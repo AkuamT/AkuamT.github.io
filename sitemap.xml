@@ -2,14 +2,12 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <sitemap>
-    <loc>https://AkuamT.github.io/zh/sitemap.xml</loc>
-    
-      <lastmod>2026-01-26T00:00:00+00:00</lastmod>
+    <loc>https://AkuamT.github.io/en/sitemap.xml</loc>
     
   </sitemap>
   
   <sitemap>
-    <loc>https://AkuamT.github.io/en/sitemap.xml</loc>
+    <loc>https://AkuamT.github.io/zh/sitemap.xml</loc>
     
       <lastmod>2026-05-12T02:00:15+08:00</lastmod>
     

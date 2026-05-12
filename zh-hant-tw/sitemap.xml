@@ -6,8 +6,8 @@
     <lastmod>2026-01-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
-                href="https://AkuamT.github.io/zh/"
+                hreflang="en"
+                href="https://AkuamT.github.io/en/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -29,8 +29,8 @@
     <lastmod>2026-01-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
-                href="https://AkuamT.github.io/zh/categories/"
+                hreflang="en"
+                href="https://AkuamT.github.io/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -52,11 +52,6 @@
     <lastmod>2026-01-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
-                href="https://AkuamT.github.io/zh/tags/gallery/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="en-us"
                 href="https://AkuamT.github.io/tags/gallery/"
                 />
@@ -73,11 +68,6 @@
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/page/</loc>
     <lastmod>2026-01-26T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://AkuamT.github.io/zh/page/"
-                />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
@@ -98,11 +88,6 @@
     <lastmod>2026-01-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
-                href="https://AkuamT.github.io/zh/tags/photoswipe/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="en-us"
                 href="https://AkuamT.github.io/tags/photoswipe/"
                 />
@@ -119,11 +104,6 @@
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/post/</loc>
     <lastmod>2026-01-26T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://AkuamT.github.io/zh/post/"
-                />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
@@ -144,8 +124,8 @@
     <lastmod>2026-01-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
-                href="https://AkuamT.github.io/zh/tags/"
+                hreflang="en"
+                href="https://AkuamT.github.io/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -167,11 +147,6 @@
     <lastmod>2026-01-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
-                href="https://AkuamT.github.io/zh/categories/documentation/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="en-us"
                 href="https://AkuamT.github.io/categories/documentation/"
                 />
@@ -188,11 +163,6 @@
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/p/image-gallery/</loc>
     <lastmod>2026-01-26T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://AkuamT.github.io/zh/p/image-gallery/"
-                />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
@@ -213,13 +183,8 @@
     <lastmod>2026-01-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
-                href="https://AkuamT.github.io/zh/p/%E7%9F%AD%E4%BB%A3%E7%A0%81/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="en-us"
-                href="https://AkuamT.github.io/p/shortcodes/"
+                href="https://AkuamT.github.io/p/%E7%9F%AD%E4%BB%A3%E7%A0%81/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -236,8 +201,8 @@
     <lastmod>2026-01-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
-                href="https://AkuamT.github.io/zh/tags/%E9%9A%90%E7%A7%81/"
+                hreflang="en-us"
+                href="https://AkuamT.github.io/tags/%E9%9A%90%E7%A7%81/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -254,13 +219,8 @@
     <lastmod>2026-01-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
-                href="https://AkuamT.github.io/zh/%E5%85%B3%E4%BA%8E/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="en-us"
-                href="https://AkuamT.github.io/about/"
+                href="https://AkuamT.github.io/%E5%85%B3%E4%BA%8E/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -275,11 +235,6 @@
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/archives/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://AkuamT.github.io/zh/archives/"
-                />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
@@ -299,11 +254,6 @@
     <loc>https://AkuamT.github.io/zh-hant-tw/search/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
-                href="https://AkuamT.github.io/zh/search/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="en-us"
                 href="https://AkuamT.github.io/search/"
                 />
@@ -321,13 +271,8 @@
     <loc>https://AkuamT.github.io/zh-hant-tw/%E9%8F%88%E6%8E%A5/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
-                href="https://AkuamT.github.io/zh/%E9%93%BE%E6%8E%A5/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="en-us"
-                href="https://AkuamT.github.io/links/"
+                href="https://AkuamT.github.io/%E9%93%BE%E6%8E%A5/"
                 />
     <xhtml:link
                 rel="alternate"
