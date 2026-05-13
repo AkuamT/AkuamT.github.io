@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="zh-hant-tw" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="🤖 AI 編程進化史：從提示詞、上下文工程到 Harness 同等能力的模型越來越多，各家產品的體驗差距反而越拉越大。 有的產品寫出來的程式碼可以直接提交上線，有的產品寫出來的卻難以維護——為什麼？ 因為模型是一樣的，差距在於怎麼用模型，怎麼穩定地用模型。 在 AI 行業裡，這就叫 Harness Engineering（駕馭工程）。\n🧠 Harness 工程：把 Agent 拆成三層 我們將編程 Agent 劃分為三個層次：\nScaffolding（腳手架） 負責 AI 任務執行前的所有準備工作，包括系統準備的工具。 Harness（運行時編排，核心） 整個智能體的核心調度中心。 負責管控 AI 的核心推理循環，協調工具調用、上下文管理、運行安全管控和會話數據的持久化存儲。 Context Engineering（上下文工程） 負責管理大模型處理文本的最小計算單位——token 的資源分配。 決定 AI 運行過程中，哪些資訊需要保留，哪些資訊應當丟棄。 一個穩定幹活的 AI 程式碼智能體 = 所調用的一個或多個大模型 + 一套完善的 Harness 系統。\n⏳ Harness 很重要，為什麼現在才火？ ① 第一階段：Prompt Engineering（提示詞工程） 核心關注點：怎麼去寫好一個指令。\n角色設定：給 AI 劃定明確的身份和職責邊界 附上示例：用 Few-shot 讓 AI 照著格式和風格生成 思維鏈（Chain-of-Thought）：在指令中要求 AI 一步一步拆解問題，逐步推導，減少跳躍式錯誤 ② 第二階段：Context Engineering（上下文工程） 單條 prompt 已經不夠用了——需要為模型動態構建整個上下文環境。 讓模型在做每一個決策時，都能精確看到它所需要的全部資訊：任務文件、歷史對話、工具規則、知識庫條目……\n">
+<title>AI編程進化史</title>
+
+
+<link rel="canonical" href="https://AkuamT.github.io/zh-hant-tw/p/ai%E7%B7%A8%E7%A8%8B%E9%80%B2%E5%8C%96%E5%8F%B2/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e62e09c60ba428a627e03568fa3df938f6a8224f815b5846f00816c17d4a0be4.css"><meta property='og:title' content="AI編程進化史">
+<meta property='og:description' content="🤖 AI 編程進化史：從提示詞、上下文工程到 Harness 同等能力的模型越來越多，各家產品的體驗差距反而越拉越大。 有的產品寫出來的程式碼可以直接提交上線，有的產品寫出來的卻難以維護——為什麼？ 因為模型是一樣的，差距在於怎麼用模型，怎麼穩定地用模型。 在 AI 行業裡，這就叫 Harness Engineering（駕馭工程）。\n🧠 Harness 工程：把 Agent 拆成三層 我們將編程 Agent 劃分為三個層次：\nScaffolding（腳手架） 負責 AI 任務執行前的所有準備工作，包括系統準備的工具。 Harness（運行時編排，核心） 整個智能體的核心調度中心。 負責管控 AI 的核心推理循環，協調工具調用、上下文管理、運行安全管控和會話數據的持久化存儲。 Context Engineering（上下文工程） 負責管理大模型處理文本的最小計算單位——token 的資源分配。 決定 AI 運行過程中，哪些資訊需要保留，哪些資訊應當丟棄。 一個穩定幹活的 AI 程式碼智能體 = 所調用的一個或多個大模型 + 一套完善的 Harness 系統。\n⏳ Harness 很重要，為什麼現在才火？ ① 第一階段：Prompt Engineering（提示詞工程） 核心關注點：怎麼去寫好一個指令。\n角色設定：給 AI 劃定明確的身份和職責邊界 附上示例：用 Few-shot 讓 AI 照著格式和風格生成 思維鏈（Chain-of-Thought）：在指令中要求 AI 一步一步拆解問題，逐步推導，減少跳躍式錯誤 ② 第二階段：Context Engineering（上下文工程） 單條 prompt 已經不夠用了——需要為模型動態構建整個上下文環境。 讓模型在做每一個決策時，都能精確看到它所需要的全部資訊：任務文件、歷史對話、工具規則、知識庫條目……\n">
+<meta property='og:url' content='https://AkuamT.github.io/zh-hant-tw/p/ai%E7%B7%A8%E7%A8%8B%E9%80%B2%E5%8C%96%E5%8F%B2/'>
+<meta property='og:site_name' content='Yanmu'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-05-11T02:00:15&#43;08:00'/><meta property='article:modified_time' content='2026-05-11T02:00:15&#43;08:00'/>
+<meta name="twitter:title" content="AI編程進化史">
+<meta name="twitter:description" content="🤖 AI 編程進化史：從提示詞、上下文工程到 Harness 同等能力的模型越來越多，各家產品的體驗差距反而越拉越大。 有的產品寫出來的程式碼可以直接提交上線，有的產品寫出來的卻難以維護——為什麼？ 因為模型是一樣的，差距在於怎麼用模型，怎麼穩定地用模型。 在 AI 行業裡，這就叫 Harness Engineering（駕馭工程）。\n🧠 Harness 工程：把 Agent 拆成三層 我們將編程 Agent 劃分為三個層次：\nScaffolding（腳手架） 負責 AI 任務執行前的所有準備工作，包括系統準備的工具。 Harness（運行時編排，核心） 整個智能體的核心調度中心。 負責管控 AI 的核心推理循環，協調工具調用、上下文管理、運行安全管控和會話數據的持久化存儲。 Context Engineering（上下文工程） 負責管理大模型處理文本的最小計算單位——token 的資源分配。 決定 AI 運行過程中，哪些資訊需要保留，哪些資訊應當丟棄。 一個穩定幹活的 AI 程式碼智能體 = 所調用的一個或多個大模型 + 一套完善的 Harness 系統。\n⏳ Harness 很重要，為什麼現在才火？ ① 第一階段：Prompt Engineering（提示詞工程） 核心關注點：怎麼去寫好一個指令。\n角色設定：給 AI 劃定明確的身份和職責邊界 附上示例：用 Few-shot 讓 AI 照著格式和風格生成 思維鏈（Chain-of-Thought）：在指令中要求 AI 一步一步拆解問題，逐步推導，減少跳躍式錯誤 ② 第二階段：Context Engineering（上下文工程） 單條 prompt 已經不夠用了——需要為模型動態構建整個上下文環境。 讓模型在做每一個決策時，都能精確看到它所需要的全部資訊：任務文件、歷史對話、工具規則、知識庫條目……\n">
+    <link rel="shortcut icon" href="img/avatar.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切換選單">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-hant-tw/">
+                    <img src="/img/Yanmu.jpg" 
+                        width="1024"
+                        height="1037"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">💻 </span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-hant-tw/">Yanmu</a></h1>
+            <h2 class="site-description">「願你成為自己的太陽，無需借誰的光。」</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/CaiJimmy/hugo-theme-stack'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-hant-tw/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主頁</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-hant-tw/%E9%97%9C%E6%96%BC/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>關於</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-hant-tw/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>歸檔</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-hant-tw/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-hant-tw/%E9%8F%88%E6%8E%A5/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>鏈接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                <option value="/p/the-evolution-of-ai-programming/" >English</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                <option value="/zh/p/ai%E7%BC%96%E7%A8%8B%E8%BF%9B%E5%8C%96%E5%8F%B2/" >简体中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                <option value="/zh-hant-tw/p/ai%E7%B7%A8%E7%A8%8B%E9%80%B2%E5%8C%96%E5%8F%B2/" selected>繁体中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/ja/p/" >日本語</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>夜晚模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目錄</h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#-harness-工程把-agent-拆成三層">🧠 Harness 工程：把 Agent 拆成三層</a></li>
+    <li><a href="#-harness-很重要為什麼現在才火">⏳ Harness 很重要，為什麼現在才火？</a>
+      <ol>
+        <li><a href="#-第一階段prompt-engineering提示詞工程">① 第一階段：Prompt Engineering（提示詞工程）</a></li>
+        <li><a href="#-第二階段context-engineering上下文工程">② 第二階段：Context Engineering（上下文工程）</a></li>
+        <li><a href="#-第三階段harness-engineering駕馭工程">③ 第三階段：Harness Engineering（駕馭工程）</a></li>
+      </ol>
+    </li>
+    <li><a href="#-ai-任務為何頻頻失敗">💥 AI 任務為何頻頻失敗？</a></li>
+    <li><a href="#-harness-的四大護欄">🛡️ Harness 的四大護欄</a>
+      <ol>
+        <li><a href="#-1-上下文工程">🔹 1. 上下文工程</a></li>
+        <li><a href="#-2-架構約束最核心">🔹 2. 架構約束（最核心）</a></li>
+        <li><a href="#-3-feedback-loop反饋循環">🔹 3. Feedback Loop（反饋循環）</a></li>
+        <li><a href="#-4-熵管理">🔹 4. 熵管理</a></li>
+      </ol>
+    </li>
+    <li><a href="#-總結">🧭 總結</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-hant-tw/p/ai%E7%B7%A8%E7%A8%8B%E9%80%B2%E5%8C%96%E5%8F%B2/">AI編程進化史</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-05-11T02:00:15&#43;08:00'>2026年5月11日 星期一</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        閱讀時間: 1 分鐘
+                    </time>
+                
+            </div>
+        
+
+        
+            <div class="inline-meta">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                
+                    <a href="/p/the-evolution-of-ai-programming/" class="link">English</a>
+                
+                    <a href="/zh/p/ai%E7%BC%96%E7%A8%8B%E8%BF%9B%E5%8C%96%E5%8F%B2/" class="link">简体中文</a>
+                
+                    <a href="/ja/p/" class="link">日本語</a>
+                
+            </div>
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span>目錄</span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#-harness-工程把-agent-拆成三層">🧠 Harness 工程：把 Agent 拆成三層</a></li>
+    <li><a href="#-harness-很重要為什麼現在才火">⏳ Harness 很重要，為什麼現在才火？</a>
+      <ol>
+        <li><a href="#-第一階段prompt-engineering提示詞工程">① 第一階段：Prompt Engineering（提示詞工程）</a></li>
+        <li><a href="#-第二階段context-engineering上下文工程">② 第二階段：Context Engineering（上下文工程）</a></li>
+        <li><a href="#-第三階段harness-engineering駕馭工程">③ 第三階段：Harness Engineering（駕馭工程）</a></li>
+      </ol>
+    </li>
+    <li><a href="#-ai-任務為何頻頻失敗">💥 AI 任務為何頻頻失敗？</a></li>
+    <li><a href="#-harness-的四大護欄">🛡️ Harness 的四大護欄</a>
+      <ol>
+        <li><a href="#-1-上下文工程">🔹 1. 上下文工程</a></li>
+        <li><a href="#-2-架構約束最核心">🔹 2. 架構約束（最核心）</a></li>
+        <li><a href="#-3-feedback-loop反饋循環">🔹 3. Feedback Loop（反饋循環）</a></li>
+        <li><a href="#-4-熵管理">🔹 4. 熵管理</a></li>
+      </ol>
+    </li>
+    <li><a href="#-總結">🧭 總結</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h1 id="-ai-編程進化史從提示詞上下文工程到-harness">🤖 AI 編程進化史：從提示詞、上下文工程到 Harness
+</h1>
+    <blockquote>
+        <p>同等能力的模型越來越多，各家產品的體驗差距反而越拉越大。
+有的產品寫出來的程式碼可以直接提交上線，有的產品寫出來的卻難以維護——為什麼？
+<strong>因為模型是一樣的，差距在於怎麼用模型，怎麼穩定地用模型。</strong>
+在 AI 行業裡，這就叫 <strong>Harness Engineering（駕馭工程）</strong>。</p>
+
+    </blockquote>
+<hr>
+<h2 id="-harness-工程把-agent-拆成三層">🧠 Harness 工程：把 Agent 拆成三層
+</h2><p>我們將編程 Agent 劃分為三個層次：</p>
+<ul>
+<li><strong>Scaffolding（腳手架）</strong>
+負責 AI 任務執行前的所有準備工作，包括系統準備的工具。</li>
+<li><strong>Harness（運行時編排，核心）</strong>
+整個智能體的核心調度中心。
+負責管控 AI 的核心推理循環，協調工具調用、上下文管理、運行安全管控和會話數據的持久化存儲。</li>
+<li><strong>Context Engineering（上下文工程）</strong>
+負責管理大模型處理文本的最小計算單位——token 的資源分配。
+決定 AI 運行過程中，哪些資訊需要保留，哪些資訊應當丟棄。</li>
+</ul>
+
+    <blockquote>
+        <p><strong>一個穩定幹活的 AI 程式碼智能體 = 所調用的一個或多個大模型 + 一套完善的 Harness 系統。</strong></p>
+
+    </blockquote>
+<hr>
+<h2 id="-harness-很重要為什麼現在才火">⏳ Harness 很重要，為什麼現在才火？
+</h2><h3 id="-第一階段prompt-engineering提示詞工程">① 第一階段：Prompt Engineering（提示詞工程）
+</h3><p><strong>核心關注點：怎麼去寫好一個指令。</strong></p>
+<ul>
+<li><strong>角色設定</strong>：給 AI 劃定明確的身份和職責邊界</li>
+<li><strong>附上示例</strong>：用 Few-shot 讓 AI 照著格式和風格生成</li>
+<li><strong>思維鏈（Chain-of-Thought）</strong>：在指令中要求 AI 一步一步拆解問題，逐步推導，減少跳躍式錯誤</li>
+</ul>
+<h3 id="-第二階段context-engineering上下文工程">② 第二階段：Context Engineering（上下文工程）
+</h3><p>單條 prompt 已經不夠用了——需要為模型<strong>動態構建整個上下文環境</strong>。
+讓模型在做每一個決策時，都能精確看到它所需要的全部資訊：任務文件、歷史對話、工具規則、知識庫條目……</p>
+<p>核心理念：<strong>給模型看它該看的，擋住它不該看的。</strong></p>
+<h3 id="-第三階段harness-engineering駕馭工程">③ 第三階段：Harness Engineering（駕馭工程）
+</h3>
+    <blockquote>
+        <p>每當你發現 Agent 犯了一個錯誤，你就花時間去工程化地解決它，讓它不會犯相同的錯誤。</p>
+
+    </blockquote>
+<p>模型的能力夠了，但它就是不聽話，怎麼辦？
+<strong>答案就是——Harness Engineering。</strong></p>
+<p><strong>真實案例：</strong></p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>實驗</th>
+          <th>條件</th>
+          <th>結果</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>LangChain</strong></td>
+          <td>同一模型，僅優化 Harness</td>
+          <td>Terminal Bench 2.0：<strong>52.8 → 66.5</strong></td>
+      </tr>
+      <tr>
+          <td><strong>Nate B Jones</strong></td>
+          <td>同一模型、同一提示詞，僅改變運行環境</td>
+          <td>編程基準測試率：<strong>42% → 78%</strong></td>
+      </tr>
+      <tr>
+          <td><strong>OpenAI</strong></td>
+          <td>空 git 倉庫起步，五個月，全 AI Agent 驅動</td>
+          <td>產出 <strong>~100 萬行程式碼</strong>，<strong>1500 個 PR</strong>，人類零介入</td>
+      </tr>
+  </tbody>
+</table></div>
+
+    <blockquote>
+        <p><strong>Agent 不難，Harness 才難。</strong></p>
+
+    </blockquote>
+<hr>
+<h2 id="-ai-任務為何頻頻失敗">💥 AI 任務為何頻頻失敗？
+</h2><p><strong>1. 試圖一步到位</strong>
+在一個窗口裡想把所有功能都做完，結果就是上下文窗口迅速耗盡，後半段的質量斷崖式下跌。</p>
+<p><strong>2. 過早宣佈勝利</strong>
+複雜項目開發後期，AI 智能體完成了核心功能、有了可見產出，就直接判定任務完成而主動終止——哪怕大量功能還沒實現，核心需求尚未滿足，依然會停止。</p>
+<p><strong>3. 過早標記功能完成</strong>
+AI 智能體只要寫完了某個功能，就會將其標記為已完成。它不會主動做端到端的完整功能測試，也不會驗證這個功能在真實環境中到底能不能用。<strong>看起來能跑，實際上到處是隱藏的 bug。</strong></p>
+<p><strong>4. 機械複製程式碼模式</strong>
+AI 會機械地沿用已有的程式碼模式（架構風格、編寫規範），哪怕這個模式是錯誤的，並在整個項目裡持續放大。不加約束的 AI 智能體，會以極快的速度在項目中積累<strong>大量技術債務</strong>。</p>
+<hr>
+<h2 id="-harness-的四大護欄">🛡️ Harness 的四大護欄
+</h2><h3 id="-1-上下文工程">🔹 1. 上下文工程
+</h3><p><strong>AGENTS.MD</strong> 文件越長、資訊越冗餘，Agent 任務成功率就越低，推理成本卻越高。
+AGENTS.MD 文件應嚴格控制在 <strong>60 行以內</strong>。</p>
+
+    <blockquote>
+        <p>上下文是稀缺資源，過多的指導會擠掉真正重要的任務程式碼。</p>
+
+    </blockquote>
+<h3 id="-2-架構約束最核心">🔹 2. 架構約束（最核心）
+</h3><p>實行<strong>嚴格的分層架構</strong>——不是用 prompt 告訴 agent&quot;請遵守架構&quot;，而是用<strong>確定性的 Linter 和結構化測試</strong>來機械執行。</p>
+<p>在 Linter 報錯資訊裡直接嵌入修復指引，告訴 agent 應該怎麼改。<strong>約束比指令更有效。</strong></p>
+<h3 id="-3-feedback-loop反饋循環">🔹 3. Feedback Loop（反饋循環）
+</h3><p>在 Harness 裡，程式碼審查變成 <strong>Agent 對 Agent</strong> 的方式。
+形成標準化閉環：<strong>規劃與發現 → 構建 → 驗證 → 修復</strong>，循環往復，持續提純程式碼質量。</p>
+<h3 id="-4-熵管理">🔹 4. 熵管理
+</h3><p>隨著時間推移，AI 生成程式碼會積累大量問題：文檔過時、架構漂移、風格走樣、死程式碼堆積……
+讓 <strong>Agent 為 Agent 維護文檔</strong>，持續對抗熵增，防止項目腐化。</p>
+<hr>
+<h2 id="-總結">🧭 總結
+</h2><p>AI 編程的進化，本質上是一場<strong>從&quot;寫好提示詞&quot;到&quot;構建好系統&quot;的範式轉移</strong>。</p>
+<ul>
+<li><strong>Prompt Engineering</strong> 解決的是&quot;怎麼說&quot;</li>
+<li><strong>Context Engineering</strong> 解決的是&quot;給什麼資訊&quot;</li>
+<li><strong>Harness Engineering</strong> 解決的是&quot;怎麼管住它&quot;</li>
+</ul>
+<p>三條線不是替代關係，而是<strong>疊加遞進</strong>——每一層都建立在上一層的基礎之上。真正能穩定產出高質量程式碼的 AI 編程產品，必定在這三個層次上都下了硬功夫。</p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under <a class="link" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"  target="_blank" rel="noopener"
+    >CC BY-NC-SA 4.0</a></span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+
+        <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2026 Yanmu
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 建立 <br />
+        主題 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="4.0.2">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 設計
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.c9cd0fdae22289454c0e78b3c21f6b53761cd5474ad3cb782e5a8703bdc027f2.js" defer></script>
+
+
+    </body>
+</html>

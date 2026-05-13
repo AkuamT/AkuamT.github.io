@@ -296,6 +296,28 @@
                 href="https://AkuamT.github.io/ja/archives/"
                 />
   </url><url>
+    <loc>https://AkuamT.github.io/ja/p/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://AkuamT.github.io/p/the-evolution-of-ai-programming/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://AkuamT.github.io/zh/p/ai%E7%BC%96%E7%A8%8B%E8%BF%9B%E5%8C%96%E5%8F%B2/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/p/ai%E7%B7%A8%E7%A8%8B%E9%80%B2%E5%8C%96%E5%8F%B2/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/p/"
+                />
+  </url><url>
     <loc>https://AkuamT.github.io/ja/%E3%83%AA%E3%83%B3%E3%82%AF/</loc>
     <xhtml:link
                 rel="alternate"
