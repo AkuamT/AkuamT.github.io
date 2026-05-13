@@ -6,13 +6,13 @@
     <lastmod>2026-01-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
-                href="https://AkuamT.github.io/en/"
+                hreflang="en-us"
+                href="https://AkuamT.github.io/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en-us"
-                href="https://AkuamT.github.io/"
+                hreflang="zh"
+                href="https://AkuamT.github.io/zh/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -29,13 +29,13 @@
     <lastmod>2026-01-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
-                href="https://AkuamT.github.io/en/categories/"
+                hreflang="en-us"
+                href="https://AkuamT.github.io/categories/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en-us"
-                href="https://AkuamT.github.io/categories/"
+                hreflang="zh"
+                href="https://AkuamT.github.io/zh/categories/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -57,6 +57,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="zh"
+                href="https://AkuamT.github.io/zh/tags/gallery/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="ja"
                 href="https://AkuamT.github.io/ja/tags/gallery/"
                 />
@@ -72,6 +77,11 @@
                 rel="alternate"
                 hreflang="en-us"
                 href="https://AkuamT.github.io/page/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://AkuamT.github.io/zh/page/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -93,6 +103,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="zh"
+                href="https://AkuamT.github.io/zh/tags/photoswipe/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="ja"
                 href="https://AkuamT.github.io/ja/tags/photoswipe/"
                 />
@@ -111,6 +126,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="zh"
+                href="https://AkuamT.github.io/zh/post/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="ja"
                 href="https://AkuamT.github.io/ja/post/"
                 />
@@ -124,13 +144,13 @@
     <lastmod>2026-01-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
-                href="https://AkuamT.github.io/en/tags/"
+                hreflang="en-us"
+                href="https://AkuamT.github.io/tags/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en-us"
-                href="https://AkuamT.github.io/tags/"
+                hreflang="zh"
+                href="https://AkuamT.github.io/zh/tags/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -152,6 +172,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="zh"
+                href="https://AkuamT.github.io/zh/categories/documentation/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="ja"
                 href="https://AkuamT.github.io/ja/categories/documentation/"
                 />
@@ -170,6 +195,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="zh"
+                href="https://AkuamT.github.io/zh/p/image-gallery/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="ja"
                 href="https://AkuamT.github.io/ja/p/image-gallery/"
                 />
@@ -184,7 +214,12 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="https://AkuamT.github.io/p/%E7%9F%AD%E4%BB%A3%E7%A0%81/"
+                href="https://AkuamT.github.io/p/shortcodes/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://AkuamT.github.io/zh/p/%E7%9F%AD%E4%BB%A3%E7%A0%81/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -201,8 +236,8 @@
     <lastmod>2026-01-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="en-us"
-                href="https://AkuamT.github.io/tags/%E9%9A%90%E7%A7%81/"
+                hreflang="zh"
+                href="https://AkuamT.github.io/zh/tags/%E9%9A%90%E7%A7%81/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -220,7 +255,12 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="https://AkuamT.github.io/%E5%85%B3%E4%BA%8E/"
+                href="https://AkuamT.github.io/about/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://AkuamT.github.io/zh/%E5%85%B3%E4%BA%8E/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -242,6 +282,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="zh"
+                href="https://AkuamT.github.io/zh/archives/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="ja"
                 href="https://AkuamT.github.io/ja/archives/"
                 />
@@ -259,6 +304,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="zh"
+                href="https://AkuamT.github.io/zh/search/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="ja"
                 href="https://AkuamT.github.io/ja/search/"
                 />
@@ -272,7 +322,12 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="https://AkuamT.github.io/%E9%93%BE%E6%8E%A5/"
+                href="https://AkuamT.github.io/links/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://AkuamT.github.io/zh/%E9%93%BE%E6%8E%A5/"
                 />
     <xhtml:link
                 rel="alternate"
