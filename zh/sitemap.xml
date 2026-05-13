@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://AkuamT.github.io/zh/</loc>
-    <lastmod>2026-01-26T00:00:00+00:00</lastmod>
+    <lastmod>2026-05-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
@@ -23,6 +23,52 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://AkuamT.github.io/zh/"
+                />
+  </url><url>
+    <loc>https://AkuamT.github.io/zh/page/</loc>
+    <lastmod>2026-05-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://AkuamT.github.io/page/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/page/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/page/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://AkuamT.github.io/zh/page/"
+                />
+  </url><url>
+    <loc>https://AkuamT.github.io/zh/%E5%85%B3%E4%BA%8E/</loc>
+    <lastmod>2026-05-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://AkuamT.github.io/about/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/%E9%97%9C%E6%96%BC/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/%E6%A6%82%E8%A6%81/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://AkuamT.github.io/zh/%E5%85%B3%E4%BA%8E/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh/categories/</loc>
@@ -69,29 +115,6 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://AkuamT.github.io/zh/tags/gallery/"
-                />
-  </url><url>
-    <loc>https://AkuamT.github.io/zh/page/</loc>
-    <lastmod>2026-01-26T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://AkuamT.github.io/page/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/page/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/page/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://AkuamT.github.io/zh/page/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh/tags/photoswipe/</loc>
@@ -184,29 +207,6 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://AkuamT.github.io/zh/p/%E7%9F%AD%E4%BB%A3%E7%A0%81/"
-                />
-  </url><url>
-    <loc>https://AkuamT.github.io/zh/%E5%85%B3%E4%BA%8E/</loc>
-    <lastmod>2026-01-26T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://AkuamT.github.io/about/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/%E9%97%9C%E6%96%BC/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/%E3%81%93%E3%81%AE%E3%82%B5%E3%82%A4%E3%83%88%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://AkuamT.github.io/zh/%E5%85%B3%E4%BA%8E/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh/categories/documentation/</loc>
