@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 📌 生成日：2026-05-10 | 対象：Obsidian内でOpenCode AIアシスタントを直接使いたいユーザー\n📋 目次 一、opencode-obsidianプラグインとは？ 二、環境準備 三、BRATプラグインのインストール 四、BRATでopencode-obsidianをインストール 五、OpenCode CLIのインストール 六、プラグイン設定の詳細 七、初回使用 八、コンテキスト注入（実験的機能） 九、カスタムコマンドモード 十、よくある質問とトラブルシューティング 一、opencode-obsidianプラグインとは？ opencode-obsidianは、OpenCode AIアシスタントをObsidianウィンドウに直接埋め込むサードパーティコミュニティプラグインです。従来のターミナル統合ソリューションとは異なり、このプラグインはOpenCodeのWebビューを使用して直接埋め込むため、表示されるのは完全なOpenCodeインターフェースであり、ターミナルとObsidianの間を行き来する必要がありません。\nコア機能：\n🖥️ OpenCodeインターフェースがObsidianのサイドバーやメインエディタに直接埋め込み 🔄 サーバーの自動管理——パネルを開くと起動、閉じると停止 📄 実験的なコンテキスト注入——現在開いているノートと選択テキストを自動的にAIに渡す ⌨️ ショートカット Ctrl/Cmd + Shift + O でパネルを素早く切り替え 適用シーン：\n長文コンテンツの要約と精製 執筆、編集、推敲 ナレッジベースの検索と探索 アウトラインと構造化ノートの生成 ⚠️ プラグイン作者はOpenCode / Obsidianとは無関係で、これは独立したサードパーティプロジェクトです。現在のバージョンは0.2.1（Beta段階）、デスクトップのみ対応。\n二、環境準備 始める前に、以下の準備ができていることを確認してください：\n項目 要件 説明 Obsidian ≥ 1.4.0 公式サイトからダウンロード Node.js ≥ 18+ ダウンロード、OpenCodeのインストールに必要 準備ができたら、以下の手順に従ってください。\n">
+<title>OpenCode &#43; Obsidian：AI駆動のナレッジマネジメントワークフローを構築する</title>
+
+
+<link rel="canonical" href="https://AkuamT.github.io/ja/p/opencode--obsidianai%E9%A7%86%E5%8B%95%E3%81%AE%E3%83%8A%E3%83%AC%E3%83%83%E3%82%B8%E3%83%9E%E3%83%8D%E3%82%B8%E3%83%A1%E3%83%B3%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%E3%83%95%E3%83%AD%E3%83%BC%E3%82%92%E6%A7%8B%E7%AF%89%E3%81%99%E3%82%8B/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e62e09c60ba428a627e03568fa3df938f6a8224f815b5846f00816c17d4a0be4.css"><meta property='og:title' content="OpenCode + Obsidian：AI駆動のナレッジマネジメントワークフローを構築する">
+<meta property='og:description' content=" 📌 生成日：2026-05-10 | 対象：Obsidian内でOpenCode AIアシスタントを直接使いたいユーザー\n📋 目次 一、opencode-obsidianプラグインとは？ 二、環境準備 三、BRATプラグインのインストール 四、BRATでopencode-obsidianをインストール 五、OpenCode CLIのインストール 六、プラグイン設定の詳細 七、初回使用 八、コンテキスト注入（実験的機能） 九、カスタムコマンドモード 十、よくある質問とトラブルシューティング 一、opencode-obsidianプラグインとは？ opencode-obsidianは、OpenCode AIアシスタントをObsidianウィンドウに直接埋め込むサードパーティコミュニティプラグインです。従来のターミナル統合ソリューションとは異なり、このプラグインはOpenCodeのWebビューを使用して直接埋め込むため、表示されるのは完全なOpenCodeインターフェースであり、ターミナルとObsidianの間を行き来する必要がありません。\nコア機能：\n🖥️ OpenCodeインターフェースがObsidianのサイドバーやメインエディタに直接埋め込み 🔄 サーバーの自動管理——パネルを開くと起動、閉じると停止 📄 実験的なコンテキスト注入——現在開いているノートと選択テキストを自動的にAIに渡す ⌨️ ショートカット Ctrl/Cmd + Shift + O でパネルを素早く切り替え 適用シーン：\n長文コンテンツの要約と精製 執筆、編集、推敲 ナレッジベースの検索と探索 アウトラインと構造化ノートの生成 ⚠️ プラグイン作者はOpenCode / Obsidianとは無関係で、これは独立したサードパーティプロジェクトです。現在のバージョンは0.2.1（Beta段階）、デスクトップのみ対応。\n二、環境準備 始める前に、以下の準備ができていることを確認してください：\n項目 要件 説明 Obsidian ≥ 1.4.0 公式サイトからダウンロード Node.js ≥ 18+ ダウンロード、OpenCodeのインストールに必要 準備ができたら、以下の手順に従ってください。\n">
+<meta property='og:url' content='https://AkuamT.github.io/ja/p/opencode--obsidianai%E9%A7%86%E5%8B%95%E3%81%AE%E3%83%8A%E3%83%AC%E3%83%83%E3%82%B8%E3%83%9E%E3%83%8D%E3%82%B8%E3%83%A1%E3%83%B3%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%E3%83%95%E3%83%AD%E3%83%BC%E3%82%92%E6%A7%8B%E7%AF%89%E3%81%99%E3%82%8B/'>
+<meta property='og:site_name' content='Yanmu'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-04-22T02:00:15&#43;08:00'/><meta property='article:modified_time' content='2026-04-22T02:00:15&#43;08:00'/>
+<meta name="twitter:title" content="OpenCode + Obsidian：AI駆動のナレッジマネジメントワークフローを構築する">
+<meta name="twitter:description" content=" 📌 生成日：2026-05-10 | 対象：Obsidian内でOpenCode AIアシスタントを直接使いたいユーザー\n📋 目次 一、opencode-obsidianプラグインとは？ 二、環境準備 三、BRATプラグインのインストール 四、BRATでopencode-obsidianをインストール 五、OpenCode CLIのインストール 六、プラグイン設定の詳細 七、初回使用 八、コンテキスト注入（実験的機能） 九、カスタムコマンドモード 十、よくある質問とトラブルシューティング 一、opencode-obsidianプラグインとは？ opencode-obsidianは、OpenCode AIアシスタントをObsidianウィンドウに直接埋め込むサードパーティコミュニティプラグインです。従来のターミナル統合ソリューションとは異なり、このプラグインはOpenCodeのWebビューを使用して直接埋め込むため、表示されるのは完全なOpenCodeインターフェースであり、ターミナルとObsidianの間を行き来する必要がありません。\nコア機能：\n🖥️ OpenCodeインターフェースがObsidianのサイドバーやメインエディタに直接埋め込み 🔄 サーバーの自動管理——パネルを開くと起動、閉じると停止 📄 実験的なコンテキスト注入——現在開いているノートと選択テキストを自動的にAIに渡す ⌨️ ショートカット Ctrl/Cmd + Shift + O でパネルを素早く切り替え 適用シーン：\n長文コンテンツの要約と精製 執筆、編集、推敲 ナレッジベースの検索と探索 アウトラインと構造化ノートの生成 ⚠️ プラグイン作者はOpenCode / Obsidianとは無関係で、これは独立したサードパーティプロジェクトです。現在のバージョンは0.2.1（Beta段階）、デスクトップのみ対応。\n二、環境準備 始める前に、以下の準備ができていることを確認してください：\n項目 要件 説明 Obsidian ≥ 1.4.0 公式サイトからダウンロード Node.js ≥ 18+ ダウンロード、OpenCodeのインストールに必要 準備ができたら、以下の手順に従ってください。\n">
+    <link rel="shortcut icon" href="img/avatar.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="メニューを開く・閉じる">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/ja/">
+                    <img src="/img/Yanmu.jpg" 
+                        width="1024"
+                        height="1037"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">💻 </span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/ja/">Yanmu</a></h1>
+            <h2 class="site-description">「誰の光を借りることもなく、自らが太陽となりますように。」</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/CaiJimmy/hugo-theme-stack'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/ja/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>ホーム</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/ja/%E6%A6%82%E8%A6%81/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>概要</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/ja/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>アーカイブ</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/ja/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>検索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/ja/%E3%83%AA%E3%83%B3%E3%82%AF/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>リンク</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                <option value="/p/opencode--obsidian-build-your-ai-powered-knowledge-management-workflow/" >English</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                <option value="/zh/p/opencode--obsidian%E6%89%93%E9%80%A0%E4%BD%A0%E7%9A%84ai%E9%A9%B1%E5%8A%A8%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E5%B7%A5%E4%BD%9C%E6%B5%81/" >简体中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                <option value="/zh-hant-tw/p/opencode--obsidian%E6%89%93%E9%80%A0%E4%BD%A0%E7%9A%84ai%E9%A9%85%E5%8B%95%E7%9F%A5%E8%AD%98%E7%AE%A1%E7%90%86%E5%B7%A5%E4%BD%9C%E6%B5%81/" >繁体中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/ja/p/opencode--obsidianai%E9%A7%86%E5%8B%95%E3%81%AE%E3%83%8A%E3%83%AC%E3%83%83%E3%82%B8%E3%83%9E%E3%83%8D%E3%82%B8%E3%83%A1%E3%83%B3%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%E3%83%95%E3%83%AD%E3%83%BC%E3%82%92%E6%A7%8B%E7%AF%89%E3%81%99%E3%82%8B/" selected>日本語</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>ダークモード</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目次</h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#-目次">📋 目次</a></li>
+    <li><a href="#一opencode-obsidianプラグインとは">一、opencode-obsidianプラグインとは？</a></li>
+    <li><a href="#二環境準備">二、環境準備</a></li>
+    <li><a href="#三bratプラグインのインストール">三、BRATプラグインのインストール</a>
+      <ol>
+        <li><a href="#ステップ1コミュニティプラグインマーケットプレイスを開く">ステップ1：コミュニティプラグインマーケットプレイスを開く</a></li>
+        <li><a href="#ステップ2bratを検索してインストール">ステップ2：BRATを検索してインストール</a></li>
+      </ol>
+    </li>
+    <li><a href="#四bratでopencode-obsidianをインストール">四、BRATでopencode-obsidianをインストール</a>
+      <ol>
+        <li><a href="#ステップ1brat設定を開く">ステップ1：BRAT設定を開く</a></li>
+        <li><a href="#ステップ2betaプラグインを追加">ステップ2：Betaプラグインを追加</a></li>
+        <li><a href="#ステップ3リポジトリアドレスを入力">ステップ3：リポジトリアドレスを入力</a></li>
+        <li><a href="#ステップ4プラグインを有効化">ステップ4：プラグインを有効化</a></li>
+        <li><a href="#自動更新">自動更新</a></li>
+      </ol>
+    </li>
+    <li><a href="#五opencode-cliのインストール">五、OpenCode CLIのインストール</a></li>
+    <li><a href="#六プラグイン設定の詳細">六、プラグイン設定の詳細</a>
+      <ol>
+        <li><a href="#基本設定">基本設定</a></li>
+        <li><a href="#インターフェース設定">インターフェース設定</a></li>
+        <li><a href="#コンテキスト注入実験的">コンテキスト注入（実験的）</a></li>
+        <li><a href="#カスタムコマンド">カスタムコマンド</a></li>
+      </ol>
+    </li>
+    <li><a href="#七初回使用">七、初回使用</a>
+      <ol>
+        <li><a href="#opencodeパネルを開く">OpenCodeパネルを開く</a></li>
+        <li><a href="#初回起動フロー">初回起動フロー</a></li>
+        <li><a href="#すべてが正常に動作しているか確認">すべてが正常に動作しているか確認</a></li>
+        <li><a href="#ショートカット早見表">ショートカット早見表</a></li>
+      </ol>
+    </li>
+    <li><a href="#八コンテキスト注入実験的機能">八、コンテキスト注入（実験的機能）</a>
+      <ol>
+        <li><a href="#有効にする方法">有効にする方法</a></li>
+        <li><a href="#注入される内容">注入される内容</a></li>
+        <li><a href="#使用シーン">使用シーン</a></li>
+        <li><a href="#制限事項">制限事項</a></li>
+      </ol>
+    </li>
+    <li><a href="#九カスタムコマンドモード">九、カスタムコマンドモード</a>
+      <ol>
+        <li><a href="#カスタムコマンドが必要な場合">カスタムコマンドが必要な場合</a></li>
+        <li><a href="#設定手順">設定手順</a></li>
+        <li><a href="#コマンドテンプレート">コマンドテンプレート</a></li>
+        <li><a href="#-重要な注意事項">⚠️ 重要な注意事項</a></li>
+      </ol>
+    </li>
+    <li><a href="#十よくある質問とトラブルシューティング">十、よくある質問とトラブルシューティング</a>
+      <ol>
+        <li><a href="#-opencode実行ファイルが見つからない">❌ OpenCode実行ファイルが見つからない</a></li>
+        <li><a href="#-サービス起動タイムアウト">❌ サービス起動タイムアウト</a></li>
+        <li><a href="#-パネルが空白で表示される">❌ パネルが空白で表示される</a></li>
+        <li><a href="#-パネルを埋め込めない">❌ パネルを埋め込めない</a></li>
+        <li><a href="#-中国語ファイル名の文字化けwindows">❌ 中国語ファイル名の文字化け（Windows）</a></li>
+        <li><a href="#-プラグイン更新後に再設定が必要">❌ プラグイン更新後に再設定が必要</a></li>
+      </ol>
+    </li>
+    <li><a href="#まとめ">まとめ</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/ja/p/opencode--obsidianai%E9%A7%86%E5%8B%95%E3%81%AE%E3%83%8A%E3%83%AC%E3%83%83%E3%82%B8%E3%83%9E%E3%83%8D%E3%82%B8%E3%83%A1%E3%83%B3%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%E3%83%95%E3%83%AD%E3%83%BC%E3%82%92%E6%A7%8B%E7%AF%89%E3%81%99%E3%82%8B/">OpenCode &#43; Obsidian：AI駆動のナレッジマネジメントワークフローを構築する</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-04-22T02:00:15&#43;08:00'>2026年4月22日水曜日</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        読了時間: 3分
+                    </time>
+                
+            </div>
+        
+
+        
+            <div class="inline-meta">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                
+                    <a href="/p/opencode--obsidian-build-your-ai-powered-knowledge-management-workflow/" class="link">English</a>
+                
+                    <a href="/zh/p/opencode--obsidian%E6%89%93%E9%80%A0%E4%BD%A0%E7%9A%84ai%E9%A9%B1%E5%8A%A8%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E5%B7%A5%E4%BD%9C%E6%B5%81/" class="link">简体中文</a>
+                
+                    <a href="/zh-hant-tw/p/opencode--obsidian%E6%89%93%E9%80%A0%E4%BD%A0%E7%9A%84ai%E9%A9%85%E5%8B%95%E7%9F%A5%E8%AD%98%E7%AE%A1%E7%90%86%E5%B7%A5%E4%BD%9C%E6%B5%81/" class="link">繁体中文</a>
+                
+            </div>
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span>目次</span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#-目次">📋 目次</a></li>
+    <li><a href="#一opencode-obsidianプラグインとは">一、opencode-obsidianプラグインとは？</a></li>
+    <li><a href="#二環境準備">二、環境準備</a></li>
+    <li><a href="#三bratプラグインのインストール">三、BRATプラグインのインストール</a>
+      <ol>
+        <li><a href="#ステップ1コミュニティプラグインマーケットプレイスを開く">ステップ1：コミュニティプラグインマーケットプレイスを開く</a></li>
+        <li><a href="#ステップ2bratを検索してインストール">ステップ2：BRATを検索してインストール</a></li>
+      </ol>
+    </li>
+    <li><a href="#四bratでopencode-obsidianをインストール">四、BRATでopencode-obsidianをインストール</a>
+      <ol>
+        <li><a href="#ステップ1brat設定を開く">ステップ1：BRAT設定を開く</a></li>
+        <li><a href="#ステップ2betaプラグインを追加">ステップ2：Betaプラグインを追加</a></li>
+        <li><a href="#ステップ3リポジトリアドレスを入力">ステップ3：リポジトリアドレスを入力</a></li>
+        <li><a href="#ステップ4プラグインを有効化">ステップ4：プラグインを有効化</a></li>
+        <li><a href="#自動更新">自動更新</a></li>
+      </ol>
+    </li>
+    <li><a href="#五opencode-cliのインストール">五、OpenCode CLIのインストール</a></li>
+    <li><a href="#六プラグイン設定の詳細">六、プラグイン設定の詳細</a>
+      <ol>
+        <li><a href="#基本設定">基本設定</a></li>
+        <li><a href="#インターフェース設定">インターフェース設定</a></li>
+        <li><a href="#コンテキスト注入実験的">コンテキスト注入（実験的）</a></li>
+        <li><a href="#カスタムコマンド">カスタムコマンド</a></li>
+      </ol>
+    </li>
+    <li><a href="#七初回使用">七、初回使用</a>
+      <ol>
+        <li><a href="#opencodeパネルを開く">OpenCodeパネルを開く</a></li>
+        <li><a href="#初回起動フロー">初回起動フロー</a></li>
+        <li><a href="#すべてが正常に動作しているか確認">すべてが正常に動作しているか確認</a></li>
+        <li><a href="#ショートカット早見表">ショートカット早見表</a></li>
+      </ol>
+    </li>
+    <li><a href="#八コンテキスト注入実験的機能">八、コンテキスト注入（実験的機能）</a>
+      <ol>
+        <li><a href="#有効にする方法">有効にする方法</a></li>
+        <li><a href="#注入される内容">注入される内容</a></li>
+        <li><a href="#使用シーン">使用シーン</a></li>
+        <li><a href="#制限事項">制限事項</a></li>
+      </ol>
+    </li>
+    <li><a href="#九カスタムコマンドモード">九、カスタムコマンドモード</a>
+      <ol>
+        <li><a href="#カスタムコマンドが必要な場合">カスタムコマンドが必要な場合</a></li>
+        <li><a href="#設定手順">設定手順</a></li>
+        <li><a href="#コマンドテンプレート">コマンドテンプレート</a></li>
+        <li><a href="#-重要な注意事項">⚠️ 重要な注意事項</a></li>
+      </ol>
+    </li>
+    <li><a href="#十よくある質問とトラブルシューティング">十、よくある質問とトラブルシューティング</a>
+      <ol>
+        <li><a href="#-opencode実行ファイルが見つからない">❌ OpenCode実行ファイルが見つからない</a></li>
+        <li><a href="#-サービス起動タイムアウト">❌ サービス起動タイムアウト</a></li>
+        <li><a href="#-パネルが空白で表示される">❌ パネルが空白で表示される</a></li>
+        <li><a href="#-パネルを埋め込めない">❌ パネルを埋め込めない</a></li>
+        <li><a href="#-中国語ファイル名の文字化けwindows">❌ 中国語ファイル名の文字化け（Windows）</a></li>
+        <li><a href="#-プラグイン更新後に再設定が必要">❌ プラグイン更新後に再設定が必要</a></li>
+      </ol>
+    </li>
+    <li><a href="#まとめ">まとめ</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    
+    <blockquote>
+        <p>📌 生成日：2026-05-10 | 対象：Obsidian内でOpenCode AIアシスタントを直接使いたいユーザー</p>
+
+    </blockquote>
+<hr>
+<h2 id="-目次">📋 目次
+</h2><ul>
+<li><a class="link" href="#%e4%b8%80opencode-obsidian%e3%83%97%e3%83%a9%e3%82%b0%e3%82%a4%e3%83%b3%e3%81%a8%e3%81%af" >一、opencode-obsidianプラグインとは？</a></li>
+<li><a class="link" href="#%e4%ba%8c%e7%92%b0%e5%a2%83%e6%ba%96%e5%82%99" >二、環境準備</a></li>
+<li><a class="link" href="#%e4%b8%89brat%e3%83%97%e3%83%a9%e3%82%b0%e3%82%a4%e3%83%b3%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab" >三、BRATプラグインのインストール</a></li>
+<li><a class="link" href="#%e5%9b%9bbrat%e3%81%a7opencode-obsidian%e3%82%92%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab" >四、BRATでopencode-obsidianをインストール</a></li>
+<li><a class="link" href="#%e4%ba%94opencode-cli%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab" >五、OpenCode CLIのインストール</a></li>
+<li><a class="link" href="#%e5%85%ad%e3%83%97%e3%83%a9%e3%82%b0%e3%82%a4%e3%83%b3%e8%a8%ad%e5%ae%9a%e3%81%ae%e8%a9%b3%e7%b4%b0" >六、プラグイン設定の詳細</a></li>
+<li><a class="link" href="#%e4%b8%83%e5%88%9d%e5%9b%9e%e4%bd%bf%e7%94%a8" >七、初回使用</a></li>
+<li><a class="link" href="#%e5%85%ab%e3%82%b3%e3%83%b3%e3%83%86%e3%82%ad%e3%82%b9%e3%83%88%e6%b3%a8%e5%85%a5%e5%ae%9f%e9%a8%93%e7%9a%84%e6%a9%9f%e8%83%bd" >八、コンテキスト注入（実験的機能）</a></li>
+<li><a class="link" href="#%e4%b9%9d%e3%82%ab%e3%82%b9%e3%82%bf%e3%83%a0%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%83%a2%e3%83%bc%e3%83%89" >九、カスタムコマンドモード</a></li>
+<li><a class="link" href="#%e5%8d%81%e3%82%88%e3%81%8f%e3%81%82%e3%82%8b%e8%b3%aa%e5%95%8f%e3%81%a8%e3%83%88%e3%83%a9%e3%83%96%e3%83%ab%e3%82%b7%e3%83%a5%e3%83%bc%e3%83%86%e3%82%a3%e3%83%b3%e3%82%b0" >十、よくある質問とトラブルシューティング</a></li>
+</ul>
+<hr>
+<h2 id="一opencode-obsidianプラグインとは">一、opencode-obsidianプラグインとは？
+</h2><p><a class="link" href="https://github.com/mtymek/opencode-obsidian"  target="_blank" rel="noopener"
+    >opencode-obsidian</a>は、<a class="link" href="https://opencode.ai"  target="_blank" rel="noopener"
+    >OpenCode</a> AIアシスタントをObsidianウィンドウに直接埋め込むサードパーティコミュニティプラグインです。従来のターミナル統合ソリューションとは異なり、このプラグインはOpenCodeの<strong>Webビュー</strong>を使用して直接埋め込むため、表示されるのは完全なOpenCodeインターフェースであり、ターミナルとObsidianの間を行き来する必要がありません。</p>
+<p><strong>コア機能：</strong></p>
+<ul>
+<li>🖥️ OpenCodeインターフェースがObsidianのサイドバーやメインエディタに直接埋め込み</li>
+<li>🔄 サーバーの自動管理——パネルを開くと起動、閉じると停止</li>
+<li>📄 実験的なコンテキスト注入——現在開いているノートと選択テキストを自動的にAIに渡す</li>
+<li>⌨️ ショートカット <code>Ctrl/Cmd + Shift + O</code> でパネルを素早く切り替え</li>
+</ul>
+<p><strong>適用シーン：</strong></p>
+<ul>
+<li>長文コンテンツの要約と精製</li>
+<li>執筆、編集、推敲</li>
+<li>ナレッジベースの検索と探索</li>
+<li>アウトラインと構造化ノートの生成</li>
+</ul>
+
+    <blockquote>
+        <p>⚠️ プラグイン作者はOpenCode / Obsidianとは無関係で、これは独立したサードパーティプロジェクトです。現在のバージョンは<strong>0.2.1</strong>（Beta段階）、デスクトップのみ対応。</p>
+
+    </blockquote>
+<hr>
+<h2 id="二環境準備">二、環境準備
+</h2><p>始める前に、以下の準備ができていることを確認してください：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>項目</th>
+          <th>要件</th>
+          <th>説明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Obsidian</strong></td>
+          <td>≥ 1.4.0</td>
+          <td><a class="link" href="https://obsidian.md/"  target="_blank" rel="noopener"
+    >公式サイト</a>からダウンロード</td>
+      </tr>
+      <tr>
+          <td><strong>Node.js</strong></td>
+          <td>≥ 18+</td>
+          <td><a class="link" href="https://nodejs.org/"  target="_blank" rel="noopener"
+    >ダウンロード</a>、OpenCodeのインストールに必要</td>
+      </tr>
+  </tbody>
+</table></div>
+<p>準備ができたら、以下の手順に従ってください。</p>
+<hr>
+<h2 id="三bratプラグインのインストール">三、BRATプラグインのインストール
+</h2><p><a class="link" href="https://github.com/TfTHacker/obsidian42-brat"  target="_blank" rel="noopener"
+    >BRAT</a>（Beta Reviewer&rsquo;s Auto-update Tool）は、コミュニティプラグインマーケットプレイスにまだ公開されていないBeta版プラグインをインストールするためのObsidianコミュニティプラグインです。opencode-obsidianはまだ正式に公開されていないため、BRATでのインストールが必要です。</p>
+<h3 id="ステップ1コミュニティプラグインマーケットプレイスを開く">ステップ1：コミュニティプラグインマーケットプレイスを開く
+</h3><p>Obsidianで順にクリック：<strong>設定</strong> → <strong>サードパーティプラグイン</strong> → 「セーフモード」をオフ → <strong>コミュニティプラグインマーケットプレイス</strong></p>
+<h3 id="ステップ2bratを検索してインストール">ステップ2：BRATを検索してインストール
+</h3><p>コミュニティマーケットプレイスで<strong>BRAT</strong>を検索（正式名称：Obsidian42 - BRAT）、「インストール」→「有効化」をクリック。</p>
+
+    <blockquote>
+        <p>💡 BRATはBeta Reviewer&rsquo;s Auto-update Toolの略で、TfTHackerによって開発されました。Betaプラグインの更新を自動的に検出し、アップグレードを通知します。</p>
+
+    </blockquote>
+<hr>
+<h2 id="四bratでopencode-obsidianをインストール">四、BRATでopencode-obsidianをインストール
+</h2><p>BRATがインストールできたら、それを使ってopencode-obsidianプラグインをインストールできます。</p>
+<h3 id="ステップ1brat設定を開く">ステップ1：BRAT設定を開く
+</h3><p><strong>設定</strong> → <strong>サードパーティプラグイン</strong> → インストール済みの<strong>BRAT</strong>を見つけ、右側の歯車アイコンをクリックして設定に入ります。</p>
+<h3 id="ステップ2betaプラグインを追加">ステップ2：Betaプラグインを追加
+</h3><p>BRAT設定ページで、**「Add Beta plugin」**ボタンをクリック。</p>
+<h3 id="ステップ3リポジトリアドレスを入力">ステップ3：リポジトリアドレスを入力
+</h3><p>ポップアップの入力ボックスに以下を入力：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mtymek/opencode-obsidian
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>**「Add Plugin」**をクリック。</p>
+<p>BRATがGitHubから最新のリリースバージョンを自動的に取得してインストールします。</p>
+<h3 id="ステップ4プラグインを有効化">ステップ4：プラグインを有効化
+</h3><p>インストール完了後、<strong>設定</strong> → <strong>サードパーティプラグイン</strong> → 「インストール済みプラグイン」リストで<strong>OpenCode-Obsidian</strong>を見つけ、スイッチをオンにして有効化します。</p>
+
+    <blockquote>
+        <p>✅ 有効化後、Obsidianの左サイドバーにターミナル風のアイコンが表示されます——これがOpenCodeのエントリーポイントです。</p>
+
+    </blockquote>
+<h3 id="自動更新">自動更新
+</h3><p>BRATは定期的にGitHubの新しいバージョンをチェックします。更新があると、Obsidian内で通知が表示され、確認をクリックするだけで自動アップグレードされます。</p>
+<hr>
+<h2 id="五opencode-cliのインストール">五、OpenCode CLIのインストール
+</h2><p>プラグイン自体は「シェル」に過ぎません——バックグラウンドで<code>opencode serve</code>サービスを起動し、OpenCodeのWebインターフェースをObsidianに埋め込みます。そのため、npmでOpenCode CLIをインストールするだけで十分です。</p>
+<p>システムのターミナルを開きます（WindowsはPowerShell、macOS/LinuxはTerminal）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm i -g opencode-ai
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>インストール確認：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">opencode --version
+</span></span><span class="line"><span class="cl"><span class="c1"># 期待出力例: 1.14.39</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    <blockquote>
+        <p>⚠️ <strong>Windowsユーザー</strong>：プラグインが「Executable not found at &lsquo;opencode&rsquo;」と表示する場合、本文の第十節にジャンプして解決策を確認してください。</p>
+
+    </blockquote>
+<hr>
+<h2 id="六プラグイン設定の詳細">六、プラグイン設定の詳細
+</h2><p>プラグインを有効化した後、<strong>設定</strong> → <strong>サードパーティプラグイン</strong> → <strong>OpenCode-Obsidian</strong>の歯車アイコンから、以下の設定項目を確認できます：</p>
+<h3 id="基本設定">基本設定
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>設定項目</th>
+          <th>デフォルト</th>
+          <th>説明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>OpenCode実行ファイルパス</strong></td>
+          <td><code>opencode</code></td>
+          <td>システムPATHで見つからない場合、フルパスを入力</td>
+      </tr>
+      <tr>
+          <td><strong>ポート</strong></td>
+          <td><code>14096</code></td>
+          <td>OpenCodeサービスがリッスンするポート番号</td>
+      </tr>
+      <tr>
+          <td><strong>ホスト名</strong></td>
+          <td><code>127.0.0.1</code></td>
+          <td>サービスがバインドするアドレス</td>
+      </tr>
+      <tr>
+          <td><strong>プロジェクトディレクトリ</strong></td>
+          <td>（Vaultパスから自動取得）</td>
+          <td>OpenCodeが操作する作業ディレクトリ</td>
+      </tr>
+      <tr>
+          <td><strong>起動タイムアウト</strong></td>
+          <td><code>45000</code> (45秒)</td>
+          <td>サービス起動を待つ最大ミリ秒数</td>
+      </tr>
+  </tbody>
+</table></div>
+<h3 id="インターフェース設定">インターフェース設定
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>設定項目</th>
+          <th>デフォルト</th>
+          <th>説明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>デフォルトビューポジション</strong></td>
+          <td><code>sidebar</code></td>
+          <td><code>sidebar</code> = サイドバー、<code>main</code> = メインエディタ</td>
+      </tr>
+      <tr>
+          <td><strong>自動起動</strong></td>
+          <td><code>オフ</code></td>
+          <td>Obsidian起動時にOpenCodeサービスを自動起動</td>
+      </tr>
+  </tbody>
+</table></div>
+<h3 id="コンテキスト注入実験的">コンテキスト注入（実験的）
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>設定項目</th>
+          <th>デフォルト</th>
+          <th>説明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>ワークスペースコンテキスト注入</strong></td>
+          <td><code>オフ</code></td>
+          <td>現在のノート情報をOpenCodeに自動転送</td>
+      </tr>
+      <tr>
+          <td><strong>最大ノート数</strong></td>
+          <td><code>20</code></td>
+          <td>コンテキストに含まれる最大ノート数</td>
+      </tr>
+      <tr>
+          <td><strong>最大選択テキスト長</strong></td>
+          <td><code>2000</code></td>
+          <td>AIに渡す選択テキストの文字数上限</td>
+      </tr>
+  </tbody>
+</table></div>
+<h3 id="カスタムコマンド">カスタムコマンド
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>設定項目</th>
+          <th>デフォルト</th>
+          <th>説明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>カスタムコマンドを使用</strong></td>
+          <td><code>オフ</code></td>
+          <td>有効にするとOpenCode起動コマンドをカスタマイズ可能</td>
+      </tr>
+      <tr>
+          <td><strong>カスタムコマンド</strong></td>
+          <td>（空）</td>
+          <td>カスタム起動コマンド（第九節を参照）</td>
+      </tr>
+  </tbody>
+</table></div>
+<hr>
+<h2 id="七初回使用">七、初回使用
+</h2><h3 id="opencodeパネルを開く">OpenCodeパネルを開く
+</h3><p>OpenCodeを開く3つの方法：</p>
+<ol>
+<li><strong>サイドバーアイコンをクリック</strong>：左サイドバーのターミナルアイコンをクリック</li>
+<li><strong>ショートカット</strong>：<code>Ctrl + Shift + O</code>（macOSは<code>Cmd + Shift + O</code>）</li>
+<li><strong>コマンドパレット</strong>：<code>Ctrl/Cmd + P</code> → <code>Toggle OpenCode panel</code>と入力</li>
+</ol>
+<h3 id="初回起動フロー">初回起動フロー
+</h3><p>パネルを開くと、プラグインが自動的に以下を実行：</p>
+<ol>
+<li>OpenCode実行ファイルパスを検出</li>
+<li>OpenCodeサービスを起動（<code>opencode serve</code>）</li>
+<li>埋め込みWebビューにOpenCodeインターフェースを読み込み</li>
+</ol>
+<p>起動成功後、完全なOpenCodeダイアログインターフェースが表示され、プロンプトを直接入力できます。</p>
+<h3 id="すべてが正常に動作しているか確認">すべてが正常に動作しているか確認
+</h3><p>OpenCodeインターフェースで以下を入力：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">/help
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>コマンド一覧が表示されれば、すべて正常です。以下も入力できます：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">/models
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>利用可能なAIモデルを確認。OpenCodeには無料モデル（GLM-4.7、MiniMax-2.1）が内蔵されており、設定不要ですぐ使えます。</p>
+<h3 id="ショートカット早見表">ショートカット早見表
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>ショートカット</th>
+          <th>機能</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>Ctrl/Cmd + Shift + O</code></td>
+          <td>OpenCodeパネルの切り替え</td>
+      </tr>
+  </tbody>
+</table></div>
+<hr>
+<h2 id="八コンテキスト注入実験的機能">八、コンテキスト注入（実験的機能）
+</h2><p>これはopencode-obsidianプラグインの最もユニークな機能の1つ——Obsidianの作業コンテキストをOpenCodeに自動的に渡せます。</p>
+<h3 id="有効にする方法">有効にする方法
+</h3><p>プラグイン設定で、**「ワークスペースコンテキスト注入」**スイッチをオンにします。</p>
+<h3 id="注入される内容">注入される内容
+</h3><p>有効にすると、プラグインは以下の情報を実行中のOpenCodeインスタンスに自動転送します：</p>
+<ul>
+<li>📂 <strong>現在開いているノート一覧</strong>：どのファイルを編集中か</li>
+<li>📝 <strong>選択テキスト</strong>：ノートでハイライトしたテキスト</li>
+</ul>
+<h3 id="使用シーン">使用シーン
+</h3><ol>
+<li><strong>テキストを選択</strong>してOpenCodeパネルを開き、「この文章を推敲して」と言う——AIはすでにどのテキストかを知っている</li>
+<li><strong>複数のノートを同時に開き</strong>、AIに「この2つのノートの違いを比較して」と頼む——AIはすでにどのファイルが開いているかを知っている</li>
+</ol>
+<h3 id="制限事項">制限事項
+</h3>
+    <blockquote>
+        <p>⚠️ これは実験的機能で、現在いくつかの制限があります：</p>
+<ul>
+<li>OpenCodeインターフェースで新しいSessionを作成する時、コンテキストは自動注入されない</li>
+<li>コンテキスト更新には一定の遅延がある</li>
+</ul>
+
+    </blockquote>
+<hr>
+<h2 id="九カスタムコマンドモード">九、カスタムコマンドモード
+</h2><p>デフォルトでは、プラグインは<code>opencode serve</code>コマンドでサービスを起動します。より多くの制御が必要な場合は、カスタムコマンドモードを有効にしてください。</p>
+<h3 id="カスタムコマンドが必要な場合">カスタムコマンドが必要な場合
+</h3><ul>
+<li>追加のCLI引数が必要な場合</li>
+<li>カスタム起動スクリプトを使用する場合</li>
+<li>コンテナや仮想環境でOpenCodeを実行する場合</li>
+<li>OpenCodeが非標準パスにインストールされている場合</li>
+</ul>
+<h3 id="設定手順">設定手順
+</h3><ol>
+<li>プラグイン設定で**「カスタムコマンドを使用」**をオン</li>
+<li>**「カスタムコマンド」**入力ボックスに完全なコマンドを入力</li>
+</ol>
+<h3 id="コマンドテンプレート">コマンドテンプレート
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">opencode serve --port <span class="m">14096</span> --hostname 127.0.0.1 --cors app://obsidian.md
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="-重要な注意事項">⚠️ 重要な注意事項
+</h3><ul>
+<li><strong>ポートとホスト名は設定の値と一致している必要があります</strong></li>
+<li><strong><code>--cors app://obsidian.md</code>を含める必要があります</strong>——さもないとObsidianがOpenCodeのWebインターフェースを埋め込めません</li>
+</ul>
+<hr>
+<h2 id="十よくある質問とトラブルシューティング">十、よくある質問とトラブルシューティング
+</h2><h3 id="-opencode実行ファイルが見つからない">❌ OpenCode実行ファイルが見つからない
+</h3><p><strong>症状</strong>：パネルを開くと「Executable not found at &lsquo;opencode&rsquo;」と表示されるが、ターミナルで<code>opencode</code>は正常に動作する。</p>
+<p><strong>原因</strong>：Electron（Obsidianの基盤フレームワーク）がWindowsでシステムPATH環境変数を完全に継承しない。</p>
+<p><strong>解決策</strong>：</p>
+<ol>
+<li>ターミナルでopencode.cmdのフルパスを検索：</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">where </span><span class="n">opencode</span><span class="p">.</span><span class="py">cmd</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>出力されたフルパスをプラグイン設定の「OpenCode実行ファイルパス」に貼り付け、例：</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">C:¥Users¥あなたのユーザー名¥AppData¥Roaming¥npm¥opencode.cmd
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="-サービス起動タイムアウト">❌ サービス起動タイムアウト
+</h3><p><strong>考えられる原因</strong>：ネットワークの問題、モデル読み込みの遅さ、ポートが使用中。</p>
+<p><strong>解決策</strong>：</p>
+<ul>
+<li>ポート14096が他のプログラムで使用されていないか確認</li>
+<li>ポート番号を変更してみる（例：15096に）</li>
+<li>起動タイムアウト時間を増やす</li>
+</ul>
+<h3 id="-パネルが空白で表示される">❌ パネルが空白で表示される
+</h3><p><strong>考えられる原因</strong>：CORS設定が正しくない。</p>
+<p><strong>解決策</strong>：</p>
+<p>カスタムコマンドを使用している場合、コマンドに<code>--cors app://obsidian.md</code>が含まれていることを確認してください。</p>
+<h3 id="-パネルを埋め込めない">❌ パネルを埋め込めない
+</h3><p><strong>考えられる原因</strong>：OpenCodeのバージョンが古い。</p>
+<p><strong>解決策</strong>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm i -g opencode-ai@latest
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="-中国語ファイル名の文字化けwindows">❌ 中国語ファイル名の文字化け（Windows）
+</h3><p><strong>解決策</strong>：PowerShellで実行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">chcp</span> <span class="mf">65001</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>その後、Obsidianを再起動してください。</p>
+<h3 id="-プラグイン更新後に再設定が必要">❌ プラグイン更新後に再設定が必要
+</h3><p>BRATはプラグイン更新時に設定データを保持します。設定が失われている場合は、設定ページを開いて再設定してください。</p>
+<hr>
+<h2 id="まとめ">まとめ
+</h2><p>インストールフロー全体を一図でまとめると：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">┌──────────────────────────────────────────┐
+</span></span><span class="line"><span class="cl">│        BRATプラグインをインストール         │
+</span></span><span class="line"><span class="cl">│  設定 → コミュニティマーケットプレイス      │
+</span></span><span class="line"><span class="cl">│  → BRATを検索 → インストール              │
+</span></span><span class="line"><span class="cl">└──────────────────┬───────────────────────┘
+</span></span><span class="line"><span class="cl">                   │
+</span></span><span class="line"><span class="cl">                   ▼
+</span></span><span class="line"><span class="cl">┌──────────────────────────────────────────┐
+</span></span><span class="line"><span class="cl">│   BRATでopencode-obsidianをインストール    │
+</span></span><span class="line"><span class="cl">│   BRAT設定 → Add Beta plugin              │
+</span></span><span class="line"><span class="cl">│   入力: mtymek/opencode-obsidian          │
+</span></span><span class="line"><span class="cl">└──────────────────┬───────────────────────┘
+</span></span><span class="line"><span class="cl">                   │
+</span></span><span class="line"><span class="cl">                   ▼
+</span></span><span class="line"><span class="cl">┌──────────────────────────────────────────┐
+</span></span><span class="line"><span class="cl">│        OpenCode CLIをインストール          │
+</span></span><span class="line"><span class="cl">│   npm i -g opencode-ai                   │
+</span></span><span class="line"><span class="cl">└──────────────────┬───────────────────────┘
+</span></span><span class="line"><span class="cl">                   │
+</span></span><span class="line"><span class="cl">                   ▼
+</span></span><span class="line"><span class="cl">┌──────────────────────────────────────────┐
+</span></span><span class="line"><span class="cl">│      プラグインを有効化して使用開始         │
+</span></span><span class="line"><span class="cl">│   Ctrl+Shift+Oでパネルを開く              │
+</span></span><span class="line"><span class="cl">│   Obsidian内でOpenCodeを直接使用          │
+</span></span><span class="line"><span class="cl">└──────────────────────────────────────────┘
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>一言まとめ</strong>：BRATをインストール → <code>mtymek/opencode-obsidian</code>を検索 → OpenCode CLIをインストール → <code>Ctrl+Shift+O</code>で始めよう。これだけ簡単です。</p>
+<hr>
+
+    <blockquote>
+        <p>📚 参考元：</p>
+<ul>
+<li><a class="link" href="https://github.com/mtymek/opencode-obsidian"  target="_blank" rel="noopener"
+    >opencode-obsidian GitHubリポジトリ</a></li>
+<li><a class="link" href="https://github.com/TfTHacker/obsidian42-brat"  target="_blank" rel="noopener"
+    >BRATプラグインGitHubリポジトリ</a></li>
+<li><a class="link" href="https://opencode.ai"  target="_blank" rel="noopener"
+    >OpenCode公式ドキュメント</a></li>
+</ul>
+
+    </blockquote>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under <a class="link" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"  target="_blank" rel="noopener"
+    >CC BY-NC-SA 4.0</a></span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+
+        <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2026 Yanmu
+    </section>
+    
+    <section class="powerby">
+        <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> で構築されています。 <br />
+        テーマ <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="4.0.2">Stack</a></b> は <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> によって設計されています。
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.8f587a582cd4e51d03a4840028b19d7deac2cee707cfe21ffe942b6666363a7f.js" defer></script>
+
+
+    </body>
+</html>

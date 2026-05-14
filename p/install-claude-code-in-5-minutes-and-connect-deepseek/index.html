@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="概述 Claude Code 是 Anthropic 推出的命令行 AI 编程助手，内置多种 Skills 插件，通过不同组合可以完成许多 AI 单独做不到的事。接入国产大模型 DeepSeek V4 后，可以大幅降低使用成本。\n核心用途：\n构建个人知识库，自动化整理学习笔记 按时搜集行业资讯并整理成文稿 自动发布到各大社交媒体平台 第一步：安装运行环境 1.1 安装 Node.js 前往 Node.js 官网 下载 Windows 安装包（.msi），双击后一路下一步。\n验证安装：\n1 2 node -v npm -v 1.2 配置 npm 国内镜像 1 npm config set registry https://registry.npmmirror.com/ 💡 为什么要配置镜像？ 默认 npm 源在国外，下载速度很慢。配置国内镜像后安装速度可提升 10 倍以上。\n1.3 安装 Git 前往 Git 官网 下载对应版本安装包，一路下一步。\n验证安装：\n1 git -v 1.4 安装 CC-Switch CC-Switch 用于将第三方模型接入 Claude Code。\n">
-<title>5分钟安装ClaudeCode并接入DeepSeek</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Overview Claude Code is a command-line AI programming assistant launched by Anthropic, with a variety of built-in Skills plugins. Through different combinations, it can accomplish many things that AI alone cannot do. After connecting to the domestic large model DeepSeek V4, usage costs can be significantly reduced.\nCore uses:\nBuilding a personal knowledge base, automating the organization of study notes Collecting industry information on schedule and organizing it into manuscripts Automatically publishing to various social media platforms Step 1: Install the Runtime Environment 1.1 Install Node.js Go to the Node.js official website to download the Windows installer (.msi), double-click and follow the prompts.\n">
+<title>Install Claude Code in 5 Minutes and Connect DeepSeek</title>
 
 
-<link rel="canonical" href="https://AkuamT.github.io/p/5%E5%88%86%E9%92%9F%E5%AE%89%E8%A3%85claudecode%E5%B9%B6%E6%8E%A5%E5%85%A5deepseek/">
+<link rel="canonical" href="https://AkuamT.github.io/p/install-claude-code-in-5-minutes-and-connect-deepseek/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
 
 
-<link rel="stylesheet" href="/scss/style.min.e62e09c60ba428a627e03568fa3df938f6a8224f815b5846f00816c17d4a0be4.css"><meta property='og:title' content="5分钟安装ClaudeCode并接入DeepSeek">
-<meta property='og:description' content="概述 Claude Code 是 Anthropic 推出的命令行 AI 编程助手，内置多种 Skills 插件，通过不同组合可以完成许多 AI 单独做不到的事。接入国产大模型 DeepSeek V4 后，可以大幅降低使用成本。\n核心用途：\n构建个人知识库，自动化整理学习笔记 按时搜集行业资讯并整理成文稿 自动发布到各大社交媒体平台 第一步：安装运行环境 1.1 安装 Node.js 前往 Node.js 官网 下载 Windows 安装包（.msi），双击后一路下一步。\n验证安装：\n1 2 node -v npm -v 1.2 配置 npm 国内镜像 1 npm config set registry https://registry.npmmirror.com/ 💡 为什么要配置镜像？ 默认 npm 源在国外，下载速度很慢。配置国内镜像后安装速度可提升 10 倍以上。\n1.3 安装 Git 前往 Git 官网 下载对应版本安装包，一路下一步。\n验证安装：\n1 git -v 1.4 安装 CC-Switch CC-Switch 用于将第三方模型接入 Claude Code。\n">
-<meta property='og:url' content='https://AkuamT.github.io/p/5%E5%88%86%E9%92%9F%E5%AE%89%E8%A3%85claudecode%E5%B9%B6%E6%8E%A5%E5%85%A5deepseek/'>
+<link rel="stylesheet" href="/scss/style.min.e62e09c60ba428a627e03568fa3df938f6a8224f815b5846f00816c17d4a0be4.css"><meta property='og:title' content="Install Claude Code in 5 Minutes and Connect DeepSeek">
+<meta property='og:description' content="Overview Claude Code is a command-line AI programming assistant launched by Anthropic, with a variety of built-in Skills plugins. Through different combinations, it can accomplish many things that AI alone cannot do. After connecting to the domestic large model DeepSeek V4, usage costs can be significantly reduced.\nCore uses:\nBuilding a personal knowledge base, automating the organization of study notes Collecting industry information on schedule and organizing it into manuscripts Automatically publishing to various social media platforms Step 1: Install the Runtime Environment 1.1 Install Node.js Go to the Node.js official website to download the Windows installer (.msi), double-click and follow the prompts.\n">
+<meta property='og:url' content='https://AkuamT.github.io/p/install-claude-code-in-5-minutes-and-connect-deepseek/'>
 <meta property='og:site_name' content='Yanmu'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-05-12T02:00:15&#43;08:00'/><meta property='article:modified_time' content='2026-05-12T02:00:15&#43;08:00'/>
-<meta name="twitter:title" content="5分钟安装ClaudeCode并接入DeepSeek">
-<meta name="twitter:description" content="概述 Claude Code 是 Anthropic 推出的命令行 AI 编程助手，内置多种 Skills 插件，通过不同组合可以完成许多 AI 单独做不到的事。接入国产大模型 DeepSeek V4 后，可以大幅降低使用成本。\n核心用途：\n构建个人知识库，自动化整理学习笔记 按时搜集行业资讯并整理成文稿 自动发布到各大社交媒体平台 第一步：安装运行环境 1.1 安装 Node.js 前往 Node.js 官网 下载 Windows 安装包（.msi），双击后一路下一步。\n验证安装：\n1 2 node -v npm -v 1.2 配置 npm 国内镜像 1 npm config set registry https://registry.npmmirror.com/ 💡 为什么要配置镜像？ 默认 npm 源在国外，下载速度很慢。配置国内镜像后安装速度可提升 10 倍以上。\n1.3 安装 Git 前往 Git 官网 下载对应版本安装包，一路下一步。\n验证安装：\n1 git -v 1.4 安装 CC-Switch CC-Switch 用于将第三方模型接入 Claude Code。\n">
+<meta name="twitter:title" content="Install Claude Code in 5 Minutes and Connect DeepSeek">
+<meta name="twitter:description" content="Overview Claude Code is a command-line AI programming assistant launched by Anthropic, with a variety of built-in Skills plugins. Through different combinations, it can accomplish many things that AI alone cannot do. After connecting to the domestic large model DeepSeek V4, usage costs can be significantly reduced.\nCore uses:\nBuilding a personal knowledge base, automating the organization of study notes Collecting industry information on schedule and organizing it into manuscripts Automatically publishing to various social media platforms Step 1: Install the Runtime Environment 1.1 Install Node.js Go to the Node.js official website to download the Windows installer (.msi), double-click and follow the prompts.\n">
     <link rel="shortcut icon" href="img/avatar.png" />
 
     </head>
@@ -228,25 +228,55 @@
                                         
                                     
                                 
-                                <option value="/p/5%E5%88%86%E9%92%9F%E5%AE%89%E8%A3%85claudecode%E5%B9%B6%E6%8E%A5%E5%85%A5deepseek/" selected>English</option>
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                <option value="/p/install-claude-code-in-5-minutes-and-connect-deepseek/" selected>English</option>
                             
                                 
                                 
                                     
                                 
-                                <option value="/zh/" >简体中文</option>
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                <option value="/zh/p/5%E5%88%86%E9%92%9F%E5%AE%89%E8%A3%85claudecode%E5%B9%B6%E6%8E%A5%E5%85%A5deepseek/" >简体中文</option>
                             
                                 
                                 
                                     
                                 
-                                <option value="/zh-hant-tw/" >繁体中文</option>
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                <option value="/zh-hant-tw/p/5%E5%88%86%E9%90%98%E5%AE%89%E8%A3%9Dclaudecode%E4%B8%A6%E6%8E%A5%E5%85%A5deepseek/" >繁体中文</option>
                             
                                 
                                 
                                     
                                 
-                                <option value="/ja/" >日本語</option>
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/ja/p/5%E5%88%86%E3%81%A7claude-code%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%97deepseek%E3%81%AB%E6%8E%A5%E7%B6%9A%E3%81%99%E3%82%8B/" >日本語</option>
                             
                         </select>
                     </li>
@@ -301,30 +331,30 @@
             <nav class="toc-nav" id="TableOfContents">
                 
   <ol>
-    <li><a href="#概述">概述</a></li>
-    <li><a href="#第一步安装运行环境">第一步：安装运行环境</a>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#step-1-install-the-runtime-environment">Step 1: Install the Runtime Environment</a>
       <ol>
-        <li><a href="#11-安装-nodejs">1.1 安装 Node.js</a></li>
-        <li><a href="#12-配置-npm-国内镜像">1.2 配置 npm 国内镜像</a></li>
-        <li><a href="#13-安装-git">1.3 安装 Git</a></li>
-        <li><a href="#14-安装-cc-switch">1.4 安装 CC-Switch</a></li>
+        <li><a href="#11-install-nodejs">1.1 Install Node.js</a></li>
+        <li><a href="#12-configure-npm-domestic-mirror">1.2 Configure npm Domestic Mirror</a></li>
+        <li><a href="#13-install-git">1.3 Install Git</a></li>
+        <li><a href="#14-install-cc-switch">1.4 Install CC-Switch</a></li>
       </ol>
     </li>
-    <li><a href="#第二步安装-claude-code">第二步：安装 Claude Code</a>
+    <li><a href="#step-2-install-claude-code">Step 2: Install Claude Code</a>
       <ol>
-        <li><a href="#跳过登录使用第三方-api">跳过登录（使用第三方 API）</a></li>
+        <li><a href="#skip-login-using-third-party-api">Skip Login (Using Third-party API)</a></li>
       </ol>
     </li>
-    <li><a href="#第三步接入-deepseek">第三步：接入 DeepSeek</a>
+    <li><a href="#step-3-connect-deepseek">Step 3: Connect DeepSeek</a>
       <ol>
-        <li><a href="#31-获取-api-key">3.1 获取 API Key</a></li>
-        <li><a href="#32-配置-cc-switch">3.2 配置 CC-Switch</a></li>
-        <li><a href="#33-验证模型">3.3 验证模型</a></li>
+        <li><a href="#31-get-api-key">3.1 Get API Key</a></li>
+        <li><a href="#32-configure-cc-switch">3.2 Configure CC-Switch</a></li>
+        <li><a href="#33-verify-the-model">3.3 Verify the Model</a></li>
       </ol>
     </li>
-    <li><a href="#第四步实战示例">第四步：实战示例</a></li>
-    <li><a href="#命令速查表">命令速查表</a></li>
-    <li><a href="#常见问题">常见问题</a></li>
+    <li><a href="#step-4-hands-on-example">Step 4: Hands-on Example</a></li>
+    <li><a href="#command-quick-reference">Command Quick Reference</a></li>
+    <li><a href="#faq">FAQ</a></li>
   </ol>
 
             </nav>
@@ -345,7 +375,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/5%E5%88%86%E9%92%9F%E5%AE%89%E8%A3%85claudecode%E5%B9%B6%E6%8E%A5%E5%85%A5deepseek/">5分钟安装ClaudeCode并接入DeepSeek</a>
+            <a href="/p/install-claude-code-in-5-minutes-and-connect-deepseek/">Install Claude Code in 5 Minutes and Connect DeepSeek</a>
         </h2>
     
         
@@ -384,12 +414,33 @@
 
 
                     <time class="article-time--reading">
-                        2 minutes read
+                        4 minutes read
                     </time>
                 
             </div>
         
 
+        
+            <div class="inline-meta">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                
+                    <a href="/zh/p/5%E5%88%86%E9%92%9F%E5%AE%89%E8%A3%85claudecode%E5%B9%B6%E6%8E%A5%E5%85%A5deepseek/" class="link">简体中文</a>
+                
+                    <a href="/zh-hant-tw/p/5%E5%88%86%E9%90%98%E5%AE%89%E8%A3%9Dclaudecode%E4%B8%A6%E6%8E%A5%E5%85%A5deepseek/" class="link">繁体中文</a>
+                
+                    <a href="/ja/p/5%E5%88%86%E3%81%A7claude-code%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%97deepseek%E3%81%AB%E6%8E%A5%E7%B6%9A%E3%81%99%E3%82%8B/" class="link">日本語</a>
+                
+            </div>
         
 
         
@@ -411,30 +462,30 @@
             <nav class="toc-nav">
                 
   <ol>
-    <li><a href="#概述">概述</a></li>
-    <li><a href="#第一步安装运行环境">第一步：安装运行环境</a>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#step-1-install-the-runtime-environment">Step 1: Install the Runtime Environment</a>
       <ol>
-        <li><a href="#11-安装-nodejs">1.1 安装 Node.js</a></li>
-        <li><a href="#12-配置-npm-国内镜像">1.2 配置 npm 国内镜像</a></li>
-        <li><a href="#13-安装-git">1.3 安装 Git</a></li>
-        <li><a href="#14-安装-cc-switch">1.4 安装 CC-Switch</a></li>
+        <li><a href="#11-install-nodejs">1.1 Install Node.js</a></li>
+        <li><a href="#12-configure-npm-domestic-mirror">1.2 Configure npm Domestic Mirror</a></li>
+        <li><a href="#13-install-git">1.3 Install Git</a></li>
+        <li><a href="#14-install-cc-switch">1.4 Install CC-Switch</a></li>
       </ol>
     </li>
-    <li><a href="#第二步安装-claude-code">第二步：安装 Claude Code</a>
+    <li><a href="#step-2-install-claude-code">Step 2: Install Claude Code</a>
       <ol>
-        <li><a href="#跳过登录使用第三方-api">跳过登录（使用第三方 API）</a></li>
+        <li><a href="#skip-login-using-third-party-api">Skip Login (Using Third-party API)</a></li>
       </ol>
     </li>
-    <li><a href="#第三步接入-deepseek">第三步：接入 DeepSeek</a>
+    <li><a href="#step-3-connect-deepseek">Step 3: Connect DeepSeek</a>
       <ol>
-        <li><a href="#31-获取-api-key">3.1 获取 API Key</a></li>
-        <li><a href="#32-配置-cc-switch">3.2 配置 CC-Switch</a></li>
-        <li><a href="#33-验证模型">3.3 验证模型</a></li>
+        <li><a href="#31-get-api-key">3.1 Get API Key</a></li>
+        <li><a href="#32-configure-cc-switch">3.2 Configure CC-Switch</a></li>
+        <li><a href="#33-verify-the-model">3.3 Verify the Model</a></li>
       </ol>
     </li>
-    <li><a href="#第四步实战示例">第四步：实战示例</a></li>
-    <li><a href="#命令速查表">命令速查表</a></li>
-    <li><a href="#常见问题">常见问题</a></li>
+    <li><a href="#step-4-hands-on-example">Step 4: Hands-on Example</a></li>
+    <li><a href="#command-quick-reference">Command Quick Reference</a></li>
+    <li><a href="#faq">FAQ</a></li>
   </ol>
 
             </nav>
@@ -445,19 +496,19 @@
     <section class="article-content">
     
     
-    <h2 id="概述">概述
-</h2><p>Claude Code 是 Anthropic 推出的命令行 AI 编程助手，内置多种 Skills 插件，通过不同组合可以完成许多 AI 单独做不到的事。接入国产大模型 DeepSeek V4 后，可以大幅降低使用成本。</p>
-<p><strong>核心用途：</strong></p>
+    <h2 id="overview">Overview
+</h2><p>Claude Code is a command-line AI programming assistant launched by Anthropic, with a variety of built-in Skills plugins. Through different combinations, it can accomplish many things that AI alone cannot do. After connecting to the domestic large model DeepSeek V4, usage costs can be significantly reduced.</p>
+<p><strong>Core uses:</strong></p>
 <ul>
-<li>构建个人知识库，自动化整理学习笔记</li>
-<li>按时搜集行业资讯并整理成文稿</li>
-<li>自动发布到各大社交媒体平台</li>
+<li>Building a personal knowledge base, automating the organization of study notes</li>
+<li>Collecting industry information on schedule and organizing it into manuscripts</li>
+<li>Automatically publishing to various social media platforms</li>
 </ul>
-<h2 id="第一步安装运行环境">第一步：安装运行环境
-</h2><h3 id="11-安装-nodejs">1.1 安装 Node.js
-</h3><p>前往 <a class="link" href="https://nodejs.org/"  target="_blank" rel="noopener"
-    >Node.js 官网</a> 下载 Windows 安装包（.msi），双击后一路下一步。</p>
-<p>验证安装：</p>
+<h2 id="step-1-install-the-runtime-environment">Step 1: Install the Runtime Environment
+</h2><h3 id="11-install-nodejs">1.1 Install Node.js
+</h3><p>Go to the <a class="link" href="https://nodejs.org/"  target="_blank" rel="noopener"
+    >Node.js official website</a> to download the Windows installer (.msi), double-click and follow the prompts.</p>
+<p>Verify installation:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -468,7 +519,7 @@
 </span></span><span class="line"><span class="cl">npm -v
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="12-配置-npm-国内镜像">1.2 配置 npm 国内镜像
+</div><h3 id="12-configure-npm-domestic-mirror">1.2 Configure npm Domestic Mirror
 </h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -480,16 +531,16 @@
 </div><blockquote class="alert alert-tip">
         <div class="alert-header">
             <span class="alert-icon">💡</span>
-            <span class="alert-title">为什么要配置镜像？</span>
+            <span class="alert-title">Why configure a mirror?</span>
         </div>
         <div class="alert-body">
-            <p>默认 npm 源在国外，下载速度很慢。配置国内镜像后安装速度可提升 10 倍以上。</p>
+            <p>The default npm source is overseas, and download speeds are very slow. After configuring a domestic mirror, installation speed can be improved by more than 10 times.</p>
         </div>
     </blockquote>
-<h3 id="13-安装-git">1.3 安装 Git
-</h3><p>前往 <a class="link" href="https://git-scm.com/"  target="_blank" rel="noopener"
-    >Git 官网</a> 下载对应版本安装包，一路下一步。</p>
-<p>验证安装：</p>
+<h3 id="13-install-git">1.3 Install Git
+</h3><p>Go to the <a class="link" href="https://git-scm.com/"  target="_blank" rel="noopener"
+    >Git official website</a> to download the corresponding version installer and follow the prompts.</p>
+<p>Verify installation:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -498,11 +549,11 @@
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git -v
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="14-安装-cc-switch">1.4 安装 CC-Switch
-</h3><p>CC-Switch 用于将第三方模型接入 Claude Code。</p>
-<p>前往 <a class="link" href="https://github.com/cc-switch/cc-switch/releases"  target="_blank" rel="noopener"
-    >GitHub Release 页面</a> 下载对应版本（如 Windows MSI），双击安装，一路下一步。</p>
-<h2 id="第二步安装-claude-code">第二步：安装 Claude Code
+</div><h3 id="14-install-cc-switch">1.4 Install CC-Switch
+</h3><p>CC-Switch is used to connect third-party models to Claude Code.</p>
+<p>Go to the <a class="link" href="https://github.com/cc-switch/cc-switch/releases"  target="_blank" rel="noopener"
+    >GitHub Release page</a> to download the corresponding version (e.g., Windows MSI), double-click to install, and follow the prompts.</p>
+<h2 id="step-2-install-claude-code">Step 2: Install Claude Code
 </h2><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -511,7 +562,7 @@
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm install -g @anthropic-ai/claude-code
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>验证：</p>
+</div><p>Verify:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -520,11 +571,11 @@
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">claude --version
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="跳过登录使用第三方-api">跳过登录（使用第三方 API）
+</div><h3 id="skip-login-using-third-party-api">Skip Login (Using Third-party API)
 </h3><ol>
-<li>启动一次 Claude Code 后关闭</li>
-<li>在用户目录下找到 <code>.claude.json</code> 文件</li>
-<li>添加以下字段（<strong>注意上一字段尾部需加英文逗号</strong>）：</li>
+<li>Launch Claude Code once and then close it</li>
+<li>Find the <code>.claude.json</code> file in your user directory</li>
+<li>Add the following field (<strong>note that a comma must be added at the end of the previous field</strong>):</li>
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -535,44 +586,44 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="4">
-<li>重新执行 <code>claude</code> 启动，选择信任当前文件夹即可</li>
+<li>Re-execute <code>claude</code> to start, and choose to trust the current folder</li>
 </ol>
 <blockquote class="alert alert-warning">
         <div class="alert-header">
             <span class="alert-icon">⚠️</span>
-            <span class="alert-title">常见错误</span>
+            <span class="alert-title">Common Error</span>
         </div>
         <div class="alert-body">
-            <p>如果忘记在上一字段末尾加逗号，会导致 JSON 解析错误，Claude Code 无法启动。</p>
+            <p>If you forget to add a comma at the end of the previous field, it will cause a JSON parsing error and Claude Code will fail to start.</p>
         </div>
     </blockquote>
-<h2 id="第三步接入-deepseek">第三步：接入 DeepSeek
-</h2><h3 id="31-获取-api-key">3.1 获取 API Key
+<h2 id="step-3-connect-deepseek">Step 3: Connect DeepSeek
+</h2><h3 id="31-get-api-key">3.1 Get API Key
 </h3><ol>
-<li>打开 <a class="link" href="https://platform.deepseek.com/"  target="_blank" rel="noopener"
-    >DeepSeek 开放平台</a>，注册登录</li>
-<li>确保账户有余额</li>
-<li>右侧 <strong>API Keys</strong> → <strong>创建 API Key</strong> → 复制保存（关闭后无法再次查看）</li>
+<li>Open <a class="link" href="https://platform.deepseek.com/"  target="_blank" rel="noopener"
+    >DeepSeek Open Platform</a>, register and log in</li>
+<li>Ensure your account has a balance</li>
+<li>Click <strong>API Keys</strong> on the right → <strong>Create API Key</strong> → Copy and save (cannot be viewed again after closing)</li>
 </ol>
 <blockquote class="alert alert-caution">
         <div class="alert-header">
             <span class="alert-icon">🚨</span>
-            <span class="alert-title">密钥安全</span>
+            <span class="alert-title">Key Security</span>
         </div>
         <div class="alert-body">
-            <p>密钥不要分享给他人，否则会消耗你的余额。</p>
+            <p>Do not share your key with others, as it will consume your balance.</p>
         </div>
     </blockquote>
-<h3 id="32-配置-cc-switch">3.2 配置 CC-Switch
+<h3 id="32-configure-cc-switch">3.2 Configure CC-Switch
 </h3><ol>
-<li>打开 CC-Switch，点击右上角 <strong>+</strong> 号</li>
-<li>模型预设选择 <strong>DeepSeek</strong></li>
-<li>填入 API Key</li>
-<li>模型名称统一改为：<code>deepseek-v4-pro[1m]</code>（上下文 1M，Claude Code 默认使用 128K）</li>
-<li>点击添加</li>
+<li>Open CC-Switch, click the <strong>+</strong> button in the upper right corner</li>
+<li>Select <strong>DeepSeek</strong> as the model preset</li>
+<li>Enter the API Key</li>
+<li>Change the model name uniformly to: <code>deepseek-v4-pro[1m]</code> (context 1M, Claude Code uses 128K by default)</li>
+<li>Click Add</li>
 </ol>
-<h3 id="33-验证模型">3.3 验证模型
-</h3><p>在 Claude Code 对话框中输入：</p>
+<h3 id="33-verify-the-model">3.3 Verify the Model
+</h3><p>In the Claude Code dialog box, enter:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -581,94 +632,94 @@
 <pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">/model
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>可查看当前可用模型，或直接问&quot;你当前是什么模型&quot;确认接入成功。</p>
-<h2 id="第四步实战示例">第四步：实战示例
+</div><p>You can view the currently available models, or directly ask &ldquo;What model are you currently using&rdquo; to confirm successful connection.</p>
+<h2 id="step-4-hands-on-example">Step 4: Hands-on Example
 </h2><ol>
-<li>桌面新建一个文件夹</li>
-<li>在地址栏输入 <code>CMD</code> 回车</li>
-<li>执行 <code>claude</code> 启动，选择信任当前文件夹</li>
-<li>输入需求：<code>使用 HTML + JS + CSS 做一个 Todo 软件</code></li>
-<li>运行中会申请工具权限，选择 <strong>Yes</strong> 即可</li>
-<li>完成后让它帮你打开页面预览</li>
+<li>Create a new folder on the desktop</li>
+<li>Enter <code>CMD</code> in the address bar and press Enter</li>
+<li>Execute <code>claude</code> to start, and choose to trust the current folder</li>
+<li>Enter your requirement: <code>Use HTML + JS + CSS to create a Todo app</code></li>
+<li>During execution, it will request tool permissions — select <strong>Yes</strong></li>
+<li>After completion, ask it to open the page for preview</li>
 </ol>
 <blockquote class="alert alert-tip">
         <div class="alert-header">
             <span class="alert-icon">💡</span>
-            <span class="alert-title">小技巧</span>
+            <span class="alert-title">Tip</span>
         </div>
         <div class="alert-body">
-            <p>可以用中文直接描述需求，Claude Code 支持中英文混合输入。</p>
+            <p>You can describe your requirements directly in Chinese — Claude Code supports mixed Chinese and English input.</p>
         </div>
     </blockquote>
-<h2 id="命令速查表">命令速查表
+<h2 id="command-quick-reference">Command Quick Reference
 </h2><div class="table-wrapper"><table>
   <thead>
       <tr>
-          <th>操作</th>
-          <th>命令</th>
+          <th>Operation</th>
+          <th>Command</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td>Node 版本检查</td>
+          <td>Node version check</td>
           <td><code>node -v</code></td>
       </tr>
       <tr>
-          <td>npm 版本检查</td>
+          <td>npm version check</td>
           <td><code>npm -v</code></td>
       </tr>
       <tr>
-          <td>npm 国内镜像</td>
+          <td>npm domestic mirror</td>
           <td><code>npm config set registry https://registry.npmmirror.com/</code></td>
       </tr>
       <tr>
-          <td>Git 版本检查</td>
+          <td>Git version check</td>
           <td><code>git -v</code></td>
       </tr>
       <tr>
-          <td>安装 Claude Code</td>
+          <td>Install Claude Code</td>
           <td><code>npm install -g @anthropic-ai/claude-code</code></td>
       </tr>
       <tr>
-          <td>Claude Code 版本检查</td>
+          <td>Claude Code version check</td>
           <td><code>claude --version</code></td>
       </tr>
       <tr>
-          <td>启动 Claude Code</td>
+          <td>Launch Claude Code</td>
           <td><code>claude</code></td>
       </tr>
       <tr>
-          <td>切换模型</td>
+          <td>Switch model</td>
           <td><code>/model</code></td>
       </tr>
   </tbody>
 </table></div>
-<h2 id="常见问题">常见问题
+<h2 id="faq">FAQ
 </h2><blockquote class="alert alert-faq">
         <div class="alert-header">
             <span class="alert-icon"></span>
-            <span class="alert-title">执行 <code>claude</code> 后提示找不到命令？</span>
+            <span class="alert-title">Command not found after running <code>claude</code>?</span>
         </div>
         <div class="alert-body">
-            <p>检查 Node.js 是否安装成功（<code>node -v</code>），以及 npm 全局路径是否在系统 PATH 中。</p>
+            <p>Check if Node.js is installed successfully (<code>node -v</code>) and whether the npm global path is in the system PATH.</p>
         </div>
     </blockquote>
 <blockquote class="alert alert-faq">
         <div class="alert-header">
             <span class="alert-icon"></span>
-            <span class="alert-title">启动后要求登录 Anthropic 账号？</span>
+            <span class="alert-title">Prompts to log in to Anthropic account after starting?</span>
         </div>
         <div class="alert-body">
-            <p>说明 <code>.claude.json</code> 中的 <code>hasCompletedOnboarding</code> 未正确配置，请回到第二步检查。</p>
+            <p>The <code>hasCompletedOnboarding</code> in <code>.claude.json</code> is not configured correctly. Please go back to Step 2 to check.</p>
         </div>
     </blockquote>
 <blockquote class="alert alert-faq">
         <div class="alert-header">
             <span class="alert-icon"></span>
-            <span class="alert-title">模型调用报错 / 无响应？</span>
+            <span class="alert-title">Model call error / no response?</span>
         </div>
         <div class="alert-body">
-            <p>检查 DeepSeek 账户余额是否充足，以及 CC-Switch 中 API Key 是否正确填写。</p>
+            <p>Check if your DeepSeek account balance is sufficient, and whether the API Key in CC-Switch is entered correctly.</p>
         </div>
     </blockquote>
 
