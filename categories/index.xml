@@ -4,12 +4,5 @@
         <link>https://AkuamT.github.io/categories/</link>
         <description>Recent content in Categories on Yanmu</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
-        <lastBuildDate>Sun, 25 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://AkuamT.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
-            <title>文档</title>
-            <link>https://AkuamT.github.io/categories/documentation/</link>
-            <pubDate>Sun, 25 Jan 2026 00:00:00 +0000</pubDate>
-            <guid>https://AkuamT.github.io/categories/documentation/</guid>
-            <description>&lt;img src=&#34;https://AkuamT.github.io/categories/documentation/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg&#34; alt=&#34;Featured image of post 文档&#34; /&gt;</description>
-        </item></channel>
+        <language>zh-cn</language><atom:link href="https://AkuamT.github.io/categories/index.xml" rel="self" type="application/rss+xml" /></channel>
 </rss>

@@ -303,117 +303,6 @@
                 href="https://AkuamT.github.io/p/opencode-%E5%85%A8%E6%B7%B1%E5%BA%A6%E6%8C%87%E5%8D%97%E5%BC%80%E6%BA%90%E7%89%88-claude-code-%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E4%B8%8E%E9%AB%98%E7%BA%A7%E7%8E%A9%E6%B3%95/"
                 />
   </url><url>
-    <loc>https://AkuamT.github.io/categories/</loc>
-    <lastmod>2026-01-25T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://AkuamT.github.io/en/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://AkuamT.github.io/categories/"
-                />
-  </url><url>
-    <loc>https://AkuamT.github.io/tags/css/</loc>
-    <lastmod>2026-01-25T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://AkuamT.github.io/en/tags/css/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://AkuamT.github.io/tags/css/"
-                />
-  </url><url>
-    <loc>https://AkuamT.github.io/tags/html/</loc>
-    <lastmod>2026-01-25T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://AkuamT.github.io/en/tags/html/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://AkuamT.github.io/tags/html/"
-                />
-  </url><url>
-    <loc>https://AkuamT.github.io/tags/markdown/</loc>
-    <lastmod>2026-01-25T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://AkuamT.github.io/en/tags/markdown/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://AkuamT.github.io/tags/markdown/"
-                />
-  </url><url>
-    <loc>https://AkuamT.github.io/p/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/</loc>
-    <lastmod>2026-01-25T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://AkuamT.github.io/en/p/markdown-syntax-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://AkuamT.github.io/p/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/"
-                />
-  </url><url>
-    <loc>https://AkuamT.github.io/tags/themes/</loc>
-    <lastmod>2026-01-25T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://AkuamT.github.io/en/tags/themes/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://AkuamT.github.io/tags/themes/"
-                />
-  </url><url>
-    <loc>https://AkuamT.github.io/categories/documentation/</loc>
-    <lastmod>2026-01-25T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://AkuamT.github.io/en/categories/documentation/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/categories/documentation/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/categories/documentation/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://AkuamT.github.io/categories/documentation/"
-                />
-  </url><url>
     <loc>https://AkuamT.github.io/archives/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -435,6 +324,28 @@
                 rel="alternate"
                 hreflang="zh-cn"
                 href="https://AkuamT.github.io/archives/"
+                />
+  </url><url>
+    <loc>https://AkuamT.github.io/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://AkuamT.github.io/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://AkuamT.github.io/categories/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/%E9%93%BE%E6%8E%A5/</loc>
