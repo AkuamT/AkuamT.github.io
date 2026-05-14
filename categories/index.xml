@@ -4,5 +4,18 @@
         <link>https://AkuamT.github.io/categories/</link>
         <description>Recent content in Categories on Yanmu</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language><atom:link href="https://AkuamT.github.io/categories/index.xml" rel="self" type="application/rss+xml" /></channel>
+        <language>zh-cn</language>
+        <lastBuildDate>Wed, 13 May 2026 01:46:03 +0800</lastBuildDate><atom:link href="https://AkuamT.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+            <title>AI工具</title>
+            <link>https://AkuamT.github.io/categories/ai%E5%B7%A5%E5%85%B7/</link>
+            <pubDate>Wed, 13 May 2026 01:46:03 +0800</pubDate>
+            <guid>https://AkuamT.github.io/categories/ai%E5%B7%A5%E5%85%B7/</guid>
+            <description></description>
+        </item><item>
+            <title>教程</title>
+            <link>https://AkuamT.github.io/categories/%E6%95%99%E7%A8%8B/</link>
+            <pubDate>Tue, 12 May 2026 00:00:00 +0000</pubDate>
+            <guid>https://AkuamT.github.io/categories/%E6%95%99%E7%A8%8B/</guid>
+            <description></description>
+        </item></channel>
 </rss>

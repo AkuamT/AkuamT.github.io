@@ -71,6 +71,32 @@
                 href="https://AkuamT.github.io/en/"
                 />
   </url><url>
+    <loc>https://AkuamT.github.io/en/categories/ai-tools/</loc>
+    <lastmod>2026-05-13T01:46:03+08:00</lastmod>
+  </url><url>
+    <loc>https://AkuamT.github.io/en/categories/</loc>
+    <lastmod>2026-05-13T01:46:03+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://AkuamT.github.io/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://AkuamT.github.io/en/categories/"
+                />
+  </url><url>
     <loc>https://AkuamT.github.io/en/p/mcp-beginners-guide-the-universal-ai-plug-anyone-can-understand/</loc>
     <lastmod>2026-05-13T01:46:03+08:00</lastmod>
     <xhtml:link
@@ -184,6 +210,9 @@
                 hreflang="en"
                 href="https://AkuamT.github.io/en/tags/"
                 />
+  </url><url>
+    <loc>https://AkuamT.github.io/en/categories/tutorial/</loc>
+    <lastmod>2026-05-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://AkuamT.github.io/en/tags/tutorial/</loc>
     <lastmod>2026-05-12T00:00:00+00:00</lastmod>
@@ -324,28 +353,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://AkuamT.github.io/en/archives/"
-                />
-  </url><url>
-    <loc>https://AkuamT.github.io/en/categories/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://AkuamT.github.io/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://AkuamT.github.io/en/categories/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/en/links/</loc>

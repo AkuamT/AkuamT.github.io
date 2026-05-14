@@ -71,6 +71,42 @@
                 href="https://AkuamT.github.io/%E5%85%B3%E4%BA%8E/"
                 />
   </url><url>
+    <loc>https://AkuamT.github.io/categories/ai%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2026-05-13T01:46:03+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/categories/ai%E5%B7%A5%E5%85%B7/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://AkuamT.github.io/categories/ai%E5%B7%A5%E5%85%B7/"
+                />
+  </url><url>
+    <loc>https://AkuamT.github.io/categories/</loc>
+    <lastmod>2026-05-13T01:46:03+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://AkuamT.github.io/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://AkuamT.github.io/categories/"
+                />
+  </url><url>
     <loc>https://AkuamT.github.io/p/mcp%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97%E5%B0%8F%E7%99%BD%E4%B9%9F%E8%83%BD%E7%9C%8B%E6%87%82%E7%9A%84ai%E4%B8%87%E8%83%BD%E6%8F%92%E5%A4%B4/</loc>
     <lastmod>2026-05-13T01:46:03+08:00</lastmod>
     <xhtml:link
@@ -183,6 +219,9 @@
                 />
   </url><url>
     <loc>https://AkuamT.github.io/tags/%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2026-05-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://AkuamT.github.io/categories/%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2026-05-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://AkuamT.github.io/tags/%E6%95%99%E7%A8%8B/</loc>
@@ -324,28 +363,6 @@
                 rel="alternate"
                 hreflang="zh-cn"
                 href="https://AkuamT.github.io/archives/"
-                />
-  </url><url>
-    <loc>https://AkuamT.github.io/categories/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://AkuamT.github.io/en/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://AkuamT.github.io/categories/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/%E9%93%BE%E6%8E%A5/</loc>
