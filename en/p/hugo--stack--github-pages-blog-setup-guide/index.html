@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Hugo + Stack + GitHub Pages Blog Setup Guide A complete guide to building a personal blog with Hugo + Stack theme and deploying it to GitHub Pages.\nThis guide covers both new Stack (v4.x, split .toml config format) and legacy (v3.x, single hugo.yaml) configuration differences, with annotations where key differences exist.\n1. Environment Setup 1.1 Install Git Go to the Git website to download and install: https://git-scm.com/downloads Use all default options during installation 1.2 Install Hugo (Extended Version) Go to Hugo GitHub Releases: https://github.com/gohugoio/hugo/releases Choose the extended version (marked with extended) — the Stack theme requires extended SCSS compilation support Windows users: download hugo_extended_xxx_windows-amd64.zip and extract hugo.exe This guide was written using Hugo v0.161.1 and Stack theme v4.0.2.\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Hugo + Stack + GitHub Pages Blog Setup Guide A complete guide to building a personal blog with Hugo + Stack theme and deploying it to GitHub Pages.\nThis guide covers both new Stack (v4.x, split .toml config format) and legacy (v3.x, single hugo.yaml) configuration differences, with annotations where key differences exist.\nEnvironment Setup 1.1 Install Git Go to the Git website to download and install: https://git-scm.com/downloads Use all default options during installation 1.2 Install Hugo (Extended Version) Go to Hugo GitHub Releases: https://github.com/gohugoio/hugo/releases Choose the extended version (marked with extended) — the Stack theme requires extended SCSS compilation support Windows users: download hugo_extended_xxx_windows-amd64.zip and extract hugo.exe This guide was written using Hugo v0.161.1 and Stack theme v4.0.2.\n">
 <title>Hugo &#43; Stack &#43; GitHub Pages Blog Setup Guide</title>
 
 
@@ -13,12 +13,12 @@
 
 
 <link rel="stylesheet" href="/scss/style.min.e62e09c60ba428a627e03568fa3df938f6a8224f815b5846f00816c17d4a0be4.css"><meta property='og:title' content="Hugo + Stack + GitHub Pages Blog Setup Guide">
-<meta property='og:description' content="Hugo + Stack + GitHub Pages Blog Setup Guide A complete guide to building a personal blog with Hugo + Stack theme and deploying it to GitHub Pages.\nThis guide covers both new Stack (v4.x, split .toml config format) and legacy (v3.x, single hugo.yaml) configuration differences, with annotations where key differences exist.\n1. Environment Setup 1.1 Install Git Go to the Git website to download and install: https://git-scm.com/downloads Use all default options during installation 1.2 Install Hugo (Extended Version) Go to Hugo GitHub Releases: https://github.com/gohugoio/hugo/releases Choose the extended version (marked with extended) — the Stack theme requires extended SCSS compilation support Windows users: download hugo_extended_xxx_windows-amd64.zip and extract hugo.exe This guide was written using Hugo v0.161.1 and Stack theme v4.0.2.\n">
+<meta property='og:description' content="Hugo + Stack + GitHub Pages Blog Setup Guide A complete guide to building a personal blog with Hugo + Stack theme and deploying it to GitHub Pages.\nThis guide covers both new Stack (v4.x, split .toml config format) and legacy (v3.x, single hugo.yaml) configuration differences, with annotations where key differences exist.\nEnvironment Setup 1.1 Install Git Go to the Git website to download and install: https://git-scm.com/downloads Use all default options during installation 1.2 Install Hugo (Extended Version) Go to Hugo GitHub Releases: https://github.com/gohugoio/hugo/releases Choose the extended version (marked with extended) — the Stack theme requires extended SCSS compilation support Windows users: download hugo_extended_xxx_windows-amd64.zip and extract hugo.exe This guide was written using Hugo v0.161.1 and Stack theme v4.0.2.\n">
 <meta property='og:url' content='https://AkuamT.github.io/en/p/hugo--stack--github-pages-blog-setup-guide/'>
 <meta property='og:site_name' content='Yanmu'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Hugo' /><meta property='article:tag' content='Blog' /><meta property='article:tag' content='GitHub' /><meta property='article:tag' content='Stack' /><meta property='article:tag' content='Tutorial' /><meta property='article:published_time' content='2026-05-12T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-05-12T00:00:00&#43;00:00'/><meta property='og:image' content='https://AkuamT.github.io/p/hugo--stack--github-pages-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/cover.svg' />
 <meta name="twitter:title" content="Hugo + Stack + GitHub Pages Blog Setup Guide">
-<meta name="twitter:description" content="Hugo + Stack + GitHub Pages Blog Setup Guide A complete guide to building a personal blog with Hugo + Stack theme and deploying it to GitHub Pages.\nThis guide covers both new Stack (v4.x, split .toml config format) and legacy (v3.x, single hugo.yaml) configuration differences, with annotations where key differences exist.\n1. Environment Setup 1.1 Install Git Go to the Git website to download and install: https://git-scm.com/downloads Use all default options during installation 1.2 Install Hugo (Extended Version) Go to Hugo GitHub Releases: https://github.com/gohugoio/hugo/releases Choose the extended version (marked with extended) — the Stack theme requires extended SCSS compilation support Windows users: download hugo_extended_xxx_windows-amd64.zip and extract hugo.exe This guide was written using Hugo v0.161.1 and Stack theme v4.0.2.\n"><meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="Hugo + Stack + GitHub Pages Blog Setup Guide A complete guide to building a personal blog with Hugo + Stack theme and deploying it to GitHub Pages.\nThis guide covers both new Stack (v4.x, split .toml config format) and legacy (v3.x, single hugo.yaml) configuration differences, with annotations where key differences exist.\nEnvironment Setup 1.1 Install Git Go to the Git website to download and install: https://git-scm.com/downloads Use all default options during installation 1.2 Install Hugo (Extended Version) Go to Hugo GitHub Releases: https://github.com/gohugoio/hugo/releases Choose the extended version (marked with extended) — the Stack theme requires extended SCSS compilation support Windows users: download hugo_extended_xxx_windows-amd64.zip and extract hugo.exe This guide was written using Hugo v0.161.1 and Stack theme v4.0.2.\n"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://AkuamT.github.io/p/hugo--stack--github-pages-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/cover.svg' />
     <link rel="shortcut icon" href="img/avatar.png" />
 
@@ -294,20 +294,20 @@
             <nav class="toc-nav" id="TableOfContents">
                 
   <ol>
-    <li><a href="#1-environment-setup">1. Environment Setup</a>
+    <li><a href="#environment-setup">Environment Setup</a>
       <ol>
         <li><a href="#11-install-git">1.1 Install Git</a></li>
         <li><a href="#12-install-hugo-extended-version">1.2 Install Hugo (Extended Version)</a></li>
         <li><a href="#13-github-account">1.3 GitHub Account</a></li>
       </ol>
     </li>
-    <li><a href="#2-create-a-hugo-site">2. Create a Hugo Site</a>
+    <li><a href="#create-a-hugo-site">Create a Hugo Site</a>
       <ol>
         <li><a href="#21-initialize-the-project">2.1 Initialize the Project</a></li>
         <li><a href="#22-test-the-default-site">2.2 Test the Default Site</a></li>
       </ol>
     </li>
-    <li><a href="#3-configure-the-stack-theme">3. Configure the Stack Theme</a>
+    <li><a href="#configure-the-stack-theme">Configure the Stack Theme</a>
       <ol>
         <li><a href="#31-download-the-theme">3.1 Download the Theme</a></li>
         <li><a href="#32-configure-theme-files--critical-step">3.2 Configure Theme Files — Critical Step</a>
@@ -319,7 +319,7 @@
         <li><a href="#33-verify-by-starting">3.3 Verify by Starting</a></li>
       </ol>
     </li>
-    <li><a href="#4-custom-configuration">4. Custom Configuration</a>
+    <li><a href="#custom-configuration">Custom Configuration</a>
       <ol>
         <li><a href="#41-basic-information">4.1 Basic Information</a></li>
         <li><a href="#42-sidebar">4.2 Sidebar</a></li>
@@ -328,20 +328,20 @@
         <li><a href="#45-footer">4.5 Footer</a></li>
       </ol>
     </li>
-    <li><a href="#5-creating-articles">5. Creating Articles</a>
+    <li><a href="#creating-articles">Creating Articles</a>
       <ol>
         <li><a href="#51-article-structure">5.1 Article Structure</a></li>
         <li><a href="#52-article-front-matter-example">5.2 Article Front Matter Example</a></li>
       </ol>
     </li>
-    <li><a href="#6-deploy-to-github-pages">6. Deploy to GitHub Pages</a>
+    <li><a href="#deploy-to-github-pages">Deploy to GitHub Pages</a>
       <ol>
         <li><a href="#61-create-a-github-repository">6.1 Create a GitHub Repository</a></li>
         <li><a href="#62-manual-deployment">6.2 Manual Deployment</a></li>
         <li><a href="#63-automatic-deployment-github-actions">6.3 Automatic Deployment (GitHub Actions)</a></li>
       </ol>
     </li>
-    <li><a href="#7-faq">7. FAQ</a>
+    <li><a href="#faq">FAQ</a>
       <ol>
         <li><a href="#q1-page-is-blankincomplete-after-starting">Q1: Page is blank/incomplete after starting?</a></li>
         <li><a href="#q2-hugo-server-throws-theme-not-found-error">Q2: <code>hugo server</code> throws “Theme not found” error?</a></li>
@@ -461,20 +461,20 @@
             <nav class="toc-nav">
                 
   <ol>
-    <li><a href="#1-environment-setup">1. Environment Setup</a>
+    <li><a href="#environment-setup">Environment Setup</a>
       <ol>
         <li><a href="#11-install-git">1.1 Install Git</a></li>
         <li><a href="#12-install-hugo-extended-version">1.2 Install Hugo (Extended Version)</a></li>
         <li><a href="#13-github-account">1.3 GitHub Account</a></li>
       </ol>
     </li>
-    <li><a href="#2-create-a-hugo-site">2. Create a Hugo Site</a>
+    <li><a href="#create-a-hugo-site">Create a Hugo Site</a>
       <ol>
         <li><a href="#21-initialize-the-project">2.1 Initialize the Project</a></li>
         <li><a href="#22-test-the-default-site">2.2 Test the Default Site</a></li>
       </ol>
     </li>
-    <li><a href="#3-configure-the-stack-theme">3. Configure the Stack Theme</a>
+    <li><a href="#configure-the-stack-theme">Configure the Stack Theme</a>
       <ol>
         <li><a href="#31-download-the-theme">3.1 Download the Theme</a></li>
         <li><a href="#32-configure-theme-files--critical-step">3.2 Configure Theme Files — Critical Step</a>
@@ -486,7 +486,7 @@
         <li><a href="#33-verify-by-starting">3.3 Verify by Starting</a></li>
       </ol>
     </li>
-    <li><a href="#4-custom-configuration">4. Custom Configuration</a>
+    <li><a href="#custom-configuration">Custom Configuration</a>
       <ol>
         <li><a href="#41-basic-information">4.1 Basic Information</a></li>
         <li><a href="#42-sidebar">4.2 Sidebar</a></li>
@@ -495,20 +495,20 @@
         <li><a href="#45-footer">4.5 Footer</a></li>
       </ol>
     </li>
-    <li><a href="#5-creating-articles">5. Creating Articles</a>
+    <li><a href="#creating-articles">Creating Articles</a>
       <ol>
         <li><a href="#51-article-structure">5.1 Article Structure</a></li>
         <li><a href="#52-article-front-matter-example">5.2 Article Front Matter Example</a></li>
       </ol>
     </li>
-    <li><a href="#6-deploy-to-github-pages">6. Deploy to GitHub Pages</a>
+    <li><a href="#deploy-to-github-pages">Deploy to GitHub Pages</a>
       <ol>
         <li><a href="#61-create-a-github-repository">6.1 Create a GitHub Repository</a></li>
         <li><a href="#62-manual-deployment">6.2 Manual Deployment</a></li>
         <li><a href="#63-automatic-deployment-github-actions">6.3 Automatic Deployment (GitHub Actions)</a></li>
       </ol>
     </li>
-    <li><a href="#7-faq">7. FAQ</a>
+    <li><a href="#faq">FAQ</a>
       <ol>
         <li><a href="#q1-page-is-blankincomplete-after-starting">Q1: Page is blank/incomplete after starting?</a></li>
         <li><a href="#q2-hugo-server-throws-theme-not-found-error">Q2: <code>hugo server</code> throws “Theme not found” error?</a></li>
@@ -537,7 +537,7 @@
 
     </blockquote>
 <hr>
-<h2 id="1-environment-setup">1. Environment Setup
+<h2 id="environment-setup">Environment Setup
 </h2><h3 id="11-install-git">1.1 Install Git
 </h3><ol>
 <li>Go to the Git website to download and install: <a class="link" href="https://git-scm.com/downloads"  target="_blank" rel="noopener"
@@ -563,7 +563,7 @@
 <li>It&rsquo;s recommended to enable two-factor authentication (2FA) — you can install the <strong>Authenticator 2FA Client</strong> plugin in Edge</li>
 </ul>
 <hr>
-<h2 id="2-create-a-hugo-site">2. Create a Hugo Site
+<h2 id="create-a-hugo-site">Create a Hugo Site
 </h2><h3 id="21-initialize-the-project">2.1 Initialize the Project
 </h3><p>Open a terminal in the directory where <code>hugo.exe</code> is located (type <code>cmd</code> or <code>powershell</code> in the address bar) and run:</p>
 <div class="highlight"><div class="chroma">
@@ -622,7 +622,7 @@
 </div>
 </div><p>Visit <code>http://localhost:1313/</code> in your browser. The page will be basic (no theme). Press <code>Ctrl + C</code> to stop the server.</p>
 <hr>
-<h2 id="3-configure-the-stack-theme">3. Configure the Stack Theme
+<h2 id="configure-the-stack-theme">Configure the Stack Theme
 </h2><h3 id="31-download-the-theme">3.1 Download the Theme
 </h3><ol>
 <li>Go to the Stack theme GitHub: <a class="link" href="https://github.com/CaiJimmy/hugo-theme-stack"  target="_blank" rel="noopener"
@@ -812,7 +812,7 @@
 
     </blockquote>
 <hr>
-<h2 id="4-custom-configuration">4. Custom Configuration
+<h2 id="custom-configuration">Custom Configuration
 </h2><h3 id="41-basic-information">4.1 Basic Information
 </h3><p>Edit <code>config/_default/hugo.toml</code> (new version) or <code>hugo.yaml</code> (legacy):</p>
 <div class="highlight"><div class="chroma">
@@ -919,7 +919,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><hr>
-<h2 id="5-creating-articles">5. Creating Articles
+<h2 id="creating-articles">Creating Articles
 </h2><h3 id="51-article-structure">5.1 Article Structure
 </h3><p>The Stack theme recommends each article in its own folder with <code>index.md</code> and image assets:</p>
 <div class="highlight"><div class="chroma">
@@ -973,7 +973,7 @@
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><hr>
-<h2 id="6-deploy-to-github-pages">6. Deploy to GitHub Pages
+<h2 id="deploy-to-github-pages">Deploy to GitHub Pages
 </h2><h3 id="61-create-a-github-repository">6.1 Create a GitHub Repository
 </h3><ol>
 <li>Log in to GitHub, click <strong>New repository</strong></li>
@@ -1142,7 +1142,7 @@ Add the following to <code>config/_default/hugo.toml</code> (new version) or <co
 
     </blockquote>
 <hr>
-<h2 id="7-faq">7. FAQ
+<h2 id="faq">FAQ
 </h2><h3 id="q1-page-is-blankincomplete-after-starting">Q1: Page is blank/incomplete after starting?
 </h3><p>Check whether you copied the demo&rsquo;s <code>content</code> folder. Missing example pages (search, archives, etc.) will cause the theme to display incompletely.</p>
 <h3 id="q2-hugo-server-throws-theme-not-found-error">Q2: <code>hugo server</code> throws &ldquo;Theme not found&rdquo; error?
