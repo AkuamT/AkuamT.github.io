@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 📌 生成日：2026-05-10 | 対象：Obsidian内でOpenCode AIアシスタントを直接使いたいユーザー\n📋 目次 一、opencode-obsidianプラグインとは？ 二、環境準備 三、BRATプラグインのインストール 四、BRATでopencode-obsidianをインストール 五、OpenCode CLIのインストール 六、プラグイン設定の詳細 七、初回使用 八、コンテキスト注入（実験的機能） 九、カスタムコマンドモード 十、よくある質問とトラブルシューティング 一、opencode-obsidianプラグインとは？ opencode-obsidianは、OpenCode AIアシスタントをObsidianウィンドウに直接埋め込むサードパーティコミュニティプラグインです。従来のターミナル統合ソリューションとは異なり、このプラグインはOpenCodeのWebビューを使用して直接埋め込むため、表示されるのは完全なOpenCodeインターフェースであり、ターミナルとObsidianの間を行き来する必要がありません。\nコア機能：\n🖥️ OpenCodeインターフェースがObsidianのサイドバーやメインエディタに直接埋め込み 🔄 サーバーの自動管理——パネルを開くと起動、閉じると停止 📄 実験的なコンテキスト注入——現在開いているノートと選択テキストを自動的にAIに渡す ⌨️ ショートカット Ctrl/Cmd + Shift + O でパネルを素早く切り替え 適用シーン：\n長文コンテンツの要約と精製 執筆、編集、推敲 ナレッジベースの検索と探索 アウトラインと構造化ノートの生成 ⚠️ プラグイン作者はOpenCode / Obsidianとは無関係で、これは独立したサードパーティプロジェクトです。現在のバージョンは0.2.1（Beta段階）、デスクトップのみ対応。\n二、環境準備 始める前に、以下の準備ができていることを確認してください：\n項目 要件 説明 Obsidian ≥ 1.4.0 公式サイトからダウンロード Node.js ≥ 18+ ダウンロード、OpenCodeのインストールに必要 準備ができたら、以下の手順に従ってください。\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 📌 生成日：2026-05-10 | 対象：Obsidian内でOpenCode AIアシスタントを直接使いたいユーザー\n📋 目次 一、opencode-obsidianプラグインとは？ 二、環境準備 三、BRATプラグインのインストール 四、BRATでopencode-obsidianをインストール 五、OpenCode CLIのインストール 六、プラグイン設定の詳細 七、初回使用 八、コンテキスト注入（実験的機能） 九、カスタムコマンドモード 十、よくある質問とトラブルシューティング 一、opencode-obsidianプラグインとは？ opencode-obsidianは、OpenCode AIアシスタントをObsidianウィンドウに直接埋め込むサードパーティコミュニティプラグインです。従来のターミナル統合ソリューションとは異なり、このプラグインはOpenCodeのWebビューを使用して直接埋め込むため、表示されるのは完全なOpenCodeインターフェースであり、ターミナルとObsidianの間を行き来する必要がありません。\n">
 <title>OpenCode &#43; Obsidian：AI駆動のナレッジマネジメントワークフローを構築する</title>
 
 
@@ -13,12 +13,12 @@
 
 
 <link rel="stylesheet" href="/scss/style.min.e62e09c60ba428a627e03568fa3df938f6a8224f815b5846f00816c17d4a0be4.css"><meta property='og:title' content="OpenCode + Obsidian：AI駆動のナレッジマネジメントワークフローを構築する">
-<meta property='og:description' content=" 📌 生成日：2026-05-10 | 対象：Obsidian内でOpenCode AIアシスタントを直接使いたいユーザー\n📋 目次 一、opencode-obsidianプラグインとは？ 二、環境準備 三、BRATプラグインのインストール 四、BRATでopencode-obsidianをインストール 五、OpenCode CLIのインストール 六、プラグイン設定の詳細 七、初回使用 八、コンテキスト注入（実験的機能） 九、カスタムコマンドモード 十、よくある質問とトラブルシューティング 一、opencode-obsidianプラグインとは？ opencode-obsidianは、OpenCode AIアシスタントをObsidianウィンドウに直接埋め込むサードパーティコミュニティプラグインです。従来のターミナル統合ソリューションとは異なり、このプラグインはOpenCodeのWebビューを使用して直接埋め込むため、表示されるのは完全なOpenCodeインターフェースであり、ターミナルとObsidianの間を行き来する必要がありません。\nコア機能：\n🖥️ OpenCodeインターフェースがObsidianのサイドバーやメインエディタに直接埋め込み 🔄 サーバーの自動管理——パネルを開くと起動、閉じると停止 📄 実験的なコンテキスト注入——現在開いているノートと選択テキストを自動的にAIに渡す ⌨️ ショートカット Ctrl/Cmd + Shift + O でパネルを素早く切り替え 適用シーン：\n長文コンテンツの要約と精製 執筆、編集、推敲 ナレッジベースの検索と探索 アウトラインと構造化ノートの生成 ⚠️ プラグイン作者はOpenCode / Obsidianとは無関係で、これは独立したサードパーティプロジェクトです。現在のバージョンは0.2.1（Beta段階）、デスクトップのみ対応。\n二、環境準備 始める前に、以下の準備ができていることを確認してください：\n項目 要件 説明 Obsidian ≥ 1.4.0 公式サイトからダウンロード Node.js ≥ 18+ ダウンロード、OpenCodeのインストールに必要 準備ができたら、以下の手順に従ってください。\n">
+<meta property='og:description' content=" 📌 生成日：2026-05-10 | 対象：Obsidian内でOpenCode AIアシスタントを直接使いたいユーザー\n📋 目次 一、opencode-obsidianプラグインとは？ 二、環境準備 三、BRATプラグインのインストール 四、BRATでopencode-obsidianをインストール 五、OpenCode CLIのインストール 六、プラグイン設定の詳細 七、初回使用 八、コンテキスト注入（実験的機能） 九、カスタムコマンドモード 十、よくある質問とトラブルシューティング 一、opencode-obsidianプラグインとは？ opencode-obsidianは、OpenCode AIアシスタントをObsidianウィンドウに直接埋め込むサードパーティコミュニティプラグインです。従来のターミナル統合ソリューションとは異なり、このプラグインはOpenCodeのWebビューを使用して直接埋め込むため、表示されるのは完全なOpenCodeインターフェースであり、ターミナルとObsidianの間を行き来する必要がありません。\n">
 <meta property='og:url' content='https://AkuamT.github.io/ja/p/opencode--obsidianai%E9%A7%86%E5%8B%95%E3%81%AE%E3%83%8A%E3%83%AC%E3%83%83%E3%82%B8%E3%83%9E%E3%83%8D%E3%82%B8%E3%83%A1%E3%83%B3%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%E3%83%95%E3%83%AD%E3%83%BC%E3%82%92%E6%A7%8B%E7%AF%89%E3%81%99%E3%82%8B/'>
 <meta property='og:site_name' content='Yanmu'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-04-22T02:00:15&#43;08:00'/><meta property='article:modified_time' content='2026-04-22T02:00:15&#43;08:00'/>
 <meta name="twitter:title" content="OpenCode + Obsidian：AI駆動のナレッジマネジメントワークフローを構築する">
-<meta name="twitter:description" content=" 📌 生成日：2026-05-10 | 対象：Obsidian内でOpenCode AIアシスタントを直接使いたいユーザー\n📋 目次 一、opencode-obsidianプラグインとは？ 二、環境準備 三、BRATプラグインのインストール 四、BRATでopencode-obsidianをインストール 五、OpenCode CLIのインストール 六、プラグイン設定の詳細 七、初回使用 八、コンテキスト注入（実験的機能） 九、カスタムコマンドモード 十、よくある質問とトラブルシューティング 一、opencode-obsidianプラグインとは？ opencode-obsidianは、OpenCode AIアシスタントをObsidianウィンドウに直接埋め込むサードパーティコミュニティプラグインです。従来のターミナル統合ソリューションとは異なり、このプラグインはOpenCodeのWebビューを使用して直接埋め込むため、表示されるのは完全なOpenCodeインターフェースであり、ターミナルとObsidianの間を行き来する必要がありません。\nコア機能：\n🖥️ OpenCodeインターフェースがObsidianのサイドバーやメインエディタに直接埋め込み 🔄 サーバーの自動管理——パネルを開くと起動、閉じると停止 📄 実験的なコンテキスト注入——現在開いているノートと選択テキストを自動的にAIに渡す ⌨️ ショートカット Ctrl/Cmd + Shift + O でパネルを素早く切り替え 適用シーン：\n長文コンテンツの要約と精製 執筆、編集、推敲 ナレッジベースの検索と探索 アウトラインと構造化ノートの生成 ⚠️ プラグイン作者はOpenCode / Obsidianとは無関係で、これは独立したサードパーティプロジェクトです。現在のバージョンは0.2.1（Beta段階）、デスクトップのみ対応。\n二、環境準備 始める前に、以下の準備ができていることを確認してください：\n項目 要件 説明 Obsidian ≥ 1.4.0 公式サイトからダウンロード Node.js ≥ 18+ ダウンロード、OpenCodeのインストールに必要 準備ができたら、以下の手順に従ってください。\n">
+<meta name="twitter:description" content=" 📌 生成日：2026-05-10 | 対象：Obsidian内でOpenCode AIアシスタントを直接使いたいユーザー\n📋 目次 一、opencode-obsidianプラグインとは？ 二、環境準備 三、BRATプラグインのインストール 四、BRATでopencode-obsidianをインストール 五、OpenCode CLIのインストール 六、プラグイン設定の詳細 七、初回使用 八、コンテキスト注入（実験的機能） 九、カスタムコマンドモード 十、よくある質問とトラブルシューティング 一、opencode-obsidianプラグインとは？ opencode-obsidianは、OpenCode AIアシスタントをObsidianウィンドウに直接埋め込むサードパーティコミュニティプラグインです。従来のターミナル統合ソリューションとは異なり、このプラグインはOpenCodeのWebビューを使用して直接埋め込むため、表示されるのは完全なOpenCodeインターフェースであり、ターミナルとObsidianの間を行き来する必要がありません。\n">
     <link rel="shortcut icon" href="img/avatar.png" />
 
     </head>
@@ -225,6 +225,16 @@
                                 
                                 
                                     
+                                
+                                    
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                                
+                                
+                                    
                                         
                                     
                                 
@@ -232,27 +242,9 @@
                                 
                                     
                                 
-                                    
-                                
-                                <option value="/p/opencode--obsidian-build-your-ai-powered-knowledge-management-workflow/" >English</option>
+                                <option value="/p/opencode--obsidian%E6%89%93%E9%80%A0%E4%BD%A0%E7%9A%84ai%E9%A9%B1%E5%8A%A8%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E5%B7%A5%E4%BD%9C%E6%B5%81/" >简体中文</option>
                             
                                 
-                                
-                                    
-                                
-                                    
-                                        
-                                    
-                                
-                                    
-                                
-                                    
-                                
-                                <option value="/zh/p/opencode--obsidian%E6%89%93%E9%80%A0%E4%BD%A0%E7%9A%84ai%E9%A9%B1%E5%8A%A8%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E5%B7%A5%E4%BD%9C%E6%B5%81/" >简体中文</option>
-                            
-                                
-                                
-                                    
                                 
                                     
                                 
@@ -265,8 +257,6 @@
                                 <option value="/zh-hant-tw/p/opencode--obsidian%E6%89%93%E9%80%A0%E4%BD%A0%E7%9A%84ai%E9%A9%85%E5%8B%95%E7%9F%A5%E8%AD%98%E7%AE%A1%E7%90%86%E5%B7%A5%E4%BD%9C%E6%B5%81/" >繁体中文</option>
                             
                                 
-                                
-                                    
                                 
                                     
                                 
@@ -452,7 +442,7 @@
 
 
                     <time class="article-time--reading">
-                        読了時間: 3分
+                        読了時間: 12分
                     </time>
                 
             </div>
@@ -472,9 +462,7 @@
 
 
                 
-                    <a href="/p/opencode--obsidian-build-your-ai-powered-knowledge-management-workflow/" class="link">English</a>
-                
-                    <a href="/zh/p/opencode--obsidian%E6%89%93%E9%80%A0%E4%BD%A0%E7%9A%84ai%E9%A9%B1%E5%8A%A8%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E5%B7%A5%E4%BD%9C%E6%B5%81/" class="link">简体中文</a>
+                    <a href="/p/opencode--obsidian%E6%89%93%E9%80%A0%E4%BD%A0%E7%9A%84ai%E9%A9%B1%E5%8A%A8%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E5%B7%A5%E4%BD%9C%E6%B5%81/" class="link">简体中文</a>
                 
                     <a href="/zh-hant-tw/p/opencode--obsidian%E6%89%93%E9%80%A0%E4%BD%A0%E7%9A%84ai%E9%A9%85%E5%8B%95%E7%9F%A5%E8%AD%98%E7%AE%A1%E7%90%86%E5%B7%A5%E4%BD%9C%E6%B5%81/" class="link">繁体中文</a>
                 

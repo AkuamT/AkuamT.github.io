@@ -6,13 +6,13 @@
     <lastmod>2026-05-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="en-us"
-                href="https://AkuamT.github.io/"
+                hreflang="en"
+                href="https://AkuamT.github.io/en/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
-                href="https://AkuamT.github.io/zh/"
+                hreflang="zh-cn"
+                href="https://AkuamT.github.io/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -29,13 +29,8 @@
     <lastmod>2026-05-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="en-us"
+                hreflang="zh-cn"
                 href="https://AkuamT.github.io/page/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://AkuamT.github.io/zh/page/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -52,13 +47,8 @@
     <lastmod>2026-05-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="en-us"
-                href="https://AkuamT.github.io/about/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://AkuamT.github.io/zh/%E5%85%B3%E4%BA%8E/"
+                hreflang="zh-cn"
+                href="https://AkuamT.github.io/%E5%85%B3%E4%BA%8E/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -75,13 +65,8 @@
     <lastmod>2026-05-12T02:00:15+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="en-us"
-                href="https://AkuamT.github.io/p/install-claude-code-in-5-minutes-and-connect-deepseek/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://AkuamT.github.io/zh/p/5%E5%88%86%E9%92%9F%E5%AE%89%E8%A3%85claudecode%E5%B9%B6%E6%8E%A5%E5%85%A5deepseek/"
+                hreflang="zh-cn"
+                href="https://AkuamT.github.io/p/5%E5%88%86%E9%92%9F%E5%AE%89%E8%A3%85claudecode%E5%B9%B6%E6%8E%A5%E5%85%A5deepseek/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -98,13 +83,8 @@
     <lastmod>2026-05-12T02:00:15+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="en-us"
+                hreflang="zh-cn"
                 href="https://AkuamT.github.io/post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://AkuamT.github.io/zh/post/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -121,13 +101,8 @@
     <lastmod>2026-05-11T02:00:15+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="en-us"
-                href="https://AkuamT.github.io/p/the-evolution-of-ai-programming/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://AkuamT.github.io/zh/p/ai%E7%BC%96%E7%A8%8B%E8%BF%9B%E5%8C%96%E5%8F%B2/"
+                hreflang="zh-cn"
+                href="https://AkuamT.github.io/p/ai%E7%BC%96%E7%A8%8B%E8%BF%9B%E5%8C%96%E5%8F%B2/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -144,13 +119,8 @@
     <lastmod>2026-04-22T02:00:15+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="en-us"
-                href="https://AkuamT.github.io/p/opencode--obsidian-build-your-ai-powered-knowledge-management-workflow/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://AkuamT.github.io/zh/p/opencode--obsidian%E6%89%93%E9%80%A0%E4%BD%A0%E7%9A%84ai%E9%A9%B1%E5%8A%A8%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E5%B7%A5%E4%BD%9C%E6%B5%81/"
+                hreflang="zh-cn"
+                href="https://AkuamT.github.io/p/opencode--obsidian%E6%89%93%E9%80%A0%E4%BD%A0%E7%9A%84ai%E9%A9%B1%E5%8A%A8%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E5%B7%A5%E4%BD%9C%E6%B5%81/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -167,13 +137,8 @@
     <lastmod>2026-04-12T02:00:15+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="en-us"
-                href="https://AkuamT.github.io/p/opencode-beginner-to-advanced-a-complete-guide-to-parallel-scheduling-and-usage-tips/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://AkuamT.github.io/zh/p/opencode-%E6%96%B0%E6%89%8B%E8%BF%9B%E9%98%B6%E5%B9%B6%E8%A1%8C%E8%B0%83%E5%BA%A6%E4%B8%8E%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E5%85%A8%E6%94%BB%E7%95%A5/"
+                hreflang="zh-cn"
+                href="https://AkuamT.github.io/p/opencode-%E6%96%B0%E6%89%8B%E8%BF%9B%E9%98%B6%E5%B9%B6%E8%A1%8C%E8%B0%83%E5%BA%A6%E4%B8%8E%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E5%85%A8%E6%94%BB%E7%95%A5/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -190,13 +155,8 @@
     <lastmod>2026-02-12T02:00:15+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="en-us"
-                href="https://AkuamT.github.io/p/opencode-in-depth-guide-installation-configuration-and-advanced-techniques-for-the-open-source-claude-code/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://AkuamT.github.io/zh/p/opencode-%E5%85%A8%E6%B7%B1%E5%BA%A6%E6%8C%87%E5%8D%97%E5%BC%80%E6%BA%90%E7%89%88-claude-code-%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E4%B8%8E%E9%AB%98%E7%BA%A7%E7%8E%A9%E6%B3%95/"
+                hreflang="zh-cn"
+                href="https://AkuamT.github.io/p/opencode-%E5%85%A8%E6%B7%B1%E5%BA%A6%E6%8C%87%E5%8D%97%E5%BC%80%E6%BA%90%E7%89%88-claude-code-%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E4%B8%8E%E9%AB%98%E7%BA%A7%E7%8E%A9%E6%B3%95/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -213,13 +173,13 @@
     <lastmod>2026-01-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="en-us"
-                href="https://AkuamT.github.io/categories/"
+                hreflang="en"
+                href="https://AkuamT.github.io/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
-                href="https://AkuamT.github.io/zh/categories/"
+                hreflang="zh-cn"
+                href="https://AkuamT.github.io/categories/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -236,13 +196,8 @@
     <lastmod>2026-01-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="en-us"
+                hreflang="zh-cn"
                 href="https://AkuamT.github.io/tags/gallery/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://AkuamT.github.io/zh/tags/gallery/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -259,13 +214,8 @@
     <lastmod>2026-01-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="en-us"
+                hreflang="zh-cn"
                 href="https://AkuamT.github.io/tags/photoswipe/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://AkuamT.github.io/zh/tags/photoswipe/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -282,13 +232,13 @@
     <lastmod>2026-01-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="en-us"
-                href="https://AkuamT.github.io/tags/"
+                hreflang="en"
+                href="https://AkuamT.github.io/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
-                href="https://AkuamT.github.io/zh/tags/"
+                hreflang="zh-cn"
+                href="https://AkuamT.github.io/tags/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -305,13 +255,8 @@
     <lastmod>2026-01-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="en-us"
+                hreflang="zh-cn"
                 href="https://AkuamT.github.io/categories/documentation/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://AkuamT.github.io/zh/categories/documentation/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -328,13 +273,8 @@
     <lastmod>2026-01-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="en-us"
+                hreflang="zh-cn"
                 href="https://AkuamT.github.io/p/image-gallery/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://AkuamT.github.io/zh/p/image-gallery/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -351,13 +291,8 @@
     <lastmod>2026-01-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="en-us"
-                href="https://AkuamT.github.io/p/shortcodes/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://AkuamT.github.io/zh/p/%E7%9F%AD%E4%BB%A3%E7%A0%81/"
+                hreflang="zh-cn"
+                href="https://AkuamT.github.io/p/%E7%9F%AD%E4%BB%A3%E7%A0%81/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -374,8 +309,8 @@
     <lastmod>2026-01-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
-                href="https://AkuamT.github.io/zh/tags/%E9%9A%90%E7%A7%81/"
+                hreflang="zh-cn"
+                href="https://AkuamT.github.io/tags/%E9%9A%90%E7%A7%81/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -392,13 +327,8 @@
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="en-us"
+                hreflang="zh-cn"
                 href="https://AkuamT.github.io/archives/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://AkuamT.github.io/zh/archives/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -414,13 +344,8 @@
     <loc>https://AkuamT.github.io/zh-hant-tw/search/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="en-us"
+                hreflang="zh-cn"
                 href="https://AkuamT.github.io/search/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://AkuamT.github.io/zh/search/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -436,13 +361,8 @@
     <loc>https://AkuamT.github.io/zh-hant-tw/%E9%8F%88%E6%8E%A5/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="en-us"
-                href="https://AkuamT.github.io/links/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://AkuamT.github.io/zh/%E9%93%BE%E6%8E%A5/"
+                hreflang="zh-cn"
+                href="https://AkuamT.github.io/%E9%93%BE%E6%8E%A5/"
                 />
     <xhtml:link
                 rel="alternate"

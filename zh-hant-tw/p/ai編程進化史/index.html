@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-hant-tw" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="🤖 AI 編程進化史：從提示詞、上下文工程到 Harness 同等能力的模型越來越多，各家產品的體驗差距反而越拉越大。 有的產品寫出來的程式碼可以直接提交上線，有的產品寫出來的卻難以維護——為什麼？ 因為模型是一樣的，差距在於怎麼用模型，怎麼穩定地用模型。 在 AI 行業裡，這就叫 Harness Engineering（駕馭工程）。\n🧠 Harness 工程：把 Agent 拆成三層 我們將編程 Agent 劃分為三個層次：\nScaffolding（腳手架） 負責 AI 任務執行前的所有準備工作，包括系統準備的工具。 Harness（運行時編排，核心） 整個智能體的核心調度中心。 負責管控 AI 的核心推理循環，協調工具調用、上下文管理、運行安全管控和會話數據的持久化存儲。 Context Engineering（上下文工程） 負責管理大模型處理文本的最小計算單位——token 的資源分配。 決定 AI 運行過程中，哪些資訊需要保留，哪些資訊應當丟棄。 一個穩定幹活的 AI 程式碼智能體 = 所調用的一個或多個大模型 + 一套完善的 Harness 系統。\n⏳ Harness 很重要，為什麼現在才火？ ① 第一階段：Prompt Engineering（提示詞工程） 核心關注點：怎麼去寫好一個指令。\n角色設定：給 AI 劃定明確的身份和職責邊界 附上示例：用 Few-shot 讓 AI 照著格式和風格生成 思維鏈（Chain-of-Thought）：在指令中要求 AI 一步一步拆解問題，逐步推導，減少跳躍式錯誤 ② 第二階段：Context Engineering（上下文工程） 單條 prompt 已經不夠用了——需要為模型動態構建整個上下文環境。 讓模型在做每一個決策時，都能精確看到它所需要的全部資訊：任務文件、歷史對話、工具規則、知識庫條目……\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="🤖 AI 編程進化史：從提示詞、上下文工程到 Harness 同等能力的模型越來越多，各家產品的體驗差距反而越拉越大。 有的產品寫出來的程式碼可以直接提交上線，有的產品寫出來的卻難以維護——為什麼？ 因為模型是一樣的，差距在於怎麼用模型，怎麼穩定地用模型。 在 AI 行業裡，這就叫 Harness Engineering（駕馭工程）。\n">
 <title>AI編程進化史</title>
 
 
@@ -13,12 +13,12 @@
 
 
 <link rel="stylesheet" href="/scss/style.min.e62e09c60ba428a627e03568fa3df938f6a8224f815b5846f00816c17d4a0be4.css"><meta property='og:title' content="AI編程進化史">
-<meta property='og:description' content="🤖 AI 編程進化史：從提示詞、上下文工程到 Harness 同等能力的模型越來越多，各家產品的體驗差距反而越拉越大。 有的產品寫出來的程式碼可以直接提交上線，有的產品寫出來的卻難以維護——為什麼？ 因為模型是一樣的，差距在於怎麼用模型，怎麼穩定地用模型。 在 AI 行業裡，這就叫 Harness Engineering（駕馭工程）。\n🧠 Harness 工程：把 Agent 拆成三層 我們將編程 Agent 劃分為三個層次：\nScaffolding（腳手架） 負責 AI 任務執行前的所有準備工作，包括系統準備的工具。 Harness（運行時編排，核心） 整個智能體的核心調度中心。 負責管控 AI 的核心推理循環，協調工具調用、上下文管理、運行安全管控和會話數據的持久化存儲。 Context Engineering（上下文工程） 負責管理大模型處理文本的最小計算單位——token 的資源分配。 決定 AI 運行過程中，哪些資訊需要保留，哪些資訊應當丟棄。 一個穩定幹活的 AI 程式碼智能體 = 所調用的一個或多個大模型 + 一套完善的 Harness 系統。\n⏳ Harness 很重要，為什麼現在才火？ ① 第一階段：Prompt Engineering（提示詞工程） 核心關注點：怎麼去寫好一個指令。\n角色設定：給 AI 劃定明確的身份和職責邊界 附上示例：用 Few-shot 讓 AI 照著格式和風格生成 思維鏈（Chain-of-Thought）：在指令中要求 AI 一步一步拆解問題，逐步推導，減少跳躍式錯誤 ② 第二階段：Context Engineering（上下文工程） 單條 prompt 已經不夠用了——需要為模型動態構建整個上下文環境。 讓模型在做每一個決策時，都能精確看到它所需要的全部資訊：任務文件、歷史對話、工具規則、知識庫條目……\n">
+<meta property='og:description' content="🤖 AI 編程進化史：從提示詞、上下文工程到 Harness 同等能力的模型越來越多，各家產品的體驗差距反而越拉越大。 有的產品寫出來的程式碼可以直接提交上線，有的產品寫出來的卻難以維護——為什麼？ 因為模型是一樣的，差距在於怎麼用模型，怎麼穩定地用模型。 在 AI 行業裡，這就叫 Harness Engineering（駕馭工程）。\n">
 <meta property='og:url' content='https://AkuamT.github.io/zh-hant-tw/p/ai%E7%B7%A8%E7%A8%8B%E9%80%B2%E5%8C%96%E5%8F%B2/'>
 <meta property='og:site_name' content='Yanmu'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-05-11T02:00:15&#43;08:00'/><meta property='article:modified_time' content='2026-05-11T02:00:15&#43;08:00'/>
 <meta name="twitter:title" content="AI編程進化史">
-<meta name="twitter:description" content="🤖 AI 編程進化史：從提示詞、上下文工程到 Harness 同等能力的模型越來越多，各家產品的體驗差距反而越拉越大。 有的產品寫出來的程式碼可以直接提交上線，有的產品寫出來的卻難以維護——為什麼？ 因為模型是一樣的，差距在於怎麼用模型，怎麼穩定地用模型。 在 AI 行業裡，這就叫 Harness Engineering（駕馭工程）。\n🧠 Harness 工程：把 Agent 拆成三層 我們將編程 Agent 劃分為三個層次：\nScaffolding（腳手架） 負責 AI 任務執行前的所有準備工作，包括系統準備的工具。 Harness（運行時編排，核心） 整個智能體的核心調度中心。 負責管控 AI 的核心推理循環，協調工具調用、上下文管理、運行安全管控和會話數據的持久化存儲。 Context Engineering（上下文工程） 負責管理大模型處理文本的最小計算單位——token 的資源分配。 決定 AI 運行過程中，哪些資訊需要保留，哪些資訊應當丟棄。 一個穩定幹活的 AI 程式碼智能體 = 所調用的一個或多個大模型 + 一套完善的 Harness 系統。\n⏳ Harness 很重要，為什麼現在才火？ ① 第一階段：Prompt Engineering（提示詞工程） 核心關注點：怎麼去寫好一個指令。\n角色設定：給 AI 劃定明確的身份和職責邊界 附上示例：用 Few-shot 讓 AI 照著格式和風格生成 思維鏈（Chain-of-Thought）：在指令中要求 AI 一步一步拆解問題，逐步推導，減少跳躍式錯誤 ② 第二階段：Context Engineering（上下文工程） 單條 prompt 已經不夠用了——需要為模型動態構建整個上下文環境。 讓模型在做每一個決策時，都能精確看到它所需要的全部資訊：任務文件、歷史對話、工具規則、知識庫條目……\n">
+<meta name="twitter:description" content="🤖 AI 編程進化史：從提示詞、上下文工程到 Harness 同等能力的模型越來越多，各家產品的體驗差距反而越拉越大。 有的產品寫出來的程式碼可以直接提交上線，有的產品寫出來的卻難以維護——為什麼？ 因為模型是一樣的，差距在於怎麼用模型，怎麼穩定地用模型。 在 AI 行業裡，這就叫 Harness Engineering（駕馭工程）。\n">
     <link rel="shortcut icon" href="img/avatar.png" />
 
     </head>
@@ -225,6 +225,16 @@
                                 
                                 
                                     
+                                
+                                    
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                                
+                                
+                                    
                                         
                                     
                                 
@@ -232,27 +242,9 @@
                                 
                                     
                                 
-                                    
-                                
-                                <option value="/p/the-evolution-of-ai-programming/" >English</option>
+                                <option value="/p/ai%E7%BC%96%E7%A8%8B%E8%BF%9B%E5%8C%96%E5%8F%B2/" >简体中文</option>
                             
                                 
-                                
-                                    
-                                
-                                    
-                                        
-                                    
-                                
-                                    
-                                
-                                    
-                                
-                                <option value="/zh/p/ai%E7%BC%96%E7%A8%8B%E8%BF%9B%E5%8C%96%E5%8F%B2/" >简体中文</option>
-                            
-                                
-                                
-                                    
                                 
                                     
                                 
@@ -265,8 +257,6 @@
                                 <option value="/zh-hant-tw/p/ai%E7%B7%A8%E7%A8%8B%E9%80%B2%E5%8C%96%E5%8F%B2/" selected>繁体中文</option>
                             
                                 
-                                
-                                    
                                 
                                     
                                 
@@ -408,7 +398,7 @@
 
 
                     <time class="article-time--reading">
-                        閱讀時間: 1 分鐘
+                        閱讀時間: 4 分鐘
                     </time>
                 
             </div>
@@ -428,9 +418,7 @@
 
 
                 
-                    <a href="/p/the-evolution-of-ai-programming/" class="link">English</a>
-                
-                    <a href="/zh/p/ai%E7%BC%96%E7%A8%8B%E8%BF%9B%E5%8C%96%E5%8F%B2/" class="link">简体中文</a>
+                    <a href="/p/ai%E7%BC%96%E7%A8%8B%E8%BF%9B%E5%8C%96%E5%8F%B2/" class="link">简体中文</a>
                 
                     <a href="/ja/p/" class="link">日本語</a>
                 
