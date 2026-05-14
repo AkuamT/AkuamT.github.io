@@ -209,8 +209,30 @@
                 href="https://AkuamT.github.io/zh-hant-tw/p/opencode-%E5%85%A8%E6%B7%B1%E5%BA%A6%E6%8C%87%E5%8D%97%E9%96%8B%E6%BA%90%E7%89%88-claude-code-%E7%9A%84%E5%AE%89%E8%A3%9D%E9%85%8D%E7%BD%AE%E8%88%87%E9%80%B2%E9%9A%8E%E7%8E%A9%E6%B3%95/"
                 />
   </url><url>
+    <loc>https://AkuamT.github.io/zh-hant-tw/archives/</loc>
+    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://AkuamT.github.io/archives/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://AkuamT.github.io/en/archives/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/archives/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/archives/"
+                />
+  </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/categories/</loc>
-    <lastmod>2026-01-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -232,54 +254,7 @@
                 href="https://AkuamT.github.io/zh-hant-tw/categories/"
                 />
   </url><url>
-    <loc>https://AkuamT.github.io/zh-hant-tw/tags/gallery/</loc>
-    <lastmod>2026-01-26T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://AkuamT.github.io/tags/gallery/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://AkuamT.github.io/en/tags/gallery/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/tags/gallery/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/tags/gallery/"
-                />
-  </url><url>
-    <loc>https://AkuamT.github.io/zh-hant-tw/tags/photoswipe/</loc>
-    <lastmod>2026-01-26T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://AkuamT.github.io/tags/photoswipe/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://AkuamT.github.io/en/tags/photoswipe/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/tags/photoswipe/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/tags/photoswipe/"
-                />
-  </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/tags/</loc>
-    <lastmod>2026-01-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -302,7 +277,6 @@
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/categories/documentation/</loc>
-    <lastmod>2026-01-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -322,93 +296,6 @@
                 rel="alternate"
                 hreflang="zh-hant-tw"
                 href="https://AkuamT.github.io/zh-hant-tw/categories/documentation/"
-                />
-  </url><url>
-    <loc>https://AkuamT.github.io/zh-hant-tw/p/image-gallery/</loc>
-    <lastmod>2026-01-26T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://AkuamT.github.io/p/image-gallery/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://AkuamT.github.io/en/p/image-gallery/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/p/image-gallery/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/p/image-gallery/"
-                />
-  </url><url>
-    <loc>https://AkuamT.github.io/zh-hant-tw/p/%E7%9F%AD%E4%BB%A3%E7%A2%BC/</loc>
-    <lastmod>2026-01-26T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://AkuamT.github.io/p/%E7%9F%AD%E4%BB%A3%E7%A0%81/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://AkuamT.github.io/en/p/shortcodes/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/p/%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%82%B3%E3%83%BC%E3%83%89/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/p/%E7%9F%AD%E4%BB%A3%E7%A2%BC/"
-                />
-  </url><url>
-    <loc>https://AkuamT.github.io/zh-hant-tw/tags/%E9%9A%90%E7%A7%81/</loc>
-    <lastmod>2026-01-26T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://AkuamT.github.io/tags/%E9%9A%90%E7%A7%81/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/tags/%E9%9A%90%E7%A7%81/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/tags/%E9%9A%90%E7%A7%81/"
-                />
-  </url><url>
-    <loc>https://AkuamT.github.io/zh-hant-tw/archives/</loc>
-    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://AkuamT.github.io/archives/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://AkuamT.github.io/en/archives/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/archives/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/archives/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/search/</loc>
