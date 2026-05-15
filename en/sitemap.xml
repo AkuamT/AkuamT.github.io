@@ -2,6 +2,29 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://AkuamT.github.io/en/</loc>
+    <lastmod>2026-05-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://AkuamT.github.io/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://AkuamT.github.io/en/"
+                />
+  </url><url>
     <loc>https://AkuamT.github.io/en/about/</loc>
     <lastmod>2026-05-13T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -46,29 +69,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://AkuamT.github.io/en/page/"
-                />
-  </url><url>
-    <loc>https://AkuamT.github.io/en/</loc>
-    <lastmod>2026-05-13T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://AkuamT.github.io/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://AkuamT.github.io/en/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/en/categories/ai-tools/</loc>
