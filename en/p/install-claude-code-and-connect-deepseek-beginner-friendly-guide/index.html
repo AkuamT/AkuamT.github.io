@@ -1,0 +1,1872 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Overview Who Is This Tutorial For? This tutorial is for users with no computer background at all. You don&rsquo;t need to know what a &ldquo;command line&rdquo; is, what &ldquo;environment variables&rdquo; are, or what &ldquo;version management&rdquo; is — I will break down every step to the finest detail, telling you where to click, what to click, what to type, and what you should see to know it worked.\nWhat Are We Installing? Why Do We Need These? Before we start, let&rsquo;s understand the 3 things we need to install and what each one does:\n">
+<title>Install Claude Code and Connect DeepSeek (Beginner-Friendly Guide)</title>
+
+
+<link rel="canonical" href="https://AkuamT.github.io/en/p/install-claude-code-and-connect-deepseek-beginner-friendly-guide/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.ed668df6847002e96da55125322b5655e4e3773453c2addee35312e6bbf6cb10.css"><meta property='og:title' content="Install Claude Code and Connect DeepSeek (Beginner-Friendly Guide)">
+<meta property='og:description' content="Overview Who Is This Tutorial For? This tutorial is for users with no computer background at all. You don&rsquo;t need to know what a &ldquo;command line&rdquo; is, what &ldquo;environment variables&rdquo; are, or what &ldquo;version management&rdquo; is — I will break down every step to the finest detail, telling you where to click, what to click, what to type, and what you should see to know it worked.\nWhat Are We Installing? Why Do We Need These? Before we start, let&rsquo;s understand the 3 things we need to install and what each one does:\n">
+<meta property='og:url' content='https://AkuamT.github.io/en/p/install-claude-code-and-connect-deepseek-beginner-friendly-guide/'>
+<meta property='og:site_name' content='Yanmu'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='ClaudeCode' /><meta property='article:tag' content='DeepSeek' /><meta property='article:tag' content='AI Tools' /><meta property='article:tag' content='Node.js' /><meta property='article:tag' content='Beginner Tutorial' /><meta property='article:published_time' content='2026-05-18T02:00:15&#43;08:00'/><meta property='article:modified_time' content='2026-05-18T02:00:15&#43;08:00'/><meta property='og:image' content='https://AkuamT.github.io/p/%E5%AE%89%E8%A3%85claudecode%E5%B9%B6%E6%8E%A5%E5%85%A5deepseek%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD/cover.svg' />
+<meta name="twitter:title" content="Install Claude Code and Connect DeepSeek (Beginner-Friendly Guide)">
+<meta name="twitter:description" content="Overview Who Is This Tutorial For? This tutorial is for users with no computer background at all. You don&rsquo;t need to know what a &ldquo;command line&rdquo; is, what &ldquo;environment variables&rdquo; are, or what &ldquo;version management&rdquo; is — I will break down every step to the finest detail, telling you where to click, what to click, what to type, and what you should see to know it worked.\nWhat Are We Installing? Why Do We Need These? Before we start, let&rsquo;s understand the 3 things we need to install and what each one does:\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://AkuamT.github.io/p/%E5%AE%89%E8%A3%85claudecode%E5%B9%B6%E6%8E%A5%E5%85%A5deepseek%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD/cover.svg' />
+    <link rel="shortcut icon" href="img/avatar.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/en/">
+                    <img src="/img/Yanmu.jpg" 
+                        width="1024"
+                        height="1037"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">💻 </span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/en/">Yanmu</a></h1>
+            <h2 class="site-description">「May you be your own sun, needing no light but your own.」</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/CaiJimmy/hugo-theme-stack'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/en/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/links/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                <option value="/p/%E5%AE%89%E8%A3%85claudecode%E5%B9%B6%E6%8E%A5%E5%85%A5deepseek%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD/" >简体中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                <option value="/en/p/install-claude-code-and-connect-deepseek-beginner-friendly-guide/" selected>English</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                <option value="/zh-hant-tw/p/%E5%AE%89%E8%A3%9Dclaudecode%E4%B8%A6%E6%8E%A5%E5%85%A5deepseek%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD/" >繁体中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/ja/p/claude-code%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%97%E3%81%A6deepseek%E3%81%AB%E6%8E%A5%E7%B6%9A%E3%81%99%E3%82%8B%E5%88%9D%E5%BF%83%E8%80%85%E5%90%91%E3%81%91%E3%82%AC%E3%82%A4%E3%83%89/" >日本語</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#overview">Overview</a>
+      <ol>
+        <li><a href="#who-is-this-tutorial-for">Who Is This Tutorial For?</a></li>
+        <li><a href="#what-are-we-installing-why-do-we-need-these">What Are We Installing? Why Do We Need These?</a></li>
+      </ol>
+    </li>
+    <li><a href="#step-1-install-nodejs">Step 1: Install Node.js</a>
+      <ol>
+        <li><a href="#11-download-nodejs">1.1 Download Node.js</a>
+          <ol>
+            <li><a href="#step-1-open-your-browser">Step 1: Open Your Browser</a></li>
+            <li><a href="#step-2-visit-the-nodejs-official-website">Step 2: Visit the Node.js Official Website</a></li>
+            <li><a href="#step-3-find-the-download-button">Step 3: Find the Download Button</a></li>
+            <li><a href="#step-4-find-the-downloaded-file">Step 4: Find the Downloaded File</a></li>
+          </ol>
+        </li>
+        <li><a href="#12-install-nodejs">1.2 Install Node.js</a>
+          <ol>
+            <li><a href="#step-1-double-click-the-installer">Step 1: Double-click the Installer</a></li>
+            <li><a href="#step-2-welcome-screen">Step 2: Welcome Screen</a></li>
+            <li><a href="#step-3-license-agreement">Step 3: License Agreement</a></li>
+            <li><a href="#step-4-installation-location--important-you-need-to-change-the-path">Step 4: Installation Location (⚠️ Important! You Need to Change the Path)</a></li>
+            <li><a href="#step-5-custom-setup">Step 5: Custom Setup</a></li>
+            <li><a href="#step-6-confirm-installation">Step 6: Confirm Installation</a></li>
+            <li><a href="#step-7-wait-for-installation">Step 7: Wait for Installation</a></li>
+            <li><a href="#step-8-finish">Step 8: Finish</a></li>
+          </ol>
+        </li>
+        <li><a href="#13-verify-nodejs-is-installed-correctly">1.3 Verify Node.js Is Installed Correctly</a>
+          <ol>
+            <li><a href="#step-1-open-command-prompt-cmd">Step 1: Open Command Prompt (CMD)</a></li>
+            <li><a href="#step-2-enter-verification-commands">Step 2: Enter Verification Commands</a></li>
+          </ol>
+        </li>
+        <li><a href="#14-how-to-configure-environment-variables">1.4 How to Configure Environment Variables</a>
+          <ol>
+            <li><a href="#check-if-nodejs-is-already-in-path">Check If Node.js Is Already in PATH</a></li>
+            <li><a href="#manually-add-nodejs-to-path">Manually Add Node.js to PATH</a></li>
+          </ol>
+        </li>
+        <li><a href="#15-configure-npm-domestic-mirror-strongly-recommended">1.5 Configure npm Domestic Mirror (Strongly Recommended)</a></li>
+      </ol>
+    </li>
+    <li><a href="#step-2-install-claude-code">Step 2: Install Claude Code</a>
+      <ol>
+        <li><a href="#21-install-claude-code-via-npm">2.1 Install Claude Code via npm</a></li>
+        <li><a href="#22-verify-installation">2.2 Verify Installation</a></li>
+        <li><a href="#23-first-launch-skip-login">2.3 First Launch (Skip Login)</a>
+          <ol>
+            <li><a href="#step-1-launch-claude-code-once">Step 1: Launch Claude Code Once</a></li>
+            <li><a href="#step-2-find-the-configuration-file">Step 2: Find the Configuration File</a></li>
+            <li><a href="#step-3-find-the-claudejson-file">Step 3: Find the <code>.claude.json</code> File</a></li>
+            <li><a href="#step-4-open-the-config-file-with-notepad">Step 4: Open the Config File with Notepad</a></li>
+            <li><a href="#step-5-edit-the-config-file">Step 5: Edit the Config File</a></li>
+            <li><a href="#step-6-save-the-file">Step 6: Save the File</a></li>
+            <li><a href="#step-7-verify-skip-login-worked">Step 7: Verify Skip Login Worked</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#step-3-install-cc-switch-model-switching-tool">Step 3: Install CC-Switch (Model Switching Tool)</a>
+      <ol>
+        <li><a href="#31-download-cc-switch">3.1 Download CC-Switch</a>
+          <ol>
+            <li><a href="#step-1-open-the-download-page">Step 1: Open the Download Page</a></li>
+            <li><a href="#step-2-find-the-latest-version">Step 2: Find the Latest Version</a></li>
+            <li><a href="#step-3-find-the-download-link">Step 3: Find the Download Link</a></li>
+          </ol>
+        </li>
+        <li><a href="#32-install-cc-switch">3.2 Install CC-Switch</a>
+          <ol>
+            <li><a href="#step-1-double-click-the-installer-1">Step 1: Double-click the Installer</a></li>
+            <li><a href="#step-2-follow-the-prompts">Step 2: Follow the Prompts</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#step-4-get-a-deepseek-api-key">Step 4: Get a DeepSeek API Key</a>
+      <ol>
+        <li><a href="#41-register-a-deepseek-account">4.1 Register a DeepSeek Account</a>
+          <ol>
+            <li><a href="#step-1-open-the-deepseek-open-platform">Step 1: Open the DeepSeek Open Platform</a></li>
+            <li><a href="#step-2-register--log-in">Step 2: Register / Log In</a></li>
+          </ol>
+        </li>
+        <li><a href="#42-add-funds-to-your-account">4.2 Add Funds to Your Account</a></li>
+        <li><a href="#43-create-an-api-key">4.3 Create an API Key</a>
+          <ol>
+            <li><a href="#step-1-go-to-the-api-keys-page">Step 1: Go to the API Keys Page</a></li>
+            <li><a href="#step-2-create-a-new-api-key">Step 2: Create a New API Key</a></li>
+            <li><a href="#step-3-copy-the-api-key--most-critical-step">Step 3: Copy the API Key (⚠️ Most Critical Step!)</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#step-5-configure-cc-switch-to-connect-deepseek">Step 5: Configure CC-Switch to Connect DeepSeek</a>
+      <ol>
+        <li><a href="#51-open-cc-switch">5.1 Open CC-Switch</a></li>
+        <li><a href="#52-add-a-deepseek-configuration">5.2 Add a DeepSeek Configuration</a>
+          <ol>
+            <li><a href="#step-1-click-the-add-button">Step 1: Click the Add Button</a></li>
+            <li><a href="#step-2-fill-in-the-configuration">Step 2: Fill In the Configuration</a></li>
+            <li><a href="#step-3-save-the-configuration">Step 3: Save the Configuration</a></li>
+          </ol>
+        </li>
+        <li><a href="#53-switch-to-deepseek">5.3 Switch to DeepSeek</a></li>
+        <li><a href="#54-verify-the-connection">5.4 Verify the Connection</a></li>
+      </ol>
+    </li>
+    <li><a href="#step-6-start-using-it-hands-on-example">Step 6: Start Using It (Hands-on Example)</a>
+      <ol>
+        <li><a href="#61-create-a-project-folder-and-open-command-prompt">6.1 Create a Project Folder and Open Command Prompt</a></li>
+        <li><a href="#62-launch-claude-code">6.2 Launch Claude Code</a></li>
+        <li><a href="#63-give-your-first-instruction">6.3 Give Your First Instruction</a></li>
+        <li><a href="#64-handle-permission-requests">6.4 Handle Permission Requests</a></li>
+        <li><a href="#65-check-the-result">6.5 Check the Result</a></li>
+      </ol>
+    </li>
+    <li><a href="#command-quick-reference">Command Quick Reference</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/en/p/install-claude-code-and-connect-deepseek-beginner-friendly-guide/">
+            <img alt="Featured image of post Install Claude Code and Connect DeepSeek (Beginner-Friendly Guide)" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E5%AE%89%E8%A3%85claudecode%E5%B9%B6%E6%8E%A5%E5%85%A5deepseek%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD/cover.svg">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/en/categories/ai-tools/" style="background-color: #7c3aed; color: #fff;">
+                AI Tools
+            </a>
+        
+            
+            
+            
+            <a href="/en/categories/tutorial/" style="background-color: #2563eb; color: #fff;">
+                Tutorial
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/en/p/install-claude-code-and-connect-deepseek-beginner-friendly-guide/">Install Claude Code and Connect DeepSeek (Beginner-Friendly Guide)</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-05-18T02:00:15&#43;08:00'>Monday, May 18, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        17 minutes read
+                    </time>
+                
+            </div>
+        
+
+        
+            <div class="inline-meta">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                
+                    <a href="/p/%E5%AE%89%E8%A3%85claudecode%E5%B9%B6%E6%8E%A5%E5%85%A5deepseek%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD/" class="link">简体中文</a>
+                
+                    <a href="/zh-hant-tw/p/%E5%AE%89%E8%A3%9Dclaudecode%E4%B8%A6%E6%8E%A5%E5%85%A5deepseek%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD/" class="link">繁体中文</a>
+                
+                    <a href="/ja/p/claude-code%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%97%E3%81%A6deepseek%E3%81%AB%E6%8E%A5%E7%B6%9A%E3%81%99%E3%82%8B%E5%88%9D%E5%BF%83%E8%80%85%E5%90%91%E3%81%91%E3%82%AC%E3%82%A4%E3%83%89/" class="link">日本語</a>
+                
+            </div>
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span>Table of contents</span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#overview">Overview</a>
+      <ol>
+        <li><a href="#who-is-this-tutorial-for">Who Is This Tutorial For?</a></li>
+        <li><a href="#what-are-we-installing-why-do-we-need-these">What Are We Installing? Why Do We Need These?</a></li>
+      </ol>
+    </li>
+    <li><a href="#step-1-install-nodejs">Step 1: Install Node.js</a>
+      <ol>
+        <li><a href="#11-download-nodejs">1.1 Download Node.js</a>
+          <ol>
+            <li><a href="#step-1-open-your-browser">Step 1: Open Your Browser</a></li>
+            <li><a href="#step-2-visit-the-nodejs-official-website">Step 2: Visit the Node.js Official Website</a></li>
+            <li><a href="#step-3-find-the-download-button">Step 3: Find the Download Button</a></li>
+            <li><a href="#step-4-find-the-downloaded-file">Step 4: Find the Downloaded File</a></li>
+          </ol>
+        </li>
+        <li><a href="#12-install-nodejs">1.2 Install Node.js</a>
+          <ol>
+            <li><a href="#step-1-double-click-the-installer">Step 1: Double-click the Installer</a></li>
+            <li><a href="#step-2-welcome-screen">Step 2: Welcome Screen</a></li>
+            <li><a href="#step-3-license-agreement">Step 3: License Agreement</a></li>
+            <li><a href="#step-4-installation-location--important-you-need-to-change-the-path">Step 4: Installation Location (⚠️ Important! You Need to Change the Path)</a></li>
+            <li><a href="#step-5-custom-setup">Step 5: Custom Setup</a></li>
+            <li><a href="#step-6-confirm-installation">Step 6: Confirm Installation</a></li>
+            <li><a href="#step-7-wait-for-installation">Step 7: Wait for Installation</a></li>
+            <li><a href="#step-8-finish">Step 8: Finish</a></li>
+          </ol>
+        </li>
+        <li><a href="#13-verify-nodejs-is-installed-correctly">1.3 Verify Node.js Is Installed Correctly</a>
+          <ol>
+            <li><a href="#step-1-open-command-prompt-cmd">Step 1: Open Command Prompt (CMD)</a></li>
+            <li><a href="#step-2-enter-verification-commands">Step 2: Enter Verification Commands</a></li>
+          </ol>
+        </li>
+        <li><a href="#14-how-to-configure-environment-variables">1.4 How to Configure Environment Variables</a>
+          <ol>
+            <li><a href="#check-if-nodejs-is-already-in-path">Check If Node.js Is Already in PATH</a></li>
+            <li><a href="#manually-add-nodejs-to-path">Manually Add Node.js to PATH</a></li>
+          </ol>
+        </li>
+        <li><a href="#15-configure-npm-domestic-mirror-strongly-recommended">1.5 Configure npm Domestic Mirror (Strongly Recommended)</a></li>
+      </ol>
+    </li>
+    <li><a href="#step-2-install-claude-code">Step 2: Install Claude Code</a>
+      <ol>
+        <li><a href="#21-install-claude-code-via-npm">2.1 Install Claude Code via npm</a></li>
+        <li><a href="#22-verify-installation">2.2 Verify Installation</a></li>
+        <li><a href="#23-first-launch-skip-login">2.3 First Launch (Skip Login)</a>
+          <ol>
+            <li><a href="#step-1-launch-claude-code-once">Step 1: Launch Claude Code Once</a></li>
+            <li><a href="#step-2-find-the-configuration-file">Step 2: Find the Configuration File</a></li>
+            <li><a href="#step-3-find-the-claudejson-file">Step 3: Find the <code>.claude.json</code> File</a></li>
+            <li><a href="#step-4-open-the-config-file-with-notepad">Step 4: Open the Config File with Notepad</a></li>
+            <li><a href="#step-5-edit-the-config-file">Step 5: Edit the Config File</a></li>
+            <li><a href="#step-6-save-the-file">Step 6: Save the File</a></li>
+            <li><a href="#step-7-verify-skip-login-worked">Step 7: Verify Skip Login Worked</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#step-3-install-cc-switch-model-switching-tool">Step 3: Install CC-Switch (Model Switching Tool)</a>
+      <ol>
+        <li><a href="#31-download-cc-switch">3.1 Download CC-Switch</a>
+          <ol>
+            <li><a href="#step-1-open-the-download-page">Step 1: Open the Download Page</a></li>
+            <li><a href="#step-2-find-the-latest-version">Step 2: Find the Latest Version</a></li>
+            <li><a href="#step-3-find-the-download-link">Step 3: Find the Download Link</a></li>
+          </ol>
+        </li>
+        <li><a href="#32-install-cc-switch">3.2 Install CC-Switch</a>
+          <ol>
+            <li><a href="#step-1-double-click-the-installer-1">Step 1: Double-click the Installer</a></li>
+            <li><a href="#step-2-follow-the-prompts">Step 2: Follow the Prompts</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#step-4-get-a-deepseek-api-key">Step 4: Get a DeepSeek API Key</a>
+      <ol>
+        <li><a href="#41-register-a-deepseek-account">4.1 Register a DeepSeek Account</a>
+          <ol>
+            <li><a href="#step-1-open-the-deepseek-open-platform">Step 1: Open the DeepSeek Open Platform</a></li>
+            <li><a href="#step-2-register--log-in">Step 2: Register / Log In</a></li>
+          </ol>
+        </li>
+        <li><a href="#42-add-funds-to-your-account">4.2 Add Funds to Your Account</a></li>
+        <li><a href="#43-create-an-api-key">4.3 Create an API Key</a>
+          <ol>
+            <li><a href="#step-1-go-to-the-api-keys-page">Step 1: Go to the API Keys Page</a></li>
+            <li><a href="#step-2-create-a-new-api-key">Step 2: Create a New API Key</a></li>
+            <li><a href="#step-3-copy-the-api-key--most-critical-step">Step 3: Copy the API Key (⚠️ Most Critical Step!)</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#step-5-configure-cc-switch-to-connect-deepseek">Step 5: Configure CC-Switch to Connect DeepSeek</a>
+      <ol>
+        <li><a href="#51-open-cc-switch">5.1 Open CC-Switch</a></li>
+        <li><a href="#52-add-a-deepseek-configuration">5.2 Add a DeepSeek Configuration</a>
+          <ol>
+            <li><a href="#step-1-click-the-add-button">Step 1: Click the Add Button</a></li>
+            <li><a href="#step-2-fill-in-the-configuration">Step 2: Fill In the Configuration</a></li>
+            <li><a href="#step-3-save-the-configuration">Step 3: Save the Configuration</a></li>
+          </ol>
+        </li>
+        <li><a href="#53-switch-to-deepseek">5.3 Switch to DeepSeek</a></li>
+        <li><a href="#54-verify-the-connection">5.4 Verify the Connection</a></li>
+      </ol>
+    </li>
+    <li><a href="#step-6-start-using-it-hands-on-example">Step 6: Start Using It (Hands-on Example)</a>
+      <ol>
+        <li><a href="#61-create-a-project-folder-and-open-command-prompt">6.1 Create a Project Folder and Open Command Prompt</a></li>
+        <li><a href="#62-launch-claude-code">6.2 Launch Claude Code</a></li>
+        <li><a href="#63-give-your-first-instruction">6.3 Give Your First Instruction</a></li>
+        <li><a href="#64-handle-permission-requests">6.4 Handle Permission Requests</a></li>
+        <li><a href="#65-check-the-result">6.5 Check the Result</a></li>
+      </ol>
+    </li>
+    <li><a href="#command-quick-reference">Command Quick Reference</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h2 id="overview">Overview
+</h2><h3 id="who-is-this-tutorial-for">Who Is This Tutorial For?
+</h3><p>This tutorial is for users <strong>with no computer background at all</strong>. You don&rsquo;t need to know what a &ldquo;command line&rdquo; is, what &ldquo;environment variables&rdquo; are, or what &ldquo;version management&rdquo; is — I will break down every step to the finest detail, telling you <strong>where to click, what to click, what to type, and what you should see to know it worked</strong>.</p>
+<h3 id="what-are-we-installing-why-do-we-need-these">What Are We Installing? Why Do We Need These?
+</h3><p>Before we start, let&rsquo;s understand the <strong>3 things</strong> we need to install and what each one does:</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>#</th>
+          <th>Software</th>
+          <th>One-Line Explanation</th>
+          <th>Why It&rsquo;s Required</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td><strong>Node.js</strong></td>
+          <td>The &ldquo;engine&rdquo; that lets your computer run JavaScript programs</td>
+          <td>Claude Code is written in JavaScript and won&rsquo;t run without it</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td><strong>Claude Code</strong></td>
+          <td>An AI programming assistant that lives in your computer&rsquo;s terminal</td>
+          <td>This is what we ultimately want to use</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td><strong>CC-Switch</strong></td>
+          <td>A small tool to &ldquo;swap the brain&rdquo; of Claude Code</td>
+          <td>Switches Claude Code from the expensive official model to the affordable DeepSeek</td>
+      </tr>
+  </tbody>
+</table></div>
+<p>The whole process takes about <strong>10-15 minutes</strong>. Please follow the steps in order — don&rsquo;t skip around.</p>
+<blockquote class="alert alert-important">
+        <div class="alert-header">
+            <span class="alert-icon">📌</span>
+            <span class="alert-title">Prerequisites</span>
+        </div>
+        <div class="alert-body">
+            <p>You need a <strong>Windows computer</strong> (Windows 10/11) with a working internet connection.</p>
+        </div>
+    </blockquote>
+<hr>
+<h2 id="step-1-install-nodejs">Step 1: Install Node.js
+</h2><blockquote class="alert alert-info">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">What is Node.js?</span>
+        </div>
+        <div class="alert-body">
+            <p><strong>Node.js = the runtime environment that lets your computer run Claude Code</strong>. It&rsquo;s completely free. Just like you need Windows installed before you can run software, you need Node.js installed before you can run Claude Code.</p>
+        </div>
+    </blockquote>
+<h3 id="11-download-nodejs">1.1 Download Node.js
+</h3><h4 id="step-1-open-your-browser">Step 1: Open Your Browser
+</h4><p>Open any browser on your computer (Chrome, Edge, or Firefox).</p>
+<h4 id="step-2-visit-the-nodejs-official-website">Step 2: Visit the Node.js Official Website
+</h4><p>Type the following URL into the browser&rsquo;s address bar (the long bar at the top where you enter web addresses) and press Enter:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://nodejs.org/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="step-3-find-the-download-button">Step 3: Find the Download Button
+</h4><p>Once the page loads, you&rsquo;ll see two large buttons in the center:</p>
+<ul>
+<li>The left button says <strong>LTS</strong> (with a recommended version number, e.g., <code>22.16.0 LTS</code>)</li>
+<li>The right button says <strong>Current</strong></li>
+</ul>
+<p><strong>Click the left LTS button</strong> — your browser will automatically start downloading a <code>.msi</code> file.</p>
+<h4 id="step-4-find-the-downloaded-file">Step 4: Find the Downloaded File
+</h4><p>Once the download completes (usually just a few seconds), there are two ways to find the file:</p>
+<ul>
+<li><strong>Method 1</strong>: Click the <strong>download list</strong> in the top-right corner of your browser (usually a downward arrow ↓ icon) and find the file you just downloaded — the filename will be something like <code>node-v22.16.0-x64.msi</code></li>
+<li><strong>Method 2</strong>: Open <strong>File Explorer</strong> (the window you use to browse folders), find the <strong>Downloads</strong> folder in the left sidebar, and the file will be inside</li>
+</ul>
+<h3 id="12-install-nodejs">1.2 Install Node.js
+</h3><h4 id="step-1-double-click-the-installer">Step 1: Double-click the Installer
+</h4><p>In the <strong>Downloads</strong> folder, find <code>node-v22.16.0-x64.msi</code> (the version number may differ slightly) and <strong>double-click it</strong>.</p>
+<h4 id="step-2-welcome-screen">Step 2: Welcome Screen
+</h4><p>A window titled <strong>Node.js Setup</strong> will appear.
+Click the <strong>Next</strong> button at the bottom.</p>
+<h4 id="step-3-license-agreement">Step 3: License Agreement
+</h4><p>The window displays a long block of English license text.</p>
+<ul>
+<li>Check the box in the bottom-left corner: <strong>I accept the terms in the License Agreement</strong></li>
+<li>Click <strong>Next</strong></li>
+</ul>
+<h4 id="step-4-installation-location--important-you-need-to-change-the-path">Step 4: Installation Location (⚠️ Important! You Need to Change the Path)
+</h4><p>This shows where Node.js will be installed on your computer.</p>
+<p><strong>The default path is</strong>: <code>C:\Program Files\nodejs\</code></p>
+<blockquote class="alert alert-important">
+        <div class="alert-header">
+            <span class="alert-icon">📌</span>
+            <span class="alert-title">Move It to the D Drive!</span>
+        </div>
+        <div class="alert-body">
+            <p><strong>It&rsquo;s recommended to install to the D drive</strong> because:</p>
+<ol>
+<li>The C drive is your system drive — putting too much on it slows down your computer</li>
+<li>The D drive is for software — if you ever need to reinstall Windows, everything on D stays safe</li>
+<li>It&rsquo;s easier to manage and find things</li>
+</ol>
+        </div>
+    </blockquote>
+<p><strong>Steps to change:</strong></p>
+<ol>
+<li>Click inside the path input box, <strong>select everything</strong> (press <code>Ctrl + A</code>), then <strong>delete it</strong></li>
+<li>Type the new path:
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">D:\nodejs\
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>Click <strong>Next</strong></li>
+</ol>
+<blockquote class="alert alert-tip">
+        <div class="alert-header">
+            <span class="alert-icon">💡</span>
+            <span class="alert-title">Note</span>
+        </div>
+        <div class="alert-body">
+            <p>Make sure the path has <strong>no Chinese characters or spaces</strong>, or the installation may fail.</p>
+        </div>
+    </blockquote>
+<h4 id="step-5-custom-setup">Step 5: Custom Setup
+</h4><p>A page with a tree-like checkbox list appears (Custom Setup).</p>
+<p><strong>Don&rsquo;t change anything</strong> — just click <strong>Next</strong>.</p>
+<h4 id="step-6-confirm-installation">Step 6: Confirm Installation
+</h4><p>Click the <strong>Install</strong> button. If a security prompt appears, click <strong>Yes</strong>.</p>
+<h4 id="step-7-wait-for-installation">Step 7: Wait for Installation
+</h4><p>The progress bar will complete — usually takes just <strong>10-30 seconds</strong>.</p>
+<h4 id="step-8-finish">Step 8: Finish
+</h4><p>Click <strong>Finish</strong>.</p>
+<blockquote class="alert alert-success">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">Node.js Installation Complete!</span>
+        </div>
+        <div class="alert-body">
+            <p>Both Node.js and npm (Node.js&rsquo;s package manager — think of it as an &ldquo;app store&rdquo;) are now installed.</p>
+        </div>
+    </blockquote>
+<h3 id="13-verify-nodejs-is-installed-correctly">1.3 Verify Node.js Is Installed Correctly
+</h3><p>After installation, we need to <strong>verify</strong> everything — like checking your groceries to make sure nothing&rsquo;s missing.</p>
+<h4 id="step-1-open-command-prompt-cmd">Step 1: Open Command Prompt (CMD)
+</h4><blockquote class="alert alert-info">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">What is &ldquo;Command Prompt&rdquo;?</span>
+        </div>
+        <div class="alert-body">
+            <p>Command Prompt (also called CMD) is a <strong>black window with white text</strong> where you can type text commands to make your computer do things. You&rsquo;ll use it often going forward.</p>
+        </div>
+    </blockquote>
+<p>How to open it (choose one):</p>
+<ul>
+<li>
+<p><strong>Method 1</strong> (Recommended):</p>
+<ol>
+<li>Hold down the <code>Win</code> key on your keyboard (bottom-left corner, the key with the Windows logo)</li>
+<li>While holding it, press the <code>R</code> key</li>
+<li>A small window titled &ldquo;Run&rdquo; will pop up — type <code>cmd</code> in it</li>
+<li>Click <strong>OK</strong> or press <strong>Enter</strong></li>
+</ol>
+</li>
+<li>
+<p><strong>Method 2</strong>:</p>
+<ol>
+<li>Click the <strong>Start menu</strong> in the bottom-left corner of your desktop (Windows icon)</li>
+<li>Type <code>cmd</code> in the search box</li>
+<li>Click <strong>Command Prompt</strong> in the search results</li>
+</ol>
+</li>
+</ul>
+<h4 id="step-2-enter-verification-commands">Step 2: Enter Verification Commands
+</h4><p>In the <strong>black window</strong> that opens, type the following (the characters will appear on screen as you type), then press <strong>Enter</strong>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">node -v
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>If the window displays something like <code>v22.16.0</code>, Node.js is installed successfully ✅</p>
+<p>Now type this command and press Enter:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">npm -v
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>If it displays a version number like <code>10.9.2</code>, npm is also working ✅</p>
+<blockquote class="alert alert-warning">
+        <div class="alert-header">
+            <span class="alert-icon">⚠️</span>
+            <span class="alert-title">Seeing &ldquo;&rsquo;node&rsquo; is not recognized as an internal or external command&rdquo;?</span>
+        </div>
+        <div class="alert-body">
+            <p>Your environment variables aren&rsquo;t set up correctly. See <strong>1.4 How to Configure Environment Variables</strong> below.</p>
+        </div>
+    </blockquote>
+<h3 id="14-how-to-configure-environment-variables">1.4 How to Configure Environment Variables
+</h3><blockquote class="alert alert-info">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">What Are Environment Variables (PATH)?</span>
+        </div>
+        <div class="alert-body">
+            <p>PATH can be thought of as your computer&rsquo;s &ldquo;address book.&rdquo; When you type <code>node</code> in the command prompt, your computer doesn&rsquo;t know where <code>node</code> is installed — it looks it up in PATH, the &ldquo;address book.&rdquo; If Node.js&rsquo;s installation directory isn&rsquo;t in PATH, the computer can&rsquo;t find it and reports &ldquo;&rsquo;node&rsquo; is not recognized.&rdquo;</p>
+<p>Normally, the Node.js installer adds itself to PATH automatically. But if something goes wrong, you need to add it manually.</p>
+        </div>
+    </blockquote>
+<h4 id="check-if-nodejs-is-already-in-path">Check If Node.js Is Already in PATH
+</h4><ol>
+<li>Press <code>Win + R</code>, type <code>sysdm.cpl</code>, press Enter</li>
+<li>Click the <strong>Advanced</strong> tab at the top</li>
+<li>Click the <strong>Environment Variables</strong> button at the bottom</li>
+<li>In the <strong>System variables</strong> list at the bottom, find the <strong>Path</strong> row, select it, and click <strong>Edit</strong></li>
+</ol>
+<p>In the list that pops up, check if there&rsquo;s an entry like:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">D:\nodejs\
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote class="alert alert-tip">
+        <div class="alert-header">
+            <span class="alert-icon">💡</span>
+            <span class="alert-title">The Path Must Match Where You Installed</span>
+        </div>
+        <div class="alert-body">
+            <p>If you installed to <code>D:\Software\nodejs\</code>, then the entry should show <code>D:\Software\nodejs\</code>.</p>
+        </div>
+    </blockquote>
+<p><strong>If the entry exists</strong>: PATH is fine, but if it&rsquo;s still not working, <strong>close all current Command Prompt windows and open a new one</strong>, then try again.</p>
+<p><strong>If the entry doesn&rsquo;t exist</strong>: Follow the steps below to add it manually.</p>
+<h4 id="manually-add-nodejs-to-path">Manually Add Node.js to PATH
+</h4><ol>
+<li>In the <strong>Edit Environment Variable</strong> window you just opened, click <strong>New</strong></li>
+<li>Type the Node.js installation path:
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">D:\nodejs\
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>Click <strong>OK</strong></li>
+<li>Click <strong>OK</strong> to close the Environment Variables window</li>
+<li>Click <strong>OK</strong> to close the System Properties window</li>
+<li><strong>Close all open Command Prompt windows and open a new one</strong> (old windows won&rsquo;t pick up the new settings)</li>
+<li>Type <code>node -v</code> again to verify</li>
+</ol>
+<h3 id="15-configure-npm-domestic-mirror-strongly-recommended">1.5 Configure npm Domestic Mirror (Strongly Recommended)
+</h3><blockquote class="alert alert-tip">
+        <div class="alert-header">
+            <span class="alert-icon">💡</span>
+            <span class="alert-title">Why Configure This?</span>
+        </div>
+        <div class="alert-body">
+            <p>By default, npm downloads software from overseas, which is very slow. Configuring a domestic mirror speeds up downloads by <strong>more than 10 times</strong>.</p>
+        </div>
+    </blockquote>
+<p>In Command Prompt, type the following command and press Enter:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">npm config set registry https://registry.npmmirror.com/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Verify with this command — if it shows <code>https://registry.npmmirror.com/</code>, it worked ✅:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">npm config get registry
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote class="alert alert-success">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">Step 1 Complete!</span>
+        </div>
+        <div class="alert-body">
+            <p>You&rsquo;ve installed Node.js on your computer and configured the domestic mirror. Now let&rsquo;s install Claude Code.</p>
+        </div>
+    </blockquote>
+<hr>
+<h2 id="step-2-install-claude-code">Step 2: Install Claude Code
+</h2><h3 id="21-install-claude-code-via-npm">2.1 Install Claude Code via npm
+</h3><p>Open Command Prompt (if not already open), type the following command, and press Enter:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">npm install -g @anthropic-ai/claude-code
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Wait for the installation to finish (usually <strong>1-3 minutes</strong>). Text will scroll on the screen — as long as there&rsquo;s no error at the end, you&rsquo;re fine.</p>
+<h3 id="22-verify-installation">2.2 Verify Installation
+</h3><p>Type:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">claude --version
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Press Enter. If it shows a version number (e.g., <code>1.0.x</code>), installation was successful ✅</p>
+<h3 id="23-first-launch-skip-login">2.3 First Launch (Skip Login)
+</h3><blockquote class="alert alert-info">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">Why Skip Login?</span>
+        </div>
+        <div class="alert-body">
+            <p>Claude Code officially requires you to log in with an Anthropic account. But Anthropic&rsquo;s services require an overseas credit card for payment, which is inconvenient for domestic users.</p>
+<p>Our approach: skip login first, then use the CC-Switch tool to connect to the domestic DeepSeek model. This way you <strong>don&rsquo;t need an Anthropic account</strong> at all, and the cost is much lower.</p>
+        </div>
+    </blockquote>
+<h4 id="step-1-launch-claude-code-once">Step 1: Launch Claude Code Once
+</h4><p>Type this in Command Prompt:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">claude
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Press Enter. Claude Code will launch and may display some introductory information or ask you to log in.</p>
+<p><strong>Ignore it — just close the Command Prompt window</strong> (click the × in the top-right corner).</p>
+<h4 id="step-2-find-the-configuration-file">Step 2: Find the Configuration File
+</h4><ol>
+<li>Press <code>Win + R</code> (Win key and R key at the same time)</li>
+<li>In the &ldquo;Run&rdquo; window that pops up, type <code>%USERPROFILE%</code></li>
+<li>Click <strong>OK</strong> or press Enter</li>
+<li>You&rsquo;ll see a folder with various files and subfolders</li>
+</ol>
+<h4 id="step-3-find-the-claudejson-file">Step 3: Find the <code>.claude.json</code> File
+</h4><p>In this folder, look for a file named <strong><code>.claude.json</code></strong>.</p>
+<blockquote class="alert alert-warning">
+        <div class="alert-header">
+            <span class="alert-icon">⚠️</span>
+            <span class="alert-title">Can&rsquo;t Find This File?</span>
+        </div>
+        <div class="alert-body">
+            <p>If you can&rsquo;t find <code>.claude.json</code>, possible reasons:</p>
+<ol>
+<li>File extensions are hidden — in the folder window, click <strong>View</strong> → check <strong>File name extensions</strong> and <strong>Hidden items</strong></li>
+<li>Claude Code hasn&rsquo;t created this file yet — go back to Step 1 and make sure you launched Claude Code at least once</li>
+<li>In some cases, the file might be inside the <code>.claude</code> folder, named <code>settings.json</code></li>
+</ol>
+        </div>
+    </blockquote>
+<h4 id="step-4-open-the-config-file-with-notepad">Step 4: Open the Config File with Notepad
+</h4><ol>
+<li>Right-click the <code>.claude.json</code> file</li>
+<li>In the popup menu, select <strong>Open with</strong></li>
+<li>Choose <strong>Notepad</strong>
+<ul>
+<li>If Notepad isn&rsquo;t in the list, select <strong>Choose another app</strong> → find <strong>Notepad</strong> in the list → click <strong>OK</strong></li>
+</ul>
+</li>
+</ol>
+<h4 id="step-5-edit-the-config-file">Step 5: Edit the Config File
+</h4><p>When you open it, you&rsquo;ll see something like this (the exact content may vary):</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;someField&#34;</span><span class="p">:</span> <span class="s2">&#34;someValue&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;anotherField&#34;</span><span class="p">:</span> <span class="s2">&#34;anotherValue&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>We need to add the line <code>&quot;hasCompletedOnboarding&quot;: true</code> before the final <code>}</code>.</p>
+<p>After editing, it should look like this:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;someField&#34;</span><span class="p">:</span> <span class="s2">&#34;someValue&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;anotherField&#34;</span><span class="p">:</span> <span class="s2">&#34;anotherValue&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;hasCompletedOnboarding&#34;</span><span class="p">:</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote class="alert alert-important">
+        <div class="alert-header">
+            <span class="alert-icon">📌</span>
+            <span class="alert-title">⚠️ Three Critical Details — Get These Wrong and It&rsquo;ll Break!</span>
+        </div>
+        <div class="alert-body">
+            <ol>
+<li><strong>Add a comma</strong>: the line <strong>before</strong> <code>hasCompletedOnboarding</code> needs an <strong>English comma</strong> <code>,</code> at the end</li>
+<li><strong>Use English quotes</strong>: the quotes must be English <code>&quot;</code>, not Chinese <code>&quot;</code></li>
+<li><strong>true is lowercase</strong>: it must be <code>true</code>, not <code>True</code></li>
+</ol>
+        </div>
+    </blockquote>
+<h4 id="step-6-save-the-file">Step 6: Save the File
+</h4><ol>
+<li>Press <code>Ctrl + S</code> to save (or click <strong>File</strong> → <strong>Save</strong> in the top-left corner)</li>
+<li>Close the Notepad window</li>
+</ol>
+<h4 id="step-7-verify-skip-login-worked">Step 7: Verify Skip Login Worked
+</h4><ol>
+<li>Reopen Command Prompt (<code>Win + R</code> → <code>cmd</code> → Enter)</li>
+<li>Type <code>claude</code>, press Enter</li>
+<li>If you <strong>go straight into Claude Code&rsquo;s main interface</strong> (with no login prompt), skip-login was successful ✅</li>
+</ol>
+<blockquote class="alert alert-success">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">Step 2 Complete!</span>
+        </div>
+        <div class="alert-body">
+            <p>Claude Code is installed and login has been skipped. Now let&rsquo;s install CC-Switch to connect DeepSeek.</p>
+        </div>
+    </blockquote>
+<hr>
+<h2 id="step-3-install-cc-switch-model-switching-tool">Step 3: Install CC-Switch (Model Switching Tool)
+</h2><blockquote class="alert alert-info">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">What Is CC-Switch?</span>
+        </div>
+        <div class="alert-body">
+            <p>CC-Switch is a <strong>visual tool</strong> that lets you swap Claude Code&rsquo;s &ldquo;brain&rdquo; from the official model to DeepSeek — no manual config file editing needed, just point and click.</p>
+        </div>
+    </blockquote>
+<h3 id="31-download-cc-switch">3.1 Download CC-Switch
+</h3><h4 id="step-1-open-the-download-page">Step 1: Open the Download Page
+</h4><p>Type the following URL into your browser&rsquo;s address bar and press Enter:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://github.com/cc-switch/cc-switch/releases
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="step-2-find-the-latest-version">Step 2: Find the Latest Version
+</h4><p>Once the page loads, find the version with the green <strong>Latest</strong> label and click to expand it.</p>
+<h4 id="step-3-find-the-download-link">Step 3: Find the Download Link
+</h4><p>After expanding, scroll down, find the word <strong>Assets</strong> (there may be a small arrow <code>▾</code> next to it), and click to expand it.</p>
+<p>Find the file ending with <code>.msi</code> (Windows installer) and click the filename to start the download.</p>
+<blockquote class="alert alert-tip">
+        <div class="alert-header">
+            <span class="alert-icon">💡</span>
+            <span class="alert-title">Which File to Choose?</span>
+        </div>
+        <div class="alert-body">
+            <ul>
+<li><strong>Windows computer</strong>: choose the file ending in <code>x64.msi</code></li>
+<li><strong>Mac computer</strong>: choose the file ending in <code>.dmg</code></li>
+</ul>
+        </div>
+    </blockquote>
+<h3 id="32-install-cc-switch">3.2 Install CC-Switch
+</h3><h4 id="step-1-double-click-the-installer-1">Step 1: Double-click the Installer
+</h4><p>In the <strong>Downloads</strong> folder, double-click the downloaded <code>.msi</code> file. If a security prompt appears, click <strong>Run anyway</strong> or <strong>More info</strong> → <strong>Run anyway</strong>.</p>
+<h4 id="step-2-follow-the-prompts">Step 2: Follow the Prompts
+</h4><p>The installation wizard is similar to Node.js:</p>
+<ol>
+<li>Click <strong>Next</strong></li>
+<li>Accept the agreement → <strong>Next</strong></li>
+<li>Keep the default installation path → <strong>Next</strong></li>
+<li>Click <strong>Install</strong></li>
+<li>Wait for installation to complete → <strong>Finish</strong></li>
+</ol>
+<blockquote class="alert alert-success">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">Step 3 Complete!</span>
+        </div>
+        <div class="alert-body">
+            <p>CC-Switch is installed. Now let&rsquo;s get a DeepSeek API Key.</p>
+        </div>
+    </blockquote>
+<hr>
+<h2 id="step-4-get-a-deepseek-api-key">Step 4: Get a DeepSeek API Key
+</h2><blockquote class="alert alert-info">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">What Is DeepSeek?</span>
+        </div>
+        <div class="alert-body">
+            <p>A domestic large language model with powerful performance and low pricing (about 10-30 RMB per month for daily use). Connecting to it dramatically reduces your usage costs.</p>
+        </div>
+    </blockquote>
+<blockquote class="alert alert-info">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">What Is an API Key?</span>
+        </div>
+        <div class="alert-body">
+            <p>An API Key is a <strong>key</strong> used to access DeepSeek&rsquo;s AI services. Each use deducts from your account balance. You need to: ① Register an account ② Add funds ③ Create a Key</p>
+        </div>
+    </blockquote>
+<h3 id="41-register-a-deepseek-account">4.1 Register a DeepSeek Account
+</h3><h4 id="step-1-open-the-deepseek-open-platform">Step 1: Open the DeepSeek Open Platform
+</h4><p>Type this into your browser&rsquo;s address bar:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://platform.deepseek.com/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Press Enter.</p>
+<blockquote class="alert alert-tip">
+        <div class="alert-header">
+            <span class="alert-icon">💡</span>
+            <span class="alert-title">Note</span>
+        </div>
+        <div class="alert-body">
+            <p>This is DeepSeek&rsquo;s <strong>developer platform</strong> (<code>platform.deepseek.com</code>), not the chat website (<code>chat.deepseek.com</code>). Don&rsquo;t mix them up.</p>
+        </div>
+    </blockquote>
+<h4 id="step-2-register--log-in">Step 2: Register / Log In
+</h4><ol>
+<li>In the top-right corner of the page, there are <strong>Log In</strong> / <strong>Sign Up</strong> buttons</li>
+<li>Click <strong>Sign Up</strong> (if you don&rsquo;t have an account) or <strong>Log In</strong> (if you already have one)</li>
+<li>Follow the on-screen prompts to complete registration</li>
+</ol>
+<h3 id="42-add-funds-to-your-account">4.2 Add Funds to Your Account
+</h3><blockquote class="alert alert-tip">
+        <div class="alert-header">
+            <span class="alert-icon">💡</span>
+            <span class="alert-title">Cost Reference</span>
+        </div>
+        <div class="alert-body">
+            <p>Daily use costs only about <strong>10-30 RMB per month</strong>. A first-time top-up of <strong>20-50 RMB</strong> is recommended.</p>
+        </div>
+    </blockquote>
+<ol>
+<li>After logging in, find <strong>Top Up</strong> (or <strong>Wallet</strong> / <strong>Billing</strong>) in the left sidebar menu and click it</li>
+<li>Select the amount, choose a payment method, and complete the payment</li>
+<li>Make sure your account balance is greater than 0 (you can&rsquo;t use the API without a balance)</li>
+</ol>
+<h3 id="43-create-an-api-key">4.3 Create an API Key
+</h3><h4 id="step-1-go-to-the-api-keys-page">Step 1: Go to the API Keys Page
+</h4><ol>
+<li>After logging in, find <strong>API Keys</strong> in the left sidebar menu and click it</li>
+<li>You&rsquo;ll see an API Keys management page</li>
+</ol>
+<h4 id="step-2-create-a-new-api-key">Step 2: Create a New API Key
+</h4><ol>
+<li>Click the <strong>Create API Key</strong> button</li>
+<li>A dialog will pop up asking you to name your Key
+<ul>
+<li>You can name it anything — <code>claude-code</code>, <code>my-key</code>, <code>test</code> are all fine</li>
+<li>The name is just for your own reference to distinguish different Keys</li>
+</ul>
+</li>
+<li>Click <strong>Confirm</strong> or <strong>Create</strong></li>
+</ol>
+<h4 id="step-3-copy-the-api-key--most-critical-step">Step 3: Copy the API Key (⚠️ Most Critical Step!)
+</h4><p>Once created, the page will display your API Key in a format like:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote class="alert alert-danger">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">⚠️ This Key Is Only Shown Once!</span>
+        </div>
+        <div class="alert-body">
+            <p>After you close the dialog, you&rsquo;ll <strong>never see it again</strong>. Copy and save it immediately to Notepad or WeChat File Transfer.</p>
+        </div>
+    </blockquote>
+<blockquote class="alert alert-caution">
+        <div class="alert-header">
+            <span class="alert-icon">🚨</span>
+            <span class="alert-title">Security Reminder</span>
+        </div>
+        <div class="alert-body">
+            <p>An API Key is equivalent to your account password. <strong>Don&rsquo;t share it with anyone</strong> and don&rsquo;t post it publicly. If you suspect it&rsquo;s been leaked, delete it immediately and create a new one.</p>
+        </div>
+    </blockquote>
+<blockquote class="alert alert-success">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">Step 4 Complete!</span>
+        </div>
+        <div class="alert-body">
+            <p>You now have a DeepSeek API Key. For the final step, we&rsquo;ll give this key to CC-Switch to complete the connection.</p>
+        </div>
+    </blockquote>
+<hr>
+<h2 id="step-5-configure-cc-switch-to-connect-deepseek">Step 5: Configure CC-Switch to Connect DeepSeek
+</h2><h3 id="51-open-cc-switch">5.1 Open CC-Switch
+</h3><p>Find the <strong>CC-Switch</strong> icon on your desktop or in the Start menu and double-click to open it.</p>
+<h3 id="52-add-a-deepseek-configuration">5.2 Add a DeepSeek Configuration
+</h3><h4 id="step-1-click-the-add-button">Step 1: Click the Add Button
+</h4><p>Once CC-Switch opens, find the <strong>+</strong> button (plus sign) in the top-right corner and click it.</p>
+<h4 id="step-2-fill-in-the-configuration">Step 2: Fill In the Configuration
+</h4><p>After clicking +, a configuration panel will pop up. Fill in the following:</p>
+<p><strong>① Model Preset</strong>: Select <strong>DeepSeek</strong></p>
+<p><strong>② API Key</strong>: Paste the DeepSeek API Key you copied earlier (make sure there are no leading or trailing spaces)</p>
+<p><strong>③ Model Name</strong>: Delete whatever is in the input box and type:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">deepseek-v4-pro[1m]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>④ Base URL / API Address</strong> (if present):</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://api.deepseek.com
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="step-3-save-the-configuration">Step 3: Save the Configuration
+</h4><p>After double-checking all fields, click <strong>Add</strong> / <strong>Save</strong> / <strong>Confirm</strong>.</p>
+<h3 id="53-switch-to-deepseek">5.3 Switch to DeepSeek
+</h3><ol>
+<li>Return to CC-Switch&rsquo;s main interface</li>
+<li>You&rsquo;ll see the DeepSeek configuration you just added in the list</li>
+<li>Click the <strong>Switch</strong> / <strong>Enable</strong> button next to that configuration</li>
+<li>The interface should show &ldquo;Current Model: DeepSeek&rdquo; or similar</li>
+</ol>
+<h3 id="54-verify-the-connection">5.4 Verify the Connection
+</h3><p>Open Command Prompt and type <code>claude</code> to launch Claude Code.</p>
+<p>Inside Claude Code, type:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">/model
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Press Enter. If the displayed model info includes <strong>DeepSeek</strong>, the connection is successful ✅</p>
+<blockquote class="alert alert-success">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">All Configuration Complete!</span>
+        </div>
+        <div class="alert-body">
+            <p>You can now start using the AI programming assistant!</p>
+        </div>
+    </blockquote>
+<hr>
+<h2 id="step-6-start-using-it-hands-on-example">Step 6: Start Using It (Hands-on Example)
+</h2><p>Now that everything is configured, let&rsquo;s do a simple exercise to make sure it all works.</p>
+<h3 id="61-create-a-project-folder-and-open-command-prompt">6.1 Create a Project Folder and Open Command Prompt
+</h3><ol>
+<li><strong>Right-click</strong> on the desktop → <strong>New</strong> → <strong>Folder</strong>, name it <code>my-first-ai-project</code></li>
+<li>Double-click to open the folder</li>
+<li><strong>Click the address bar at the top of the window</strong>, type <code>cmd</code>, and press Enter</li>
+</ol>
+<h3 id="62-launch-claude-code">6.2 Launch Claude Code
+</h3><p>In the Command Prompt window that appears, type:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">claude
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Press Enter. If asked whether to trust this folder, type <code>y</code> and press Enter.</p>
+<h3 id="63-give-your-first-instruction">6.3 Give Your First Instruction
+</h3><p>Once Claude Code starts, type the following (you can use plain English):</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Help me create a simple personal homepage using HTML + CSS + JavaScript, with a title, a short self-introduction, and a dark mode toggle button
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Press Enter to submit.</p>
+<h3 id="64-handle-permission-requests">6.4 Handle Permission Requests
+</h3><p>During execution, Claude Code may ask for permission to create/modify files — just select <strong>Yes</strong>. For your own projects, you can choose <strong>Yes, always allow</strong> (won&rsquo;t ask again).</p>
+<h3 id="65-check-the-result">6.5 Check the Result
+</h3><p>After completion, go back to the project folder and <strong>double-click <code>index.html</code></strong> — it&rsquo;ll open in your browser, and you&rsquo;ll see the webpage the AI created for you!</p>
+<blockquote class="alert alert-success">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">Congratulations!</span>
+        </div>
+        <div class="alert-body">
+            <p>You&rsquo;ve completed your first project with Claude Code + DeepSeek!</p>
+        </div>
+    </blockquote>
+<hr>
+<h2 id="command-quick-reference">Command Quick Reference
+</h2><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>Operation</th>
+          <th>Command</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Check Node.js version</td>
+          <td><code>node -v</code></td>
+          <td>Verify Node.js is installed</td>
+      </tr>
+      <tr>
+          <td>Check npm version</td>
+          <td><code>npm -v</code></td>
+          <td>Verify npm is working</td>
+      </tr>
+      <tr>
+          <td>Set npm mirror</td>
+          <td><code>npm config set registry https://registry.npmmirror.com/</code></td>
+          <td>Speed up downloads</td>
+      </tr>
+      <tr>
+          <td>Check npm mirror</td>
+          <td><code>npm config get registry</code></td>
+          <td>Verify mirror is active</td>
+      </tr>
+      <tr>
+          <td>Install Claude Code</td>
+          <td><code>npm install -g @anthropic-ai/claude-code</code></td>
+          <td>Global install</td>
+      </tr>
+      <tr>
+          <td>Check Claude Code version</td>
+          <td><code>claude --version</code></td>
+          <td>Verify Claude Code is installed</td>
+      </tr>
+      <tr>
+          <td>Launch Claude Code</td>
+          <td><code>claude</code></td>
+          <td>Start in current folder</td>
+      </tr>
+      <tr>
+          <td>Check current model</td>
+          <td><code>/model</code></td>
+          <td>Type inside Claude Code</td>
+      </tr>
+      <tr>
+          <td>Exit Claude Code</td>
+          <td><code>/exit</code> or press <code>Ctrl + C</code> twice</td>
+          <td>Quit the program</td>
+      </tr>
+  </tbody>
+</table></div>
+<hr>
+<h2 id="faq">FAQ
+</h2><blockquote class="alert alert-faq">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title"><code>node -v</code> says &ldquo;&rsquo;node&rsquo; is not recognized as an internal or external command&rdquo;?</span>
+        </div>
+        <div class="alert-body">
+            <p>Node.js environment variables (PATH) aren&rsquo;t configured correctly. Open File Explorer and go to <code>D:\nodejs\</code> to see if <code>node.exe</code> is there:</p>
+<ul>
+<li><strong>The file exists</strong>: Node.js is installed but PATH isn&rsquo;t set up — follow the steps in <strong>1.4 How to Configure Environment Variables</strong> to add it manually</li>
+<li><strong>The file doesn&rsquo;t exist</strong>: Installation failed — re-download and reinstall</li>
+</ul>
+        </div>
+    </blockquote>
+<blockquote class="alert alert-faq">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title"><code>claude</code> says &ldquo;&lsquo;claude&rsquo; is not recognized as an internal or external command&rdquo;?</span>
+        </div>
+        <div class="alert-body">
+            <p>Claude Code installation failed. First verify <code>node -v</code> and <code>npm -v</code> are working, then re-run <code>npm install -g @anthropic-ai/claude-code</code>.</p>
+        </div>
+    </blockquote>
+<blockquote class="alert alert-faq">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">Claude Code asks me to log in to an Anthropic account after launching?</span>
+        </div>
+        <div class="alert-body">
+            <p>The <code>.claude.json</code> file wasn&rsquo;t edited correctly. Press <code>Win + R</code>, type <code>%USERPROFILE%</code> and press Enter, find <code>.claude.json</code> and open it with Notepad. Make sure it contains <code>&quot;hasCompletedOnboarding&quot;: true</code>, with an English comma at the end of the preceding line, <code>true</code> in lowercase, and English quotation marks.</p>
+        </div>
+    </blockquote>
+<blockquote class="alert alert-faq">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">Claude Code shows errors or no response during conversation?</span>
+        </div>
+        <div class="alert-body">
+            <p>Common causes: ① DeepSeek account balance is insufficient ② API Key is entered incorrectly ③ Model name isn&rsquo;t <code>deepseek-v4-pro[1m]</code> ④ Network issues. Check each one.</p>
+        </div>
+    </blockquote>
+<blockquote class="alert alert-faq">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">npm install of Claude Code is very slow (over 5 minutes)?</span>
+        </div>
+        <div class="alert-body">
+            <p>Check if the domestic mirror is configured: <code>npm config get registry</code> (should show <code>registry.npmmirror.com</code>). If not, run <code>npm config set registry https://registry.npmmirror.com/</code> and retry.</p>
+        </div>
+    </blockquote>
+<blockquote class="alert alert-faq">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">CC-Switch won&rsquo;t open or crashes on launch?</span>
+        </div>
+        <div class="alert-body">
+            <p>Download the latest version from <a class="link" href="https://github.com/cc-switch/cc-switch/releases"  target="_blank" rel="noopener"
+    >GitHub Releases</a>, or try right-clicking and running as administrator.</p>
+        </div>
+    </blockquote>
+<blockquote class="alert alert-faq">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">GitHub page won&rsquo;t load?</span>
+        </div>
+        <div class="alert-body">
+            <p><strong>Cause</strong>: GitHub may be unstable to access from within China.
+<strong>Solutions</strong>:</p>
+<ol>
+<li>Refresh the page several times</li>
+<li>Try a different browser</li>
+<li>If you still can&rsquo;t access it, search for &ldquo;CC-Switch download&rdquo; online — some domestic mirror sites may also host the download</li>
+</ol>
+        </div>
+    </blockquote>
+<hr>
+<blockquote class="alert alert-abstract">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">Complete Process Review</span>
+        </div>
+        <div class="alert-body">
+            <div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>Step</th>
+          <th>Content</th>
+          <th>One-Line Summary</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Step 1</td>
+          <td>Install Node.js</td>
+          <td>Set up the &ldquo;runtime engine&rdquo; so your computer can run JavaScript programs</td>
+      </tr>
+      <tr>
+          <td>Step 2</td>
+          <td>Install Claude Code</td>
+          <td>Install the &ldquo;AI assistant&rdquo; and skip login</td>
+      </tr>
+      <tr>
+          <td>Step 3</td>
+          <td>Install CC-Switch</td>
+          <td>Install the &ldquo;brain-swapper&rdquo; to change AI models</td>
+      </tr>
+      <tr>
+          <td>Step 4</td>
+          <td>Get DeepSeek API Key</td>
+          <td>Get the &ldquo;key&rdquo; to access DeepSeek&rsquo;s AI services</td>
+      </tr>
+      <tr>
+          <td>Step 5</td>
+          <td>Configure CC-Switch</td>
+          <td>Use the &ldquo;brain-swapper&rdquo; + &ldquo;key&rdquo; to switch Claude Code&rsquo;s brain to DeepSeek</td>
+      </tr>
+      <tr>
+          <td>Step 6</td>
+          <td>Start Using</td>
+          <td>Type <code>claude</code> in any folder to launch your AI assistant!</td>
+      </tr>
+  </tbody>
+</table></div>
+<p>After completing all steps, you can open any folder on your computer, type the <code>claude</code> command, and launch a DeepSeek-powered AI programming assistant!</p>
+        </div>
+    </blockquote>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/en/tags/claudecode/">ClaudeCode</a>
+        
+            <a href="/en/tags/deepseek/">DeepSeek</a>
+        
+            <a href="/en/tags/ai-tools/">AI Tools</a>
+        
+            <a href="/en/tags/node.js/">Node.js</a>
+        
+            <a href="/en/tags/beginner-tutorial/">Beginner Tutorial</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under <a class="link" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"  target="_blank" rel="noopener"
+    >CC BY-NC-SA 4.0</a></span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title">Related content</h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/en/p/mcp-beginners-guide-the-universal-ai-plug-anyone-can-understand/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post MCP Beginner's Guide: The Universal AI Plug Anyone Can Understand" loading="lazy" src="/p/mcp%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97%E5%B0%8F%E7%99%BD%E4%B9%9F%E8%83%BD%E7%9C%8B%E6%87%82%E7%9A%84ai%E4%B8%87%E8%83%BD%E6%8F%92%E5%A4%B4/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">MCP Beginner&#39;s Guide: The Universal AI Plug Anyone Can Understand</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/en/p/hugo--stack--github-pages-blog-setup-guide/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post Hugo + Stack + GitHub Pages Blog Setup Guide" loading="lazy" src="/p/hugo--stack--github-pages-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Hugo &#43; Stack &#43; GitHub Pages Blog Setup Guide</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/en/p/install-claude-code-in-5-minutes-and-connect-deepseek/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post Install Claude Code in 5 Minutes and Connect DeepSeek" loading="lazy" src="/p/5%E5%88%86%E9%92%9F%E5%AE%89%E8%A3%85claudecode%E5%B9%B6%E6%8E%A5%E5%85%A5deepseek/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Install Claude Code in 5 Minutes and Connect DeepSeek</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/en/p/the-evolution-of-ai-programming/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post The Evolution of AI Programming" loading="lazy" src="/p/ai%E7%BC%96%E7%A8%8B%E8%BF%9B%E5%8C%96%E5%8F%B2/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">The Evolution of AI Programming</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/en/p/opencode--obsidian-build-your-ai-powered-knowledge-management-workflow/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post OpenCode + Obsidian: Build Your AI-Powered Knowledge Management Workflow" loading="lazy" src="/p/opencode--obsidian%E6%89%93%E9%80%A0%E4%BD%A0%E7%9A%84ai%E9%A9%B1%E5%8A%A8%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E5%B7%A5%E4%BD%9C%E6%B5%81/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">OpenCode &#43; Obsidian: Build Your AI-Powered Knowledge Management Workflow</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+
+        <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2026 Yanmu
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="4.0.2">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.1ff1e5fdc4e178ed422e50aa407526dc552f26342d729343fded19416194382c.js" defer></script>
+
+
+    </body>
+</html>

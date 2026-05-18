@@ -1,0 +1,1872 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="概述 这份教程是给谁看的？ 这份教程面向完全没有计算机基础的用户。你不需要知道什么是&quot;命令行&quot;、什么是&quot;环境变量&quot;、什么是&quot;版本管理&quot;——我会把每一步都拆解到最细，告诉你在哪里点、点什么、输入什么、看到什么说明成功了。\n">
+<title>安装ClaudeCode并接入DeepSeek（面向小白）</title>
+
+
+<link rel="canonical" href="https://AkuamT.github.io/p/%E5%AE%89%E8%A3%85claudecode%E5%B9%B6%E6%8E%A5%E5%85%A5deepseek%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.ed668df6847002e96da55125322b5655e4e3773453c2addee35312e6bbf6cb10.css"><meta property='og:title' content="安装ClaudeCode并接入DeepSeek（面向小白）">
+<meta property='og:description' content="概述 这份教程是给谁看的？ 这份教程面向完全没有计算机基础的用户。你不需要知道什么是&quot;命令行&quot;、什么是&quot;环境变量&quot;、什么是&quot;版本管理&quot;——我会把每一步都拆解到最细，告诉你在哪里点、点什么、输入什么、看到什么说明成功了。\n">
+<meta property='og:url' content='https://AkuamT.github.io/p/%E5%AE%89%E8%A3%85claudecode%E5%B9%B6%E6%8E%A5%E5%85%A5deepseek%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD/'>
+<meta property='og:site_name' content='Yanmu'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='ClaudeCode' /><meta property='article:tag' content='DeepSeek' /><meta property='article:tag' content='AI工具' /><meta property='article:tag' content='Node.js' /><meta property='article:tag' content='新手教程' /><meta property='article:published_time' content='2026-05-18T02:00:15&#43;08:00'/><meta property='article:modified_time' content='2026-05-18T02:00:15&#43;08:00'/><meta property='og:image' content='https://AkuamT.github.io/p/%E5%AE%89%E8%A3%85claudecode%E5%B9%B6%E6%8E%A5%E5%85%A5deepseek%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD/cover.svg' />
+<meta name="twitter:title" content="安装ClaudeCode并接入DeepSeek（面向小白）">
+<meta name="twitter:description" content="概述 这份教程是给谁看的？ 这份教程面向完全没有计算机基础的用户。你不需要知道什么是&quot;命令行&quot;、什么是&quot;环境变量&quot;、什么是&quot;版本管理&quot;——我会把每一步都拆解到最细，告诉你在哪里点、点什么、输入什么、看到什么说明成功了。\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://AkuamT.github.io/p/%E5%AE%89%E8%A3%85claudecode%E5%B9%B6%E6%8E%A5%E5%85%A5deepseek%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD/cover.svg' />
+    <link rel="shortcut icon" href="img/avatar.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/">
+                    <img src="/img/Yanmu.jpg" 
+                        width="1024"
+                        height="1037"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">💻 </span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Yanmu</a></h1>
+            <h2 class="site-description">「愿你成为自己的太阳，无需借谁的光」</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/CaiJimmy/hugo-theme-stack'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E9%93%BE%E6%8E%A5/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                <option value="/p/%E5%AE%89%E8%A3%85claudecode%E5%B9%B6%E6%8E%A5%E5%85%A5deepseek%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD/" selected>简体中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                <option value="/en/p/install-claude-code-and-connect-deepseek-beginner-friendly-guide/" >English</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                <option value="/zh-hant-tw/p/%E5%AE%89%E8%A3%9Dclaudecode%E4%B8%A6%E6%8E%A5%E5%85%A5deepseek%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD/" >繁体中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/ja/p/claude-code%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%97%E3%81%A6deepseek%E3%81%AB%E6%8E%A5%E7%B6%9A%E3%81%99%E3%82%8B%E5%88%9D%E5%BF%83%E8%80%85%E5%90%91%E3%81%91%E3%82%AC%E3%82%A4%E3%83%89/" >日本語</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#概述">概述</a>
+      <ol>
+        <li><a href="#这份教程是给谁看的">这份教程是给谁看的？</a></li>
+        <li><a href="#你要装什么为什么要装这些">你要装什么？为什么要装这些？</a></li>
+      </ol>
+    </li>
+    <li><a href="#第一步安装-nodejs">第一步：安装 Node.js</a>
+      <ol>
+        <li><a href="#11-下载-nodejs">1.1 下载 Node.js</a>
+          <ol>
+            <li><a href="#第-1-步打开浏览器">第 1 步：打开浏览器</a></li>
+            <li><a href="#第-2-步访问-nodejs-官网">第 2 步：访问 Node.js 官网</a></li>
+            <li><a href="#第-3-步找到下载按钮">第 3 步：找到下载按钮</a></li>
+            <li><a href="#第-4-步找到下载好的文件">第 4 步：找到下载好的文件</a></li>
+          </ol>
+        </li>
+        <li><a href="#12-安装-nodejs">1.2 安装 Node.js</a>
+          <ol>
+            <li><a href="#第-1-步双击安装文件">第 1 步：双击安装文件</a></li>
+            <li><a href="#第-2-步欢迎界面">第 2 步：欢迎界面</a></li>
+            <li><a href="#第-3-步许可协议">第 3 步：许可协议</a></li>
+            <li><a href="#第-4-步安装位置-重要需要修改路径">第 4 步：安装位置（⚠️ 重要！需要修改路径）</a></li>
+            <li><a href="#第-5-步自定义安装">第 5 步：自定义安装</a></li>
+            <li><a href="#第-6-步确认安装">第 6 步：确认安装</a></li>
+            <li><a href="#第-7-步等待安装">第 7 步：等待安装</a></li>
+            <li><a href="#第-8-步完成">第 8 步：完成</a></li>
+          </ol>
+        </li>
+        <li><a href="#13-验证-nodejs-是否安装成功">1.3 验证 Node.js 是否安装成功</a>
+          <ol>
+            <li><a href="#第-1-步打开命令提示符cmd">第 1 步：打开命令提示符（CMD）</a></li>
+            <li><a href="#第-2-步输入验证命令">第 2 步：输入验证命令</a></li>
+          </ol>
+        </li>
+        <li><a href="#14-如何配置环境变量">1.4 如何配置环境变量</a>
+          <ol>
+            <li><a href="#查看-path-里有没有-nodejs">查看 PATH 里有没有 Node.js</a></li>
+            <li><a href="#手动添加-nodejs-到-path">手动添加 Node.js 到 PATH</a></li>
+          </ol>
+        </li>
+        <li><a href="#15-配置-npm-国内镜像强烈推荐">1.5 配置 npm 国内镜像（强烈推荐）</a></li>
+      </ol>
+    </li>
+    <li><a href="#第二步安装-claude-code">第二步：安装 Claude Code</a>
+      <ol>
+        <li><a href="#21-通过-npm-安装-claude-code">2.1 通过 npm 安装 Claude Code</a></li>
+        <li><a href="#22-验证安装">2.2 验证安装</a></li>
+        <li><a href="#23-首次启动跳过登录">2.3 首次启动（跳过登录）</a>
+          <ol>
+            <li><a href="#第-1-步先启动一次-claude-code">第 1 步：先启动一次 Claude Code</a></li>
+            <li><a href="#第-2-步找到配置文件">第 2 步：找到配置文件</a></li>
+            <li><a href="#第-3-步找到-claudejson-文件">第 3 步：找到 .claude.json 文件</a></li>
+            <li><a href="#第-4-步用记事本打开配置文件">第 4 步：用记事本打开配置文件</a></li>
+            <li><a href="#第-5-步编辑配置文件">第 5 步：编辑配置文件</a></li>
+            <li><a href="#第-6-步保存文件">第 6 步：保存文件</a></li>
+            <li><a href="#第-7-步验证跳过登录是否成功">第 7 步：验证跳过登录是否成功</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#第三步安装-cc-switch模型切换工具">第三步：安装 CC-Switch（模型切换工具）</a>
+      <ol>
+        <li><a href="#31-下载-cc-switch">3.1 下载 CC-Switch</a>
+          <ol>
+            <li><a href="#第-1-步打开下载页面">第 1 步：打开下载页面</a></li>
+            <li><a href="#第-2-步找到最新版本">第 2 步：找到最新版本</a></li>
+            <li><a href="#第-3-步找到下载链接">第 3 步：找到下载链接</a></li>
+          </ol>
+        </li>
+        <li><a href="#32-安装-cc-switch">3.2 安装 CC-Switch</a>
+          <ol>
+            <li><a href="#第-1-步双击安装文件-1">第 1 步：双击安装文件</a></li>
+            <li><a href="#第-2-步按提示安装">第 2 步：按提示安装</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#第四步获取-deepseek-api-key">第四步：获取 DeepSeek API Key</a>
+      <ol>
+        <li><a href="#41-注册-deepseek-账号">4.1 注册 DeepSeek 账号</a>
+          <ol>
+            <li><a href="#第-1-步打开-deepseek-开放平台">第 1 步：打开 DeepSeek 开放平台</a></li>
+            <li><a href="#第-2-步注册登录">第 2 步：注册/登录</a></li>
+          </ol>
+        </li>
+        <li><a href="#42-充值余额">4.2 充值余额</a></li>
+        <li><a href="#43-创建-api-key">4.3 创建 API Key</a>
+          <ol>
+            <li><a href="#第-1-步进入-api-keys-页面">第 1 步：进入 API Keys 页面</a></li>
+            <li><a href="#第-2-步创建新的-api-key">第 2 步：创建新的 API Key</a></li>
+            <li><a href="#第-3-步复制-api-key-最关键的一步">第 3 步：复制 API Key（⚠️ 最关键的一步！）</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#第五步配置-cc-switch-接入-deepseek">第五步：配置 CC-Switch 接入 DeepSeek</a>
+      <ol>
+        <li><a href="#51-打开-cc-switch">5.1 打开 CC-Switch</a></li>
+        <li><a href="#52-添加-deepseek-配置">5.2 添加 DeepSeek 配置</a>
+          <ol>
+            <li><a href="#第-1-步点击添加按钮">第 1 步：点击添加按钮</a></li>
+            <li><a href="#第-2-步填写配置信息">第 2 步：填写配置信息</a></li>
+            <li><a href="#第-3-步保存配置">第 3 步：保存配置</a></li>
+          </ol>
+        </li>
+        <li><a href="#53-切换到-deepseek">5.3 切换到 DeepSeek</a></li>
+        <li><a href="#54-验证接入是否成功">5.4 验证接入是否成功</a></li>
+      </ol>
+    </li>
+    <li><a href="#第六步开始使用实战示例">第六步：开始使用（实战示例）</a>
+      <ol>
+        <li><a href="#61-创建项目文件夹并打开命令提示符">6.1 创建项目文件夹并打开命令提示符</a></li>
+        <li><a href="#62-启动-claude-code">6.2 启动 Claude Code</a></li>
+        <li><a href="#63-发出第一个指令">6.3 发出第一个指令</a></li>
+        <li><a href="#64-处理权限请求">6.4 处理权限请求</a></li>
+        <li><a href="#65-查看成果">6.5 查看成果</a></li>
+      </ol>
+    </li>
+    <li><a href="#常用命令速查表">常用命令速查表</a></li>
+    <li><a href="#常见问题-faq">常见问题 FAQ</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/p/%E5%AE%89%E8%A3%85claudecode%E5%B9%B6%E6%8E%A5%E5%85%A5deepseek%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD/">
+            <img alt="Featured image of post 安装ClaudeCode并接入DeepSeek（面向小白）" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E5%AE%89%E8%A3%85claudecode%E5%B9%B6%E6%8E%A5%E5%85%A5deepseek%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD/cover.svg">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/categories/ai%E5%B7%A5%E5%85%B7/" style="background-color: #7c3aed; color: #fff;">
+                AI工具
+            </a>
+        
+            
+            
+            
+            <a href="/categories/%E6%95%99%E7%A8%8B/" style="background-color: #2563eb; color: #fff;">
+                教程
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E5%AE%89%E8%A3%85claudecode%E5%B9%B6%E6%8E%A5%E5%85%A5deepseek%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD/">安装ClaudeCode并接入DeepSeek（面向小白）</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-05-18T02:00:15&#43;08:00'>2026年5月18日星期一</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        阅读时长: 13 分钟
+                    </time>
+                
+            </div>
+        
+
+        
+            <div class="inline-meta">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                
+                    <a href="/en/p/install-claude-code-and-connect-deepseek-beginner-friendly-guide/" class="link">English</a>
+                
+                    <a href="/zh-hant-tw/p/%E5%AE%89%E8%A3%9Dclaudecode%E4%B8%A6%E6%8E%A5%E5%85%A5deepseek%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD/" class="link">繁体中文</a>
+                
+                    <a href="/ja/p/claude-code%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%97%E3%81%A6deepseek%E3%81%AB%E6%8E%A5%E7%B6%9A%E3%81%99%E3%82%8B%E5%88%9D%E5%BF%83%E8%80%85%E5%90%91%E3%81%91%E3%82%AC%E3%82%A4%E3%83%89/" class="link">日本語</a>
+                
+            </div>
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span>目录</span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#概述">概述</a>
+      <ol>
+        <li><a href="#这份教程是给谁看的">这份教程是给谁看的？</a></li>
+        <li><a href="#你要装什么为什么要装这些">你要装什么？为什么要装这些？</a></li>
+      </ol>
+    </li>
+    <li><a href="#第一步安装-nodejs">第一步：安装 Node.js</a>
+      <ol>
+        <li><a href="#11-下载-nodejs">1.1 下载 Node.js</a>
+          <ol>
+            <li><a href="#第-1-步打开浏览器">第 1 步：打开浏览器</a></li>
+            <li><a href="#第-2-步访问-nodejs-官网">第 2 步：访问 Node.js 官网</a></li>
+            <li><a href="#第-3-步找到下载按钮">第 3 步：找到下载按钮</a></li>
+            <li><a href="#第-4-步找到下载好的文件">第 4 步：找到下载好的文件</a></li>
+          </ol>
+        </li>
+        <li><a href="#12-安装-nodejs">1.2 安装 Node.js</a>
+          <ol>
+            <li><a href="#第-1-步双击安装文件">第 1 步：双击安装文件</a></li>
+            <li><a href="#第-2-步欢迎界面">第 2 步：欢迎界面</a></li>
+            <li><a href="#第-3-步许可协议">第 3 步：许可协议</a></li>
+            <li><a href="#第-4-步安装位置-重要需要修改路径">第 4 步：安装位置（⚠️ 重要！需要修改路径）</a></li>
+            <li><a href="#第-5-步自定义安装">第 5 步：自定义安装</a></li>
+            <li><a href="#第-6-步确认安装">第 6 步：确认安装</a></li>
+            <li><a href="#第-7-步等待安装">第 7 步：等待安装</a></li>
+            <li><a href="#第-8-步完成">第 8 步：完成</a></li>
+          </ol>
+        </li>
+        <li><a href="#13-验证-nodejs-是否安装成功">1.3 验证 Node.js 是否安装成功</a>
+          <ol>
+            <li><a href="#第-1-步打开命令提示符cmd">第 1 步：打开命令提示符（CMD）</a></li>
+            <li><a href="#第-2-步输入验证命令">第 2 步：输入验证命令</a></li>
+          </ol>
+        </li>
+        <li><a href="#14-如何配置环境变量">1.4 如何配置环境变量</a>
+          <ol>
+            <li><a href="#查看-path-里有没有-nodejs">查看 PATH 里有没有 Node.js</a></li>
+            <li><a href="#手动添加-nodejs-到-path">手动添加 Node.js 到 PATH</a></li>
+          </ol>
+        </li>
+        <li><a href="#15-配置-npm-国内镜像强烈推荐">1.5 配置 npm 国内镜像（强烈推荐）</a></li>
+      </ol>
+    </li>
+    <li><a href="#第二步安装-claude-code">第二步：安装 Claude Code</a>
+      <ol>
+        <li><a href="#21-通过-npm-安装-claude-code">2.1 通过 npm 安装 Claude Code</a></li>
+        <li><a href="#22-验证安装">2.2 验证安装</a></li>
+        <li><a href="#23-首次启动跳过登录">2.3 首次启动（跳过登录）</a>
+          <ol>
+            <li><a href="#第-1-步先启动一次-claude-code">第 1 步：先启动一次 Claude Code</a></li>
+            <li><a href="#第-2-步找到配置文件">第 2 步：找到配置文件</a></li>
+            <li><a href="#第-3-步找到-claudejson-文件">第 3 步：找到 .claude.json 文件</a></li>
+            <li><a href="#第-4-步用记事本打开配置文件">第 4 步：用记事本打开配置文件</a></li>
+            <li><a href="#第-5-步编辑配置文件">第 5 步：编辑配置文件</a></li>
+            <li><a href="#第-6-步保存文件">第 6 步：保存文件</a></li>
+            <li><a href="#第-7-步验证跳过登录是否成功">第 7 步：验证跳过登录是否成功</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#第三步安装-cc-switch模型切换工具">第三步：安装 CC-Switch（模型切换工具）</a>
+      <ol>
+        <li><a href="#31-下载-cc-switch">3.1 下载 CC-Switch</a>
+          <ol>
+            <li><a href="#第-1-步打开下载页面">第 1 步：打开下载页面</a></li>
+            <li><a href="#第-2-步找到最新版本">第 2 步：找到最新版本</a></li>
+            <li><a href="#第-3-步找到下载链接">第 3 步：找到下载链接</a></li>
+          </ol>
+        </li>
+        <li><a href="#32-安装-cc-switch">3.2 安装 CC-Switch</a>
+          <ol>
+            <li><a href="#第-1-步双击安装文件-1">第 1 步：双击安装文件</a></li>
+            <li><a href="#第-2-步按提示安装">第 2 步：按提示安装</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#第四步获取-deepseek-api-key">第四步：获取 DeepSeek API Key</a>
+      <ol>
+        <li><a href="#41-注册-deepseek-账号">4.1 注册 DeepSeek 账号</a>
+          <ol>
+            <li><a href="#第-1-步打开-deepseek-开放平台">第 1 步：打开 DeepSeek 开放平台</a></li>
+            <li><a href="#第-2-步注册登录">第 2 步：注册/登录</a></li>
+          </ol>
+        </li>
+        <li><a href="#42-充值余额">4.2 充值余额</a></li>
+        <li><a href="#43-创建-api-key">4.3 创建 API Key</a>
+          <ol>
+            <li><a href="#第-1-步进入-api-keys-页面">第 1 步：进入 API Keys 页面</a></li>
+            <li><a href="#第-2-步创建新的-api-key">第 2 步：创建新的 API Key</a></li>
+            <li><a href="#第-3-步复制-api-key-最关键的一步">第 3 步：复制 API Key（⚠️ 最关键的一步！）</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#第五步配置-cc-switch-接入-deepseek">第五步：配置 CC-Switch 接入 DeepSeek</a>
+      <ol>
+        <li><a href="#51-打开-cc-switch">5.1 打开 CC-Switch</a></li>
+        <li><a href="#52-添加-deepseek-配置">5.2 添加 DeepSeek 配置</a>
+          <ol>
+            <li><a href="#第-1-步点击添加按钮">第 1 步：点击添加按钮</a></li>
+            <li><a href="#第-2-步填写配置信息">第 2 步：填写配置信息</a></li>
+            <li><a href="#第-3-步保存配置">第 3 步：保存配置</a></li>
+          </ol>
+        </li>
+        <li><a href="#53-切换到-deepseek">5.3 切换到 DeepSeek</a></li>
+        <li><a href="#54-验证接入是否成功">5.4 验证接入是否成功</a></li>
+      </ol>
+    </li>
+    <li><a href="#第六步开始使用实战示例">第六步：开始使用（实战示例）</a>
+      <ol>
+        <li><a href="#61-创建项目文件夹并打开命令提示符">6.1 创建项目文件夹并打开命令提示符</a></li>
+        <li><a href="#62-启动-claude-code">6.2 启动 Claude Code</a></li>
+        <li><a href="#63-发出第一个指令">6.3 发出第一个指令</a></li>
+        <li><a href="#64-处理权限请求">6.4 处理权限请求</a></li>
+        <li><a href="#65-查看成果">6.5 查看成果</a></li>
+      </ol>
+    </li>
+    <li><a href="#常用命令速查表">常用命令速查表</a></li>
+    <li><a href="#常见问题-faq">常见问题 FAQ</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h2 id="概述">概述
+</h2><h3 id="这份教程是给谁看的">这份教程是给谁看的？
+</h3><p>这份教程面向<strong>完全没有计算机基础</strong>的用户。你不需要知道什么是&quot;命令行&quot;、什么是&quot;环境变量&quot;、什么是&quot;版本管理&quot;——我会把每一步都拆解到最细，告诉你<strong>在哪里点、点什么、输入什么、看到什么说明成功了</strong>。</p>
+<h3 id="你要装什么为什么要装这些">你要装什么？为什么要装这些？
+</h3><p>在开始之前，先了解我们一共要安装 <strong>3 个东西</strong>，它们各自的作用：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>序号</th>
+          <th>软件名称</th>
+          <th>一句话解释</th>
+          <th>为什么必须装</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td><strong>Node.js</strong></td>
+          <td>让你的电脑能运行 JavaScript 程序的&quot;引擎&quot;</td>
+          <td>Claude Code 是用 JavaScript 写的，没有它就跑不起来</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td><strong>Claude Code</strong></td>
+          <td>一个住在你电脑终端里的 AI 编程助手</td>
+          <td>这就是我们最终要用的东西</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td><strong>CC-Switch</strong></td>
+          <td>一个给 Claude Code &ldquo;换大脑&quot;的小工具</td>
+          <td>让 Claude Code 从昂贵的官方模型换成便宜的 DeepSeek</td>
+      </tr>
+  </tbody>
+</table></div>
+<p>整个过程大约需要 <strong>10-15 分钟</strong>。请按顺序一步步来，不要跳步。</p>
+<blockquote class="alert alert-important">
+        <div class="alert-header">
+            <span class="alert-icon">📌</span>
+            <span class="alert-title">前提条件</span>
+        </div>
+        <div class="alert-body">
+            <p>你需要一台 <strong>Windows 电脑</strong>（Windows 10/11），能正常上网。</p>
+        </div>
+    </blockquote>
+<hr>
+<h2 id="第一步安装-nodejs">第一步：安装 Node.js
+</h2><blockquote class="alert alert-info">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">什么是 Node.js？</span>
+        </div>
+        <div class="alert-body">
+            <p><strong>Node.js = 让电脑能运行 Claude Code 的运行环境</strong>。它是完全免费的，就像你需要先装好 Windows 系统才能运行软件一样，你需要先装好 Node.js 才能运行 Claude Code。</p>
+        </div>
+    </blockquote>
+<h3 id="11-下载-nodejs">1.1 下载 Node.js
+</h3><h4 id="第-1-步打开浏览器">第 1 步：打开浏览器
+</h4><p>打开你电脑上任意一个浏览器（Chrome、Edge、Firefox 都可以）。</p>
+<h4 id="第-2-步访问-nodejs-官网">第 2 步：访问 Node.js 官网
+</h4><p>在浏览器地址栏（顶部输入网址的长条框）中输入以下网址，然后按回车：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://nodejs.org/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="第-3-步找到下载按钮">第 3 步：找到下载按钮
+</h4><p>打开网页后，你会看到页面中央有两个大按钮：</p>
+<ul>
+<li>左边的按钮写着 <strong>LTS</strong>（推荐的版本号，比如 <code>22.16.0 LTS</code>）</li>
+<li>右边的按钮写着 <strong>Current</strong></li>
+</ul>
+<p><strong>点击左边的 LTS 按钮</strong>，浏览器会自动开始下载一个 <code>.msi</code> 文件。</p>
+<h4 id="第-4-步找到下载好的文件">第 4 步：找到下载好的文件
+</h4><p>下载完成后（通常只需几秒钟），有两种方式找到这个文件：</p>
+<ul>
+<li><strong>方式一</strong>：点击浏览器右上角的<strong>下载列表</strong>（通常是一个向下的箭头 ↓ 图标），在列表中找到刚才下载的文件，文件名类似 <code>node-v22.16.0-x64.msi</code></li>
+<li><strong>方式二</strong>：打开<strong>文件资源管理器</strong>（就是你看文件夹的那个窗口），在左侧找到<strong>下载</strong>文件夹，里面就有这个文件</li>
+</ul>
+<h3 id="12-安装-nodejs">1.2 安装 Node.js
+</h3><h4 id="第-1-步双击安装文件">第 1 步：双击安装文件
+</h4><p>在<strong>下载</strong>文件夹中，找到 <code>node-v22.16.0-x64.msi</code>（版本号可能略有不同），<strong>双击它</strong>。</p>
+<h4 id="第-2-步欢迎界面">第 2 步：欢迎界面
+</h4><p>弹出一个标题为 <strong>Node.js Setup</strong>（Node.js 安装向导）的窗口。
+点击底部的 <strong>Next</strong>（下一步）按钮。</p>
+<h4 id="第-3-步许可协议">第 3 步：许可协议
+</h4><p>窗口中显示一大段英文协议文字。</p>
+<ul>
+<li>勾选左下角的复选框：<strong>I accept the terms in the License Agreement</strong>（我接受许可协议中的条款）</li>
+<li>点击 <strong>Next</strong></li>
+</ul>
+<h4 id="第-4-步安装位置-重要需要修改路径">第 4 步：安装位置（⚠️ 重要！需要修改路径）
+</h4><p>这里显示的是 Node.js 将要安装到你电脑的哪个位置。</p>
+<p><strong>默认路径是</strong>：<code>C:\Program Files\nodejs\</code></p>
+<blockquote class="alert alert-important">
+        <div class="alert-header">
+            <span class="alert-icon">📌</span>
+            <span class="alert-title">我们要把它改到 D 盘！</span>
+        </div>
+        <div class="alert-body">
+            <p><strong>建议安装到 D 盘</strong>，原因：</p>
+<ol>
+<li>C 盘是系统盘，放太多东西会影响电脑速度</li>
+<li>D 盘专门用来装软件，万一系统重装了，D 盘的东西还在</li>
+<li>方便管理和查找</li>
+</ol>
+        </div>
+    </blockquote>
+<p><strong>修改步骤：</strong></p>
+<ol>
+<li>点击路径输入框，把里面的内容<strong>全部选中</strong>（按 <code>Ctrl + A</code>），然后<strong>删除</strong></li>
+<li>输入新的路径：
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">D:\nodejs\
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>点击 <strong>Next</strong></li>
+</ol>
+<blockquote class="alert alert-tip">
+        <div class="alert-header">
+            <span class="alert-icon">💡</span>
+            <span class="alert-title">注意</span>
+        </div>
+        <div class="alert-body">
+            <p>路径中<strong>不要有中文和空格</strong>，否则可能导致安装出错。</p>
+        </div>
+    </blockquote>
+<h4 id="第-5-步自定义安装">第 5 步：自定义安装
+</h4><p>显示一个带有树状复选框的页面（Custom Setup）。</p>
+<p><strong>什么都不要改</strong>，直接点击 <strong>Next</strong>。</p>
+<h4 id="第-6-步确认安装">第 6 步：确认安装
+</h4><p>点击 <strong>Install</strong>（安装）按钮。如果弹出安全提示，点击 <strong>是</strong>。</p>
+<h4 id="第-7-步等待安装">第 7 步：等待安装
+</h4><p>进度条会走完，通常只需 <strong>10-30 秒</strong>。</p>
+<h4 id="第-8-步完成">第 8 步：完成
+</h4><p>点击 <strong>Finish</strong>（完成）。</p>
+<blockquote class="alert alert-success">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">Node.js 安装完成！</span>
+        </div>
+        <div class="alert-body">
+            <p>此时 Node.js 和 npm（Node.js 的包管理器，可以理解为&quot;软件商店&rdquo;）都已经装好了。</p>
+        </div>
+    </blockquote>
+<h3 id="13-验证-nodejs-是否安装成功">1.3 验证 Node.js 是否安装成功
+</h3><p>安装完成后，我们需要<strong>验证</strong>一下——就像买完菜要检查一下有没有漏掉的东西。</p>
+<h4 id="第-1-步打开命令提示符cmd">第 1 步：打开命令提示符（CMD）
+</h4><blockquote class="alert alert-info">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">什么是&quot;命令提示符&quot;？</span>
+        </div>
+        <div class="alert-body">
+            <p>命令提示符（也叫 CMD）是一个<strong>黑色背景、白色文字的窗口</strong>，你可以在这个窗口里输入文字命令来让电脑执行操作。以后会经常用到它。</p>
+        </div>
+    </blockquote>
+<p>打开方式（任选一种）：</p>
+<ul>
+<li>
+<p><strong>方式一</strong>（推荐）：</p>
+<ol>
+<li>按住键盘上的 <code>Win</code> 键（键盘左下角，画着 Windows 图标的那个键）</li>
+<li>同时按下 <code>R</code> 键</li>
+<li>弹出一个小窗口（标题是&quot;运行&quot;），在里面输入 <code>cmd</code></li>
+<li>点击<strong>确定</strong>，或直接按<strong>回车键</strong>（Enter）</li>
+</ol>
+</li>
+<li>
+<p><strong>方式二</strong>：</p>
+<ol>
+<li>点击桌面左下角的<strong>开始菜单</strong>（Windows 图标）</li>
+<li>在搜索框中输入 <code>cmd</code></li>
+<li>点击搜索结果中的 <strong>命令提示符</strong></li>
+</ol>
+</li>
+</ul>
+<h4 id="第-2-步输入验证命令">第 2 步：输入验证命令
+</h4><p>在打开的<strong>黑色窗口</strong>中，输入以下内容（输入时屏幕上会显示你打的字），然后按<strong>回车键</strong>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">node -v
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果窗口中显示类似 <code>v22.16.0</code> 的内容，说明 Node.js 安装成功了 ✅</p>
+<p>继续输入以下命令，按回车：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">npm -v
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果显示类似 <code>10.9.2</code> 的版本号，说明 npm 也正常 ✅</p>
+<blockquote class="alert alert-warning">
+        <div class="alert-header">
+            <span class="alert-icon">⚠️</span>
+            <span class="alert-title">提示&quot;不是内部或外部命令&quot;？</span>
+        </div>
+        <div class="alert-body">
+            <p>说明环境变量没有配置好，请看下面的 <strong>1.4 如何配置环境变量</strong>。</p>
+        </div>
+    </blockquote>
+<h3 id="14-如何配置环境变量">1.4 如何配置环境变量
+</h3><blockquote class="alert alert-info">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">什么是环境变量（PATH）？</span>
+        </div>
+        <div class="alert-body">
+            <p>PATH 可以理解为电脑的&quot;通讯录&quot;。当你在命令提示符里输入 <code>node</code> 时，电脑不知道 <code>node</code> 装在哪里，它会去 PATH 这个&quot;通讯录&quot;里找。如果 PATH 里没有 Node.js 的安装目录，电脑就找不到它，就会报&quot;不是内部或外部命令&quot;。</p>
+<p>正常情况下，Node.js 安装时会自动把自己加到 PATH 里。但如果出了问题，你需要手动添加。</p>
+        </div>
+    </blockquote>
+<h4 id="查看-path-里有没有-nodejs">查看 PATH 里有没有 Node.js
+</h4><ol>
+<li>按 <code>Win + R</code>，输入 <code>sysdm.cpl</code>，回车</li>
+<li>点击顶部的 <strong>高级</strong> 选项卡</li>
+<li>点击底部的 <strong>环境变量</strong> 按钮</li>
+<li>在下方 <strong>系统变量</strong> 列表中，找到 <strong>Path</strong> 这一行，选中它，点击 <strong>编辑</strong></li>
+</ol>
+<p>在弹出的列表中，检查有没有类似这样的条目：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">D:\nodejs\
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote class="alert alert-tip">
+        <div class="alert-header">
+            <span class="alert-icon">💡</span>
+            <span class="alert-title">路径要和你安装时设置的一致</span>
+        </div>
+        <div class="alert-body">
+            <p>如果你当时装在了 <code>D:\Software\nodejs\</code>，那这里也应该显示 <code>D:\Software\nodejs\</code>。</p>
+        </div>
+    </blockquote>
+<p><strong>如果有这个条目</strong>：说明 PATH 没问题，但仍然报错的话，<strong>关掉当前命令提示符窗口，重新打开一个新的</strong>再试。</p>
+<p><strong>如果没有这个条目</strong>：按下面步骤手动添加。</p>
+<h4 id="手动添加-nodejs-到-path">手动添加 Node.js 到 PATH
+</h4><ol>
+<li>在刚才打开的 <strong>编辑环境变量</strong> 窗口中，点击 <strong>新建</strong></li>
+<li>输入 Node.js 的安装路径：
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">D:\nodejs\
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>点击 <strong>确定</strong></li>
+<li>点击 <strong>确定</strong> 关闭环境变量窗口</li>
+<li>点击 <strong>确定</strong> 关闭系统属性窗口</li>
+<li><strong>关掉所有已打开的命令提示符窗口，重新打开一个新的</strong>（旧窗口不会识别新配置）</li>
+<li>再次输入 <code>node -v</code> 验证</li>
+</ol>
+<h3 id="15-配置-npm-国内镜像强烈推荐">1.5 配置 npm 国内镜像（强烈推荐）
+</h3><blockquote class="alert alert-tip">
+        <div class="alert-header">
+            <span class="alert-icon">💡</span>
+            <span class="alert-title">为什么要配置？</span>
+        </div>
+        <div class="alert-body">
+            <p>npm 默认从国外下载软件，速度很慢。配置国内镜像后下载速度提升 <strong>10 倍以上</strong>。</p>
+        </div>
+    </blockquote>
+<p>在命令提示符中输入以下命令，按回车：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">npm config set registry https://registry.npmmirror.com/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>输入以下命令验证，如果显示 <code>https://registry.npmmirror.com/</code> 则成功 ✅：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">npm config get registry
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote class="alert alert-success">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">第一步完成！</span>
+        </div>
+        <div class="alert-body">
+            <p>你已经在电脑上安装好了 Node.js，并且配置了国内镜像。接下来安装 Claude Code。</p>
+        </div>
+    </blockquote>
+<hr>
+<h2 id="第二步安装-claude-code">第二步：安装 Claude Code
+</h2><h3 id="21-通过-npm-安装-claude-code">2.1 通过 npm 安装 Claude Code
+</h3><p>打开命令提示符（如果还没打开的话），输入以下命令，按回车：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">npm install -g @anthropic-ai/claude-code
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>等待安装完成（一般 <strong>1-3 分钟</strong>）。屏幕上会滚动一些文字，只要最后没有报错就行。</p>
+<h3 id="22-验证安装">2.2 验证安装
+</h3><p>输入：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">claude --version
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>按回车。如果显示版本号（例如 <code>1.0.x</code>），说明安装成功 ✅</p>
+<h3 id="23-首次启动跳过登录">2.3 首次启动（跳过登录）
+</h3><blockquote class="alert alert-info">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">为什么要跳过登录？</span>
+        </div>
+        <div class="alert-body">
+            <p>Claude Code 官方要求你用 Anthropic 账号登录才能使用。但 Anthropic 的服务需要海外信用卡支付，对国内用户很不方便。</p>
+<p>我们的方案是：先跳过登录，然后通过 CC-Switch 工具接入国产的 DeepSeek 模型，这样就<strong>不需要 Anthropic 账号</strong>了，费用也低得多。</p>
+        </div>
+    </blockquote>
+<h4 id="第-1-步先启动一次-claude-code">第 1 步：先启动一次 Claude Code
+</h4><p>在命令提示符中输入：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">claude
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>按回车。Claude Code 会启动，可能会显示一些介绍信息或要求你登录。</p>
+<p><strong>不用管它，直接关闭这个命令提示符窗口</strong>（点右上角的 ×）。</p>
+<h4 id="第-2-步找到配置文件">第 2 步：找到配置文件
+</h4><ol>
+<li>按 <code>Win + R</code>（Win 键 + R 键同时按）</li>
+<li>在弹出的&quot;运行&quot;窗口中，输入 <code>%USERPROFILE%</code></li>
+<li>点击<strong>确定</strong>或按回车</li>
+<li>打开后，你会看到一个文件夹，里面有各种文件和子文件夹</li>
+</ol>
+<h4 id="第-3-步找到-claudejson-文件">第 3 步：找到 .claude.json 文件
+</h4><p>在这个文件夹中，找到一个名为 <strong><code>.claude.json</code></strong> 的文件。</p>
+<blockquote class="alert alert-warning">
+        <div class="alert-header">
+            <span class="alert-icon">⚠️</span>
+            <span class="alert-title">找不到这个文件？</span>
+        </div>
+        <div class="alert-body">
+            <p>如果找不到 <code>.claude.json</code>，可能是以下原因：</p>
+<ol>
+<li>文件扩展名被隐藏了——在文件夹窗口顶部，点击 <strong>查看</strong> → 勾选 <strong>文件扩展名</strong> 和 <strong>隐藏的项目</strong></li>
+<li>Claude Code 还没有创建这个文件——请回到第 1 步，确保你成功启动过一次 Claude Code</li>
+<li>在某些情况下，这个文件可能在 <code>.claude</code> 文件夹里面，文件名为 <code>settings.json</code></li>
+</ol>
+        </div>
+    </blockquote>
+<h4 id="第-4-步用记事本打开配置文件">第 4 步：用记事本打开配置文件
+</h4><ol>
+<li>右键点击 <code>.claude.json</code> 文件</li>
+<li>在弹出的菜单中，选择 <strong>打开方式</strong></li>
+<li>选择 <strong>记事本</strong>（Notepad）
+<ul>
+<li>如果列表中没有记事本，选择 <strong>选择其他应用</strong> → 在列表中找到 <strong>记事本</strong> → 点击 <strong>确定</strong></li>
+</ul>
+</li>
+</ol>
+<h4 id="第-5-步编辑配置文件">第 5 步：编辑配置文件
+</h4><p>打开后，你会看到类似这样的内容（具体内容可能不同）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;someField&#34;</span><span class="p">:</span> <span class="s2">&#34;someValue&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;anotherField&#34;</span><span class="p">:</span> <span class="s2">&#34;anotherValue&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>我们需要在最后的 <code>}</code> 前面，添加一行 <code>&quot;hasCompletedOnboarding&quot;: true</code>。</p>
+<p>修改后的样子应该是这样的：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;someField&#34;</span><span class="p">:</span> <span class="s2">&#34;someValue&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;anotherField&#34;</span><span class="p">:</span> <span class="s2">&#34;anotherValue&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;hasCompletedOnboarding&#34;</span><span class="p">:</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote class="alert alert-important">
+        <div class="alert-header">
+            <span class="alert-icon">📌</span>
+            <span class="alert-title">⚠️ 注意三个细节，否则会报错！</span>
+        </div>
+        <div class="alert-body">
+            <ol>
+<li><strong>加逗号</strong>：<code>hasCompletedOnboarding</code> 前面那行的<strong>末尾</strong>要加一个<strong>英文逗号</strong> <code>,</code></li>
+<li><strong>用英文引号</strong>：引号必须是英文的 <code>&quot;</code>，不能是中文的 <code>&quot;</code></li>
+<li><strong>true 是小写</strong>：必须写 <code>true</code>，不能写 <code>True</code></li>
+</ol>
+        </div>
+    </blockquote>
+<h4 id="第-6-步保存文件">第 6 步：保存文件
+</h4><ol>
+<li>按 <code>Ctrl + S</code> 保存（或者点击左上角 <strong>文件</strong> → <strong>保存</strong>）</li>
+<li>关闭记事本窗口</li>
+</ol>
+<h4 id="第-7-步验证跳过登录是否成功">第 7 步：验证跳过登录是否成功
+</h4><ol>
+<li>重新打开命令提示符（<code>Win + R</code> → <code>cmd</code> → 回车）</li>
+<li>输入 <code>claude</code>，按回车</li>
+<li>如果<strong>直接进入了 Claude Code 的主界面</strong>（没有要求你登录），说明跳过登录成功 ✅</li>
+</ol>
+<blockquote class="alert alert-success">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">第二步完成！</span>
+        </div>
+        <div class="alert-body">
+            <p>Claude Code 安装完毕，并且跳过了登录步骤。接下来安装 CC-Switch 来接入 DeepSeek。</p>
+        </div>
+    </blockquote>
+<hr>
+<h2 id="第三步安装-cc-switch模型切换工具">第三步：安装 CC-Switch（模型切换工具）
+</h2><blockquote class="alert alert-info">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">什么是 CC-Switch？</span>
+        </div>
+        <div class="alert-body">
+            <p>CC-Switch 是一个<strong>可视化工具</strong>，让你不用手动改配置文件，点点鼠标就能把 Claude Code 的&quot;大脑&quot;从官方模型换成 DeepSeek。</p>
+        </div>
+    </blockquote>
+<h3 id="31-下载-cc-switch">3.1 下载 CC-Switch
+</h3><h4 id="第-1-步打开下载页面">第 1 步：打开下载页面
+</h4><p>在浏览器地址栏中输入以下网址，按回车：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://github.com/cc-switch/cc-switch/releases
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="第-2-步找到最新版本">第 2 步：找到最新版本
+</h4><p>打开页面后，找到带有绿色 <strong>Latest</strong> 标签的版本，点击展开。</p>
+<h4 id="第-3-步找到下载链接">第 3 步：找到下载链接
+</h4><p>展开后往下滚动，找到 <strong>Assets</strong> 这个词（旁边可能有个小箭头 <code>▾</code>），点击展开它。</p>
+<p>找到以 <code>.msi</code> 结尾的文件（Windows 安装包），点击文件名开始下载。</p>
+<blockquote class="alert alert-tip">
+        <div class="alert-header">
+            <span class="alert-icon">💡</span>
+            <span class="alert-title">选哪个文件？</span>
+        </div>
+        <div class="alert-body">
+            <ul>
+<li><strong>Windows 电脑</strong>：选 <code>x64.msi</code> 结尾的文件</li>
+<li><strong>Mac 电脑</strong>：选 <code>.dmg</code> 结尾的文件</li>
+</ul>
+        </div>
+    </blockquote>
+<h3 id="32-安装-cc-switch">3.2 安装 CC-Switch
+</h3><h4 id="第-1-步双击安装文件-1">第 1 步：双击安装文件
+</h4><p>在<strong>下载</strong>文件夹中，双击下载好的 <code>.msi</code> 文件。如果弹出安全提示，点击 <strong>仍要运行</strong> 或 <strong>更多信息</strong> → <strong>仍要运行</strong>。</p>
+<h4 id="第-2-步按提示安装">第 2 步：按提示安装
+</h4><p>安装向导和 Node.js 类似：</p>
+<ol>
+<li>点击 <strong>Next</strong></li>
+<li>接受协议 → <strong>Next</strong></li>
+<li>保持默认安装路径 → <strong>Next</strong></li>
+<li>点击 <strong>Install</strong></li>
+<li>等待安装完成 → <strong>Finish</strong></li>
+</ol>
+<blockquote class="alert alert-success">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">第三步完成！</span>
+        </div>
+        <div class="alert-body">
+            <p>CC-Switch 安装好了。接下来获取 DeepSeek 的 API Key。</p>
+        </div>
+    </blockquote>
+<hr>
+<h2 id="第四步获取-deepseek-api-key">第四步：获取 DeepSeek API Key
+</h2><blockquote class="alert alert-info">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">什么是 DeepSeek？</span>
+        </div>
+        <div class="alert-body">
+            <p>国产大语言模型，性能强大且价格低廉（日常使用每月约 10-30 元），接入后可以大幅降低使用成本。</p>
+        </div>
+    </blockquote>
+<blockquote class="alert alert-info">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">什么是 API Key？</span>
+        </div>
+        <div class="alert-body">
+            <p>API Key 是一把<strong>钥匙</strong>，用来调用 DeepSeek 的 AI 服务，每次使用会从账户余额中扣费。你需要：① 注册账号 ② 充值 ③ 创建 Key</p>
+        </div>
+    </blockquote>
+<h3 id="41-注册-deepseek-账号">4.1 注册 DeepSeek 账号
+</h3><h4 id="第-1-步打开-deepseek-开放平台">第 1 步：打开 DeepSeek 开放平台
+</h4><p>在浏览器地址栏中输入：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://platform.deepseek.com/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>按回车。</p>
+<blockquote class="alert alert-tip">
+        <div class="alert-header">
+            <span class="alert-icon">💡</span>
+            <span class="alert-title">注意</span>
+        </div>
+        <div class="alert-body">
+            <p>这是 DeepSeek 的<strong>开发者平台</strong>（<code>platform.deepseek.com</code>），不是聊天网站（<code>chat.deepseek.com</code>），别搞混了。</p>
+        </div>
+    </blockquote>
+<h4 id="第-2-步注册登录">第 2 步：注册/登录
+</h4><ol>
+<li>页面右上角有 <strong>登录</strong> / <strong>注册</strong> 按钮</li>
+<li>点击 <strong>注册</strong>（如果没有账号）或 <strong>登录</strong>（已有账号）</li>
+<li>按页面提示填写信息完成注册</li>
+</ol>
+<h3 id="42-充值余额">4.2 充值余额
+</h3><blockquote class="alert alert-tip">
+        <div class="alert-header">
+            <span class="alert-icon">💡</span>
+            <span class="alert-title">费用参考</span>
+        </div>
+        <div class="alert-body">
+            <p>日常使用一个月大约只需 <strong>10-30 元</strong>，建议首次充值 <strong>20-50 元</strong>。</p>
+        </div>
+    </blockquote>
+<ol>
+<li>登录后，在页面左侧菜单中找到 <strong>充值</strong>（或 <strong>钱包</strong> / <strong>Billing</strong>），点击它</li>
+<li>选择充值金额，选择支付方式，完成支付</li>
+<li>确保账户余额大于 0（没有余额无法使用 API）</li>
+</ol>
+<h3 id="43-创建-api-key">4.3 创建 API Key
+</h3><h4 id="第-1-步进入-api-keys-页面">第 1 步：进入 API Keys 页面
+</h4><ol>
+<li>登录后，在左侧菜单中找到 <strong>API Keys</strong>，点击它</li>
+<li>你会看到一个 API Keys 管理页面</li>
+</ol>
+<h4 id="第-2-步创建新的-api-key">第 2 步：创建新的 API Key
+</h4><ol>
+<li>点击 <strong>创建 API Key</strong> 按钮</li>
+<li>弹出一个对话框，要求你输入 Key 的<strong>名称</strong>
+<ul>
+<li>可以随意填写，比如 <code>claude-code</code>、<code>我的key</code>、<code>test</code> 都行</li>
+<li>这个名称只是给你自己看的，用来区分不同的 Key</li>
+</ul>
+</li>
+<li>点击 <strong>确认</strong> 或 <strong>创建</strong></li>
+</ol>
+<h4 id="第-3-步复制-api-key-最关键的一步">第 3 步：复制 API Key（⚠️ 最关键的一步！）
+</h4><p>创建成功后，页面会显示你的 API Key，格式类似：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote class="alert alert-danger">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">⚠️ 这个 Key 只会显示一次！</span>
+        </div>
+        <div class="alert-body">
+            <p>关闭对话框后就<strong>再也看不到了</strong>。请立即复制保存到记事本或微信文件传输助手。</p>
+        </div>
+    </blockquote>
+<blockquote class="alert alert-caution">
+        <div class="alert-header">
+            <span class="alert-icon">🚨</span>
+            <span class="alert-title">安全提醒</span>
+        </div>
+        <div class="alert-body">
+            <p>API Key 等同于你的账号密码，<strong>不要分享给任何人</strong>，不要发到公开场合。如果怀疑泄露，立即删除并重新创建。</p>
+        </div>
+    </blockquote>
+<blockquote class="alert alert-success">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">第四步完成！</span>
+        </div>
+        <div class="alert-body">
+            <p>你已经有了 DeepSeek 的 API Key（钥匙）。最后一步，把这把钥匙交给 CC-Switch，完成接入。</p>
+        </div>
+    </blockquote>
+<hr>
+<h2 id="第五步配置-cc-switch-接入-deepseek">第五步：配置 CC-Switch 接入 DeepSeek
+</h2><h3 id="51-打开-cc-switch">5.1 打开 CC-Switch
+</h3><p>在桌面上或开始菜单中找到 <strong>CC-Switch</strong> 的图标，双击打开。</p>
+<h3 id="52-添加-deepseek-配置">5.2 添加 DeepSeek 配置
+</h3><h4 id="第-1-步点击添加按钮">第 1 步：点击添加按钮
+</h4><p>CC-Switch 打开后，找到右上角的 <strong>+</strong> 号（加号按钮），点击它。</p>
+<h4 id="第-2-步填写配置信息">第 2 步：填写配置信息
+</h4><p>点击 + 号后，会弹出一个配置面板，填写以下信息：</p>
+<p><strong>① 模型预设</strong>（Model Preset）：选择 <strong>DeepSeek</strong></p>
+<p><strong>② API Key</strong>：粘贴你之前复制的 DeepSeek API Key（注意首尾不要有空格）</p>
+<p><strong>③ 模型名称</strong>（Model Name）：把输入框内容删掉，输入：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">deepseek-v4-pro[1m]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>④ Base URL / API 地址</strong>（如果有的话）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://api.deepseek.com
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="第-3-步保存配置">第 3 步：保存配置
+</h4><p>检查所有信息都填好后，点击 <strong>添加</strong> / <strong>保存</strong> / <strong>确认</strong> 按钮。</p>
+<h3 id="53-切换到-deepseek">5.3 切换到 DeepSeek
+</h3><ol>
+<li>回到 CC-Switch 的主界面</li>
+<li>你会看到刚才添加的 DeepSeek 配置已经出现在列表中</li>
+<li>点击该配置旁边的 <strong>切换</strong> / <strong>启用</strong> 按钮</li>
+<li>界面上应该会显示&quot;当前模型：DeepSeek&quot;或类似的信息</li>
+</ol>
+<h3 id="54-验证接入是否成功">5.4 验证接入是否成功
+</h3><p>打开命令提示符，输入 <code>claude</code> 启动 Claude Code。</p>
+<p>在 Claude Code 中输入：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">/model
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>按回车。如果显示的模型信息中包含 <strong>DeepSeek</strong>，说明接入成功 ✅</p>
+<blockquote class="alert alert-success">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">全部配置完成！</span>
+        </div>
+        <div class="alert-body">
+            <p>现在可以开始使用 AI 编程助手了！</p>
+        </div>
+    </blockquote>
+<hr>
+<h2 id="第六步开始使用实战示例">第六步：开始使用（实战示例）
+</h2><p>配置完成后，做一个简单的练习确保一切正常。</p>
+<h3 id="61-创建项目文件夹并打开命令提示符">6.1 创建项目文件夹并打开命令提示符
+</h3><ol>
+<li>在桌面<strong>右键</strong> → <strong>新建</strong> → <strong>文件夹</strong>，命名为 <code>my-first-ai-project</code></li>
+<li>双击打开这个文件夹</li>
+<li><strong>点击窗口顶部的地址栏</strong>，输入 <code>cmd</code>，按回车</li>
+</ol>
+<h3 id="62-启动-claude-code">6.2 启动 Claude Code
+</h3><p>在弹出的命令提示符窗口中，输入：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">claude
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>按回车。如果询问是否信任这个文件夹，输入 <code>y</code> 按回车。</p>
+<h3 id="63-发出第一个指令">6.3 发出第一个指令
+</h3><p>Claude Code 启动后，输入以下内容（可以直接用中文）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">帮我创建一个简单的个人主页，使用 HTML + CSS + JavaScript，包含一个标题、一段自我介绍和一个深色模式切换按钮
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>按回车提交。</p>
+<h3 id="64-处理权限请求">6.4 处理权限请求
+</h3><p>运行过程中 Claude Code 可能会询问是否允许创建/修改文件，选择 <strong>Yes</strong> 即可。建议在自己创建的项目中选择 <strong>Yes, always allow</strong>（以后不再询问）。</p>
+<h3 id="65-查看成果">6.5 查看成果
+</h3><p>完成后，回到项目文件夹，<strong>双击 <code>index.html</code></strong>，它会在浏览器中打开，你就能看到 AI 帮你创建的网页了！</p>
+<blockquote class="alert alert-success">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">恭喜！</span>
+        </div>
+        <div class="alert-body">
+            <p>你已经用 Claude Code + DeepSeek 完成了第一个项目！</p>
+        </div>
+    </blockquote>
+<hr>
+<h2 id="常用命令速查表">常用命令速查表
+</h2><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>操作</th>
+          <th>命令</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>检查 Node.js 版本</td>
+          <td><code>node -v</code></td>
+          <td>验证 Node.js 是否安装</td>
+      </tr>
+      <tr>
+          <td>检查 npm 版本</td>
+          <td><code>npm -v</code></td>
+          <td>验证 npm 是否正常</td>
+      </tr>
+      <tr>
+          <td>设置 npm 镜像</td>
+          <td><code>npm config set registry https://registry.npmmirror.com/</code></td>
+          <td>加速下载</td>
+      </tr>
+      <tr>
+          <td>检查 npm 镜像</td>
+          <td><code>npm config get registry</code></td>
+          <td>验证镜像是否生效</td>
+      </tr>
+      <tr>
+          <td>安装 Claude Code</td>
+          <td><code>npm install -g @anthropic-ai/claude-code</code></td>
+          <td>全局安装</td>
+      </tr>
+      <tr>
+          <td>检查 Claude Code 版本</td>
+          <td><code>claude --version</code></td>
+          <td>验证 Claude Code 是否安装</td>
+      </tr>
+      <tr>
+          <td>启动 Claude Code</td>
+          <td><code>claude</code></td>
+          <td>在当前文件夹启动</td>
+      </tr>
+      <tr>
+          <td>查看当前模型</td>
+          <td><code>/model</code></td>
+          <td>在 Claude Code 内输入</td>
+      </tr>
+      <tr>
+          <td>退出 Claude Code</td>
+          <td><code>/exit</code> 或按两次 <code>Ctrl + C</code></td>
+          <td>退出程序</td>
+      </tr>
+  </tbody>
+</table></div>
+<hr>
+<h2 id="常见问题-faq">常见问题 FAQ
+</h2><blockquote class="alert alert-faq">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">输入 <code>node -v</code> 提示&quot;不是内部或外部命令&quot;？</span>
+        </div>
+        <div class="alert-body">
+            <p>Node.js 的环境变量（PATH）没有配置好。打开文件资源管理器，进入 <code>D:\nodejs\</code> 看看里面有没有 <code>node.exe</code>：</p>
+<ul>
+<li><strong>有这个文件</strong>：说明安装了但 PATH 没配好，按照上方 <strong>1.4 如何配置环境变量</strong> 的步骤手动添加</li>
+<li><strong>没有这个文件</strong>：说明安装失败了，重新下载安装</li>
+</ul>
+        </div>
+    </blockquote>
+<blockquote class="alert alert-faq">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">输入 <code>claude</code> 提示&quot;不是内部或外部命令&quot;？</span>
+        </div>
+        <div class="alert-body">
+            <p>Claude Code 安装没成功。先确认 <code>node -v</code> 和 <code>npm -v</code> 正常，然后重新执行 <code>npm install -g @anthropic-ai/claude-code</code>。</p>
+        </div>
+    </blockquote>
+<blockquote class="alert alert-faq">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">启动 Claude Code 后要求登录 Anthropic 账号？</span>
+        </div>
+        <div class="alert-body">
+            <p><code>.claude.json</code> 没改对。按 <code>Win + R</code>，输入 <code>%USERPROFILE%</code> 回车，找到 <code>.claude.json</code> 用记事本打开，确认里面有 <code>&quot;hasCompletedOnboarding&quot;: true</code>，且前面那行末尾有英文逗号、<code>true</code> 是小写、引号是英文引号。</p>
+        </div>
+    </blockquote>
+<blockquote class="alert alert-faq">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">Claude Code 对话时报错 / 无响应？</span>
+        </div>
+        <div class="alert-body">
+            <p>常见原因：① DeepSeek 余额不足 ② API Key 填写错误 ③ 模型名称不是 <code>deepseek-v4-pro[1m]</code> ④ 网络问题。逐项检查即可。</p>
+        </div>
+    </blockquote>
+<blockquote class="alert alert-faq">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">npm 安装 Claude Code 非常慢（超过 5 分钟）？</span>
+        </div>
+        <div class="alert-body">
+            <p>检查是否配置了国内镜像：<code>npm config get registry</code>（应显示 <code>registry.npmmirror.com</code>）。如果没有，执行 <code>npm config set registry https://registry.npmmirror.com/</code> 后重试。</p>
+        </div>
+    </blockquote>
+<blockquote class="alert alert-faq">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">CC-Switch 打不开或闪退？</span>
+        </div>
+        <div class="alert-body">
+            <p>到 <a class="link" href="https://github.com/cc-switch/cc-switch/releases"  target="_blank" rel="noopener"
+    >GitHub Release</a> 重新下载最新版本，或尝试右键以管理员身份运行。</p>
+        </div>
+    </blockquote>
+<blockquote class="alert alert-faq">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">GitHub 页面打不开？</span>
+        </div>
+        <div class="alert-body">
+            <p><strong>原因</strong>：GitHub 在国内可能访问不稳定。
+<strong>解决</strong>：</p>
+<ol>
+<li>多刷新几次页面</li>
+<li>尝试使用不同的浏览器</li>
+<li>如果实在打不开，可以在网上搜索&quot;CC-Switch 下载&quot;，有些国内镜像站也提供了下载</li>
+</ol>
+        </div>
+    </blockquote>
+<hr>
+<blockquote class="alert alert-abstract">
+        <div class="alert-header">
+            <span class="alert-icon"></span>
+            <span class="alert-title">完整流程回顾</span>
+        </div>
+        <div class="alert-body">
+            <div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>步骤</th>
+          <th>内容</th>
+          <th>一句话总结</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>第一步</td>
+          <td>安装 Node.js</td>
+          <td>装好&quot;运行引擎&quot;，让电脑能跑 JavaScript 程序</td>
+      </tr>
+      <tr>
+          <td>第二步</td>
+          <td>安装 Claude Code</td>
+          <td>装好&quot;AI 助手&quot;，并跳过登录</td>
+      </tr>
+      <tr>
+          <td>第三步</td>
+          <td>安装 CC-Switch</td>
+          <td>装好&quot;换脑器&quot;，用来切换 AI 模型</td>
+      </tr>
+      <tr>
+          <td>第四步</td>
+          <td>获取 DeepSeek API Key</td>
+          <td>拿到&quot;钥匙&quot;，用来调用 DeepSeek 的 AI 服务</td>
+      </tr>
+      <tr>
+          <td>第五步</td>
+          <td>配置 CC-Switch</td>
+          <td>用&quot;换脑器&quot;+&ldquo;钥匙&rdquo;，把 Claude Code 的大脑换成 DeepSeek</td>
+      </tr>
+      <tr>
+          <td>第六步</td>
+          <td>开始使用</td>
+          <td>在任何文件夹中输入 <code>claude</code> 启动 AI 助手！</td>
+      </tr>
+  </tbody>
+</table></div>
+<p>完成全部步骤后，你就可以在电脑的任何文件夹中，输入 <code>claude</code> 命令，启动一个由 DeepSeek 驱动的 AI 编程助手了！</p>
+        </div>
+    </blockquote>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/claudecode/">ClaudeCode</a>
+        
+            <a href="/tags/deepseek/">DeepSeek</a>
+        
+            <a href="/tags/ai%E5%B7%A5%E5%85%B7/">AI工具</a>
+        
+            <a href="/tags/node.js/">Node.js</a>
+        
+            <a href="/tags/%E6%96%B0%E6%89%8B%E6%95%99%E7%A8%8B/">新手教程</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under <a class="link" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"  target="_blank" rel="noopener"
+    >CC BY-NC-SA 4.0</a></span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title">相关文章</h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/mcp%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97%E5%B0%8F%E7%99%BD%E4%B9%9F%E8%83%BD%E7%9C%8B%E6%87%82%E7%9A%84ai%E4%B8%87%E8%83%BD%E6%8F%92%E5%A4%B4/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post MCP入门指南：小白也能看懂的AI万能插头" loading="lazy" src="/p/mcp%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97%E5%B0%8F%E7%99%BD%E4%B9%9F%E8%83%BD%E7%9C%8B%E6%87%82%E7%9A%84ai%E4%B8%87%E8%83%BD%E6%8F%92%E5%A4%B4/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">MCP入门指南：小白也能看懂的AI万能插头</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/hugo--stack--github-pages-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post Hugo + Stack + GitHub Pages 博客搭建指南" loading="lazy" src="/p/hugo--stack--github-pages-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Hugo &#43; Stack &#43; GitHub Pages 博客搭建指南</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/5%E5%88%86%E9%92%9F%E5%AE%89%E8%A3%85claudecode%E5%B9%B6%E6%8E%A5%E5%85%A5deepseek/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post 5分钟安装ClaudeCode并接入DeepSeek" loading="lazy" src="/p/5%E5%88%86%E9%92%9F%E5%AE%89%E8%A3%85claudecode%E5%B9%B6%E6%8E%A5%E5%85%A5deepseek/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">5分钟安装ClaudeCode并接入DeepSeek</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/ai%E7%BC%96%E7%A8%8B%E8%BF%9B%E5%8C%96%E5%8F%B2/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI编程进化史" loading="lazy" src="/p/ai%E7%BC%96%E7%A8%8B%E8%BF%9B%E5%8C%96%E5%8F%B2/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI编程进化史</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/opencode--obsidian%E6%89%93%E9%80%A0%E4%BD%A0%E7%9A%84ai%E9%A9%B1%E5%8A%A8%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E5%B7%A5%E4%BD%9C%E6%B5%81/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post OpenCode + Obsidian：打造你的AI驱动知识管理工作流" loading="lazy" src="/p/opencode--obsidian%E6%89%93%E9%80%A0%E4%BD%A0%E7%9A%84ai%E9%A9%B1%E5%8A%A8%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E5%B7%A5%E4%BD%9C%E6%B5%81/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">OpenCode &#43; Obsidian：打造你的AI驱动知识管理工作流</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+
+        <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2026 Yanmu
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="4.0.2">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.f856840516f7c2ad1769a8f5937e3d08d6cb386e2cd2dd025ae696e0ff207958.js" defer></script>
+
+
+    </body>
+</html>
