@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-hant-tw" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 📌 生成日期：2026-05-10 | 適合人群：希望在 Obsidian 內直接使用 OpenCode AI 助手的使用者\n📋 目錄 一、什麼是 opencode-obsidian 外掛？ 二、環境準備 三、安裝 BRAT 外掛 四、透過 BRAT 安裝 opencode-obsidian 五、安裝 OpenCode CLI 六、外掛設定詳解 七、首次使用 八、上下文注入（實驗性功能） 九、自訂命令模式 十、常見問題與故障排除 一、什麼是 opencode-obsidian 外掛？ opencode-obsidian 是一個第三方社群外掛，它將 OpenCode AI 助手直接嵌入到 Obsidian 視窗中。不同於傳統的終端機整合方案，這個外掛使用 OpenCode 的 Web 視圖直接嵌入，你看到的就是完整的 OpenCode 介面，不需要在終端機和 Obsidian 之間來回切換。\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 📋 目錄 一、什麼是 opencode-obsidian 外掛？ 二、環境準備 三、安裝 BRAT 外掛 四、透過 BRAT 安裝 opencode-obsidian 五、安裝 OpenCode CLI 六、外掛設定詳解 七、首次使用 八、上下文注入（實驗性功能） 九、自訂命令模式 十、常見問題與故障排除 一、什麼是 opencode-obsidian 外掛？ opencode-obsidian 是一個第三方社群外掛，它將 OpenCode AI 助手直接嵌入到 Obsidian 視窗中。不同於傳統的終端機整合方案，這個外掛使用 OpenCode 的 Web 視圖直接嵌入，你看到的就是完整的 OpenCode 介面，不需要在終端機和 Obsidian 之間來回切換。\n">
 <title>OpenCode &#43; Obsidian：打造你的AI驅動知識管理工作流</title>
 
 
@@ -13,12 +13,12 @@
 
 
 <link rel="stylesheet" href="/scss/style.min.ed668df6847002e96da55125322b5655e4e3773453c2addee35312e6bbf6cb10.css"><meta property='og:title' content="OpenCode + Obsidian：打造你的AI驅動知識管理工作流">
-<meta property='og:description' content=" 📌 生成日期：2026-05-10 | 適合人群：希望在 Obsidian 內直接使用 OpenCode AI 助手的使用者\n📋 目錄 一、什麼是 opencode-obsidian 外掛？ 二、環境準備 三、安裝 BRAT 外掛 四、透過 BRAT 安裝 opencode-obsidian 五、安裝 OpenCode CLI 六、外掛設定詳解 七、首次使用 八、上下文注入（實驗性功能） 九、自訂命令模式 十、常見問題與故障排除 一、什麼是 opencode-obsidian 外掛？ opencode-obsidian 是一個第三方社群外掛，它將 OpenCode AI 助手直接嵌入到 Obsidian 視窗中。不同於傳統的終端機整合方案，這個外掛使用 OpenCode 的 Web 視圖直接嵌入，你看到的就是完整的 OpenCode 介面，不需要在終端機和 Obsidian 之間來回切換。\n">
+<meta property='og:description' content=" 📋 目錄 一、什麼是 opencode-obsidian 外掛？ 二、環境準備 三、安裝 BRAT 外掛 四、透過 BRAT 安裝 opencode-obsidian 五、安裝 OpenCode CLI 六、外掛設定詳解 七、首次使用 八、上下文注入（實驗性功能） 九、自訂命令模式 十、常見問題與故障排除 一、什麼是 opencode-obsidian 外掛？ opencode-obsidian 是一個第三方社群外掛，它將 OpenCode AI 助手直接嵌入到 Obsidian 視窗中。不同於傳統的終端機整合方案，這個外掛使用 OpenCode 的 Web 視圖直接嵌入，你看到的就是完整的 OpenCode 介面，不需要在終端機和 Obsidian 之間來回切換。\n">
 <meta property='og:url' content='https://AkuamT.github.io/zh-hant-tw/p/opencode--obsidian%E6%89%93%E9%80%A0%E4%BD%A0%E7%9A%84ai%E9%A9%85%E5%8B%95%E7%9F%A5%E8%AD%98%E7%AE%A1%E7%90%86%E5%B7%A5%E4%BD%9C%E6%B5%81/'>
 <meta property='og:site_name' content='Yanmu'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-04-30T02:00:15&#43;08:00'/><meta property='article:modified_time' content='2026-04-30T02:00:15&#43;08:00'/><meta property='og:image' content='https://AkuamT.github.io/p/opencode--obsidian%E6%89%93%E9%80%A0%E4%BD%A0%E7%9A%84ai%E9%A9%B1%E5%8A%A8%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E5%B7%A5%E4%BD%9C%E6%B5%81/cover.svg' />
 <meta name="twitter:title" content="OpenCode + Obsidian：打造你的AI驅動知識管理工作流">
-<meta name="twitter:description" content=" 📌 生成日期：2026-05-10 | 適合人群：希望在 Obsidian 內直接使用 OpenCode AI 助手的使用者\n📋 目錄 一、什麼是 opencode-obsidian 外掛？ 二、環境準備 三、安裝 BRAT 外掛 四、透過 BRAT 安裝 opencode-obsidian 五、安裝 OpenCode CLI 六、外掛設定詳解 七、首次使用 八、上下文注入（實驗性功能） 九、自訂命令模式 十、常見問題與故障排除 一、什麼是 opencode-obsidian 外掛？ opencode-obsidian 是一個第三方社群外掛，它將 OpenCode AI 助手直接嵌入到 Obsidian 視窗中。不同於傳統的終端機整合方案，這個外掛使用 OpenCode 的 Web 視圖直接嵌入，你看到的就是完整的 OpenCode 介面，不需要在終端機和 Obsidian 之間來回切換。\n"><meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content=" 📋 目錄 一、什麼是 opencode-obsidian 外掛？ 二、環境準備 三、安裝 BRAT 外掛 四、透過 BRAT 安裝 opencode-obsidian 五、安裝 OpenCode CLI 六、外掛設定詳解 七、首次使用 八、上下文注入（實驗性功能） 九、自訂命令模式 十、常見問題與故障排除 一、什麼是 opencode-obsidian 外掛？ opencode-obsidian 是一個第三方社群外掛，它將 OpenCode AI 助手直接嵌入到 Obsidian 視窗中。不同於傳統的終端機整合方案，這個外掛使用 OpenCode 的 Web 視圖直接嵌入，你看到的就是完整的 OpenCode 介面，不需要在終端機和 Obsidian 之間來回切換。\n"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://AkuamT.github.io/p/opencode--obsidian%E6%89%93%E9%80%A0%E4%BD%A0%E7%9A%84ai%E9%A9%B1%E5%8A%A8%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E5%B7%A5%E4%BD%9C%E6%B5%81/cover.svg' />
     <link rel="shortcut icon" href="img/avatar.png" />
 
@@ -590,12 +590,7 @@
     <section class="article-content">
     
     
-    
-    <blockquote>
-        <p>📌 生成日期：2026-05-10 | 適合人群：希望在 Obsidian 內直接使用 OpenCode AI 助手的使用者</p>
-
-    </blockquote>
-<hr>
+    <hr>
 <h2 id="-目錄">📋 目錄
 </h2><ul>
 <li><a class="link" href="#%e4%b8%80%e4%bb%80%e9%ba%bc%e6%98%af-opencode-obsidian-%e5%a4%96%e6%8e%9b" >一、什麼是 opencode-obsidian 外掛？</a></li>
