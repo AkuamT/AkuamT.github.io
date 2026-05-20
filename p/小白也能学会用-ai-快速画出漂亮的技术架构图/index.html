@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="✈️ 小白也能学会！用 AI 快速画出漂亮的技术架构图 👋 这篇文档是写给完全没画过架构图的新手看的。 你不需要会设计、不需要会写代码，只要会用 AI 聊天就能跟着做。\n">
+<title>小白也能学会！用 AI 快速画出漂亮的技术架构图</title>
+
+
+<link rel="canonical" href="https://AkuamT.github.io/p/%E5%B0%8F%E7%99%BD%E4%B9%9F%E8%83%BD%E5%AD%A6%E4%BC%9A%E7%94%A8-ai-%E5%BF%AB%E9%80%9F%E7%94%BB%E5%87%BA%E6%BC%82%E4%BA%AE%E7%9A%84%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84%E5%9B%BE/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.ed668df6847002e96da55125322b5655e4e3773453c2addee35312e6bbf6cb10.css"><meta property='og:title' content="小白也能学会！用 AI 快速画出漂亮的技术架构图">
+<meta property='og:description' content="✈️ 小白也能学会！用 AI 快速画出漂亮的技术架构图 👋 这篇文档是写给完全没画过架构图的新手看的。 你不需要会设计、不需要会写代码，只要会用 AI 聊天就能跟着做。\n">
+<meta property='og:url' content='https://AkuamT.github.io/p/%E5%B0%8F%E7%99%BD%E4%B9%9F%E8%83%BD%E5%AD%A6%E4%BC%9A%E7%94%A8-ai-%E5%BF%AB%E9%80%9F%E7%94%BB%E5%87%BA%E6%BC%82%E4%BA%AE%E7%9A%84%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84%E5%9B%BE/'>
+<meta property='og:site_name' content='Yanmu'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='AI工具' /><meta property='article:tag' content='架构图' /><meta property='article:tag' content='Excalidraw' /><meta property='article:tag' content='Mermaid' /><meta property='article:tag' content='Gemini' /><meta property='article:tag' content='教程' /><meta property='article:published_time' content='2026-03-31T19:51:00&#43;08:00'/><meta property='article:modified_time' content='2026-03-31T19:51:00&#43;08:00'/><meta property='og:image' content='https://AkuamT.github.io/p/%E5%B0%8F%E7%99%BD%E4%B9%9F%E8%83%BD%E5%AD%A6%E4%BC%9A%E7%94%A8-ai-%E5%BF%AB%E9%80%9F%E7%94%BB%E5%87%BA%E6%BC%82%E4%BA%AE%E7%9A%84%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84%E5%9B%BE/cover.svg' />
+<meta name="twitter:title" content="小白也能学会！用 AI 快速画出漂亮的技术架构图">
+<meta name="twitter:description" content="✈️ 小白也能学会！用 AI 快速画出漂亮的技术架构图 👋 这篇文档是写给完全没画过架构图的新手看的。 你不需要会设计、不需要会写代码，只要会用 AI 聊天就能跟着做。\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://AkuamT.github.io/p/%E5%B0%8F%E7%99%BD%E4%B9%9F%E8%83%BD%E5%AD%A6%E4%BC%9A%E7%94%A8-ai-%E5%BF%AB%E9%80%9F%E7%94%BB%E5%87%BA%E6%BC%82%E4%BA%AE%E7%9A%84%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84%E5%9B%BE/cover.svg' />
+    <link rel="shortcut icon" href="img/avatar.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/">
+                    <img src="/img/Yanmu.jpg" 
+                        width="1024"
+                        height="1037"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">💻 </span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Yanmu</a></h1>
+            <h2 class="site-description">「愿你成为自己的太阳，无需借谁的光」</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/CaiJimmy/hugo-theme-stack'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E9%93%BE%E6%8E%A5/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                <option value="/p/%E5%B0%8F%E7%99%BD%E4%B9%9F%E8%83%BD%E5%AD%A6%E4%BC%9A%E7%94%A8-ai-%E5%BF%AB%E9%80%9F%E7%94%BB%E5%87%BA%E6%BC%82%E4%BA%AE%E7%9A%84%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84%E5%9B%BE/" selected>简体中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                <option value="/en/p/learn-to-create-beautiful-tech-architecture-diagrams-with-ai/" >English</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                <option value="/zh-hant-tw/p/%E5%B0%8F%E7%99%BD%E4%B9%9F%E8%83%BD%E5%AD%B8%E6%9C%83%E7%94%A8-ai-%E5%BF%AB%E9%80%9F%E7%95%AB%E5%87%BA%E6%BC%82%E4%BA%AE%E7%9A%84%E6%8A%80%E8%A1%93%E6%9E%B6%E6%A7%8B%E5%9C%96/" >繁体中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/ja/p/%E5%88%9D%E5%BF%83%E8%80%85%E3%81%A7%E3%82%82%E3%81%A7%E3%81%8D%E3%82%8Bai%E3%81%A7%E3%81%8D%E3%82%8C%E3%81%84%E3%81%AA%E6%8A%80%E8%A1%93%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3%E5%9B%B3%E3%82%92%E7%B4%A0%E6%97%A9%E3%81%8F%E4%BD%9C%E6%88%90/" >日本語</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#什么是技术架构图我为什么要画它">什么是技术架构图？我为什么要画它？</a></li>
+    <li><a href="#-新手该选哪种方法先看这个">🤔 新手该选哪种方法？（先看这个）</a></li>
+    <li><a href="#方案一直接让-ai-帮你画一张图最简单最快">方案一：直接让 AI 帮你画一张图（最简单，最快）</a>
+      <ol>
+        <li><a href="#一句话原理">一句话原理</a></li>
+        <li><a href="#手把手操作步骤">手把手操作步骤</a>
+          <ol>
+            <li><a href="#第-1-步让-ai-帮你写画图描述词">第 1 步：让 AI 帮你写&quot;画图描述词&quot;</a></li>
+            <li><a href="#第-2-步把提示词喂给-ai-画图">第 2 步：把提示词喂给 AI 画图</a></li>
+            <li><a href="#第-3-步完成-">第 3 步：完成 🎉</a></li>
+          </ol>
+        </li>
+        <li><a href="#优缺点">优缺点</a></li>
+        <li><a href="#-小白避坑提示">📌 小白避坑提示</a></li>
+      </ol>
+    </li>
+    <li><a href="#方案二让-ai-先生成代码再用代码渲染成图推荐新手尝试">方案二：让 AI 先生成代码，再用代码渲染成图（推荐新手尝试）</a>
+      <ol>
+        <li><a href="#一句话原理-1">一句话原理</a></li>
+        <li><a href="#手把手操作步骤-1">手把手操作步骤</a>
+          <ol>
+            <li><a href="#第-1-步让-ai-生成-mermaid-代码">第 1 步：让 AI 生成 Mermaid 代码</a></li>
+            <li><a href="#第-2-步把代码渲染成图片">第 2 步：把代码渲染成图片</a></li>
+            <li><a href="#第-3-步想修改让-ai-改代码就行">第 3 步：想修改？让 AI 改代码就行</a></li>
+          </ol>
+        </li>
+        <li><a href="#优缺点-1">优缺点</a></li>
+        <li><a href="#-小白避坑提示-1">📌 小白避坑提示</a></li>
+      </ol>
+    </li>
+    <li><a href="#方案三让-ai-生成可编辑的架构图适合做正式文档">方案三：让 AI 生成可编辑的架构图（适合做正式文档）</a>
+      <ol>
+        <li><a href="#一句话原理-2">一句话原理</a></li>
+        <li><a href="#-先搞懂什么是-画图指令包skills">🤔 先搞懂：什么是 &ldquo;画图指令包&rdquo;（Skills）？</a></li>
+        <li><a href="#-前置安装只需一次">🔧 前置安装（只需一次）</a>
+          <ol>
+            <li><a href="#-先搞懂这个指令包要放哪里">💡 先搞懂：这个指令包要放哪里？</a></li>
+            <li><a href="#安装方式一让-ai-帮你装推荐最简单">安装方式一：让 AI 帮你装（推荐，最简单）</a></li>
+            <li><a href="#安装方式二自己手动下载">安装方式二：自己手动下载</a></li>
+            <li><a href="#安装方式三claude-code-专属的快捷安装">安装方式三：Claude Code 专属的快捷安装</a></li>
+            <li><a href="#还需要装这些">还需要装这些：</a></li>
+          </ol>
+        </li>
+        <li><a href="#-手把手操作步骤">🖐️ 手把手操作步骤</a>
+          <ol>
+            <li><a href="#第-1-步装好-skills告诉-ai-你想画什么">第 1 步：装好 Skills，告诉 AI 你想画什么</a></li>
+            <li><a href="#第-2-步在-obsidian-中手动调整">第 2 步：在 Obsidian 中手动调整</a></li>
+            <li><a href="#第-3-步可选用-ai-换风格">第 3 步（可选）：用 AI 换风格</a></li>
+          </ol>
+        </li>
+        <li><a href="#-excalidraw-技能能画哪些图">🔍 Excalidraw 技能能画哪些图？</a></li>
+        <li><a href="#-常见问题与解决">⚠️ 常见问题与解决</a></li>
+        <li><a href="#优缺点-2">优缺点</a></li>
+        <li><a href="#-小白避坑提示-2">📌 小白避坑提示</a></li>
+      </ol>
+    </li>
+    <li><a href="#-经常用到的工具汇总">🔧 经常用到的工具汇总</a></li>
+    <li><a href="#-新手快速入门路线图">🎯 新手快速入门路线图</a></li>
+    <li><a href="#-常见问题小白-faq">💬 常见问题（小白 FAQ）</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/p/%E5%B0%8F%E7%99%BD%E4%B9%9F%E8%83%BD%E5%AD%A6%E4%BC%9A%E7%94%A8-ai-%E5%BF%AB%E9%80%9F%E7%94%BB%E5%87%BA%E6%BC%82%E4%BA%AE%E7%9A%84%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84%E5%9B%BE/">
+            <img alt="Featured image of post 小白也能学会！用 AI 快速画出漂亮的技术架构图" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E5%B0%8F%E7%99%BD%E4%B9%9F%E8%83%BD%E5%AD%A6%E4%BC%9A%E7%94%A8-ai-%E5%BF%AB%E9%80%9F%E7%94%BB%E5%87%BA%E6%BC%82%E4%BA%AE%E7%9A%84%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84%E5%9B%BE/cover.svg">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/categories/ai%E5%B7%A5%E5%85%B7/" style="background-color: #7c3aed; color: #fff;">
+                AI工具
+            </a>
+        
+            
+            
+            
+            <a href="/categories/%E6%95%99%E7%A8%8B/" style="background-color: #2563eb; color: #fff;">
+                教程
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E5%B0%8F%E7%99%BD%E4%B9%9F%E8%83%BD%E5%AD%A6%E4%BC%9A%E7%94%A8-ai-%E5%BF%AB%E9%80%9F%E7%94%BB%E5%87%BA%E6%BC%82%E4%BA%AE%E7%9A%84%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84%E5%9B%BE/">小白也能学会！用 AI 快速画出漂亮的技术架构图</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-03-31T19:51:00&#43;08:00'>2026年3月31日星期二</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        阅读时长: 13 分钟
+                    </time>
+                
+            </div>
+        
+
+        
+            <div class="inline-meta">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                
+                    <a href="/en/p/learn-to-create-beautiful-tech-architecture-diagrams-with-ai/" class="link">English</a>
+                
+                    <a href="/zh-hant-tw/p/%E5%B0%8F%E7%99%BD%E4%B9%9F%E8%83%BD%E5%AD%B8%E6%9C%83%E7%94%A8-ai-%E5%BF%AB%E9%80%9F%E7%95%AB%E5%87%BA%E6%BC%82%E4%BA%AE%E7%9A%84%E6%8A%80%E8%A1%93%E6%9E%B6%E6%A7%8B%E5%9C%96/" class="link">繁体中文</a>
+                
+                    <a href="/ja/p/%E5%88%9D%E5%BF%83%E8%80%85%E3%81%A7%E3%82%82%E3%81%A7%E3%81%8D%E3%82%8Bai%E3%81%A7%E3%81%8D%E3%82%8C%E3%81%84%E3%81%AA%E6%8A%80%E8%A1%93%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3%E5%9B%B3%E3%82%92%E7%B4%A0%E6%97%A9%E3%81%8F%E4%BD%9C%E6%88%90/" class="link">日本語</a>
+                
+            </div>
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span>目录</span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#什么是技术架构图我为什么要画它">什么是技术架构图？我为什么要画它？</a></li>
+    <li><a href="#-新手该选哪种方法先看这个">🤔 新手该选哪种方法？（先看这个）</a></li>
+    <li><a href="#方案一直接让-ai-帮你画一张图最简单最快">方案一：直接让 AI 帮你画一张图（最简单，最快）</a>
+      <ol>
+        <li><a href="#一句话原理">一句话原理</a></li>
+        <li><a href="#手把手操作步骤">手把手操作步骤</a>
+          <ol>
+            <li><a href="#第-1-步让-ai-帮你写画图描述词">第 1 步：让 AI 帮你写&quot;画图描述词&quot;</a></li>
+            <li><a href="#第-2-步把提示词喂给-ai-画图">第 2 步：把提示词喂给 AI 画图</a></li>
+            <li><a href="#第-3-步完成-">第 3 步：完成 🎉</a></li>
+          </ol>
+        </li>
+        <li><a href="#优缺点">优缺点</a></li>
+        <li><a href="#-小白避坑提示">📌 小白避坑提示</a></li>
+      </ol>
+    </li>
+    <li><a href="#方案二让-ai-先生成代码再用代码渲染成图推荐新手尝试">方案二：让 AI 先生成代码，再用代码渲染成图（推荐新手尝试）</a>
+      <ol>
+        <li><a href="#一句话原理-1">一句话原理</a></li>
+        <li><a href="#手把手操作步骤-1">手把手操作步骤</a>
+          <ol>
+            <li><a href="#第-1-步让-ai-生成-mermaid-代码">第 1 步：让 AI 生成 Mermaid 代码</a></li>
+            <li><a href="#第-2-步把代码渲染成图片">第 2 步：把代码渲染成图片</a></li>
+            <li><a href="#第-3-步想修改让-ai-改代码就行">第 3 步：想修改？让 AI 改代码就行</a></li>
+          </ol>
+        </li>
+        <li><a href="#优缺点-1">优缺点</a></li>
+        <li><a href="#-小白避坑提示-1">📌 小白避坑提示</a></li>
+      </ol>
+    </li>
+    <li><a href="#方案三让-ai-生成可编辑的架构图适合做正式文档">方案三：让 AI 生成可编辑的架构图（适合做正式文档）</a>
+      <ol>
+        <li><a href="#一句话原理-2">一句话原理</a></li>
+        <li><a href="#-先搞懂什么是-画图指令包skills">🤔 先搞懂：什么是 &ldquo;画图指令包&rdquo;（Skills）？</a></li>
+        <li><a href="#-前置安装只需一次">🔧 前置安装（只需一次）</a>
+          <ol>
+            <li><a href="#-先搞懂这个指令包要放哪里">💡 先搞懂：这个指令包要放哪里？</a></li>
+            <li><a href="#安装方式一让-ai-帮你装推荐最简单">安装方式一：让 AI 帮你装（推荐，最简单）</a></li>
+            <li><a href="#安装方式二自己手动下载">安装方式二：自己手动下载</a></li>
+            <li><a href="#安装方式三claude-code-专属的快捷安装">安装方式三：Claude Code 专属的快捷安装</a></li>
+            <li><a href="#还需要装这些">还需要装这些：</a></li>
+          </ol>
+        </li>
+        <li><a href="#-手把手操作步骤">🖐️ 手把手操作步骤</a>
+          <ol>
+            <li><a href="#第-1-步装好-skills告诉-ai-你想画什么">第 1 步：装好 Skills，告诉 AI 你想画什么</a></li>
+            <li><a href="#第-2-步在-obsidian-中手动调整">第 2 步：在 Obsidian 中手动调整</a></li>
+            <li><a href="#第-3-步可选用-ai-换风格">第 3 步（可选）：用 AI 换风格</a></li>
+          </ol>
+        </li>
+        <li><a href="#-excalidraw-技能能画哪些图">🔍 Excalidraw 技能能画哪些图？</a></li>
+        <li><a href="#-常见问题与解决">⚠️ 常见问题与解决</a></li>
+        <li><a href="#优缺点-2">优缺点</a></li>
+        <li><a href="#-小白避坑提示-2">📌 小白避坑提示</a></li>
+      </ol>
+    </li>
+    <li><a href="#-经常用到的工具汇总">🔧 经常用到的工具汇总</a></li>
+    <li><a href="#-新手快速入门路线图">🎯 新手快速入门路线图</a></li>
+    <li><a href="#-常见问题小白-faq">💬 常见问题（小白 FAQ）</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h1 id="-小白也能学会用-ai-快速画出漂亮的技术架构图">✈️ 小白也能学会！用 AI 快速画出漂亮的技术架构图
+</h1>
+    <blockquote>
+        <p>👋 这篇文档是写给<strong>完全没画过架构图</strong>的新手看的。
+你不需要会设计、不需要会写代码，只要会用 AI 聊天就能跟着做。</p>
+
+    </blockquote>
+<hr>
+<h2 id="什么是技术架构图我为什么要画它">什么是技术架构图？我为什么要画它？
+</h2><p>简单说，<strong>技术架构图</strong>就是把你脑子里的系统&quot;画出来&quot;——</p>
+<p>比如你要做一个 App，它有哪些功能模块？用户怎么用？数据怎么流转？把这些关系画成图，就是架构图。</p>
+<p>画它的好处很实在：</p>
+<ul>
+<li>✅ <strong>自己理清思路</strong>——画图的过程就是你梳理系统设计的过程</li>
+<li>✅ <strong>跟同事沟通不费劲</strong>——一张图胜过千言万语</li>
+<li>✅ <strong>汇报展示有面子</strong>——老板和客户一看就明白你的方案有多牛</li>
+<li>✅ <strong>AI 帮你画，省时省力</strong>——现在用 AI，几分钟就能出一张像样的图</li>
+</ul>
+<hr>
+<h2 id="-新手该选哪种方法先看这个">🤔 新手该选哪种方法？（先看这个）
+</h2><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>你的情况</th>
+          <th>推荐方案</th>
+          <th style="text-align: center">难度</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>就想最快出一张好看的图，后期不改了</td>
+          <td><strong>方案一</strong>（AI 直接生成图片）</td>
+          <td style="text-align: center">⭐</td>
+      </tr>
+      <tr>
+          <td>愿意多一步，让图以后好修改</td>
+          <td><strong>方案二</strong>（Mermaid.js 代码生成）</td>
+          <td style="text-align: center">⭐⭐</td>
+      </tr>
+      <tr>
+          <td>做正式文档，需要反复修改、风格统一</td>
+          <td><strong>方案三</strong>（Excalidraw 本地画图）</td>
+          <td style="text-align: center">⭐⭐⭐</td>
+      </tr>
+  </tbody>
+</table></div>
+
+    <blockquote>
+        <p>💡 <strong>新手建议</strong>：先试 <strong>方案一</strong> 感受一下，再尝试 <strong>方案二</strong>。方案三等你需要做正式文档时再研究。</p>
+
+    </blockquote>
+<hr>
+<h2 id="方案一直接让-ai-帮你画一张图最简单最快">方案一：直接让 AI 帮你画一张图（最简单，最快）
+</h2>
+    <blockquote>
+        <p>⏱ 耗时：2-3 分钟
+🛠 工具：Gemini 3.1 Pro（谷歌出品，免费可用）</p>
+
+    </blockquote>
+<h3 id="一句话原理">一句话原理
+</h3><p>让你用的 AI（比如 Gemini）先写出&quot;画图描述词&quot;，再把这个描述词喂给 AI 的画图功能，AI 就帮你把图画出来了。</p>
+<h3 id="手把手操作步骤">手把手操作步骤
+</h3><h4 id="第-1-步让-ai-帮你写画图描述词">第 1 步：让 AI 帮你写&quot;画图描述词&quot;
+</h4><p>打开 Gemini，输入下面这段话（直接复制，替换你的内容就行）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">请帮我写一段用于生成技术架构图的提示词（prompt），
+</span></span><span class="line"><span class="cl">我要画的是一个 [你的系统名称，比如：电商网站] 的架构图，
+</span></span><span class="line"><span class="cl">包含以下模块：用户端、商品管理、订单系统、支付系统、后台管理。
+</span></span><span class="line"><span class="cl">模块之间的数据流向是：用户下单 → 订单系统调支付 → 支付完成通知商品管理扣库存。
+</span></span><span class="line"><span class="cl">请用英文给出适合文生图模型的详细提示词，风格要专业、清晰、好看。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>AI 会还你一段英文描述词。</p>
+<h4 id="第-2-步把提示词喂给-ai-画图">第 2 步：把提示词喂给 AI 画图
+</h4><p>在 Gemini（或其他支持画图的 AI）里，选择画图功能（如 Gemini 自带的 Banana 2.0 模型），然后把上一步得到的描述词粘贴进去，点生成。</p>
+<h4 id="第-3-步完成-">第 3 步：完成 🎉
+</h4><p>AI 会输出一张图片。不满意就重新生成一次，直到满意为止。</p>
+<h3 id="优缺点">优缺点
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>✅ 优点</th>
+          <th>❌ 缺点</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>速度最快，几分钟搞定</td>
+          <td>改起来麻烦——系统变了就得重新生图</td>
+      </tr>
+      <tr>
+          <td>图片效果好看，色彩丰富</td>
+          <td>结果不稳定，有时第一次出的图不满意</td>
+      </tr>
+      <tr>
+          <td>不需要任何额外工具</td>
+          <td>提示词写得不好，出图效果就不好</td>
+      </tr>
+  </tbody>
+</table></div>
+<h3 id="-小白避坑提示">📌 小白避坑提示
+</h3><ul>
+<li><strong>提示词一定要详细</strong>——你给 AI 的信息越具体，出图越准。别只说&quot;画个架构图&quot;，要说清楚有哪些模块、怎么连接的</li>
+<li><strong>多试几次</strong>——第一次出的图如果不满意很正常，微调提示词再生成一两次</li>
+<li><strong>英文提示词效果更好</strong>——大部分画图模型对英文理解更好，所以第一步让 AI 生成英文描述词</li>
+</ul>
+<hr>
+<h2 id="方案二让-ai-先生成代码再用代码渲染成图推荐新手尝试">方案二：让 AI 先生成代码，再用代码渲染成图（推荐新手尝试）
+</h2>
+    <blockquote>
+        <p>⏱ 耗时：3-5 分钟
+🛠 工具：任意 AI（ChatGPT、Claude、Gemini 都行）+ Mermaid.js</p>
+
+    </blockquote>
+<h3 id="一句话原理-1">一句话原理
+</h3><p>流程图的本质是一段<strong>代码</strong>（Mermaid.js 语法）。你让 AI 帮你写出这段代码，然后通过一个免费在线网站把代码渲染成图片。想改图？让 AI 改代码，重新渲染就行。</p>
+<h3 id="手把手操作步骤-1">手把手操作步骤
+</h3><h4 id="第-1-步让-ai-生成-mermaid-代码">第 1 步：让 AI 生成 Mermaid 代码
+</h4><p>打开你用的 AI（ChatGPT、Claude、Gemini 都行），输入（直接复制，替换成你的内容）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">请用 Mermaid 语法帮我画一个电商系统的架构图。
+</span></span><span class="line"><span class="cl">系统包含：用户端、商品管理、订单系统、支付系统、后台管理。
+</span></span><span class="line"><span class="cl">数据流向是：用户下单 → 订单系统调支付 → 支付完成通知商品管理扣库存。
+</span></span><span class="line"><span class="cl">请输出纯 Mermaid 代码，用 graph TD 格式。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>AI 会返回一段像这样的代码：</p>
+<pre class="mermaid" style="visibility:hidden">graph TD
+    A[用户端] --> B[订单系统]
+    B --> C[支付系统]
+    B --> D[商品管理]
+    C --> E[支付完成]
+    E --> D</pre><h4 id="第-2-步把代码渲染成图片">第 2 步：把代码渲染成图片
+</h4><p>打开这个免费网站：<a class="link" href="https://mermaid.live"  target="_blank" rel="noopener"
+    >mermaid.live</a></p>
+<ol>
+<li>把 AI 给你的代码粘贴到<strong>左边</strong>的编辑区</li>
+<li><strong>右边</strong>立刻就会显示出流程图</li>
+<li>点右上角的&quot;导出&quot;按钮，选择 PNG 或 SVG 格式下载（SVG 是矢量图，放多大都不模糊，适合正式文档）</li>
+</ol>
+<h4 id="第-3-步想修改让-ai-改代码就行">第 3 步：想修改？让 AI 改代码就行
+</h4><p>把旧代码贴回给 AI，告诉它你想怎么改：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">把上面的代码改一下，在&#34;用户端&#34;和&#34;订单系统&#34;之间加一个&#34;登录验证&#34;模块。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>改好后重新去 mermaid.live 粘贴、导出就行。</p>
+<h3 id="优缺点-1">优缺点
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>✅ 优点</th>
+          <th>❌ 缺点</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>图片质量好，专业感强</td>
+          <td>复杂的图后期修改仍然比较麻烦</td>
+      </tr>
+      <tr>
+          <td>比方案一好修改——改代码再渲染就行</td>
+          <td>架构逻辑有大的变化时，基本要重新生成</td>
+      </tr>
+      <tr>
+          <td>不需要安装任何软件，打开网页就能用</td>
+          <td></td>
+      </tr>
+  </tbody>
+</table></div>
+<h3 id="-小白避坑提示-1">📌 小白避坑提示
+</h3><ul>
+<li><strong>Mermaid 语法有固定格式</strong>——让 AI 生成时明确说&quot;用 Mermaid 语法&quot;，AI 都知道</li>
+<li><strong>mermaid.live 是神器</strong>——粘贴即预览，完全免费，不用注册账号</li>
+<li><strong>导出选 SVG 更好</strong>——SVG 是矢量图，放多大都不模糊，适合正式文档</li>
+<li><strong>代码保存好</strong>——以后修改时直接把旧代码发给 AI，说&quot;改这行&quot;就行</li>
+</ul>
+<hr>
+<h2 id="方案三让-ai-生成可编辑的架构图适合做正式文档">方案三：让 AI 生成可编辑的架构图（适合做正式文档）
+</h2>
+    <blockquote>
+        <p>⏱ 耗时：10-15 分钟（第一次配置稍久）
+🛠 需要：一个 AI 编程工具 + Obsidian + 一个&quot;画图指令包&quot;</p>
+
+    </blockquote>
+<h3 id="一句话原理-2">一句话原理
+</h3><p>这是最专业的方法，但第一次需要花点时间配置。装好之后，你告诉 AI 想画什么，AI 直接生成一个<strong>可以拖拽修改</strong>的架构图文件，你用 Obsidian 打开，哪里不满意就手动调一下。方案一方案二出的图是&quot;死图&quot;，这个方案出的图是&quot;活的&quot;。</p>
+<hr>
+<h3 id="-先搞懂什么是-画图指令包skills">🤔 先搞懂：什么是 &ldquo;画图指令包&rdquo;（Skills）？
+</h3><p><strong>Skills</strong> 就是一套写好的&quot;说明书&quot;，告诉 AI 怎么帮你画图。</p>
+<ul>
+<li>没装之前：你跟 AI 说&quot;帮我画个架构图&quot;，AI 只能给你一段文字描述</li>
+<li>装好之后：AI 知道怎么生成一个可以编辑的架构图文件</li>
+</ul>
+<p>好比给你的 AI 装了一个&quot;画图插件&quot;。</p>
+<p><strong>这个指令包叫 <code>axton-obsidian-visual-skills</code></strong>，是一个叫 Axton 的人做的免费开源项目。它含 3 种画图能力：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">画图方式</th>
+          <th style="text-align: left">生成的文件</th>
+          <th style="text-align: left">适合画什么</th>
+          <th style="text-align: left">画面风格</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Excalidraw 画图</strong></td>
+          <td style="text-align: left"><code>.excalidraw</code> 文件</td>
+          <td style="text-align: left">流程图、思维导图、架构图</td>
+          <td style="text-align: left">✏️ 手绘风格（像白板上画的）</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Mermaid 画图</strong></td>
+          <td style="text-align: left">一段文字规则</td>
+          <td style="text-align: left">流程图、时序图、对比图</td>
+          <td style="text-align: left">🎯 商务专业风格</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Canvas 画布</strong></td>
+          <td style="text-align: left"><code>.canvas</code> 文件</td>
+          <td style="text-align: left">思维导图、知识整理</td>
+          <td style="text-align: left">🎨 彩色卡片</td>
+      </tr>
+  </tbody>
+</table></div>
+
+    <blockquote>
+        <p>💡 <strong>也可以换 Draw.io</strong>——<a class="link" href="https://www.draw.io"  target="_blank" rel="noopener"
+    >Draw.io</a> 是另一款免费画图软件，也有对应的指令包。本教程以 Excalidraw 为例。</p>
+
+    </blockquote>
+<h3 id="-前置安装只需一次">🔧 前置安装（只需一次）
+</h3><h4 id="-先搞懂这个指令包要放哪里">💡 先搞懂：这个指令包要放哪里？
+</h4><p>AI 工具会去你电脑上的<strong>固定位置</strong>找这些指令文件。推荐放这个位置：</p>
+<p><strong><code>C:\Users\你的用户名\.claude\skills\</code></strong></p>
+
+    <blockquote>
+        <p>🤔 <strong>这串路径是啥？</strong></p>
+<ul>
+<li><code>C:\Users\你的用户名\</code> ← 你的&quot;用户文件夹&quot;（也叫用户目录），你电脑上的软件默认把配置文件放这里</li>
+<li><code>\.claude\</code> ← Claude Code 这个软件建的配置文件夹</li>
+<li><code>skills\</code> ← 专门放画图指令的地方</li>
+</ul>
+<p>不知道怎么查&quot;你的用户名&quot;？打开文件管理器，在地址栏输入 <code>%USERPROFILE%</code> 按回车，跳到的那个文件夹就是。</p>
+<p>如果你的用户名是 <code>xiaoming</code>，那完整路径就是 <code>C:\Users\xiaoming\.claude\skills\</code></p>
+
+    </blockquote>
+
+    <blockquote>
+        <p>🤔 <strong>为什么在 C 盘？</strong> 因为你的用户文件夹默认就在 C 盘。放这里是让这台电脑上<strong>所有项目</strong>都能用这个指令包，不用每个项目都装一次。</p>
+
+    </blockquote>
+<p><strong>这个位置 OpenCode 和 Claude Code 通用</strong>，文件放一次，两个工具都能用。</p>
+<p>其他工具也可以放别的位置，但新手不用管，直接放上面那个路径就行。</p>
+<h4 id="安装方式一让-ai-帮你装推荐最简单">安装方式一：让 AI 帮你装（推荐，最简单）
+</h4><p>不管你用 <strong>OpenCode、Claude Code 还是 Cursor</strong>，直接对它说：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">帮我从 GitHub 下载 axtonliu/axton-obsidian-visual-skills，
+</span></span><span class="line"><span class="cl">解压后把 excalidraw-diagram、mermaid-visualizer、obsidian-canvas-creator
+</span></span><span class="line"><span class="cl">这三个文件夹放到 C:\Users\你的电脑用户名\.claude\skills\ 目录下。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>AI 会自动帮你完成下载、解压、复制。完成后重启工具即可。</p>
+
+    <blockquote>
+        <p>💡 记得把上面路径里的&quot;你的电脑用户名&quot;换成你真正的用户名。</p>
+
+    </blockquote>
+<h4 id="安装方式二自己手动下载">安装方式二：自己手动下载
+</h4><p>如果 AI 不支持操作文件，或者你想自己来：</p>
+<ol>
+<li>
+<p>打开 <a class="link" href="https://github.com/axtonliu/axton-obsidian-visual-skills"  target="_blank" rel="noopener"
+    >axton-obsidian-visual-skills 下载页面</a></p>
+</li>
+<li>
+<p>点绿色的 <strong>Code</strong> 按钮 → <strong>Download ZIP</strong></p>
+</li>
+<li>
+<p>解压下载的文件，你会看到 3 个文件夹</p>
+</li>
+<li>
+<p>打开你的 <code>C:\Users\你的用户名\.claude\</code> 文件夹（如果没有 <code>skills</code> 文件夹，就新建一个）</p>
+</li>
+<li>
+<p>把解压出来的 3 个文件夹<strong>整个拖进去</strong></p>
+<p>最终效果是这样：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">C:\Users\你的用户名\.claude\skills\
+</span></span><span class="line"><span class="cl">   ├── excalidraw-diagram\
+</span></span><span class="line"><span class="cl">   │     └── SKILL.md
+</span></span><span class="line"><span class="cl">   ├── mermaid-visualizer\
+</span></span><span class="line"><span class="cl">   │     └── SKILL.md
+</span></span><span class="line"><span class="cl">   └── obsidian-canvas-creator\
+</span></span><span class="line"><span class="cl">         └── SKILL.md
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h4 id="安装方式三claude-code-专属的快捷安装">安装方式三：Claude Code 专属的快捷安装
+</h4><p>如果你用的是 <strong>Claude Code</strong>（只有它支持这种方式），可以直接在聊天里输入：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">/plugin marketplace add axtonliu/axton-obsidian-visual-skills
+</span></span><span class="line"><span class="cl">/plugin install obsidian-visual-skills
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>安装完重启 Claude Code 就能用。<strong>OpenCode 和 Cursor 不支持这种安装方式</strong>。</p>
+<h4 id="还需要装这些">还需要装这些：
+</h4><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">软件</th>
+          <th style="text-align: left">用途</th>
+          <th style="text-align: center">费用</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>OpenCode / Claude Code / Cursor</strong></td>
+          <td style="text-align: left">用来运行 AI 生成画图文件</td>
+          <td style="text-align: center">各有免费方案</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong><a class="link" href="https://obsidian.md/"  target="_blank" rel="noopener"
+    >Obsidian</a></strong></td>
+          <td style="text-align: left">用来查看和手动调整架构图</td>
+          <td style="text-align: center">免费</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong><a class="link" href="https://github.com/zsviczian/obsidian-excalidraw-plugin"  target="_blank" rel="noopener"
+    >Obsidian Excalidraw 插件</a></strong></td>
+          <td style="text-align: left">在 Obsidian 里编辑 Excalidraw 文件</td>
+          <td style="text-align: center">免费（插件市场直接搜 &ldquo;Excalidraw&rdquo; 安装）</td>
+      </tr>
+  </tbody>
+</table></div>
+<hr>
+<h3 id="-手把手操作步骤">🖐️ 手把手操作步骤
+</h3><h4 id="第-1-步装好-skills告诉-ai-你想画什么">第 1 步：装好 Skills，告诉 AI 你想画什么
+</h4><p>装好 Skills 之后，直接在 <strong>OpenCode、Claude Code 或 Cursor</strong> 里输入：</p>
+<p><strong>如果你想画 Excalidraw 手绘风格架构图：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">用 Excalidraw 帮我画一个电商系统的架构图，包含：
+</span></span><span class="line"><span class="cl">用户端、商品管理、订单系统、支付系统、后台管理。
+</span></span><span class="line"><span class="cl">用户下单 → 订单系统调支付 → 支付完成扣库存。
+</span></span><span class="line"><span class="cl">用中文标注。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>AI 会自动在当前目录下生成一个 <code>.excalidraw</code> 文件（比如 <code>电商系统架构图.excalidraw.md</code>）。</p>
+
+    <blockquote>
+        <p>🔍 <strong>找不到文件？</strong> 看看 AI 打印的输出信息，它通常会告诉你文件保存的路径，比如 <code>文件已保存到：D:/project/电商系统架构图.excalidraw.md</code>。记住这个路径，下一步要用。</p>
+
+    </blockquote>
+<p><strong>如果你想画 Mermaid 商务风格流程图：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">把这个流程转成 Mermaid 图表：
+</span></span><span class="line"><span class="cl">用户访问首页 → 浏览商品 → 加入购物车 → 提交订单 → 在线支付 → 完成交易
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>AI 会生成一段 Mermaid 代码，你复制到 <a class="link" href="https://mermaid.live"  target="_blank" rel="noopener"
+    >mermaid.live</a> 就能渲染成图。</p>
+<p><strong>如果你想画 Canvas 思维导图：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">把这篇文章整理成 Obsidian Canvas 思维导图：
+</span></span><span class="line"><span class="cl">[粘贴你的内容]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>AI 会生成一个 <code>.canvas</code> 文件，用 Obsidian 打开就能看到彩色卡片布局。</p>
+<h4 id="第-2-步在-obsidian-中手动调整">第 2 步：在 Obsidian 中手动调整
+</h4><ul>
+<li>打开 Obsidian，把上一步生成的文件拖进去</li>
+<li>如果是 Excalidraw 文件（<code>.excalidraw</code> 或 <code>.md</code>），双击就能进入编辑模式</li>
+<li>你可以随意拖拽方框、调整箭头、修改文字、换颜色</li>
+<li>想加模块就拖一个新框，想删除就选中按 Delete</li>
+</ul>
+
+    <blockquote>
+        <p>💡 这一步相当于你有一个&quot;活的&quot;架构图，想怎么改就怎么改。</p>
+
+    </blockquote>
+<h4 id="第-3-步可选用-ai-换风格">第 3 步（可选）：用 AI 换风格
+</h4><p>调整好内容和布局后，如果你想要不同的视觉效果，可以截图发给 Gemini（或其他 AI），配上参考图说：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">帮我把图1转换成类似图2的手绘风格，并加入适量的图画帮助用户理解
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>（提示词1：改变很大，连内容布局都可能调整）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">转换成类似图2的手绘画面风格
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>（提示词2：改变较小，只改配色和画风，内容布局不变）</p>
+<hr>
+<h3 id="-excalidraw-技能能画哪些图">🔍 Excalidraw 技能能画哪些图？
+</h3><p>这套 Skills 的 Excalidraw 画图支持以下类型：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">图表类型</th>
+          <th style="text-align: left">适合画什么</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>流程图</strong></td>
+          <td style="text-align: left">业务流程、操作步骤、任务顺序</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>思维导图</strong></td>
+          <td style="text-align: left">概念扩展、话题分类、头脑风暴</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>层级图</strong></td>
+          <td style="text-align: left">组织架构、系统分层、目录结构</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>关系图</strong></td>
+          <td style="text-align: left">依赖关系、影响关系、元素之间的交互</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>对比图</strong></td>
+          <td style="text-align: left">方案对比、选项分析、前后对比</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>时间线</strong></td>
+          <td style="text-align: left">事件演进、项目里程碑、版本迭代</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>矩阵图</strong></td>
+          <td style="text-align: left">二维分类、优先级矩阵、能力定位</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>自由画布</strong></td>
+          <td style="text-align: left">零散想法、初期构思、自由笔记</td>
+      </tr>
+  </tbody>
+</table></div>
+<hr>
+<h3 id="-常见问题与解决">⚠️ 常见问题与解决
+</h3><p><strong>Q：中文字体没有手写效果怎么办？</strong>
+A：Excalidraw 的手写字体（Excalifont）默认只支持英文，中文字体需要联网加载。如果你在 Obsidian 里中文显示为普通字体：</p>
+<ol>
+<li>确保能访问 Excalidraw.com（需要网络）</li>
+<li>或者从 <a class="link" href="https://github.com/excalidraw/excalidraw/tree/master/public/fonts"  target="_blank" rel="noopener"
+    >Excalidraw 官方字体库</a> 下载中文字体文件</li>
+<li>放到你的 Obsidian 笔记库的 <code>Excalidraw/CJK Fonts</code> 文件夹下</li>
+<li>在 Excalidraw 插件设置里开启&quot;启动时加载中文字体&quot;，重启 Obsidian</li>
+</ol>
+<p><strong>Q：生成出来的图有点乱怎么办？</strong>
+A：这很正常，因为 AI 生成的排版不一定完美。手动在 Obsidian 里拖拽调整一下就行——这也是方案三最大的优势。</p>
+<p><strong>Q：一定要用 Claude Code 吗？</strong>
+A：不一定。这套 Skills 在 <strong>OpenCode、Claude Code、Cursor</strong> 上都能用。OpenCode 兼容 Claude Code 的 Skills 格式，直接安装就能用。</p>
+<hr>
+<h3 id="优缺点-2">优缺点
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>✅ 优点</th>
+          <th>❌ 缺点</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>想怎么改就怎么改——拖拽就能调整</td>
+          <td>第一次配置环境需要花点时间</td>
+      </tr>
+      <tr>
+          <td>不依赖提示词质量，内容可手动精修</td>
+          <td>整体流程比较长，操作步骤多</td>
+      </tr>
+      <tr>
+          <td>可以做出一套风格统一的文档图</td>
+          <td>美化时偶尔会出现文字乱码或错位</td>
+      </tr>
+      <tr>
+          <td>结合 Obsidian 做知识管理很方便</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>一个 Skills 装好，三种画图方式随便选</td>
+          <td></td>
+      </tr>
+  </tbody>
+</table></div>
+<h3 id="-小白避坑提示-2">📌 小白避坑提示
+</h3><ul>
+<li><strong>建议先用方案一和方案二</strong>，熟悉了再尝试方案三</li>
+<li><strong>Skills 安装是关键一步</strong>——装好了 AI 才知道怎么生成可编辑的文件</li>
+<li><strong>Excalidraw 默认是手绘风格</strong>，画出来像手画的，很亲切</li>
+<li><strong>Obsidian 的 Excalidraw 插件</strong>是体验最好的查看和编辑方式</li>
+<li><strong>方案三最大的价值</strong>是可修改——一次配置好，后续改图只需要拖拽几步就完成</li>
+<li>动手前可以在 GitHub 上看这个仓库的 <a class="link" href="https://youtu.be/TUJ_3G1cylc"  target="_blank" rel="noopener"
+    >演示视频</a>，看到效果再决定要不要装</li>
+</ul>
+<hr>
+<h2 id="-经常用到的工具汇总">🔧 经常用到的工具汇总
+</h2><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">工具</th>
+          <th style="text-align: left">用途</th>
+          <th style="text-align: center">费用</th>
+          <th style="text-align: center">难度</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><a class="link" href="https://gemini.google.com"  target="_blank" rel="noopener"
+    >Gemini</a></td>
+          <td style="text-align: left">对话 + 文生图</td>
+          <td style="text-align: center">免费</td>
+          <td style="text-align: center">低</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><a class="link" href="https://chat.openai.com"  target="_blank" rel="noopener"
+    >ChatGPT</a></td>
+          <td style="text-align: left">对话 + 文生图</td>
+          <td style="text-align: center">付费/免费版</td>
+          <td style="text-align: center">低</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><a class="link" href="https://github.com/semanser/opencode"  target="_blank" rel="noopener"
+    >OpenCode</a></td>
+          <td style="text-align: left">AI 编程工具，自动加载 <code>~/.claude/skills/</code>，支持并行调度</td>
+          <td style="text-align: center">免费</td>
+          <td style="text-align: center">中</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><a class="link" href="https://docs.anthropic.com/en/docs/claude-code"  target="_blank" rel="noopener"
+    >Claude Code</a></td>
+          <td style="text-align: left">AI 编程工具，可加载 Skills</td>
+          <td style="text-align: center">按 API 用量付费</td>
+          <td style="text-align: center">中</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><a class="link" href="https://cursor.sh"  target="_blank" rel="noopener"
+    >Cursor</a></td>
+          <td style="text-align: left">AI 编程工具</td>
+          <td style="text-align: center">免费版够用</td>
+          <td style="text-align: center">中</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><a class="link" href="https://mermaid.live"  target="_blank" rel="noopener"
+    >mermaid.live</a></td>
+          <td style="text-align: left">Mermaid 代码转图片</td>
+          <td style="text-align: center">免费</td>
+          <td style="text-align: center">低</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><a class="link" href="https://github.com/excalidraw/excalidraw"  target="_blank" rel="noopener"
+    >Excalidraw</a></td>
+          <td style="text-align: left">可编辑架构图工具</td>
+          <td style="text-align: center">免费开源</td>
+          <td style="text-align: center">低</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><a class="link" href="https://obsidian.md/"  target="_blank" rel="noopener"
+    >Obsidian</a></td>
+          <td style="text-align: left">笔记软件 + Excalidraw 插件可编辑架构图</td>
+          <td style="text-align: center">免费</td>
+          <td style="text-align: center">中</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><a class="link" href="https://github.com/axtonliu/axton-obsidian-visual-skills"  target="_blank" rel="noopener"
+    >axton-obsidian-visual-skills</a></td>
+          <td style="text-align: left">AI 画图指令包（含 Excalidraw / Mermaid / Canvas 三种技能）</td>
+          <td style="text-align: center">免费开源</td>
+          <td style="text-align: center">中</td>
+      </tr>
+  </tbody>
+</table></div>
+<hr>
+<h2 id="-新手快速入门路线图">🎯 新手快速入门路线图
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">第1天 → 试方案一：用 Gemini 直接生图（体验一下）
+</span></span><span class="line"><span class="cl">         ↓
+</span></span><span class="line"><span class="cl">第2天 → 试方案二：用 Mermaid.js 生成流程图
+</span></span><span class="line"><span class="cl">         （学会&#34;改代码 = 改图&#34;的思路）
+</span></span><span class="line"><span class="cl">         ↓
+</span></span><span class="line"><span class="cl">第3天 → 把方案二的图用在你的文档里
+</span></span><span class="line"><span class="cl">         ↓
+</span></span><span class="line"><span class="cl">需要了 → 再研究方案三：安装 Skills + Obsidian + Excalidraw 插件
+</span></span><span class="line"><span class="cl">（不着急，方案一和二已经够用）
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="-常见问题小白-faq">💬 常见问题（小白 FAQ）
+</h2><p><strong>Q：这些工具都是免费的吗？</strong>
+A：Gemini 和 mermaid.live 完全免费。ChatGPT 和 Claude 有免费额度，用完才需付费。</p>
+<p><strong>Q：生成出来的图片能商用吗？</strong>
+A：可以，架构图是你自己的设计，AI 只是帮你画出来。</p>
+<p><strong>Q：我是产品经理/运营，不是程序员，也能画吗？</strong>
+A：完全没问题。方案一只需要打字，方案二只要会复制粘贴，都不需要写代码。</p>
+<p><strong>Q：生成的图片有版权问题吗？</strong>
+A：工具生成的图片版权归你所有，放心使用。</p>
+<p><strong>Q：Mac 和 Windows 都能用吗？</strong>
+A：文中所有工具都有网页版，操作系统不影响。</p>
+<p><strong>Q：方案三说的 &ldquo;axton-obsidian-visual-skills&rdquo; 到底是什么，必须装吗？</strong>
+A：它是一个开源的 AI 画图&quot;指令包&quot;。不装也能画图，但装了之后 AI 能直接生成<strong>可编辑的架构图文件</strong>（而不是一张死图片）。如果你只是偶尔画一两张图，用方案一方案二就够了；如果你需要反复修改、做正式文档，非常推荐装一下。</p>
+<p><strong>Q：方案三里的 3 种画图方式（Excalidraw / Mermaid / Canvas）有什么区别？</strong>
+A：简单说——<strong>Excalidraw</strong> 像手绘白板，最适合画架构图；<strong>Mermaid</strong> 偏专业商务风，适合正式文档；<strong>Canvas</strong> 是彩色思维导图，适合整理思路。根据你要的效果选就行，不用全学。</p>
+<p><strong>Q：方案三一定要用 Claude Code 吗？用 ChatGPT 可以吗？</strong>
+A：这套 Skills 是给 <strong>能操作本地文件</strong>的 AI 编程工具设计的，比如 <strong>OpenCode、Claude Code、Cursor</strong> 都行。ChatGPT 网页版没有本地文件操作能力，所以不能用。</p>
+<p><strong>Q：Skills 装好后在哪？我想看看装没装成功。</strong>
+A：文件放到 <code>~/.claude/skills/</code> 目录下就算装好了。你可以手动去这个目录看一眼，里面应该有 <code>excalidraw-diagram</code>、<code>mermaid-visualizer</code>、<code>obsidian-canvas-creator</code> 三个文件夹。重启 AI 工具后，它就能识别到。</p>
+<hr>
+
+    <blockquote>
+        <p>📝 <strong>最后的话</strong>：画架构图最重要的是<strong>理清你想表达什么</strong>，AI 只是帮你把想法变成图片。先从最简单的方案一开始动手，迈出第一步最重要！</p>
+
+    </blockquote>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/ai%E5%B7%A5%E5%85%B7/">AI工具</a>
+        
+            <a href="/tags/%E6%9E%B6%E6%9E%84%E5%9B%BE/">架构图</a>
+        
+            <a href="/tags/excalidraw/">Excalidraw</a>
+        
+            <a href="/tags/mermaid/">Mermaid</a>
+        
+            <a href="/tags/gemini/">Gemini</a>
+        
+            <a href="/tags/%E6%95%99%E7%A8%8B/">教程</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under <a class="link" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"  target="_blank" rel="noopener"
+    >CC BY-NC-SA 4.0</a></span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title">相关文章</h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/context7%E6%8C%87%E5%8D%97%E8%AE%A9ai%E7%BC%96%E7%A8%8B%E5%8A%A9%E6%89%8B%E8%AF%BB%E6%87%82%E6%9C%80%E6%96%B0%E6%96%87%E6%A1%A3/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post Context7指南：让AI编程助手读懂最新文档" loading="lazy" src="/p/context7%E6%8C%87%E5%8D%97%E8%AE%A9ai%E7%BC%96%E7%A8%8B%E5%8A%A9%E6%89%8B%E8%AF%BB%E6%87%82%E6%9C%80%E6%96%B0%E6%96%87%E6%A1%A3/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Context7指南：让AI编程助手读懂最新文档</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/opencode--obsidian%E6%89%93%E9%80%A0%E4%BD%A0%E7%9A%84ai%E9%A9%B1%E5%8A%A8%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E5%B7%A5%E4%BD%9C%E6%B5%81/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post OpenCode + Obsidian：打造你的AI驱动知识管理工作流" loading="lazy" src="/p/opencode--obsidian%E6%89%93%E9%80%A0%E4%BD%A0%E7%9A%84ai%E9%A9%B1%E5%8A%A8%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E5%B7%A5%E4%BD%9C%E6%B5%81/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">OpenCode &#43; Obsidian：打造你的AI驱动知识管理工作流</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/opencode-%E5%85%A8%E6%B7%B1%E5%BA%A6%E6%8C%87%E5%8D%97%E5%BC%80%E6%BA%90%E7%89%88-claude-code-%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E4%B8%8E%E9%AB%98%E7%BA%A7%E7%8E%A9%E6%B3%95/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post OpenCode 全深度指南：开源版 Claude Code 的安装、配置与高级玩法" loading="lazy" src="/p/opencode-%E5%85%A8%E6%B7%B1%E5%BA%A6%E6%8C%87%E5%8D%97%E5%BC%80%E6%BA%90%E7%89%88-claude-code-%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E4%B8%8E%E9%AB%98%E7%BA%A7%E7%8E%A9%E6%B3%95/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">OpenCode 全深度指南：开源版 Claude Code 的安装、配置与高级玩法</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/opencode-%E6%96%B0%E6%89%8B%E8%BF%9B%E9%98%B6%E5%B9%B6%E8%A1%8C%E8%B0%83%E5%BA%A6%E4%B8%8E%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E5%85%A8%E6%94%BB%E7%95%A5/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post OpenCode 新手进阶：并行调度与使用技巧全攻略" loading="lazy" src="/p/opencode-%E6%96%B0%E6%89%8B%E8%BF%9B%E9%98%B6%E5%B9%B6%E8%A1%8C%E8%B0%83%E5%BA%A6%E4%B8%8E%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E5%85%A8%E6%94%BB%E7%95%A5/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">OpenCode 新手进阶：并行调度与使用技巧全攻略</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/5%E5%88%86%E9%92%9F%E5%AE%89%E8%A3%85claudecode%E5%B9%B6%E6%8E%A5%E5%85%A5deepseek/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post 5分钟安装ClaudeCode并接入DeepSeek" loading="lazy" src="/p/5%E5%88%86%E9%92%9F%E5%AE%89%E8%A3%85claudecode%E5%B9%B6%E6%8E%A5%E5%85%A5deepseek/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">5分钟安装ClaudeCode并接入DeepSeek</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+
+        <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2026 Yanmu
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="4.0.2">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+
+    <div class="mermaid-modal" id="mermaid-modal">
+    <div class="mermaid-modal-header">
+        <div class="mermaid-modal-controls">
+            <button data-zoom="-1">− Zoom Out</button>
+            <button data-zoom="0">Reset (100%)</button>
+            <button data-zoom="1">+ Zoom In</button>
+            <button data-zoom="fit">Fit to Screen</button>
+        </div>
+        <button class="mermaid-modal-close" id="mermaid-modal-close">✕ Close (Esc)</button>
+    </div>
+    <div class="mermaid-modal-body" id="mermaid-modal-body">
+        <div class="mermaid-modal-content" id="mermaid-modal-content"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script><script type="module">
+import { initMermaidPage } from '\/ts\/mermaid.js';
+initMermaidPage({"darkTheme":"dark","darkThemeVariables":{},"htmlLabels":true,"lightTheme":"default","lightThemeVariables":{},"look":"classic","securityLevel":"strict","transparentBackground":false});
+</script>
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.f856840516f7c2ad1769a8f5937e3d08d6cb386e2cd2dd025ae696e0ff207958.js" defer></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,1538 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="✈️ Learn to Create Beautiful Tech Architecture Diagrams with AI 👋 This guide is written for complete beginners who have never drawn an architecture diagram before. You don&rsquo;t need design skills, you don&rsquo;t need to write code — just know how to chat with AI.\nWhat is a Tech Architecture Diagram and Why Should I Draw One? Simply put, a tech architecture diagram helps you &ldquo;draw out&rdquo; the system in your head.\n">
+<title>Learn to Create Beautiful Tech Architecture Diagrams with AI</title>
+
+
+<link rel="canonical" href="https://AkuamT.github.io/en/p/learn-to-create-beautiful-tech-architecture-diagrams-with-ai/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.ed668df6847002e96da55125322b5655e4e3773453c2addee35312e6bbf6cb10.css"><meta property='og:title' content="Learn to Create Beautiful Tech Architecture Diagrams with AI">
+<meta property='og:description' content="✈️ Learn to Create Beautiful Tech Architecture Diagrams with AI 👋 This guide is written for complete beginners who have never drawn an architecture diagram before. You don&rsquo;t need design skills, you don&rsquo;t need to write code — just know how to chat with AI.\nWhat is a Tech Architecture Diagram and Why Should I Draw One? Simply put, a tech architecture diagram helps you &ldquo;draw out&rdquo; the system in your head.\n">
+<meta property='og:url' content='https://AkuamT.github.io/en/p/learn-to-create-beautiful-tech-architecture-diagrams-with-ai/'>
+<meta property='og:site_name' content='Yanmu'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='AI Tools' /><meta property='article:tag' content='Architecture Diagram' /><meta property='article:tag' content='Excalidraw' /><meta property='article:tag' content='Mermaid' /><meta property='article:tag' content='Gemini' /><meta property='article:tag' content='Tutorial' /><meta property='article:published_time' content='2026-03-31T19:51:00&#43;08:00'/><meta property='article:modified_time' content='2026-03-31T19:51:00&#43;08:00'/><meta property='og:image' content='https://AkuamT.github.io/p/%E5%B0%8F%E7%99%BD%E4%B9%9F%E8%83%BD%E5%AD%A6%E4%BC%9A%E7%94%A8-ai-%E5%BF%AB%E9%80%9F%E7%94%BB%E5%87%BA%E6%BC%82%E4%BA%AE%E7%9A%84%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84%E5%9B%BE/cover.svg' />
+<meta name="twitter:title" content="Learn to Create Beautiful Tech Architecture Diagrams with AI">
+<meta name="twitter:description" content="✈️ Learn to Create Beautiful Tech Architecture Diagrams with AI 👋 This guide is written for complete beginners who have never drawn an architecture diagram before. You don&rsquo;t need design skills, you don&rsquo;t need to write code — just know how to chat with AI.\nWhat is a Tech Architecture Diagram and Why Should I Draw One? Simply put, a tech architecture diagram helps you &ldquo;draw out&rdquo; the system in your head.\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://AkuamT.github.io/p/%E5%B0%8F%E7%99%BD%E4%B9%9F%E8%83%BD%E5%AD%A6%E4%BC%9A%E7%94%A8-ai-%E5%BF%AB%E9%80%9F%E7%94%BB%E5%87%BA%E6%BC%82%E4%BA%AE%E7%9A%84%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84%E5%9B%BE/cover.svg' />
+    <link rel="shortcut icon" href="img/avatar.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/en/">
+                    <img src="/img/Yanmu.jpg" 
+                        width="1024"
+                        height="1037"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">💻 </span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/en/">Yanmu</a></h1>
+            <h2 class="site-description">「May you be your own sun, needing no light but your own.」</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/CaiJimmy/hugo-theme-stack'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/en/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/links/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                <option value="/p/%E5%B0%8F%E7%99%BD%E4%B9%9F%E8%83%BD%E5%AD%A6%E4%BC%9A%E7%94%A8-ai-%E5%BF%AB%E9%80%9F%E7%94%BB%E5%87%BA%E6%BC%82%E4%BA%AE%E7%9A%84%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84%E5%9B%BE/" >简体中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                <option value="/en/p/learn-to-create-beautiful-tech-architecture-diagrams-with-ai/" selected>English</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                <option value="/zh-hant-tw/p/%E5%B0%8F%E7%99%BD%E4%B9%9F%E8%83%BD%E5%AD%B8%E6%9C%83%E7%94%A8-ai-%E5%BF%AB%E9%80%9F%E7%95%AB%E5%87%BA%E6%BC%82%E4%BA%AE%E7%9A%84%E6%8A%80%E8%A1%93%E6%9E%B6%E6%A7%8B%E5%9C%96/" >繁体中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/ja/p/%E5%88%9D%E5%BF%83%E8%80%85%E3%81%A7%E3%82%82%E3%81%A7%E3%81%8D%E3%82%8Bai%E3%81%A7%E3%81%8D%E3%82%8C%E3%81%84%E3%81%AA%E6%8A%80%E8%A1%93%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3%E5%9B%B3%E3%82%92%E7%B4%A0%E6%97%A9%E3%81%8F%E4%BD%9C%E6%88%90/" >日本語</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#what-is-a-tech-architecture-diagram-and-why-should-i-draw-one">What is a Tech Architecture Diagram and Why Should I Draw One?</a></li>
+    <li><a href="#-which-method-should-a-beginner-choose-read-this-first">🤔 Which Method Should a Beginner Choose? (Read This First)</a></li>
+    <li><a href="#method-1-let-ai-draw-a-picture-for-you-simplest-fastest">Method 1: Let AI Draw a Picture for You (Simplest, Fastest)</a>
+      <ol>
+        <li><a href="#how-it-works-in-one-sentence">How It Works in One Sentence</a></li>
+        <li><a href="#step-by-step-guide">Step-by-Step Guide</a>
+          <ol>
+            <li><a href="#step-1-ask-ai-to-write-a-visual-description-prompt">Step 1: Ask AI to Write a &ldquo;Visual Description Prompt&rdquo;</a></li>
+            <li><a href="#step-2-feed-the-prompt-to-ai-for-image-generation">Step 2: Feed the Prompt to AI for Image Generation</a></li>
+            <li><a href="#step-3-done-">Step 3: Done 🎉</a></li>
+          </ol>
+        </li>
+        <li><a href="#pros-and-cons">Pros and Cons</a></li>
+        <li><a href="#-beginner-tips">📌 Beginner Tips</a></li>
+      </ol>
+    </li>
+    <li><a href="#method-2-let-ai-generate-code-then-render-it-into-a-diagram-recommended-for-beginners">Method 2: Let AI Generate Code, Then Render It into a Diagram (Recommended for Beginners)</a>
+      <ol>
+        <li><a href="#how-it-works-in-one-sentence-1">How It Works in One Sentence</a></li>
+        <li><a href="#step-by-step-guide-1">Step-by-Step Guide</a>
+          <ol>
+            <li><a href="#step-1-ask-ai-to-generate-mermaid-code">Step 1: Ask AI to Generate Mermaid Code</a></li>
+            <li><a href="#step-2-render-the-code-as-an-image">Step 2: Render the Code as an Image</a></li>
+            <li><a href="#step-3-want-to-modify-it-ask-ai-to-change-the-code">Step 3: Want to Modify It? Ask AI to Change the Code</a></li>
+          </ol>
+        </li>
+        <li><a href="#pros-and-cons-1">Pros and Cons</a></li>
+        <li><a href="#-beginner-tips-1">📌 Beginner Tips</a></li>
+      </ol>
+    </li>
+    <li><a href="#method-3-let-ai-generate-editable-architecture-diagrams-for-formal-documents">Method 3: Let AI Generate Editable Architecture Diagrams (For Formal Documents)</a>
+      <ol>
+        <li><a href="#how-it-works-in-one-sentence-2">How It Works in One Sentence</a></li>
+        <li><a href="#-first-understand-what-is-a-drawing-instruction-pack-skills">🤔 First, Understand: What is a &ldquo;Drawing Instruction Pack&rdquo; (Skills)?</a></li>
+        <li><a href="#-prerequisite-installation-one-time">🔧 Prerequisite Installation (One-Time)</a>
+          <ol>
+            <li><a href="#-where-should-this-instruction-pack-go">💡 Where Should This Instruction Pack Go?</a></li>
+            <li><a href="#installation-method-1-let-ai-install-it-for-you-recommended-easiest">Installation Method 1: Let AI Install It for You (Recommended, Easiest)</a></li>
+            <li><a href="#installation-method-2-manual-download">Installation Method 2: Manual Download</a></li>
+            <li><a href="#installation-method-3-claude-code-quick-install">Installation Method 3: Claude Code Quick Install</a></li>
+            <li><a href="#youll-also-need">You&rsquo;ll Also Need:</a></li>
+          </ol>
+        </li>
+        <li><a href="#-step-by-step-guide">🖐️ Step-by-Step Guide</a>
+          <ol>
+            <li><a href="#step-1-install-skills-tell-ai-what-to-draw">Step 1: Install Skills, Tell AI What to Draw</a></li>
+            <li><a href="#step-2-manual-adjustments-in-obsidian">Step 2: Manual Adjustments in Obsidian</a></li>
+            <li><a href="#step-3-optional-change-style-with-ai">Step 3 (Optional): Change Style with AI</a></li>
+          </ol>
+        </li>
+        <li><a href="#-what-diagrams-can-excalidraw-skills-draw">🔍 What Diagrams Can Excalidraw Skills Draw?</a></li>
+        <li><a href="#-common-issues--solutions">⚠️ Common Issues &amp; Solutions</a></li>
+        <li><a href="#pros-and-cons-2">Pros and Cons</a></li>
+        <li><a href="#-beginner-tips-2">📌 Beginner Tips</a></li>
+      </ol>
+    </li>
+    <li><a href="#-tools-summary">🔧 Tools Summary</a></li>
+    <li><a href="#-beginner-quick-start-roadmap">🎯 Beginner Quick Start Roadmap</a></li>
+    <li><a href="#-faq">💬 FAQ</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/en/p/learn-to-create-beautiful-tech-architecture-diagrams-with-ai/">
+            <img alt="Featured image of post Learn to Create Beautiful Tech Architecture Diagrams with AI" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E5%B0%8F%E7%99%BD%E4%B9%9F%E8%83%BD%E5%AD%A6%E4%BC%9A%E7%94%A8-ai-%E5%BF%AB%E9%80%9F%E7%94%BB%E5%87%BA%E6%BC%82%E4%BA%AE%E7%9A%84%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84%E5%9B%BE/cover.svg">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/en/categories/ai-tools/" style="background-color: #7c3aed; color: #fff;">
+                AI Tools
+            </a>
+        
+            
+            
+            
+            <a href="/en/categories/tutorial/" style="background-color: #2563eb; color: #fff;">
+                Tutorial
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/en/p/learn-to-create-beautiful-tech-architecture-diagrams-with-ai/">Learn to Create Beautiful Tech Architecture Diagrams with AI</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-03-31T19:51:00&#43;08:00'>Tuesday, March 31, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        6 minutes read
+                    </time>
+                
+            </div>
+        
+
+        
+            <div class="inline-meta">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                
+                    <a href="/p/%E5%B0%8F%E7%99%BD%E4%B9%9F%E8%83%BD%E5%AD%A6%E4%BC%9A%E7%94%A8-ai-%E5%BF%AB%E9%80%9F%E7%94%BB%E5%87%BA%E6%BC%82%E4%BA%AE%E7%9A%84%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84%E5%9B%BE/" class="link">简体中文</a>
+                
+                    <a href="/zh-hant-tw/p/%E5%B0%8F%E7%99%BD%E4%B9%9F%E8%83%BD%E5%AD%B8%E6%9C%83%E7%94%A8-ai-%E5%BF%AB%E9%80%9F%E7%95%AB%E5%87%BA%E6%BC%82%E4%BA%AE%E7%9A%84%E6%8A%80%E8%A1%93%E6%9E%B6%E6%A7%8B%E5%9C%96/" class="link">繁体中文</a>
+                
+                    <a href="/ja/p/%E5%88%9D%E5%BF%83%E8%80%85%E3%81%A7%E3%82%82%E3%81%A7%E3%81%8D%E3%82%8Bai%E3%81%A7%E3%81%8D%E3%82%8C%E3%81%84%E3%81%AA%E6%8A%80%E8%A1%93%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3%E5%9B%B3%E3%82%92%E7%B4%A0%E6%97%A9%E3%81%8F%E4%BD%9C%E6%88%90/" class="link">日本語</a>
+                
+            </div>
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span>Table of contents</span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#what-is-a-tech-architecture-diagram-and-why-should-i-draw-one">What is a Tech Architecture Diagram and Why Should I Draw One?</a></li>
+    <li><a href="#-which-method-should-a-beginner-choose-read-this-first">🤔 Which Method Should a Beginner Choose? (Read This First)</a></li>
+    <li><a href="#method-1-let-ai-draw-a-picture-for-you-simplest-fastest">Method 1: Let AI Draw a Picture for You (Simplest, Fastest)</a>
+      <ol>
+        <li><a href="#how-it-works-in-one-sentence">How It Works in One Sentence</a></li>
+        <li><a href="#step-by-step-guide">Step-by-Step Guide</a>
+          <ol>
+            <li><a href="#step-1-ask-ai-to-write-a-visual-description-prompt">Step 1: Ask AI to Write a &ldquo;Visual Description Prompt&rdquo;</a></li>
+            <li><a href="#step-2-feed-the-prompt-to-ai-for-image-generation">Step 2: Feed the Prompt to AI for Image Generation</a></li>
+            <li><a href="#step-3-done-">Step 3: Done 🎉</a></li>
+          </ol>
+        </li>
+        <li><a href="#pros-and-cons">Pros and Cons</a></li>
+        <li><a href="#-beginner-tips">📌 Beginner Tips</a></li>
+      </ol>
+    </li>
+    <li><a href="#method-2-let-ai-generate-code-then-render-it-into-a-diagram-recommended-for-beginners">Method 2: Let AI Generate Code, Then Render It into a Diagram (Recommended for Beginners)</a>
+      <ol>
+        <li><a href="#how-it-works-in-one-sentence-1">How It Works in One Sentence</a></li>
+        <li><a href="#step-by-step-guide-1">Step-by-Step Guide</a>
+          <ol>
+            <li><a href="#step-1-ask-ai-to-generate-mermaid-code">Step 1: Ask AI to Generate Mermaid Code</a></li>
+            <li><a href="#step-2-render-the-code-as-an-image">Step 2: Render the Code as an Image</a></li>
+            <li><a href="#step-3-want-to-modify-it-ask-ai-to-change-the-code">Step 3: Want to Modify It? Ask AI to Change the Code</a></li>
+          </ol>
+        </li>
+        <li><a href="#pros-and-cons-1">Pros and Cons</a></li>
+        <li><a href="#-beginner-tips-1">📌 Beginner Tips</a></li>
+      </ol>
+    </li>
+    <li><a href="#method-3-let-ai-generate-editable-architecture-diagrams-for-formal-documents">Method 3: Let AI Generate Editable Architecture Diagrams (For Formal Documents)</a>
+      <ol>
+        <li><a href="#how-it-works-in-one-sentence-2">How It Works in One Sentence</a></li>
+        <li><a href="#-first-understand-what-is-a-drawing-instruction-pack-skills">🤔 First, Understand: What is a &ldquo;Drawing Instruction Pack&rdquo; (Skills)?</a></li>
+        <li><a href="#-prerequisite-installation-one-time">🔧 Prerequisite Installation (One-Time)</a>
+          <ol>
+            <li><a href="#-where-should-this-instruction-pack-go">💡 Where Should This Instruction Pack Go?</a></li>
+            <li><a href="#installation-method-1-let-ai-install-it-for-you-recommended-easiest">Installation Method 1: Let AI Install It for You (Recommended, Easiest)</a></li>
+            <li><a href="#installation-method-2-manual-download">Installation Method 2: Manual Download</a></li>
+            <li><a href="#installation-method-3-claude-code-quick-install">Installation Method 3: Claude Code Quick Install</a></li>
+            <li><a href="#youll-also-need">You&rsquo;ll Also Need:</a></li>
+          </ol>
+        </li>
+        <li><a href="#-step-by-step-guide">🖐️ Step-by-Step Guide</a>
+          <ol>
+            <li><a href="#step-1-install-skills-tell-ai-what-to-draw">Step 1: Install Skills, Tell AI What to Draw</a></li>
+            <li><a href="#step-2-manual-adjustments-in-obsidian">Step 2: Manual Adjustments in Obsidian</a></li>
+            <li><a href="#step-3-optional-change-style-with-ai">Step 3 (Optional): Change Style with AI</a></li>
+          </ol>
+        </li>
+        <li><a href="#-what-diagrams-can-excalidraw-skills-draw">🔍 What Diagrams Can Excalidraw Skills Draw?</a></li>
+        <li><a href="#-common-issues--solutions">⚠️ Common Issues &amp; Solutions</a></li>
+        <li><a href="#pros-and-cons-2">Pros and Cons</a></li>
+        <li><a href="#-beginner-tips-2">📌 Beginner Tips</a></li>
+      </ol>
+    </li>
+    <li><a href="#-tools-summary">🔧 Tools Summary</a></li>
+    <li><a href="#-beginner-quick-start-roadmap">🎯 Beginner Quick Start Roadmap</a></li>
+    <li><a href="#-faq">💬 FAQ</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h1 id="-learn-to-create-beautiful-tech-architecture-diagrams-with-ai">✈️ Learn to Create Beautiful Tech Architecture Diagrams with AI
+</h1>
+    <blockquote>
+        <p>👋 This guide is written for <strong>complete beginners</strong> who have never drawn an architecture diagram before.
+You don&rsquo;t need design skills, you don&rsquo;t need to write code — just know how to chat with AI.</p>
+
+    </blockquote>
+<hr>
+<h2 id="what-is-a-tech-architecture-diagram-and-why-should-i-draw-one">What is a Tech Architecture Diagram and Why Should I Draw One?
+</h2><p>Simply put, a <strong>tech architecture diagram</strong> helps you &ldquo;draw out&rdquo; the system in your head.</p>
+<p>For example, if you&rsquo;re building an app: what functional modules does it have? How do users interact with it? How does data flow? Drawing these relationships as a diagram is an architecture diagram.</p>
+<p>The benefits are real:</p>
+<ul>
+<li>✅ <strong>Clarify your own thinking</strong> — the process of drawing helps you organize your system design</li>
+<li>✅ <strong>Communicate with coworkers effortlessly</strong> — a picture is worth a thousand words</li>
+<li>✅ <strong>Impress in presentations</strong> — bosses and clients instantly understand how great your solution is</li>
+<li>✅ <strong>AI draws for you, saving time and effort</strong> — with AI, you can get a decent diagram in minutes</li>
+</ul>
+<hr>
+<h2 id="-which-method-should-a-beginner-choose-read-this-first">🤔 Which Method Should a Beginner Choose? (Read This First)
+</h2><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>Your Situation</th>
+          <th>Recommended Method</th>
+          <th style="text-align: center">Difficulty</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Just want the fastest way to get a good-looking image, no changes later</td>
+          <td><strong>Method 1</strong> (AI generates image directly)</td>
+          <td style="text-align: center">⭐</td>
+      </tr>
+      <tr>
+          <td>Willing to take one more step for easier future edits</td>
+          <td><strong>Method 2</strong> (Mermaid.js code generation)</td>
+          <td style="text-align: center">⭐⭐</td>
+      </tr>
+      <tr>
+          <td>Creating formal docs that need repeated edits and consistent style</td>
+          <td><strong>Method 3</strong> (Excalidraw local drawing)</td>
+          <td style="text-align: center">⭐⭐⭐</td>
+      </tr>
+  </tbody>
+</table></div>
+
+    <blockquote>
+        <p>💡 <strong>Beginner tip</strong>: Try <strong>Method 1</strong> first to get a feel, then try <strong>Method 2</strong>. Save Method 3 for when you need to create formal documents.</p>
+
+    </blockquote>
+<hr>
+<h2 id="method-1-let-ai-draw-a-picture-for-you-simplest-fastest">Method 1: Let AI Draw a Picture for You (Simplest, Fastest)
+</h2>
+    <blockquote>
+        <p>⏱ Time: 2-3 minutes
+🛠 Tool: Gemini 3.1 Pro (by Google, free)</p>
+
+    </blockquote>
+<h3 id="how-it-works-in-one-sentence">How It Works in One Sentence
+</h3><p>Ask your AI (like Gemini) to write a &ldquo;visual description prompt&rdquo; first, then feed that prompt to the AI&rsquo;s image generation feature, and the AI draws the picture for you.</p>
+<h3 id="step-by-step-guide">Step-by-Step Guide
+</h3><h4 id="step-1-ask-ai-to-write-a-visual-description-prompt">Step 1: Ask AI to Write a &ldquo;Visual Description Prompt&rdquo;
+</h4><p>Open Gemini and enter the following (copy and replace with your content):</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Please write a prompt for generating a technical architecture diagram.
+</span></span><span class="line"><span class="cl">I want to draw an architecture diagram for [your system name, e.g., e-commerce website],
+</span></span><span class="line"><span class="cl">with the following modules: user interface, product management, order system, payment system, admin panel.
+</span></span><span class="line"><span class="cl">The data flow is: user places an order → order system calls payment → payment completion notifies product management to update inventory.
+</span></span><span class="line"><span class="cl">Please provide a detailed prompt in English suitable for text-to-image models. The style should be professional, clean, and visually appealing.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>The AI will return a detailed English description.</p>
+<h4 id="step-2-feed-the-prompt-to-ai-for-image-generation">Step 2: Feed the Prompt to AI for Image Generation
+</h4><p>In Gemini (or other AI with image generation), select the image generation feature (like Gemini&rsquo;s built-in Banana 2.0 model), paste the prompt from the previous step, and click generate.</p>
+<h4 id="step-3-done-">Step 3: Done 🎉
+</h4><p>The AI will output an image. If you&rsquo;re not satisfied, regenerate until you&rsquo;re happy.</p>
+<h3 id="pros-and-cons">Pros and Cons
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>✅ Pros</th>
+          <th>❌ Cons</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Fastest — done in minutes</td>
+          <td>Hard to modify — system changes require full regeneration</td>
+      </tr>
+      <tr>
+          <td>Great visual quality, rich colors</td>
+          <td>Results can be inconsistent</td>
+      </tr>
+      <tr>
+          <td>No extra tools needed</td>
+          <td>Poor prompts lead to poor results</td>
+      </tr>
+  </tbody>
+</table></div>
+<h3 id="-beginner-tips">📌 Beginner Tips
+</h3><ul>
+<li><strong>Be detailed in your prompt</strong> — the more specific you are, the better the output. Don&rsquo;t just say &ldquo;draw an architecture diagram&rdquo; — specify the modules and how they connect</li>
+<li><strong>Try multiple times</strong> — it&rsquo;s normal to not get a perfect result on the first try</li>
+<li><strong>English prompts work better</strong> — most image generation models understand English better</li>
+</ul>
+<hr>
+<h2 id="method-2-let-ai-generate-code-then-render-it-into-a-diagram-recommended-for-beginners">Method 2: Let AI Generate Code, Then Render It into a Diagram (Recommended for Beginners)
+</h2>
+    <blockquote>
+        <p>⏱ Time: 3-5 minutes
+🛠 Tool: Any AI (ChatGPT, Claude, Gemini) + Mermaid.js</p>
+
+    </blockquote>
+<h3 id="how-it-works-in-one-sentence-1">How It Works in One Sentence
+</h3><p>A flowchart is essentially <strong>code</strong> (Mermaid.js syntax). You ask AI to write this code, then use a free online tool to render it as an image. Want to change the diagram? Ask AI to modify the code and re-render.</p>
+<h3 id="step-by-step-guide-1">Step-by-Step Guide
+</h3><h4 id="step-1-ask-ai-to-generate-mermaid-code">Step 1: Ask AI to Generate Mermaid Code
+</h4><p>Open your preferred AI (ChatGPT, Claude, Gemini) and enter (copy and replace with your content):</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Please use Mermaid syntax to draw an architecture diagram for an e-commerce system.
+</span></span><span class="line"><span class="cl">The system includes: user interface, product management, order system, payment system, admin panel.
+</span></span><span class="line"><span class="cl">Data flow: user places order → order system calls payment → payment completion notifies product management to update inventory.
+</span></span><span class="line"><span class="cl">Output pure Mermaid code using graph TD format.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>The AI will return something like:</p>
+<pre class="mermaid" style="visibility:hidden">graph TD
+    A[User Interface] --> B[Order System]
+    B --> C[Payment System]
+    B --> D[Product Management]
+    C --> E[Payment Complete]
+    E --> D</pre><h4 id="step-2-render-the-code-as-an-image">Step 2: Render the Code as an Image
+</h4><p>Open this free website: <a class="link" href="https://mermaid.live"  target="_blank" rel="noopener"
+    >mermaid.live</a></p>
+<ol>
+<li>Paste the AI-generated code into the <strong>left</strong> editor panel</li>
+<li>The <strong>right</strong> panel will instantly display the flowchart</li>
+<li>Click the &ldquo;Export&rdquo; button in the top-right corner and choose PNG or SVG format (SVG is a vector format — it stays sharp at any size, great for formal documents)</li>
+</ol>
+<h4 id="step-3-want-to-modify-it-ask-ai-to-change-the-code">Step 3: Want to Modify It? Ask AI to Change the Code
+</h4><p>Paste the old code back to the AI and tell it what you want to change:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Modify the code above to add a &#34;Login Verification&#34; module between &#34;User Interface&#34; and &#34;Order System&#34;.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>After modification, go back to mermaid.live to paste and export.</p>
+<h3 id="pros-and-cons-1">Pros and Cons
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>✅ Pros</th>
+          <th>❌ Cons</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Good image quality, professional look</td>
+          <td>Complex diagrams are still hard to modify later</td>
+      </tr>
+      <tr>
+          <td>Easier to modify than Method 1 — change code, re-render</td>
+          <td>Major architecture changes essentially require regeneration</td>
+      </tr>
+      <tr>
+          <td>No software installation needed — works in a browser</td>
+          <td></td>
+      </tr>
+  </tbody>
+</table></div>
+<h3 id="-beginner-tips-1">📌 Beginner Tips
+</h3><ul>
+<li><strong>Mermaid has fixed syntax</strong> — when asking AI, clearly say &ldquo;use Mermaid syntax&rdquo;</li>
+<li><strong>mermaid.live is a gem</strong> — paste and preview instantly, completely free, no account needed</li>
+<li><strong>Export as SVG for best results</strong> — vector format stays sharp at any size</li>
+<li><strong>Save your code</strong> — for future modifications, just send the old code to AI</li>
+</ul>
+<hr>
+<h2 id="method-3-let-ai-generate-editable-architecture-diagrams-for-formal-documents">Method 3: Let AI Generate Editable Architecture Diagrams (For Formal Documents)
+</h2>
+    <blockquote>
+        <p>⏱ Time: 10-15 minutes (first setup takes a bit longer)
+🛠 Tools: An AI coding tool + Obsidian + a &ldquo;Drawing Instruction Pack&rdquo;</p>
+
+    </blockquote>
+<h3 id="how-it-works-in-one-sentence-2">How It Works in One Sentence
+</h3><p>This is the most professional method, but requires some initial setup. Once configured, you tell AI what to draw, and AI generates a <strong>draggable, editable</strong> architecture diagram file that you open in Obsidian — adjust anything you don&rsquo;t like manually. Methods 1 and 2 produce &ldquo;static&rdquo; images; this method produces &ldquo;living&rdquo; ones.</p>
+<hr>
+<h3 id="-first-understand-what-is-a-drawing-instruction-pack-skills">🤔 First, Understand: What is a &ldquo;Drawing Instruction Pack&rdquo; (Skills)?
+</h3><p><strong>Skills</strong> are a set of &ldquo;instruction manuals&rdquo; that tell AI how to draw diagrams for you.</p>
+<ul>
+<li>Without it: You say &ldquo;draw an architecture diagram&rdquo; — AI can only give you a text description</li>
+<li>With it: AI knows how to generate an editable architecture diagram file</li>
+</ul>
+<p>Think of it as installing a &ldquo;diagram plugin&rdquo; for your AI.</p>
+<p><strong>This instruction pack is called <code>axton-obsidian-visual-skills</code></strong> — a free open-source project by Axton. It includes 3 drawing abilities:</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Drawing Method</th>
+          <th style="text-align: left">Generated File</th>
+          <th style="text-align: left">Best For</th>
+          <th style="text-align: left">Visual Style</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Excalidraw</strong></td>
+          <td style="text-align: left"><code>.excalidraw</code> file</td>
+          <td style="text-align: left">Flowcharts, mind maps, architecture diagrams</td>
+          <td style="text-align: left">✏️ Hand-drawn style (like a whiteboard)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Mermaid</strong></td>
+          <td style="text-align: left">Text rules</td>
+          <td style="text-align: left">Flowcharts, sequence diagrams, comparison charts</td>
+          <td style="text-align: left">🎯 Professional business style</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Canvas</strong></td>
+          <td style="text-align: left"><code>.canvas</code> file</td>
+          <td style="text-align: left">Mind maps, knowledge organization</td>
+          <td style="text-align: left">🎨 Colorful cards</td>
+      </tr>
+  </tbody>
+</table></div>
+
+    <blockquote>
+        <p>💡 <strong>You can also use Draw.io</strong> — <a class="link" href="https://www.draw.io"  target="_blank" rel="noopener"
+    >Draw.io</a> is another free drawing tool with its own instruction pack. This guide uses Excalidraw as an example.</p>
+
+    </blockquote>
+<h3 id="-prerequisite-installation-one-time">🔧 Prerequisite Installation (One-Time)
+</h3><h4 id="-where-should-this-instruction-pack-go">💡 Where Should This Instruction Pack Go?
+</h4><p>AI tools look for these instruction files in a <strong>fixed location</strong> on your computer. Recommended location:</p>
+<p><strong><code>C:\Users\yourusername\.claude\skills\</code></strong></p>
+
+    <blockquote>
+        <p>🤔 <strong>What&rsquo;s this path?</strong></p>
+<ul>
+<li><code>C:\Users\yourusername\</code> ← Your &ldquo;user folder&rdquo; — where software stores config files by default</li>
+<li><code>\.claude\</code> ← Configuration folder created by Claude Code</li>
+<li><code>skills\</code> ← Where drawing instructions are stored</li>
+</ul>
+<p>Don&rsquo;t know your username? Open File Explorer, type <code>%USERPROFILE%</code> in the address bar and press Enter — that&rsquo;s the folder.</p>
+
+    </blockquote>
+
+    <blockquote>
+        <p>🤔 <strong>Why on C drive?</strong> Because your user folder is on C by default. This makes the instruction pack available to <strong>all projects</strong> on this machine.</p>
+
+    </blockquote>
+<p><strong>This location works for both OpenCode and Claude Code</strong> — install once, use with both tools.</p>
+<p>Other tools may use different locations, but beginners can just use the path above.</p>
+<h4 id="installation-method-1-let-ai-install-it-for-you-recommended-easiest">Installation Method 1: Let AI Install It for You (Recommended, Easiest)
+</h4><p>Whether you use <strong>OpenCode, Claude Code, or Cursor</strong>, just say:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">Help</span> <span class="n">me</span> <span class="n">download</span> <span class="n">axtonliu</span><span class="o">/</span><span class="n">axton</span><span class="o">-</span><span class="n">obsidian</span><span class="o">-</span><span class="n">visual</span><span class="o">-</span><span class="n">skills</span> <span class="n">from</span> <span class="n">GitHub</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="n">unzip</span> <span class="n">it</span><span class="p">,</span> <span class="ow">and</span> <span class="n">put</span> <span class="n">the</span> <span class="n">excalidraw</span><span class="o">-</span><span class="n">diagram</span><span class="p">,</span> <span class="n">mermaid</span><span class="o">-</span><span class="n">visualizer</span><span class="p">,</span> <span class="ow">and</span> <span class="n">obsidian</span><span class="o">-</span><span class="n">canvas</span><span class="o">-</span><span class="n">creator</span>
+</span></span><span class="line"><span class="cl"><span class="n">folders</span> <span class="n">into</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">yourusername</span>\<span class="o">.</span><span class="n">claude</span>\<span class="n">skills</span>\ <span class="n">directory</span><span class="o">.</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>AI will handle downloading, unzipping, and copying. Restart your tool when done.</p>
+
+    <blockquote>
+        <p>💡 Replace &ldquo;yourusername&rdquo; with your actual username.</p>
+
+    </blockquote>
+<h4 id="installation-method-2-manual-download">Installation Method 2: Manual Download
+</h4><p>If your AI doesn&rsquo;t support file operations:</p>
+<ol>
+<li>
+<p>Open the <a class="link" href="https://github.com/axtonliu/axton-obsidian-visual-skills"  target="_blank" rel="noopener"
+    >axton-obsidian-visual-skills download page</a></p>
+</li>
+<li>
+<p>Click the green <strong>Code</strong> button → <strong>Download ZIP</strong></p>
+</li>
+<li>
+<p>Unzip the file — you&rsquo;ll see 3 folders</p>
+</li>
+<li>
+<p>Open your <code>C:\Users\yourusername\.claude\</code> folder (create a <code>skills</code> folder if it doesn&rsquo;t exist)</p>
+</li>
+<li>
+<p>Drag all 3 folders in</p>
+<p>Final structure:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">C:\Users\yourusername\.claude\skills\
+</span></span><span class="line"><span class="cl">   ├── excalidraw-diagram\
+</span></span><span class="line"><span class="cl">   │     └── SKILL.md
+</span></span><span class="line"><span class="cl">   ├── mermaid-visualizer\
+</span></span><span class="line"><span class="cl">   │     └── SKILL.md
+</span></span><span class="line"><span class="cl">   └── obsidian-canvas-creator\
+</span></span><span class="line"><span class="cl">         └── SKILL.md
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h4 id="installation-method-3-claude-code-quick-install">Installation Method 3: Claude Code Quick Install
+</h4><p>If you use <strong>Claude Code</strong> (only works with it), type in the chat:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">/plugin marketplace add axtonliu/axton-obsidian-visual-skills
+</span></span><span class="line"><span class="cl">/plugin install obsidian-visual-skills
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Restart Claude Code after installation. <strong>Not supported by OpenCode or Cursor.</strong></p>
+<h4 id="youll-also-need">You&rsquo;ll Also Need:
+</h4><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Software</th>
+          <th style="text-align: left">Purpose</th>
+          <th style="text-align: center">Cost</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>OpenCode / Claude Code / Cursor</strong></td>
+          <td style="text-align: left">Runs AI to generate diagram files</td>
+          <td style="text-align: center">Free tiers available</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong><a class="link" href="https://obsidian.md/"  target="_blank" rel="noopener"
+    >Obsidian</a></strong></td>
+          <td style="text-align: left">View and manually adjust diagrams</td>
+          <td style="text-align: center">Free</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong><a class="link" href="https://github.com/zsviczian/obsidian-excalidraw-plugin"  target="_blank" rel="noopener"
+    >Obsidian Excalidraw Plugin</a></strong></td>
+          <td style="text-align: left">Edit Excalidraw files in Obsidian</td>
+          <td style="text-align: center">Free (search &ldquo;Excalidraw&rdquo; in the plugin marketplace)</td>
+      </tr>
+  </tbody>
+</table></div>
+<hr>
+<h3 id="-step-by-step-guide">🖐️ Step-by-Step Guide
+</h3><h4 id="step-1-install-skills-tell-ai-what-to-draw">Step 1: Install Skills, Tell AI What to Draw
+</h4><p>After installing Skills, type directly in <strong>OpenCode, Claude Code, or Cursor</strong>:</p>
+<p><strong>For Excalidraw hand-drawn style architecture diagram:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Use Excalidraw to draw an e-commerce system architecture diagram, including:
+</span></span><span class="line"><span class="cl">user interface, product management, order system, payment system, admin panel.
+</span></span><span class="line"><span class="cl">User places order → order system calls payment → payment completion updates inventory.
+</span></span><span class="line"><span class="cl">Use Chinese labels.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>AI will automatically generate a <code>.excalidraw</code> file in the current directory.</p>
+
+    <blockquote>
+        <p>🔍 <strong>Can&rsquo;t find the file?</strong> Check the AI&rsquo;s output — it usually tells you the save path.</p>
+
+    </blockquote>
+<p><strong>For Mermaid business-style flowchart:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Convert this flow into a Mermaid diagram:
+</span></span><span class="line"><span class="cl">User visits homepage → browses products → adds to cart → submits order → pays online → completes transaction
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>AI will generate Mermaid code — copy it to <a class="link" href="https://mermaid.live"  target="_blank" rel="noopener"
+    >mermaid.live</a> to render.</p>
+<p><strong>For Canvas mind map:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Organize this article into an Obsidian Canvas mind map:
+</span></span><span class="line"><span class="cl">[paste your content]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>AI will generate a <code>.canvas</code> file — open with Obsidian to see a colorful card layout.</p>
+<h4 id="step-2-manual-adjustments-in-obsidian">Step 2: Manual Adjustments in Obsidian
+</h4><ul>
+<li>Open Obsidian and drag the generated file in</li>
+<li>For Excalidraw files (<code>.excalidraw</code> or <code>.md</code>), double-click to enter edit mode</li>
+<li>Freely drag boxes, adjust arrows, modify text, change colors</li>
+<li>Drag a new box to add a module, select and press Delete to remove</li>
+</ul>
+
+    <blockquote>
+        <p>💡 This is the key advantage — you have a &ldquo;living&rdquo; architecture diagram.</p>
+
+    </blockquote>
+<h4 id="step-3-optional-change-style-with-ai">Step 3 (Optional): Change Style with AI
+</h4><p>After adjusting content and layout, screenshot it and send to Gemini (or other AI) with a reference image:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Help me convert Image 1 to a hand-drawn style similar to Image 2, adding appropriate illustrations to help users understand
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>(Prompt 1: Major changes — content layout may also be adjusted)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Convert to a hand-drawn style similar to Image 2
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>(Prompt 2: Minor changes — only colors and style, content layout stays the same)</p>
+<hr>
+<h3 id="-what-diagrams-can-excalidraw-skills-draw">🔍 What Diagrams Can Excalidraw Skills Draw?
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Diagram Type</th>
+          <th style="text-align: left">Best For</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Flowchart</strong></td>
+          <td style="text-align: left">Business processes, operation steps, task sequences</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Mind Map</strong></td>
+          <td style="text-align: left">Concept expansion, topic classification, brainstorming</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Hierarchy Diagram</strong></td>
+          <td style="text-align: left">Organization structure, system layers, directory structure</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Relationship Diagram</strong></td>
+          <td style="text-align: left">Dependencies, influence relationships, element interactions</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Comparison Chart</strong></td>
+          <td style="text-align: left">Solution comparison, option analysis, before/after</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Timeline</strong></td>
+          <td style="text-align: left">Event evolution, project milestones, version iterations</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Matrix</strong></td>
+          <td style="text-align: left">2D classification, priority matrix, capability positioning</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Free Canvas</strong></td>
+          <td style="text-align: left">Scattered ideas, initial drafts, free-form notes</td>
+      </tr>
+  </tbody>
+</table></div>
+<hr>
+<h3 id="-common-issues--solutions">⚠️ Common Issues &amp; Solutions
+</h3><p><strong>Q: Chinese text doesn&rsquo;t have a hand-drawn look?</strong>
+A: Excalidraw&rsquo;s hand-drawn font (Excalifont) supports English by default; Chinese fonts need online loading. If Chinese shows as regular font:</p>
+<ol>
+<li>Ensure access to Excalidraw.com (needs internet)</li>
+<li>Or download Chinese font files from the <a class="link" href="https://github.com/excalidraw/excalidraw/tree/master/public/fonts"  target="_blank" rel="noopener"
+    >Excalidraw official font library</a></li>
+<li>Place them in your Obsidian vault under <code>Excalidraw/CJK Fonts</code></li>
+<li>Enable &ldquo;Load Chinese fonts at startup&rdquo; in Excalidraw plugin settings and restart Obsidian</li>
+</ol>
+<p><strong>Q: The generated diagram looks messy?</strong>
+A: That&rsquo;s normal — AI-generated layouts aren&rsquo;t always perfect. Just drag and adjust in Obsidian — that&rsquo;s the biggest advantage of Method 3.</p>
+<p><strong>Q: Do I have to use Claude Code?</strong>
+A: No. These Skills work on <strong>OpenCode, Claude Code, and Cursor</strong>. OpenCode is compatible with Claude Code&rsquo;s Skills format.</p>
+<hr>
+<h3 id="pros-and-cons-2">Pros and Cons
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>✅ Pros</th>
+          <th>❌ Cons</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Edit anything — drag to adjust</td>
+          <td>First-time environment setup takes time</td>
+      </tr>
+      <tr>
+          <td>Not dependent on prompt quality — content can be manually refined</td>
+          <td>Longer workflow, more steps</td>
+      </tr>
+      <tr>
+          <td>Create a set of consistently styled document diagrams</td>
+          <td>Occasional text encoding or alignment issues</td>
+      </tr>
+      <tr>
+          <td>Works well with Obsidian for knowledge management</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>One Skills install gives three drawing methods</td>
+          <td></td>
+      </tr>
+  </tbody>
+</table></div>
+<h3 id="-beginner-tips-2">📌 Beginner Tips
+</h3><ul>
+<li><strong>Try Methods 1 and 2 first</strong>, then move to Method 3 when you&rsquo;re comfortable</li>
+<li><strong>Skills installation is the key step</strong> — once installed, AI knows how to generate editable files</li>
+<li><strong>Excalidraw defaults to hand-drawn style</strong>, giving a亲切, approachable look</li>
+<li><strong>Obsidian&rsquo;s Excalidraw plugin</strong> offers the best viewing and editing experience</li>
+<li><strong>Method 3&rsquo;s greatest value is editability</strong> — once set up, future changes are just drag-and-drop</li>
+<li>Check out the <a class="link" href="https://youtu.be/TUJ_3G1cylc"  target="_blank" rel="noopener"
+    >demo video</a> on GitHub before deciding</li>
+</ul>
+<hr>
+<h2 id="-tools-summary">🔧 Tools Summary
+</h2><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Tool</th>
+          <th style="text-align: left">Purpose</th>
+          <th style="text-align: center">Cost</th>
+          <th style="text-align: center">Difficulty</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><a class="link" href="https://gemini.google.com"  target="_blank" rel="noopener"
+    >Gemini</a></td>
+          <td style="text-align: left">Chat + text-to-image generation</td>
+          <td style="text-align: center">Free</td>
+          <td style="text-align: center">Low</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><a class="link" href="https://chat.openai.com"  target="_blank" rel="noopener"
+    >ChatGPT</a></td>
+          <td style="text-align: left">Chat + text-to-image generation</td>
+          <td style="text-align: center">Paid/Free</td>
+          <td style="text-align: center">Low</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><a class="link" href="https://github.com/semanser/opencode"  target="_blank" rel="noopener"
+    >OpenCode</a></td>
+          <td style="text-align: left">AI coding tool, auto-loads <code>~/.claude/skills/</code>, supports parallel execution</td>
+          <td style="text-align: center">Free</td>
+          <td style="text-align: center">Medium</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><a class="link" href="https://docs.anthropic.com/en/docs/claude-code"  target="_blank" rel="noopener"
+    >Claude Code</a></td>
+          <td style="text-align: left">AI coding tool, supports Skills</td>
+          <td style="text-align: center">API usage pricing</td>
+          <td style="text-align: center">Medium</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><a class="link" href="https://cursor.sh"  target="_blank" rel="noopener"
+    >Cursor</a></td>
+          <td style="text-align: left">AI coding tool</td>
+          <td style="text-align: center">Free tier sufficient</td>
+          <td style="text-align: center">Medium</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><a class="link" href="https://mermaid.live"  target="_blank" rel="noopener"
+    >mermaid.live</a></td>
+          <td style="text-align: left">Convert Mermaid code to images</td>
+          <td style="text-align: center">Free</td>
+          <td style="text-align: center">Low</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><a class="link" href="https://github.com/excalidraw/excalidraw"  target="_blank" rel="noopener"
+    >Excalidraw</a></td>
+          <td style="text-align: left">Editable diagram tool</td>
+          <td style="text-align: center">Free &amp; open source</td>
+          <td style="text-align: center">Low</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><a class="link" href="https://obsidian.md/"  target="_blank" rel="noopener"
+    >Obsidian</a></td>
+          <td style="text-align: left">Note-taking + Excalidraw plugin for editable diagrams</td>
+          <td style="text-align: center">Free</td>
+          <td style="text-align: center">Medium</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><a class="link" href="https://github.com/axtonliu/axton-obsidian-visual-skills"  target="_blank" rel="noopener"
+    >axton-obsidian-visual-skills</a></td>
+          <td style="text-align: left">AI drawing instruction pack (Excalidraw / Mermaid / Canvas)</td>
+          <td style="text-align: center">Free &amp; open source</td>
+          <td style="text-align: center">Medium</td>
+      </tr>
+  </tbody>
+</table></div>
+<hr>
+<h2 id="-beginner-quick-start-roadmap">🎯 Beginner Quick Start Roadmap
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Day 1 → Try Method 1: Generate images with Gemini (just try it)
+</span></span><span class="line"><span class="cl">         ↓
+</span></span><span class="line"><span class="cl">Day 2 → Try Method 2: Generate flowcharts with Mermaid.js
+</span></span><span class="line"><span class="cl">         (Learn the &#34;change code = change diagram&#34; approach)
+</span></span><span class="line"><span class="cl">         ↓
+</span></span><span class="line"><span class="cl">Day 3 → Use Method 2 diagrams in your documents
+</span></span><span class="line"><span class="cl">         ↓
+</span></span><span class="line"><span class="cl">When needed → Explore Method 3: Install Skills + Obsidian + Excalidraw plugin
+</span></span><span class="line"><span class="cl">(No rush — Methods 1 and 2 are already sufficient)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="-faq">💬 FAQ
+</h2><p><strong>Q: Are all these tools free?</strong>
+A: Gemini and mermaid.live are completely free. ChatGPT and Claude have free tiers — you only pay after using them up.</p>
+<p><strong>Q: Can I use generated images commercially?</strong>
+A: Yes, the architecture diagram is your own design — AI is just a tool to draw it.</p>
+<p><strong>Q: I&rsquo;m a product manager/operations person, not a developer — can I still draw?</strong>
+A: Absolutely. Method 1 only requires typing, Method 2 only requires copy-pasting — no coding needed.</p>
+<p><strong>Q: Are there copyright issues with generated images?</strong>
+A: The copyright of tool-generated images belongs to you.</p>
+<p><strong>Q: Do Mac and Windows both work?</strong>
+A: All tools mentioned have web versions, so the OS doesn&rsquo;t matter.</p>
+<p><strong>Q: What exactly is &ldquo;axton-obsidian-visual-skills&rdquo; in Method 3, do I have to install it?</strong>
+A: It&rsquo;s an open-source AI drawing &ldquo;instruction pack.&rdquo; You can draw without it, but with it installed, AI can directly generate <strong>editable architecture diagram files</strong> instead of static images. If you only need occasional diagrams, Methods 1 and 2 are sufficient. If you need frequent edits and formal documents, highly recommended.</p>
+<p><strong>Q: What&rsquo;s the difference between the 3 drawing methods (Excalidraw / Mermaid / Canvas) in Method 3?</strong>
+A: Simply put — <strong>Excalidraw</strong> is like a hand-drawn whiteboard, best for architecture diagrams; <strong>Mermaid</strong> has a professional business style, great for formal docs; <strong>Canvas</strong> is a colorful mind map tool for organizing ideas. Choose based on what you need.</p>
+<p><strong>Q: Does Method 3 require Claude Code? Can I use ChatGPT?</strong>
+A: These Skills are designed for <strong>AI coding tools that can manipulate local files</strong> — <strong>OpenCode, Claude Code, Cursor</strong> all work. ChatGPT&rsquo;s web version can&rsquo;t handle local files, so it won&rsquo;t work.</p>
+<p><strong>Q: Where should the installed Skills be? How do I check?</strong>
+A: They go in <code>~/.claude/skills/</code>. Check that directory — it should have <code>excalidraw-diagram</code>, <code>mermaid-visualizer</code>, and <code>obsidian-canvas-creator</code> folders. Restart your AI tool and it should recognize them.</p>
+<hr>
+
+    <blockquote>
+        <p>📝 <strong>Final words</strong>: The most important thing about drawing architecture diagrams is <strong>clarifying what you want to express</strong>. AI is just a tool to turn your ideas into images. Start with the simplest Method 1 — the first step is the most important!</p>
+
+    </blockquote>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/en/tags/ai-tools/">AI Tools</a>
+        
+            <a href="/en/tags/architecture-diagram/">Architecture Diagram</a>
+        
+            <a href="/en/tags/excalidraw/">Excalidraw</a>
+        
+            <a href="/en/tags/mermaid/">Mermaid</a>
+        
+            <a href="/en/tags/gemini/">Gemini</a>
+        
+            <a href="/en/tags/tutorial/">Tutorial</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under <a class="link" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"  target="_blank" rel="noopener"
+    >CC BY-NC-SA 4.0</a></span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title">Related content</h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/en/p/context7-guide-help-your-ai-coding-assistant-read-the-latest-docs/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post Context7 Guide: Help Your AI Coding Assistant Read the Latest Docs" loading="lazy" src="/p/context7%E6%8C%87%E5%8D%97%E8%AE%A9ai%E7%BC%96%E7%A8%8B%E5%8A%A9%E6%89%8B%E8%AF%BB%E6%87%82%E6%9C%80%E6%96%B0%E6%96%87%E6%A1%A3/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Context7 Guide: Help Your AI Coding Assistant Read the Latest Docs</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/en/p/opencode--obsidian-build-your-ai-powered-knowledge-management-workflow/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post OpenCode + Obsidian: Build Your AI-Powered Knowledge Management Workflow" loading="lazy" src="/p/opencode--obsidian%E6%89%93%E9%80%A0%E4%BD%A0%E7%9A%84ai%E9%A9%B1%E5%8A%A8%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E5%B7%A5%E4%BD%9C%E6%B5%81/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">OpenCode &#43; Obsidian: Build Your AI-Powered Knowledge Management Workflow</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/en/p/opencode-beginner-to-advanced-a-complete-guide-to-parallel-scheduling-and-usage-tips/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post OpenCode Beginner to Advanced: A Complete Guide to Parallel Scheduling and Usage Tips" loading="lazy" src="/p/opencode-%E6%96%B0%E6%89%8B%E8%BF%9B%E9%98%B6%E5%B9%B6%E8%A1%8C%E8%B0%83%E5%BA%A6%E4%B8%8E%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E5%85%A8%E6%94%BB%E7%95%A5/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">OpenCode Beginner to Advanced: A Complete Guide to Parallel Scheduling and Usage Tips</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/en/p/opencode-in-depth-guide-installation-configuration-and-advanced-techniques-for-the-open-source-claude-code/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post OpenCode In-Depth Guide: Installation, Configuration, and Advanced Techniques for the Open-Source Claude Code" loading="lazy" src="/p/opencode-%E5%85%A8%E6%B7%B1%E5%BA%A6%E6%8C%87%E5%8D%97%E5%BC%80%E6%BA%90%E7%89%88-claude-code-%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E4%B8%8E%E9%AB%98%E7%BA%A7%E7%8E%A9%E6%B3%95/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">OpenCode In-Depth Guide: Installation, Configuration, and Advanced Techniques for the Open-Source Claude Code</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/en/p/install-claude-code-in-5-minutes-and-connect-deepseek/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post Install Claude Code in 5 Minutes and Connect DeepSeek" loading="lazy" src="/p/5%E5%88%86%E9%92%9F%E5%AE%89%E8%A3%85claudecode%E5%B9%B6%E6%8E%A5%E5%85%A5deepseek/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Install Claude Code in 5 Minutes and Connect DeepSeek</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+
+        <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2026 Yanmu
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="4.0.2">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+
+    <div class="mermaid-modal" id="mermaid-modal">
+    <div class="mermaid-modal-header">
+        <div class="mermaid-modal-controls">
+            <button data-zoom="-1">− Zoom Out</button>
+            <button data-zoom="0">Reset (100%)</button>
+            <button data-zoom="1">+ Zoom In</button>
+            <button data-zoom="fit">Fit to Screen</button>
+        </div>
+        <button class="mermaid-modal-close" id="mermaid-modal-close">✕ Close (Esc)</button>
+    </div>
+    <div class="mermaid-modal-body" id="mermaid-modal-body">
+        <div class="mermaid-modal-content" id="mermaid-modal-content"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script><script type="module">
+import { initMermaidPage } from '\/ts\/mermaid.js';
+initMermaidPage({"darkTheme":"dark","darkThemeVariables":{},"htmlLabels":true,"lightTheme":"default","lightThemeVariables":{},"look":"classic","securityLevel":"strict","transparentBackground":false});
+</script>
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.1ff1e5fdc4e178ed422e50aa407526dc552f26342d729343fded19416194382c.js" defer></script>
+
+
+    </body>
+</html>
