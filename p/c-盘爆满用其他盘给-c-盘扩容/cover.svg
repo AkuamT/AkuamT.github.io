@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1565C0"/>
+      <stop offset="100%" style="stop-color:#004D40"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" fill="url(#bg)"/>
+  <text x="400" y="140" text-anchor="middle" font-family="Arial,sans-serif" font-size="44" fill="white" opacity="0.95">C 盘爆满？用其他盘给 C 盘扩容</text>
+  <text x="400" y="210" text-anchor="middle" font-family="Arial,sans-serif" font-size="28" fill="white" opacity="0.8">扩容图文教程</text>
+  <text x="400" y="275" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="white" opacity="0.6">微PE + 分区助手，从 D 盘借空间</text>
+  <text x="400" y="320" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="white" opacity="0.5">Expand C Drive with Other Drives</text>
+</svg>

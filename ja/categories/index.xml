@@ -5,17 +5,17 @@
         <description>Recent content in Categories on Yanmu</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>ja</language>
-        <lastBuildDate>Sat, 02 May 2026 19:51:00 +0800</lastBuildDate><atom:link href="https://AkuamT.github.io/ja/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 24 May 2026 16:00:00 +0800</lastBuildDate><atom:link href="https://AkuamT.github.io/ja/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+            <title>チュートリアル</title>
+            <link>https://AkuamT.github.io/ja/categories/tutorial/</link>
+            <pubDate>Sun, 24 May 2026 16:00:00 +0800</pubDate>
+            <guid>https://AkuamT.github.io/ja/categories/tutorial/</guid>
+            <description></description>
+        </item><item>
             <title>AI ツール</title>
             <link>https://AkuamT.github.io/ja/categories/ai-%E3%83%84%E3%83%BC%E3%83%AB/</link>
             <pubDate>Sat, 02 May 2026 19:51:00 +0800</pubDate>
             <guid>https://AkuamT.github.io/ja/categories/ai-%E3%83%84%E3%83%BC%E3%83%AB/</guid>
-            <description></description>
-        </item><item>
-            <title>チュートリアル</title>
-            <link>https://AkuamT.github.io/ja/categories/tutorial/</link>
-            <pubDate>Sat, 02 May 2026 19:51:00 +0800</pubDate>
-            <guid>https://AkuamT.github.io/ja/categories/tutorial/</guid>
             <description></description>
         </item></channel>
 </rss>
