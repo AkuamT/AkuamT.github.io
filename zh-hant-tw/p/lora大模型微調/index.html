@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="zh-hant-tw" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="一、LoRA 是什麼？ LoRA（Low-Rank Adaptation，低秩適應）是一種大模型微調技術。\n問題的起點 大模型（例如 Qwen、Llama）動輒 7B、70B 參數。如果每次想讓它學點新東西，都要重新訓練所有參數，那需要幾十張 A100 顯示卡跑好幾天——一般人根本沒這個條件。\n">
+<title>LoRA大模型微調</title>
+
+
+<link rel="canonical" href="https://AkuamT.github.io/zh-hant-tw/p/lora%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%AA%BF/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.ed668df6847002e96da55125322b5655e4e3773453c2addee35312e6bbf6cb10.css"><meta property='og:title' content="LoRA大模型微調">
+<meta property='og:description' content="一、LoRA 是什麼？ LoRA（Low-Rank Adaptation，低秩適應）是一種大模型微調技術。\n問題的起點 大模型（例如 Qwen、Llama）動輒 7B、70B 參數。如果每次想讓它學點新東西，都要重新訓練所有參數，那需要幾十張 A100 顯示卡跑好幾天——一般人根本沒這個條件。\n">
+<meta property='og:url' content='https://AkuamT.github.io/zh-hant-tw/p/lora%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%AA%BF/'>
+<meta property='og:site_name' content='Yanmu'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='AI' /><meta property='article:tag' content='大模型' /><meta property='article:tag' content='LoRA' /><meta property='article:tag' content='微調' /><meta property='article:published_time' content='2025-12-11T00:00:00&#43;08:00'/><meta property='article:modified_time' content='2025-12-11T00:00:00&#43;08:00'/><meta property='og:image' content='https://AkuamT.github.io/p/lora%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/cover.svg' />
+<meta name="twitter:title" content="LoRA大模型微調">
+<meta name="twitter:description" content="一、LoRA 是什麼？ LoRA（Low-Rank Adaptation，低秩適應）是一種大模型微調技術。\n問題的起點 大模型（例如 Qwen、Llama）動輒 7B、70B 參數。如果每次想讓它學點新東西，都要重新訓練所有參數，那需要幾十張 A100 顯示卡跑好幾天——一般人根本沒這個條件。\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://AkuamT.github.io/p/lora%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/cover.svg' />
+    <link rel="shortcut icon" href="img/avatar.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切換選單">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-hant-tw/">
+                    <img src="/img/Yanmu.jpg" 
+                        width="1024"
+                        height="1037"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">💻 </span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-hant-tw/">Yanmu</a></h1>
+            <h2 class="site-description">「願你成為自己的太陽，無需借誰的光。」</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/CaiJimmy/hugo-theme-stack'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-hant-tw/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主頁</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-hant-tw/%E9%97%9C%E6%96%BC/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>關於</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-hant-tw/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>歸檔</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-hant-tw/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-hant-tw/%E9%8F%88%E6%8E%A5/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>鏈接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                <option value="/p/lora%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/" >简体中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                <option value="/en/p/lora-large-model-fine-tuning/" >English</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                <option value="/zh-hant-tw/p/lora%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%AA%BF/" selected>繁体中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/ja/p/lora%E5%A4%A7%E8%A6%8F%E6%A8%A1%E3%83%A2%E3%83%87%E3%83%AB%E5%BE%AE%E8%AA%BF%E6%95%B4/" >日本語</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>夜晚模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目錄</h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#一lora-是什麼">一、LoRA 是什麼？</a>
+      <ol>
+        <li><a href="#問題的起點">問題的起點</a></li>
+        <li><a href="#lora-的思路">LoRA 的思路</a></li>
+        <li><a href="#為什麼叫低秩適應">為什麼叫「低秩適應」？</a></li>
+      </ol>
+    </li>
+    <li><a href="#二lora-有什麼用">二、LoRA 有什麼用？</a>
+      <ol>
+        <li><a href="#典型應用場景">典型應用場景</a></li>
+        <li><a href="#lora-的優勢">LoRA 的優勢</a></li>
+      </ol>
+    </li>
+    <li><a href="#三怎麼使用-lora">三、怎麼使用 LoRA？</a>
+      <ol>
+        <li><a href="#第一步準備資料">第一步：準備資料</a></li>
+        <li><a href="#第二步選擇工具">第二步：選擇工具</a></li>
+        <li><a href="#第三步訓練">第三步：訓練</a></li>
+        <li><a href="#第四步使用">第四步：使用</a></li>
+      </ol>
+    </li>
+    <li><a href="#四與相關概念的關係">四、與相關概念的關係</a></li>
+    <li><a href="#五一句話總結">五、一句話總結</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/zh-hant-tw/p/lora%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%AA%BF/">
+            <img alt="Featured image of post LoRA大模型微調" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/lora%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/cover.svg">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-hant-tw/categories/%E6%95%99%E7%A8%8B/" style="background-color: #2563eb; color: #fff;">
+                教學
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-hant-tw/p/lora%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%AA%BF/">LoRA大模型微調</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2025-12-11T00:00:00&#43;08:00'>2025年12月11日 星期四</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        閱讀時間: 3 分鐘
+                    </time>
+                
+            </div>
+        
+
+        
+            <div class="inline-meta">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                
+                    <a href="/p/lora%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/" class="link">简体中文</a>
+                
+                    <a href="/en/p/lora-large-model-fine-tuning/" class="link">English</a>
+                
+                    <a href="/ja/p/lora%E5%A4%A7%E8%A6%8F%E6%A8%A1%E3%83%A2%E3%83%87%E3%83%AB%E5%BE%AE%E8%AA%BF%E6%95%B4/" class="link">日本語</a>
+                
+            </div>
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span>目錄</span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#一lora-是什麼">一、LoRA 是什麼？</a>
+      <ol>
+        <li><a href="#問題的起點">問題的起點</a></li>
+        <li><a href="#lora-的思路">LoRA 的思路</a></li>
+        <li><a href="#為什麼叫低秩適應">為什麼叫「低秩適應」？</a></li>
+      </ol>
+    </li>
+    <li><a href="#二lora-有什麼用">二、LoRA 有什麼用？</a>
+      <ol>
+        <li><a href="#典型應用場景">典型應用場景</a></li>
+        <li><a href="#lora-的優勢">LoRA 的優勢</a></li>
+      </ol>
+    </li>
+    <li><a href="#三怎麼使用-lora">三、怎麼使用 LoRA？</a>
+      <ol>
+        <li><a href="#第一步準備資料">第一步：準備資料</a></li>
+        <li><a href="#第二步選擇工具">第二步：選擇工具</a></li>
+        <li><a href="#第三步訓練">第三步：訓練</a></li>
+        <li><a href="#第四步使用">第四步：使用</a></li>
+      </ol>
+    </li>
+    <li><a href="#四與相關概念的關係">四、與相關概念的關係</a></li>
+    <li><a href="#五一句話總結">五、一句話總結</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h2 id="一lora-是什麼">一、LoRA 是什麼？
+</h2><p>LoRA（Low-Rank Adaptation，低秩適應）是一種<strong>大模型微調技術</strong>。</p>
+<h3 id="問題的起點">問題的起點
+</h3><p>大模型（例如 Qwen、Llama）動輒 7B、70B 參數。如果每次想讓它學點新東西，都要重新訓練所有參數，那需要幾十張 A100 顯示卡跑好幾天——一般人根本沒這個條件。</p>
+<h3 id="lora-的思路">LoRA 的思路
+</h3>
+    <blockquote>
+        <p><strong>不動原模型，只在旁邊掛一個「小插件」。</strong></p>
+
+    </blockquote>
+<p>打個比方：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>做法</th>
+          <th>類比</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>全量微調</td>
+          <td>把整本教科書改寫成你想要的版本</td>
+      </tr>
+      <tr>
+          <td><strong>LoRA</strong></td>
+          <td>在教科書頁邊貼幾張便利貼，寫上你的補充說明</td>
+      </tr>
+  </tbody>
+</table></div>
+<p>原始模型的權重<strong>完全不改</strong>。LoRA 只在某些關鍵層旁邊插入一個<strong>極小的矩陣</strong>（低秩矩陣），訓練時只更新這個矩陣的參數。</p>
+<h3 id="為什麼叫低秩適應">為什麼叫「低秩適應」？
+</h3><p>數學上，一個大矩陣可以用兩個小矩陣的乘積來近似。LoRA 利用這個原理：原始權重矩陣 $W$ 不動，額外訓練兩個小矩陣 $A$ 和 $B$，模型的最終輸出變成 $W + A \cdot B$。$A$ 和 $B$ 加起來可能只有原權重的 <strong>千分之一</strong> 大小。</p>
+<hr>
+<h2 id="二lora-有什麼用">二、LoRA 有什麼用？
+</h2><p>它的核心能力只有一個：<strong>以極低的成本，改變大模型的「行為方式」</strong>。</p>
+<blockquote class="alert alert-important">
+        <div class="alert-header">
+            <span class="alert-icon">📌</span>
+            <span class="alert-title">LoRA 改變的是風格/格式/行為，不是知識</span>
+        </div>
+        <div class="alert-body">
+            <ul>
+<li>想讓模型學會新知識 → 用 RAG（檢索增強生成）</li>
+<li>想讓模型<strong>換一種方式說話、做事</strong> → 用 LoRA</li>
+</ul>
+        </div>
+    </blockquote>
+<h3 id="典型應用場景">典型應用場景
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>場景</th>
+          <th>例子</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>風格遷移</strong></td>
+          <td>讓通用模型用魯迅的文風寫作</td>
+      </tr>
+      <tr>
+          <td><strong>格式約束</strong></td>
+          <td>強制模型輸出嚴格 JSON，不多一個標點</td>
+      </tr>
+      <tr>
+          <td><strong>角色扮演</strong></td>
+          <td>把 Qwen 變成《原神》裡的鍾離</td>
+      </tr>
+      <tr>
+          <td><strong>領域口吻</strong></td>
+          <td>醫療問診語氣、法律文書的嚴謹措辭</td>
+      </tr>
+      <tr>
+          <td><strong>指令遵循</strong></td>
+          <td>讓模型更好地遵守 system prompt，不亂發散</td>
+      </tr>
+  </tbody>
+</table></div>
+<h3 id="lora-的優勢">LoRA 的優勢
+</h3><ul>
+<li><strong>顯示記憶體極低</strong>：7B 模型一張 RTX 3090（24G）就能訓練，甚至 8G 顯示卡也勉強能跑</li>
+<li><strong>檔案極小</strong>：訓練產物只有幾 MB，一個模型可以掛幾十個不同的 LoRA，即插即用</li>
+<li><strong>訓練極快</strong>：幾百條資料，半小時出結果</li>
+<li><strong>不破壞基座</strong>：LoRA 卸載後，模型恢復原樣，零風險</li>
+</ul>
+<hr>
+<h2 id="三怎麼使用-lora">三、怎麼使用 LoRA？
+</h2><p>大體分四步：</p>
+<h3 id="第一步準備資料">第一步：準備資料
+</h3><p>把你想要模型學會的「行為」寫成範例對話。</p>
+<p>假設你想讓模型變成毒舌客服，你就寫 50-200 條這樣的對話：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">使用者：我的包裹到哪了？
+</span></span><span class="line"><span class="cl">客服：親，不出意外的話應該在快遞車裡曬太陽呢，建議您曬個日光浴等等它。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">使用者：能退款嗎？
+</span></span><span class="line"><span class="cl">客服：能，流程大概和唐僧取經差不多，準備好您的訂單號，我幫您開啟這趟西行之旅。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>資料量不用多，<strong>50-200 條高品質範例就能看到明顯效果</strong>。品質遠比數量重要。</p>
+<h3 id="第二步選擇工具">第二步：選擇工具
+</h3><p>市面上一堆工具，但本質上都在做同一件事。推薦兩個：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>工具</th>
+          <th>特點</th>
+          <th>適合誰</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>LLaMA-Factory</strong></td>
+          <td>有 Web UI，全程點滑鼠</td>
+          <td>完全不想寫程式的新手</td>
+      </tr>
+      <tr>
+          <td><strong>Unsloth</strong></td>
+          <td>快 2-5 倍，省一半顯示記憶體</td>
+          <td>會寫點 Python，追求效率</td>
+      </tr>
+  </tbody>
+</table></div>
+<p>Unsloth 的核心程式碼不到 30 行，本質就是：載入模型 → 掛 LoRA → 餵資料 → 訓練 → 儲存。</p>
+<h3 id="第三步訓練">第三步：訓練
+</h3><p>設定幾個關鍵參數，然後等：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>參數</th>
+          <th>作用</th>
+          <th>一般設多少</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>LoRA rank（秩）</td>
+          <td>決定「插件」的容量。越大越細膩，但也越佔顯示記憶體</td>
+          <td>8 或 16 夠用</td>
+      </tr>
+      <tr>
+          <td>學習率</td>
+          <td>每次學多少</td>
+          <td>5e-5，別亂調</td>
+      </tr>
+      <tr>
+          <td>訓練輪數</td>
+          <td>資料反覆學幾遍</td>
+          <td>3-5 輪</td>
+      </tr>
+  </tbody>
+</table></div>
+<h3 id="第四步使用">第四步：使用
+</h3><p>訓練完後你得到一個幾 MB 的 LoRA 檔案。使用時<strong>同時載入原模型和這個 LoRA 檔案</strong>，模型就變成了你訓練的樣子。</p>
+<p>想切換回原模型？卸載 LoRA 就行，一秒恢復。</p>
+<p>一個模型可以同時掛多個 LoRA——比如掛一個「毒舌風格」和一個「輸出 JSON」，模型就變成一個會輸出 JSON 的毒舌助手。</p>
+<hr>
+<h2 id="四與相關概念的關係">四、與相關概念的關係
+</h2><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>概念</th>
+          <th>做什麼</th>
+          <th>和 LoRA 的關係</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>全量微調</strong></td>
+          <td>改全部參數</td>
+          <td>LoRA 的替代方案，效果更好但成本高幾百倍</td>
+      </tr>
+      <tr>
+          <td><strong>RAG</strong></td>
+          <td>外掛知識庫檢索</td>
+          <td>互補關係：RAG 管知識，LoRA 管風格</td>
+      </tr>
+      <tr>
+          <td><strong>Prompt Engineering</strong></td>
+          <td>寫提示詞</td>
+          <td>最輕量方案，但效果有限。調不動了再上 LoRA</td>
+      </tr>
+      <tr>
+          <td><strong>QLoRA</strong></td>
+          <td>LoRA + 4bit 量化</td>
+          <td>LoRA 的省顯示記憶體版本，8G 顯示卡也能跑 7B 模型</td>
+      </tr>
+      <tr>
+          <td><strong>PEFT</strong></td>
+          <td>參數高效微調的大類</td>
+          <td>LoRA 是 PEFT 家族裡最流行的一個成員</td>
+      </tr>
+  </tbody>
+</table></div>
+<hr>
+<h2 id="五一句話總結">五、一句話總結
+</h2>
+    <blockquote>
+        <p><strong>LoRA = 給大模型外掛一個小插件，只改行為不改知識，訓練成本極低，幾 MB 檔案即插即用。</strong></p>
+
+    </blockquote>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/zh-hant-tw/tags/ai/">AI</a>
+        
+            <a href="/zh-hant-tw/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/">大模型</a>
+        
+            <a href="/zh-hant-tw/tags/lora/">LoRA</a>
+        
+            <a href="/zh-hant-tw/tags/%E5%BE%AE%E8%AA%BF/">微調</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under <a class="link" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"  target="_blank" rel="noopener"
+    >CC BY-NC-SA 4.0</a></span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title">相關文章</h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/zh-hant-tw/p/c-%E7%A2%9F%E7%88%86%E6%BB%BF%E7%94%A8%E5%85%B6%E4%BB%96%E7%A3%81%E7%A2%9F%E7%82%BA-c-%E7%A2%9F%E6%93%B4%E5%AE%B9/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post C 碟爆滿？用其他磁碟為 C 碟擴容" loading="lazy" src="/p/c-%E7%9B%98%E7%88%86%E6%BB%A1%E7%94%A8%E5%85%B6%E4%BB%96%E7%9B%98%E7%BB%99-c-%E7%9B%98%E6%89%A9%E5%AE%B9/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">C 碟爆滿？用其他磁碟為 C 碟擴容</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-hant-tw/p/context7-%E6%8C%87%E5%8D%97%E8%AE%93-ai-%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88%E5%8A%A9%E6%89%8B%E8%AE%80%E6%87%82%E6%9C%80%E6%96%B0%E6%96%87%E4%BB%B6/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post Context7 指南：讓 AI 程式設計助手讀懂最新文件" loading="lazy" src="/p/context7%E6%8C%87%E5%8D%97%E8%AE%A9ai%E7%BC%96%E7%A8%8B%E5%8A%A9%E6%89%8B%E8%AF%BB%E6%87%82%E6%9C%80%E6%96%B0%E6%96%87%E6%A1%A3/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Context7 指南：讓 AI 程式設計助手讀懂最新文件</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-hant-tw/p/opencode--obsidian%E6%89%93%E9%80%A0%E4%BD%A0%E7%9A%84ai%E9%A9%85%E5%8B%95%E7%9F%A5%E8%AD%98%E7%AE%A1%E7%90%86%E5%B7%A5%E4%BD%9C%E6%B5%81/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post OpenCode + Obsidian：打造你的AI驅動知識管理工作流" loading="lazy" src="/p/opencode--obsidian%E6%89%93%E9%80%A0%E4%BD%A0%E7%9A%84ai%E9%A9%B1%E5%8A%A8%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E5%B7%A5%E4%BD%9C%E6%B5%81/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">OpenCode &#43; Obsidian：打造你的AI驅動知識管理工作流</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-hant-tw/p/opencode-%E5%85%A8%E6%B7%B1%E5%BA%A6%E6%8C%87%E5%8D%97%E9%96%8B%E6%BA%90%E7%89%88-claude-code-%E7%9A%84%E5%AE%89%E8%A3%9D%E9%85%8D%E7%BD%AE%E8%88%87%E9%80%B2%E9%9A%8E%E7%8E%A9%E6%B3%95/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post OpenCode 全深度指南：開源版 Claude Code 的安裝、配置與進階玩法" loading="lazy" src="/p/opencode-%E5%85%A8%E6%B7%B1%E5%BA%A6%E6%8C%87%E5%8D%97%E5%BC%80%E6%BA%90%E7%89%88-claude-code-%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E4%B8%8E%E9%AB%98%E7%BA%A7%E7%8E%A9%E6%B3%95/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">OpenCode 全深度指南：開源版 Claude Code 的安裝、配置與進階玩法</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-hant-tw/p/opencode-%E6%96%B0%E6%89%8B%E9%80%B2%E9%9A%8E%E4%B8%A6%E8%A1%8C%E8%AA%BF%E5%BA%A6%E8%88%87%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E5%85%A8%E6%94%BB%E7%95%A5/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post OpenCode 新手進階：並行調度與使用技巧全攻略" loading="lazy" src="/p/opencode-%E6%96%B0%E6%89%8B%E8%BF%9B%E9%98%B6%E5%B9%B6%E8%A1%8C%E8%B0%83%E5%BA%A6%E4%B8%8E%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E5%85%A8%E6%94%BB%E7%95%A5/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">OpenCode 新手進階：並行調度與使用技巧全攻略</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+
+        <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2026 Yanmu
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 建立 <br />
+        主題 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="4.0.2">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 設計
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.c9cd0fdae22289454c0e78b3c21f6b53761cd5474ad3cb782e5a8703bdc027f2.js" defer></script>
+
+
+    </body>
+</html>
