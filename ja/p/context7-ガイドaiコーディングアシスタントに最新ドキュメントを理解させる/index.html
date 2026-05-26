@@ -576,35 +576,35 @@
 <p>これは、友達にスマホの修理を頼んだとき、3年前の手順を記憶だけで分解しようとするようなものです。ネジの位置は変わっています。最新のチュートリアルを先に見ておけば、壊さずに済みます。</p>
 <h3 id="context7-の有無の違い">Context7 の有無の違い
 </h3><div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th></th>
-          <th>なし</th>
-          <th>あり</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>情報源</td>
-          <td>AI の古い知識（時代遅れの可能性）</td>
-          <td>公式ドキュメントからリアルタイム取得</td>
-      </tr>
-      <tr>
-          <td>API の正確性</td>
-          <td>よく間違える、または既に存在しない API を使う</td>
-          <td>現在のバージョンの API を保証</td>
-      </tr>
-      <tr>
-          <td>コード品質</td>
-          <td>数年前の古い書き方の可能性</td>
-          <td>最新の推奨される書き方</td>
-      </tr>
-      <tr>
-          <td>バージョン対応</td>
-          <td>バージョンを無視して推測</td>
-          <td>指定したバージョンを検索</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th></th>
+					<th>なし</th>
+					<th>あり</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>情報源</td>
+					<td>AI の古い知識（時代遅れの可能性）</td>
+					<td>公式ドキュメントからリアルタイム取得</td>
+			</tr>
+			<tr>
+					<td>API の正確性</td>
+					<td>よく間違える、または既に存在しない API を使う</td>
+					<td>現在のバージョンの API を保証</td>
+			</tr>
+			<tr>
+					<td>コード品質</td>
+					<td>数年前の古い書き方の可能性</td>
+					<td>最新の推奨される書き方</td>
+			</tr>
+			<tr>
+					<td>バージョン対応</td>
+					<td>バージョンを無視して推測</td>
+					<td>指定したバージョンを検索</td>
+			</tr>
+	</tbody>
 </table></div>
 <h2 id="-仕組み">🔄 仕組み
 </h2><p>数ステップで完了します：</p>
@@ -637,22 +637,22 @@
 <p>結果を取得した後、Context7 は LLM を使ってインテリジェントに並べ替え、最も関連性の高い部分だけを選び出します。</p>
 <p><strong>2つの使い方：</strong></p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>方法</th>
-          <th>説明</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>MCP モード（推奨）</strong></td>
-          <td>一度インストールすれば、AI コーディングアシスタントが自動的に呼び出す。MCP は AI にプラグインを追加するようなもの</td>
-      </tr>
-      <tr>
-          <td><strong>CLI 手動モード</strong></td>
-          <td>ターミナルでコマンドを打って手動でドキュメントを検索</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>方法</th>
+					<th>説明</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>MCP モード（推奨）</strong></td>
+					<td>一度インストールすれば、AI コーディングアシスタントが自動的に呼び出す。MCP は AI にプラグインを追加するようなもの</td>
+			</tr>
+			<tr>
+					<td><strong>CLI 手動モード</strong></td>
+					<td>ターミナルでコマンドを打って手動でドキュメントを検索</td>
+			</tr>
+	</tbody>
 </table></div>
 <h2 id="コア機能">コア機能
 </h2><h3 id="スマートマッチング名前を言えば探しに行く">スマートマッチング：名前を言えば、探しに行く
@@ -752,34 +752,34 @@
 </div>
 </div><p>各ツールの設定ファイルの場所（<code>~</code> はユーザーディレクトリ、Windows なら <code>C:\Users\ユーザー名</code>）：</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>ツール</th>
-          <th>設定場所</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Cursor</td>
-          <td>Settings → MCP、または <code>~/.cursor/mcp.json</code></td>
-      </tr>
-      <tr>
-          <td>Claude Code</td>
-          <td><code>~/.claude/settings.json</code>（グローバル）または <code>.claude/settings.json</code>（プロジェクト）</td>
-      </tr>
-      <tr>
-          <td>Windsurf</td>
-          <td>Settings → Cascade → MCP servers</td>
-      </tr>
-      <tr>
-          <td>Cline</td>
-          <td>VS Code 拡張内 MCP Servers → Configure</td>
-      </tr>
-      <tr>
-          <td>OpenCode</td>
-          <td>プロジェクトルート <code>opencode.json</code></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>ツール</th>
+					<th>設定場所</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Cursor</td>
+					<td>Settings → MCP、または <code>~/.cursor/mcp.json</code></td>
+			</tr>
+			<tr>
+					<td>Claude Code</td>
+					<td><code>~/.claude/settings.json</code>（グローバル）または <code>.claude/settings.json</code>（プロジェクト）</td>
+			</tr>
+			<tr>
+					<td>Windsurf</td>
+					<td>Settings → Cascade → MCP servers</td>
+			</tr>
+			<tr>
+					<td>Cline</td>
+					<td>VS Code 拡張内 MCP Servers → Configure</td>
+			</tr>
+			<tr>
+					<td>OpenCode</td>
+					<td>プロジェクトルート <code>opencode.json</code></td>
+			</tr>
+	</tbody>
 </table></div>
 <p>API Key は <a class="link" href="https://context7.com/dashboard"  target="_blank" rel="noopener"
     >context7.com/dashboard</a> で取得。形式は <code>ctx7sk...</code> で、無料ユーザーにも割り当てがあります。</p>
@@ -939,48 +939,48 @@
 </h3><p>1〜2秒の待ち時間が増えますが、正確な回答が得られるので修正のやりとりが減ります。エラーが起きてから修正する時間に比べれば、この1〜2秒ははるかに短いです。</p>
 <h2 id="まとめ">まとめ
 </h2><div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>項目</th>
-          <th>内容</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>概要</strong></td>
-          <td>AI コーディングアシスタントにリアルタイムの最新ドキュメントを提供するプラットフォーム</td>
-      </tr>
-      <tr>
-          <td><strong>解決する問題</strong></td>
-          <td>学習データの古さによる AI の誤ったコード出力</td>
-      </tr>
-      <tr>
-          <td><strong>コア原理</strong></td>
-          <td>公式ドキュメントをリアルタイムに取得し、AI コンテキストに注入</td>
-      </tr>
-      <tr>
-          <td><strong>インストール</strong></td>
-          <td><code>npx ctx7 setup</code> の一行で完了</td>
-      </tr>
-      <tr>
-          <td><strong>使用方法</strong></td>
-          <td>プロンプト末尾に <code>use context7</code> を追加</td>
-      </tr>
-      <tr>
-          <td><strong>価格</strong></td>
-          <td>無料枠あり、個人利用に十分</td>
-      </tr>
-      <tr>
-          <td><strong>公式サイト</strong></td>
-          <td><a class="link" href="https://context7.com"  target="_blank" rel="noopener"
+	<thead>
+			<tr>
+					<th>項目</th>
+					<th>内容</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>概要</strong></td>
+					<td>AI コーディングアシスタントにリアルタイムの最新ドキュメントを提供するプラットフォーム</td>
+			</tr>
+			<tr>
+					<td><strong>解決する問題</strong></td>
+					<td>学習データの古さによる AI の誤ったコード出力</td>
+			</tr>
+			<tr>
+					<td><strong>コア原理</strong></td>
+					<td>公式ドキュメントをリアルタイムに取得し、AI コンテキストに注入</td>
+			</tr>
+			<tr>
+					<td><strong>インストール</strong></td>
+					<td><code>npx ctx7 setup</code> の一行で完了</td>
+			</tr>
+			<tr>
+					<td><strong>使用方法</strong></td>
+					<td>プロンプト末尾に <code>use context7</code> を追加</td>
+			</tr>
+			<tr>
+					<td><strong>価格</strong></td>
+					<td>無料枠あり、個人利用に十分</td>
+			</tr>
+			<tr>
+					<td><strong>公式サイト</strong></td>
+					<td><a class="link" href="https://context7.com"  target="_blank" rel="noopener"
     >context7.com</a></td>
-      </tr>
-      <tr>
-          <td><strong>GitHub</strong></td>
-          <td><a class="link" href="https://github.com/upstash/context7"  target="_blank" rel="noopener"
+			</tr>
+			<tr>
+					<td><strong>GitHub</strong></td>
+					<td><a class="link" href="https://github.com/upstash/context7"  target="_blank" rel="noopener"
     >github.com/upstash/context7</a></td>
-      </tr>
-  </tbody>
+			</tr>
+	</tbody>
 </table></div>
 <p>インストールすれば、AI が古い知識でごまかす心配はもうありません。</p>
 
@@ -1137,8 +1137,9 @@
         (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	
 </div>
 
 <style>

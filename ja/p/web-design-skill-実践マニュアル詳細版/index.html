@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Web Design Skill 実践マニュアル（詳細版） 対象ツール： Claude Code / OpenCode 目標： このガイドに従って、AI を使用して高品質な宇宙探索博物館のウェブページを生成します 所要時間： 40〜90 分\n">
+<title>Web Design Skill 実践マニュアル（詳細版）</title>
+
+
+<link rel="canonical" href="https://AkuamT.github.io/ja/p/web-design-skill-%E5%AE%9F%E8%B7%B5%E3%83%9E%E3%83%8B%E3%83%A5%E3%82%A2%E3%83%AB%E8%A9%B3%E7%B4%B0%E7%89%88/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.ed668df6847002e96da55125322b5655e4e3773453c2addee35312e6bbf6cb10.css"><meta property='og:title' content="Web Design Skill 実践マニュアル（詳細版）">
+<meta property='og:description' content="Web Design Skill 実践マニュアル（詳細版） 対象ツール： Claude Code / OpenCode 目標： このガイドに従って、AI を使用して高品質な宇宙探索博物館のウェブページを生成します 所要時間： 40〜90 分\n">
+<meta property='og:url' content='https://AkuamT.github.io/ja/p/web-design-skill-%E5%AE%9F%E8%B7%B5%E3%83%9E%E3%83%8B%E3%83%A5%E3%82%A2%E3%83%AB%E8%A9%B3%E7%B4%B0%E7%89%88/'>
+<meta property='og:site_name' content='Yanmu'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='AIデザイン' /><meta property='article:tag' content='Claude' /><meta property='article:tag' content='実践チュートリアル' /><meta property='article:tag' content='ウェブデザイン' /><meta property='article:tag' content='Skill' /><meta property='article:tag' content='Claude-Code' /><meta property='article:tag' content='OpenCode' /><meta property='article:published_time' content='2026-05-25T00:00:00&#43;08:00'/><meta property='article:modified_time' content='2026-05-25T00:00:00&#43;08:00'/>
+<meta name="twitter:title" content="Web Design Skill 実践マニュアル（詳細版）">
+<meta name="twitter:description" content="Web Design Skill 実践マニュアル（詳細版） 対象ツール： Claude Code / OpenCode 目標： このガイドに従って、AI を使用して高品質な宇宙探索博物館のウェブページを生成します 所要時間： 40〜90 分\n">
+    <link rel="shortcut icon" href="img/avatar.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="メニューを開く・閉じる">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/ja/">
+                    <img src="/img/Yanmu.jpg" 
+                        width="1024"
+                        height="1037"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">💻 </span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/ja/">Yanmu</a></h1>
+            <h2 class="site-description">「誰の光を借りることもなく、自らが太陽となりますように。」</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/CaiJimmy/hugo-theme-stack'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/ja/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>ホーム</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/ja/%E6%A6%82%E8%A6%81/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>概要</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/ja/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>アーカイブ</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/ja/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>検索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/ja/%E3%83%AA%E3%83%B3%E3%82%AF/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>リンク</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                <option value="/p/web-design-skill-%E5%AE%9E%E6%93%8D%E6%89%8B%E5%86%8C%E8%AF%A6%E7%BB%86%E7%89%88/" >简体中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                <option value="/en/p/web-design-skill-practical-manual-detailed-version/" >English</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                <option value="/zh-hant-tw/p/web-design-skill-%E5%AF%A6%E6%93%8D%E6%89%8B%E5%86%8A%E8%A9%B3%E7%B4%B0%E7%89%88/" >繁体中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/ja/p/web-design-skill-%E5%AE%9F%E8%B7%B5%E3%83%9E%E3%83%8B%E3%83%A5%E3%82%A2%E3%83%AB%E8%A9%B3%E7%B4%B0%E7%89%88/" selected>日本語</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>ダークモード</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目次</h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#ゼロ始める前に---やることを理解する">ゼロ：始める前に - やることを理解する</a>
+      <ol>
+        <li><a href="#全体プロセス概要">全体プロセス概要</a></li>
+        <li><a href="#なぜ先にベアランしてから-skill-を使うのか">なぜ先に「ベアラン」してから Skill を使うのか？</a></li>
+        <li><a href="#必要なツール一覧">必要なツール一覧</a></li>
+      </ol>
+    </li>
+    <li><a href="#ステップ-1agent-の準備確認">ステップ 1：Agent の準備確認</a>
+      <ol>
+        <li><a href="#11-claude-code-を使う場合">1.1 Claude Code を使う場合</a></li>
+        <li><a href="#12-opencode-を使う場合">1.2 OpenCode を使う場合</a></li>
+      </ol>
+    </li>
+    <li><a href="#ステップ-2プロジェクトディレクトリ作成">ステップ 2：プロジェクトディレクトリ作成</a>
+      <ol>
+        <li><a href="#21-作業フォルダ作成">2.1 作業フォルダ作成</a></li>
+        <li><a href="#22-git-リポジトリ初期化">2.2 Git リポジトリ初期化</a></li>
+        <li><a href="#23-初期ファイル作成">2.3 初期ファイル作成</a></li>
+        <li><a href="#24-ローカルプレビューサーバー起動">2.4 ローカルプレビューサーバー起動</a></li>
+      </ol>
+    </li>
+    <li><a href="#ステップ-3web-design-skill-ダウンロード">ステップ 3：web-design-skill ダウンロード</a>
+      <ol>
+        <li><a href="#31-リポジトリクローン">3.1 リポジトリクローン</a></li>
+      </ol>
+    </li>
+    <li><a href="#ステップ-4ベアラン体験---ai-のネイティブ美学を見る">ステップ 4：ベアラン体験 - AI の「ネイティブ美学」を見る</a>
+      <ol>
+        <li><a href="#41-agent-起動skill-ロードなし">4.1 Agent 起動（Skill ロードなし）</a></li>
+        <li><a href="#42-設計要件入力">4.2 設計要件入力</a></li>
+        <li><a href="#43-ai-生成待ち">4.3 AI 生成待ち</a></li>
+        <li><a href="#44-結果確認">4.4 結果確認</a></li>
+        <li><a href="#45-ベアランバージョン保存">4.5 ベアランバージョン保存</a></li>
+      </ol>
+    </li>
+    <li><a href="#ステップ-5agent-に-skill-をインストール">ステップ 5：Agent に Skill をインストール</a>
+      <ol>
+        <li><a href="#51-claude-code---2つのインストール方法">5.1 Claude Code - 2つのインストール方法</a>
+          <ol>
+            <li><a href="#方法-aclaudemd-に書き込む推奨永続的">方法 A：CLAUDE.md に書き込む（推奨、永続的）</a></li>
+            <li><a href="#方法-b会話で参照一時的">方法 B：会話で参照（一時的）</a></li>
+          </ol>
+        </li>
+        <li><a href="#52-opencode---インストール">5.2 OpenCode - インストール</a>
+          <ol>
+            <li><a href="#方法-aagentsmd-に書き込む推奨">方法 A：AGENTS.md に書き込む（推奨）</a></li>
+          </ol>
+        </li>
+        <li><a href="#53-skill-が有効か確認">5.3 Skill が有効か確認</a></li>
+      </ol>
+    </li>
+    <li><a href="#ステップ-6skill-活用---高級感を磨く">ステップ 6：Skill 活用 - 高級感を磨く</a>
+      <ol>
+        <li><a href="#61-新しい会話開始">6.1 新しい会話開始</a></li>
+        <li><a href="#62-設計要件入力">6.2 設計要件入力</a>
+          <ol>
+            <li><a href="#フェーズ-aai-が質問">フェーズ A：AI が質問</a></li>
+            <li><a href="#フェーズ-bai-が設計システムを説明">フェーズ B：AI が設計システムを説明</a></li>
+            <li><a href="#フェーズ-cai-が-v0-を出力粗い初期版">フェーズ C：AI が V0 を出力（粗い初期版）</a></li>
+            <li><a href="#フェーズ-d反復改善">フェーズ D：反復改善</a></li>
+            <li><a href="#フェーズ-e最終検証">フェーズ E：最終検証</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#ステップ-72つのバージョンを比較">ステップ 7：2つのバージョンを比較</a></li>
+    <li><a href="#ステップ-8動画録画オプション">ステップ 8：動画録画（オプション）</a>
+      <ol>
+        <li><a href="#推奨ショット">推奨ショット</a></li>
+      </ol>
+    </li>
+    <li><a href="#付録-aよく使うプロンプトテンプレート">付録 A：よく使うプロンプトテンプレート</a>
+      <ol>
+        <li><a href="#ai-に設計システムを先に説明させる">AI に設計システムを先に説明させる</a></li>
+        <li><a href="#素早い-v0-を要求">素早い V0 を要求</a></li>
+        <li><a href="#包括的検証をトリガー">包括的検証をトリガー</a></li>
+      </ol>
+    </li>
+    <li><a href="#まとめ">まとめ</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/ja/categories/tutorial/" style="background-color: #2563eb; color: #fff;">
+                チュートリアル
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/ja/p/web-design-skill-%E5%AE%9F%E8%B7%B5%E3%83%9E%E3%83%8B%E3%83%A5%E3%82%A2%E3%83%AB%E8%A9%B3%E7%B4%B0%E7%89%88/">Web Design Skill 実践マニュアル（詳細版）</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-05-25T00:00:00&#43;08:00'>2026年5月25日月曜日</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        読了時間: 7分
+                    </time>
+                
+            </div>
+        
+
+        
+            <div class="inline-meta">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                
+                    <a href="/p/web-design-skill-%E5%AE%9E%E6%93%8D%E6%89%8B%E5%86%8C%E8%AF%A6%E7%BB%86%E7%89%88/" class="link">简体中文</a>
+                
+                    <a href="/en/p/web-design-skill-practical-manual-detailed-version/" class="link">English</a>
+                
+                    <a href="/zh-hant-tw/p/web-design-skill-%E5%AF%A6%E6%93%8D%E6%89%8B%E5%86%8A%E8%A9%B3%E7%B4%B0%E7%89%88/" class="link">繁体中文</a>
+                
+            </div>
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span>目次</span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#ゼロ始める前に---やることを理解する">ゼロ：始める前に - やることを理解する</a>
+      <ol>
+        <li><a href="#全体プロセス概要">全体プロセス概要</a></li>
+        <li><a href="#なぜ先にベアランしてから-skill-を使うのか">なぜ先に「ベアラン」してから Skill を使うのか？</a></li>
+        <li><a href="#必要なツール一覧">必要なツール一覧</a></li>
+      </ol>
+    </li>
+    <li><a href="#ステップ-1agent-の準備確認">ステップ 1：Agent の準備確認</a>
+      <ol>
+        <li><a href="#11-claude-code-を使う場合">1.1 Claude Code を使う場合</a></li>
+        <li><a href="#12-opencode-を使う場合">1.2 OpenCode を使う場合</a></li>
+      </ol>
+    </li>
+    <li><a href="#ステップ-2プロジェクトディレクトリ作成">ステップ 2：プロジェクトディレクトリ作成</a>
+      <ol>
+        <li><a href="#21-作業フォルダ作成">2.1 作業フォルダ作成</a></li>
+        <li><a href="#22-git-リポジトリ初期化">2.2 Git リポジトリ初期化</a></li>
+        <li><a href="#23-初期ファイル作成">2.3 初期ファイル作成</a></li>
+        <li><a href="#24-ローカルプレビューサーバー起動">2.4 ローカルプレビューサーバー起動</a></li>
+      </ol>
+    </li>
+    <li><a href="#ステップ-3web-design-skill-ダウンロード">ステップ 3：web-design-skill ダウンロード</a>
+      <ol>
+        <li><a href="#31-リポジトリクローン">3.1 リポジトリクローン</a></li>
+      </ol>
+    </li>
+    <li><a href="#ステップ-4ベアラン体験---ai-のネイティブ美学を見る">ステップ 4：ベアラン体験 - AI の「ネイティブ美学」を見る</a>
+      <ol>
+        <li><a href="#41-agent-起動skill-ロードなし">4.1 Agent 起動（Skill ロードなし）</a></li>
+        <li><a href="#42-設計要件入力">4.2 設計要件入力</a></li>
+        <li><a href="#43-ai-生成待ち">4.3 AI 生成待ち</a></li>
+        <li><a href="#44-結果確認">4.4 結果確認</a></li>
+        <li><a href="#45-ベアランバージョン保存">4.5 ベアランバージョン保存</a></li>
+      </ol>
+    </li>
+    <li><a href="#ステップ-5agent-に-skill-をインストール">ステップ 5：Agent に Skill をインストール</a>
+      <ol>
+        <li><a href="#51-claude-code---2つのインストール方法">5.1 Claude Code - 2つのインストール方法</a>
+          <ol>
+            <li><a href="#方法-aclaudemd-に書き込む推奨永続的">方法 A：CLAUDE.md に書き込む（推奨、永続的）</a></li>
+            <li><a href="#方法-b会話で参照一時的">方法 B：会話で参照（一時的）</a></li>
+          </ol>
+        </li>
+        <li><a href="#52-opencode---インストール">5.2 OpenCode - インストール</a>
+          <ol>
+            <li><a href="#方法-aagentsmd-に書き込む推奨">方法 A：AGENTS.md に書き込む（推奨）</a></li>
+          </ol>
+        </li>
+        <li><a href="#53-skill-が有効か確認">5.3 Skill が有効か確認</a></li>
+      </ol>
+    </li>
+    <li><a href="#ステップ-6skill-活用---高級感を磨く">ステップ 6：Skill 活用 - 高級感を磨く</a>
+      <ol>
+        <li><a href="#61-新しい会話開始">6.1 新しい会話開始</a></li>
+        <li><a href="#62-設計要件入力">6.2 設計要件入力</a>
+          <ol>
+            <li><a href="#フェーズ-aai-が質問">フェーズ A：AI が質問</a></li>
+            <li><a href="#フェーズ-bai-が設計システムを説明">フェーズ B：AI が設計システムを説明</a></li>
+            <li><a href="#フェーズ-cai-が-v0-を出力粗い初期版">フェーズ C：AI が V0 を出力（粗い初期版）</a></li>
+            <li><a href="#フェーズ-d反復改善">フェーズ D：反復改善</a></li>
+            <li><a href="#フェーズ-e最終検証">フェーズ E：最終検証</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#ステップ-72つのバージョンを比較">ステップ 7：2つのバージョンを比較</a></li>
+    <li><a href="#ステップ-8動画録画オプション">ステップ 8：動画録画（オプション）</a>
+      <ol>
+        <li><a href="#推奨ショット">推奨ショット</a></li>
+      </ol>
+    </li>
+    <li><a href="#付録-aよく使うプロンプトテンプレート">付録 A：よく使うプロンプトテンプレート</a>
+      <ol>
+        <li><a href="#ai-に設計システムを先に説明させる">AI に設計システムを先に説明させる</a></li>
+        <li><a href="#素早い-v0-を要求">素早い V0 を要求</a></li>
+        <li><a href="#包括的検証をトリガー">包括的検証をトリガー</a></li>
+      </ol>
+    </li>
+    <li><a href="#まとめ">まとめ</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h1 id="web-design-skill-実践マニュアル詳細版">Web Design Skill 実践マニュアル（詳細版）
+</h1>
+    <blockquote>
+        <p><strong>対象ツール：</strong> Claude Code / OpenCode
+<strong>目標：</strong> このガイドに従って、AI を使用して高品質な宇宙探索博物館のウェブページを生成します
+<strong>所要時間：</strong> 40〜90 分</p>
+
+    </blockquote>
+<hr>
+<h2 id="ゼロ始める前に---やることを理解する">ゼロ：始める前に - やることを理解する
+</h2><h3 id="全体プロセス概要">全体プロセス概要
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">環境構築 → Skill インストール → プロジェクト作成 → ベアラン体験 → Skill 活用 → 比較
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="なぜ先にベアランしてから-skill-を使うのか">なぜ先に「ベアラン」してから Skill を使うのか？
+</h3><p>これは<strong>比較実験</strong>です：</p>
+<ul>
+<li>直接 Skill を使うと、その価値を実感できません</li>
+<li>まず AI に自由にやらせる → 典型的な AI 風ウェブページが見える（紫ピンク青のグラデーション、角丸カード、絵文字アイコン&hellip;）</li>
+<li>そして Skill でやり直す → <strong>同じトピック、同じモデル</strong>が全く異なる結果を出すのを目の当たりにします</li>
+</ul>
+<h3 id="必要なツール一覧">必要なツール一覧
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>ツール</th>
+					<th>説明</th>
+					<th>入手方法</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>ターミナル</strong></td>
+					<td>AI と対話する場所</td>
+					<td>Windows: PowerShell / Terminal；macOS: Terminal</td>
+			</tr>
+			<tr>
+					<td><strong>Claude Code</strong> または <strong>OpenCode</strong></td>
+					<td>AI コーディング Agent</td>
+					<td>インストール手順参照</td>
+			</tr>
+			<tr>
+					<td><strong>Git</strong></td>
+					<td>GitHub から Skill ファイルをダウンロード</td>
+					<td><code>winget install Git.Git</code>（Win）/ <code>brew install git</code>（macOS）</td>
+			</tr>
+			<tr>
+					<td><strong>ブラウザ</strong></td>
+					<td>ウェブページのプレビュー</td>
+					<td>Chrome / Edge / Firefox</td>
+			</tr>
+			<tr>
+					<td><strong>画面録画ソフト</strong>（オプション）</td>
+					<td>プロセスを録画</td>
+					<td>OBS Studio（無料）/ システム標準</td>
+			</tr>
+	</tbody>
+</table></div>
+<hr>
+<h2 id="ステップ-1agent-の準備確認">ステップ 1：Agent の準備確認
+</h2><h3 id="11-claude-code-を使う場合">1.1 Claude Code を使う場合
+</h3><p><strong>説明：</strong> Anthropic 公式のターミナル AI コーディングツール。</p>
+<p><strong>インストール確認：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">claude --version
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>バージョン番号が表示されればインストール済み。</p>
+<p><strong>インストールされていない場合：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># まず Node.js をインストール（https://nodejs.org）、その後：</span>
+</span></span><span class="line"><span class="cl">npm install -g @anthropic-ai/claude-code
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="12-opencode-を使う場合">1.2 OpenCode を使う場合
+</h3><p><strong>説明：</strong> SST チームが開発したオープンソースのターミナル AI コーディングツール。</p>
+<p><strong>インストール確認：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">opencode --version
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>インストールされていない場合：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 方法 1：Go でインストール</span>
+</span></span><span class="line"><span class="cl">go install github.com/sst/opencode@latest
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 方法 2：Homebrew でインストール（macOS/Linux）</span>
+</span></span><span class="line"><span class="cl">brew install sst/tap/opencode
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="ステップ-2プロジェクトディレクトリ作成">ステップ 2：プロジェクトディレクトリ作成
+</h2><h3 id="21-作業フォルダ作成">2.1 作業フォルダ作成
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> ~/Desktop
+</span></span><span class="line"><span class="cl">mkdir space-museum-demo
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> space-museum-demo
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="22-git-リポジトリ初期化">2.2 Git リポジトリ初期化
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git init
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="23-初期ファイル作成">2.3 初期ファイル作成
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">claude
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>入力：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">現在のディレクトリに index.html ファイルを作成してください。基本的な HTML5 構造のみ（DOCTYPE、head、body）、スタイルやコンテンツは不要です。HTML lang は zh-CN、title は「宇宙探索博物館」に設定してください。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="24-ローカルプレビューサーバー起動">2.4 ローカルプレビューサーバー起動
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npx serve .
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>ブラウザで <code>http://localhost:3000</code> にアクセス。</p>
+<hr>
+<h2 id="ステップ-3web-design-skill-ダウンロード">ステップ 3：web-design-skill ダウンロード
+</h2><h3 id="31-リポジトリクローン">3.1 リポジトリクローン
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> ~/Desktop/space-museum-demo
+</span></span><span class="line"><span class="cl">git clone https://github.com/ConardLi/web-design-skill.git
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="ステップ-4ベアラン体験---ai-のネイティブ美学を見る">ステップ 4：ベアラン体験 - AI の「ネイティブ美学」を見る
+</h2>
+    <blockquote>
+        <p>🎯 <strong>目的：</strong> デフォルト動作でウェブページを生成させ、AI の「ネイティブ美学」を観察する。</p>
+
+    </blockquote>
+<h3 id="41-agent-起動skill-ロードなし">4.1 Agent 起動（Skill ロードなし）
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">claude
+</span></span><span class="line"><span class="cl"><span class="c1"># または</span>
+</span></span><span class="line"><span class="cl">opencode
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="42-設計要件入力">4.2 設計要件入力
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">宇宙探索博物館のオンライン展覧ウェブページを作成してください。すべてのコードを1つの index.html ファイルに（HTML + CSS + JS インライン）。要件：
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">1. ダークテーマ、宇宙感とSF的な雰囲気
+</span></span><span class="line"><span class="cl">2. ヒーローエリアに博物館名「星間探索博物館」とスローガンを表示
+</span></span><span class="line"><span class="cl">3. 展示カードエリアに4つの宇宙探索マイルストーン（ガガーリン、アポロ11号、ハッブル望遠鏡、ジェイズ・ウェッブ望遠鏡）
+</span></span><span class="line"><span class="cl">4. タイムラインエリアに宇宙探索の重要な年号
+</span></span><span class="line"><span class="cl">5. スクロールアニメーション効果（要素がスクロール時にフェードイン）
+</span></span><span class="line"><span class="cl">6. レスポンシブレイアウト、モバイル対応
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">完全なコードを生成し、index.html に書き込んでください。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="43-ai-生成待ち">4.3 AI 生成待ち
+</h3><p>約1〜3分かかります。</p>
+<h3 id="44-結果確認">4.4 結果確認
+</h3><p>ブラウザで <code>http://localhost:3000</code> を更新。</p>
+<p><strong>観察チェックリスト：</strong></p>
+<ul>
+<li>カラー：紫ピンク青のグラデーションはあるか？</li>
+<li>レイアウト：標準的な「中央揃えタイトル + サブタイトル」か？</li>
+<li>AI 風の特徴：絵文字アイコン？大きな角丸カード？</li>
+</ul>
+<h3 id="45-ベアランバージョン保存">4.5 ベアランバージョン保存
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">現在の index.html をコピーして、index-no-skill.html という名前を付けてください。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="ステップ-5agent-に-skill-をインストール">ステップ 5：Agent に Skill をインストール
+</h2>
+    <blockquote>
+        <p>🎯 <strong>目的：</strong> web-design-skill のルールを Agent のシステムプロンプトに注入する。</p>
+
+    </blockquote>
+<h3 id="51-claude-code---2つのインストール方法">5.1 Claude Code - 2つのインストール方法
+</h3><h4 id="方法-aclaudemd-に書き込む推奨永続的">方法 A：CLAUDE.md に書き込む（推奨、永続的）
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">web-design-skill/skill.md ファイルの内容を読み込み、CLAUDE.md ファイルを作成してください。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="方法-b会話で参照一時的">方法 B：会話で参照（一時的）
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">@web-design-skill/skill.md この Skill ファイルのルールに従ってウェブページを設計してください。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="52-opencode---インストール">5.2 OpenCode - インストール
+</h3><h4 id="方法-aagentsmd-に書き込む推奨">方法 A：AGENTS.md に書き込む（推奨）
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cp web-design-skill/skill.md AGENTS.md
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="53-skill-が有効か確認">5.3 Skill が有効か確認
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">設計を始める前に、お聞きください：設計システムに従って、どのような配色方案を使いますか？フォントは？間隔のルールは？絶対にやってはいけないことは？
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Skill が有効なら、AI は OKLCH 色空間、具体的なフォント推薦、「AI 風を除去する」ルールについて言及します。</p>
+<hr>
+<h2 id="ステップ-6skill-活用---高級感を磨く">ステップ 6：Skill 活用 - 高級感を磨く
+</h2>
+    <blockquote>
+        <p>🎯 <strong>目的：</strong> 同じ要件で、Skill が AI を導いて全く異なるウェブページを作らせる。</p>
+
+    </blockquote>
+<h3 id="61-新しい会話開始">6.1 新しい会話開始
+</h3><p><strong>重要：新しい会話を開始すること！</strong></p>
+<h3 id="62-設計要件入力">6.2 設計要件入力
+</h3><p>今回は意図的に最小限の要件のみ：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">宇宙探索博物館のオンライン展覧ウェブページを作成してください。すべてのコードを1つの index.html ファイルに。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="フェーズ-aai-が質問">フェーズ A：AI が質問
+</h4><p>AI がまず確認質問をする場合があります。</p>
+<h4 id="フェーズ-bai-が設計システムを説明">フェーズ B：AI が設計システムを説明
+</h4><p>コードを書く前に、AI が設計システムを説明：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">設計システム：
+</span></span><span class="line"><span class="cl">━━━━━━━━━━━━
+</span></span><span class="line"><span class="cl">配色方案（OKLCH ベース）：
+</span></span><span class="line"><span class="cl">- 背景：oklch(15% 0.02 260) — 深い宇宙ブルー
+</span></span><span class="line"><span class="cl">- メイン：oklch(70% 0.15 250) — 冷たい青
+</span></span><span class="line"><span class="cl">- サブ：oklch(60% 0.12 310) — 深い紫
+</span></span><span class="line"><span class="cl">- テキスト：oklch(95% 0.01 260) — ホワイトに近い
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">フォント：
+</span></span><span class="line"><span class="cl">- 見出し：Orbitron（テック感）
+</span></span><span class="line"><span class="cl">- 本文：Space Grotesk（可読性良好）
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">間隔システム：8px グリッドベース
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">レイアウト戦略：マガジン風大画像レイアウト、従来のカードグリッドではない
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="フェーズ-cai-が-v0-を出力粗い初期版">フェーズ C：AI が V0 を出力（粗い初期版）
+</h4><p>ブラウザで方向性が正しいか確認。</p>
+<h4 id="フェーズ-d反復改善">フェーズ D：反復改善
+</h4><p>1回のフィードバックで1〜2点のみ。</p>
+<h4 id="フェーズ-e最終検証">フェーズ E：最終検証
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">新しいデザインレビューエキスパートとして、このウェブページを包括的にチェックしてください：
+</span></span><span class="line"><span class="cl">1. 「明らかに AI が作った」特徴はありますか？すべて列挙してください。
+</span></span><span class="line"><span class="cl">2. 配色は調和していますか？OKLCH を使っていますか？
+</span></span><span class="line"><span class="cl">3. フォントの使用は適切ですか？使い古されたフォントはありませんか？
+</span></span><span class="line"><span class="cl">4. レイアウトは創造的ですか？標準的なヒーロー + カードグリッドではありませんか？
+</span></span><span class="line"><span class="cl">5. アニメーションは自然ですか？グロー効果の使いすぎはありませんか？
+</span></span><span class="line"><span class="cl">6. モバイル対応は正常ですか？
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="ステップ-72つのバージョンを比較">ステップ 7：2つのバージョンを比較
+</h2><p>ブラウザで両方のファイルを開く：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">http://localhost:3000/index-no-skill.html     ← ベアランバージョン
+</span></span><span class="line"><span class="cl">http://localhost:3000/index.html               ← Skill バージョン
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="ステップ-8動画録画オプション">ステップ 8：動画録画（オプション）
+</h2><h3 id="推奨ショット">推奨ショット
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ショット 1：完成品ショーケース（30秒）
+</span></span><span class="line"><span class="cl">ショット 2：比較表示（1分）
+</span></span><span class="line"><span class="cl">ショット 3：プロセス再生（2〜3分）
+</span></span><span class="line"><span class="cl">ショット 4：デザイン詳細解説（1分）
+</span></span><span class="line"><span class="cl">ショット 5：まとめ（30秒）
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="付録-aよく使うプロンプトテンプレート">付録 A：よく使うプロンプトテンプレート
+</h2><h3 id="ai-に設計システムを先に説明させる">AI に設計システムを先に説明させる
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">コードを書く前に、設計システムを自然言語で説明してください：
+</span></span><span class="line"><span class="cl">1. 配色方案（OKLCH 使用）
+</span></span><span class="line"><span class="cl">2. フォント選択（見出しと本文それぞれ）
+</span></span><span class="line"><span class="cl">3. 間隔システム
+</span></span><span class="line"><span class="cl">4. レイアウト戦略
+</span></span><span class="line"><span class="cl">5. 絶対にやってはいけないことを確認してからコーディングを開始します。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="素早い-v0-を要求">素早い V0 を要求
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">まず最小限の実用版（V0）をください。
+</span></span><span class="line"><span class="cl">プレースホルダーと未完成の部分があって構いません。
+</span></span><span class="line"><span class="cl">方向を確認してから詳細を洗練してください。
+</span></span><span class="line"><span class="cl">詳細に時間をかけすぎないでください。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="包括的検証をトリガー">包括的検証をトリガー
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">新しいデザインレビューエキスパートとして、現在のウェブページを包括的にチェックしてください。
+</span></span><span class="line"><span class="cl">「明らかに AI が作った」特徴をすべて列挙し、配色、フォント、レイアウトのすべての問題を修正してください。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="まとめ">まとめ
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ウェブデザインのコアワークフロー：
+</span></span><span class="line"><span class="cl">要件理解 → 設計システム確認 → 素早い V0 → 反復改善 → 検証
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Skill のエッセンスを覚える3つの文：</strong></p>
+<ol>
+<li><strong>設計システムが先、コードが後</strong> — 方向が間違えばコードは無駄</li>
+<li><strong>まず粗い V0、その後磨き上げる</strong> — 素早い反復、最低コスト</li>
+<li><strong>大胆な余白、すべての要素は存在を証明せよ</strong> — 抑制こそが高級感</li>
+</ol>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/ja/tags/ai%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3/">AIデザイン</a>
+        
+            <a href="/ja/tags/claude/">Claude</a>
+        
+            <a href="/ja/tags/%E5%AE%9F%E8%B7%B5%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB/">実践チュートリアル</a>
+        
+            <a href="/ja/tags/%E3%82%A6%E3%82%A7%E3%83%96%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3/">ウェブデザイン</a>
+        
+            <a href="/ja/tags/skill/">Skill</a>
+        
+            <a href="/ja/tags/claude-code/">Claude-Code</a>
+        
+            <a href="/ja/tags/opencode/">OpenCode</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under <a class="link" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"  target="_blank" rel="noopener"
+    >CC BY-NC-SA 4.0</a></span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title">関連するコンテンツ</h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="">
+    <a href="/ja/p/web-design-skill-%E5%AD%A6%E7%BF%92%E3%83%8E%E3%83%BC%E3%83%88/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Web Design Skill 学習ノート</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/ja/p/opencode--obsidianai%E9%A7%86%E5%8B%95%E3%81%AE%E3%83%8A%E3%83%AC%E3%83%83%E3%82%B8%E3%83%9E%E3%83%8D%E3%82%B8%E3%83%A1%E3%83%B3%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%E3%83%95%E3%83%AD%E3%83%BC%E3%82%92%E6%A7%8B%E7%AF%89%E3%81%99%E3%82%8B/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post OpenCode + Obsidian：AI駆動のナレッジマネジメントワークフローを構築する" loading="lazy" src="/p/opencode--obsidian%E6%89%93%E9%80%A0%E4%BD%A0%E7%9A%84ai%E9%A9%B1%E5%8A%A8%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E5%B7%A5%E4%BD%9C%E6%B5%81/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">OpenCode &#43; Obsidian：AI駆動のナレッジマネジメントワークフローを構築する</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/ja/p/opencode-%E5%88%9D%E7%B4%9A%E8%80%85%E3%81%8B%E3%82%89%E4%B8%8A%E7%B4%9A%E8%80%85%E3%81%B8%E4%B8%A6%E5%88%97%E3%82%B9%E3%82%B1%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0%E3%81%A8%E4%BD%BF%E7%94%A8%E3%83%86%E3%82%AF%E3%83%8B%E3%83%83%E3%82%AF%E5%AE%8C%E5%85%A8%E3%82%AC%E3%82%A4%E3%83%89/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post OpenCode 初級者から上級者へ：並列スケジューリングと使用テクニック完全ガイド" loading="lazy" src="/p/opencode-%E6%96%B0%E6%89%8B%E8%BF%9B%E9%98%B6%E5%B9%B6%E8%A1%8C%E8%B0%83%E5%BA%A6%E4%B8%8E%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E5%85%A8%E6%94%BB%E7%95%A5/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">OpenCode 初級者から上級者へ：並列スケジューリングと使用テクニック完全ガイド</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/ja/p/opencode-%E5%AE%8C%E5%85%A8%E3%82%AC%E3%82%A4%E3%83%89%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%82%BD%E3%83%BC%E3%82%B9%E7%89%88-claude-code-%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E8%A8%AD%E5%AE%9A%E9%AB%98%E5%BA%A6%E3%81%AA%E6%B4%BB%E7%94%A8%E6%B3%95/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post OpenCode 完全ガイド：オープンソース版 Claude Code のインストール、設定、高度な活用法" loading="lazy" src="/p/opencode-%E5%85%A8%E6%B7%B1%E5%BA%A6%E6%8C%87%E5%8D%97%E5%BC%80%E6%BA%90%E7%89%88-claude-code-%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E4%B8%8E%E9%AB%98%E7%BA%A7%E7%8E%A9%E6%B3%95/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">OpenCode 完全ガイド：オープンソース版 Claude Code のインストール、設定、高度な活用法</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/ja/p/c%E3%83%89%E3%83%A9%E3%82%A4%E3%83%96%E3%81%AE%E7%A9%BA%E3%81%8D%E5%AE%B9%E9%87%8F%E4%B8%8D%E8%B6%B3%E4%BB%96%E3%81%AE%E3%83%89%E3%83%A9%E3%82%A4%E3%83%96%E3%81%A7%E6%8B%A1%E5%BC%B5%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post Cドライブの空き容量不足？他のドライブで拡張する方法" loading="lazy" src="/p/c-%E7%9B%98%E7%88%86%E6%BB%A1%E7%94%A8%E5%85%B6%E4%BB%96%E7%9B%98%E7%BB%99-c-%E7%9B%98%E6%89%A9%E5%AE%B9/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Cドライブの空き容量不足？他のドライブで拡張する方法</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+
+        <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2026 Yanmu
+    </section>
+    
+    <section class="powerby">
+        <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> で構築されています。 <br />
+        テーマ <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="4.0.2">Stack</a></b> は <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> によって設計されています。
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.8f587a582cd4e51d03a4840028b19d7deac2cee707cfe21ffe942b6666363a7f.js" defer></script>
+
+
+    </body>
+</html>

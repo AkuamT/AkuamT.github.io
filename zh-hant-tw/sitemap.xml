@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
@@ -16,13 +17,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/tags/agent/</loc>
@@ -39,13 +40,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/tags/agent/"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/tags/agent/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/tags/agent/"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/tags/agent/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E9%BA%BC-%E5%BD%B1%E7%89%87%E7%AD%86%E8%A8%98%E6%95%B4%E7%90%86/</loc>
@@ -62,13 +63,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/p/agent-%E3%81%A8-harness-%E3%81%A8%E3%81%AF-%E5%8B%95%E7%94%BB%E3%83%8E%E3%83%BC%E3%83%88%E3%81%BE%E3%81%A8%E3%82%81/"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E9%BA%BC-%E5%BD%B1%E7%89%87%E7%AD%86%E8%A8%98%E6%95%B4%E7%90%86/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E9%BA%BC-%E5%BD%B1%E7%89%87%E7%AD%86%E8%A8%98%E6%95%B4%E7%90%86/"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/p/agent-%E3%81%A8-harness-%E3%81%A8%E3%81%AF-%E5%8B%95%E7%94%BB%E3%83%8E%E3%83%BC%E3%83%88%E3%81%BE%E3%81%A8%E3%82%81/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/categories/ai%E5%B7%A5%E5%85%B7/</loc>
@@ -98,13 +99,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/tags/ai%E5%B7%A5%E7%A8%8B%E5%8C%96/"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/tags/ai%E5%B7%A5%E7%A8%8B%E5%8C%96/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/tags/ai%E5%B7%A5%E7%A8%8B%E5%8C%96/"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/tags/ai%E5%B7%A5%E7%A8%8B%E5%8C%96/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/categories/</loc>
@@ -121,13 +122,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/categories/"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/categories/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/categories/"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/categories/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/tags/harness/</loc>
@@ -144,13 +145,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/tags/harness/"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/tags/harness/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/tags/harness/"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/tags/harness/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/post/</loc>
@@ -167,13 +168,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/post/"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/post/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/post/"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/post/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/tags/</loc>
@@ -190,14 +191,151 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="ja"
                 href="https://AkuamT.github.io/ja/tags/"
+                />
+  </url><url>
+    <loc>https://AkuamT.github.io/zh-hant-tw/tags/ai%E8%A8%AD%E8%A8%88/</loc>
+    <lastmod>2026-05-25T00:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://AkuamT.github.io/zh-hant-tw/tags/claude/</loc>
+    <lastmod>2026-05-25T00:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://AkuamT.github.io/tags/claude/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://AkuamT.github.io/en/tags/claude/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/tags/"
+                href="https://AkuamT.github.io/zh-hant-tw/tags/claude/"
                 />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/tags/claude/"
+                />
+  </url><url>
+    <loc>https://AkuamT.github.io/zh-hant-tw/tags/claude-code/</loc>
+    <lastmod>2026-05-25T00:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://AkuamT.github.io/tags/claude-code/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://AkuamT.github.io/en/tags/claude-code/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/tags/claude-code/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/tags/claude-code/"
+                />
+  </url><url>
+    <loc>https://AkuamT.github.io/zh-hant-tw/tags/opencode/</loc>
+    <lastmod>2026-05-25T00:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://AkuamT.github.io/tags/opencode/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://AkuamT.github.io/en/tags/opencode/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/tags/opencode/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/tags/opencode/"
+                />
+  </url><url>
+    <loc>https://AkuamT.github.io/zh-hant-tw/tags/skill/</loc>
+    <lastmod>2026-05-25T00:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://AkuamT.github.io/tags/skill/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://AkuamT.github.io/en/tags/skill/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/tags/skill/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/tags/skill/"
+                />
+  </url><url>
+    <loc>https://AkuamT.github.io/zh-hant-tw/p/web-design-skill-%E5%AF%A6%E6%93%8D%E6%89%8B%E5%86%8A%E8%A9%B3%E7%B4%B0%E7%89%88/</loc>
+    <lastmod>2026-05-25T00:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://AkuamT.github.io/p/web-design-skill-%E5%AE%9E%E6%93%8D%E6%89%8B%E5%86%8C%E8%AF%A6%E7%BB%86%E7%89%88/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://AkuamT.github.io/en/p/web-design-skill-practical-manual-detailed-version/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/p/web-design-skill-%E5%AF%A6%E6%93%8D%E6%89%8B%E5%86%8A%E8%A9%B3%E7%B4%B0%E7%89%88/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/p/web-design-skill-%E5%AE%9F%E8%B7%B5%E3%83%9E%E3%83%8B%E3%83%A5%E3%82%A2%E3%83%AB%E8%A9%B3%E7%B4%B0%E7%89%88/"
+                />
+  </url><url>
+    <loc>https://AkuamT.github.io/zh-hant-tw/categories/%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2026-05-25T00:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://AkuamT.github.io/categories/%E6%95%99%E7%A8%8B/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/categories/%E6%95%99%E7%A8%8B/"
+                />
+  </url><url>
+    <loc>https://AkuamT.github.io/zh-hant-tw/tags/%E5%AF%A6%E6%93%8D%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2026-05-25T00:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://AkuamT.github.io/zh-hant-tw/tags/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88/</loc>
+    <lastmod>2026-05-25T00:00:00+08:00</lastmod>
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/p/c-%E7%A2%9F%E7%88%86%E6%BB%BF%E7%94%A8%E5%85%B6%E4%BB%96%E7%A3%81%E7%A2%9F%E7%82%BA-c-%E7%A2%9F%E6%93%B4%E5%AE%B9/</loc>
     <lastmod>2026-05-24T16:00:00+08:00</lastmod>
@@ -213,13 +351,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/p/c%E3%83%89%E3%83%A9%E3%82%A4%E3%83%96%E3%81%AE%E7%A9%BA%E3%81%8D%E5%AE%B9%E9%87%8F%E4%B8%8D%E8%B6%B3%E4%BB%96%E3%81%AE%E3%83%89%E3%83%A9%E3%82%A4%E3%83%96%E3%81%A7%E6%8B%A1%E5%BC%B5%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/p/c-%E7%A2%9F%E7%88%86%E6%BB%BF%E7%94%A8%E5%85%B6%E4%BB%96%E7%A3%81%E7%A2%9F%E7%82%BA-c-%E7%A2%9F%E6%93%B4%E5%AE%B9/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/p/c-%E7%A2%9F%E7%88%86%E6%BB%BF%E7%94%A8%E5%85%B6%E4%BB%96%E7%A3%81%E7%A2%9F%E7%82%BA-c-%E7%A2%9F%E6%93%B4%E5%AE%B9/"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/p/c%E3%83%89%E3%83%A9%E3%82%A4%E3%83%96%E3%81%AE%E7%A9%BA%E3%81%8D%E5%AE%B9%E9%87%8F%E4%B8%8D%E8%B6%B3%E4%BB%96%E3%81%AE%E3%83%89%E3%83%A9%E3%82%A4%E3%83%96%E3%81%A7%E6%8B%A1%E5%BC%B5%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/tags/windows/</loc>
@@ -236,26 +374,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/tags/windows/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="zh-hant-tw"
                 href="https://AkuamT.github.io/zh-hant-tw/tags/windows/"
                 />
-  </url><url>
-    <loc>https://AkuamT.github.io/zh-hant-tw/categories/%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2026-05-24T16:00:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-cn"
-                href="https://AkuamT.github.io/categories/%E6%95%99%E7%A8%8B/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/categories/%E6%95%99%E7%A8%8B/"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/tags/windows/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/tags/%E6%96%B0%E6%89%8B%E6%95%99%E5%AD%B8/</loc>
@@ -263,6 +388,32 @@
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/tags/%E7%A3%81%E7%A2%9F%E7%AE%A1%E7%90%86/</loc>
     <lastmod>2026-05-24T16:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://AkuamT.github.io/zh-hant-tw/p/web-design-skill-%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/</loc>
+    <lastmod>2026-05-24T00:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://AkuamT.github.io/p/web-design-skill-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://AkuamT.github.io/en/p/web-design-skill-learning-notes/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/p/web-design-skill-%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/p/web-design-skill-%E5%AD%A6%E7%BF%92%E3%83%8E%E3%83%BC%E3%83%88/"
+                />
+  </url><url>
+    <loc>https://AkuamT.github.io/zh-hant-tw/tags/%E6%8F%90%E7%A4%BA%E8%A9%9E%E5%B7%A5%E7%A8%8B/</loc>
+    <lastmod>2026-05-24T00:00:00+08:00</lastmod>
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/page/</loc>
     <lastmod>2026-05-13T00:00:00+00:00</lastmod>
@@ -278,13 +429,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/page/"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/page/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/page/"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/page/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/%E9%97%9C%E6%96%BC/</loc>
@@ -301,13 +452,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/%E6%A6%82%E8%A6%81/"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/%E9%97%9C%E6%96%BC/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/%E9%97%9C%E6%96%BC/"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/%E6%A6%82%E8%A6%81/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/tags/ai%E5%B7%A5%E5%85%B7/</loc>
@@ -337,13 +488,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/tags/context7/"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/tags/context7/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/tags/context7/"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/tags/context7/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/p/context7-%E6%8C%87%E5%8D%97%E8%AE%93-ai-%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88%E5%8A%A9%E6%89%8B%E8%AE%80%E6%87%82%E6%9C%80%E6%96%B0%E6%96%87%E4%BB%B6/</loc>
@@ -360,13 +511,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/p/context7-%E3%82%AC%E3%82%A4%E3%83%89ai%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%A2%E3%82%B7%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%88%E3%81%AB%E6%9C%80%E6%96%B0%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88%E3%82%92%E7%90%86%E8%A7%A3%E3%81%95%E3%81%9B%E3%82%8B/"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/p/context7-%E6%8C%87%E5%8D%97%E8%AE%93-ai-%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88%E5%8A%A9%E6%89%8B%E8%AE%80%E6%87%82%E6%9C%80%E6%96%B0%E6%96%87%E4%BB%B6/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/p/context7-%E6%8C%87%E5%8D%97%E8%AE%93-ai-%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88%E5%8A%A9%E6%89%8B%E8%AE%80%E6%87%82%E6%9C%80%E6%96%B0%E6%96%87%E4%BB%B6/"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/p/context7-%E3%82%AC%E3%82%A4%E3%83%89ai%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%A2%E3%82%B7%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%88%E3%81%AB%E6%9C%80%E6%96%B0%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88%E3%82%92%E7%90%86%E8%A7%A3%E3%81%95%E3%81%9B%E3%82%8B/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/tags/mcp/</loc>
@@ -383,13 +534,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/tags/mcp/"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/tags/mcp/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/tags/mcp/"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/tags/mcp/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/tags/%E6%95%99%E7%A8%8B/</loc>
@@ -419,13 +570,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/tags/claudecode/"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/tags/claudecode/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/tags/claudecode/"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/tags/claudecode/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/tags/obsidian/</loc>
@@ -442,36 +593,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/tags/obsidian/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="zh-hant-tw"
                 href="https://AkuamT.github.io/zh-hant-tw/tags/obsidian/"
                 />
-  </url><url>
-    <loc>https://AkuamT.github.io/zh-hant-tw/tags/opencode/</loc>
-    <lastmod>2026-04-30T02:00:15+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://AkuamT.github.io/tags/opencode/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://AkuamT.github.io/en/tags/opencode/"
-                />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://AkuamT.github.io/ja/tags/opencode/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/tags/opencode/"
+                href="https://AkuamT.github.io/ja/tags/obsidian/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/p/opencode--obsidian%E6%89%93%E9%80%A0%E4%BD%A0%E7%9A%84ai%E9%A9%85%E5%8B%95%E7%9F%A5%E8%AD%98%E7%AE%A1%E7%90%86%E5%B7%A5%E4%BD%9C%E6%B5%81/</loc>
@@ -488,13 +616,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/p/opencode--obsidianai%E9%A7%86%E5%8B%95%E3%81%AE%E3%83%8A%E3%83%AC%E3%83%83%E3%82%B8%E3%83%9E%E3%83%8D%E3%82%B8%E3%83%A1%E3%83%B3%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%E3%83%95%E3%83%AD%E3%83%BC%E3%82%92%E6%A7%8B%E7%AF%89%E3%81%99%E3%82%8B/"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/p/opencode--obsidian%E6%89%93%E9%80%A0%E4%BD%A0%E7%9A%84ai%E9%A9%85%E5%8B%95%E7%9F%A5%E8%AD%98%E7%AE%A1%E7%90%86%E5%B7%A5%E4%BD%9C%E6%B5%81/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/p/opencode--obsidian%E6%89%93%E9%80%A0%E4%BD%A0%E7%9A%84ai%E9%A9%85%E5%8B%95%E7%9F%A5%E8%AD%98%E7%AE%A1%E7%90%86%E5%B7%A5%E4%BD%9C%E6%B5%81/"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/p/opencode--obsidianai%E9%A7%86%E5%8B%95%E3%81%AE%E3%83%8A%E3%83%AC%E3%83%83%E3%82%B8%E3%83%9E%E3%83%8D%E3%82%B8%E3%83%A1%E3%83%B3%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%E3%83%95%E3%83%AD%E3%83%BC%E3%82%92%E6%A7%8B%E7%AF%89%E3%81%99%E3%82%8B/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/p/opencode-%E5%85%A8%E6%B7%B1%E5%BA%A6%E6%8C%87%E5%8D%97%E9%96%8B%E6%BA%90%E7%89%88-claude-code-%E7%9A%84%E5%AE%89%E8%A3%9D%E9%85%8D%E7%BD%AE%E8%88%87%E9%80%B2%E9%9A%8E%E7%8E%A9%E6%B3%95/</loc>
@@ -511,13 +639,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/p/opencode-%E5%AE%8C%E5%85%A8%E3%82%AC%E3%82%A4%E3%83%89%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%82%BD%E3%83%BC%E3%82%B9%E7%89%88-claude-code-%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E8%A8%AD%E5%AE%9A%E9%AB%98%E5%BA%A6%E3%81%AA%E6%B4%BB%E7%94%A8%E6%B3%95/"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/p/opencode-%E5%85%A8%E6%B7%B1%E5%BA%A6%E6%8C%87%E5%8D%97%E9%96%8B%E6%BA%90%E7%89%88-claude-code-%E7%9A%84%E5%AE%89%E8%A3%9D%E9%85%8D%E7%BD%AE%E8%88%87%E9%80%B2%E9%9A%8E%E7%8E%A9%E6%B3%95/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/p/opencode-%E5%85%A8%E6%B7%B1%E5%BA%A6%E6%8C%87%E5%8D%97%E9%96%8B%E6%BA%90%E7%89%88-claude-code-%E7%9A%84%E5%AE%89%E8%A3%9D%E9%85%8D%E7%BD%AE%E8%88%87%E9%80%B2%E9%9A%8E%E7%8E%A9%E6%B3%95/"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/p/opencode-%E5%AE%8C%E5%85%A8%E3%82%AC%E3%82%A4%E3%83%89%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%82%BD%E3%83%BC%E3%82%B9%E7%89%88-claude-code-%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E8%A8%AD%E5%AE%9A%E9%AB%98%E5%BA%A6%E3%81%AA%E6%B4%BB%E7%94%A8%E6%B3%95/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/p/opencode-%E6%96%B0%E6%89%8B%E9%80%B2%E9%9A%8E%E4%B8%A6%E8%A1%8C%E8%AA%BF%E5%BA%A6%E8%88%87%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E5%85%A8%E6%94%BB%E7%95%A5/</loc>
@@ -534,13 +662,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/p/opencode-%E5%88%9D%E7%B4%9A%E8%80%85%E3%81%8B%E3%82%89%E4%B8%8A%E7%B4%9A%E8%80%85%E3%81%B8%E4%B8%A6%E5%88%97%E3%82%B9%E3%82%B1%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0%E3%81%A8%E4%BD%BF%E7%94%A8%E3%83%86%E3%82%AF%E3%83%8B%E3%83%83%E3%82%AF%E5%AE%8C%E5%85%A8%E3%82%AC%E3%82%A4%E3%83%89/"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/p/opencode-%E6%96%B0%E6%89%8B%E9%80%B2%E9%9A%8E%E4%B8%A6%E8%A1%8C%E8%AA%BF%E5%BA%A6%E8%88%87%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E5%85%A8%E6%94%BB%E7%95%A5/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/p/opencode-%E6%96%B0%E6%89%8B%E9%80%B2%E9%9A%8E%E4%B8%A6%E8%A1%8C%E8%AA%BF%E5%BA%A6%E8%88%87%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E5%85%A8%E6%94%BB%E7%95%A5/"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/p/opencode-%E5%88%9D%E7%B4%9A%E8%80%85%E3%81%8B%E3%82%89%E4%B8%8A%E7%B4%9A%E8%80%85%E3%81%B8%E4%B8%A6%E5%88%97%E3%82%B9%E3%82%B1%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0%E3%81%A8%E4%BD%BF%E7%94%A8%E3%83%86%E3%82%AF%E3%83%8B%E3%83%83%E3%82%AF%E5%AE%8C%E5%85%A8%E3%82%AC%E3%82%A4%E3%83%89/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/tags/ralphloop/</loc>
@@ -557,13 +685,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/tags/ralphloop/"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/tags/ralphloop/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/tags/ralphloop/"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/tags/ralphloop/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/tags/skills/</loc>
@@ -580,13 +708,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/tags/skills/"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/tags/skills/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/tags/skills/"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/tags/skills/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/tags/ultrawork/</loc>
@@ -603,26 +731,26 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/tags/ultrawork/"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/tags/ultrawork/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/tags/ultrawork/"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/tags/ultrawork/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/tags/%E7%9F%A5%E8%AD%98%E7%AE%A1%E7%90%86/</loc>
     <lastmod>2026-04-30T02:00:15+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/tags/%E7%9F%A5%E8%AD%98%E7%AE%A1%E7%90%86/"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/tags/%E7%9F%A5%E8%AD%98%E7%AE%A1%E7%90%86/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/tags/%E7%9F%A5%E8%AD%98%E7%AE%A1%E7%90%86/"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/tags/%E7%9F%A5%E8%AD%98%E7%AE%A1%E7%90%86/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/p/5%E5%88%86%E9%90%98%E5%AE%89%E8%A3%9Dclaudecode%E4%B8%A6%E6%8E%A5%E5%85%A5deepseek/</loc>
@@ -639,13 +767,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/p/5%E5%88%86%E3%81%A7claude-code%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%97deepseek%E3%81%AB%E6%8E%A5%E7%B6%9A%E3%81%99%E3%82%8B/"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/p/5%E5%88%86%E9%90%98%E5%AE%89%E8%A3%9Dclaudecode%E4%B8%A6%E6%8E%A5%E5%85%A5deepseek/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/p/5%E5%88%86%E9%90%98%E5%AE%89%E8%A3%9Dclaudecode%E4%B8%A6%E6%8E%A5%E5%85%A5deepseek/"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/p/5%E5%88%86%E3%81%A7claude-code%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%97deepseek%E3%81%AB%E6%8E%A5%E7%B6%9A%E3%81%99%E3%82%8B/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/tags/deepseek/</loc>
@@ -662,13 +790,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/tags/deepseek/"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/tags/deepseek/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/tags/deepseek/"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/tags/deepseek/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/tags/node.js/</loc>
@@ -685,13 +813,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/tags/node.js/"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/tags/node.js/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/tags/node.js/"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/tags/node.js/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/p/%E5%AE%89%E8%A3%9Dclaudecode%E4%B8%A6%E6%8E%A5%E5%85%A5deepseek%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD/</loc>
@@ -708,13 +836,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/p/claude-code%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%97%E3%81%A6deepseek%E3%81%AB%E6%8E%A5%E7%B6%9A%E3%81%99%E3%82%8B%E5%88%9D%E5%BF%83%E8%80%85%E5%90%91%E3%81%91%E3%82%AC%E3%82%A4%E3%83%89/"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/p/%E5%AE%89%E8%A3%9Dclaudecode%E4%B8%A6%E6%8E%A5%E5%85%A5deepseek%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/p/%E5%AE%89%E8%A3%9Dclaudecode%E4%B8%A6%E6%8E%A5%E5%85%A5deepseek%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD/"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/p/claude-code%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%97%E3%81%A6deepseek%E3%81%AB%E6%8E%A5%E7%B6%9A%E3%81%99%E3%82%8B%E5%88%9D%E5%BF%83%E8%80%85%E5%90%91%E3%81%91%E3%82%AC%E3%82%A4%E3%83%89/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/tags/excalidraw/</loc>
@@ -731,13 +859,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/tags/excalidraw/"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/tags/excalidraw/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/tags/excalidraw/"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/tags/excalidraw/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/tags/gemini/</loc>
@@ -754,13 +882,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/tags/gemini/"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/tags/gemini/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/tags/gemini/"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/tags/gemini/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/tags/mermaid/</loc>
@@ -777,13 +905,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/tags/mermaid/"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/tags/mermaid/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/tags/mermaid/"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/tags/mermaid/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/p/%E5%B0%8F%E7%99%BD%E4%B9%9F%E8%83%BD%E5%AD%B8%E6%9C%83%E7%94%A8-ai-%E5%BF%AB%E9%80%9F%E7%95%AB%E5%87%BA%E6%BC%82%E4%BA%AE%E7%9A%84%E6%8A%80%E8%A1%93%E6%9E%B6%E6%A7%8B%E5%9C%96/</loc>
@@ -800,13 +928,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/p/%E5%88%9D%E5%BF%83%E8%80%85%E3%81%A7%E3%82%82%E3%81%A7%E3%81%8D%E3%82%8Bai%E3%81%A7%E3%81%8D%E3%82%8C%E3%81%84%E3%81%AA%E6%8A%80%E8%A1%93%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3%E5%9B%B3%E3%82%92%E7%B4%A0%E6%97%A9%E3%81%8F%E4%BD%9C%E6%88%90/"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/p/%E5%B0%8F%E7%99%BD%E4%B9%9F%E8%83%BD%E5%AD%B8%E6%9C%83%E7%94%A8-ai-%E5%BF%AB%E9%80%9F%E7%95%AB%E5%87%BA%E6%BC%82%E4%BA%AE%E7%9A%84%E6%8A%80%E8%A1%93%E6%9E%B6%E6%A7%8B%E5%9C%96/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/p/%E5%B0%8F%E7%99%BD%E4%B9%9F%E8%83%BD%E5%AD%B8%E6%9C%83%E7%94%A8-ai-%E5%BF%AB%E9%80%9F%E7%95%AB%E5%87%BA%E6%BC%82%E4%BA%AE%E7%9A%84%E6%8A%80%E8%A1%93%E6%9E%B6%E6%A7%8B%E5%9C%96/"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/p/%E5%88%9D%E5%BF%83%E8%80%85%E3%81%A7%E3%82%82%E3%81%A7%E3%81%8D%E3%82%8Bai%E3%81%A7%E3%81%8D%E3%82%8C%E3%81%84%E3%81%AA%E6%8A%80%E8%A1%93%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3%E5%9B%B3%E3%82%92%E7%B4%A0%E6%97%A9%E3%81%8F%E4%BD%9C%E6%88%90/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/tags/%E6%9E%B6%E6%A7%8B%E5%9C%96/</loc>
@@ -829,13 +957,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/p/"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/p/ai%E7%B7%A8%E7%A8%8B%E9%80%B2%E5%8C%96%E5%8F%B2/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/p/ai%E7%B7%A8%E7%A8%8B%E9%80%B2%E5%8C%96%E5%8F%B2/"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/p/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/tags/ai/</loc>
@@ -852,13 +980,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/tags/ai/"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/tags/ai/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/tags/ai/"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/tags/ai/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/tags/lora/</loc>
@@ -875,13 +1003,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/tags/lora/"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/tags/lora/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/tags/lora/"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/tags/lora/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/p/lora%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%AA%BF/</loc>
@@ -898,13 +1026,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/p/lora%E5%A4%A7%E8%A6%8F%E6%A8%A1%E3%83%A2%E3%83%87%E3%83%AB%E5%BE%AE%E8%AA%BF%E6%95%B4/"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/p/lora%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%AA%BF/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/p/lora%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%AA%BF/"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/p/lora%E5%A4%A7%E8%A6%8F%E6%A8%A1%E3%83%A2%E3%83%87%E3%83%AB%E5%BE%AE%E8%AA%BF%E6%95%B4/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/</loc>
@@ -937,13 +1065,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/archives/"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/archives/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/archives/"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/archives/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/search/</loc>
@@ -959,13 +1087,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/search/"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/search/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/search/"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/search/"
                 />
   </url><url>
     <loc>https://AkuamT.github.io/zh-hant-tw/%E9%8F%88%E6%8E%A5/</loc>
@@ -981,13 +1109,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://AkuamT.github.io/ja/%E3%83%AA%E3%83%B3%E3%82%AF/"
+                hreflang="zh-hant-tw"
+                href="https://AkuamT.github.io/zh-hant-tw/%E9%8F%88%E6%8E%A5/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-hant-tw"
-                href="https://AkuamT.github.io/zh-hant-tw/%E9%8F%88%E6%8E%A5/"
+                hreflang="ja"
+                href="https://AkuamT.github.io/ja/%E3%83%AA%E3%83%B3%E3%82%AF/"
                 />
   </url>
 </urlset>

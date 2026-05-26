@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a23;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a3e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2d3436;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#636e72;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grad1)"/>
+  <rect x="50" y="50" width="1100" height="530" rx="20" fill="none" stroke="url(#grad2)" stroke-width="3"/>
+  <polygon points="200,100 250,150 200,200 150,150" fill="none" stroke="#00b894" stroke-width="2" opacity="0.6"/>
+  <polygon points="1000,430 1050,480 1000,530 950,480" fill="none" stroke="#6c5ce7" stroke-width="2" opacity="0.5"/>
+  <text x="600" y="250" font-family="Arial, sans-serif" font-size="48" fill="#ffffff" text-anchor="middle" font-weight="bold">Web Design Skill</text>
+  <text x="600" y="320" font-family="Arial, sans-serif" font-size="36" fill="#00b894" text-anchor="middle">學習筆記</text>
+  <text x="600" y="380" font-family="Arial, sans-serif" font-size="24" fill="#a0a0a0" text-anchor="middle">Claude Design 核心原則</text>
+  <line x1="400" y1="420" x2="800" y2="420" stroke="url(#grad2)" stroke-width="2"/>
+  <text x="600" y="470" font-family="Arial, sans-serif" font-size="18" fill="#666666" text-anchor="middle">提示詞工程與設計系統</text>
+</svg>

@@ -24,6 +24,48 @@
             <guid>https://AkuamT.github.io/ja/tags/harness/</guid>
             <description></description>
         </item><item>
+            <title>AIデザイン</title>
+            <link>https://AkuamT.github.io/ja/tags/ai%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3/</link>
+            <pubDate>Mon, 25 May 2026 00:00:00 +0800</pubDate>
+            <guid>https://AkuamT.github.io/ja/tags/ai%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3/</guid>
+            <description></description>
+        </item><item>
+            <title>Claude</title>
+            <link>https://AkuamT.github.io/ja/tags/claude/</link>
+            <pubDate>Mon, 25 May 2026 00:00:00 +0800</pubDate>
+            <guid>https://AkuamT.github.io/ja/tags/claude/</guid>
+            <description></description>
+        </item><item>
+            <title>Claude-Code</title>
+            <link>https://AkuamT.github.io/ja/tags/claude-code/</link>
+            <pubDate>Mon, 25 May 2026 00:00:00 +0800</pubDate>
+            <guid>https://AkuamT.github.io/ja/tags/claude-code/</guid>
+            <description></description>
+        </item><item>
+            <title>OpenCode</title>
+            <link>https://AkuamT.github.io/ja/tags/opencode/</link>
+            <pubDate>Mon, 25 May 2026 00:00:00 +0800</pubDate>
+            <guid>https://AkuamT.github.io/ja/tags/opencode/</guid>
+            <description></description>
+        </item><item>
+            <title>Skill</title>
+            <link>https://AkuamT.github.io/ja/tags/skill/</link>
+            <pubDate>Mon, 25 May 2026 00:00:00 +0800</pubDate>
+            <guid>https://AkuamT.github.io/ja/tags/skill/</guid>
+            <description></description>
+        </item><item>
+            <title>ウェブデザイン</title>
+            <link>https://AkuamT.github.io/ja/tags/%E3%82%A6%E3%82%A7%E3%83%96%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3/</link>
+            <pubDate>Mon, 25 May 2026 00:00:00 +0800</pubDate>
+            <guid>https://AkuamT.github.io/ja/tags/%E3%82%A6%E3%82%A7%E3%83%96%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3/</guid>
+            <description></description>
+        </item><item>
+            <title>実践チュートリアル</title>
+            <link>https://AkuamT.github.io/ja/tags/%E5%AE%9F%E8%B7%B5%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB/</link>
+            <pubDate>Mon, 25 May 2026 00:00:00 +0800</pubDate>
+            <guid>https://AkuamT.github.io/ja/tags/%E5%AE%9F%E8%B7%B5%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB/</guid>
+            <description></description>
+        </item><item>
             <title>Windows</title>
             <link>https://AkuamT.github.io/ja/tags/windows/</link>
             <pubDate>Sun, 24 May 2026 16:00:00 +0800</pubDate>
@@ -40,6 +82,12 @@
             <link>https://AkuamT.github.io/ja/tags/%E5%88%9D%E5%BF%83%E8%80%85%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB/</link>
             <pubDate>Sun, 24 May 2026 16:00:00 +0800</pubDate>
             <guid>https://AkuamT.github.io/ja/tags/%E5%88%9D%E5%BF%83%E8%80%85%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB/</guid>
+            <description></description>
+        </item><item>
+            <title>プロンプトエンジニアリング</title>
+            <link>https://AkuamT.github.io/ja/tags/%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%83%AA%E3%83%B3%E3%82%B0/</link>
+            <pubDate>Sun, 24 May 2026 00:00:00 +0800</pubDate>
+            <guid>https://AkuamT.github.io/ja/tags/%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%83%AA%E3%83%B3%E3%82%B0/</guid>
             <description></description>
         </item><item>
             <title>AIツール</title>
@@ -76,12 +124,6 @@
             <link>https://AkuamT.github.io/ja/tags/obsidian/</link>
             <pubDate>Thu, 30 Apr 2026 02:00:15 +0800</pubDate>
             <guid>https://AkuamT.github.io/ja/tags/obsidian/</guid>
-            <description></description>
-        </item><item>
-            <title>OpenCode</title>
-            <link>https://AkuamT.github.io/ja/tags/opencode/</link>
-            <pubDate>Thu, 30 Apr 2026 02:00:15 +0800</pubDate>
-            <guid>https://AkuamT.github.io/ja/tags/opencode/</guid>
             <description></description>
         </item><item>
             <title>RalphLoop</title>

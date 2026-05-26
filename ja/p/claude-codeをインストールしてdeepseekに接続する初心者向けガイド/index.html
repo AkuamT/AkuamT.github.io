@@ -587,34 +587,34 @@
 <h3 id="何をインストールするのかなぜ必要なのか">何をインストールするのか？なぜ必要なのか？
 </h3><p>始める前に、インストールする必要がある <strong>3つのもの</strong> と、それぞれの役割を理解しておきましょう：</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>#</th>
-          <th>ソフトウェア</th>
-          <th>一言での説明</th>
-          <th>なぜ必要なのか</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>1</td>
-          <td><strong>Node.js</strong></td>
-          <td>コンピューターがJavaScriptプログラムを実行するための「エンジン」</td>
-          <td>Claude Code はJavaScriptで書かれているため、これがないと動作しない</td>
-      </tr>
-      <tr>
-          <td>2</td>
-          <td><strong>Claude Code</strong></td>
-          <td>コンピューターの端末に常駐するAIプログラミングアシスタント</td>
-          <td>これが最終的に使いたいものです</td>
-      </tr>
-      <tr>
-          <td>3</td>
-          <td><strong>CC-Switch</strong></td>
-          <td>Claude Code の「脳」を交換する小さなツール</td>
-          <td>Claude Code の高価な公式モデルから安価な DeepSeek に切り替える</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>#</th>
+					<th>ソフトウェア</th>
+					<th>一言での説明</th>
+					<th>なぜ必要なのか</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>1</td>
+					<td><strong>Node.js</strong></td>
+					<td>コンピューターがJavaScriptプログラムを実行するための「エンジン」</td>
+					<td>Claude Code はJavaScriptで書かれているため、これがないと動作しない</td>
+			</tr>
+			<tr>
+					<td>2</td>
+					<td><strong>Claude Code</strong></td>
+					<td>コンピューターの端末に常駐するAIプログラミングアシスタント</td>
+					<td>これが最終的に使いたいものです</td>
+			</tr>
+			<tr>
+					<td>3</td>
+					<td><strong>CC-Switch</strong></td>
+					<td>Claude Code の「脳」を交換する小さなツール</td>
+					<td>Claude Code の高価な公式モデルから安価な DeepSeek に切り替える</td>
+			</tr>
+	</tbody>
 </table></div>
 <p>全体のプロセスには約 <strong>10〜15分</strong> かかります。順番に一つずつ進めてください。飛ばさないでください。</p>
 <blockquote class="alert alert-important">
@@ -1321,60 +1321,60 @@
 <hr>
 <h2 id="コマンド早見表">コマンド早見表
 </h2><div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>操作</th>
-          <th>コマンド</th>
-          <th>説明</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Node.js バージョン確認</td>
-          <td><code>node -v</code></td>
-          <td>Node.js がインストールされているか確認</td>
-      </tr>
-      <tr>
-          <td>npm バージョン確認</td>
-          <td><code>npm -v</code></td>
-          <td>npm が正常か確認</td>
-      </tr>
-      <tr>
-          <td>npm ミラー設定</td>
-          <td><code>npm config set registry https://registry.npmmirror.com/</code></td>
-          <td>ダウンロードを高速化</td>
-      </tr>
-      <tr>
-          <td>npm ミラー確認</td>
-          <td><code>npm config get registry</code></td>
-          <td>ミラーが有効か確認</td>
-      </tr>
-      <tr>
-          <td>Claude Code インストール</td>
-          <td><code>npm install -g @anthropic-ai/claude-code</code></td>
-          <td>グローバルインストール</td>
-      </tr>
-      <tr>
-          <td>Claude Code バージョン確認</td>
-          <td><code>claude --version</code></td>
-          <td>Claude Code がインストールされているか確認</td>
-      </tr>
-      <tr>
-          <td>Claude Code 起動</td>
-          <td><code>claude</code></td>
-          <td>現在のフォルダで起動</td>
-      </tr>
-      <tr>
-          <td>現在のモデル確認</td>
-          <td><code>/model</code></td>
-          <td>Claude Code 内で入力</td>
-      </tr>
-      <tr>
-          <td>Claude Code 終了</td>
-          <td><code>/exit</code> または <code>Ctrl + C</code> を2回</td>
-          <td>プログラムを終了</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>操作</th>
+					<th>コマンド</th>
+					<th>説明</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Node.js バージョン確認</td>
+					<td><code>node -v</code></td>
+					<td>Node.js がインストールされているか確認</td>
+			</tr>
+			<tr>
+					<td>npm バージョン確認</td>
+					<td><code>npm -v</code></td>
+					<td>npm が正常か確認</td>
+			</tr>
+			<tr>
+					<td>npm ミラー設定</td>
+					<td><code>npm config set registry https://registry.npmmirror.com/</code></td>
+					<td>ダウンロードを高速化</td>
+			</tr>
+			<tr>
+					<td>npm ミラー確認</td>
+					<td><code>npm config get registry</code></td>
+					<td>ミラーが有効か確認</td>
+			</tr>
+			<tr>
+					<td>Claude Code インストール</td>
+					<td><code>npm install -g @anthropic-ai/claude-code</code></td>
+					<td>グローバルインストール</td>
+			</tr>
+			<tr>
+					<td>Claude Code バージョン確認</td>
+					<td><code>claude --version</code></td>
+					<td>Claude Code がインストールされているか確認</td>
+			</tr>
+			<tr>
+					<td>Claude Code 起動</td>
+					<td><code>claude</code></td>
+					<td>現在のフォルダで起動</td>
+			</tr>
+			<tr>
+					<td>現在のモデル確認</td>
+					<td><code>/model</code></td>
+					<td>Claude Code 内で入力</td>
+			</tr>
+			<tr>
+					<td>Claude Code 終了</td>
+					<td><code>/exit</code> または <code>Ctrl + C</code> を2回</td>
+					<td>プログラムを終了</td>
+			</tr>
+	</tbody>
 </table></div>
 <hr>
 <h2 id="よくある質問">よくある質問
@@ -1460,45 +1460,45 @@
         </div>
         <div class="alert-body">
             <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>ステップ</th>
-          <th>内容</th>
-          <th>一言でのまとめ</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>ステップ1</td>
-          <td>Node.js のインストール</td>
-          <td>「ランタイムエンジン」をセットアップし、コンピューターがJavaScriptプログラムを実行できるようにする</td>
-      </tr>
-      <tr>
-          <td>ステップ2</td>
-          <td>Claude Code のインストール</td>
-          <td>「AIアシスタント」をインストールし、ログインをスキップ</td>
-      </tr>
-      <tr>
-          <td>ステップ3</td>
-          <td>CC-Switch のインストール</td>
-          <td>「脳交換器」をインストールし、AIモデルを切り替え可能に</td>
-      </tr>
-      <tr>
-          <td>ステップ4</td>
-          <td>DeepSeek API Key の取得</td>
-          <td>DeepSeek の AI サービスにアクセスするための「鍵」を取得</td>
-      </tr>
-      <tr>
-          <td>ステップ5</td>
-          <td>CC-Switch の設定</td>
-          <td>「脳交換器」+「鍵」で Claude Code の脳を DeepSeek に切り替え</td>
-      </tr>
-      <tr>
-          <td>ステップ6</td>
-          <td>使い始める</td>
-          <td>任意のフォルダで <code>claude</code> と入力してAIアシスタントを起動！</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>ステップ</th>
+					<th>内容</th>
+					<th>一言でのまとめ</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>ステップ1</td>
+					<td>Node.js のインストール</td>
+					<td>「ランタイムエンジン」をセットアップし、コンピューターがJavaScriptプログラムを実行できるようにする</td>
+			</tr>
+			<tr>
+					<td>ステップ2</td>
+					<td>Claude Code のインストール</td>
+					<td>「AIアシスタント」をインストールし、ログインをスキップ</td>
+			</tr>
+			<tr>
+					<td>ステップ3</td>
+					<td>CC-Switch のインストール</td>
+					<td>「脳交換器」をインストールし、AIモデルを切り替え可能に</td>
+			</tr>
+			<tr>
+					<td>ステップ4</td>
+					<td>DeepSeek API Key の取得</td>
+					<td>DeepSeek の AI サービスにアクセスするための「鍵」を取得</td>
+			</tr>
+			<tr>
+					<td>ステップ5</td>
+					<td>CC-Switch の設定</td>
+					<td>「脳交換器」+「鍵」で Claude Code の脳を DeepSeek に切り替え</td>
+			</tr>
+			<tr>
+					<td>ステップ6</td>
+					<td>使い始める</td>
+					<td>任意のフォルダで <code>claude</code> と入力してAIアシスタントを起動！</td>
+			</tr>
+	</tbody>
 </table></div>
 <p>すべてのステップが完了したら、コンピューターの任意のフォルダで <code>claude</code> コマンドを入力して、DeepSeek 駆動の AI プログラミングアシスタントを起動できます！</p>
         </div>
@@ -1659,8 +1659,9 @@
         (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	
 </div>
 
 <style>

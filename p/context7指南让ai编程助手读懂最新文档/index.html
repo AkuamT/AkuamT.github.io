@@ -576,35 +576,35 @@
 <p>这就像让朋友帮忙修手机，他凭记忆拆机，记的却是 3 年前的步骤——螺丝位置早变了。动手前先看一眼最新教程，就不会拆坏。</p>
 <h3 id="有没有-context7-的区别">有没有 Context7 的区别
 </h3><div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th></th>
-          <th>没有</th>
-          <th>有</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>信息来源</td>
-          <td>AI 脑子里的旧知识，可能过时</td>
-          <td>实时去官方文档拿最新内容</td>
-      </tr>
-      <tr>
-          <td>API 准确性</td>
-          <td>经常调错或用已经不存在的 API</td>
-          <td>保证用当前版本的 API</td>
-      </tr>
-      <tr>
-          <td>代码质量</td>
-          <td>可能是两三年前的过时写法</td>
-          <td>符合最新推荐写法</td>
-      </tr>
-      <tr>
-          <td>版本处理</td>
-          <td>不管版本瞎猜</td>
-          <td>你说用哪个版本就查哪个版本</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th></th>
+					<th>没有</th>
+					<th>有</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>信息来源</td>
+					<td>AI 脑子里的旧知识，可能过时</td>
+					<td>实时去官方文档拿最新内容</td>
+			</tr>
+			<tr>
+					<td>API 准确性</td>
+					<td>经常调错或用已经不存在的 API</td>
+					<td>保证用当前版本的 API</td>
+			</tr>
+			<tr>
+					<td>代码质量</td>
+					<td>可能是两三年前的过时写法</td>
+					<td>符合最新推荐写法</td>
+			</tr>
+			<tr>
+					<td>版本处理</td>
+					<td>不管版本瞎猜</td>
+					<td>你说用哪个版本就查哪个版本</td>
+			</tr>
+	</tbody>
 </table></div>
 <h2 id="-工作原理">🔄 工作原理
 </h2><p>操作就几步：</p>
@@ -637,22 +637,22 @@
 <p>搜到一堆结果后，Context7 会用 LLM（大语言模型）再做一次智能排序，把最相关的那几段挑出来给你。</p>
 <p><strong>两种用法：</strong></p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>方式</th>
-          <th>说明</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>MCP 模式（推荐）</strong></td>
-          <td>装一次，AI 编程助手自动调用。MCP 相当于给 AI 装了个插件，装好了不用管</td>
-      </tr>
-      <tr>
-          <td><strong>CLI 手动模式</strong></td>
-          <td>在终端敲命令手动查文档，适合喜欢折腾的人</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>方式</th>
+					<th>说明</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>MCP 模式（推荐）</strong></td>
+					<td>装一次，AI 编程助手自动调用。MCP 相当于给 AI 装了个插件，装好了不用管</td>
+			</tr>
+			<tr>
+					<td><strong>CLI 手动模式</strong></td>
+					<td>在终端敲命令手动查文档，适合喜欢折腾的人</td>
+			</tr>
+	</tbody>
 </table></div>
 <h2 id="核心能力">核心能力
 </h2><h3 id="智能匹配你说名字它去找地方">智能匹配：你说名字，它去找地方
@@ -752,34 +752,34 @@
 </div>
 </div><p>不同工具的配置文件位置（<code>~</code> 代表你电脑的用户目录，比如 Windows 上的 <code>C:\Users\你的用户名</code>）：</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>工具</th>
-          <th>配置位置</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Cursor</td>
-          <td>Settings → MCP，或 <code>~/.cursor/mcp.json</code></td>
-      </tr>
-      <tr>
-          <td>Claude Code</td>
-          <td><code>~/.claude/settings.json</code>（全局）或 <code>.claude/settings.json</code>（项目）</td>
-      </tr>
-      <tr>
-          <td>Windsurf</td>
-          <td>Settings → Cascade → MCP servers</td>
-      </tr>
-      <tr>
-          <td>Cline</td>
-          <td>VS Code 扩展内 MCP Servers → Configure</td>
-      </tr>
-      <tr>
-          <td>OpenCode</td>
-          <td>项目根目录 <code>opencode.json</code></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>工具</th>
+					<th>配置位置</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Cursor</td>
+					<td>Settings → MCP，或 <code>~/.cursor/mcp.json</code></td>
+			</tr>
+			<tr>
+					<td>Claude Code</td>
+					<td><code>~/.claude/settings.json</code>（全局）或 <code>.claude/settings.json</code>（项目）</td>
+			</tr>
+			<tr>
+					<td>Windsurf</td>
+					<td>Settings → Cascade → MCP servers</td>
+			</tr>
+			<tr>
+					<td>Cline</td>
+					<td>VS Code 扩展内 MCP Servers → Configure</td>
+			</tr>
+			<tr>
+					<td>OpenCode</td>
+					<td>项目根目录 <code>opencode.json</code></td>
+			</tr>
+	</tbody>
 </table></div>
 <p>API Key 去 <a class="link" href="https://context7.com/dashboard"  target="_blank" rel="noopener"
     >context7.com/dashboard</a> 注册，格式是 <code>ctx7sk...</code>，免费用户也有额度。</p>
@@ -939,48 +939,48 @@
 </h3><p>会多等一两秒，但换来答案准了、不用反复改。跑一次报错再修的时间，可比这一两秒长多了。</p>
 <h2 id="总结">总结
 </h2><div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>项目</th>
-          <th>内容</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>是什么</strong></td>
-          <td>为 AI 编程助手提供实时最新文档的平台</td>
-      </tr>
-      <tr>
-          <td><strong>解决什么</strong></td>
-          <td>AI 因训练数据过时而给出错误代码</td>
-      </tr>
-      <tr>
-          <td><strong>核心原理</strong></td>
-          <td>实时拉取官方文档，注入 AI 上下文</td>
-      </tr>
-      <tr>
-          <td><strong>安装</strong></td>
-          <td><code>npx ctx7 setup</code> 一行命令搞定</td>
-      </tr>
-      <tr>
-          <td><strong>使用</strong></td>
-          <td>提示词末尾加 <code>use context7</code></td>
-      </tr>
-      <tr>
-          <td><strong>价格</strong></td>
-          <td>有免费层级，个人够用</td>
-      </tr>
-      <tr>
-          <td><strong>官网</strong></td>
-          <td><a class="link" href="https://context7.com"  target="_blank" rel="noopener"
+	<thead>
+			<tr>
+					<th>项目</th>
+					<th>内容</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>是什么</strong></td>
+					<td>为 AI 编程助手提供实时最新文档的平台</td>
+			</tr>
+			<tr>
+					<td><strong>解决什么</strong></td>
+					<td>AI 因训练数据过时而给出错误代码</td>
+			</tr>
+			<tr>
+					<td><strong>核心原理</strong></td>
+					<td>实时拉取官方文档，注入 AI 上下文</td>
+			</tr>
+			<tr>
+					<td><strong>安装</strong></td>
+					<td><code>npx ctx7 setup</code> 一行命令搞定</td>
+			</tr>
+			<tr>
+					<td><strong>使用</strong></td>
+					<td>提示词末尾加 <code>use context7</code></td>
+			</tr>
+			<tr>
+					<td><strong>价格</strong></td>
+					<td>有免费层级，个人够用</td>
+			</tr>
+			<tr>
+					<td><strong>官网</strong></td>
+					<td><a class="link" href="https://context7.com"  target="_blank" rel="noopener"
     >context7.com</a></td>
-      </tr>
-      <tr>
-          <td><strong>GitHub</strong></td>
-          <td><a class="link" href="https://github.com/upstash/context7"  target="_blank" rel="noopener"
+			</tr>
+			<tr>
+					<td><strong>GitHub</strong></td>
+					<td><a class="link" href="https://github.com/upstash/context7"  target="_blank" rel="noopener"
     >github.com/upstash/context7</a></td>
-      </tr>
-  </tbody>
+			</tr>
+	</tbody>
 </table></div>
 <p>装好之后，再也不用担心 AI 拿旧版知识来糊弄你了。</p>
 
@@ -1137,8 +1137,9 @@
         (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	
 </div>
 
 <style>

@@ -625,58 +625,58 @@ It&rsquo;s the &ldquo;USB-C port&rdquo; for the AI world — a unified standard,
 </span></span></code></pre></td></tr></table>
 </div>
 </div><div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>Role</th>
-          <th>Description</th>
-          <th>Analogy</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>MCP Client</strong></td>
-          <td>AI applications (Claude, ChatGPT, Cursor)</td>
-          <td>Phone</td>
-      </tr>
-      <tr>
-          <td><strong>MCP Server</strong></td>
-          <td>Services providing specific capabilities (weather, file management)</td>
-          <td>Charger</td>
-      </tr>
-      <tr>
-          <td><strong>MCP Protocol</strong></td>
-          <td>The &ldquo;language&rdquo; both sides communicate in</td>
-          <td>USB-C Standard</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Role</th>
+					<th>Description</th>
+					<th>Analogy</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>MCP Client</strong></td>
+					<td>AI applications (Claude, ChatGPT, Cursor)</td>
+					<td>Phone</td>
+			</tr>
+			<tr>
+					<td><strong>MCP Server</strong></td>
+					<td>Services providing specific capabilities (weather, file management)</td>
+					<td>Charger</td>
+			</tr>
+			<tr>
+					<td><strong>MCP Protocol</strong></td>
+					<td>The &ldquo;language&rdquo; both sides communicate in</td>
+					<td>USB-C Standard</td>
+			</tr>
+	</tbody>
 </table></div>
 <h3 id="what-can-an-mcp-server-provide">What Can an MCP Server Provide?
 </h3><p>An MCP Server can expose three types of capabilities to AI:</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Examples</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>Tools</strong></td>
-          <td>Functions/operations AI can call</td>
-          <td>Search the web, send emails, query databases</td>
-      </tr>
-      <tr>
-          <td><strong>Resources</strong></td>
-          <td>Data AI can read</td>
-          <td>File contents, database records, API responses</td>
-      </tr>
-      <tr>
-          <td><strong>Prompts</strong></td>
-          <td>Preset prompt templates</td>
-          <td>Code review templates, translation templates</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Type</th>
+					<th>Description</th>
+					<th>Examples</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>Tools</strong></td>
+					<td>Functions/operations AI can call</td>
+					<td>Search the web, send emails, query databases</td>
+			</tr>
+			<tr>
+					<td><strong>Resources</strong></td>
+					<td>Data AI can read</td>
+					<td>File contents, database records, API responses</td>
+			</tr>
+			<tr>
+					<td><strong>Prompts</strong></td>
+					<td>Preset prompt templates</td>
+					<td>Code review templates, translation templates</td>
+			</tr>
+	</tbody>
 </table></div>
 <hr>
 <h2 id="how-to-use-mcp">How to Use MCP?
@@ -694,38 +694,38 @@ It&rsquo;s the &ldquo;USB-C port&rdquo; for the AI world — a unified standard,
 </ul>
 <p>Popular MCP Servers:</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>MCP Server</th>
-          <th>Function</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>filesystem</code></td>
-          <td>Read and write local files</td>
-      </tr>
-      <tr>
-          <td><code>github</code></td>
-          <td>Operate GitHub (Issues, PRs)</td>
-      </tr>
-      <tr>
-          <td><code>fetch</code></td>
-          <td>Fetch web page content</td>
-      </tr>
-      <tr>
-          <td><code>sqlite</code></td>
-          <td>Operate SQLite databases</td>
-      </tr>
-      <tr>
-          <td><code>notion</code></td>
-          <td>Operate Notion notes</td>
-      </tr>
-      <tr>
-          <td><code>memory</code></td>
-          <td>Persistent memory storage</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>MCP Server</th>
+					<th>Function</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>filesystem</code></td>
+					<td>Read and write local files</td>
+			</tr>
+			<tr>
+					<td><code>github</code></td>
+					<td>Operate GitHub (Issues, PRs)</td>
+			</tr>
+			<tr>
+					<td><code>fetch</code></td>
+					<td>Fetch web page content</td>
+			</tr>
+			<tr>
+					<td><code>sqlite</code></td>
+					<td>Operate SQLite databases</td>
+			</tr>
+			<tr>
+					<td><code>notion</code></td>
+					<td>Operate Notion notes</td>
+			</tr>
+			<tr>
+					<td><code>memory</code></td>
+					<td>Persistent memory storage</td>
+			</tr>
+	</tbody>
 </table></div>
 <h4 id="step-2-configure-mcp-server-in-your-ai-application">Step 2: Configure MCP Server in Your AI Application
 </h4><p>Using <strong>Claude Desktop</strong> as an example, find the configuration file:</p>
@@ -813,26 +813,26 @@ It&rsquo;s the &ldquo;USB-C port&rdquo; for the AI world — a unified standard,
 </h3><p>If you want to connect AI to your own systems (like a company&rsquo;s internal API), you can write your own MCP Server.</p>
 <p>MCP supports multiple programming languages with official SDKs:</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>Language</th>
-          <th>SDK</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>TypeScript</td>
-          <td><code>@modelcontextprotocol/sdk</code></td>
-      </tr>
-      <tr>
-          <td>Python</td>
-          <td><code>mcp</code> (PyPI)</td>
-      </tr>
-      <tr>
-          <td>Java / Kotlin</td>
-          <td><code>io.modelcontextprotocol</code></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Language</th>
+					<th>SDK</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>TypeScript</td>
+					<td><code>@modelcontextprotocol/sdk</code></td>
+			</tr>
+			<tr>
+					<td>Python</td>
+					<td><code>mcp</code> (PyPI)</td>
+			</tr>
+			<tr>
+					<td>Java / Kotlin</td>
+					<td><code>io.modelcontextprotocol</code></td>
+			</tr>
+	</tbody>
 </table></div>
 <p><strong>Minimal example (TypeScript):</strong></p>
 <div class="highlight"><div class="chroma">
@@ -896,38 +896,38 @@ It&rsquo;s the &ldquo;USB-C port&rdquo; for the AI world — a unified standard,
 <h2 id="which-ai-applications-support-mcp">Which AI Applications Support MCP?
 </h2><p>MCP has become an industry standard, with mainstream AI applications offering support:</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>AI Application</th>
-          <th>Support Status</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>Claude Desktop / Claude Code</strong></td>
-          <td>Native support</td>
-      </tr>
-      <tr>
-          <td><strong>ChatGPT</strong></td>
-          <td>Supported</td>
-      </tr>
-      <tr>
-          <td><strong>Cursor</strong></td>
-          <td>Supported</td>
-      </tr>
-      <tr>
-          <td><strong>VS Code (Copilot)</strong></td>
-          <td>Supported</td>
-      </tr>
-      <tr>
-          <td><strong>Windsurf</strong></td>
-          <td>Supported</td>
-      </tr>
-      <tr>
-          <td><strong>OpenCode</strong></td>
-          <td>Supported</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>AI Application</th>
+					<th>Support Status</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>Claude Desktop / Claude Code</strong></td>
+					<td>Native support</td>
+			</tr>
+			<tr>
+					<td><strong>ChatGPT</strong></td>
+					<td>Supported</td>
+			</tr>
+			<tr>
+					<td><strong>Cursor</strong></td>
+					<td>Supported</td>
+			</tr>
+			<tr>
+					<td><strong>VS Code (Copilot)</strong></td>
+					<td>Supported</td>
+			</tr>
+			<tr>
+					<td><strong>Windsurf</strong></td>
+					<td>Supported</td>
+			</tr>
+			<tr>
+					<td><strong>OpenCode</strong></td>
+					<td>Supported</td>
+			</tr>
+	</tbody>
 </table></div>
 
     <blockquote>
@@ -948,30 +948,30 @@ It&rsquo;s the &ldquo;USB-C port&rdquo; for the AI world — a unified standard,
 <hr>
 <h2 id="summary">Summary
 </h2><div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>Question</th>
-          <th>Answer</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>What is MCP?</td>
-          <td>A unified standard protocol for AI to connect to external tools</td>
-      </tr>
-      <tr>
-          <td>Why use it?</td>
-          <td>To let AI actually &ldquo;do work&rdquo; instead of just chatting</td>
-      </tr>
-      <tr>
-          <td>Who can use it?</td>
-          <td>Everyone — beginners use existing Servers, developers can write their own</td>
-      </tr>
-      <tr>
-          <td>How to use it?</td>
-          <td>Find an MCP Server → Configure it in your AI app → Restart and use</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Question</th>
+					<th>Answer</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>What is MCP?</td>
+					<td>A unified standard protocol for AI to connect to external tools</td>
+			</tr>
+			<tr>
+					<td>Why use it?</td>
+					<td>To let AI actually &ldquo;do work&rdquo; instead of just chatting</td>
+			</tr>
+			<tr>
+					<td>Who can use it?</td>
+					<td>Everyone — beginners use existing Servers, developers can write their own</td>
+			</tr>
+			<tr>
+					<td>How to use it?</td>
+					<td>Find an MCP Server → Configure it in your AI app → Restart and use</td>
+			</tr>
+	</tbody>
 </table></div>
 <p><strong>The essence of MCP is: creating a unified &ldquo;plug standard&rdquo; for the AI world, allowing tools and AI to connect freely.</strong></p>
 
@@ -1143,8 +1143,9 @@ It&rsquo;s the &ldquo;USB-C port&rdquo; for the AI world — a unified standard,
         (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	
 </div>
 
 <style>

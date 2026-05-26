@@ -643,27 +643,27 @@
 <h2 id="2-environment-preparation">2. Environment Preparation
 </h2><p>Before starting, ensure you have the following ready:</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>Item</th>
-          <th>Requirement</th>
-          <th>Notes</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>Obsidian</strong></td>
-          <td>≥ 1.4.0</td>
-          <td><a class="link" href="https://obsidian.md/"  target="_blank" rel="noopener"
+	<thead>
+			<tr>
+					<th>Item</th>
+					<th>Requirement</th>
+					<th>Notes</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>Obsidian</strong></td>
+					<td>≥ 1.4.0</td>
+					<td><a class="link" href="https://obsidian.md/"  target="_blank" rel="noopener"
     >Download</a></td>
-      </tr>
-      <tr>
-          <td><strong>Node.js</strong></td>
-          <td>≥ 18+</td>
-          <td><a class="link" href="https://nodejs.org/"  target="_blank" rel="noopener"
+			</tr>
+			<tr>
+					<td><strong>Node.js</strong></td>
+					<td>≥ 18+</td>
+					<td><a class="link" href="https://nodejs.org/"  target="_blank" rel="noopener"
     >Download</a>, for OpenCode installation</td>
-      </tr>
-  </tbody>
+			</tr>
+	</tbody>
 </table></div>
 <p>Once ready, follow the steps below.</p>
 <hr>
@@ -740,111 +740,111 @@
 </h2><p>After enabling the plugin, go to <strong>Settings</strong> → <strong>Third-party plugins</strong> → <strong>OpenCode-Obsidian</strong> gear icon to see these configuration options:</p>
 <h3 id="basic-settings">Basic Settings
 </h3><div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>Setting</th>
-          <th>Default</th>
-          <th>Description</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>OpenCode executable path</strong></td>
-          <td><code>opencode</code></td>
-          <td>Enter full path if not found in system PATH</td>
-      </tr>
-      <tr>
-          <td><strong>Port</strong></td>
-          <td><code>14096</code></td>
-          <td>Port number the OpenCode service listens on</td>
-      </tr>
-      <tr>
-          <td><strong>Hostname</strong></td>
-          <td><code>127.0.0.1</code></td>
-          <td>Address the service binds to</td>
-      </tr>
-      <tr>
-          <td><strong>Project directory</strong></td>
-          <td>(Auto from Vault path)</td>
-          <td>Working directory for OpenCode</td>
-      </tr>
-      <tr>
-          <td><strong>Startup timeout</strong></td>
-          <td><code>45000</code> (45s)</td>
-          <td>Max milliseconds to wait for service startup</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Setting</th>
+					<th>Default</th>
+					<th>Description</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>OpenCode executable path</strong></td>
+					<td><code>opencode</code></td>
+					<td>Enter full path if not found in system PATH</td>
+			</tr>
+			<tr>
+					<td><strong>Port</strong></td>
+					<td><code>14096</code></td>
+					<td>Port number the OpenCode service listens on</td>
+			</tr>
+			<tr>
+					<td><strong>Hostname</strong></td>
+					<td><code>127.0.0.1</code></td>
+					<td>Address the service binds to</td>
+			</tr>
+			<tr>
+					<td><strong>Project directory</strong></td>
+					<td>(Auto from Vault path)</td>
+					<td>Working directory for OpenCode</td>
+			</tr>
+			<tr>
+					<td><strong>Startup timeout</strong></td>
+					<td><code>45000</code> (45s)</td>
+					<td>Max milliseconds to wait for service startup</td>
+			</tr>
+	</tbody>
 </table></div>
 <h3 id="interface-settings">Interface Settings
 </h3><div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>Setting</th>
-          <th>Default</th>
-          <th>Description</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>Default view position</strong></td>
-          <td><code>sidebar</code></td>
-          <td><code>sidebar</code> = sidebar, <code>main</code> = main editor area</td>
-      </tr>
-      <tr>
-          <td><strong>Auto-start</strong></td>
-          <td><code>Off</code></td>
-          <td>Auto-start OpenCode service when Obsidian opens</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Setting</th>
+					<th>Default</th>
+					<th>Description</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>Default view position</strong></td>
+					<td><code>sidebar</code></td>
+					<td><code>sidebar</code> = sidebar, <code>main</code> = main editor area</td>
+			</tr>
+			<tr>
+					<td><strong>Auto-start</strong></td>
+					<td><code>Off</code></td>
+					<td>Auto-start OpenCode service when Obsidian opens</td>
+			</tr>
+	</tbody>
 </table></div>
 <h3 id="context-injection-experimental">Context Injection (Experimental)
 </h3><div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>Setting</th>
-          <th>Default</th>
-          <th>Description</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>Inject workspace context</strong></td>
-          <td><code>Off</code></td>
-          <td>Auto-pass current note info to OpenCode</td>
-      </tr>
-      <tr>
-          <td><strong>Max notes</strong></td>
-          <td><code>20</code></td>
-          <td>Maximum notes included in context</td>
-      </tr>
-      <tr>
-          <td><strong>Max selection length</strong></td>
-          <td><code>2000</code></td>
-          <td>Character limit for text passed to AI</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Setting</th>
+					<th>Default</th>
+					<th>Description</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>Inject workspace context</strong></td>
+					<td><code>Off</code></td>
+					<td>Auto-pass current note info to OpenCode</td>
+			</tr>
+			<tr>
+					<td><strong>Max notes</strong></td>
+					<td><code>20</code></td>
+					<td>Maximum notes included in context</td>
+			</tr>
+			<tr>
+					<td><strong>Max selection length</strong></td>
+					<td><code>2000</code></td>
+					<td>Character limit for text passed to AI</td>
+			</tr>
+	</tbody>
 </table></div>
 <h3 id="custom-commands">Custom Commands
 </h3><div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>Setting</th>
-          <th>Default</th>
-          <th>Description</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>Use custom command</strong></td>
-          <td><code>Off</code></td>
-          <td>Enable to customize OpenCode launch command</td>
-      </tr>
-      <tr>
-          <td><strong>Custom command</strong></td>
-          <td>(empty)</td>
-          <td>Custom launch command (see Section 9)</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Setting</th>
+					<th>Default</th>
+					<th>Description</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>Use custom command</strong></td>
+					<td><code>Off</code></td>
+					<td>Enable to customize OpenCode launch command</td>
+			</tr>
+			<tr>
+					<td><strong>Custom command</strong></td>
+					<td>(empty)</td>
+					<td>Custom launch command (see Section 9)</td>
+			</tr>
+	</tbody>
 </table></div>
 <hr>
 <h2 id="7-first-use">7. First Use
@@ -885,18 +885,18 @@
 </div><p>to view available AI models. OpenCode has built-in free models (GLM-4.7, MiniMax-2.1) — no configuration needed.</p>
 <h3 id="shortcut-reference">Shortcut Reference
 </h3><div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>Shortcut</th>
-          <th>Function</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>Ctrl/Cmd + Shift + O</code></td>
-          <td>Toggle OpenCode panel</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Shortcut</th>
+					<th>Function</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>Ctrl/Cmd + Shift + O</code></td>
+					<td>Toggle OpenCode panel</td>
+			</tr>
+	</tbody>
 </table></div>
 <hr>
 <h2 id="8-context-injection-experimental-feature">8. Context Injection (Experimental Feature)
@@ -1251,8 +1251,9 @@
         (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	
 </div>
 
 <style>

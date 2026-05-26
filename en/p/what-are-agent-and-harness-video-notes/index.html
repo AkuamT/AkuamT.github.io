@@ -572,25 +572,25 @@
 <li><strong>Execute</strong>: Follow the checklist step by step</li>
 </ul>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>Mode</th>
-          <th>Analogy</th>
-          <th>Characteristic</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>ReAct</td>
-          <td>Improvise as you go</td>
-          <td>Flexible, adjust on the fly</td>
-      </tr>
-      <tr>
-          <td>Plan &amp; Execute</td>
-          <td>Research before traveling</td>
-          <td>Structured, suited for complex tasks</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Mode</th>
+					<th>Analogy</th>
+					<th>Characteristic</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>ReAct</td>
+					<td>Improvise as you go</td>
+					<td>Flexible, adjust on the fly</td>
+			</tr>
+			<tr>
+					<td>Plan &amp; Execute</td>
+					<td>Research before traveling</td>
+					<td>Structured, suited for complex tasks</td>
+			</tr>
+	</tbody>
 </table></div>
 <p>Real agents <strong>combine both</strong>. For example, Qwen&rsquo;s &ldquo;Task Assistant&rdquo; mode: first analyzes requirements and creates steps (Plan), then proactively searches, writes code, and adjusts (Act).</p>
 <p><img class="gallery-image" data-flex-basis="312px" data-flex-grow="130" height="893" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525213008.png" srcset="/p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525213008_hu_8abcc76a1376ff26.png 800w, /p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525213008.png 1162w" width="1162"></p>
@@ -622,40 +622,40 @@
 </h2><p>When Agents run in production, they encounter various issues that need a Harness to solve.</p>
 <h3 id="engineering-checkpoints-in-a-harness">Engineering Checkpoints in a Harness
 </h3><div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>Checkpoint</th>
-          <th>Problem</th>
-          <th>Solution</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>Format Sanitization</strong></td>
-          <td>AI adds &ldquo;okay&rdquo;, markdown code blocks, or extra newlines when returning JSON</td>
-          <td>Clean: remove fluff, wrapping symbols, extra newlines; send errors back for regeneration if still failing</td>
-      </tr>
-      <tr>
-          <td><strong>Parameter Validation</strong></td>
-          <td>Tool call parameters are invalid (e.g., city field contains a non-city name)</td>
-          <td>Validate format/range before calling; reject and request refill if invalid</td>
-      </tr>
-      <tr>
-          <td><strong>Input Filtering</strong></td>
-          <td>Prompt injection attacks (&ldquo;ignore all previous instructions&rdquo;) / malicious SVG uploads</td>
-          <td>Scan user input for suspicious instructions and asset safety before processing</td>
-      </tr>
-      <tr>
-          <td><strong>Output Filtering</strong></td>
-          <td>AI-generated content may contain malicious code</td>
-          <td>Scan output content for threats</td>
-      </tr>
-      <tr>
-          <td><strong>Hard-Coded Validation</strong></td>
-          <td>AI repeatedly makes the same error (e.g., always using pure white backgrounds)</td>
-          <td>Enforce with code: auto-detect SVG background color and replace white with dark</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Checkpoint</th>
+					<th>Problem</th>
+					<th>Solution</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>Format Sanitization</strong></td>
+					<td>AI adds &ldquo;okay&rdquo;, markdown code blocks, or extra newlines when returning JSON</td>
+					<td>Clean: remove fluff, wrapping symbols, extra newlines; send errors back for regeneration if still failing</td>
+			</tr>
+			<tr>
+					<td><strong>Parameter Validation</strong></td>
+					<td>Tool call parameters are invalid (e.g., city field contains a non-city name)</td>
+					<td>Validate format/range before calling; reject and request refill if invalid</td>
+			</tr>
+			<tr>
+					<td><strong>Input Filtering</strong></td>
+					<td>Prompt injection attacks (&ldquo;ignore all previous instructions&rdquo;) / malicious SVG uploads</td>
+					<td>Scan user input for suspicious instructions and asset safety before processing</td>
+			</tr>
+			<tr>
+					<td><strong>Output Filtering</strong></td>
+					<td>AI-generated content may contain malicious code</td>
+					<td>Scan output content for threats</td>
+			</tr>
+			<tr>
+					<td><strong>Hard-Coded Validation</strong></td>
+					<td>AI repeatedly makes the same error (e.g., always using pure white backgrounds)</td>
+					<td>Enforce with code: auto-detect SVG background color and replace white with dark</td>
+			</tr>
+	</tbody>
 </table></div>
 <p><img class="gallery-image" data-flex-basis="396px" data-flex-grow="165" height="703" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525213039.png" srcset="/p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525213039_hu_3ed75d1f97918308.png 800w, /p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525213039.png 1160w" width="1160"></p>
 <h3 id="core-principle-of-harness-engineering">Core Principle of Harness Engineering
@@ -825,8 +825,9 @@
         (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	
 </div>
 
 <style>

@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Web Design Skill Learning Notes 1. What is Claude Design? Claude Design is a design tool released by Anthropic that caused Figma&rsquo;s stock price to plummet on the day of its release.\nCore concept: Type on the left, get a design draft on the right (essentially runnable webpages, not images)\nDifferences from Traditional Design Tools Dimension Traditional Design Tools (e.g., Figma) Claude Design Lead Human operates on canvas, AI assists AI is the main generator, human reviews Output Design images Real runnable code Interaction Manual drawing Text description → Auto generation Version control Manual operation Clickable links, tag-based version switching Essence: Claude Design is more like Claude Code (designer version) rather than an AI version of Figma.\n">
+<title>Web Design Skill Learning Notes</title>
+
+
+<link rel="canonical" href="https://AkuamT.github.io/en/p/web-design-skill-learning-notes/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.ed668df6847002e96da55125322b5655e4e3773453c2addee35312e6bbf6cb10.css"><meta property='og:title' content="Web Design Skill Learning Notes">
+<meta property='og:description' content="Web Design Skill Learning Notes 1. What is Claude Design? Claude Design is a design tool released by Anthropic that caused Figma&rsquo;s stock price to plummet on the day of its release.\nCore concept: Type on the left, get a design draft on the right (essentially runnable webpages, not images)\nDifferences from Traditional Design Tools Dimension Traditional Design Tools (e.g., Figma) Claude Design Lead Human operates on canvas, AI assists AI is the main generator, human reviews Output Design images Real runnable code Interaction Manual drawing Text description → Auto generation Version control Manual operation Clickable links, tag-based version switching Essence: Claude Design is more like Claude Code (designer version) rather than an AI version of Figma.\n">
+<meta property='og:url' content='https://AkuamT.github.io/en/p/web-design-skill-learning-notes/'>
+<meta property='og:site_name' content='Yanmu'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='AI Design' /><meta property='article:tag' content='Claude' /><meta property='article:tag' content='Prompt Engineering' /><meta property='article:tag' content='Web Design' /><meta property='article:tag' content='Skill' /><meta property='article:published_time' content='2026-05-24T00:00:00&#43;08:00'/><meta property='article:modified_time' content='2026-05-24T00:00:00&#43;08:00'/>
+<meta name="twitter:title" content="Web Design Skill Learning Notes">
+<meta name="twitter:description" content="Web Design Skill Learning Notes 1. What is Claude Design? Claude Design is a design tool released by Anthropic that caused Figma&rsquo;s stock price to plummet on the day of its release.\nCore concept: Type on the left, get a design draft on the right (essentially runnable webpages, not images)\nDifferences from Traditional Design Tools Dimension Traditional Design Tools (e.g., Figma) Claude Design Lead Human operates on canvas, AI assists AI is the main generator, human reviews Output Design images Real runnable code Interaction Manual drawing Text description → Auto generation Version control Manual operation Clickable links, tag-based version switching Essence: Claude Design is more like Claude Code (designer version) rather than an AI version of Figma.\n">
+    <link rel="shortcut icon" href="img/avatar.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/en/">
+                    <img src="/img/Yanmu.jpg" 
+                        width="1024"
+                        height="1037"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">💻 </span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/en/">Yanmu</a></h1>
+            <h2 class="site-description">「May you be your own sun, needing no light but your own.」</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/CaiJimmy/hugo-theme-stack'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/en/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/links/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                <option value="/p/web-design-skill-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" >简体中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                <option value="/en/p/web-design-skill-learning-notes/" selected>English</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                <option value="/zh-hant-tw/p/web-design-skill-%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/" >繁体中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/ja/p/web-design-skill-%E5%AD%A6%E7%BF%92%E3%83%8E%E3%83%BC%E3%83%88/" >日本語</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#1-what-is-claude-design">1. What is Claude Design?</a>
+      <ol>
+        <li><a href="#differences-from-traditional-design-tools">Differences from Traditional Design Tools</a></li>
+      </ol>
+    </li>
+    <li><a href="#2-core-prompt-breakdown-6-key-points">2. Core Prompt Breakdown (6 Key Points)</a>
+      <ol>
+        <li><a href="#1-role-positioning--dynamic-identity-switching">1. Role Positioning — Dynamic Identity Switching</a></li>
+        <li><a href="#2-workflow--six-step-process">2. Workflow — Six-Step Process</a>
+          <ol>
+            <li><a href="#detail-1-the-art-of-questioning-when-to-ask-when-to-just-do-it">Detail 1: The Art of Questioning (When to ask? When to just do it?)</a></li>
+            <li><a href="#detail-2-summary-principles">Detail 2: Summary Principles</a></li>
+          </ol>
+        </li>
+        <li><a href="#3-removing-ai-style-most-valuable-part">3. Removing AI-Style (Most Valuable Part)</a></li>
+        <li><a href="#4-color-system--oklch-color-space">4. Color System — OKLCH Color Space</a></li>
+        <li><a href="#5-content-principles--1000-nos-for-one-yes">5. Content Principles — &ldquo;1000 NOs for One YES&rdquo;</a></li>
+        <li><a href="#6-verification-mechanism--sub-agent-check">6. Verification Mechanism — Sub-Agent Check</a></li>
+      </ol>
+    </li>
+    <li><a href="#3-core-optimizations-of-skill-file">3. Core Optimizations of Skill File</a>
+      <ol>
+        <li><a href="#optimization-1-design-system-first-code-later">Optimization 1: Design System First, Code Later</a></li>
+        <li><a href="#optimization-2-output-minimum-viable-version-early">Optimization 2: Output Minimum Viable Version Early</a></li>
+        <li><a href="#optimization-3-additional-supplements">Optimization 3: Additional Supplements</a></li>
+      </ol>
+    </li>
+    <li><a href="#4-effect-comparison-demo">4. Effect Comparison Demo</a>
+      <ol>
+        <li><a href="#test-1-space-exploration-museum-online-exhibition-page">Test 1: Space Exploration Museum Online Exhibition Page</a></li>
+        <li><a href="#test-2-independent-photographer-portfolio-minimal-prompt">Test 2: Independent Photographer Portfolio (Minimal Prompt)</a></li>
+        <li><a href="#final-conclusion">Final Conclusion</a></li>
+      </ol>
+    </li>
+    <li><a href="#5-core-knowledge-quick-reference">5. Core Knowledge Quick Reference</a></li>
+    <li><a href="#6-related-resources">6. Related Resources</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/en/categories/tutorial/" style="background-color: #2563eb; color: #fff;">
+                Tutorial
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/en/p/web-design-skill-learning-notes/">Web Design Skill Learning Notes</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-05-24T00:00:00&#43;08:00'>Sunday, May 24, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        3 minutes read
+                    </time>
+                
+            </div>
+        
+
+        
+            <div class="inline-meta">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                
+                    <a href="/p/web-design-skill-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="link">简体中文</a>
+                
+                    <a href="/zh-hant-tw/p/web-design-skill-%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/" class="link">繁体中文</a>
+                
+                    <a href="/ja/p/web-design-skill-%E5%AD%A6%E7%BF%92%E3%83%8E%E3%83%BC%E3%83%88/" class="link">日本語</a>
+                
+            </div>
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span>Table of contents</span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#1-what-is-claude-design">1. What is Claude Design?</a>
+      <ol>
+        <li><a href="#differences-from-traditional-design-tools">Differences from Traditional Design Tools</a></li>
+      </ol>
+    </li>
+    <li><a href="#2-core-prompt-breakdown-6-key-points">2. Core Prompt Breakdown (6 Key Points)</a>
+      <ol>
+        <li><a href="#1-role-positioning--dynamic-identity-switching">1. Role Positioning — Dynamic Identity Switching</a></li>
+        <li><a href="#2-workflow--six-step-process">2. Workflow — Six-Step Process</a>
+          <ol>
+            <li><a href="#detail-1-the-art-of-questioning-when-to-ask-when-to-just-do-it">Detail 1: The Art of Questioning (When to ask? When to just do it?)</a></li>
+            <li><a href="#detail-2-summary-principles">Detail 2: Summary Principles</a></li>
+          </ol>
+        </li>
+        <li><a href="#3-removing-ai-style-most-valuable-part">3. Removing AI-Style (Most Valuable Part)</a></li>
+        <li><a href="#4-color-system--oklch-color-space">4. Color System — OKLCH Color Space</a></li>
+        <li><a href="#5-content-principles--1000-nos-for-one-yes">5. Content Principles — &ldquo;1000 NOs for One YES&rdquo;</a></li>
+        <li><a href="#6-verification-mechanism--sub-agent-check">6. Verification Mechanism — Sub-Agent Check</a></li>
+      </ol>
+    </li>
+    <li><a href="#3-core-optimizations-of-skill-file">3. Core Optimizations of Skill File</a>
+      <ol>
+        <li><a href="#optimization-1-design-system-first-code-later">Optimization 1: Design System First, Code Later</a></li>
+        <li><a href="#optimization-2-output-minimum-viable-version-early">Optimization 2: Output Minimum Viable Version Early</a></li>
+        <li><a href="#optimization-3-additional-supplements">Optimization 3: Additional Supplements</a></li>
+      </ol>
+    </li>
+    <li><a href="#4-effect-comparison-demo">4. Effect Comparison Demo</a>
+      <ol>
+        <li><a href="#test-1-space-exploration-museum-online-exhibition-page">Test 1: Space Exploration Museum Online Exhibition Page</a></li>
+        <li><a href="#test-2-independent-photographer-portfolio-minimal-prompt">Test 2: Independent Photographer Portfolio (Minimal Prompt)</a></li>
+        <li><a href="#final-conclusion">Final Conclusion</a></li>
+      </ol>
+    </li>
+    <li><a href="#5-core-knowledge-quick-reference">5. Core Knowledge Quick Reference</a></li>
+    <li><a href="#6-related-resources">6. Related Resources</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h1 id="web-design-skill-learning-notes">Web Design Skill Learning Notes
+</h1><hr>
+<h2 id="1-what-is-claude-design">1. What is Claude Design?
+</h2><p>Claude Design is a design tool released by Anthropic that caused Figma&rsquo;s stock price to plummet on the day of its release.</p>
+<p><strong>Core concept:</strong> Type on the left, get a design draft on the right (essentially runnable webpages, not images)</p>
+<h3 id="differences-from-traditional-design-tools">Differences from Traditional Design Tools
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>Dimension</th>
+					<th>Traditional Design Tools (e.g., Figma)</th>
+					<th>Claude Design</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Lead</td>
+					<td>Human operates on canvas, AI assists</td>
+					<td><strong>AI is the main generator, human reviews</strong></td>
+			</tr>
+			<tr>
+					<td>Output</td>
+					<td>Design images</td>
+					<td><strong>Real runnable code</strong></td>
+			</tr>
+			<tr>
+					<td>Interaction</td>
+					<td>Manual drawing</td>
+					<td>Text description → Auto generation</td>
+			</tr>
+			<tr>
+					<td>Version control</td>
+					<td>Manual operation</td>
+					<td>Clickable links, tag-based version switching</td>
+			</tr>
+	</tbody>
+</table></div>
+<p><strong>Essence:</strong> Claude Design is more like Claude Code (designer version) rather than an AI version of Figma.</p>
+<hr>
+<h2 id="2-core-prompt-breakdown-6-key-points">2. Core Prompt Breakdown (6 Key Points)
+</h2><p>The video deeply analyzed Claude Design&rsquo;s leaked prompts and extracted 6 core design principles:</p>
+<h3 id="1-role-positioning--dynamic-identity-switching">1. Role Positioning — Dynamic Identity Switching
+</h3><p><strong>Original prompt essence:</strong> &ldquo;You are an expert designer, and the user is your product manager&rdquo;</p>
+<p><strong>Key insights:</strong></p>
+<ul>
+<li>❌ Don&rsquo;t say &ldquo;you are an AI assistant&rdquo;</li>
+<li>✅ Establish a <strong>designer ↔ product manager</strong> collaboration</li>
+</ul>
+<p><strong>Two benefits:</strong></p>
+<ol>
+<li><strong>AI makes decisions more decisively</strong> — Designers should have judgment, no need to ask about everything</li>
+<li><strong>Key points will be asked</strong> — Because the user is the product manager, they make final decisions</li>
+</ol>
+<p><strong>Dynamic identity switching:</strong></p>
+<ul>
+<li>Making animations → Motion designer</li>
+<li>Making prototypes → UX designer</li>
+<li>Making presentations → Deck designer</li>
+</ul>
+
+    <blockquote>
+        <p>💡 <strong>Insight:</strong> Many people&rsquo;s prompts just say &ldquo;you are a frontend developer&rdquo; and that&rsquo;s it. Good role positioning should be <strong>dynamic</strong>, flexibly switching identities based on specific tasks.</p>
+
+    </blockquote>
+<h3 id="2-workflow--six-step-process">2. Workflow — Six-Step Process
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Understand requirements → Explore resources → Make plan → Build structure → Complete verification → Brief summary
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="detail-1-the-art-of-questioning-when-to-ask-when-to-just-do-it">Detail 1: The Art of Questioning (When to ask? When to just do it?)
+</h4><p><strong>Problem:</strong> Many Agents either ask you a bunch of questions first or just do everything without asking.</p>
+<p><strong>Claude Design&rsquo;s strategy:</strong></p>
+<ul>
+<li>Input &ldquo;Help me make a PPT&rdquo; → <strong>Ask a few questions first</strong> (insufficient information)</li>
+<li>Input &ldquo;Help me make a PPT, needed for the National Games in 10 minutes&rdquo; → <strong>Just do it</strong> (urgent scenario, sufficient information)</li>
+</ul>
+
+    <blockquote>
+        <p>💡 <strong>Insight:</strong> Based on the urgency and information completeness of the context, flexibly decide whether to ask or execute.</p>
+
+    </blockquote>
+<h4 id="detail-2-summary-principles">Detail 2: Summary Principles
+</h4><ul>
+<li>✅ Only mention <strong>key considerations</strong> and <strong>next steps</strong></li>
+<li>❌ Don&rsquo;t repeat what you&rsquo;ve already done</li>
+</ul>
+
+    <blockquote>
+        <p>💡 <strong>Insight:</strong> This principle can effectively prevent AI from generating excessive nonsense.</p>
+
+    </blockquote>
+<h3 id="3-removing-ai-style-most-valuable-part">3. Removing AI-Style (Most Valuable Part)
+</h3><p><strong>Typical AI-generated webpage characteristics:</strong></p>
+<ul>
+<li>Purple-pink-blue gradient backgrounds</li>
+<li>Large rounded cards</li>
+<li>Using emojis as icons</li>
+<li>Fake data everywhere</li>
+<li>Left-side colored border rounded cards</li>
+<li>Overused fonts</li>
+<li>Meaningless data and icon stacking</li>
+</ul>
+
+    <blockquote>
+        <p>It&rsquo;s like having &ldquo;furthermore,&rdquo; &ldquo;notably,&rdquo; &ldquo;in summary&rdquo; throughout an article —一眼就能看出是 AI 写的。</p>
+
+    </blockquote>
+<p><strong>Claude Design&rsquo;s approach:</strong> List a complete <strong>&ldquo;minefield checklist&rdquo;</strong>, telling AI one by one not to use these clichés.</p>
+<p><strong>Font recommendations are also carefully considered:</strong></p>
+<ul>
+<li>Clearly list <strong>fonts that must never be used</strong> + alternatives</li>
+<li>Recommend niche but high-quality fonts</li>
+</ul>
+<h3 id="4-color-system--oklch-color-space">4. Color System — OKLCH Color Space
+</h3><p><strong>Color strategy priority:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Brand color → OKLCH-derived colors → Never invent new colors
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Why OKLCH instead of HSL?</strong></p>
+<div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th></th>
+					<th>HSL</th>
+					<th>OKLCH</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Perceptual uniformity</td>
+					<td>❌ Not uniform (same brightness value, yellow is much brighter than blue)</td>
+					<td>✅ Uniform</td>
+			</tr>
+			<tr>
+					<td>AI color effect</td>
+					<td>Values look fine but uncomfortable</td>
+					<td>Keep lightness and chroma constant, only change hue, colors naturally harmonious</td>
+			</tr>
+	</tbody>
+</table></div>
+
+    <blockquote>
+        <p>💡 <strong>Insight:</strong> OKLCH, this seemingly small detail, can directly elevate a webpage&rsquo;s <strong>premium feel</strong> by a level.</p>
+
+    </blockquote>
+<h3 id="5-content-principles--1000-nos-for-one-yes">5. Content Principles — &ldquo;1000 NOs for One YES&rdquo;
+</h3>
+    <blockquote>
+        <p>Quoting Steve Jobs&rsquo; classic quote.</p>
+
+    </blockquote>
+<p><strong>AI&rsquo;s traditional problem with webpages:</strong> Wants to fill every space — Hero, features, reviews, data, FAQ, contact info&hellip; everything goes in, but everything is mediocre.</p>
+<p><strong>Claude Design&rsquo;s attitude:</strong></p>
+<ul>
+<li>Every element must <strong>prove why it should be there</strong></li>
+<li>If the page feels empty → May be a layout issue, use <strong>whitespace</strong> to solve</li>
+<li><strong>One bold whitespace</strong> &gt; Ten filler sections</li>
+</ul>
+<h3 id="6-verification-mechanism--sub-agent-check">6. Verification Mechanism — Sub-Agent Check
+</h3><p><strong>Principle:</strong> After development, fork an <strong>independent sub-Agent</strong> to do a comprehensive check on the webpage.</p>
+<p><strong>Why an independent sub-Agent?</strong></p>
+<ul>
+<li>AI in the same context tends to &ldquo;feel good about itself&rdquo;</li>
+<li>Independent sub-Agent has no &ldquo;emotional baggage&rdquo;, easier to find problems</li>
+</ul>
+<p><strong>Verification content:</strong></p>
+<ul>
+<li>Any AI-style features?</li>
+<li>Is the color scheme harmonious?</li>
+<li>Are fonts appropriate?</li>
+<li>Is layout creative?</li>
+</ul>
+<hr>
+<h2 id="3-core-optimizations-of-skill-file">3. Core Optimizations of Skill File
+</h2><p>The Skill file made three key optimizations based on Claude Design&rsquo;s prompts:</p>
+<h3 id="optimization-1-design-system-first-code-later">Optimization 1: Design System First, Code Later
+</h3><p>Before starting coding, require AI to clearly list:</p>
+<ul>
+<li>Color scheme</li>
+<li>Font choices</li>
+<li>Spacing system</li>
+<li>&hellip;</li>
+</ul>
+<p><strong>Why?</strong> If not clarified, AI will silently make decisions and write code. When you see the result, if direction is wrong, you have to redo everything. Clarifying upfront means no cost to correct direction before coding.</p>
+<h3 id="optimization-2-output-minimum-viable-version-early">Optimization 2: Output Minimum Viable Version Early
+</h3><ul>
+<li>Require AI to first produce a <strong>rough V0 version with assumptions and placeholders</strong></li>
+<li>A rough V0 &gt; Spending multiples of time to make a polished V1</li>
+</ul>
+<p><strong>Why?</strong> If the entire direction is wrong, no matter how polished V1 is, it&rsquo;s all wasted.</p>
+<h3 id="optimization-3-additional-supplements">Optimization 3: Additional Supplements
+</h3><ul>
+<li>Added more items for removing AI-style</li>
+<li>Added several verified <strong>font and color reference tables</strong></li>
+<li>Included reference files (typical code templates, from the &ldquo;copy study the component&rdquo; part of the prompt)</li>
+</ul>
+<hr>
+<h2 id="4-effect-comparison-demo">4. Effect Comparison Demo
+</h2><p>Test environment: Cursor + Claude 4.7 (with Skill vs without Skill)</p>
+<h3 id="test-1-space-exploration-museum-online-exhibition-page">Test 1: Space Exploration Museum Online Exhibition Page
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th></th>
+					<th>Without Skill</th>
+					<th>With Skill</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Colors</td>
+					<td>Cyan-purple-pink gradient, typical AI neon feel</td>
+					<td>OKLCH defined, close to magazine printing&rsquo;s deep tones</td>
+			</tr>
+			<tr>
+					<td>Fonts</td>
+					<td>Relatively outdated</td>
+					<td>Headings and body text have character, tech feel</td>
+			</tr>
+			<tr>
+					<td>Layout</td>
+					<td>Standard Hero + cards, textbook landing page</td>
+					<td>Non-traditional card style, creative</td>
+			</tr>
+			<tr>
+					<td>Animation</td>
+					<td>Starry sky and planet animations, but with excessive glow effects</td>
+					<td>Comfortable, creative</td>
+			</tr>
+			<tr>
+					<td>Overall</td>
+					<td>Has space feel, lacks creativity</td>
+					<td><strong>Like a very experienced designer&rsquo;s masterpiece</strong></td>
+			</tr>
+	</tbody>
+</table></div>
+<h3 id="test-2-independent-photographer-portfolio-minimal-prompt">Test 2: Independent Photographer Portfolio (Minimal Prompt)
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th></th>
+					<th>Without Skill</th>
+					<th>With Skill</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Design style</td>
+					<td>Dark background + neon glow + semi-transparent cards, outdated</td>
+					<td>Fictionalized a Nordic photographer, designed complete visual style from scratch</td>
+			</tr>
+			<tr>
+					<td>Copy</td>
+					<td>Full of AI feel</td>
+					<td>—</td>
+			</tr>
+			<tr>
+					<td>Emotional expression</td>
+					<td>The freedom a photographer should have is completely missing</td>
+					<td><strong>Like flipping through a high-end photography album</strong></td>
+			</tr>
+			<tr>
+					<td>Decision strategy</td>
+					<td>Just did it, didn&rsquo;t ask questions</td>
+					<td>Proactively asked about color preferences, core elements, etc.</td>
+			</tr>
+	</tbody>
+</table></div>
+<h3 id="final-conclusion">Final Conclusion
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Without Skill: 85 points → Usable, complete, passing
+</span></span><span class="line"><span class="cl">With Skill: 95 points → Beautiful, polished, stylish
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    <blockquote>
+        <p>Each rule in Skill seems small individually, but <strong>combined they produce qualitative change</strong>. This is the gap from &ldquo;usable&rdquo; to &ldquo;beautiful&rdquo;, from &ldquo;complete&rdquo; to &ldquo;polished&rdquo;, from &ldquo;passing&rdquo; to &ldquo;stylish&rdquo;.</p>
+
+    </blockquote>
+<hr>
+<h2 id="5-core-knowledge-quick-reference">5. Core Knowledge Quick Reference
+</h2><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>#</th>
+					<th>Knowledge Point</th>
+					<th>One-Sentence Summary</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>1</td>
+					<td>Dynamic role positioning</td>
+					<td>Flexibly switch AI identity based on tasks, not just &ldquo;you are a frontend developer&rdquo;</td>
+			</tr>
+			<tr>
+					<td>2</td>
+					<td>Six-step workflow</td>
+					<td>Understand requirements → Explore resources → Make plan → Build structure → Complete verification → Brief summary</td>
+			</tr>
+			<tr>
+					<td>3</td>
+					<td>Art of questioning</td>
+					<td>Decide whether to ask or act based on information completeness and urgency</td>
+			</tr>
+			<tr>
+					<td>4</td>
+					<td>Remove AI-style</td>
+					<td>List minefield checklist, ban gradients/emojis/large rounded cards and other clichés</td>
+			</tr>
+			<tr>
+					<td>5</td>
+					<td>OKLCH color</td>
+					<td>Perceptually uniform color space, produces more harmonious colors than HSL</td>
+			</tr>
+			<tr>
+					<td>6</td>
+					<td>Content restraint</td>
+					<td>Every element must prove its reason for existence, bold whitespace</td>
+			</tr>
+			<tr>
+					<td>7</td>
+					<td>Sub-Agent verification</td>
+					<td>Check with independent context, avoid &ldquo;feeling good about yourself&rdquo;</td>
+			</tr>
+			<tr>
+					<td>8</td>
+					<td>Design system first, code later</td>
+					<td>Expose design decisions early, avoid directional errors</td>
+			</tr>
+			<tr>
+					<td>9</td>
+					<td>Quick V0</td>
+					<td>Rough but fast prototype &gt; Polished but directionally wrong product</td>
+			</tr>
+	</tbody>
+</table></div>
+<hr>
+<h2 id="6-related-resources">6. Related Resources
+</h2><ul>
+<li>Open source repository: <a class="link" href="https://github.com/ConardLi/web-design-skill/"  target="_blank" rel="noopener"
+    >ConardLi/web-design-skill</a></li>
+</ul>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/en/tags/ai-design/">AI Design</a>
+        
+            <a href="/en/tags/claude/">Claude</a>
+        
+            <a href="/en/tags/prompt-engineering/">Prompt Engineering</a>
+        
+            <a href="/en/tags/web-design/">Web Design</a>
+        
+            <a href="/en/tags/skill/">Skill</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under <a class="link" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"  target="_blank" rel="noopener"
+    >CC BY-NC-SA 4.0</a></span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title">Related content</h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="">
+    <a href="/en/p/web-design-skill-practical-manual-detailed-version/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Web Design Skill Practical Manual (Detailed Version)</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/en/p/c-drive-full-expand-it-using-other-drives/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post C Drive Full? Expand It Using Other Drives" loading="lazy" src="/p/c-%E7%9B%98%E7%88%86%E6%BB%A1%E7%94%A8%E5%85%B6%E4%BB%96%E7%9B%98%E7%BB%99-c-%E7%9B%98%E6%89%A9%E5%AE%B9/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">C Drive Full? Expand It Using Other Drives</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/en/p/context7-guide-help-your-ai-coding-assistant-read-the-latest-docs/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post Context7 Guide: Help Your AI Coding Assistant Read the Latest Docs" loading="lazy" src="/p/context7%E6%8C%87%E5%8D%97%E8%AE%A9ai%E7%BC%96%E7%A8%8B%E5%8A%A9%E6%89%8B%E8%AF%BB%E6%87%82%E6%9C%80%E6%96%B0%E6%96%87%E6%A1%A3/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Context7 Guide: Help Your AI Coding Assistant Read the Latest Docs</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/en/p/opencode--obsidian-build-your-ai-powered-knowledge-management-workflow/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post OpenCode + Obsidian: Build Your AI-Powered Knowledge Management Workflow" loading="lazy" src="/p/opencode--obsidian%E6%89%93%E9%80%A0%E4%BD%A0%E7%9A%84ai%E9%A9%B1%E5%8A%A8%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E5%B7%A5%E4%BD%9C%E6%B5%81/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">OpenCode &#43; Obsidian: Build Your AI-Powered Knowledge Management Workflow</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/en/p/opencode-beginner-to-advanced-a-complete-guide-to-parallel-scheduling-and-usage-tips/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post OpenCode Beginner to Advanced: A Complete Guide to Parallel Scheduling and Usage Tips" loading="lazy" src="/p/opencode-%E6%96%B0%E6%89%8B%E8%BF%9B%E9%98%B6%E5%B9%B6%E8%A1%8C%E8%B0%83%E5%BA%A6%E4%B8%8E%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E5%85%A8%E6%94%BB%E7%95%A5/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">OpenCode Beginner to Advanced: A Complete Guide to Parallel Scheduling and Usage Tips</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+
+        <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2026 Yanmu
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="4.0.2">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.1ff1e5fdc4e178ed422e50aa407526dc552f26342d729343fded19416194382c.js" defer></script>
+
+
+    </body>
+</html>

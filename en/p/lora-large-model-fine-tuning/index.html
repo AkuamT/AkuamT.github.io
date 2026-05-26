@@ -524,22 +524,22 @@
     </blockquote>
 <p>Think of it this way:</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>Approach</th>
-          <th>Analogy</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Full fine-tuning</td>
-          <td>Rewriting the entire textbook into your desired version</td>
-      </tr>
-      <tr>
-          <td><strong>LoRA</strong></td>
-          <td>Sticking a few Post-it notes in the margins with your additions</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Approach</th>
+					<th>Analogy</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Full fine-tuning</td>
+					<td>Rewriting the entire textbook into your desired version</td>
+			</tr>
+			<tr>
+					<td><strong>LoRA</strong></td>
+					<td>Sticking a few Post-it notes in the margins with your additions</td>
+			</tr>
+	</tbody>
 </table></div>
 <p>The original model weights are <strong>completely unchanged</strong>. LoRA inserts a <strong>tiny matrix</strong> (low-rank matrix) next to certain key layers, and only updates this matrix during training.</p>
 <h3 id="why-low-rank-adaptation">Why &ldquo;Low-Rank Adaptation&rdquo;?
@@ -561,34 +561,34 @@
     </blockquote>
 <h3 id="typical-use-cases">Typical Use Cases
 </h3><div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>Scenario</th>
-          <th>Example</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>Style Transfer</strong></td>
-          <td>Make a general model write in Lu Xun&rsquo;s literary style</td>
-      </tr>
-      <tr>
-          <td><strong>Format Constraint</strong></td>
-          <td>Force the model to output strict JSON, nothing more</td>
-      </tr>
-      <tr>
-          <td><strong>Role-playing</strong></td>
-          <td>Turn Qwen into Zhongli from Genshin Impact</td>
-      </tr>
-      <tr>
-          <td><strong>Domain Tone</strong></td>
-          <td>Medical consultation tone, legal document precision</td>
-      </tr>
-      <tr>
-          <td><strong>Instruction Following</strong></td>
-          <td>Make the model better follow system prompts without wandering</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Scenario</th>
+					<th>Example</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>Style Transfer</strong></td>
+					<td>Make a general model write in Lu Xun&rsquo;s literary style</td>
+			</tr>
+			<tr>
+					<td><strong>Format Constraint</strong></td>
+					<td>Force the model to output strict JSON, nothing more</td>
+			</tr>
+			<tr>
+					<td><strong>Role-playing</strong></td>
+					<td>Turn Qwen into Zhongli from Genshin Impact</td>
+			</tr>
+			<tr>
+					<td><strong>Domain Tone</strong></td>
+					<td>Medical consultation tone, legal document precision</td>
+			</tr>
+			<tr>
+					<td><strong>Instruction Following</strong></td>
+					<td>Make the model better follow system prompts without wandering</td>
+			</tr>
+	</tbody>
 </table></div>
 <h3 id="lora-advantages">LoRA Advantages
 </h3><ul>
@@ -623,54 +623,54 @@
 <h3 id="step-2-choose-a-tool">Step 2: Choose a Tool
 </h3><p>There are many tools out there, but they all do essentially the same thing. Two recommendations:</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>Tool</th>
-          <th>Features</th>
-          <th>Best For</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>LLaMA-Factory</strong></td>
-          <td>Web UI, click-based operation</td>
-          <td>Complete beginners who don&rsquo;t want to code</td>
-      </tr>
-      <tr>
-          <td><strong>Unsloth</strong></td>
-          <td>2-5x faster, half the VRAM</td>
-          <td>Those who know some Python and want efficiency</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Tool</th>
+					<th>Features</th>
+					<th>Best For</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>LLaMA-Factory</strong></td>
+					<td>Web UI, click-based operation</td>
+					<td>Complete beginners who don&rsquo;t want to code</td>
+			</tr>
+			<tr>
+					<td><strong>Unsloth</strong></td>
+					<td>2-5x faster, half the VRAM</td>
+					<td>Those who know some Python and want efficiency</td>
+			</tr>
+	</tbody>
 </table></div>
 <p>Unsloth&rsquo;s core code is under 30 lines. The essence: load model → attach LoRA → feed data → train → save.</p>
 <h3 id="step-3-train">Step 3: Train
 </h3><p>Set a few key parameters, then wait:</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>Parameter</th>
-          <th>Purpose</th>
-          <th>Typical Value</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>LoRA rank</td>
-          <td>Determines the &ldquo;plugin&rdquo; capacity. Higher = more refined but more VRAM</td>
-          <td>8 or 16 is enough</td>
-      </tr>
-      <tr>
-          <td>Learning rate</td>
-          <td>How much to learn each step</td>
-          <td>5e-5, don&rsquo;t overthink it</td>
-      </tr>
-      <tr>
-          <td>Epochs</td>
-          <td>How many times to go through the data</td>
-          <td>3-5</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Parameter</th>
+					<th>Purpose</th>
+					<th>Typical Value</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>LoRA rank</td>
+					<td>Determines the &ldquo;plugin&rdquo; capacity. Higher = more refined but more VRAM</td>
+					<td>8 or 16 is enough</td>
+			</tr>
+			<tr>
+					<td>Learning rate</td>
+					<td>How much to learn each step</td>
+					<td>5e-5, don&rsquo;t overthink it</td>
+			</tr>
+			<tr>
+					<td>Epochs</td>
+					<td>How many times to go through the data</td>
+					<td>3-5</td>
+			</tr>
+	</tbody>
 </table></div>
 <h3 id="step-4-use">Step 4: Use
 </h3><p>After training, you get a LoRA file of a few MB. To use it, <strong>load both the original model and this LoRA file</strong> — the model now behaves as you trained it.</p>
@@ -679,40 +679,40 @@
 <hr>
 <h2 id="4-relationship-with-related-concepts">4. Relationship with Related Concepts
 </h2><div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>Concept</th>
-          <th>What It Does</th>
-          <th>Relationship with LoRA</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>Full Fine-tuning</strong></td>
-          <td>Modifies all parameters</td>
-          <td>Alternative to LoRA, better results but hundreds of times more expensive</td>
-      </tr>
-      <tr>
-          <td><strong>RAG</strong></td>
-          <td>External knowledge retrieval</td>
-          <td>Complementary: RAG handles knowledge, LoRA handles style</td>
-      </tr>
-      <tr>
-          <td><strong>Prompt Engineering</strong></td>
-          <td>Writing prompts</td>
-          <td>Lightest approach, but limited. Use LoRA when prompts aren&rsquo;t enough</td>
-      </tr>
-      <tr>
-          <td><strong>QLoRA</strong></td>
-          <td>LoRA + 4-bit quantization</td>
-          <td>VRAM-saving version of LoRA, can run 7B on 8G cards</td>
-      </tr>
-      <tr>
-          <td><strong>PEFT</strong></td>
-          <td>Parameter-Efficient Fine-tuning category</td>
-          <td>LoRA is the most popular member of the PEFT family</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Concept</th>
+					<th>What It Does</th>
+					<th>Relationship with LoRA</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>Full Fine-tuning</strong></td>
+					<td>Modifies all parameters</td>
+					<td>Alternative to LoRA, better results but hundreds of times more expensive</td>
+			</tr>
+			<tr>
+					<td><strong>RAG</strong></td>
+					<td>External knowledge retrieval</td>
+					<td>Complementary: RAG handles knowledge, LoRA handles style</td>
+			</tr>
+			<tr>
+					<td><strong>Prompt Engineering</strong></td>
+					<td>Writing prompts</td>
+					<td>Lightest approach, but limited. Use LoRA when prompts aren&rsquo;t enough</td>
+			</tr>
+			<tr>
+					<td><strong>QLoRA</strong></td>
+					<td>LoRA + 4-bit quantization</td>
+					<td>VRAM-saving version of LoRA, can run 7B on 8G cards</td>
+			</tr>
+			<tr>
+					<td><strong>PEFT</strong></td>
+					<td>Parameter-Efficient Fine-tuning category</td>
+					<td>LoRA is the most popular member of the PEFT family</td>
+			</tr>
+	</tbody>
 </table></div>
 <hr>
 <h2 id="5-one-sentence-summary">5. One-Sentence Summary
@@ -769,6 +769,17 @@
         <div class="article-list--tile">
             
                 
+<article class="">
+    <a href="/en/p/web-design-skill-practical-manual-detailed-version/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Web Design Skill Practical Manual (Detailed Version)</h2>
+        </div>
+    </a>
+</article>
+            
+                
 <article class="has-image">
     <a href="/en/p/c-drive-full-expand-it-using-other-drives/">
         
@@ -780,6 +791,17 @@
 
         <div class="article-details">
             <h2 class="article-title">C Drive Full? Expand It Using Other Drives</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/en/p/web-design-skill-learning-notes/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Web Design Skill Learning Notes</h2>
         </div>
     </a>
 </article>
@@ -816,38 +838,6 @@
     </a>
 </article>
             
-                
-<article class="has-image">
-    <a href="/en/p/opencode-beginner-to-advanced-a-complete-guide-to-parallel-scheduling-and-usage-tips/">
-        
-        <div class="article-image">
-            <img alt="Featured image of post OpenCode Beginner to Advanced: A Complete Guide to Parallel Scheduling and Usage Tips" loading="lazy" src="/p/opencode-%E6%96%B0%E6%89%8B%E8%BF%9B%E9%98%B6%E5%B9%B6%E8%A1%8C%E8%B0%83%E5%BA%A6%E4%B8%8E%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E5%85%A8%E6%94%BB%E7%95%A5/cover.svg">
-
-        </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">OpenCode Beginner to Advanced: A Complete Guide to Parallel Scheduling and Usage Tips</h2>
-        </div>
-    </a>
-</article>
-            
-                
-<article class="has-image">
-    <a href="/en/p/opencode-in-depth-guide-installation-configuration-and-advanced-techniques-for-the-open-source-claude-code/">
-        
-        <div class="article-image">
-            <img alt="Featured image of post OpenCode In-Depth Guide: Installation, Configuration, and Advanced Techniques for the Open-Source Claude Code" loading="lazy" src="/p/opencode-%E5%85%A8%E6%B7%B1%E5%BA%A6%E6%8C%87%E5%8D%97%E5%BC%80%E6%BA%90%E7%89%88-claude-code-%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E4%B8%8E%E9%AB%98%E7%BA%A7%E7%8E%A9%E6%B3%95/cover.svg">
-
-        </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">OpenCode In-Depth Guide: Installation, Configuration, and Advanced Techniques for the Open-Source Claude Code</h2>
-        </div>
-    </a>
-</article>
-            
         </div>
     </div>
 </aside>
@@ -875,8 +865,9 @@
         (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	
 </div>
 
 <style>

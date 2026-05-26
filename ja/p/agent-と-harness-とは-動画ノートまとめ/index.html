@@ -572,25 +572,25 @@
 <li><strong>実行</strong>：リストに従って一つずつ実行</li>
 </ul>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>モード</th>
-          <th>類似</th>
-          <th>特徴</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>ReAct</td>
-          <td>行き当たりばったり</td>
-          <td>柔軟、その場で調整</td>
-      </tr>
-      <tr>
-          <td>Plan &amp; Execute</td>
-          <td>事前に下調べしてから出発</td>
-          <td>構造化、複雑なタスクに適切</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>モード</th>
+					<th>類似</th>
+					<th>特徴</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>ReAct</td>
+					<td>行き当たりばったり</td>
+					<td>柔軟、その場で調整</td>
+			</tr>
+			<tr>
+					<td>Plan &amp; Execute</td>
+					<td>事前に下調べしてから出発</td>
+					<td>構造化、複雑なタスクに適切</td>
+			</tr>
+	</tbody>
 </table></div>
 <p>実際の Agent は<strong>両方を組み合わせて</strong>使用します。例えば千問の「タスクアシスタント」モード：まず要件を分析してステップを計画し（Plan）、その後能動的に情報検索、コード作成、調整を行います（Act）。</p>
 <p><img class="gallery-image" data-flex-basis="312px" data-flex-grow="130" height="893" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525213008.png" srcset="/p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525213008_hu_8abcc76a1376ff26.png 800w, /p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525213008.png 1162w" width="1162"></p>
@@ -622,40 +622,40 @@
 </h2><p>Agent が実際に稼働すると様々な問題に直面するため、Harness（馬具/保護網）が必要です。</p>
 <h3 id="harness-に含まれる工学的チェックポイント">Harness に含まれる工学的チェックポイント
 </h3><div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>チェックポイント</th>
-          <th>問題</th>
-          <th>解決策</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>フォーマット整形</strong></td>
-          <td>JSON 返却時に「はい」やマークダウンコードブロック、余分な改行を追加</td>
-          <td>無駄な部分、ラッパー記号、余分な改行を除去；それでもダメならエラーを返して再生成</td>
-      </tr>
-      <tr>
-          <td><strong>パラメータ検証</strong></td>
-          <td>ツール呼び出しのパラメータが不正（city に都市名以外など）</td>
-          <td>呼び出し前にフォーマット/範囲を検証、不合格なら差し戻し</td>
-      </tr>
-      <tr>
-          <td><strong>入力フィルタリング</strong></td>
-          <td>プロンプトインジェクション攻撃（「前の指示をすべて無視して」）/ 悪意あるコードを含む SVG のアップロード</td>
-          <td>ユーザー入力がシステムに入る前に不審な指示と素材の安全性をチェック</td>
-      </tr>
-      <tr>
-          <td><strong>出力フィルタリング</strong></td>
-          <td>AI 生成コンテンツに悪意あるコードが含まれる可能性</td>
-          <td>出力内容を検査</td>
-      </tr>
-      <tr>
-          <td><strong>ハードコード検証</strong></td>
-          <td>AI が同じミスを繰り返す（常に白背景を使うなど）</td>
-          <td>コードで直接制御：SVG 背景色を自動検出し、白を暗色に置換</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>チェックポイント</th>
+					<th>問題</th>
+					<th>解決策</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>フォーマット整形</strong></td>
+					<td>JSON 返却時に「はい」やマークダウンコードブロック、余分な改行を追加</td>
+					<td>無駄な部分、ラッパー記号、余分な改行を除去；それでもダメならエラーを返して再生成</td>
+			</tr>
+			<tr>
+					<td><strong>パラメータ検証</strong></td>
+					<td>ツール呼び出しのパラメータが不正（city に都市名以外など）</td>
+					<td>呼び出し前にフォーマット/範囲を検証、不合格なら差し戻し</td>
+			</tr>
+			<tr>
+					<td><strong>入力フィルタリング</strong></td>
+					<td>プロンプトインジェクション攻撃（「前の指示をすべて無視して」）/ 悪意あるコードを含む SVG のアップロード</td>
+					<td>ユーザー入力がシステムに入る前に不審な指示と素材の安全性をチェック</td>
+			</tr>
+			<tr>
+					<td><strong>出力フィルタリング</strong></td>
+					<td>AI 生成コンテンツに悪意あるコードが含まれる可能性</td>
+					<td>出力内容を検査</td>
+			</tr>
+			<tr>
+					<td><strong>ハードコード検証</strong></td>
+					<td>AI が同じミスを繰り返す（常に白背景を使うなど）</td>
+					<td>コードで直接制御：SVG 背景色を自動検出し、白を暗色に置換</td>
+			</tr>
+	</tbody>
 </table></div>
 <p><img class="gallery-image" data-flex-basis="396px" data-flex-grow="165" height="703" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525213039.png" srcset="/p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525213039_hu_3ed75d1f97918308.png 800w, /p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525213039.png 1160w" width="1160"></p>
 <h3 id="harness-工学の核心原則">Harness 工学の核心原則
@@ -825,8 +825,9 @@
         (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	
 </div>
 
 <style>
