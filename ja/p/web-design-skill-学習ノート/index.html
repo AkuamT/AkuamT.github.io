@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Web Design Skill 学習ノート 1. Claude Design とは？ Claude Design は Anthropic がリリースしたデザインツールで、リリース当日に Figma の株価を暴落させました。\nコアコンセプト： 左側にタイプし、右側にデザインが表示される（本質的には実行可能なウェブページ、画像ではない）\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Web Design Skill 学習ノート Claude Design とは？ Claude Design は Anthropic がリリースしたデザインツールで、リリース当日に Figma の株価を暴落させました。\nコアコンセプト： 左側にタイプし、右側にデザインが表示される（本質的には実行可能なウェブページ、画像ではない）\n">
 <title>Web Design Skill 学習ノート</title>
 
 
@@ -13,12 +13,13 @@
 
 
 <link rel="stylesheet" href="/scss/style.min.ed668df6847002e96da55125322b5655e4e3773453c2addee35312e6bbf6cb10.css"><meta property='og:title' content="Web Design Skill 学習ノート">
-<meta property='og:description' content="Web Design Skill 学習ノート 1. Claude Design とは？ Claude Design は Anthropic がリリースしたデザインツールで、リリース当日に Figma の株価を暴落させました。\nコアコンセプト： 左側にタイプし、右側にデザインが表示される（本質的には実行可能なウェブページ、画像ではない）\n">
+<meta property='og:description' content="Web Design Skill 学習ノート Claude Design とは？ Claude Design は Anthropic がリリースしたデザインツールで、リリース当日に Figma の株価を暴落させました。\nコアコンセプト： 左側にタイプし、右側にデザインが表示される（本質的には実行可能なウェブページ、画像ではない）\n">
 <meta property='og:url' content='https://AkuamT.github.io/ja/p/web-design-skill-%E5%AD%A6%E7%BF%92%E3%83%8E%E3%83%BC%E3%83%88/'>
 <meta property='og:site_name' content='Yanmu'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='AIデザイン' /><meta property='article:tag' content='Claude' /><meta property='article:tag' content='プロンプトエンジニアリング' /><meta property='article:tag' content='ウェブデザイン' /><meta property='article:tag' content='Skill' /><meta property='article:published_time' content='2026-05-24T00:00:00&#43;08:00'/><meta property='article:modified_time' content='2026-05-24T00:00:00&#43;08:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='AIデザイン' /><meta property='article:tag' content='Claude' /><meta property='article:tag' content='プロンプトエンジニアリング' /><meta property='article:tag' content='ウェブデザイン' /><meta property='article:tag' content='Skill' /><meta property='article:published_time' content='2026-05-26T00:00:00&#43;08:00'/><meta property='article:modified_time' content='2026-05-26T00:00:00&#43;08:00'/><meta property='og:image' content='https://AkuamT.github.io/p/web-design-skill-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/cover.svg' />
 <meta name="twitter:title" content="Web Design Skill 学習ノート">
-<meta name="twitter:description" content="Web Design Skill 学習ノート 1. Claude Design とは？ Claude Design は Anthropic がリリースしたデザインツールで、リリース当日に Figma の株価を暴落させました。\nコアコンセプト： 左側にタイプし、右側にデザインが表示される（本質的には実行可能なウェブページ、画像ではない）\n">
+<meta name="twitter:description" content="Web Design Skill 学習ノート Claude Design とは？ Claude Design は Anthropic がリリースしたデザインツールで、リリース当日に Figma の株価を暴落させました。\nコアコンセプト： 左側にタイプし、右側にデザインが表示される（本質的には実行可能なウェブページ、画像ではない）\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://AkuamT.github.io/p/web-design-skill-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/cover.svg' />
     <link rel="shortcut icon" href="img/avatar.png" />
 
     </head>
@@ -331,42 +332,42 @@
             <nav class="toc-nav" id="TableOfContents">
                 
   <ol>
-    <li><a href="#1-claude-design-とは">1. Claude Design とは？</a>
+    <li><a href="#claude-design-とは">Claude Design とは？</a>
       <ol>
         <li><a href="#従来のデザインツールとの違い">従来のデザインツールとの違い</a></li>
       </ol>
     </li>
-    <li><a href="#2-コアプロンプト分解6つの要点">2. コアプロンプト分解（6つの要点）</a>
+    <li><a href="#コアプロンプト分解6つの要点">コアプロンプト分解（6つの要点）</a>
       <ol>
-        <li><a href="#1-ロールポジショニング--動的アイデンティティ切替">1. ロールポジショニング — 動的アイデンティティ切替</a></li>
-        <li><a href="#2-ワークフロー--6ステッププロセス">2. ワークフロー — 6ステッププロセス</a>
+        <li><a href="#ロールポジショニング--動的アイデンティティ切替">ロールポジショニング — 動的アイデンティティ切替</a></li>
+        <li><a href="#ワークフロー--6ステッププロセス">ワークフロー — 6ステッププロセス</a>
           <ol>
             <li><a href="#ディテール1質問の技術いつ聞くべきいつ直接やるべきか">ディテール1：質問の技術（いつ聞くべき？いつ直接やるべきか？）</a></li>
             <li><a href="#ディテール2まとめの原則">ディテール2：まとめの原則</a></li>
           </ol>
         </li>
-        <li><a href="#3-ai-風の除去最も価値のある部分">3. AI 風の除去（最も価値のある部分）</a></li>
-        <li><a href="#4-カラーシステム--oklch-色空間">4. カラーシステム — OKLCH 色空間</a></li>
-        <li><a href="#5-コンテンツ原則--1000個の-no-で1つの-yes-を">5. コンテンツ原則 — 「1000個の NO で1つの YES を」</a></li>
-        <li><a href="#6-検証メカニズム--サブエージェントチェック">6. 検証メカニズム — サブエージェントチェック</a></li>
+        <li><a href="#ai-風の除去最も価値のある部分">AI 風の除去（最も価値のある部分）</a></li>
+        <li><a href="#カラーシステム--oklch-色空間">カラーシステム — OKLCH 色空間</a></li>
+        <li><a href="#コンテンツ原則--1000個の-no-で1つの-yes-を">コンテンツ原則 — 「1000個の NO で1つの YES を」</a></li>
+        <li><a href="#検証メカニズム--サブエージェントチェック">検証メカニズム — サブエージェントチェック</a></li>
       </ol>
     </li>
-    <li><a href="#3-skill-ファイルのコア最適化">3. Skill ファイルのコア最適化</a>
+    <li><a href="#skill-ファイルのコア最適化">Skill ファイルのコア最適化</a>
       <ol>
-        <li><a href="#最適化1コード前に設計システムを述べる">最適化1：コード前に設計システムを述べる</a></li>
-        <li><a href="#最適化2最小実用版を早期に出力">最適化2：最小実用版を早期に出力</a></li>
-        <li><a href="#最適化3追加補足">最適化3：追加補足</a></li>
+        <li><a href="#コード前に設計システムを述べる">コード前に設計システムを述べる</a></li>
+        <li><a href="#最小実用版を早期に出力">最小実用版を早期に出力</a></li>
+        <li><a href="#追加補足">追加補足</a></li>
       </ol>
     </li>
-    <li><a href="#4-効果比較デモ">4. 効果比較デモ</a>
+    <li><a href="#効果比較デモ">効果比較デモ</a>
       <ol>
-        <li><a href="#テスト1宇宙探索博物館オンライン展覧ページ">テスト1：宇宙探索博物館オンライン展覧ページ</a></li>
-        <li><a href="#テスト2独立フォトグラファーの個人ポートフォリオ最小プロンプト">テスト2：独立フォトグラファーの個人ポートフォリオ（最小プロンプト）</a></li>
+        <li><a href="#宇宙探索博物館オンライン展覧ページ">宇宙探索博物館オンライン展覧ページ</a></li>
+        <li><a href="#独立フォトグラファーの個人ポートフォリオ最小プロンプト">独立フォトグラファーの個人ポートフォリオ（最小プロンプト）</a></li>
         <li><a href="#最終結論">最終結論</a></li>
       </ol>
     </li>
-    <li><a href="#5-コア知識早見表">5. コア知識早見表</a></li>
-    <li><a href="#6-関連リソース">6. 関連リソース</a></li>
+    <li><a href="#コア知識早見表">コア知識早見表</a></li>
+    <li><a href="#関連リソース">関連リソース</a></li>
   </ol>
 
             </nav>
@@ -379,8 +380,14 @@
 
 
             <main class="main full-width">
-    <article class="main-article">
+    <article class="has-image main-article">
     <header class="article-header">
+    <div class="article-image">
+        <a href="/ja/p/web-design-skill-%E5%AD%A6%E7%BF%92%E3%83%8E%E3%83%BC%E3%83%88/">
+            <img alt="Featured image of post Web Design Skill 学習ノート" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/web-design-skill-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/cover.svg">
+        </a>
+    </div>
+    
 
     <div class="article-details">
     
@@ -424,7 +431,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                    <time class="article-time--published" datetime='2026-05-24T00:00:00&#43;08:00'>2026年5月24日日曜日</time>
+                    <time class="article-time--published" datetime='2026-05-26T00:00:00&#43;08:00'>2026年5月26日火曜日</time>
                 
 
                 
@@ -485,42 +492,42 @@
             <nav class="toc-nav">
                 
   <ol>
-    <li><a href="#1-claude-design-とは">1. Claude Design とは？</a>
+    <li><a href="#claude-design-とは">Claude Design とは？</a>
       <ol>
         <li><a href="#従来のデザインツールとの違い">従来のデザインツールとの違い</a></li>
       </ol>
     </li>
-    <li><a href="#2-コアプロンプト分解6つの要点">2. コアプロンプト分解（6つの要点）</a>
+    <li><a href="#コアプロンプト分解6つの要点">コアプロンプト分解（6つの要点）</a>
       <ol>
-        <li><a href="#1-ロールポジショニング--動的アイデンティティ切替">1. ロールポジショニング — 動的アイデンティティ切替</a></li>
-        <li><a href="#2-ワークフロー--6ステッププロセス">2. ワークフロー — 6ステッププロセス</a>
+        <li><a href="#ロールポジショニング--動的アイデンティティ切替">ロールポジショニング — 動的アイデンティティ切替</a></li>
+        <li><a href="#ワークフロー--6ステッププロセス">ワークフロー — 6ステッププロセス</a>
           <ol>
             <li><a href="#ディテール1質問の技術いつ聞くべきいつ直接やるべきか">ディテール1：質問の技術（いつ聞くべき？いつ直接やるべきか？）</a></li>
             <li><a href="#ディテール2まとめの原則">ディテール2：まとめの原則</a></li>
           </ol>
         </li>
-        <li><a href="#3-ai-風の除去最も価値のある部分">3. AI 風の除去（最も価値のある部分）</a></li>
-        <li><a href="#4-カラーシステム--oklch-色空間">4. カラーシステム — OKLCH 色空間</a></li>
-        <li><a href="#5-コンテンツ原則--1000個の-no-で1つの-yes-を">5. コンテンツ原則 — 「1000個の NO で1つの YES を」</a></li>
-        <li><a href="#6-検証メカニズム--サブエージェントチェック">6. 検証メカニズム — サブエージェントチェック</a></li>
+        <li><a href="#ai-風の除去最も価値のある部分">AI 風の除去（最も価値のある部分）</a></li>
+        <li><a href="#カラーシステム--oklch-色空間">カラーシステム — OKLCH 色空間</a></li>
+        <li><a href="#コンテンツ原則--1000個の-no-で1つの-yes-を">コンテンツ原則 — 「1000個の NO で1つの YES を」</a></li>
+        <li><a href="#検証メカニズム--サブエージェントチェック">検証メカニズム — サブエージェントチェック</a></li>
       </ol>
     </li>
-    <li><a href="#3-skill-ファイルのコア最適化">3. Skill ファイルのコア最適化</a>
+    <li><a href="#skill-ファイルのコア最適化">Skill ファイルのコア最適化</a>
       <ol>
-        <li><a href="#最適化1コード前に設計システムを述べる">最適化1：コード前に設計システムを述べる</a></li>
-        <li><a href="#最適化2最小実用版を早期に出力">最適化2：最小実用版を早期に出力</a></li>
-        <li><a href="#最適化3追加補足">最適化3：追加補足</a></li>
+        <li><a href="#コード前に設計システムを述べる">コード前に設計システムを述べる</a></li>
+        <li><a href="#最小実用版を早期に出力">最小実用版を早期に出力</a></li>
+        <li><a href="#追加補足">追加補足</a></li>
       </ol>
     </li>
-    <li><a href="#4-効果比較デモ">4. 効果比較デモ</a>
+    <li><a href="#効果比較デモ">効果比較デモ</a>
       <ol>
-        <li><a href="#テスト1宇宙探索博物館オンライン展覧ページ">テスト1：宇宙探索博物館オンライン展覧ページ</a></li>
-        <li><a href="#テスト2独立フォトグラファーの個人ポートフォリオ最小プロンプト">テスト2：独立フォトグラファーの個人ポートフォリオ（最小プロンプト）</a></li>
+        <li><a href="#宇宙探索博物館オンライン展覧ページ">宇宙探索博物館オンライン展覧ページ</a></li>
+        <li><a href="#独立フォトグラファーの個人ポートフォリオ最小プロンプト">独立フォトグラファーの個人ポートフォリオ（最小プロンプト）</a></li>
         <li><a href="#最終結論">最終結論</a></li>
       </ol>
     </li>
-    <li><a href="#5-コア知識早見表">5. コア知識早見表</a></li>
-    <li><a href="#6-関連リソース">6. 関連リソース</a></li>
+    <li><a href="#コア知識早見表">コア知識早見表</a></li>
+    <li><a href="#関連リソース">関連リソース</a></li>
   </ol>
 
             </nav>
@@ -533,7 +540,7 @@
     
     <h1 id="web-design-skill-学習ノート">Web Design Skill 学習ノート
 </h1><hr>
-<h2 id="1-claude-design-とは">1. Claude Design とは？
+<h2 id="claude-design-とは">Claude Design とは？
 </h2><p>Claude Design は Anthropic がリリースしたデザインツールで、リリース当日に Figma の株価を暴落させました。</p>
 <p><strong>コアコンセプト：</strong> 左側にタイプし、右側にデザインが表示される（本質的には実行可能なウェブページ、画像ではない）</p>
 <h3 id="従来のデザインツールとの違い">従来のデザインツールとの違い
@@ -570,9 +577,9 @@
 </table></div>
 <p><strong>本質：</strong> Claude Design は Claude Code（デザイナー版）に近く、AI 版 Figma ではありません。</p>
 <hr>
-<h2 id="2-コアプロンプト分解6つの要点">2. コアプロンプト分解（6つの要点）
+<h2 id="コアプロンプト分解6つの要点">コアプロンプト分解（6つの要点）
 </h2><p>ビデオは Claude Design のリークされたプロンプトを深く分析し、6つのコアデザイン原則を抽出しました：</p>
-<h3 id="1-ロールポジショニング--動的アイデンティティ切替">1. ロールポジショニング — 動的アイデンティティ切替
+<h3 id="ロールポジショニング--動的アイデンティティ切替">ロールポジショニング — 動的アイデンティティ切替
 </h3><p><strong>オリジナルプロンプトの要旨：</strong> 「あなたはエキスパートデザイナーで、ユーザーはプロダクトマネージャーです」</p>
 <p><strong>重要な洞察：</strong></p>
 <ul>
@@ -595,7 +602,7 @@
         <p>💡 <strong>洞察：</strong> 多くの人のプロンプトは「あなたはフロントエンド開発者です」と一言で終わります。良いロールポジショニングは<strong>動的</strong>であるべきで、具体的なタスクに応じて柔軟にアイデンティティを切り替えます。</p>
 
     </blockquote>
-<h3 id="2-ワークフロー--6ステッププロセス">2. ワークフロー — 6ステッププロセス
+<h3 id="ワークフロー--6ステッププロセス">ワークフロー — 6ステッププロセス
 </h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -626,7 +633,7 @@
         <p>💡 <strong>洞察：</strong> この原則は AI が大量の無駄話を生成するのを効果的に防ぎます。</p>
 
     </blockquote>
-<h3 id="3-ai-風の除去最も価値のある部分">3. AI 風の除去（最も価値のある部分）
+<h3 id="ai-風の除去最も価値のある部分">AI 風の除去（最も価値のある部分）
 </h3><p><strong>典型的な AI 生成ウェブページの特徴：</strong></p>
 <ul>
 <li>紫ピンク青のグラデーション背景</li>
@@ -648,7 +655,7 @@
 <li><strong>絶対に使用してはいけないフォント</strong>を明確にリスト + 代替案</li>
 <li>ニッチだが品質の高いフォントを推薦</li>
 </ul>
-<h3 id="4-カラーシステム--oklch-色空間">4. カラーシステム — OKLCH 色空間
+<h3 id="カラーシステム--oklch-色空間">カラーシステム — OKLCH 色空間
 </h3><p><strong>配色戦略の優先順位：</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -685,7 +692,7 @@
         <p>💡 <strong>洞察：</strong> OKLCH は一見小さなディテールですが、ウェブページの<strong>高級感</strong>を直接1レベル上げることができます。</p>
 
     </blockquote>
-<h3 id="5-コンテンツ原則--1000個の-no-で1つの-yes-を">5. コンテンツ原則 — 「1000個の NO で1つの YES を」
+<h3 id="コンテンツ原則--1000個の-no-で1つの-yes-を">コンテンツ原則 — 「1000個の NO で1つの YES を」
 </h3>
     <blockquote>
         <p>スティーブ・ジョブズの有名な言葉を引用。</p>
@@ -698,7 +705,7 @@
 <li>ページが空っぽに感じるなら → レイアウトの問題かもしれない、<strong>余白</strong>を使って解決</li>
 <li><strong>1つの大胆な余白</strong> &gt; 10の埋め合わせセクション</li>
 </ul>
-<h3 id="6-検証メカニズム--サブエージェントチェック">6. 検証メカニズム — サブエージェントチェック
+<h3 id="検証メカニズム--サブエージェントチェック">検証メカニズム — サブエージェントチェック
 </h3><p><strong>原理：</strong> 開発完了後、<strong>独立したサブエージェント</strong>をフォークしてウェブページの包括的チェックを行います。</p>
 <p><strong>なぜ独立したサブエージェントなのか？</strong></p>
 <ul>
@@ -713,9 +720,9 @@
 <li>レイアウトは創造的か？</li>
 </ul>
 <hr>
-<h2 id="3-skill-ファイルのコア最適化">3. Skill ファイルのコア最適化
+<h2 id="skill-ファイルのコア最適化">Skill ファイルのコア最適化
 </h2><p>Skill ファイルは Claude Design のプロンプトをベースに、3つの重要な最適化を行いました：</p>
-<h3 id="最適化1コード前に設計システムを述べる">最適化1：コード前に設計システムを述べる
+<h3 id="コード前に設計システムを述べる">コード前に設計システムを述べる
 </h3><p>コーディングを始める前に、AI に明確にリストアップさせる：</p>
 <ul>
 <li>配色方案</li>
@@ -724,22 +731,22 @@
 <li>&hellip;</li>
 </ul>
 <p><strong>なぜ？</strong> 明確にしないと、AI は黙って自分で決めてコードを書きます。完成品を見た時に方向が間違っていたら、やり直しになります。事前に明確にすれば、コーディング前の方向修正コストはゼロです。</p>
-<h3 id="最適化2最小実用版を早期に出力">最適化2：最小実用版を早期に出力
+<h3 id="最小実用版を早期に出力">最小実用版を早期に出力
 </h3><ul>
 <li>AI にまず<strong>仮定とプレースホルダーを持つ粗い V0 バージョン</strong>を作らせる</li>
 <li>粗い V0 &gt; 何倍も時間をかけて磨き上げた V1</li>
 </ul>
 <p><strong>なぜ？</strong> 方向が完全に間違っていたら、V1 がどれだけ洗練されていても全部無駄になります。</p>
-<h3 id="最適化3追加補足">最適化3：追加補足
+<h3 id="追加補足">追加補足
 </h3><ul>
 <li>AI 風除去の項目をさらに追加</li>
 <li>いくつかの検証済み<strong>フォントと配色の参照表</strong>を追加</li>
 <li>参照ファイルを添付（典型的なコードテンプレート、プロンプトの「copy study the component」部分から）</li>
 </ul>
 <hr>
-<h2 id="4-効果比較デモ">4. 効果比較デモ
+<h2 id="効果比較デモ">効果比較デモ
 </h2><p>テスト環境：Cursor + Claude 4.7（Skill あり vs Skill なし）</p>
-<h3 id="テスト1宇宙探索博物館オンライン展覧ページ">テスト1：宇宙探索博物館オンライン展覧ページ
+<h3 id="宇宙探索博物館オンライン展覧ページ">宇宙探索博物館オンライン展覧ページ
 </h3><div class="table-wrapper"><table>
 	<thead>
 			<tr>
@@ -776,7 +783,7 @@
 			</tr>
 	</tbody>
 </table></div>
-<h3 id="テスト2独立フォトグラファーの個人ポートフォリオ最小プロンプト">テスト2：独立フォトグラファーの個人ポートフォリオ（最小プロンプト）
+<h3 id="独立フォトグラファーの個人ポートフォリオ最小プロンプト">独立フォトグラファーの個人ポートフォリオ（最小プロンプト）
 </h3><div class="table-wrapper"><table>
 	<thead>
 			<tr>
@@ -825,7 +832,7 @@
 
     </blockquote>
 <hr>
-<h2 id="5-コア知識早見表">5. コア知識早見表
+<h2 id="コア知識早見表">コア知識早見表
 </h2><div class="table-wrapper"><table>
 	<thead>
 			<tr>
@@ -883,7 +890,7 @@
 	</tbody>
 </table></div>
 <hr>
-<h2 id="6-関連リソース">6. 関連リソース
+<h2 id="関連リソース">関連リソース
 </h2><ul>
 <li>オープンソースリポジトリ：<a class="link" href="https://github.com/ConardLi/web-design-skill/"  target="_blank" rel="noopener"
     >ConardLi/web-design-skill</a></li>
@@ -938,8 +945,13 @@
         <div class="article-list--tile">
             
                 
-<article class="">
+<article class="has-image">
     <a href="/ja/p/web-design-skill-%E5%AE%9F%E8%B7%B5%E3%83%9E%E3%83%8B%E3%83%A5%E3%82%A2%E3%83%AB%E8%A9%B3%E7%B4%B0%E7%89%88/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post Web Design Skill 実践マニュアル（詳細版）" loading="lazy" src="/p/web-design-skill-%E5%AE%9E%E6%93%8D%E6%89%8B%E5%86%8C%E8%AF%A6%E7%BB%86%E7%89%88/cover.svg">
+
+        </div>
         
 
         <div class="article-details">

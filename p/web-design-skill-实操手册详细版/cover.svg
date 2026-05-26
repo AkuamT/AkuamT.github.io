@@ -15,8 +15,8 @@
   <circle cx="200" cy="150" r="60" fill="none" stroke="#e94560" stroke-width="1" opacity="0.4"/>
   <circle cx="1000" cy="480" r="100" fill="none" stroke="#0f3460" stroke-width="2" opacity="0.5"/>
   <text x="600" y="250" font-family="Arial, sans-serif" font-size="48" fill="#ffffff" text-anchor="middle" font-weight="bold">Web Design Skill</text>
-  <text x="600" y="320" font-family="Arial, sans-serif" font-size="36" fill="#e94560" text-anchor="middle">實操手冊</text>
+  <text x="600" y="320" font-family="Arial, sans-serif" font-size="36" fill="#e94560" text-anchor="middle">实操手册</text>
   <text x="600" y="380" font-family="Arial, sans-serif" font-size="24" fill="#a0a0a0" text-anchor="middle">Claude Code / OpenCode</text>
   <line x1="400" y1="420" x2="800" y2="420" stroke="url(#grad2)" stroke-width="2"/>
-  <text x="600" y="470" font-family="Arial, sans-serif" font-size="18" fill="#666666" text-anchor="middle">AI 網頁設計實戰教程</text>
+  <text x="600" y="470" font-family="Arial, sans-serif" font-size="18" fill="#666666" text-anchor="middle">AI 网页设计实战教程</text>
 </svg>

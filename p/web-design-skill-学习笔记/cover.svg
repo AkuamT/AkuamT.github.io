@@ -14,8 +14,8 @@
   <polygon points="200,100 250,150 200,200 150,150" fill="none" stroke="#00b894" stroke-width="2" opacity="0.6"/>
   <polygon points="1000,430 1050,480 1000,530 950,480" fill="none" stroke="#6c5ce7" stroke-width="2" opacity="0.5"/>
   <text x="600" y="250" font-family="Arial, sans-serif" font-size="48" fill="#ffffff" text-anchor="middle" font-weight="bold">Web Design Skill</text>
-  <text x="600" y="320" font-family="Arial, sans-serif" font-size="36" fill="#00b894" text-anchor="middle">學習筆記</text>
+  <text x="600" y="320" font-family="Arial, sans-serif" font-size="36" fill="#00b894" text-anchor="middle">学习笔记</text>
   <text x="600" y="380" font-family="Arial, sans-serif" font-size="24" fill="#a0a0a0" text-anchor="middle">Claude Design 核心原則</text>
   <line x1="400" y1="420" x2="800" y2="420" stroke="url(#grad2)" stroke-width="2"/>
-  <text x="600" y="470" font-family="Arial, sans-serif" font-size="18" fill="#666666" text-anchor="middle">提示詞工程與設計系統</text>
+  <text x="600" y="470" font-family="Arial, sans-serif" font-size="18" fill="#666666" text-anchor="middle">提示词工程与设计系统</text>
 </svg>
