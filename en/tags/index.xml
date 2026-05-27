@@ -12,30 +12,6 @@
             <guid>https://AkuamT.github.io/en/tags/ai-design/</guid>
             <description></description>
         </item><item>
-            <title>Claude</title>
-            <link>https://AkuamT.github.io/en/tags/claude/</link>
-            <pubDate>Wed, 27 May 2026 00:00:00 +0800</pubDate>
-            <guid>https://AkuamT.github.io/en/tags/claude/</guid>
-            <description></description>
-        </item><item>
-            <title>Claude-Code</title>
-            <link>https://AkuamT.github.io/en/tags/claude-code/</link>
-            <pubDate>Wed, 27 May 2026 00:00:00 +0800</pubDate>
-            <guid>https://AkuamT.github.io/en/tags/claude-code/</guid>
-            <description></description>
-        </item><item>
-            <title>OpenCode</title>
-            <link>https://AkuamT.github.io/en/tags/opencode/</link>
-            <pubDate>Wed, 27 May 2026 00:00:00 +0800</pubDate>
-            <guid>https://AkuamT.github.io/en/tags/opencode/</guid>
-            <description></description>
-        </item><item>
-            <title>Practical Tutorial</title>
-            <link>https://AkuamT.github.io/en/tags/practical-tutorial/</link>
-            <pubDate>Wed, 27 May 2026 00:00:00 +0800</pubDate>
-            <guid>https://AkuamT.github.io/en/tags/practical-tutorial/</guid>
-            <description></description>
-        </item><item>
             <title>Skill</title>
             <link>https://AkuamT.github.io/en/tags/skill/</link>
             <pubDate>Wed, 27 May 2026 00:00:00 +0800</pubDate>
@@ -60,10 +36,10 @@
             <guid>https://AkuamT.github.io/en/tags/agent/</guid>
             <description></description>
         </item><item>
-            <title>AI工程化</title>
-            <link>https://AkuamT.github.io/en/tags/ai%E5%B7%A5%E7%A8%8B%E5%8C%96/</link>
+            <title>AI Engineering</title>
+            <link>https://AkuamT.github.io/en/tags/ai-engineering/</link>
             <pubDate>Mon, 25 May 2026 02:00:00 +0800</pubDate>
-            <guid>https://AkuamT.github.io/en/tags/ai%E5%B7%A5%E7%A8%8B%E5%8C%96/</guid>
+            <guid>https://AkuamT.github.io/en/tags/ai-engineering/</guid>
             <description></description>
         </item><item>
             <title>Harness</title>
@@ -72,10 +48,10 @@
             <guid>https://AkuamT.github.io/en/tags/harness/</guid>
             <description></description>
         </item><item>
-            <title>Beginner Tutorial</title>
-            <link>https://AkuamT.github.io/en/tags/beginner-tutorial/</link>
+            <title>Beginner Guide</title>
+            <link>https://AkuamT.github.io/en/tags/beginner-guide/</link>
             <pubDate>Sun, 24 May 2026 16:00:00 +0800</pubDate>
-            <guid>https://AkuamT.github.io/en/tags/beginner-tutorial/</guid>
+            <guid>https://AkuamT.github.io/en/tags/beginner-guide/</guid>
             <description></description>
         </item><item>
             <title>Disk Management</title>
@@ -90,12 +66,6 @@
             <guid>https://AkuamT.github.io/en/tags/windows/</guid>
             <description></description>
         </item><item>
-            <title>AI Tools</title>
-            <link>https://AkuamT.github.io/en/tags/ai-tools/</link>
-            <pubDate>Sat, 02 May 2026 19:51:00 +0800</pubDate>
-            <guid>https://AkuamT.github.io/en/tags/ai-tools/</guid>
-            <description></description>
-        </item><item>
             <title>Context7</title>
             <link>https://AkuamT.github.io/en/tags/context7/</link>
             <pubDate>Sat, 02 May 2026 19:51:00 +0800</pubDate>
@@ -106,18 +76,6 @@
             <link>https://AkuamT.github.io/en/tags/mcp/</link>
             <pubDate>Sat, 02 May 2026 19:51:00 +0800</pubDate>
             <guid>https://AkuamT.github.io/en/tags/mcp/</guid>
-            <description></description>
-        </item><item>
-            <title>Tutorial</title>
-            <link>https://AkuamT.github.io/en/tags/tutorial/</link>
-            <pubDate>Sat, 02 May 2026 19:51:00 +0800</pubDate>
-            <guid>https://AkuamT.github.io/en/tags/tutorial/</guid>
-            <description></description>
-        </item><item>
-            <title>ClaudeCode</title>
-            <link>https://AkuamT.github.io/en/tags/claudecode/</link>
-            <pubDate>Thu, 30 Apr 2026 02:00:15 +0800</pubDate>
-            <guid>https://AkuamT.github.io/en/tags/claudecode/</guid>
             <description></description>
         </item><item>
             <title>Knowledge Management</title>
@@ -132,34 +90,22 @@
             <guid>https://AkuamT.github.io/en/tags/obsidian/</guid>
             <description></description>
         </item><item>
-            <title>RalphLoop</title>
-            <link>https://AkuamT.github.io/en/tags/ralphloop/</link>
+            <title>OpenCode</title>
+            <link>https://AkuamT.github.io/en/tags/opencode/</link>
             <pubDate>Thu, 30 Apr 2026 02:00:15 +0800</pubDate>
-            <guid>https://AkuamT.github.io/en/tags/ralphloop/</guid>
+            <guid>https://AkuamT.github.io/en/tags/opencode/</guid>
             <description></description>
         </item><item>
-            <title>Skills</title>
-            <link>https://AkuamT.github.io/en/tags/skills/</link>
-            <pubDate>Thu, 30 Apr 2026 02:00:15 +0800</pubDate>
-            <guid>https://AkuamT.github.io/en/tags/skills/</guid>
-            <description></description>
-        </item><item>
-            <title>UltraWork</title>
-            <link>https://AkuamT.github.io/en/tags/ultrawork/</link>
-            <pubDate>Thu, 30 Apr 2026 02:00:15 +0800</pubDate>
-            <guid>https://AkuamT.github.io/en/tags/ultrawork/</guid>
+            <title>ClaudeCode</title>
+            <link>https://AkuamT.github.io/en/tags/claudecode/</link>
+            <pubDate>Sun, 26 Apr 2026 02:00:15 +0800</pubDate>
+            <guid>https://AkuamT.github.io/en/tags/claudecode/</guid>
             <description></description>
         </item><item>
             <title>DeepSeek</title>
             <link>https://AkuamT.github.io/en/tags/deepseek/</link>
             <pubDate>Sun, 26 Apr 2026 02:00:15 +0800</pubDate>
             <guid>https://AkuamT.github.io/en/tags/deepseek/</guid>
-            <description></description>
-        </item><item>
-            <title>Node.js</title>
-            <link>https://AkuamT.github.io/en/tags/node.js/</link>
-            <pubDate>Sun, 26 Apr 2026 02:00:15 +0800</pubDate>
-            <guid>https://AkuamT.github.io/en/tags/node.js/</guid>
             <description></description>
         </item><item>
             <title>Architecture Diagram</title>
@@ -174,12 +120,6 @@
             <guid>https://AkuamT.github.io/en/tags/excalidraw/</guid>
             <description></description>
         </item><item>
-            <title>Gemini</title>
-            <link>https://AkuamT.github.io/en/tags/gemini/</link>
-            <pubDate>Tue, 31 Mar 2026 19:51:00 +0800</pubDate>
-            <guid>https://AkuamT.github.io/en/tags/gemini/</guid>
-            <description></description>
-        </item><item>
             <title>Mermaid</title>
             <link>https://AkuamT.github.io/en/tags/mermaid/</link>
             <pubDate>Tue, 31 Mar 2026 19:51:00 +0800</pubDate>
@@ -190,12 +130,6 @@
             <link>https://AkuamT.github.io/en/tags/ai-programming/</link>
             <pubDate>Fri, 20 Mar 2026 02:00:15 +0800</pubDate>
             <guid>https://AkuamT.github.io/en/tags/ai-programming/</guid>
-            <description></description>
-        </item><item>
-            <title>AI</title>
-            <link>https://AkuamT.github.io/en/tags/ai/</link>
-            <pubDate>Thu, 11 Dec 2025 00:00:00 +0800</pubDate>
-            <guid>https://AkuamT.github.io/en/tags/ai/</guid>
             <description></description>
         </item><item>
             <title>Fine-Tuning</title>
@@ -210,18 +144,6 @@
             <guid>https://AkuamT.github.io/en/tags/large-language-model/</guid>
             <description></description>
         </item><item>
-            <title>LoRA</title>
-            <link>https://AkuamT.github.io/en/tags/lora/</link>
-            <pubDate>Thu, 11 Dec 2025 00:00:00 +0800</pubDate>
-            <guid>https://AkuamT.github.io/en/tags/lora/</guid>
-            <description></description>
-        </item><item>
-            <title>Blog</title>
-            <link>https://AkuamT.github.io/en/tags/blog/</link>
-            <pubDate>Mon, 08 Dec 2025 00:00:00 +0000</pubDate>
-            <guid>https://AkuamT.github.io/en/tags/blog/</guid>
-            <description></description>
-        </item><item>
             <title>GitHub Pages</title>
             <link>https://AkuamT.github.io/en/tags/github-pages/</link>
             <pubDate>Mon, 08 Dec 2025 00:00:00 +0000</pubDate>
@@ -232,18 +154,6 @@
             <link>https://AkuamT.github.io/en/tags/hugo/</link>
             <pubDate>Mon, 08 Dec 2025 00:00:00 +0000</pubDate>
             <guid>https://AkuamT.github.io/en/tags/hugo/</guid>
-            <description></description>
-        </item><item>
-            <title>Stack</title>
-            <link>https://AkuamT.github.io/en/tags/stack/</link>
-            <pubDate>Mon, 08 Dec 2025 00:00:00 +0000</pubDate>
-            <guid>https://AkuamT.github.io/en/tags/stack/</guid>
-            <description></description>
-        </item><item>
-            <title>Cursor</title>
-            <link>https://AkuamT.github.io/en/tags/cursor/</link>
-            <pubDate>Mon, 01 Dec 2025 01:46:03 +0800</pubDate>
-            <guid>https://AkuamT.github.io/en/tags/cursor/</guid>
             <description></description>
         </item></channel>
 </rss>
