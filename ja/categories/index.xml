@@ -5,7 +5,13 @@
         <description>Recent content in Categories on Yanmu</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>ja</language>
-        <lastBuildDate>Wed, 27 May 2026 00:00:00 +0800</lastBuildDate><atom:link href="https://AkuamT.github.io/ja/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 02 Jun 2026 00:00:00 +0800</lastBuildDate><atom:link href="https://AkuamT.github.io/ja/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+            <title>チュートリアル</title>
+            <link>https://AkuamT.github.io/ja/categories/tutorial/</link>
+            <pubDate>Tue, 02 Jun 2026 00:00:00 +0800</pubDate>
+            <guid>https://AkuamT.github.io/ja/categories/tutorial/</guid>
+            <description>&lt;img src=&#34;https://AkuamT.github.io/categories/tutorial/cover.svg&#34; alt=&#34;Featured image of post チュートリアル&#34; /&gt;</description>
+        </item><item>
             <title>AI ツール</title>
             <link>https://AkuamT.github.io/ja/categories/ai-tools/</link>
             <pubDate>Wed, 27 May 2026 00:00:00 +0800</pubDate>
@@ -17,11 +23,5 @@
             <pubDate>Mon, 25 May 2026 02:00:00 +0800</pubDate>
             <guid>https://AkuamT.github.io/ja/categories/ai-concepts/</guid>
             <description>&lt;img src=&#34;https://AkuamT.github.io/categories/ai-concepts/cover.svg&#34; alt=&#34;Featured image of post AIの概念&#34; /&gt;</description>
-        </item><item>
-            <title>チュートリアル</title>
-            <link>https://AkuamT.github.io/ja/categories/tutorial/</link>
-            <pubDate>Sun, 24 May 2026 16:00:00 +0800</pubDate>
-            <guid>https://AkuamT.github.io/ja/categories/tutorial/</guid>
-            <description>&lt;img src=&#34;https://AkuamT.github.io/categories/tutorial/cover.svg&#34; alt=&#34;Featured image of post チュートリアル&#34; /&gt;</description>
         </item></channel>
 </rss>

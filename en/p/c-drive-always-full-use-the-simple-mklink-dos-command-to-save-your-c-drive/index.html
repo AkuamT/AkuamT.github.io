@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Background Running out of space on the C drive is a classic pain point for Windows users. The usual culprits are:\nWeChat/QQ chat history and file caches (easily tens of GB) Browser caches and user data Global caches from package managers (pip, npm, conda, cargo, etc.) Default installation/data directories for Adobe, Office, games, and other large software Windows update leftovers and temporary files Most of these programs default to writing data to the C drive and don&rsquo;t provide an option to change the path. Reinstalling software or editing the registry is both troublesome and risky.\n">
+<title>C Drive Always Full? Use the Simple mklink DOS Command to Save Your C Drive!</title>
+
+
+<link rel="canonical" href="https://AkuamT.github.io/en/p/c-drive-always-full-use-the-simple-mklink-dos-command-to-save-your-c-drive/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.ed668df6847002e96da55125322b5655e4e3773453c2addee35312e6bbf6cb10.css"><meta property='og:title' content="C Drive Always Full? Use the Simple mklink DOS Command to Save Your C Drive!">
+<meta property='og:description' content="Background Running out of space on the C drive is a classic pain point for Windows users. The usual culprits are:\nWeChat/QQ chat history and file caches (easily tens of GB) Browser caches and user data Global caches from package managers (pip, npm, conda, cargo, etc.) Default installation/data directories for Adobe, Office, games, and other large software Windows update leftovers and temporary files Most of these programs default to writing data to the C drive and don&rsquo;t provide an option to change the path. Reinstalling software or editing the registry is both troublesome and risky.\n">
+<meta property='og:url' content='https://AkuamT.github.io/en/p/c-drive-always-full-use-the-simple-mklink-dos-command-to-save-your-c-drive/'>
+<meta property='og:site_name' content='Yanmu'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Windows' /><meta property='article:tag' content='Disk Management' /><meta property='article:tag' content='Tools' /><meta property='article:tag' content='Tips' /><meta property='article:published_time' content='2026-06-02T00:00:00&#43;08:00'/><meta property='article:modified_time' content='2026-06-02T00:00:00&#43;08:00'/><meta property='og:image' content='https://AkuamT.github.io/p/c-%E7%9B%98%E7%BB%8F%E5%B8%B8%E7%88%86%E6%BB%A1%E6%95%99%E4%BD%A0%E7%AE%80%E5%8D%95%E7%9A%84-dos-%E5%91%BD%E4%BB%A4-mklink-%E6%8B%AF%E6%95%91-c-%E7%9B%98/cover.svg' />
+<meta name="twitter:title" content="C Drive Always Full? Use the Simple mklink DOS Command to Save Your C Drive!">
+<meta name="twitter:description" content="Background Running out of space on the C drive is a classic pain point for Windows users. The usual culprits are:\nWeChat/QQ chat history and file caches (easily tens of GB) Browser caches and user data Global caches from package managers (pip, npm, conda, cargo, etc.) Default installation/data directories for Adobe, Office, games, and other large software Windows update leftovers and temporary files Most of these programs default to writing data to the C drive and don&rsquo;t provide an option to change the path. Reinstalling software or editing the registry is both troublesome and risky.\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://AkuamT.github.io/p/c-%E7%9B%98%E7%BB%8F%E5%B8%B8%E7%88%86%E6%BB%A1%E6%95%99%E4%BD%A0%E7%AE%80%E5%8D%95%E7%9A%84-dos-%E5%91%BD%E4%BB%A4-mklink-%E6%8B%AF%E6%95%91-c-%E7%9B%98/cover.svg' />
+    <link rel="shortcut icon" href="img/avatar.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/en/">
+                    <img src="/img/Yanmu.jpg" 
+                        width="1024"
+                        height="1037"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">💻 </span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/en/">Yanmu</a></h1>
+            <h2 class="site-description">「May you be your own sun, needing no light but your own.」</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/AkuamT'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/en/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/links/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                <option value="/p/c-%E7%9B%98%E7%BB%8F%E5%B8%B8%E7%88%86%E6%BB%A1%E6%95%99%E4%BD%A0%E7%AE%80%E5%8D%95%E7%9A%84-dos-%E5%91%BD%E4%BB%A4-mklink-%E6%8B%AF%E6%95%91-c-%E7%9B%98/" >简体中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                <option value="/en/p/c-drive-always-full-use-the-simple-mklink-dos-command-to-save-your-c-drive/" selected>English</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                <option value="/zh-hant-tw/p/c-%E7%A2%9F%E7%B6%93%E5%B8%B8%E7%88%86%E6%BB%BF%E6%95%99%E4%BD%A0%E7%B0%A1%E5%96%AE%E7%9A%84-dos-%E5%91%BD%E4%BB%A4-mklink-%E6%8B%AF%E6%95%91-c-%E7%A2%9F/" >繁体中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/ja/p/c%E3%83%89%E3%83%A9%E3%82%A4%E3%83%96%E3%81%8C%E9%A0%BB%E7%B9%81%E3%81%AB%E6%BA%80%E6%9D%AF%E3%81%AB%E7%B0%A1%E5%8D%98%E3%81%AAdos%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89-mklink-%E3%81%A7c%E3%83%89%E3%83%A9%E3%82%A4%E3%83%96%E3%82%92%E6%95%91%E6%B8%88/" >日本語</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#background">Background</a></li>
+    <li><a href="#what-is-mklink">What is mklink?</a></li>
+    <li><a href="#three-types-of-links">Three Types of Links</a></li>
+    <li><a href="#step-by-step-instructions">Step-by-Step Instructions</a>
+      <ol>
+        <li><a href="#close-the-target-software">Close the Target Software</a></li>
+        <li><a href="#move-the-original-folder">Move the Original Folder</a></li>
+        <li><a href="#create-the-link">Create the Link</a></li>
+        <li><a href="#verify">Verify</a></li>
+      </ol>
+    </li>
+    <li><a href="#common-use-cases">Common Use Cases</a>
+      <ol>
+        <li><a href="#wechat-data-migration-">WeChat Data Migration ⭐</a></li>
+        <li><a href="#qq-data-migration">QQ Data Migration</a></li>
+        <li><a href="#chrome--edge-browser-cache">Chrome / Edge Browser Cache</a></li>
+        <li><a href="#development-tool-caches">Development Tool Caches</a></li>
+        <li><a href="#windows-store-apps--large-games">Windows Store Apps / Large Games</a></li>
+        <li><a href="#onedrive--icloud-sync-directories">OneDrive / iCloud Sync Directories</a></li>
+      </ol>
+    </li>
+    <li><a href="#important-notes--pitfalls">Important Notes &amp; Pitfalls</a>
+      <ol>
+        <li><a href="#deleting--restoring-a-link">Deleting / Restoring a Link</a></li>
+      </ol>
+    </li>
+    <li><a href="#quick-diagnosis-whats-eating-your-c-drive">Quick Diagnosis: What&rsquo;s Eating Your C Drive?</a></li>
+    <li><a href="#summary">Summary</a></li>
+    <li><a href="#further-reading">Further Reading</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/en/p/c-drive-always-full-use-the-simple-mklink-dos-command-to-save-your-c-drive/">
+            <img alt="Featured image of post C Drive Always Full? Use the Simple mklink DOS Command to Save Your C Drive!" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/c-%E7%9B%98%E7%BB%8F%E5%B8%B8%E7%88%86%E6%BB%A1%E6%95%99%E4%BD%A0%E7%AE%80%E5%8D%95%E7%9A%84-dos-%E5%91%BD%E4%BB%A4-mklink-%E6%8B%AF%E6%95%91-c-%E7%9B%98/cover.svg">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/en/categories/tutorial/" style="background-color: #2563eb; color: #fff;">
+                Tutorial
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/en/p/c-drive-always-full-use-the-simple-mklink-dos-command-to-save-your-c-drive/">C Drive Always Full? Use the Simple mklink DOS Command to Save Your C Drive!</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-06-02T00:00:00&#43;08:00'>Tuesday, June 2, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        5 minutes read
+                    </time>
+                
+            </div>
+        
+
+        
+            <div class="inline-meta">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                
+                    <a href="/p/c-%E7%9B%98%E7%BB%8F%E5%B8%B8%E7%88%86%E6%BB%A1%E6%95%99%E4%BD%A0%E7%AE%80%E5%8D%95%E7%9A%84-dos-%E5%91%BD%E4%BB%A4-mklink-%E6%8B%AF%E6%95%91-c-%E7%9B%98/" class="link">简体中文</a>
+                
+                    <a href="/zh-hant-tw/p/c-%E7%A2%9F%E7%B6%93%E5%B8%B8%E7%88%86%E6%BB%BF%E6%95%99%E4%BD%A0%E7%B0%A1%E5%96%AE%E7%9A%84-dos-%E5%91%BD%E4%BB%A4-mklink-%E6%8B%AF%E6%95%91-c-%E7%A2%9F/" class="link">繁体中文</a>
+                
+                    <a href="/ja/p/c%E3%83%89%E3%83%A9%E3%82%A4%E3%83%96%E3%81%8C%E9%A0%BB%E7%B9%81%E3%81%AB%E6%BA%80%E6%9D%AF%E3%81%AB%E7%B0%A1%E5%8D%98%E3%81%AAdos%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89-mklink-%E3%81%A7c%E3%83%89%E3%83%A9%E3%82%A4%E3%83%96%E3%82%92%E6%95%91%E6%B8%88/" class="link">日本語</a>
+                
+            </div>
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span>Table of contents</span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#background">Background</a></li>
+    <li><a href="#what-is-mklink">What is mklink?</a></li>
+    <li><a href="#three-types-of-links">Three Types of Links</a></li>
+    <li><a href="#step-by-step-instructions">Step-by-Step Instructions</a>
+      <ol>
+        <li><a href="#close-the-target-software">Close the Target Software</a></li>
+        <li><a href="#move-the-original-folder">Move the Original Folder</a></li>
+        <li><a href="#create-the-link">Create the Link</a></li>
+        <li><a href="#verify">Verify</a></li>
+      </ol>
+    </li>
+    <li><a href="#common-use-cases">Common Use Cases</a>
+      <ol>
+        <li><a href="#wechat-data-migration-">WeChat Data Migration ⭐</a></li>
+        <li><a href="#qq-data-migration">QQ Data Migration</a></li>
+        <li><a href="#chrome--edge-browser-cache">Chrome / Edge Browser Cache</a></li>
+        <li><a href="#development-tool-caches">Development Tool Caches</a></li>
+        <li><a href="#windows-store-apps--large-games">Windows Store Apps / Large Games</a></li>
+        <li><a href="#onedrive--icloud-sync-directories">OneDrive / iCloud Sync Directories</a></li>
+      </ol>
+    </li>
+    <li><a href="#important-notes--pitfalls">Important Notes &amp; Pitfalls</a>
+      <ol>
+        <li><a href="#deleting--restoring-a-link">Deleting / Restoring a Link</a></li>
+      </ol>
+    </li>
+    <li><a href="#quick-diagnosis-whats-eating-your-c-drive">Quick Diagnosis: What&rsquo;s Eating Your C Drive?</a></li>
+    <li><a href="#summary">Summary</a></li>
+    <li><a href="#further-reading">Further Reading</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h2 id="background">Background
+</h2><p>Running out of space on the C drive is a classic pain point for Windows users. The usual culprits are:</p>
+<ul>
+<li><strong>WeChat/QQ chat history and file caches</strong> (easily tens of GB)</li>
+<li><strong>Browser caches and user data</strong></li>
+<li><strong>Global caches from package managers</strong> (pip, npm, conda, cargo, etc.)</li>
+<li><strong>Default installation/data directories</strong> for Adobe, Office, games, and other large software</li>
+<li><strong>Windows update leftovers and temporary files</strong></li>
+</ul>
+<p>Most of these programs <strong>default to writing data to the C drive</strong> and don&rsquo;t provide an option to change the path. Reinstalling software or editing the registry is both troublesome and risky.</p>
+<p>The <strong>mklink</strong> command offers an elegant solution — <strong>store the data on your D or E drive, while the software &ldquo;thinks&rdquo; it&rsquo;s still on the C drive</strong>.</p>
+<hr>
+<h2 id="what-is-mklink">What is mklink?
+</h2><p><code>mklink</code> is a built-in Windows command-line tool (available since Vista) for creating <strong>links</strong>. It&rsquo;s essentially a <strong>path alias/pointer</strong>, similar to Linux&rsquo;s <code>ln -s</code>.</p>
+
+    <blockquote>
+        <p>🧊 <strong>Analogy</strong>: Think of a desktop shortcut — when you double-click the icon on your desktop, it actually opens a file located elsewhere. mklink does the same thing, connecting the &ldquo;real storage location&rdquo; with the &ldquo;path the software expects.&rdquo;</p>
+
+    </blockquote>
+<hr>
+<h2 id="three-types-of-links">Three Types of Links
+</h2><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>Type</th>
+					<th>Command</th>
+					<th>Target</th>
+					<th>Characteristics</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>Symbolic Link</strong></td>
+					<td><code>/D</code></td>
+					<td>Directory</td>
+					<td>Can cross partitions, most commonly used, like a &ldquo;directory shortcut&rdquo;</td>
+			</tr>
+			<tr>
+					<td><strong>Hard Link</strong></td>
+					<td><code>/H</code></td>
+					<td>File</td>
+					<td>Same partition only, multiple paths pointing to the same data</td>
+			</tr>
+			<tr>
+					<td><strong>Directory Junction</strong></td>
+					<td><code>/J</code></td>
+					<td>Directory</td>
+					<td>Cross-partition, older NTFS technology, better compatibility</td>
+			</tr>
+	</tbody>
+</table></div>
+
+    <blockquote>
+        <p>⭐ <strong>For everyday use, prefer <code>/J</code> (Directory Junction) or <code>/D</code> (Directory Symbolic Link)</strong>. For moving software data directories, they work almost identically.</p>
+
+    </blockquote>
+<hr>
+<h2 id="step-by-step-instructions">Step-by-Step Instructions
+</h2><h3 id="close-the-target-software">Close the Target Software
+</h3><p>Make sure the software you&rsquo;re migrating data from is <strong>completely closed</strong> (including background processes), otherwise files will be locked and cannot be moved.</p>
+<h3 id="move-the-original-folder">Move the Original Folder
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"># Move/cut the original C drive directory to the target drive
+</span></span><span class="line"><span class="cl"><span class="k">move</span> <span class="s2">&#34;C:\original-path&#34;</span> <span class="s2">&#34;D:\new-path&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    <blockquote>
+        <p>⚠️ <strong>Don&rsquo;t copy!</strong> Use move (or cut) to ensure the original path no longer exists.</p>
+
+    </blockquote>
+<h3 id="create-the-link">Create the Link
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"># Create a Directory Junction with /J
+</span></span><span class="line"><span class="cl"><span class="k">mklink</span> /J <span class="s2">&#34;C:\original-path&#34;</span> <span class="s2">&#34;D:\new-path&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Or use <code>/D</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"><span class="k">mklink</span> /D <span class="s2">&#34;C:\original-path&#34;</span> <span class="s2">&#34;D:\new-path&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="verify">Verify
+</h3><p>Open the original C drive path and confirm you can access the files on the D drive.</p>
+
+    <blockquote>
+        <p>🔍 In CMD, navigate to the parent directory and run <code>dir</code>. Linked items will show the <code>&lt;JUNCTION&gt;</code> or <code>&lt;SYMLINKD&gt;</code> marker.</p>
+
+    </blockquote>
+<hr>
+<h2 id="common-use-cases">Common Use Cases
+</h2><h3 id="wechat-data-migration-">WeChat Data Migration ⭐
+</h3><p>WeChat is the number one C drive killer — chat history and file caches can easily reach tens of GB.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"># Close WeChat
+</span></span><span class="line"><span class="cl"># Move the data directory
+</span></span><span class="line"><span class="cl"><span class="k">move</span> <span class="s2">&#34;</span><span class="nv">%USERPROFILE%</span><span class="s2">\Documents\WeChat Files&#34;</span> <span class="s2">&#34;D:\Data\WeChat Files&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># Create the link
+</span></span><span class="line"><span class="cl"><span class="k">mklink</span> /J <span class="s2">&#34;</span><span class="nv">%USERPROFILE%</span><span class="s2">\Documents\WeChat Files&#34;</span> <span class="s2">&#34;D:\Data\WeChat Files&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    <blockquote>
+        <p>The new version of WeChat stores data at <code>C:\Users\username\Documents\WeChat Files</code>, while older versions store it in the installation directory under <code>WeChat Files</code>.</p>
+
+    </blockquote>
+<h3 id="qq-data-migration">QQ Data Migration
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"># QQ personal folder is usually at
+</span></span><span class="line"><span class="cl"># C:\Users\username\Documents\Tencent Files
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">move</span> <span class="s2">&#34;C:\Users\your-username\Documents\Tencent Files&#34;</span> <span class="s2">&#34;D:\Data\Tencent Files&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">mklink</span> /J <span class="s2">&#34;C:\Users\your-username\Documents\Tencent Files&#34;</span> <span class="s2">&#34;D:\Data\Tencent Files&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="chrome--edge-browser-cache">Chrome / Edge Browser Cache
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"># Chrome user data
+</span></span><span class="line"><span class="cl"><span class="k">move</span> <span class="s2">&#34;</span><span class="nv">%LOCALAPPDATA%</span><span class="s2">\Google\Chrome\User Data&#34;</span> <span class="s2">&#34;D:\BrowserData\Chrome&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">mklink</span> /J <span class="s2">&#34;</span><span class="nv">%LOCALAPPDATA%</span><span class="s2">\Google\Chrome\User Data&#34;</span> <span class="s2">&#34;D:\BrowserData\Chrome&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># Edge user data
+</span></span><span class="line"><span class="cl"><span class="k">move</span> <span class="s2">&#34;</span><span class="nv">%LOCALAPPDATA%</span><span class="s2">\Microsoft\Edge\User Data&#34;</span> <span class="s2">&#34;D:\BrowserData\Edge&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">mklink</span> /J <span class="s2">&#34;</span><span class="nv">%LOCALAPPDATA%</span><span class="s2">\Microsoft\Edge\User Data&#34;</span> <span class="s2">&#34;D:\BrowserData\Edge&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="development-tool-caches">Development Tool Caches
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"># pip cache
+</span></span><span class="line"><span class="cl"><span class="k">move</span> <span class="s2">&#34;</span><span class="nv">%LOCALAPPDATA%</span><span class="s2">\pip\cache&#34;</span> <span class="s2">&#34;D:\DevCache\pip&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">mklink</span> /J <span class="s2">&#34;</span><span class="nv">%LOCALAPPDATA%</span><span class="s2">\pip\cache&#34;</span> <span class="s2">&#34;D:\DevCache\pip&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># npm cache
+</span></span><span class="line"><span class="cl"><span class="k">move</span> <span class="s2">&#34;</span><span class="nv">%LOCALAPPDATA%</span><span class="s2">\npm-cache&#34;</span> <span class="s2">&#34;D:\DevCache\npm&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">mklink</span> /J <span class="s2">&#34;</span><span class="nv">%LOCALAPPDATA%</span><span class="s2">\npm-cache&#34;</span> <span class="s2">&#34;D:\DevCache\npm&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># Maven local repository
+</span></span><span class="line"><span class="cl"><span class="k">move</span> <span class="s2">&#34;</span><span class="nv">%USERPROFILE%</span><span class="s2">\.m2\repository&#34;</span> <span class="s2">&#34;D:\DevCache\maven&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">mklink</span> /J <span class="s2">&#34;</span><span class="nv">%USERPROFILE%</span><span class="s2">\.m2\repository&#34;</span> <span class="s2">&#34;D:\DevCache\maven&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    <blockquote>
+        <p>A better approach is to configure the package manager&rsquo;s cache path directly (e.g., <code>npm config set cache</code>). Environment variable solutions are more stable, with mklink as a fallback.</p>
+
+    </blockquote>
+<h3 id="windows-store-apps--large-games">Windows Store Apps / Large Games
+</h3><p>Some UWP apps and Xbox Game Pass games don&rsquo;t allow you to change the installation path, but mklink can help migrate them.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"># For Forza Horizon and similar games
+</span></span><span class="line"><span class="cl"># Usually located at C:\Program Files\WindowsApps or C:\XboxGames
+</span></span><span class="line"><span class="cl"># You&#39;ll need to obtain folder permissions (TrustedInstaller) first
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    <blockquote>
+        <p>⚠️ Operating on the WindowsApps directory is more complex and involves permission management. Proceed with caution.</p>
+
+    </blockquote>
+<h3 id="onedrive--icloud-sync-directories">OneDrive / iCloud Sync Directories
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"><span class="k">move</span> <span class="s2">&#34;C:\Users\your-username\OneDrive&#34;</span> <span class="s2">&#34;D:\OneDrive&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">mklink</span> /J <span class="s2">&#34;C:\Users\your-username\OneDrive&#34;</span> <span class="s2">&#34;D:\OneDrive&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="important-notes--pitfalls">Important Notes &amp; Pitfalls
+</h2><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>Issue</th>
+					<th>Explanation</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>Must move first, then link</strong></td>
+					<td><code>mklink</code> requires that the target path <strong>does not exist</strong>, otherwise it will error <code>File already exists</code></td>
+			</tr>
+			<tr>
+					<td><strong>Back up before moving</strong></td>
+					<td>Although the operation is reversible, it&rsquo;s recommended to back up important data first</td>
+			</tr>
+			<tr>
+					<td><strong>Don&rsquo;t touch system directories</strong></td>
+					<td>Avoid <code>C:\Windows</code>, <code>C:\Program Files</code>, and other system directories</td>
+			</tr>
+			<tr>
+					<td><strong>Deleting a link ≠ deleting data</strong></td>
+					<td>Removing the &ldquo;shortcut&rdquo; on the C drive only deletes the link; the data on the D drive remains</td>
+			</tr>
+			<tr>
+					<td><strong>Correct way to delete a link</strong></td>
+					<td><code>rmdir &quot;C:\link-path&quot;</code> (not <code>del</code>)</td>
+			</tr>
+			<tr>
+					<td><strong>Run CMD as Administrator</strong></td>
+					<td>Some directories require admin privileges to create links</td>
+			</tr>
+			<tr>
+					<td><strong>NTFS file system required</strong></td>
+					<td>Only supported on NTFS, not FAT32 or exFAT</td>
+			</tr>
+			<tr>
+					<td><strong>Restoring</strong></td>
+					<td>Delete the link → move the D drive data back to the original C drive path</td>
+			</tr>
+	</tbody>
+</table></div>
+<h3 id="deleting--restoring-a-link">Deleting / Restoring a Link
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"># Delete the link (does NOT delete the original data on the D drive)
+</span></span><span class="line"><span class="cl"><span class="k">rmdir</span> <span class="s2">&#34;C:\original-path&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># To restore: move the data back
+</span></span><span class="line"><span class="cl"><span class="k">move</span> <span class="s2">&#34;D:\new-path&#34;</span> <span class="s2">&#34;C:\original-path&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="quick-diagnosis-whats-eating-your-c-drive">Quick Diagnosis: What&rsquo;s Eating Your C Drive?
+</h2><p>Before using mklink, analyze your C drive to find the real culprit:</p>
+<div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>Tool</th>
+					<th>Features</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>WizTree</strong></td>
+					<td>Blazing fast scan, intuitive treemap, free</td>
+			</tr>
+			<tr>
+					<td><strong>SpaceSniffer</strong></td>
+					<td>Visual block chart, intuitive</td>
+			</tr>
+			<tr>
+					<td><strong>TreeSize Free</strong></td>
+					<td>Classic tool, sorted by folder size</td>
+			</tr>
+			<tr>
+					<td><strong>Windows Disk Cleanup</strong></td>
+					<td><code>cleanmgr</code>, cleans temp files and update leftovers</td>
+			</tr>
+	</tbody>
+</table></div>
+
+    <blockquote>
+        <p>🔥 <strong>WizTree</strong> is recommended — it uses MFT parsing directly, scanning an entire hard drive in seconds.</p>
+
+    </blockquote>
+<hr>
+<h2 id="summary">Summary
+</h2><p>The core idea of <code>mklink</code> is:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Software thinks data is still at C:\some-path
+</span></span><span class="line"><span class="cl">       ↓ (the link created by mklink)
+</span></span><span class="line"><span class="cl">Data is actually stored at D:\some-path
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>The operation mantra</strong>: Close the software → Move the folder → Create the mklink link → Verify it works</p>
+<p>It&rsquo;s safer, reversible, and more efficient than &ldquo;editing the registry&rdquo; or &ldquo;reinstalling to another drive.&rdquo; Master this command, and your C drive will never mysteriously turn red again. 🎉</p>
+<hr>
+<h2 id="further-reading">Further Reading
+</h2><ul>
+<li>Disk cleanup tools: WizTree / SpaceSniffer</li>
+<li>Package manager cache path configuration: npm, pip, cargo official documentation</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/en/tags/windows/">Windows</a>
+        
+            <a href="/en/tags/disk-management/">Disk Management</a>
+        
+            <a href="/en/tags/tools/">Tools</a>
+        
+            <a href="/en/tags/tips/">Tips</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under <a class="link" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"  target="_blank" rel="noopener"
+    >CC BY-NC-SA 4.0</a></span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title">Related content</h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/en/p/c-drive-full-expand-it-using-other-drives/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post C Drive Full? Expand It Using Other Drives" loading="lazy" src="/p/c-%E7%9B%98%E7%88%86%E6%BB%A1%E7%94%A8%E5%85%B6%E4%BB%96%E7%9B%98%E7%BB%99-c-%E7%9B%98%E6%89%A9%E5%AE%B9/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">C Drive Full? Expand It Using Other Drives</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/en/p/hugo--stack--github-pages-blog-setup-guide/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post Hugo + Stack + GitHub Pages Blog Setup Guide" loading="lazy" src="/p/hugo--stack--github-pages-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Hugo &#43; Stack &#43; GitHub Pages Blog Setup Guide</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+
+        <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2026 Yanmu
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="4.0.2">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.1ff1e5fdc4e178ed422e50aa407526dc552f26342d729343fded19416194382c.js" defer></script>
+
+
+    </body>
+</html>

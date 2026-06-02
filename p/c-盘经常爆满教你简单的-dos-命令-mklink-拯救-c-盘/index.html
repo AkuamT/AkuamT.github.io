@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="问题背景 C 盘空间告急是 Windows 用户的经典痛点，罪魁祸首通常是：\n微信/QQ 的聊天记录和文件缓存（动辄几十 GB） 浏览器缓存和用户数据 pip / npm / conda / cargo 等包管理器的全局缓存 Adobe / Office / 游戏等大型软件的默认安装/数据目录 Windows 更新残留和临时文件 这些软件大多 默认把数据写死到 C 盘，且不提供修改路径的选项。重装软件、改注册表等方式既麻烦又有风险。\n">
+<title>C 盘经常爆满？教你简单的 DOS 命令 mklink 拯救 C 盘！</title>
+
+
+<link rel="canonical" href="https://AkuamT.github.io/p/c-%E7%9B%98%E7%BB%8F%E5%B8%B8%E7%88%86%E6%BB%A1%E6%95%99%E4%BD%A0%E7%AE%80%E5%8D%95%E7%9A%84-dos-%E5%91%BD%E4%BB%A4-mklink-%E6%8B%AF%E6%95%91-c-%E7%9B%98/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.ed668df6847002e96da55125322b5655e4e3773453c2addee35312e6bbf6cb10.css"><meta property='og:title' content="C 盘经常爆满？教你简单的 DOS 命令 mklink 拯救 C 盘！">
+<meta property='og:description' content="问题背景 C 盘空间告急是 Windows 用户的经典痛点，罪魁祸首通常是：\n微信/QQ 的聊天记录和文件缓存（动辄几十 GB） 浏览器缓存和用户数据 pip / npm / conda / cargo 等包管理器的全局缓存 Adobe / Office / 游戏等大型软件的默认安装/数据目录 Windows 更新残留和临时文件 这些软件大多 默认把数据写死到 C 盘，且不提供修改路径的选项。重装软件、改注册表等方式既麻烦又有风险。\n">
+<meta property='og:url' content='https://AkuamT.github.io/p/c-%E7%9B%98%E7%BB%8F%E5%B8%B8%E7%88%86%E6%BB%A1%E6%95%99%E4%BD%A0%E7%AE%80%E5%8D%95%E7%9A%84-dos-%E5%91%BD%E4%BB%A4-mklink-%E6%8B%AF%E6%95%91-c-%E7%9B%98/'>
+<meta property='og:site_name' content='Yanmu'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Windows' /><meta property='article:tag' content='磁盘管理' /><meta property='article:tag' content='工具' /><meta property='article:tag' content='技巧' /><meta property='article:published_time' content='2026-06-02T00:00:00&#43;08:00'/><meta property='article:modified_time' content='2026-06-02T00:00:00&#43;08:00'/><meta property='og:image' content='https://AkuamT.github.io/p/c-%E7%9B%98%E7%BB%8F%E5%B8%B8%E7%88%86%E6%BB%A1%E6%95%99%E4%BD%A0%E7%AE%80%E5%8D%95%E7%9A%84-dos-%E5%91%BD%E4%BB%A4-mklink-%E6%8B%AF%E6%95%91-c-%E7%9B%98/cover.svg' />
+<meta name="twitter:title" content="C 盘经常爆满？教你简单的 DOS 命令 mklink 拯救 C 盘！">
+<meta name="twitter:description" content="问题背景 C 盘空间告急是 Windows 用户的经典痛点，罪魁祸首通常是：\n微信/QQ 的聊天记录和文件缓存（动辄几十 GB） 浏览器缓存和用户数据 pip / npm / conda / cargo 等包管理器的全局缓存 Adobe / Office / 游戏等大型软件的默认安装/数据目录 Windows 更新残留和临时文件 这些软件大多 默认把数据写死到 C 盘，且不提供修改路径的选项。重装软件、改注册表等方式既麻烦又有风险。\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://AkuamT.github.io/p/c-%E7%9B%98%E7%BB%8F%E5%B8%B8%E7%88%86%E6%BB%A1%E6%95%99%E4%BD%A0%E7%AE%80%E5%8D%95%E7%9A%84-dos-%E5%91%BD%E4%BB%A4-mklink-%E6%8B%AF%E6%95%91-c-%E7%9B%98/cover.svg' />
+    <link rel="shortcut icon" href="img/avatar.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/">
+                    <img src="/img/Yanmu.jpg" 
+                        width="1024"
+                        height="1037"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">💻 </span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Yanmu</a></h1>
+            <h2 class="site-description">「愿你成为自己的太阳，无需借谁的光」</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/AkuamT'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E9%93%BE%E6%8E%A5/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                <option value="/p/c-%E7%9B%98%E7%BB%8F%E5%B8%B8%E7%88%86%E6%BB%A1%E6%95%99%E4%BD%A0%E7%AE%80%E5%8D%95%E7%9A%84-dos-%E5%91%BD%E4%BB%A4-mklink-%E6%8B%AF%E6%95%91-c-%E7%9B%98/" selected>简体中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                <option value="/en/p/c-drive-always-full-use-the-simple-mklink-dos-command-to-save-your-c-drive/" >English</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                <option value="/zh-hant-tw/p/c-%E7%A2%9F%E7%B6%93%E5%B8%B8%E7%88%86%E6%BB%BF%E6%95%99%E4%BD%A0%E7%B0%A1%E5%96%AE%E7%9A%84-dos-%E5%91%BD%E4%BB%A4-mklink-%E6%8B%AF%E6%95%91-c-%E7%A2%9F/" >繁体中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/ja/p/c%E3%83%89%E3%83%A9%E3%82%A4%E3%83%96%E3%81%8C%E9%A0%BB%E7%B9%81%E3%81%AB%E6%BA%80%E6%9D%AF%E3%81%AB%E7%B0%A1%E5%8D%98%E3%81%AAdos%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89-mklink-%E3%81%A7c%E3%83%89%E3%83%A9%E3%82%A4%E3%83%96%E3%82%92%E6%95%91%E6%B8%88/" >日本語</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#问题背景">问题背景</a></li>
+    <li><a href="#mklink-是什么">mklink 是什么</a></li>
+    <li><a href="#三种链接类型">三种链接类型</a></li>
+    <li><a href="#操作步骤">操作步骤</a>
+      <ol>
+        <li><a href="#关闭目标软件">关闭目标软件</a></li>
+        <li><a href="#移动原始文件夹">移动原始文件夹</a></li>
+        <li><a href="#创建链接">创建链接</a></li>
+        <li><a href="#验证">验证</a></li>
+      </ol>
+    </li>
+    <li><a href="#常见应用场景">常见应用场景</a>
+      <ol>
+        <li><a href="#微信wechat-数据迁移-">微信/WeChat 数据迁移 ⭐</a></li>
+        <li><a href="#qq-数据迁移">QQ 数据迁移</a></li>
+        <li><a href="#chrome--edge-浏览器缓存">Chrome / Edge 浏览器缓存</a></li>
+        <li><a href="#开发工具缓存">开发工具缓存</a></li>
+        <li><a href="#windows-应用商店应用--大型游戏">Windows 应用商店应用 / 大型游戏</a></li>
+        <li><a href="#onedrive--icloud-云盘同步目录">OneDrive / iCloud 云盘同步目录</a></li>
+      </ol>
+    </li>
+    <li><a href="#注意事项--避坑指南">注意事项 &amp; 避坑指南</a>
+      <ol>
+        <li><a href="#删除还原一个链接">删除/还原一个链接</a></li>
+      </ol>
+    </li>
+    <li><a href="#快速诊断-c-盘谁在占用空间">快速诊断 C 盘：谁在占用空间？</a></li>
+    <li><a href="#总结">总结</a></li>
+    <li><a href="#相关阅读">相关阅读</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/p/c-%E7%9B%98%E7%BB%8F%E5%B8%B8%E7%88%86%E6%BB%A1%E6%95%99%E4%BD%A0%E7%AE%80%E5%8D%95%E7%9A%84-dos-%E5%91%BD%E4%BB%A4-mklink-%E6%8B%AF%E6%95%91-c-%E7%9B%98/">
+            <img alt="Featured image of post C 盘经常爆满？教你简单的 DOS 命令 mklink 拯救 C 盘！" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/c-%E7%9B%98%E7%BB%8F%E5%B8%B8%E7%88%86%E6%BB%A1%E6%95%99%E4%BD%A0%E7%AE%80%E5%8D%95%E7%9A%84-dos-%E5%91%BD%E4%BB%A4-mklink-%E6%8B%AF%E6%95%91-c-%E7%9B%98/cover.svg">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/categories/tutorial/" style="background-color: #2563eb; color: #fff;">
+                教程
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/c-%E7%9B%98%E7%BB%8F%E5%B8%B8%E7%88%86%E6%BB%A1%E6%95%99%E4%BD%A0%E7%AE%80%E5%8D%95%E7%9A%84-dos-%E5%91%BD%E4%BB%A4-mklink-%E6%8B%AF%E6%95%91-c-%E7%9B%98/">C 盘经常爆满？教你简单的 DOS 命令 mklink 拯救 C 盘！</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-06-02T00:00:00&#43;08:00'>2026年6月2日星期二</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        阅读时长: 5 分钟
+                    </time>
+                
+            </div>
+        
+
+        
+            <div class="inline-meta">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                
+                    <a href="/en/p/c-drive-always-full-use-the-simple-mklink-dos-command-to-save-your-c-drive/" class="link">English</a>
+                
+                    <a href="/zh-hant-tw/p/c-%E7%A2%9F%E7%B6%93%E5%B8%B8%E7%88%86%E6%BB%BF%E6%95%99%E4%BD%A0%E7%B0%A1%E5%96%AE%E7%9A%84-dos-%E5%91%BD%E4%BB%A4-mklink-%E6%8B%AF%E6%95%91-c-%E7%A2%9F/" class="link">繁体中文</a>
+                
+                    <a href="/ja/p/c%E3%83%89%E3%83%A9%E3%82%A4%E3%83%96%E3%81%8C%E9%A0%BB%E7%B9%81%E3%81%AB%E6%BA%80%E6%9D%AF%E3%81%AB%E7%B0%A1%E5%8D%98%E3%81%AAdos%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89-mklink-%E3%81%A7c%E3%83%89%E3%83%A9%E3%82%A4%E3%83%96%E3%82%92%E6%95%91%E6%B8%88/" class="link">日本語</a>
+                
+            </div>
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span>目录</span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#问题背景">问题背景</a></li>
+    <li><a href="#mklink-是什么">mklink 是什么</a></li>
+    <li><a href="#三种链接类型">三种链接类型</a></li>
+    <li><a href="#操作步骤">操作步骤</a>
+      <ol>
+        <li><a href="#关闭目标软件">关闭目标软件</a></li>
+        <li><a href="#移动原始文件夹">移动原始文件夹</a></li>
+        <li><a href="#创建链接">创建链接</a></li>
+        <li><a href="#验证">验证</a></li>
+      </ol>
+    </li>
+    <li><a href="#常见应用场景">常见应用场景</a>
+      <ol>
+        <li><a href="#微信wechat-数据迁移-">微信/WeChat 数据迁移 ⭐</a></li>
+        <li><a href="#qq-数据迁移">QQ 数据迁移</a></li>
+        <li><a href="#chrome--edge-浏览器缓存">Chrome / Edge 浏览器缓存</a></li>
+        <li><a href="#开发工具缓存">开发工具缓存</a></li>
+        <li><a href="#windows-应用商店应用--大型游戏">Windows 应用商店应用 / 大型游戏</a></li>
+        <li><a href="#onedrive--icloud-云盘同步目录">OneDrive / iCloud 云盘同步目录</a></li>
+      </ol>
+    </li>
+    <li><a href="#注意事项--避坑指南">注意事项 &amp; 避坑指南</a>
+      <ol>
+        <li><a href="#删除还原一个链接">删除/还原一个链接</a></li>
+      </ol>
+    </li>
+    <li><a href="#快速诊断-c-盘谁在占用空间">快速诊断 C 盘：谁在占用空间？</a></li>
+    <li><a href="#总结">总结</a></li>
+    <li><a href="#相关阅读">相关阅读</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h2 id="问题背景">问题背景
+</h2><p>C 盘空间告急是 Windows 用户的经典痛点，罪魁祸首通常是：</p>
+<ul>
+<li><strong>微信/QQ 的聊天记录和文件缓存</strong>（动辄几十 GB）</li>
+<li><strong>浏览器缓存和用户数据</strong></li>
+<li><strong>pip / npm / conda / cargo 等包管理器的全局缓存</strong></li>
+<li><strong>Adobe / Office / 游戏等大型软件的默认安装/数据目录</strong></li>
+<li><strong>Windows 更新残留和临时文件</strong></li>
+</ul>
+<p>这些软件大多 <strong>默认把数据写死到 C 盘</strong>，且不提供修改路径的选项。重装软件、改注册表等方式既麻烦又有风险。</p>
+<p><strong>mklink</strong> 命令可以优雅地解决这个问题——<strong>把数据实际存储在 D/E 盘，但软件&quot;以为&quot;它还在 C 盘</strong>。</p>
+<hr>
+<h2 id="mklink-是什么">mklink 是什么
+</h2><p><code>mklink</code> 是 Windows 内置的命令行工具（Vista 起），用于创建 <strong>链接（Link）</strong>。它本质上是一个 <strong>&ldquo;路径的别名/指针&rdquo;</strong>，类似于 Linux 的 <code>ln -s</code>。</p>
+
+    <blockquote>
+        <p>🧊 <strong>类比</strong>：就像桌面快捷方式——你双击桌面的图标，实际打开的是另一个位置的文件。mklink 做的就是把&quot;真实存储位置&quot;和&quot;软件期望的路径&quot;关联起来。</p>
+
+    </blockquote>
+<hr>
+<h2 id="三种链接类型">三种链接类型
+</h2><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>类型</th>
+					<th>命令</th>
+					<th>适用对象</th>
+					<th>特点</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>符号链接</strong></td>
+					<td><code>/D</code></td>
+					<td>目录</td>
+					<td>可跨分区，最常用，类似&quot;目录的快捷方式&quot;</td>
+			</tr>
+			<tr>
+					<td><strong>硬链接</strong></td>
+					<td><code>/H</code></td>
+					<td>文件</td>
+					<td>同一分区内，多个路径指向同一份数据</td>
+			</tr>
+			<tr>
+					<td><strong>目录 Junction</strong></td>
+					<td><code>/J</code></td>
+					<td>目录</td>
+					<td>跨分区，老的 NTFS 技术，兼容性更好</td>
+			</tr>
+	</tbody>
+</table></div>
+
+    <blockquote>
+        <p>⭐ <strong>日常使用首选 <code>/J</code>（目录 Junction）或 <code>/D</code>（目录符号链接）</strong>。对于移动软件数据目录的场景，两者效果几乎一样。</p>
+
+    </blockquote>
+<hr>
+<h2 id="操作步骤">操作步骤
+</h2><h3 id="关闭目标软件">关闭目标软件
+</h3><p>确保要迁移数据的软件 <strong>完全关闭</strong>（包括后台进程），否则文件被占用无法移动。</p>
+<h3 id="移动原始文件夹">移动原始文件夹
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"># 把 C 盘的原始目录 移动/剪切 到目标盘
+</span></span><span class="line"><span class="cl"><span class="k">move</span> <span class="s2">&#34;C:\原路径&#34;</span> <span class="s2">&#34;D:\新路径&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    <blockquote>
+        <p>⚠️ <strong>不要用复制！</strong> 用移动（move）或剪切，确保原路径不再存在。</p>
+
+    </blockquote>
+<h3 id="创建链接">创建链接
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"># 用 /J 创建目录 Junction
+</span></span><span class="line"><span class="cl"><span class="k">mklink</span> /J <span class="s2">&#34;C:\原路径&#34;</span> <span class="s2">&#34;D:\新路径&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>或者用 <code>/D</code>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"><span class="k">mklink</span> /D <span class="s2">&#34;C:\原路径&#34;</span> <span class="s2">&#34;D:\新路径&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="验证">验证
+</h3><p>打开 C 盘原路径，确认能正常访问 D 盘的文件。</p>
+
+    <blockquote>
+        <p>🔍 在 CMD 中进入父目录，执行 <code>dir</code>，链接项会显示 <code>&lt;JUNCTION&gt;</code> 或 <code>&lt;SYMLINKD&gt;</code> 标记。</p>
+
+    </blockquote>
+<hr>
+<h2 id="常见应用场景">常见应用场景
+</h2><h3 id="微信wechat-数据迁移-">微信/WeChat 数据迁移 ⭐
+</h3><p>微信是 C 盘杀手，聊天记录和文件缓存轻松几十 GB。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"># 关闭微信
+</span></span><span class="line"><span class="cl"># 移动数据目录
+</span></span><span class="line"><span class="cl"><span class="k">move</span> <span class="s2">&#34;</span><span class="nv">%USERPROFILE%</span><span class="s2">\Documents\WeChat Files&#34;</span> <span class="s2">&#34;D:\Data\WeChat Files&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># 创建链接
+</span></span><span class="line"><span class="cl"><span class="k">mklink</span> /J <span class="s2">&#34;</span><span class="nv">%USERPROFILE%</span><span class="s2">\Documents\WeChat Files&#34;</span> <span class="s2">&#34;D:\Data\WeChat Files&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    <blockquote>
+        <p>WeChat 新版路径可能在 <code>C:\Users\用户名\Documents\WeChat Files</code>，旧版在安装目录下的 <code>WeChat Files</code>。</p>
+
+    </blockquote>
+<h3 id="qq-数据迁移">QQ 数据迁移
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"># QQ 个人文件夹通常在
+</span></span><span class="line"><span class="cl"># C:\Users\用户名\Documents\Tencent Files
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">move</span> <span class="s2">&#34;C:\Users\你的用户名\Documents\Tencent Files&#34;</span> <span class="s2">&#34;D:\Data\Tencent Files&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">mklink</span> /J <span class="s2">&#34;C:\Users\你的用户名\Documents\Tencent Files&#34;</span> <span class="s2">&#34;D:\Data\Tencent Files&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="chrome--edge-浏览器缓存">Chrome / Edge 浏览器缓存
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"># Chrome 用户数据
+</span></span><span class="line"><span class="cl"><span class="k">move</span> <span class="s2">&#34;</span><span class="nv">%LOCALAPPDATA%</span><span class="s2">\Google\Chrome\User Data&#34;</span> <span class="s2">&#34;D:\BrowserData\Chrome&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">mklink</span> /J <span class="s2">&#34;</span><span class="nv">%LOCALAPPDATA%</span><span class="s2">\Google\Chrome\User Data&#34;</span> <span class="s2">&#34;D:\BrowserData\Chrome&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># Edge 用户数据
+</span></span><span class="line"><span class="cl"><span class="k">move</span> <span class="s2">&#34;</span><span class="nv">%LOCALAPPDATA%</span><span class="s2">\Microsoft\Edge\User Data&#34;</span> <span class="s2">&#34;D:\BrowserData\Edge&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">mklink</span> /J <span class="s2">&#34;</span><span class="nv">%LOCALAPPDATA%</span><span class="s2">\Microsoft\Edge\User Data&#34;</span> <span class="s2">&#34;D:\BrowserData\Edge&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="开发工具缓存">开发工具缓存
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"># pip 缓存
+</span></span><span class="line"><span class="cl"><span class="k">move</span> <span class="s2">&#34;</span><span class="nv">%LOCALAPPDATA%</span><span class="s2">\pip\cache&#34;</span> <span class="s2">&#34;D:\DevCache\pip&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">mklink</span> /J <span class="s2">&#34;</span><span class="nv">%LOCALAPPDATA%</span><span class="s2">\pip\cache&#34;</span> <span class="s2">&#34;D:\DevCache\pip&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># npm 缓存
+</span></span><span class="line"><span class="cl"><span class="k">move</span> <span class="s2">&#34;</span><span class="nv">%LOCALAPPDATA%</span><span class="s2">\npm-cache&#34;</span> <span class="s2">&#34;D:\DevCache\npm&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">mklink</span> /J <span class="s2">&#34;</span><span class="nv">%LOCALAPPDATA%</span><span class="s2">\npm-cache&#34;</span> <span class="s2">&#34;D:\DevCache\npm&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># Maven 本地仓库
+</span></span><span class="line"><span class="cl"><span class="k">move</span> <span class="s2">&#34;</span><span class="nv">%USERPROFILE%</span><span class="s2">\.m2\repository&#34;</span> <span class="s2">&#34;D:\DevCache\maven&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">mklink</span> /J <span class="s2">&#34;</span><span class="nv">%USERPROFILE%</span><span class="s2">\.m2\repository&#34;</span> <span class="s2">&#34;D:\DevCache\maven&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    <blockquote>
+        <p>更推荐的做法是直接配置包管理器的缓存路径（如 <code>npm config set cache</code>），环境变量方案更稳定。mklink 作为兜底方案。</p>
+
+    </blockquote>
+<h3 id="windows-应用商店应用--大型游戏">Windows 应用商店应用 / 大型游戏
+</h3><p>部分 UWP 应用和 Xbox Game Pass 游戏无法修改安装路径，可以通过 mklink 迁移。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"># 以 Forza Horizon 等游戏为例
+</span></span><span class="line"><span class="cl"># 通常在 C:\Program Files\WindowsApps 或 C:\XboxGames
+</span></span><span class="line"><span class="cl"># 需要先获取文件夹权限（TrustedInstaller）
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    <blockquote>
+        <p>⚠️ 操作 WindowsApps 目录较复杂，涉及权限获取，普通用户谨慎操作。</p>
+
+    </blockquote>
+<h3 id="onedrive--icloud-云盘同步目录">OneDrive / iCloud 云盘同步目录
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"><span class="k">move</span> <span class="s2">&#34;C:\Users\你的用户名\OneDrive&#34;</span> <span class="s2">&#34;D:\OneDrive&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">mklink</span> /J <span class="s2">&#34;C:\Users\你的用户名\OneDrive&#34;</span> <span class="s2">&#34;D:\OneDrive&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="注意事项--避坑指南">注意事项 &amp; 避坑指南
+</h2><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>问题</th>
+					<th>说明</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>必须先移动再链接</strong></td>
+					<td><code>mklink</code> 要求目标路径 <strong>不存在</strong>，否则报错 <code>文件已存在</code></td>
+			</tr>
+			<tr>
+					<td><strong>移动前备份</strong></td>
+					<td>虽然操作可逆，但建议重要数据先备份</td>
+			</tr>
+			<tr>
+					<td><strong>不要对系统关键目录操作</strong></td>
+					<td><code>C:\Windows</code>、<code>C:\Program Files</code> 等系统目录勿动</td>
+			</tr>
+			<tr>
+					<td><strong>删除链接 ≠ 删除数据</strong></td>
+					<td>在 C 盘删除那个&quot;快捷方式&quot;只删除链接，D 盘数据还在</td>
+			</tr>
+			<tr>
+					<td><strong>删除链接的正确姿势</strong></td>
+					<td><code>rmdir &quot;C:\链接路径&quot;</code>（不是 <code>del</code>）</td>
+			</tr>
+			<tr>
+					<td><strong>以管理员身份运行 CMD</strong></td>
+					<td>部分目录需要管理员权限才能创建链接</td>
+			</tr>
+			<tr>
+					<td><strong>NTFS 文件系统</strong></td>
+					<td>仅 NTFS 支持，FAT32/exFAT 不支持</td>
+			</tr>
+			<tr>
+					<td><strong>还原操作</strong></td>
+					<td>删除链接 → 把 D 盘数据移回 C 盘原路径即可</td>
+			</tr>
+	</tbody>
+</table></div>
+<h3 id="删除还原一个链接">删除/还原一个链接
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"># 删除链接（不会删除 D 盘的原始数据）
+</span></span><span class="line"><span class="cl"><span class="k">rmdir</span> <span class="s2">&#34;C:\原路径&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># 如果需要还原：把数据移回来
+</span></span><span class="line"><span class="cl"><span class="k">move</span> <span class="s2">&#34;D:\新路径&#34;</span> <span class="s2">&#34;C:\原路径&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="快速诊断-c-盘谁在占用空间">快速诊断 C 盘：谁在占用空间？
+</h2><p>在执行 mklink 之前，建议先用工具分析 C 盘，找到真正的&quot;元凶&quot;：</p>
+<div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>工具</th>
+					<th>特点</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>WizTree</strong></td>
+					<td>极速扫描，直观的树图，免费</td>
+			</tr>
+			<tr>
+					<td><strong>SpaceSniffer</strong></td>
+					<td>可视化方块图，直观</td>
+			</tr>
+			<tr>
+					<td><strong>TreeSize Free</strong></td>
+					<td>经典工具，按文件夹大小排序</td>
+			</tr>
+			<tr>
+					<td><strong>Windows 自带磁盘清理</strong></td>
+					<td><code>cleanmgr</code>，清理临时文件和更新残留</td>
+			</tr>
+	</tbody>
+</table></div>
+
+    <blockquote>
+        <p>🔥 推荐 <strong>WizTree</strong>——直接用 MFT 解析，几秒扫描完整个硬盘。</p>
+
+    </blockquote>
+<hr>
+<h2 id="总结">总结
+</h2><p><code>mklink</code> 的核心思想就是：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">软件以为数据还在 C:\某路径
+</span></span><span class="line"><span class="cl">       ↓ (mklink 创建的链接)
+</span></span><span class="line"><span class="cl">实际存储在 D:\某路径
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>操作口诀</strong>：关闭软件 → 移动文件夹 → mklink 链接 → 验证能用</p>
+<p>它比「改注册表」「重装到其他盘」更安全、可逆、高效。掌握这个命令，C 盘再也不会莫名其妙爆红了。🎉</p>
+<hr>
+<h2 id="相关阅读">相关阅读
+</h2><ul>
+<li>磁盘清理工具：WizTree / SpaceSniffer</li>
+<li>包管理器缓存路径配置：npm / pip / cargo 官方文档</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/windows/">Windows</a>
+        
+            <a href="/tags/%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86/">磁盘管理</a>
+        
+            <a href="/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+        
+            <a href="/tags/%E6%8A%80%E5%B7%A7/">技巧</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under <a class="link" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"  target="_blank" rel="noopener"
+    >CC BY-NC-SA 4.0</a></span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title">相关文章</h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/c-%E7%9B%98%E7%88%86%E6%BB%A1%E7%94%A8%E5%85%B6%E4%BB%96%E7%9B%98%E7%BB%99-c-%E7%9B%98%E6%89%A9%E5%AE%B9/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post C 盘爆满？用其他盘给 C 盘扩容" loading="lazy" src="/p/c-%E7%9B%98%E7%88%86%E6%BB%A1%E7%94%A8%E5%85%B6%E4%BB%96%E7%9B%98%E7%BB%99-c-%E7%9B%98%E6%89%A9%E5%AE%B9/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">C 盘爆满？用其他盘给 C 盘扩容</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/hugo--stack--github-pages-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post Hugo + Stack + GitHub Pages 博客搭建指南" loading="lazy" src="/p/hugo--stack--github-pages-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Hugo &#43; Stack &#43; GitHub Pages 博客搭建指南</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+
+        <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2026 Yanmu
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="4.0.2">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.f856840516f7c2ad1769a8f5937e3d08d6cb386e2cd2dd025ae696e0ff207958.js" defer></script>
+
+
+    </body>
+</html>
