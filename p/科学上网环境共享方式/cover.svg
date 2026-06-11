@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a2a6c"/>
+      <stop offset="100%" style="stop-color:#11998e"/>
+    </linearGradient>
+    <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="white" opacity="0.1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="400" fill="url(#bg)"/>
+  <rect width="800" height="400" fill="url(#dots)"/>
+  <text x="400" y="140" text-anchor="middle" font-family="Arial,sans-serif" font-size="44" fill="white" opacity="0.95">科学上网环境共享</text>
+  <text x="400" y="210" text-anchor="middle" font-family="Arial,sans-serif" font-size="28" fill="white" opacity="0.8">三种网络共享模式详解</text>
+  <text x="400" y="275" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="white" opacity="0.6">代理共享 · 网关共享 · 路由共享</text>
+  <text x="400" y="320" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="white" opacity="0.5">Proxy Network Sharing Guide</text>
+</svg>

@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="三种共享模式概览 模式 别称 说明 代理共享模式 允许局域网 设备通过代理软件转发请求 网关共享模式 旁路网关、透明代理 设备将网关指向代理主机 路由共享模式 WIFI 热点 主机独立开辟网段分配 IP 概览图： ">
+<title>科学上网环境共享方式</title>
+
+
+<link rel="canonical" href="https://AkuamT.github.io/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.ed668df6847002e96da55125322b5655e4e3773453c2addee35312e6bbf6cb10.css"><meta property='og:title' content="科学上网环境共享方式">
+<meta property='og:description' content="三种共享模式概览 模式 别称 说明 代理共享模式 允许局域网 设备通过代理软件转发请求 网关共享模式 旁路网关、透明代理 设备将网关指向代理主机 路由共享模式 WIFI 热点 主机独立开辟网段分配 IP 概览图： ">
+<meta property='og:url' content='https://AkuamT.github.io/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/'>
+<meta property='og:site_name' content='Yanmu'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Windows' /><meta property='article:tag' content='代理' /><meta property='article:tag' content='网络' /><meta property='article:tag' content='科学上网' /><meta property='article:published_time' content='2026-06-11T23:00:00&#43;08:00'/><meta property='article:modified_time' content='2026-06-11T23:00:00&#43;08:00'/><meta property='og:image' content='https://AkuamT.github.io/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/cover.svg' />
+<meta name="twitter:title" content="科学上网环境共享方式">
+<meta name="twitter:description" content="三种共享模式概览 模式 别称 说明 代理共享模式 允许局域网 设备通过代理软件转发请求 网关共享模式 旁路网关、透明代理 设备将网关指向代理主机 路由共享模式 WIFI 热点 主机独立开辟网段分配 IP 概览图： "><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://AkuamT.github.io/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/cover.svg' />
+    <link rel="shortcut icon" href="img/avatar.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/">
+                    <img src="/img/Yanmu.jpg" 
+                        width="1024"
+                        height="1037"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">💻 </span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Yanmu</a></h1>
+            <h2 class="site-description">「愿你成为自己的太阳，无需借谁的光」</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/AkuamT'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E9%93%BE%E6%8E%A5/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                <option value="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/" selected>简体中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                <option value="/en/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/" >English</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                <option value="/zh-hant-tw/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/" >繁体中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/ja/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/" >日本語</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#三种共享模式概览">三种共享模式概览</a></li>
+    <li><a href="#代理共享模式">代理共享模式</a>
+      <ol>
+        <li><a href="#工作原理">工作原理</a></li>
+        <li><a href="#操作示例手机通过电脑代理上网">操作示例：手机通过电脑代理上网</a></li>
+        <li><a href="#操作示例电脑代理手机请求反向">操作示例：电脑代理手机请求（反向）</a></li>
+        <li><a href="#关于-udp-代理">关于 UDP 代理</a></li>
+        <li><a href="#优缺点">优缺点</a></li>
+      </ol>
+    </li>
+    <li><a href="#网关共享模式">网关共享模式</a>
+      <ol>
+        <li><a href="#工作原理-1">工作原理</a></li>
+        <li><a href="#优缺点-1">优缺点</a></li>
+        <li><a href="#通过-linux-虚拟机实现">通过 Linux 虚拟机实现</a></li>
+      </ol>
+    </li>
+    <li><a href="#路由共享模式">路由共享模式</a>
+      <ol>
+        <li><a href="#工作原理-2">工作原理</a></li>
+        <li><a href="#优缺点-2">优缺点</a></li>
+        <li><a href="#windows-下的配置方法">Windows 下的配置方法</a></li>
+        <li><a href="#应用场景">应用场景</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/">
+            <img alt="Featured image of post 科学上网环境共享方式" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/cover.svg">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/categories/tutorial/" style="background-color: #2563eb; color: #fff;">
+                教程
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/">科学上网环境共享方式</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-06-11T23:00:00&#43;08:00'>2026年6月11日星期四</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        阅读时长: 4 分钟
+                    </time>
+                
+            </div>
+        
+
+        
+            <div class="inline-meta">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                
+                    <a href="/en/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/" class="link">English</a>
+                
+                    <a href="/zh-hant-tw/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/" class="link">繁体中文</a>
+                
+                    <a href="/ja/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/" class="link">日本語</a>
+                
+            </div>
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span>目录</span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#三种共享模式概览">三种共享模式概览</a></li>
+    <li><a href="#代理共享模式">代理共享模式</a>
+      <ol>
+        <li><a href="#工作原理">工作原理</a></li>
+        <li><a href="#操作示例手机通过电脑代理上网">操作示例：手机通过电脑代理上网</a></li>
+        <li><a href="#操作示例电脑代理手机请求反向">操作示例：电脑代理手机请求（反向）</a></li>
+        <li><a href="#关于-udp-代理">关于 UDP 代理</a></li>
+        <li><a href="#优缺点">优缺点</a></li>
+      </ol>
+    </li>
+    <li><a href="#网关共享模式">网关共享模式</a>
+      <ol>
+        <li><a href="#工作原理-1">工作原理</a></li>
+        <li><a href="#优缺点-1">优缺点</a></li>
+        <li><a href="#通过-linux-虚拟机实现">通过 Linux 虚拟机实现</a></li>
+      </ol>
+    </li>
+    <li><a href="#路由共享模式">路由共享模式</a>
+      <ol>
+        <li><a href="#工作原理-2">工作原理</a></li>
+        <li><a href="#优缺点-2">优缺点</a></li>
+        <li><a href="#windows-下的配置方法">Windows 下的配置方法</a></li>
+        <li><a href="#应用场景">应用场景</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h2 id="三种共享模式概览">三种共享模式概览
+</h2><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>模式</th>
+					<th>别称</th>
+					<th>说明</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>代理共享模式</td>
+					<td>允许局域网</td>
+					<td>设备通过代理软件转发请求</td>
+			</tr>
+			<tr>
+					<td>网关共享模式</td>
+					<td>旁路网关、透明代理</td>
+					<td>设备将网关指向代理主机</td>
+			</tr>
+			<tr>
+					<td>路由共享模式</td>
+					<td>WIFI 热点</td>
+					<td>主机独立开辟网段分配 IP</td>
+			</tr>
+	</tbody>
+</table></div>
+<p>概览图：
+<img class="gallery-image" data-flex-basis="295px" data-flex-grow="123" height="929" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/Pasted-image-20260611010018.png" srcset="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/Pasted-image-20260611010018_hu_605a75c4cac0224a.png 800w, /p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/Pasted-image-20260611010018.png 1143w" width="1143"></p>
+<hr>
+<h2 id="代理共享模式">代理共享模式
+</h2><h3 id="工作原理">工作原理
+</h3><p>假设你的电脑运行了 Clash 或 V2Ray 并开启了代理共享，你可以在手机上设置通过电脑代理你的请求访问。流程如下：</p>
+<ol>
+<li>手机的访问请求 → <strong>电脑</strong>（V2Ray/Clash 处理）→ <strong>网关（路由器）</strong> → 互联网</li>
+<li>互联网响应 → <strong>网关（路由器）</strong> → <strong>电脑</strong> → <strong>手机</strong></li>
+</ol>
+<p>这就是代理共享模式的工作流程。</p>
+<h3 id="操作示例手机通过电脑代理上网">操作示例：手机通过电脑代理上网
+</h3><ol>
+<li>
+<p>在 V2Ray 中设置允许来自局域网的连接，可以看到 SOCKS5 端口和 HTTP 端口
+<img class="gallery-image" data-flex-basis="125px" data-flex-grow="52" height="1277" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-05-22.png" width="670"></p>
+
+    <blockquote>
+        <p>电脑使用的是 HTTP 代理，因此使用 <strong>10809</strong> 端口</p>
+
+    </blockquote>
+</li>
+<li>
+<p>查看手机连接的 WiFi 信息，获取手机 IP 地址
+<img class="gallery-image" data-flex-basis="123px" data-flex-grow="51" height="1264" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-06-53.png" width="648"></p>
+</li>
+<li>
+<p>在电脑的代理设置中填入手机的 IP 和端口
+<img class="gallery-image" data-flex-basis="358px" data-flex-grow="149" height="1010" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-07-47.png" srcset="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-07-47_hu_f6ba163f9be6936.png 800w, /p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-07-47.png 1509w" width="1509"></p>
+</li>
+</ol>
+<p>此时电脑的访问请求就会交给手机去处理了——电脑就可以进入 Google。如果关掉手机的 VPN，电脑也就无法访问。</p>
+<h3 id="操作示例电脑代理手机请求反向">操作示例：电脑代理手机请求（反向）
+</h3><p>反过来，用电脑去代理手机的请求也是一样的：</p>
+<ol>
+<li>
+<p>进入 V2Ray 参数设置，允许局域网连接
+<img class="gallery-image" data-flex-basis="400px" data-flex-grow="166" height="900" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-13-39.png" srcset="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-13-39_hu_a3769d628b23d5ff.png 800w, /p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-13-39.png 1500w" width="1500"></p>
+</li>
+<li>
+<p>在界面左下角即可看到代理端口
+<img class="gallery-image" data-flex-basis="362px" data-flex-grow="151" height="1191" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-14-45.png" srcset="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-14-45_hu_58525963efb8a58d.png 800w, /p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-14-45_hu_1e47fd44071a6d32.png 1600w, /p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-14-45.png 1800w" width="1800"></p>
+</li>
+<li>
+<p>进入手机的 WiFi 代理页面，IP 地址填电脑的 IP，端口填上图中的端口，即可进行代理</p>
+</li>
+</ol>
+<h3 id="关于-udp-代理">关于 UDP 代理
+</h3>
+    <blockquote>
+        <p><strong>注意：</strong> 一般我们在手机设置中的系统代理是 <strong>HTTP 代理</strong>，而 HTTP 代理不支持 UDP 传输。若要传输 UDP，则需要使用 SOCKS 代理。由于系统代理不支持 SOCKS 代理，需要借助第三方 VPN 工具。</p>
+
+    </blockquote>
+<p>在手机上 V2Ray 创建一条 SOCKS 代理：</p>
+<ul>
+<li><strong>服务器：</strong> 填写电脑的 IP 地址</li>
+<li><strong>端口：</strong> 填写电脑 V2Ray 的 SOCKS 端口</li>
+</ul>
+<p><img class="gallery-image" data-flex-basis="188px" data-flex-grow="78" height="853" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-17-12.png" width="671"></p>
+<p>这样就可以代理 UDP 数据了。不过最终能否代理成功，还得看你的节点是否支持 UDP 代理。</p>
+<h3 id="优缺点">优缺点
+</h3><p><strong>优点：</strong></p>
+<ul>
+<li>基本上所有代理工具都支持开启代理共享模式</li>
+</ul>
+<p><strong>缺点：</strong></p>
+<ul>
+<li>每台网络设备都需要单独设置</li>
+<li>有的网络设备不支持（如电视盒子），导致无法使用这种方式</li>
+</ul>
+<hr>
+<h2 id="网关共享模式">网关共享模式
+</h2><h3 id="工作原理-1">工作原理
+</h3><p>网关共享模式也叫<strong>旁路网关</strong>、<strong>透明代理</strong>或<strong>透明网关</strong>。</p>
+<p>通常路由器给每台设备分配 IP。开启网关模式后，路由器将电脑的 IP 分配给每台设备作为<strong>网关</strong>。</p>
+<p><img class="gallery-image" data-flex-basis="461px" data-flex-grow="192" height="1247" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-24-22.png" srcset="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-24-22_hu_f093e72c498b81db.png 800w, /p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-24-22_hu_edcd86dbb3ea811.png 1600w, /p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-24-22.png 2397w" width="2397"></p>
+<p>工作流程：手机要访问 Google → 数据交给网关（即电脑）处理 → 电脑处理完数据后交给路由器</p>
+
+    <blockquote>
+        <p><strong>重点：</strong> 局域网内所有设备访问互联网都会经过网关处理。</p>
+
+    </blockquote>
+<h3 id="优缺点-1">优缺点
+</h3><p><strong>优势：</strong></p>
+<ul>
+<li>配置更灵活，可以单独设置每台设备的网关，也可以让路由器统一修改局域网内所有设备的网关</li>
+<li>最大的优势是：网关级的系统代理可以接管系统<strong>所有流量</strong>。即使某些应用不走代理、某些设备不支持代理，但只要访问互联网就一定会经过网关。设备本身并不知道自己被科学代理了</li>
+<li>这种方式也叫<strong>透明代理</strong>或<strong>透明网关</strong></li>
+</ul>
+<p><strong>缺点：</strong></p>
+<ul>
+<li>不是所有系统都支持。Windows 系统不支持，macOS 和 Linux 支持</li>
+</ul>
+<h3 id="通过-linux-虚拟机实现">通过 Linux 虚拟机实现
+</h3><p>由于 Windows 不支持网关共享模式，可以通过安装 <strong>Linux 虚拟机</strong>来实现。</p>
+<ol>
+<li>虚拟机使用<strong>桥接模式</strong>（与物理机在同一局域网）</li>
+<li>开启 root 用户</li>
+<li>开启 IP 转发和 TUN 模式：
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sysctl -w net.ipv4.ip_forward<span class="o">=</span><span class="m">1</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>进入电脑的 IP 设置，将<strong>默认网关</strong>设置为 Linux 虚拟机的 IP 地址</li>
+</ol>
+<p><strong>缺点：</strong> 如果没有局域网则无法实现。</p>
+<hr>
+<h2 id="路由共享模式">路由共享模式
+</h2><h3 id="工作原理-2">工作原理
+</h3><p>开启路由共享模式后，电脑会独立开辟一个网段（图中绿色的 <strong>192.168.137.1</strong>）。其他设备连接这台电脑后，电脑负责给每台设备分配 IP、网关等信息。相当于电脑把路由器的活干了，因此称之为<strong>路由共享模式</strong>。</p>
+<p><img class="gallery-image" data-flex-basis="374px" data-flex-grow="156" height="1158" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-39-06.png" srcset="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-39-06_hu_7556cb085f5b9b63.png 800w, /p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-39-06_hu_caff2ffb676554da.png 1600w, /p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-39-06.png 1809w" width="1809"></p>
+<h3 id="优缺点-2">优缺点
+</h3><p><strong>优点：</strong></p>
+<ul>
+<li>很多，适用场景广</li>
+</ul>
+<p><strong>缺点：</strong></p>
+<ul>
+<li>多了一层 NAT，对性能有一定要求</li>
+<li>存在两个不同的局域网网段，默认情况下这两个网段无法相互通信</li>
+<li>大部分手机不支持路由模式共享 VPN 网络，需要 Root 权限</li>
+</ul>
+<h3 id="windows-下的配置方法">Windows 下的配置方法
+</h3><p>Windows 开启路由共享模式需要<strong>两个网口</strong>。大部分电脑只有一个网口，可以购买一个 <strong>USB 转网卡</strong>来添加额外网口。</p>
+<p><img class="gallery-image" data-flex-basis="494px" data-flex-grow="206" height="341" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-45-07.png" width="703"></p>
+<p>配置步骤：</p>
+<ol>
+<li>假设第一个网卡连接了局域网，第二个是空闲网卡</li>
+<li>开启 TUN 模式
+<img class="gallery-image" data-flex-basis="421px" data-flex-grow="175" height="397" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-45-54.png" width="697"></li>
+<li>可以看到 Clash 创建了一张虚拟网卡</li>
+<li>右键虚拟网卡 → <strong>属性</strong> → <strong>共享</strong> → 选择 <strong>&ldquo;允许其他网络用户&hellip;&rdquo;</strong>，网卡选择那张空闲网卡
+<img class="gallery-image" data-flex-basis="365px" data-flex-grow="152" height="362" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-46-58.png" width="552"></li>
+<li>这样就会开启一个新的网段，将 Clash 的科学上网环境共享给了这张空闲网卡</li>
+</ol>
+<h3 id="应用场景">应用场景
+</h3><p>这个空闲网卡可以通过<strong>网线</strong>连接到另一台电脑，另一台电脑<strong>不需要任何设置</strong>即可直接科学上网。更常见的场景是通过网线连接一台<strong>无线 AP</strong> 用于发射 WiFi。</p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/windows/">Windows</a>
+        
+            <a href="/tags/%E4%BB%A3%E7%90%86/">代理</a>
+        
+            <a href="/tags/%E7%BD%91%E7%BB%9C/">网络</a>
+        
+            <a href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">科学上网</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under <a class="link" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"  target="_blank" rel="noopener"
+    >CC BY-NC-SA 4.0</a></span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title">相关文章</h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/c-%E7%9B%98%E7%BB%8F%E5%B8%B8%E7%88%86%E6%BB%A1%E6%95%99%E4%BD%A0%E7%AE%80%E5%8D%95%E7%9A%84-dos-%E5%91%BD%E4%BB%A4-mklink-%E6%8B%AF%E6%95%91-c-%E7%9B%98/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post C 盘经常爆满？教你简单的 DOS 命令 mklink 拯救 C 盘！" loading="lazy" src="/p/c-%E7%9B%98%E7%BB%8F%E5%B8%B8%E7%88%86%E6%BB%A1%E6%95%99%E4%BD%A0%E7%AE%80%E5%8D%95%E7%9A%84-dos-%E5%91%BD%E4%BB%A4-mklink-%E6%8B%AF%E6%95%91-c-%E7%9B%98/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">C 盘经常爆满？教你简单的 DOS 命令 mklink 拯救 C 盘！</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/c-%E7%9B%98%E7%88%86%E6%BB%A1%E7%94%A8%E5%85%B6%E4%BB%96%E7%9B%98%E7%BB%99-c-%E7%9B%98%E6%89%A9%E5%AE%B9/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post C 盘爆满？用其他盘给 C 盘扩容" loading="lazy" src="/p/c-%E7%9B%98%E7%88%86%E6%BB%A1%E7%94%A8%E5%85%B6%E4%BB%96%E7%9B%98%E7%BB%99-c-%E7%9B%98%E6%89%A9%E5%AE%B9/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">C 盘爆满？用其他盘给 C 盘扩容</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/hugo--stack--github-pages-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post Hugo + Stack + GitHub Pages 博客搭建指南" loading="lazy" src="/p/hugo--stack--github-pages-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Hugo &#43; Stack &#43; GitHub Pages 博客搭建指南</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+
+        <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2026 Yanmu
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="4.0.2">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.f856840516f7c2ad1769a8f5937e3d08d6cb386e2cd2dd025ae696e0ff207958.js" defer></script>
+
+
+    </body>
+</html>

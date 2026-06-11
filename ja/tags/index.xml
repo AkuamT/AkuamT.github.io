@@ -5,17 +5,35 @@
         <description>Recent content in Tags on Yanmu</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>ja</language>
-        <lastBuildDate>Tue, 02 Jun 2026 00:00:00 +0800</lastBuildDate><atom:link href="https://AkuamT.github.io/ja/tags/index.xml" rel="self" type="application/rss+xml" /><item>
-            <title>Tips</title>
-            <link>https://AkuamT.github.io/ja/tags/tips/</link>
-            <pubDate>Tue, 02 Jun 2026 00:00:00 +0800</pubDate>
-            <guid>https://AkuamT.github.io/ja/tags/tips/</guid>
+        <lastBuildDate>Thu, 11 Jun 2026 23:00:00 +0800</lastBuildDate><atom:link href="https://AkuamT.github.io/ja/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+            <title>VPN</title>
+            <link>https://AkuamT.github.io/ja/tags/vpn/</link>
+            <pubDate>Thu, 11 Jun 2026 23:00:00 +0800</pubDate>
+            <guid>https://AkuamT.github.io/ja/tags/vpn/</guid>
             <description></description>
         </item><item>
             <title>Windows</title>
             <link>https://AkuamT.github.io/ja/tags/windows/</link>
-            <pubDate>Tue, 02 Jun 2026 00:00:00 +0800</pubDate>
+            <pubDate>Thu, 11 Jun 2026 23:00:00 +0800</pubDate>
             <guid>https://AkuamT.github.io/ja/tags/windows/</guid>
+            <description></description>
+        </item><item>
+            <title>ネットワーク</title>
+            <link>https://AkuamT.github.io/ja/tags/%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF/</link>
+            <pubDate>Thu, 11 Jun 2026 23:00:00 +0800</pubDate>
+            <guid>https://AkuamT.github.io/ja/tags/%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF/</guid>
+            <description></description>
+        </item><item>
+            <title>プロキシ</title>
+            <link>https://AkuamT.github.io/ja/tags/%E3%83%97%E3%83%AD%E3%82%AD%E3%82%B7/</link>
+            <pubDate>Thu, 11 Jun 2026 23:00:00 +0800</pubDate>
+            <guid>https://AkuamT.github.io/ja/tags/%E3%83%97%E3%83%AD%E3%82%AD%E3%82%B7/</guid>
+            <description></description>
+        </item><item>
+            <title>Tips</title>
+            <link>https://AkuamT.github.io/ja/tags/tips/</link>
+            <pubDate>Tue, 02 Jun 2026 00:00:00 +0800</pubDate>
+            <guid>https://AkuamT.github.io/ja/tags/tips/</guid>
             <description></description>
         </item><item>
             <title>ツール</title>

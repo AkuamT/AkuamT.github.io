@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="三つの共有モード概要 モード 別名 説明 プロキシ共有モード LAN許可 デバイスがプロキシソフト経由でリクエストを転送 ゲートウェイ共有モード バイパスゲートウェイ、透過プロキシ デバイスがゲートウェイをプロキシホストに設定 ルーティング共有モード WiFiホットスポット ホストが独立したサブネットを作成しIPを割り当て 概要図： ">
+<title>科学上网環境共有方法</title>
+
+
+<link rel="canonical" href="https://AkuamT.github.io/ja/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.ed668df6847002e96da55125322b5655e4e3773453c2addee35312e6bbf6cb10.css"><meta property='og:title' content="科学上网環境共有方法">
+<meta property='og:description' content="三つの共有モード概要 モード 別名 説明 プロキシ共有モード LAN許可 デバイスがプロキシソフト経由でリクエストを転送 ゲートウェイ共有モード バイパスゲートウェイ、透過プロキシ デバイスがゲートウェイをプロキシホストに設定 ルーティング共有モード WiFiホットスポット ホストが独立したサブネットを作成しIPを割り当て 概要図： ">
+<meta property='og:url' content='https://AkuamT.github.io/ja/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/'>
+<meta property='og:site_name' content='Yanmu'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Windows' /><meta property='article:tag' content='プロキシ' /><meta property='article:tag' content='ネットワーク' /><meta property='article:tag' content='VPN' /><meta property='article:published_time' content='2026-06-11T23:00:00&#43;08:00'/><meta property='article:modified_time' content='2026-06-11T23:00:00&#43;08:00'/><meta property='og:image' content='https://AkuamT.github.io/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/cover.svg' />
+<meta name="twitter:title" content="科学上网環境共有方法">
+<meta name="twitter:description" content="三つの共有モード概要 モード 別名 説明 プロキシ共有モード LAN許可 デバイスがプロキシソフト経由でリクエストを転送 ゲートウェイ共有モード バイパスゲートウェイ、透過プロキシ デバイスがゲートウェイをプロキシホストに設定 ルーティング共有モード WiFiホットスポット ホストが独立したサブネットを作成しIPを割り当て 概要図： "><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://AkuamT.github.io/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/cover.svg' />
+    <link rel="shortcut icon" href="img/avatar.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="メニューを開く・閉じる">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/ja/">
+                    <img src="/img/Yanmu.jpg" 
+                        width="1024"
+                        height="1037"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">💻 </span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/ja/">Yanmu</a></h1>
+            <h2 class="site-description">「誰の光を借りることもなく、自らが太陽となりますように。」</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/AkuamT'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/ja/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>ホーム</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/ja/%E6%A6%82%E8%A6%81/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>概要</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/ja/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>アーカイブ</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/ja/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>検索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/ja/%E3%83%AA%E3%83%B3%E3%82%AF/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>リンク</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                <option value="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/" >简体中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                <option value="/en/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/" >English</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                <option value="/zh-hant-tw/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/" >繁体中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/ja/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/" selected>日本語</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>ダークモード</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目次</h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#三つの共有モード概要">三つの共有モード概要</a></li>
+    <li><a href="#プロキシ共有モード">プロキシ共有モード</a>
+      <ol>
+        <li><a href="#仕組み">仕組み</a></li>
+        <li><a href="#操作例スマホがパソコンのプロキシを通じて接続">操作例：スマホがパソコンのプロキシを通じて接続</a></li>
+        <li><a href="#操作例パソコンがスマホのリクエストを代理逆方向">操作例：パソコンがスマホのリクエストを代理（逆方向）</a></li>
+        <li><a href="#udp-プロキシについて">UDP プロキシについて</a></li>
+        <li><a href="#長所と短所">長所と短所</a></li>
+      </ol>
+    </li>
+    <li><a href="#ゲートウェイ共有モード">ゲートウェイ共有モード</a>
+      <ol>
+        <li><a href="#仕組み-1">仕組み</a></li>
+        <li><a href="#長所と短所-1">長所と短所</a></li>
+        <li><a href="#linux-仮想マシンによる実装">Linux 仮想マシンによる実装</a></li>
+      </ol>
+    </li>
+    <li><a href="#ルーティング共有モード">ルーティング共有モード</a>
+      <ol>
+        <li><a href="#仕組み-2">仕組み</a></li>
+        <li><a href="#長所と短所-2">長所と短所</a></li>
+        <li><a href="#windows-での設定方法">Windows での設定方法</a></li>
+        <li><a href="#活用シナリオ">活用シナリオ</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/ja/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/">
+            <img alt="Featured image of post 科学上网環境共有方法" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/cover.svg">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/ja/categories/tutorial/" style="background-color: #2563eb; color: #fff;">
+                チュートリアル
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/ja/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/">科学上网環境共有方法</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-06-11T23:00:00&#43;08:00'>2026年6月11日木曜日</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        読了時間: 5分
+                    </time>
+                
+            </div>
+        
+
+        
+            <div class="inline-meta">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                
+                    <a href="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/" class="link">简体中文</a>
+                
+                    <a href="/en/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/" class="link">English</a>
+                
+                    <a href="/zh-hant-tw/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/" class="link">繁体中文</a>
+                
+            </div>
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span>目次</span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#三つの共有モード概要">三つの共有モード概要</a></li>
+    <li><a href="#プロキシ共有モード">プロキシ共有モード</a>
+      <ol>
+        <li><a href="#仕組み">仕組み</a></li>
+        <li><a href="#操作例スマホがパソコンのプロキシを通じて接続">操作例：スマホがパソコンのプロキシを通じて接続</a></li>
+        <li><a href="#操作例パソコンがスマホのリクエストを代理逆方向">操作例：パソコンがスマホのリクエストを代理（逆方向）</a></li>
+        <li><a href="#udp-プロキシについて">UDP プロキシについて</a></li>
+        <li><a href="#長所と短所">長所と短所</a></li>
+      </ol>
+    </li>
+    <li><a href="#ゲートウェイ共有モード">ゲートウェイ共有モード</a>
+      <ol>
+        <li><a href="#仕組み-1">仕組み</a></li>
+        <li><a href="#長所と短所-1">長所と短所</a></li>
+        <li><a href="#linux-仮想マシンによる実装">Linux 仮想マシンによる実装</a></li>
+      </ol>
+    </li>
+    <li><a href="#ルーティング共有モード">ルーティング共有モード</a>
+      <ol>
+        <li><a href="#仕組み-2">仕組み</a></li>
+        <li><a href="#長所と短所-2">長所と短所</a></li>
+        <li><a href="#windows-での設定方法">Windows での設定方法</a></li>
+        <li><a href="#活用シナリオ">活用シナリオ</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h2 id="三つの共有モード概要">三つの共有モード概要
+</h2><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>モード</th>
+					<th>別名</th>
+					<th>説明</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>プロキシ共有モード</td>
+					<td>LAN許可</td>
+					<td>デバイスがプロキシソフト経由でリクエストを転送</td>
+			</tr>
+			<tr>
+					<td>ゲートウェイ共有モード</td>
+					<td>バイパスゲートウェイ、透過プロキシ</td>
+					<td>デバイスがゲートウェイをプロキシホストに設定</td>
+			</tr>
+			<tr>
+					<td>ルーティング共有モード</td>
+					<td>WiFiホットスポット</td>
+					<td>ホストが独立したサブネットを作成しIPを割り当て</td>
+			</tr>
+	</tbody>
+</table></div>
+<p>概要図：
+<img class="gallery-image" data-flex-basis="295px" data-flex-grow="123" height="929" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/Pasted-image-20260611010018.png" srcset="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/Pasted-image-20260611010018_hu_605a75c4cac0224a.png 800w, /p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/Pasted-image-20260611010018.png 1143w" width="1143"></p>
+<hr>
+<h2 id="プロキシ共有モード">プロキシ共有モード
+</h2><h3 id="仕組み">仕組み
+</h3><p>あなたのパソコンで Clash や V2Ray を実行し、プロキシ共有を有効にしているとします。スマートフォンからパソコンを経由してインターネットにアクセスするように設定できます。流れは次のとおりです：</p>
+<ol>
+<li>スマホのアクセス要求 → <strong>パソコン</strong>（V2Ray/Clash が処理）→ <strong>ゲートウェイ（ルーター）</strong> → インターネット</li>
+<li>インターネットの応答 → <strong>ゲートウェイ（ルーター）</strong> → <strong>パソコン</strong> → <strong>スマホ</strong></li>
+</ol>
+<p>これがプロキシ共有モードの仕組みです。</p>
+<h3 id="操作例スマホがパソコンのプロキシを通じて接続">操作例：スマホがパソコンのプロキシを通じて接続
+</h3><ol>
+<li>
+<p>V2Ray で LAN 接続を許可し、SOCKS5 ポートと HTTP ポートを確認
+<img class="gallery-image" data-flex-basis="125px" data-flex-grow="52" height="1277" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-05-22.png" width="670"></p>
+
+    <blockquote>
+        <p>パソコンは HTTP プロキシを使用しているため、<strong>10809</strong> ポートを使用</p>
+
+    </blockquote>
+</li>
+<li>
+<p>スマホの WiFi 接続情報を確認し、スマホの IP アドレスを取得
+<img class="gallery-image" data-flex-basis="123px" data-flex-grow="51" height="1264" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-06-53.png" width="648"></p>
+</li>
+<li>
+<p>パソコンのプロキシ設定にスマホの IP とポートを入力
+<img class="gallery-image" data-flex-basis="358px" data-flex-grow="149" height="1010" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-07-47.png" srcset="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-07-47_hu_f6ba163f9be6936.png 800w, /p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-07-47.png 1509w" width="1509"></p>
+</li>
+</ol>
+<p>これでパソコンのアクセス要求がスマホ経由で処理されるようになります。スマホの VPN をオフにすると、パソコンもアクセスできなくなります。</p>
+<h3 id="操作例パソコンがスマホのリクエストを代理逆方向">操作例：パソコンがスマホのリクエストを代理（逆方向）
+</h3><p>逆に、パソコンでスマホのリクエストを代理する場合も同様です：</p>
+<ol>
+<li>
+<p>V2Ray のパラメータ設定で LAN 接続を許可
+<img class="gallery-image" data-flex-basis="400px" data-flex-grow="166" height="900" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-13-39.png" srcset="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-13-39_hu_a3769d628b23d5ff.png 800w, /p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-13-39.png 1500w" width="1500"></p>
+</li>
+<li>
+<p>左下にプロキシポートが表示されます
+<img class="gallery-image" data-flex-basis="362px" data-flex-grow="151" height="1191" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-14-45.png" srcset="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-14-45_hu_58525963efb8a58d.png 800w, /p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-14-45_hu_1e47fd44071a6d32.png 1600w, /p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-14-45.png 1800w" width="1800"></p>
+</li>
+<li>
+<p>スマホの WiFi プロキシ設定で、IP アドレスにパソコンの IP、ポートに図のポートを入力</p>
+</li>
+</ol>
+<h3 id="udp-プロキシについて">UDP プロキシについて
+</h3>
+    <blockquote>
+        <p><strong>注意：</strong> スマホのシステムプロキシは通常 <strong>HTTP プロキシ</strong>であり、HTTP プロキシは UDP 転送をサポートしていません。UDP を転送するには SOCKS プロキシを使用する必要があります。システムプロキシは SOCKS に対応していないため、サードパーティの VPN ツールが必要です。</p>
+
+    </blockquote>
+<p>スマホの V2Ray で SOCKS プロキシを作成：</p>
+<ul>
+<li><strong>サーバー：</strong> パソコンの IP アドレスを入力</li>
+<li><strong>ポート：</strong> パソコンの V2Ray SOCKS ポートを入力</li>
+</ul>
+<p><img class="gallery-image" data-flex-basis="188px" data-flex-grow="78" height="853" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-17-12.png" width="671"></p>
+<p>これで UDP データをプロキシできます。ただし、最終的に UDP プロキシが成功するかどうかは、ノードが UDP をサポートしているかどうかに依存します。</p>
+<h3 id="長所と短所">長所と短所
+</h3><p><strong>長所：</strong></p>
+<ul>
+<li>ほぼすべてのプロキシツールがプロキシ共有モードに対応</li>
+</ul>
+<p><strong>短所：</strong></p>
+<ul>
+<li>各ネットワークデバイスを個別に設定する必要がある</li>
+<li>一部のデバイス（TVボックスなど）は設定に対応しておらず、この方法が使えない</li>
+</ul>
+<hr>
+<h2 id="ゲートウェイ共有モード">ゲートウェイ共有モード
+</h2><h3 id="仕組み-1">仕組み
+</h3><p>ゲートウェイ共有モードは<strong>バイパスゲートウェイ</strong>、<strong>透過プロキシ</strong>、または<strong>透過ゲートウェイ</strong>とも呼ばれます。</p>
+<p>通常、ルーターが各デバイスに IP を割り当てます。ゲートウェイモードを有効にすると、ルーターはパソコンの IP をすべてのデバイスの<strong>ゲートウェイ</strong>として割り当てます。</p>
+<p><img class="gallery-image" data-flex-basis="461px" data-flex-grow="192" height="1247" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-24-22.png" srcset="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-24-22_hu_f093e72c498b81db.png 800w, /p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-24-22_hu_edcd86dbb3ea811.png 1600w, /p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-24-22.png 2397w" width="2397"></p>
+<p>処理の流れ：スマホが Google にアクセス → データがゲートウェイ（パソコン）に送られる → パソコンがデータを処理してルーターに転送</p>
+
+    <blockquote>
+        <p><strong>重要：</strong> ローカルネットワーク内のすべてのデバイスのインターネットアクセスがゲートウェイを経由します。</p>
+
+    </blockquote>
+<h3 id="長所と短所-1">長所と短所
+</h3><p><strong>長所：</strong></p>
+<ul>
+<li>柔軟な設定が可能。デバイスごとにゲートウェイを個別設定できるほか、ルーターで全デバイスのゲートウェイを一括変更もできる</li>
+<li>最大の利点：ゲートウェイレベルのシステムプロキシはシステムの<strong>すべてのトラフィック</strong>を捕捉できる。プロキシを使わないアプリやプロキシ設定に対応していないデバイスでも、インターネットにアクセスする限り必ずゲートウェイを通過する。デバイス自身はプロキシされていることに気づかない</li>
+<li>そのため<strong>透過プロキシ</strong>または<strong>透過ゲートウェイ</strong>と呼ばれる</li>
+</ul>
+<p><strong>短所：</strong></p>
+<ul>
+<li>すべての OS が対応しているわけではない。Windows は非対応、macOS と Linux は対応</li>
+</ul>
+<h3 id="linux-仮想マシンによる実装">Linux 仮想マシンによる実装
+</h3><p>Windows はゲートウェイ共有モードに対応していないため、<strong>Linux 仮想マシン</strong>をインストールして実現します。</p>
+<ol>
+<li>仮想マシンは<strong>ブリッジモード</strong>を使用（ホストと同じ LAN）</li>
+<li>root ユーザーを有効化</li>
+<li>IP フォワーディングと TUN モードを有効化：
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sysctl -w net.ipv4.ip_forward<span class="o">=</span><span class="m">1</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>パソコンの IP 設定で<strong>デフォルトゲートウェイ</strong>を Linux VM の IP アドレスに設定</li>
+</ol>
+<p><strong>制限：</strong> LAN がないと実装できません。</p>
+<hr>
+<h2 id="ルーティング共有モード">ルーティング共有モード
+</h2><h3 id="仕組み-2">仕組み
+</h3><p>ルーティング共有モードを有効にすると、パソコンが独立したサブネット（図の緑色の <strong>192.168.137.1</strong>）を作成します。他のデバイスがこのパソコンに接続すると、パソコンが各デバイスに IP やゲートウェイ情報を割り当てます。いわばパソコンがルーターの仕事を代行するため、<strong>ルーティング共有モード</strong>と呼ばれます。</p>
+<p><img class="gallery-image" data-flex-basis="374px" data-flex-grow="156" height="1158" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-39-06.png" srcset="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-39-06_hu_7556cb085f5b9b63.png 800w, /p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-39-06_hu_caff2ffb676554da.png 1600w, /p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-39-06.png 1809w" width="1809"></p>
+<h3 id="長所と短所-2">長所と短所
+</h3><p><strong>長所：</strong></p>
+<ul>
+<li>多く、適用範囲が広い</li>
+</ul>
+<p><strong>短所：</strong></p>
+<ul>
+<li>NAT レイヤーが追加され、パフォーマンスに影響がある</li>
+<li>異なる LAN セグメントが2つ存在し、デフォルトでは相互通信できない</li>
+<li>ほとんどのスマートフォンは Root 権限なしではルーティングモードでの VPN 共有に対応していない</li>
+</ul>
+<h3 id="windows-での設定方法">Windows での設定方法
+</h3><p>Windows でルーティング共有モードを有効にするには<strong>2つのネットワークインターフェース</strong>が必要です。ほとんどのパソコンは1つしかないため、<strong>USB イーサネットアダプター</strong>を購入して増設します。</p>
+<p><img class="gallery-image" data-flex-basis="494px" data-flex-grow="206" height="341" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-45-07.png" width="703"></p>
+<p>設定手順：</p>
+<ol>
+<li>1つ目の NIC が LAN に接続、2つ目は空きと仮定</li>
+<li>TUN モードを有効化
+<img class="gallery-image" data-flex-basis="421px" data-flex-grow="175" height="397" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-45-54.png" width="697"></li>
+<li>Clash が仮想ネットワークアダプターを作成する</li>
+<li>仮想アダプターを右クリック → <strong>プロパティ</strong> → <strong>共有</strong> → <strong>&ldquo;他のネットワークユーザーにこのコンピューターのインターネット接続をとおしての接続を許可する&rdquo;</strong> を選択し、空いている NIC を選択
+<img class="gallery-image" data-flex-basis="365px" data-flex-grow="152" height="362" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-46-58.png" width="552"></li>
+<li>新しいサブネットが作成され、Clash のプロキシ環境が空き NIC と共有される</li>
+</ol>
+<h3 id="活用シナリオ">活用シナリオ
+</h3><p>この空き NIC を<strong>イーサネットケーブル</strong>で別のパソコンに接続すると、そのパソコンは<strong>何の設定もせずに</strong>プロキシ経由でインターネットにアクセスできます。より一般的なシナリオは、<strong>無線 AP</strong> に接続して WiFi を提供することです。</p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/ja/tags/windows/">Windows</a>
+        
+            <a href="/ja/tags/%E3%83%97%E3%83%AD%E3%82%AD%E3%82%B7/">プロキシ</a>
+        
+            <a href="/ja/tags/%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF/">ネットワーク</a>
+        
+            <a href="/ja/tags/vpn/">VPN</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under <a class="link" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"  target="_blank" rel="noopener"
+    >CC BY-NC-SA 4.0</a></span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title">関連するコンテンツ</h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/ja/p/c%E3%83%89%E3%83%A9%E3%82%A4%E3%83%96%E3%81%8C%E9%A0%BB%E7%B9%81%E3%81%AB%E6%BA%80%E6%9D%AF%E3%81%AB%E7%B0%A1%E5%8D%98%E3%81%AAdos%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89-mklink-%E3%81%A7c%E3%83%89%E3%83%A9%E3%82%A4%E3%83%96%E3%82%92%E6%95%91%E6%B8%88/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post Cドライブが頻繁に満杯に？簡単なDOSコマンド mklink でCドライブを救済！" loading="lazy" src="/p/c-%E7%9B%98%E7%BB%8F%E5%B8%B8%E7%88%86%E6%BB%A1%E6%95%99%E4%BD%A0%E7%AE%80%E5%8D%95%E7%9A%84-dos-%E5%91%BD%E4%BB%A4-mklink-%E6%8B%AF%E6%95%91-c-%E7%9B%98/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Cドライブが頻繁に満杯に？簡単なDOSコマンド mklink でCドライブを救済！</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/ja/p/c%E3%83%89%E3%83%A9%E3%82%A4%E3%83%96%E3%81%AE%E7%A9%BA%E3%81%8D%E5%AE%B9%E9%87%8F%E4%B8%8D%E8%B6%B3%E4%BB%96%E3%81%AE%E3%83%89%E3%83%A9%E3%82%A4%E3%83%96%E3%81%A7%E6%8B%A1%E5%BC%B5%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post Cドライブの空き容量不足？他のドライブで拡張する方法" loading="lazy" src="/p/c-%E7%9B%98%E7%88%86%E6%BB%A1%E7%94%A8%E5%85%B6%E4%BB%96%E7%9B%98%E7%BB%99-c-%E7%9B%98%E6%89%A9%E5%AE%B9/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Cドライブの空き容量不足？他のドライブで拡張する方法</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+
+        <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2026 Yanmu
+    </section>
+    
+    <section class="powerby">
+        <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> で構築されています。 <br />
+        テーマ <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="4.0.2">Stack</a></b> は <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> によって設計されています。
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.8f587a582cd4e51d03a4840028b19d7deac2cee707cfe21ffe942b6666363a7f.js" defer></script>
+
+
+    </body>
+</html>

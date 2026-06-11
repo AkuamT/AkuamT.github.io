@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Overview of Three Sharing Modes Mode Also Known As Description Proxy Sharing Mode Allow LAN Devices forward requests through proxy software Gateway Sharing Mode Bypass Gateway, Transparent Proxy Devices point their gateway to the proxy host Routing Sharing Mode WiFi Hotspot Host creates an independent subnet and assigns IPs Overview diagram: Proxy Sharing Mode How It Works Suppose your computer is running Clash or V2Ray with proxy sharing enabled. You can set up your phone to route its requests through your computer. The flow is as follows:\n">
+<title>Methods for Sharing VPN and Proxy Connections Across Devices</title>
+
+
+<link rel="canonical" href="https://AkuamT.github.io/en/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.ed668df6847002e96da55125322b5655e4e3773453c2addee35312e6bbf6cb10.css"><meta property='og:title' content="Methods for Sharing VPN and Proxy Connections Across Devices">
+<meta property='og:description' content="Overview of Three Sharing Modes Mode Also Known As Description Proxy Sharing Mode Allow LAN Devices forward requests through proxy software Gateway Sharing Mode Bypass Gateway, Transparent Proxy Devices point their gateway to the proxy host Routing Sharing Mode WiFi Hotspot Host creates an independent subnet and assigns IPs Overview diagram: Proxy Sharing Mode How It Works Suppose your computer is running Clash or V2Ray with proxy sharing enabled. You can set up your phone to route its requests through your computer. The flow is as follows:\n">
+<meta property='og:url' content='https://AkuamT.github.io/en/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/'>
+<meta property='og:site_name' content='Yanmu'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Windows' /><meta property='article:tag' content='Proxy' /><meta property='article:tag' content='Network' /><meta property='article:tag' content='VPN' /><meta property='article:published_time' content='2026-06-11T23:00:00&#43;08:00'/><meta property='article:modified_time' content='2026-06-11T23:00:00&#43;08:00'/><meta property='og:image' content='https://AkuamT.github.io/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/cover.svg' />
+<meta name="twitter:title" content="Methods for Sharing VPN and Proxy Connections Across Devices">
+<meta name="twitter:description" content="Overview of Three Sharing Modes Mode Also Known As Description Proxy Sharing Mode Allow LAN Devices forward requests through proxy software Gateway Sharing Mode Bypass Gateway, Transparent Proxy Devices point their gateway to the proxy host Routing Sharing Mode WiFi Hotspot Host creates an independent subnet and assigns IPs Overview diagram: Proxy Sharing Mode How It Works Suppose your computer is running Clash or V2Ray with proxy sharing enabled. You can set up your phone to route its requests through your computer. The flow is as follows:\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://AkuamT.github.io/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/cover.svg' />
+    <link rel="shortcut icon" href="img/avatar.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/en/">
+                    <img src="/img/Yanmu.jpg" 
+                        width="1024"
+                        height="1037"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">💻 </span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/en/">Yanmu</a></h1>
+            <h2 class="site-description">「May you be your own sun, needing no light but your own.」</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/AkuamT'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/en/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/links/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                <option value="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/" >简体中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                <option value="/en/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/" selected>English</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                <option value="/zh-hant-tw/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/" >繁体中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/ja/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/" >日本語</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#overview-of-three-sharing-modes">Overview of Three Sharing Modes</a></li>
+    <li><a href="#proxy-sharing-mode">Proxy Sharing Mode</a>
+      <ol>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#example-phone-accessing-the-internet-through-computer-proxy">Example: Phone Accessing the Internet Through Computer Proxy</a></li>
+        <li><a href="#example-computer-proxying-phone-requests-reverse">Example: Computer Proxying Phone Requests (Reverse)</a></li>
+        <li><a href="#about-udp-proxy">About UDP Proxy</a></li>
+        <li><a href="#pros-and-cons">Pros and Cons</a></li>
+      </ol>
+    </li>
+    <li><a href="#gateway-sharing-mode">Gateway Sharing Mode</a>
+      <ol>
+        <li><a href="#how-it-works-1">How It Works</a></li>
+        <li><a href="#pros-and-cons-1">Pros and Cons</a></li>
+        <li><a href="#implementation-via-linux-virtual-machine">Implementation via Linux Virtual Machine</a></li>
+      </ol>
+    </li>
+    <li><a href="#routing-sharing-mode">Routing Sharing Mode</a>
+      <ol>
+        <li><a href="#how-it-works-2">How It Works</a></li>
+        <li><a href="#pros-and-cons-2">Pros and Cons</a></li>
+        <li><a href="#configuration-on-windows">Configuration on Windows</a></li>
+        <li><a href="#use-cases">Use Cases</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/en/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/">
+            <img alt="Featured image of post Methods for Sharing VPN and Proxy Connections Across Devices" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/cover.svg">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/en/categories/tutorial/" style="background-color: #2563eb; color: #fff;">
+                Tutorial
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/en/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/">Methods for Sharing VPN and Proxy Connections Across Devices</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-06-11T23:00:00&#43;08:00'>Thursday, June 11, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        2 minutes read
+                    </time>
+                
+            </div>
+        
+
+        
+            <div class="inline-meta">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                
+                    <a href="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/" class="link">简体中文</a>
+                
+                    <a href="/zh-hant-tw/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/" class="link">繁体中文</a>
+                
+                    <a href="/ja/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/" class="link">日本語</a>
+                
+            </div>
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span>Table of contents</span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#overview-of-three-sharing-modes">Overview of Three Sharing Modes</a></li>
+    <li><a href="#proxy-sharing-mode">Proxy Sharing Mode</a>
+      <ol>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#example-phone-accessing-the-internet-through-computer-proxy">Example: Phone Accessing the Internet Through Computer Proxy</a></li>
+        <li><a href="#example-computer-proxying-phone-requests-reverse">Example: Computer Proxying Phone Requests (Reverse)</a></li>
+        <li><a href="#about-udp-proxy">About UDP Proxy</a></li>
+        <li><a href="#pros-and-cons">Pros and Cons</a></li>
+      </ol>
+    </li>
+    <li><a href="#gateway-sharing-mode">Gateway Sharing Mode</a>
+      <ol>
+        <li><a href="#how-it-works-1">How It Works</a></li>
+        <li><a href="#pros-and-cons-1">Pros and Cons</a></li>
+        <li><a href="#implementation-via-linux-virtual-machine">Implementation via Linux Virtual Machine</a></li>
+      </ol>
+    </li>
+    <li><a href="#routing-sharing-mode">Routing Sharing Mode</a>
+      <ol>
+        <li><a href="#how-it-works-2">How It Works</a></li>
+        <li><a href="#pros-and-cons-2">Pros and Cons</a></li>
+        <li><a href="#configuration-on-windows">Configuration on Windows</a></li>
+        <li><a href="#use-cases">Use Cases</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h2 id="overview-of-three-sharing-modes">Overview of Three Sharing Modes
+</h2><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>Mode</th>
+					<th>Also Known As</th>
+					<th>Description</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Proxy Sharing Mode</td>
+					<td>Allow LAN</td>
+					<td>Devices forward requests through proxy software</td>
+			</tr>
+			<tr>
+					<td>Gateway Sharing Mode</td>
+					<td>Bypass Gateway, Transparent Proxy</td>
+					<td>Devices point their gateway to the proxy host</td>
+			</tr>
+			<tr>
+					<td>Routing Sharing Mode</td>
+					<td>WiFi Hotspot</td>
+					<td>Host creates an independent subnet and assigns IPs</td>
+			</tr>
+	</tbody>
+</table></div>
+<p>Overview diagram:
+<img class="gallery-image" data-flex-basis="295px" data-flex-grow="123" height="929" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/Pasted-image-20260611010018.png" srcset="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/Pasted-image-20260611010018_hu_605a75c4cac0224a.png 800w, /p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/Pasted-image-20260611010018.png 1143w" width="1143"></p>
+<hr>
+<h2 id="proxy-sharing-mode">Proxy Sharing Mode
+</h2><h3 id="how-it-works">How It Works
+</h3><p>Suppose your computer is running Clash or V2Ray with proxy sharing enabled. You can set up your phone to route its requests through your computer. The flow is as follows:</p>
+<ol>
+<li>Phone access request → <strong>Computer</strong> (processed by V2Ray/Clash) → <strong>Gateway (Router)</strong> → Internet</li>
+<li>Internet response → <strong>Gateway (Router)</strong> → <strong>Computer</strong> → <strong>Phone</strong></li>
+</ol>
+<p>This is how proxy sharing mode works.</p>
+<h3 id="example-phone-accessing-the-internet-through-computer-proxy">Example: Phone Accessing the Internet Through Computer Proxy
+</h3><ol>
+<li>
+<p>In V2Ray, enable LAN connections to see the SOCKS5 and HTTP ports
+<img class="gallery-image" data-flex-basis="125px" data-flex-grow="52" height="1277" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-05-22.png" width="670"></p>
+
+    <blockquote>
+        <p>The computer uses HTTP proxy, so port <strong>10809</strong> is used</p>
+
+    </blockquote>
+</li>
+<li>
+<p>Check the WiFi connection info on your phone to get its IP address
+<img class="gallery-image" data-flex-basis="123px" data-flex-grow="51" height="1264" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-06-53.png" width="648"></p>
+</li>
+<li>
+<p>Enter the phone&rsquo;s IP and port in your computer&rsquo;s proxy settings
+<img class="gallery-image" data-flex-basis="358px" data-flex-grow="149" height="1010" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-07-47.png" srcset="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-07-47_hu_f6ba163f9be6936.png 800w, /p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-07-47.png 1509w" width="1509"></p>
+</li>
+</ol>
+<p>Now your computer&rsquo;s requests will be handled by your phone—your computer can access Google. If you turn off the phone&rsquo;s VPN, the computer loses access too.</p>
+<h3 id="example-computer-proxying-phone-requests-reverse">Example: Computer Proxying Phone Requests (Reverse)
+</h3><p>The reverse setup—using your computer to proxy your phone&rsquo;s requests—works the same way:</p>
+<ol>
+<li>
+<p>Open V2Ray settings and allow LAN connections
+<img class="gallery-image" data-flex-basis="400px" data-flex-grow="166" height="900" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-13-39.png" srcset="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-13-39_hu_a3769d628b23d5ff.png 800w, /p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-13-39.png 1500w" width="1500"></p>
+</li>
+<li>
+<p>The proxy port is displayed in the lower-left corner
+<img class="gallery-image" data-flex-basis="362px" data-flex-grow="151" height="1191" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-14-45.png" srcset="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-14-45_hu_58525963efb8a58d.png 800w, /p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-14-45_hu_1e47fd44071a6d32.png 1600w, /p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-14-45.png 1800w" width="1800"></p>
+</li>
+<li>
+<p>Go to your phone&rsquo;s WiFi proxy settings, enter the computer&rsquo;s IP as the server address and the port shown in the screenshot</p>
+</li>
+</ol>
+<h3 id="about-udp-proxy">About UDP Proxy
+</h3>
+    <blockquote>
+        <p><strong>Note:</strong> The system proxy configured in phone settings is typically an <strong>HTTP proxy</strong>, which does not support UDP transport. To proxy UDP traffic, you need a SOCKS proxy. Since system proxy settings don&rsquo;t support SOCKS, you&rsquo;ll need a third-party VPN tool.</p>
+
+    </blockquote>
+<p>Create a SOCKS proxy in V2Ray on your phone:</p>
+<ul>
+<li><strong>Server:</strong> Enter your computer&rsquo;s IP address</li>
+<li><strong>Port:</strong> Enter your computer&rsquo;s V2Ray SOCKS port</li>
+</ul>
+<p><img class="gallery-image" data-flex-basis="188px" data-flex-grow="78" height="853" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-17-12.png" width="671"></p>
+<p>This allows UDP data to be proxied. However, whether UDP proxying actually works depends on whether your server node supports UDP.</p>
+<h3 id="pros-and-cons">Pros and Cons
+</h3><p><strong>Pros:</strong></p>
+<ul>
+<li>Almost all proxy tools support enabling proxy sharing mode</li>
+</ul>
+<p><strong>Cons:</strong></p>
+<ul>
+<li>Each network device needs to be configured individually</li>
+<li>Some devices (e.g., TV boxes) don&rsquo;t support proxy configuration, making this method unusable for them</li>
+</ul>
+<hr>
+<h2 id="gateway-sharing-mode">Gateway Sharing Mode
+</h2><h3 id="how-it-works-1">How It Works
+</h3><p>Gateway sharing mode is also called <strong>bypass gateway</strong>, <strong>transparent proxy</strong>, or <strong>transparent gateway</strong>.</p>
+<p>Typically, the router assigns IPs to each device. In gateway mode, the router assigns the computer&rsquo;s IP to every device as their <strong>gateway</strong>.</p>
+<p><img class="gallery-image" data-flex-basis="461px" data-flex-grow="192" height="1247" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-24-22.png" srcset="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-24-22_hu_f093e72c498b81db.png 800w, /p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-24-22_hu_edcd86dbb3ea811.png 1600w, /p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-24-22.png 2397w" width="2397"></p>
+<p>Workflow: When your phone wants to access Google → data is sent to the gateway (the computer) → the computer processes the data and forwards it to the router</p>
+
+    <blockquote>
+        <p><strong>Key point:</strong> All internet traffic from devices on the LAN goes through the gateway.</p>
+
+    </blockquote>
+<h3 id="pros-and-cons-1">Pros and Cons
+</h3><p><strong>Advantages:</strong></p>
+<ul>
+<li>Flexible configuration—you can set the gateway individually per device, or have the router change the gateway for all devices on the LAN at once</li>
+<li>The biggest advantage: a gateway-level system proxy can intercept <strong>all traffic</strong> on the system. Even if some applications don&rsquo;t use a proxy or certain devices don&rsquo;t support proxy settings, any internet access still passes through the gateway. The devices themselves don&rsquo;t even know they&rsquo;re being proxied</li>
+<li>This is why it&rsquo;s called <strong>transparent proxy</strong> or <strong>transparent gateway</strong></li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Not all operating systems support it. Windows does not support this mode; macOS and Linux do</li>
+</ul>
+<h3 id="implementation-via-linux-virtual-machine">Implementation via Linux Virtual Machine
+</h3><p>Since Windows doesn&rsquo;t support gateway sharing mode, you can install a <strong>Linux virtual machine</strong> to achieve it.</p>
+<ol>
+<li>Use <strong>bridged networking</strong> for the VM (same LAN as the host)</li>
+<li>Enable the root user</li>
+<li>Enable IP forwarding and TUN mode:
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sysctl -w net.ipv4.ip_forward<span class="o">=</span><span class="m">1</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>Go to your computer&rsquo;s IP settings and set the <strong>default gateway</strong> to the Linux VM&rsquo;s IP address</li>
+</ol>
+<p><strong>Limitation:</strong> This won&rsquo;t work without a LAN.</p>
+<hr>
+<h2 id="routing-sharing-mode">Routing Sharing Mode
+</h2><h3 id="how-it-works-2">How It Works
+</h3><p>When routing sharing mode is enabled, the computer creates an independent subnet (shown as <strong>192.168.137.1</strong> in green in the diagram). When other devices connect to this computer, the computer assigns them IPs, gateways, and other network info. The computer essentially takes over the router&rsquo;s job—hence the name <strong>routing sharing mode</strong>.</p>
+<p><img class="gallery-image" data-flex-basis="374px" data-flex-grow="156" height="1158" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-39-06.png" srcset="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-39-06_hu_7556cb085f5b9b63.png 800w, /p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-39-06_hu_caff2ffb676554da.png 1600w, /p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-39-06.png 1809w" width="1809"></p>
+<h3 id="pros-and-cons-2">Pros and Cons
+</h3><p><strong>Pros:</strong></p>
+<ul>
+<li>Many advantages, widely applicable</li>
+</ul>
+<p><strong>Cons:</strong></p>
+<ul>
+<li>Adds an extra NAT layer, requiring some performance overhead</li>
+<li>Creates two different LAN segments that cannot communicate with each other by default</li>
+<li>Most phones don&rsquo;t support sharing VPN networks through routing mode without Root access</li>
+</ul>
+<h3 id="configuration-on-windows">Configuration on Windows
+</h3><p>Enabling routing sharing mode on Windows requires <strong>two network interfaces</strong>. Most computers have only one, so you may need to purchase a <strong>USB Ethernet adapter</strong> to add an extra port.</p>
+<p><img class="gallery-image" data-flex-basis="494px" data-flex-grow="206" height="341" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-45-07.png" width="703"></p>
+<p>Setup steps:</p>
+<ol>
+<li>Assume the first NIC connects to your LAN and the second is idle</li>
+<li>Enable TUN mode
+<img class="gallery-image" data-flex-basis="421px" data-flex-grow="175" height="397" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-45-54.png" width="697"></li>
+<li>Clash will create a virtual network adapter</li>
+<li>Right-click the virtual adapter → <strong>Properties</strong> → <strong>Sharing</strong> → Select <strong>&ldquo;Allow other network users&hellip;&rdquo;</strong> and choose the idle NIC
+<img class="gallery-image" data-flex-basis="365px" data-flex-grow="152" height="362" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%8E%AF%E5%A2%83%E5%85%B1%E4%BA%AB%E6%96%B9%E5%BC%8F/images/PixPin_2026-06-11_01-46-58.png" width="552"></li>
+<li>This creates a new subnet, sharing Clash&rsquo;s proxy environment with the idle NIC</li>
+</ol>
+<h3 id="use-cases">Use Cases
+</h3><p>This idle NIC can be connected to another computer via an <strong>Ethernet cable</strong>, and that computer can access the internet through the proxy <strong>without any configuration</strong>. A more common scenario is connecting it to a <strong>wireless access point (AP)</strong> to broadcast WiFi.</p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/en/tags/windows/">Windows</a>
+        
+            <a href="/en/tags/proxy/">Proxy</a>
+        
+            <a href="/en/tags/network/">Network</a>
+        
+            <a href="/en/tags/vpn/">VPN</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under <a class="link" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"  target="_blank" rel="noopener"
+    >CC BY-NC-SA 4.0</a></span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title">Related content</h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/en/p/c-drive-always-full-use-the-simple-mklink-dos-command-to-save-your-c-drive/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post C Drive Always Full? Use the Simple mklink DOS Command to Save Your C Drive!" loading="lazy" src="/p/c-%E7%9B%98%E7%BB%8F%E5%B8%B8%E7%88%86%E6%BB%A1%E6%95%99%E4%BD%A0%E7%AE%80%E5%8D%95%E7%9A%84-dos-%E5%91%BD%E4%BB%A4-mklink-%E6%8B%AF%E6%95%91-c-%E7%9B%98/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">C Drive Always Full? Use the Simple mklink DOS Command to Save Your C Drive!</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/en/p/c-drive-full-expand-it-using-other-drives/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post C Drive Full? Expand It Using Other Drives" loading="lazy" src="/p/c-%E7%9B%98%E7%88%86%E6%BB%A1%E7%94%A8%E5%85%B6%E4%BB%96%E7%9B%98%E7%BB%99-c-%E7%9B%98%E6%89%A9%E5%AE%B9/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">C Drive Full? Expand It Using Other Drives</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/en/p/hugo--stack--github-pages-blog-setup-guide/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post Hugo + Stack + GitHub Pages Blog Setup Guide" loading="lazy" src="/p/hugo--stack--github-pages-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Hugo &#43; Stack &#43; GitHub Pages Blog Setup Guide</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+
+        <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2026 Yanmu
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="4.0.2">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.1ff1e5fdc4e178ed422e50aa407526dc552f26342d729343fded19416194382c.js" defer></script>
+
+
+    </body>
+</html>
