@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" Windows / macOS / Linux 向けのコマンドライン（CLI）インストールマニュアルです。2 大 AI コーディングアシスタントを扱います。 まとめ時期：2026 年 10 月。コマンドとバージョンは公式ドキュメントに準拠します。公式ページと異なる場合は公式を優先してください。 読み方の目安：1 つだけ入れたい場合は該当セクションへ直接どうぞ。「npm を使い続けるべきか」を知りたい場合は「まずはここから」のセクションをご覧ください。\n">
+<title>Claude Code と OpenCode のインストールガイド（CLI）</title>
+
+
+<link rel="canonical" href="https://AkuamT.github.io/ja/p/claude-code-%E3%81%A8-opencode-%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%82%AC%E3%82%A4%E3%83%89cli/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.cf0091000d754a7e58ed45a5ba2bc8263b849a91250b3fedd4fa2fd8e504403f.css"><meta property='og:title' content="Claude Code と OpenCode のインストールガイド（CLI）">
+<meta property='og:description' content=" Windows / macOS / Linux 向けのコマンドライン（CLI）インストールマニュアルです。2 大 AI コーディングアシスタントを扱います。 まとめ時期：2026 年 10 月。コマンドとバージョンは公式ドキュメントに準拠します。公式ページと異なる場合は公式を優先してください。 読み方の目安：1 つだけ入れたい場合は該当セクションへ直接どうぞ。「npm を使い続けるべきか」を知りたい場合は「まずはここから」のセクションをご覧ください。\n">
+<meta property='og:url' content='https://AkuamT.github.io/ja/p/claude-code-%E3%81%A8-opencode-%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%82%AC%E3%82%A4%E3%83%89cli/'>
+<meta property='og:site_name' content='Yanmu'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='ClaudeCode' /><meta property='article:tag' content='OpenCode' /><meta property='article:tag' content='初心者ガイド' /><meta property='article:published_time' content='2026-10-14T00:00:00&#43;08:00'/><meta property='article:modified_time' content='2026-10-14T00:00:00&#43;08:00'/><meta property='og:image' content='https://AkuamT.github.io/p/claude-code-%E4%B8%8E-opencode-%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97cli/cover.svg' />
+<meta name="twitter:title" content="Claude Code と OpenCode のインストールガイド（CLI）">
+<meta name="twitter:description" content=" Windows / macOS / Linux 向けのコマンドライン（CLI）インストールマニュアルです。2 大 AI コーディングアシスタントを扱います。 まとめ時期：2026 年 10 月。コマンドとバージョンは公式ドキュメントに準拠します。公式ページと異なる場合は公式を優先してください。 読み方の目安：1 つだけ入れたい場合は該当セクションへ直接どうぞ。「npm を使い続けるべきか」を知りたい場合は「まずはここから」のセクションをご覧ください。\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://AkuamT.github.io/p/claude-code-%E4%B8%8E-opencode-%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97cli/cover.svg' />
+    <link rel="shortcut icon" href="img/avatar.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="メニューを開く・閉じる">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/ja/">
+                    <img src="/img/Yanmu.jpg" 
+                        width="1024"
+                        height="1037"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">💻 </span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/ja/">Yanmu</a></h1>
+            <h2 class="site-description">「誰の光を借りることもなく、自らが太陽となりますように。」</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/AkuamT'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/ja/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>ホーム</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/ja/%E6%A6%82%E8%A6%81/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>概要</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/ja/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>アーカイブ</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/ja/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>検索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/ja/%E3%83%AA%E3%83%B3%E3%82%AF/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>リンク</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                <option value="/p/claude-code-%E4%B8%8E-opencode-%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97cli/" >简体中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                <option value="/en/p/installation-guide-for-claude-code-and-opencode-cli/" >English</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                <option value="/zh-hant-tw/p/claude-code-%E8%88%87-opencode-%E5%AE%89%E8%A3%9D%E6%8C%87%E5%8D%97cli/" >繁体中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/ja/p/claude-code-%E3%81%A8-opencode-%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%82%AC%E3%82%A4%E3%83%89cli/" selected>日本語</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>ダークモード</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目次</h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#まずはここからよくある-3-つの疑問">まずはここから：よくある 3 つの疑問</a>
+      <ol>
+        <li><a href="#q1npm-でのインストールはまだ必要か">Q1：npm でのインストールはまだ必要か？</a></li>
+        <li><a href="#q2ネイティブのインストーラーバイナリはあるか">Q2：ネイティブのインストーラー／バイナリはあるか？</a></li>
+        <li><a href="#q33-つの方法をどう選ぶか">Q3：3 つの方法をどう選ぶか？</a></li>
+      </ol>
+    </li>
+    <li><a href="#claude-code-のインストール">Claude Code のインストール</a>
+      <ol>
+        <li><a href="#システム要件">システム要件</a></li>
+        <li><a href="#インストール方法の一覧">インストール方法の一覧</a></li>
+        <li><a href="#ネイティブインストールのコマンド">ネイティブインストールのコマンド</a></li>
+        <li><a href="#インストーラーは裏で何をしているか">インストーラーは裏で何をしているか</a></li>
+        <li><a href="#インストール先">インストール先</a></li>
+        <li><a href="#インストールの確認">インストールの確認</a></li>
+        <li><a href="#初回起動とログイン">初回起動とログイン</a></li>
+        <li><a href="#更新方針とリリースチャネル">更新方針とリリースチャネル</a></li>
+        <li><a href="#アンインストール">アンインストール</a></li>
+        <li><a href="#よくある問題の早見表">よくある問題の早見表</a></li>
+      </ol>
+    </li>
+    <li><a href="#opencode-のインストール">OpenCode のインストール</a>
+      <ol>
+        <li><a href="#まず-v1-と-v2-を区別する">まず V1 と V2 を区別する</a></li>
+        <li><a href="#v1-のインストール方法">V1 のインストール方法</a></li>
+        <li><a href="#v2-のインストール方法">V2 のインストール方法</a></li>
+        <li><a href="#windows-ユーザーの-3-つの注意点">Windows ユーザーの 3 つの注意点</a></li>
+        <li><a href="#インストール先ディレクトリの優先順位">インストール先ディレクトリの優先順位</a></li>
+        <li><a href="#確認と設定">確認と設定</a></li>
+        <li><a href="#アンインストール-1">アンインストール</a></li>
+        <li><a href="#デスクトップ版beta">デスクトップ版（Beta）</a></li>
+      </ol>
+    </li>
+    <li><a href="#両者の比較と選択の指針">両者の比較と選択の指針</a></li>
+    <li><a href="#セキュリティとコンプライアンスの注意">セキュリティとコンプライアンスの注意</a></li>
+    <li><a href="#公式リンク">公式リンク</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/ja/p/claude-code-%E3%81%A8-opencode-%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%82%AC%E3%82%A4%E3%83%89cli/">
+            <img alt="Featured image of post Claude Code と OpenCode のインストールガイド（CLI）" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/claude-code-%E4%B8%8E-opencode-%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97cli/cover.svg">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/ja/categories/ai-tools/" style="background-color: #7c3aed; color: #fff;">
+                AI ツール
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/ja/p/claude-code-%E3%81%A8-opencode-%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%82%AC%E3%82%A4%E3%83%89cli/">Claude Code と OpenCode のインストールガイド（CLI）</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-10-14T00:00:00&#43;08:00'>2026年10月14日水曜日</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        読了時間: 13分
+                    </time>
+                
+            </div>
+        
+
+        
+            <div class="inline-meta">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                
+                    <a href="/p/claude-code-%E4%B8%8E-opencode-%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97cli/" class="link">简体中文</a>
+                
+                    <a href="/en/p/installation-guide-for-claude-code-and-opencode-cli/" class="link">English</a>
+                
+                    <a href="/zh-hant-tw/p/claude-code-%E8%88%87-opencode-%E5%AE%89%E8%A3%9D%E6%8C%87%E5%8D%97cli/" class="link">繁体中文</a>
+                
+            </div>
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span>目次</span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#まずはここからよくある-3-つの疑問">まずはここから：よくある 3 つの疑問</a>
+      <ol>
+        <li><a href="#q1npm-でのインストールはまだ必要か">Q1：npm でのインストールはまだ必要か？</a></li>
+        <li><a href="#q2ネイティブのインストーラーバイナリはあるか">Q2：ネイティブのインストーラー／バイナリはあるか？</a></li>
+        <li><a href="#q33-つの方法をどう選ぶか">Q3：3 つの方法をどう選ぶか？</a></li>
+      </ol>
+    </li>
+    <li><a href="#claude-code-のインストール">Claude Code のインストール</a>
+      <ol>
+        <li><a href="#システム要件">システム要件</a></li>
+        <li><a href="#インストール方法の一覧">インストール方法の一覧</a></li>
+        <li><a href="#ネイティブインストールのコマンド">ネイティブインストールのコマンド</a></li>
+        <li><a href="#インストーラーは裏で何をしているか">インストーラーは裏で何をしているか</a></li>
+        <li><a href="#インストール先">インストール先</a></li>
+        <li><a href="#インストールの確認">インストールの確認</a></li>
+        <li><a href="#初回起動とログイン">初回起動とログイン</a></li>
+        <li><a href="#更新方針とリリースチャネル">更新方針とリリースチャネル</a></li>
+        <li><a href="#アンインストール">アンインストール</a></li>
+        <li><a href="#よくある問題の早見表">よくある問題の早見表</a></li>
+      </ol>
+    </li>
+    <li><a href="#opencode-のインストール">OpenCode のインストール</a>
+      <ol>
+        <li><a href="#まず-v1-と-v2-を区別する">まず V1 と V2 を区別する</a></li>
+        <li><a href="#v1-のインストール方法">V1 のインストール方法</a></li>
+        <li><a href="#v2-のインストール方法">V2 のインストール方法</a></li>
+        <li><a href="#windows-ユーザーの-3-つの注意点">Windows ユーザーの 3 つの注意点</a></li>
+        <li><a href="#インストール先ディレクトリの優先順位">インストール先ディレクトリの優先順位</a></li>
+        <li><a href="#確認と設定">確認と設定</a></li>
+        <li><a href="#アンインストール-1">アンインストール</a></li>
+        <li><a href="#デスクトップ版beta">デスクトップ版（Beta）</a></li>
+      </ol>
+    </li>
+    <li><a href="#両者の比較と選択の指針">両者の比較と選択の指針</a></li>
+    <li><a href="#セキュリティとコンプライアンスの注意">セキュリティとコンプライアンスの注意</a></li>
+    <li><a href="#公式リンク">公式リンク</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    
+    <blockquote>
+        <p><strong>Windows / macOS / Linux</strong> 向けのコマンドライン（CLI）インストールマニュアルです。2 大 AI コーディングアシスタントを扱います。
+まとめ時期：<strong>2026 年 10 月</strong>。コマンドとバージョンは公式ドキュメントに準拠します。公式ページと異なる場合は公式を優先してください。
+読み方の目安：1 つだけ入れたい場合は該当セクションへ直接どうぞ。「npm を使い続けるべきか」を知りたい場合は「まずはここから」のセクションをご覧ください。</p>
+
+    </blockquote>
+<hr>
+<h2 id="まずはここからよくある-3-つの疑問">まずはここから：よくある 3 つの疑問
+</h2><h3 id="q1npm-でのインストールはまだ必要か">Q1：npm でのインストールはまだ必要か？
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">ツール</th>
+					<th style="text-align: left">結論</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong>Claude Code</strong></td>
+					<td style="text-align: left"><strong>不要</strong>。公式ドキュメントは「ネイティブインストーラー（Native Install）」を <strong>Recommended</strong> としており、npm は「Advanced installation options」に移されました。さらに<strong>バックグラウンドで自動更新されるのはネイティブインストールだけ</strong>で、Homebrew / WinGet / npm はいずれも手動アップグレードが必要です。新規ユーザーは npm を選ばないことをおすすめします。</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>OpenCode</strong></td>
+					<td style="text-align: left"><strong>任意</strong>。公式はインストールスクリプト、単体ネイティブバイナリ、npm の 3 通りを提供しています。すでに Node.js 環境があるなら npm が最も楽です。Node.js に一切依存したくない場合は単体バイナリをダウンロードしてください。</td>
+			</tr>
+	</tbody>
+</table></div>
+<h3 id="q2ネイティブのインストーラーバイナリはあるか">Q2：ネイティブのインストーラー／バイナリはあるか？
+</h3><p><strong>どちらにもあります。</strong></p>
+<ul>
+<li>Claude Code：ネイティブインストーラーの 1 コマンドで完了。<strong>Node.js も管理者権限も不要</strong>で、PATH を自動設定し、バックグラウンドで自動更新します。</li>
+<li>OpenCode：各プラットフォーム向けの単体バイナリ（zip / tar.gz）とインストールスクリプトを提供しています。ただし <strong>Windows ではインストールスクリプトが bash 環境を必要とする</strong>（WSL または Git Bash）ため、公式は Windows のセクションで WSL を第一に推奨しています。</li>
+</ul>
+<h3 id="q33-つの方法をどう選ぶか">Q3：3 つの方法をどう選ぶか？
+</h3>
+    <blockquote>
+        <p><strong>ひと言で</strong>：公式のネイティブインストーラーが使えるならそれを使う。ネットワークやシステムの制限で詰まったら OS のパッケージマネージャー（WinGet / Homebrew / choco / scoop）に退き、npm は最後の手段とする。</p>
+
+    </blockquote>
+<hr>
+<h2 id="claude-code-のインストール">Claude Code のインストール
+</h2><h3 id="システム要件">システム要件
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">項目</th>
+					<th style="text-align: left">要件</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">OS</td>
+					<td style="text-align: left">macOS 13.0+ / Windows 10 1809+ または Windows Server 2019+ / Ubuntu 20.04+ / Debian 10+ / Alpine Linux 3.19+</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">ハードウェア</td>
+					<td style="text-align: left">メモリ 4 GB 以上；x64 または ARM64 プロセッサ（<strong>32 ビット Windows は非対応</strong>）</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">ネットワーク</td>
+					<td style="text-align: left">インターネット接続が必須</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">シェル</td>
+					<td style="text-align: left">Bash、Zsh、PowerShell または CMD</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">追加依存</td>
+					<td style="text-align: left"><code>ripgrep</code>——通常 Claude Code に同梱。コード検索がおかしい場合は公式のトラブルシューティングページを参照</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">地域</td>
+					<td style="text-align: left">Anthropic がサポートする国・地域に所在すること</td>
+			</tr>
+	</tbody>
+</table></div>
+<h3 id="インストール方法の一覧">インストール方法の一覧
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">方法</th>
+					<th style="text-align: center">自動更新</th>
+					<th style="text-align: left">対応プラットフォーム</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong>ネイティブインストーラー（推奨）</strong></td>
+					<td style="text-align: center">✅ バックグラウンド</td>
+					<td style="text-align: left">Windows / macOS / Linux / WSL</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Homebrew</td>
+					<td style="text-align: center">❌ 手動 <code>brew upgrade</code></td>
+					<td style="text-align: left">macOS / Linux</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">WinGet</td>
+					<td style="text-align: center">❌ 手動 <code>winget upgrade</code></td>
+					<td style="text-align: left">Windows</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Linux のパッケージマネージャー（apt / dnf / apk）</td>
+					<td style="text-align: center">パッケージマネージャー次第</td>
+					<td style="text-align: left">Debian / Fedora / Alpine</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>npm（上級オプション）</strong></td>
+					<td style="text-align: center">❌ 手動アップグレード</td>
+					<td style="text-align: left">Node.js がある任意のプラットフォーム</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">デスクトップアプリ（GUI）</td>
+					<td style="text-align: center">—</td>
+					<td style="text-align: left">Windows / macOS / Linux</td>
+			</tr>
+	</tbody>
+</table></div>
+<h3 id="ネイティブインストールのコマンド">ネイティブインストールのコマンド
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">プラットフォーム</th>
+					<th style="text-align: left">コマンド</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong>Windows（PowerShell）</strong></td>
+					<td style="text-align: left"><code>irm https://claude.ai/install.ps1 | iex</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>Windows（CMD）</strong></td>
+					<td style="text-align: left"><code>curl -fsSL https://claude.ai/install.cmd -o install.cmd &amp;&amp; install.cmd &amp;&amp; del install.cmd</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>macOS / Linux / WSL</strong></td>
+					<td style="text-align: left"><code>curl -fsSL https://claude.ai/install.sh | bash</code></td>
+			</tr>
+	</tbody>
+</table></div>
+
+    <blockquote>
+        <p><strong>ヒント</strong>：どのターミナルにいるかはプロンプトで判断できます。PowerShell は <code>PS C:\&gt;</code>、CMD は <code>C:\&gt;</code> の形です。2 つのコマンドは<strong>互換性がありません</strong>。PowerShell で CMD のコマンドを実行すると <code>The token '&amp;&amp;' is not a valid statement separator</code>、CMD で PowerShell のコマンドを実行すると <code>'irm' is not recognized</code> が返ります。</p>
+
+    </blockquote>
+<p><strong>リリースチャネルやバージョンの指定</strong>（指定できる値：<code>stable</code>、<code>latest</code>、または <code>2.1.89</code> のような具体的なバージョン番号。省略時は <code>latest</code>）：</p>
+<div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">プラットフォーム</th>
+					<th style="text-align: left">コマンド</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">Windows（PowerShell）</td>
+					<td style="text-align: left"><code>&amp; ([scriptblock]::Create((irm https://claude.ai/install.ps1))) stable</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">macOS / Linux / WSL</td>
+					<td style="text-align: left"><code>curl -fsSL https://claude.ai/install.sh | bash -s -- stable</code></td>
+			</tr>
+	</tbody>
+</table></div>
+<h3 id="インストーラーは裏で何をしているか">インストーラーは裏で何をしているか
+</h3><p>流れを知っておくと「止まっているのか、動いているのか」を判断しやすくなります。</p>
+<ol>
+<li>システムアーキテクチャを検証（32 ビット Windows は拒否）。ARM64 と x64 は自動で対応バイナリを選択。</li>
+<li><code>downloads.claude.ai</code> から現在のバージョン番号を取得。</li>
+<li>そのバージョンの <code>manifest.json</code> をダウンロードし、該当プラットフォームの <strong>SHA256 チェックサム</strong>を取り出す。</li>
+<li>バイナリをローカルの一時ディレクトリにダウンロード。</li>
+<li><strong>SHA256 を検証</strong>し、一致しなければファイルを削除して中止。</li>
+<li>ユーザーディレクトリにインストールし、PATH を書き込む。</li>
+<li>一時ファイルを削除し、完了メッセージを出力。</li>
+</ol>
+
+    <blockquote>
+        <p>⚠️ <strong>誤解しやすい 2 点</strong></p>
+<ul>
+<li><strong>最初から最後まで進捗バーが出ません</strong>。止まったように見えても実際はダウンロード中で、通常は数十秒で完了します。</li>
+<li>完了の目印は緑色の <code>Installation complete!</code> の 1 行です。</li>
+</ul>
+
+    </blockquote>
+<h3 id="インストール先">インストール先
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">プラットフォーム</th>
+					<th style="text-align: left">実行ファイル</th>
+					<th style="text-align: left">データディレクトリ</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">Windows</td>
+					<td style="text-align: left"><code>%USERPROFILE%\.local\bin\claude.exe</code></td>
+					<td style="text-align: left"><code>%USERPROFILE%\.local\share\claude</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">macOS / Linux / WSL</td>
+					<td style="text-align: left"><code>~/.local/bin/claude</code></td>
+					<td style="text-align: left"><code>~/.local/share/claude</code></td>
+			</tr>
+	</tbody>
+</table></div>
+<p>ユーザー設定とセッションデータは <code>~/.claude/</code>（Windows では <code>%USERPROFILE%\.claude</code>）と <code>~/.claude.json</code> にあります。</p>
+<h3 id="インストールの確認">インストールの確認
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">claude --version     <span class="c1"># バージョン番号が表示されるはず</span>
+</span></span><span class="line"><span class="cl">claude doctor        <span class="c1"># 環境のセルフチェック（トラブルシューティングの第一選択）</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    <blockquote>
+        <p><strong>重要</strong>：インストール後は<strong>ターミナルを閉じて開き直してください</strong>。インストーラーが書き込んだ PATH は、すでに開いているウィンドウには反映されません。</p>
+
+    </blockquote>
+<p><strong>コマンドが見つからない場合</strong>（<code>command not found</code> / <code>用語 'claude' は cmdlet として認識されません</code>）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># Windows PowerShell</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Test-Path</span> <span class="s2">&#34;</span><span class="nv">$env:USERPROFILE</span><span class="s2">\.local\bin\claude.exe&#34;</span>                                  <span class="c"># ① バイナリはインストール済みか</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="no">Environment</span><span class="p">]::</span><span class="n">GetEnvironmentVariable</span><span class="p">(</span><span class="s1">&#39;Path&#39;</span><span class="p">,</span><span class="s1">&#39;User&#39;</span><span class="p">)</span> <span class="n">-split</span> <span class="s1">&#39;;&#39;</span> <span class="p">|</span> <span class="nb">Select-String</span> <span class="s1">&#39;local\\bin&#39;</span>   <span class="c"># ② PATH に含まれているか</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>① が True で ② が空の場合、ユーザーレベルの PATH に手動で追加します（管理者権限は不要、追記するだけ）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nv">$p</span> <span class="p">=</span> <span class="p">[</span><span class="no">Environment</span><span class="p">]::</span><span class="n">GetEnvironmentVariable</span><span class="p">(</span><span class="s1">&#39;Path&#39;</span><span class="p">,</span><span class="s1">&#39;User&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="no">Environment</span><span class="p">]::</span><span class="n">SetEnvironmentVariable</span><span class="p">(</span><span class="s1">&#39;Path&#39;</span><span class="p">,</span> <span class="s2">&#34;</span><span class="nv">$env:USERPROFILE</span><span class="s2">\.local\bin;</span><span class="nv">$p</span><span class="s2">&#34;</span><span class="p">,</span> <span class="s1">&#39;User&#39;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>macOS / Linux も同様に、<code>export PATH=&quot;$HOME/.local/bin:$PATH&quot;</code> を <code>~/.bashrc</code> / <code>~/.zshrc</code> に書き込みます。</p>
+<h3 id="初回起動とログイン">初回起動とログイン
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> あなたのプロジェクトディレクトリ
+</span></span><span class="line"><span class="cl">claude
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>初回起動時はガイド付きの流れになります：ログイン方法を選択（Claude のサブスクリプションアカウント、または Anthropic Console の API Key）→ ブラウザで認可を完了 → 設定が <code>~/.claude/</code> に書き込まれます。</p>
+<h3 id="更新方針とリリースチャネル">更新方針とリリースチャネル
+</h3><ul>
+<li><strong>ネイティブインストール</strong>：バックグラウンドで自動更新。操作は不要。</li>
+<li>リリースチャネル：
+<ul>
+<li><code>stable</code>——安定チャネル。通常は最新版より約 1 週間遅れ、重大なリグレッションのあるバージョンはスキップされます；</li>
+<li><code>latest</code>——最新チャネル。新バージョンが出た瞬間に取得できます。</li>
+</ul>
+</li>
+<li>その他の方法の更新コマンド：<code>brew upgrade claude-code</code> / <code>winget upgrade Anthropic.ClaudeCode</code> / <code>npm update -g @anthropic-ai/claude-code</code>。</li>
+</ul>
+<h3 id="アンインストール">アンインストール
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">インストール方法</th>
+					<th style="text-align: left">アンインストールコマンド</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">ネイティブ（Windows PowerShell）</td>
+					<td style="text-align: left"><code>Remove-Item -Path &quot;$env:USERPROFILE\.local\bin\claude.exe&quot; -Force</code> と <code>Remove-Item -Path &quot;$env:USERPROFILE\.local\share\claude&quot; -Recurse -Force</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">ネイティブ（macOS / Linux / WSL）</td>
+					<td style="text-align: left"><code>rm -f ~/.local/bin/claude</code> と <code>rm -rf ~/.local/share/claude</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Homebrew</td>
+					<td style="text-align: left"><code>brew uninstall --cask claude-code</code>（latest チャネルなら <code>claude-code@latest</code>）</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">WinGet</td>
+					<td style="text-align: left"><code>winget uninstall Anthropic.ClaudeCode</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">npm</td>
+					<td style="text-align: left"><code>npm uninstall -g @anthropic-ai/claude-code</code></td>
+			</tr>
+	</tbody>
+</table></div>
+<p><strong>設定ファイルの削除</strong>（⚠️ すべての設定、認可済みツール、MCP 設定、セッション履歴も一緒に削除されます）：</p>
+<div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">プラットフォーム</th>
+					<th style="text-align: left">コマンド</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">Windows（PowerShell）</td>
+					<td style="text-align: left"><code>Remove-Item -Path &quot;$env:USERPROFILE\.claude&quot; -Recurse -Force</code>；<code>Remove-Item -Path &quot;$env:USERPROFILE\.claude.json&quot; -Force</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">macOS / Linux / WSL</td>
+					<td style="text-align: left"><code>rm -rf ~/.claude</code>；<code>rm ~/.claude.json</code></td>
+			</tr>
+	</tbody>
+</table></div>
+
+    <blockquote>
+        <p>VS Code 拡張、JetBrains プラグイン、デスクトップアプリがまだインストールされている場合、それらが <code>~/.claude/</code> を再作成します。完全に消すには先にそれらをアンインストールしてください。</p>
+
+    </blockquote>
+<h3 id="よくある問題の早見表">よくある問題の早見表
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">症状</th>
+					<th style="text-align: left">原因と対処</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><code>command not found: claude</code> / 認識されない</td>
+					<td style="text-align: left">インストールディレクトリが PATH に入っていない——ターミナルを開き直す。それでもだめなら上記の「インストールの確認」を参照</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><code>'irm' is not recognized</code></td>
+					<td style="text-align: left">CMD で PowerShell のコマンドを実行した</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><code>The token '&amp;&amp;' is not a valid statement separator</code></td>
+					<td style="text-align: left">PowerShell で CMD のコマンドを実行した</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">ダウンロードがタイムアウト / <code>Failed to get a valid version from downloads.claude.ai</code></td>
+					<td style="text-align: left">ネットワークまたは地域の問題。プロキシを設定して再試行。例：<code>export HTTPS_PROXY=http://127.0.0.1:ポート</code>（Windows：<code>$env:HTTPS_PROXY=&quot;http://127.0.0.1:ポート&quot;</code>）</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><code>Checksum verification failed</code></td>
+					<td style="text-align: left">ダウンロードが壊れている。インストールコマンドを再実行</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Windows で Bash ツールが使えない</td>
+					<td style="text-align: left"><strong>Git for Windows</strong> をインストールする。Claude Code は Git Bash を優先し、未インストールならシェルツールとして PowerShell にフォールバックします</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">何度もインストールして挙動がおかしい</td>
+					<td style="text-align: left">複数のインストールが併存している可能性がある（npm 版とネイティブ版など）。<code>claude doctor</code> で競合を確認</td>
+			</tr>
+	</tbody>
+</table></div>
+<hr>
+<h2 id="opencode-のインストール">OpenCode のインストール
+</h2><p>公式サイト：<a class="link" href="https://opencode.ai"  target="_blank" rel="noopener"
+    >https://opencode.ai</a> ｜ リポジトリ：<a class="link" href="https://github.com/anomalyco/opencode"  target="_blank" rel="noopener"
+    >https://github.com/anomalyco/opencode</a></p>
+
+    <blockquote>
+        <p><strong>ブランドの沿革に注意</strong>：このプロジェクトは元々 <code>sst</code> 組織に属していましたが、現在は <strong><code>anomalyco</code></strong> に移管されました。旧リンク <code>github.com/sst/opencode</code> は自動でリダイレクトされます。偽サイトではありません。</p>
+
+    </blockquote>
+<h3 id="まず-v1-と-v2-を区別する">まず V1 と V2 を区別する
+</h3><p>OpenCode には現在 2 つの並行する製品ラインがあり、<strong>どちらも <code>opencode</code> というコマンドを使うため共存できません</strong>（同時にインストールできません）：</p>
+<div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left"></th>
+					<th style="text-align: left"><strong>V1（stable）</strong></th>
+					<th style="text-align: left"><strong>V2（beta）</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">インストールスクリプト</td>
+					<td style="text-align: left"><code>curl -fsSL https://opencode.ai/install | bash</code></td>
+					<td style="text-align: left"><code>curl -fsSL https://opencode.ai/v2/install | bash</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">npm パッケージ名</td>
+					<td style="text-align: left"><code>opencode-ai</code></td>
+					<td style="text-align: left"><code>@opencode/cli</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Homebrew</td>
+					<td style="text-align: left"><code>brew install anomalyco/tap/opencode</code></td>
+					<td style="text-align: left"><code>brew install anomalyco/tap/opencode-v2</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Windows パッケージマネージャー</td>
+					<td style="text-align: left"><code>choco</code> / <code>scoop</code> に対応</td>
+					<td style="text-align: left"><strong>非対応</strong></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">ドキュメント</td>
+					<td style="text-align: left"><a class="link" href="https://opencode.ai/docs"  target="_blank" rel="noopener"
+    >https://opencode.ai/docs</a></td>
+					<td style="text-align: left"><a class="link" href="https://opencode.ai/v2/docs"  target="_blank" rel="noopener"
+    >https://opencode.ai/v2/docs</a></td>
+			</tr>
+	</tbody>
+</table></div>
+
+    <blockquote>
+        <p><strong>推奨</strong>：V2 はまだ beta で、Windows のパッケージマネージャーが非対応であると明言されています。安定性を求めるなら <strong>V1</strong> を選んでください。試したい場合のみ V2 を検討し、V1 と共存できない点に注意してください。</p>
+
+    </blockquote>
+<h3 id="v1-のインストール方法">V1 のインストール方法
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">方法</th>
+					<th style="text-align: left">コマンド</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">インストールスクリプト（推奨）</td>
+					<td style="text-align: left"><code>curl -fsSL https://opencode.ai/install | bash</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">npm</td>
+					<td style="text-align: left"><code>npm install -g opencode-ai</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">pnpm / yarn / bun</td>
+					<td style="text-align: left"><code>pnpm install -g opencode-ai</code> / <code>yarn global add opencode-ai</code> / <code>bun install -g opencode-ai</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">macOS / Linux（Homebrew）</td>
+					<td style="text-align: left"><code>brew install anomalyco/tap/opencode</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Arch Linux</td>
+					<td style="text-align: left"><code>sudo pacman -S opencode</code>（安定版）または <code>paru -S opencode-bin</code>（最新版）</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Windows（WSL、公式推奨）</td>
+					<td style="text-align: left">WSL 内で上記のスクリプトまたは npm を使用</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Windows（Chocolatey / Scoop）</td>
+					<td style="text-align: left"><code>choco install opencode</code> / <code>scoop install opencode</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Windows（npm）</td>
+					<td style="text-align: left"><code>npm install -g opencode-ai</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Docker</td>
+					<td style="text-align: left"><code>docker run -it --rm ghcr.io/anomalyco/opencode</code></td>
+			</tr>
+	</tbody>
+</table></div>
+<h3 id="v2-のインストール方法">V2 のインストール方法
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">方法</th>
+					<th style="text-align: left">コマンド</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">インストールスクリプト</td>
+					<td style="text-align: left"><code>curl -fsSL https://opencode.ai/v2/install | bash</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">npm</td>
+					<td style="text-align: left"><code>npm install -g @opencode/cli</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">bun</td>
+					<td style="text-align: left"><code>bun install -g --trust @opencode/cli</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">pnpm</td>
+					<td style="text-align: left"><code>pnpm add -g --allow-build=@opencode/cli @opencode/cli</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">yarn</td>
+					<td style="text-align: left"><code>yarn global add @opencode/cli</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Homebrew</td>
+					<td style="text-align: left"><code>brew install anomalyco/tap/opencode-v2</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">単体バイナリ</td>
+					<td style="text-align: left">公式のダウンロードページまたは GitHub Releases から該当プラットフォームのアーカイブを取得</td>
+			</tr>
+	</tbody>
+</table></div>
+
+    <blockquote>
+        <p>npm / bun / pnpm でインストールする場合、パッケージ内の <code>postinstall</code> スクリプトが<strong>現在のプラットフォームのネイティブバイナリ</strong>を自動選択します。bun と pnpm はデフォルトでビルドスクリプトをブロックするため、公式コマンドには <code>--trust</code> / <code>--allow-build</code> が付いています。</p>
+
+    </blockquote>
+<h3 id="windows-ユーザーの-3-つの注意点">Windows ユーザーの 3 つの注意点
+</h3><ol>
+<li><strong>公式は WSL を第一に推奨</strong>：性能と機能の互換性が最も良いです。</li>
+<li><strong>インストールスクリプトには bash が必要</strong>：<code>curl ... | bash</code> は素の Windows ターミナルでは動きません。WSL か Git Bash が必要です。</li>
+<li><strong>V2 は Windows のパッケージマネージャーに対応していない</strong>：choco / scoop は V2 では使えません。V2 では npm か単体バイナリを使ってください。</li>
+</ol>
+<h3 id="インストール先ディレクトリの優先順位">インストール先ディレクトリの優先順位
+</h3><p>インストールスクリプトは次の順序で配置先を選びます。</p>
+<ol>
+<li><code>$OPENCODE_INSTALL_DIR</code></li>
+<li><code>$XDG_BIN_DIR</code></li>
+<li><code>$HOME/bin</code></li>
+<li><code>$HOME/.opencode/bin</code>（デフォルトのフォールバック）</li>
+</ol>
+<p>例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">OPENCODE_INSTALL_DIR</span><span class="o">=</span>/usr/local/bin curl -fsSL https://opencode.ai/install <span class="p">|</span> bash
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="確認と設定">確認と設定
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">opencode --version    <span class="c1"># バージョンを表示</span>
+</span></span><span class="line"><span class="cl">opencode              <span class="c1"># プロジェクトディレクトリで TUI を起動</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>起動後は TUI 内で <code>/connect</code> を使ってモデルプロバイダーを設定します（公式の OpenCode Zen が推奨ですが、互換性のある任意の provider も利用できます）。</p>
+<h3 id="アンインストール-1">アンインストール
+</h3><ul>
+<li>スクリプト / 単体バイナリでのインストール：上記のインストール先ディレクトリにある <code>opencode</code> 実行ファイルを削除し、そのディレクトリを PATH から外します。</li>
+<li>npm でのインストール：<code>npm uninstall -g opencode-ai</code>（または <code>@opencode/cli</code>）。</li>
+<li>Homebrew：<code>brew uninstall opencode</code>（または <code>opencode-v2</code>）。</li>
+<li>設定ディレクトリ：<code>~/.config/opencode/</code>、<code>~/.local/share/opencode/</code> は必要に応じて削除できます。</li>
+</ul>
+<h3 id="デスクトップ版beta">デスクトップ版（Beta）
+</h3><p>ターミナルを使いたくない場合、公式はデスクトップアプリも提供しています。Windows は <code>opencode-desktop-windows-x64.exe</code>、macOS は <code>.dmg</code>、Linux は <code>.deb</code> / <code>.rpm</code> / <code>.AppImage</code> です。ダウンロードページは公式ドキュメントを参照してください。</p>
+<hr>
+<h2 id="両者の比較と選択の指針">両者の比較と選択の指針
+</h2><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">観点</th>
+					<th style="text-align: left">Claude Code</th>
+					<th style="text-align: left">OpenCode</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">提供元</td>
+					<td style="text-align: left">Anthropic（公式）</td>
+					<td style="text-align: left">Anomaly コミュニティのオープンソース（MIT）</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">モデル対応</td>
+					<td style="text-align: left">主に Claude シリーズ（互換 API エンドポイントも可）</td>
+					<td style="text-align: left">任意の provider（ローカル・自前構築を含む）</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">インストール難易度</td>
+					<td style="text-align: left">非常に低い（1 コマンド、自動更新内蔵）</td>
+					<td style="text-align: left">中（プラットフォーム・バージョンごとに方法を選ぶ）</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Windows の体験</td>
+					<td style="text-align: left">ネイティブ対応が良好（Git for Windows の導入を推奨）</td>
+					<td style="text-align: left">WSL を推奨</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">オープンソース</td>
+					<td style="text-align: left">クライアントはクローズド</td>
+					<td style="text-align: left">完全にオープンソース</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">向いている人</td>
+					<td style="text-align: left">「すぐ使えて公式サポート」を求める人</td>
+					<td style="text-align: left">「モデルを差し替え、セルフホストし、ソースを改変したい」人</td>
+			</tr>
+	</tbody>
+</table></div>
+<p><strong>選択の指針</strong></p>
+<ul>
+<li>早く使い始めたい、Anthropic アカウントがある → <strong>Claude Code</strong>（ネイティブインストール）。</li>
+<li>サードパーティのモデルを使いたい、コストを抑えたい、いじりたい → <strong>OpenCode</strong>（V1 stable）。</li>
+<li>両者は機能の位置づけが似ているので、<strong>両方入れても構いません</strong>。Claude Code はユーザーディレクトリ（<code>~/.local/bin</code>）、OpenCode は npm か独自ディレクトリに入るため、互いに干渉しません。</li>
+</ul>
+<hr>
+<h2 id="セキュリティとコンプライアンスの注意">セキュリティとコンプライアンスの注意
+</h2><ol>
+<li><strong>公式ドメインからのみダウンロードする</strong>
+<ul>
+<li>Claude Code：<code>claude.ai</code>、<code>code.claude.com</code>、<code>downloads.claude.ai</code></li>
+<li>OpenCode：<code>opencode.ai</code>、<code>github.com/anomalyco/opencode</code></li>
+</ul>
+</li>
+<li><strong>npm のパッケージ名は公式のものだけを信じる</strong>：npm には同名の偽パッケージがあります（OpenCode のエコシステムでは <code>opcpackage</code> などの模倣パッケージが実際に出現しました）。Claude Code は <code>@anthropic-ai/claude-code</code>、OpenCode は <code>opencode-ai</code>（V1）/ <code>@opencode/cli</code>（V2）です。</li>
+<li><strong>署名・チェックサムの検証</strong>
+<ul>
+<li>Windows：<code>Get-AuthenticodeSignature .\claude.exe</code>。署名者は <code>Anthropic, PBC</code> であるべきです。</li>
+<li>macOS：<code>codesign --verify --verbose ./claude</code>。</li>
+<li>公式は GPG 署名付きの <code>manifest.json</code> も提供しており、全プラットフォームのバイナリの SHA256 を検証できます。</li>
+</ul>
+</li>
+<li><strong><code>curl … | bash</code> と <code>irm … | iex</code> の安全な習慣</strong>：まずドメインを確認してから実行する。可能なら先にスクリプトをダウンロードして読み、それから実行する（<code>curl -fsSL &lt;url&gt; -o install.sh</code> の後に <code>less install.sh</code>）。</li>
+<li><strong>サードパーティの「設定切替 / 中継プロキシ」ツールは慎重に</strong>：これらは <code>~/.claude/settings.json</code> や <code>~/.config/opencode/opencode.json</code> などを直接書き換え、サードパーティの <code>baseURL</code> と <code>token</code> を書き込むことがあります。無効なモデル名や残留した hook が入ると、起動エラー程度ならまだしも、認証情報の漏洩につながります。使うなら設定ファイルは自分で書き、各行が何をしているか理解してください。</li>
+<li><strong>API Key の管理</strong>：Key を平文で Git リポジトリにコミットしない。漏洩が疑われたら、ただちに対応プラットフォームでローテーションする。</li>
+</ol>
+<hr>
+<h2 id="公式リンク">公式リンク
+</h2><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">リソース</th>
+					<th style="text-align: left">アドレス</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">Claude Code ドキュメント トップ</td>
+					<td style="text-align: left"><a class="link" href="https://code.claude.com/docs"  target="_blank" rel="noopener"
+    >https://code.claude.com/docs</a></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Claude Code のインストールとアンインストール（Advanced setup）</td>
+					<td style="text-align: left"><a class="link" href="https://code.claude.com/docs/en/setup"  target="_blank" rel="noopener"
+    >https://code.claude.com/docs/en/setup</a></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Claude Code インストールのトラブルシューティング</td>
+					<td style="text-align: left"><a class="link" href="https://code.claude.com/docs/en/troubleshoot-install"  target="_blank" rel="noopener"
+    >https://code.claude.com/docs/en/troubleshoot-install</a></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Anthropic がサポートする国・地域</td>
+					<td style="text-align: left"><a class="link" href="https://www.anthropic.com/supported-countries"  target="_blank" rel="noopener"
+    >https://www.anthropic.com/supported-countries</a></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">OpenCode ドキュメント（V1）</td>
+					<td style="text-align: left"><a class="link" href="https://opencode.ai/docs"  target="_blank" rel="noopener"
+    >https://opencode.ai/docs</a></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">OpenCode ドキュメント（V2 beta）</td>
+					<td style="text-align: left"><a class="link" href="https://opencode.ai/v2/docs"  target="_blank" rel="noopener"
+    >https://opencode.ai/v2/docs</a></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">OpenCode リポジトリ</td>
+					<td style="text-align: left"><a class="link" href="https://github.com/anomalyco/opencode"  target="_blank" rel="noopener"
+    >https://github.com/anomalyco/opencode</a></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">OpenCode ダウンロードページ</td>
+					<td style="text-align: left"><a class="link" href="https://opencode.ai/download"  target="_blank" rel="noopener"
+    >https://opencode.ai/download</a></td>
+			</tr>
+	</tbody>
+</table></div>
+<hr>
+<p><sub>本記事は個人のまとめであり、公式ドキュメントではありません。コマンドは各プロジェクトの公式ページを参照してください。</sub></p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/ja/tags/claudecode/">ClaudeCode</a>
+        
+            <a href="/ja/tags/opencode/">OpenCode</a>
+        
+            <a href="/ja/tags/%E5%88%9D%E5%BF%83%E8%80%85%E3%82%AC%E3%82%A4%E3%83%89/">初心者ガイド</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under <a class="link" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"  target="_blank" rel="noopener"
+    >CC BY-NC-SA 4.0</a></span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title">関連するコンテンツ</h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/ja/p/opencode-%E5%88%9D%E7%B4%9A%E8%80%85%E3%81%8B%E3%82%89%E4%B8%8A%E7%B4%9A%E8%80%85%E3%81%B8%E4%B8%A6%E5%88%97%E3%82%B9%E3%82%B1%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0%E3%81%A8%E4%BD%BF%E7%94%A8%E3%83%86%E3%82%AF%E3%83%8B%E3%83%83%E3%82%AF%E5%AE%8C%E5%85%A8%E3%82%AC%E3%82%A4%E3%83%89/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post OpenCode 初級者から上級者へ：並列スケジューリングと使用テクニック完全ガイド" loading="lazy" src="/p/opencode-%E6%96%B0%E6%89%8B%E8%BF%9B%E9%98%B6%E5%B9%B6%E8%A1%8C%E8%B0%83%E5%BA%A6%E4%B8%8E%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E5%85%A8%E6%94%BB%E7%95%A5/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">OpenCode 初級者から上級者へ：並列スケジューリングと使用テクニック完全ガイド</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/ja/p/5%E5%88%86%E3%81%A7claude-code%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%97deepseek%E3%81%AB%E6%8E%A5%E7%B6%9A%E3%81%99%E3%82%8B/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post 5分でClaude CodeをインストールしDeepSeekに接続する" loading="lazy" src="/p/5%E5%88%86%E9%92%9F%E5%AE%89%E8%A3%85claudecode%E5%B9%B6%E6%8E%A5%E5%85%A5deepseek/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">5分でClaude CodeをインストールしDeepSeekに接続する</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/ja/p/claude-code%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%97%E3%81%A6deepseek%E3%81%AB%E6%8E%A5%E7%B6%9A%E3%81%99%E3%82%8B%E5%88%9D%E5%BF%83%E8%80%85%E5%90%91%E3%81%91%E3%82%AC%E3%82%A4%E3%83%89/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post Claude CodeをインストールしてDeepSeekに接続する（初心者向けガイド）" loading="lazy" src="/p/%E5%AE%89%E8%A3%85claudecode%E5%B9%B6%E6%8E%A5%E5%85%A5deepseek%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Claude CodeをインストールしてDeepSeekに接続する（初心者向けガイド）</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/ja/p/ai-%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%A2%E3%82%B7%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%88-cli-%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E6%96%B9%E6%B3%95%E3%82%92%E5%85%A8%E9%83%A8%E8%A7%A3%E8%AA%AC/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI コーディングアシスタント CLI のインストール方法を全部解説" loading="lazy" src="/p/ai-%E7%BC%96%E7%A8%8B%E5%8A%A9%E6%89%8B-cli-%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F%E5%85%A8%E7%A7%91%E6%99%AE/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI コーディングアシスタント CLI のインストール方法を全部解説</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/ja/p/opencode--obsidianai%E9%A7%86%E5%8B%95%E3%81%AE%E3%83%8A%E3%83%AC%E3%83%83%E3%82%B8%E3%83%9E%E3%83%8D%E3%82%B8%E3%83%A1%E3%83%B3%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%E3%83%95%E3%83%AD%E3%83%BC%E3%82%92%E6%A7%8B%E7%AF%89%E3%81%99%E3%82%8B/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post OpenCode + Obsidian：AI駆動のナレッジマネジメントワークフローを構築する" loading="lazy" src="/p/opencode--obsidian%E6%89%93%E9%80%A0%E4%BD%A0%E7%9A%84ai%E9%A9%B1%E5%8A%A8%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E5%B7%A5%E4%BD%9C%E6%B5%81/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">OpenCode &#43; Obsidian：AI駆動のナレッジマネジメントワークフローを構築する</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+
+        <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2026 Yanmu
+    </section>
+    
+    <section class="powerby">
+        <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> で構築されています。 <br />
+        テーマ <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="4.0.2">Stack</a></b> は <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> によって設計されています。
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.8f587a582cd4e51d03a4840028b19d7deac2cee707cfe21ffe942b6666363a7f.js" defer></script>
+
+
+    </body>
+</html>

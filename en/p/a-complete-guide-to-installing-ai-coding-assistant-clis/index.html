@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="First, Understand What &ldquo;Installing&rdquo; Actually Does No matter which method you pick, installing a command-line tool really only does three things:\nPut an executable file into some directory on your computer (such as claude.exe or opencode). Tell the system where that directory is (that is, configure PATH), so that typing claude anywhere can find it. Possibly write some configuration files along the way (such as ~/.claude/ or ~/.config/opencode/). The difference between installation methods is simply &ldquo;who does these three things for you&rdquo;:\n">
+<title>A Complete Guide to Installing AI Coding Assistant CLIs</title>
+
+
+<link rel="canonical" href="https://AkuamT.github.io/en/p/a-complete-guide-to-installing-ai-coding-assistant-clis/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.cf0091000d754a7e58ed45a5ba2bc8263b849a91250b3fedd4fa2fd8e504403f.css"><meta property='og:title' content="A Complete Guide to Installing AI Coding Assistant CLIs">
+<meta property='og:description' content="First, Understand What &ldquo;Installing&rdquo; Actually Does No matter which method you pick, installing a command-line tool really only does three things:\nPut an executable file into some directory on your computer (such as claude.exe or opencode). Tell the system where that directory is (that is, configure PATH), so that typing claude anywhere can find it. Possibly write some configuration files along the way (such as ~/.claude/ or ~/.config/opencode/). The difference between installation methods is simply &ldquo;who does these three things for you&rdquo;:\n">
+<meta property='og:url' content='https://AkuamT.github.io/en/p/a-complete-guide-to-installing-ai-coding-assistant-clis/'>
+<meta property='og:site_name' content='Yanmu'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='CLI' /><meta property='article:tag' content='Beginner Guide' /><meta property='article:tag' content='Tools' /><meta property='article:tag' content='AI Programming' /><meta property='article:published_time' content='2026-08-15T02:00:00&#43;08:00'/><meta property='article:modified_time' content='2026-08-15T02:00:00&#43;08:00'/><meta property='og:image' content='https://AkuamT.github.io/p/ai-%E7%BC%96%E7%A8%8B%E5%8A%A9%E6%89%8B-cli-%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F%E5%85%A8%E7%A7%91%E6%99%AE/cover.svg' />
+<meta name="twitter:title" content="A Complete Guide to Installing AI Coding Assistant CLIs">
+<meta name="twitter:description" content="First, Understand What &ldquo;Installing&rdquo; Actually Does No matter which method you pick, installing a command-line tool really only does three things:\nPut an executable file into some directory on your computer (such as claude.exe or opencode). Tell the system where that directory is (that is, configure PATH), so that typing claude anywhere can find it. Possibly write some configuration files along the way (such as ~/.claude/ or ~/.config/opencode/). The difference between installation methods is simply &ldquo;who does these three things for you&rdquo;:\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://AkuamT.github.io/p/ai-%E7%BC%96%E7%A8%8B%E5%8A%A9%E6%89%8B-cli-%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F%E5%85%A8%E7%A7%91%E6%99%AE/cover.svg' />
+    <link rel="shortcut icon" href="img/avatar.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/en/">
+                    <img src="/img/Yanmu.jpg" 
+                        width="1024"
+                        height="1037"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">💻 </span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/en/">Yanmu</a></h1>
+            <h2 class="site-description">「May you be your own sun, needing no light but your own.」</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/AkuamT'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/en/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/links/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                <option value="/p/ai-%E7%BC%96%E7%A8%8B%E5%8A%A9%E6%89%8B-cli-%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F%E5%85%A8%E7%A7%91%E6%99%AE/" >简体中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                <option value="/en/p/a-complete-guide-to-installing-ai-coding-assistant-clis/" selected>English</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                <option value="/zh-hant-tw/p/ai-%E7%B7%A8%E7%A8%8B%E5%8A%A9%E6%89%8B-cli-%E5%AE%89%E8%A3%9D%E6%96%B9%E5%BC%8F%E5%85%A8%E7%A7%91%E6%99%AE/" >繁体中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/ja/p/ai-%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%A2%E3%82%B7%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%88-cli-%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E6%96%B9%E6%B3%95%E3%82%92%E5%85%A8%E9%83%A8%E8%A7%A3%E8%AA%AC/" >日本語</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#first-understand-what-installing-actually-does">First, Understand What &ldquo;Installing&rdquo; Actually Does</a></li>
+    <li><a href="#eight-installation-methods-one-by-one">Eight Installation Methods, One by One</a>
+      <ol>
+        <li><a href="#official-one-line-script">Official One-Line Script</a></li>
+        <li><a href="#system-package-managers">System Package Managers</a></li>
+        <li><a href="#language-package-managers-npm--pip--cargo-etc">Language Package Managers (npm / pip / cargo, etc.)</a></li>
+        <li><a href="#standalone-binaries--archives">Standalone Binaries / Archives</a></li>
+        <li><a href="#containers--docker">Containers / Docker</a></li>
+        <li><a href="#desktop-apps--graphical-installers">Desktop Apps / Graphical Installers</a></li>
+        <li><a href="#building-from-source">Building From Source</a></li>
+        <li><a href="#app-stores--plugin-marketplaces">App Stores / Plugin Marketplaces</a></li>
+      </ol>
+    </li>
+    <li><a href="#one-summary-table-how-to-choose">One Summary Table: How to Choose</a></li>
+    <li><a href="#glossary">Glossary</a></li>
+    <li><a href="#security-notes">Security Notes</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/en/p/a-complete-guide-to-installing-ai-coding-assistant-clis/">
+            <img alt="Featured image of post A Complete Guide to Installing AI Coding Assistant CLIs" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/ai-%E7%BC%96%E7%A8%8B%E5%8A%A9%E6%89%8B-cli-%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F%E5%85%A8%E7%A7%91%E6%99%AE/cover.svg">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/en/categories/ai-tools/" style="background-color: #7c3aed; color: #fff;">
+                AI Tools
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/en/p/a-complete-guide-to-installing-ai-coding-assistant-clis/">A Complete Guide to Installing AI Coding Assistant CLIs</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-08-15T02:00:00&#43;08:00'>Saturday, August 15, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        9 minutes read
+                    </time>
+                
+            </div>
+        
+
+        
+            <div class="inline-meta">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                
+                    <a href="/p/ai-%E7%BC%96%E7%A8%8B%E5%8A%A9%E6%89%8B-cli-%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F%E5%85%A8%E7%A7%91%E6%99%AE/" class="link">简体中文</a>
+                
+                    <a href="/zh-hant-tw/p/ai-%E7%B7%A8%E7%A8%8B%E5%8A%A9%E6%89%8B-cli-%E5%AE%89%E8%A3%9D%E6%96%B9%E5%BC%8F%E5%85%A8%E7%A7%91%E6%99%AE/" class="link">繁体中文</a>
+                
+                    <a href="/ja/p/ai-%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%A2%E3%82%B7%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%88-cli-%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E6%96%B9%E6%B3%95%E3%82%92%E5%85%A8%E9%83%A8%E8%A7%A3%E8%AA%AC/" class="link">日本語</a>
+                
+            </div>
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span>Table of contents</span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#first-understand-what-installing-actually-does">First, Understand What &ldquo;Installing&rdquo; Actually Does</a></li>
+    <li><a href="#eight-installation-methods-one-by-one">Eight Installation Methods, One by One</a>
+      <ol>
+        <li><a href="#official-one-line-script">Official One-Line Script</a></li>
+        <li><a href="#system-package-managers">System Package Managers</a></li>
+        <li><a href="#language-package-managers-npm--pip--cargo-etc">Language Package Managers (npm / pip / cargo, etc.)</a></li>
+        <li><a href="#standalone-binaries--archives">Standalone Binaries / Archives</a></li>
+        <li><a href="#containers--docker">Containers / Docker</a></li>
+        <li><a href="#desktop-apps--graphical-installers">Desktop Apps / Graphical Installers</a></li>
+        <li><a href="#building-from-source">Building From Source</a></li>
+        <li><a href="#app-stores--plugin-marketplaces">App Stores / Plugin Marketplaces</a></li>
+      </ol>
+    </li>
+    <li><a href="#one-summary-table-how-to-choose">One Summary Table: How to Choose</a></li>
+    <li><a href="#glossary">Glossary</a></li>
+    <li><a href="#security-notes">Security Notes</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h2 id="first-understand-what-installing-actually-does">First, Understand What &ldquo;Installing&rdquo; Actually Does
+</h2><p>No matter which method you pick, installing a command-line tool really only does three things:</p>
+<ol>
+<li><strong>Put an executable file into some directory on your computer</strong> (such as <code>claude.exe</code> or <code>opencode</code>).</li>
+<li><strong>Tell the system where that directory is</strong> (that is, configure <code>PATH</code>), so that typing <code>claude</code> anywhere can find it.</li>
+<li><strong>Possibly write some configuration files along the way</strong> (such as <code>~/.claude/</code> or <code>~/.config/opencode/</code>).</li>
+</ol>
+<p>The difference between installation methods is simply <strong>&ldquo;who does these three things for you&rdquo;</strong>:</p>
+<ul>
+<li>Official script: a program written by the vendor does it for you.</li>
+<li>Package manager: a piece of software called a &ldquo;package manager&rdquo; does it for you.</li>
+<li>Manual download: you do it yourself.</li>
+<li>Docker: put it inside an isolated box instead of your host system.</li>
+</ul>
+<p>Once you understand this, all the methods below become easy.</p>
+<hr>
+<h2 id="eight-installation-methods-one-by-one">Eight Installation Methods, One by One
+</h2><h3 id="official-one-line-script">Official One-Line Script
+</h3><p><strong>What it looks like:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># macOS / Linux / WSL</span>
+</span></span><span class="line"><span class="cl">curl -fsSL https://xxx.com/install.sh <span class="p">|</span> bash
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Windows PowerShell</span>
+</span></span><span class="line"><span class="cl">irm https://xxx.com/install.ps1 <span class="p">|</span> iex
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Windows CMD</span>
+</span></span><span class="line"><span class="cl">curl -fsSL https://xxx.com/install.cmd -o install.cmd <span class="o">&amp;&amp;</span> install.cmd <span class="o">&amp;&amp;</span> del install.cmd
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Decoding it word by word:</strong></p>
+<ul>
+<li><code>curl</code>: a download tool; <code>-fsSL</code> means &ldquo;quiet, fail on error, follow redirects, show errors&rdquo;.</li>
+<li><code>| bash</code>: feed whatever was downloaded straight into <code>bash</code> to execute.</li>
+<li><code>irm</code>: the download command in PowerShell (short for <code>Invoke-RestMethod</code>).</li>
+<li><code>| iex</code>: feed whatever was downloaded straight into <code>iex</code> to execute (short for <code>Invoke-Expression</code>).</li>
+</ul>
+<p>So <code>irm ... | iex</code> and <code>curl ... | bash</code> are <strong>the same idea written for two platforms</strong>: download a script → run it immediately.</p>
+<p><strong>What it does for you:</strong> identifies your system automatically (Windows or Mac, 64-bit or ARM), downloads the right build, verifies the file, places it in a directory, and configures PATH. You type one line.</p>
+<p><strong>Pros:</strong> the least effort; usually includes automatic updates; no need to pre-install a runtime such as Node.js.</p>
+<p><strong>Cons:</strong> &ldquo;download and execute&rdquo; — you cannot see the script before it runs; you must confirm the domain is the official one.</p>
+<p><strong>Who it suits:</strong> people who want the fastest setup and are fine trusting the official script. <strong>This is currently the recommended path for most AI CLI tools.</strong></p>
+<hr>
+<h3 id="system-package-managers">System Package Managers
+</h3><p><strong>What it looks like:</strong></p>
+<div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Tool</th>
+					<th style="text-align: left">Platform</th>
+					<th style="text-align: left">Example</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">Homebrew</td>
+					<td style="text-align: left">macOS / Linux</td>
+					<td style="text-align: left"><code>brew install xxx</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">WinGet</td>
+					<td style="text-align: left">Windows</td>
+					<td style="text-align: left"><code>winget install xxx</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Chocolatey</td>
+					<td style="text-align: left">Windows</td>
+					<td style="text-align: left"><code>choco install xxx</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Scoop</td>
+					<td style="text-align: left">Windows</td>
+					<td style="text-align: left"><code>scoop install xxx</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">apt</td>
+					<td style="text-align: left">Debian / Ubuntu</td>
+					<td style="text-align: left"><code>sudo apt install xxx</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">dnf</td>
+					<td style="text-align: left">Fedora</td>
+					<td style="text-align: left"><code>sudo dnf install xxx</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">pacman</td>
+					<td style="text-align: left">Arch Linux</td>
+					<td style="text-align: left"><code>sudo pacman -S xxx</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">apk</td>
+					<td style="text-align: left">Alpine</td>
+					<td style="text-align: left"><code>sudo apk add xxx</code></td>
+			</tr>
+	</tbody>
+</table></div>
+<p><strong>What it is:</strong> a &ldquo;software repository&rdquo; maintained by the OS or the community. You tell it what to install, and it downloads, unpacks, configures, and registers it — and later also handles upgrades and removal.</p>
+<p><strong>Pros:</strong> clean upgrade and uninstall paths; well integrated with the system; no need to remember install paths.</p>
+<p><strong>Cons:</strong> versions in the repository often lag behind; many newly released AI CLI tools never make it into these repositories at all.</p>
+<p><strong>Who it suits:</strong> people already used to package managers; Homebrew is especially convenient for macOS users.</p>
+
+    <blockquote>
+        <p><strong>Note for Windows users:</strong> WinGet ships with the system, while Chocolatey and Scoop must be installed separately. Do not mix the three for the same piece of software, or you may end up with &ldquo;two copies installed and weird behaviour&rdquo;.</p>
+
+    </blockquote>
+<hr>
+<h3 id="language-package-managers-npm--pip--cargo-etc">Language Package Managers (npm / pip / cargo, etc.)
+</h3><p><strong>What it looks like:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm install -g @anthropic-ai/claude-code   <span class="c1"># Node.js package manager</span>
+</span></span><span class="line"><span class="cl">npm install -g opencode-ai
+</span></span><span class="line"><span class="cl">pip install xxx                             <span class="c1"># Python package manager</span>
+</span></span><span class="line"><span class="cl">cargo install xxx                           <span class="c1"># Rust package manager</span>
+</span></span><span class="line"><span class="cl">go install xxx                              <span class="c1"># Go package manager</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>What it is:</strong> every programming language has its own &ldquo;app store&rdquo;. <code>npm</code> belongs to Node.js, <code>pip</code> to Python, <code>cargo</code> to Rust. <code>-g</code> means &ldquo;global install&rdquo;, that is, installed system-wide rather than only into the current project.</p>
+<p><strong>Pros:</strong> if you already have a Node.js / Python / Rust environment, this is the smoothest route; consistent across platforms.</p>
+<p><strong>Cons:</strong></p>
+<ul>
+<li>You must install the matching runtime first (npm needs Node.js, for instance);</li>
+<li>global packages usually require a manual command to upgrade;</li>
+<li><strong>look-alike packages with the same name exist on npm</strong>, so you must use the official package name.</li>
+</ul>
+<p><strong>Who it suits:</strong> people who already write code and already have Node.js or similar on their machine.</p>
+
+    <blockquote>
+        <p><strong>The npm you know belongs to this category.</strong> It is not &ldquo;an installer&rdquo;, but &ldquo;a package manager for a language ecosystem&rdquo;.</p>
+
+    </blockquote>
+<hr>
+<h3 id="standalone-binaries--archives">Standalone Binaries / Archives
+</h3><p><strong>What it looks like:</strong></p>
+<p>Download from the official site or GitHub Releases:</p>
+<ul>
+<li>Windows: <code>xxx-windows-x64.zip</code>, <code>.exe</code></li>
+<li>macOS: <code>xxx-macos-arm64.tar.gz</code>, <code>.dmg</code></li>
+<li>Linux: <code>.tar.gz</code>, <code>.deb</code>, <code>.rpm</code>, <code>.AppImage</code></li>
+</ul>
+<p>Unpack it, move the executable inside into a directory, and add that directory to <code>PATH</code> yourself.</p>
+<p><strong>What it is:</strong> the vendor hands you a pre-built &ldquo;finished product&rdquo; with no middleman involved.</p>
+<p><strong>Pros:</strong> no dependency on Node.js or any package manager; precise version control; installs offline too.</p>
+<p><strong>Cons:</strong> upgrading means downloading and replacing it yourself; PATH must be configured manually; picking the wrong architecture (x64 / ARM64) means it will not run.</p>
+<p><strong>Who it suits:</strong> people who want no runtime at all, who want a clean and controllable setup, or who cannot run scripts due to network restrictions.</p>
+<hr>
+<h3 id="containers--docker">Containers / Docker
+</h3><p><strong>What it looks like:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run -it --rm ghcr.io/anomalyco/opencode
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>What it is:</strong> Docker is an &ldquo;isolated box&rdquo;. The tool lives inside the box and never touches your host system. <code>-it</code> means an interactive terminal, <code>--rm</code> means the box is deleted automatically on exit.</p>
+<p><strong>Pros:</strong> clean, reproducible, no pollution of your system; moving to a new computer restores the environment with one command.</p>
+<p><strong>Cons:</strong> Docker must be installed first; not necessarily suitable for desktop tools; file path mapping requires extra configuration.</p>
+<p><strong>Who it suits:</strong> developers, people who want isolation, people deploying on servers. <strong>Ordinary users generally do not need it.</strong></p>
+<hr>
+<h3 id="desktop-apps--graphical-installers">Desktop Apps / Graphical Installers
+</h3><p><strong>What it looks like:</strong> double-click <code>.exe</code>, <code>.msi</code>, <code>.dmg</code>, <code>.deb</code>, <code>.rpm</code>, <code>.AppImage</code>.</p>
+<p><strong>What it is:</strong> a version installed through a graphical interface instead of the command line.</p>
+<p><strong>Pros:</strong> friendliest for people unfamiliar with the terminal; there is a UI with buttons to click.</p>
+<p><strong>Cons:</strong> may not expose all the abilities of the CLI; updating differs across platforms; some tools only ship a CLI with no desktop version.</p>
+<p><strong>Who it suits:</strong> people who would rather not touch the terminal at all.</p>
+<hr>
+<h3 id="building-from-source">Building From Source
+</h3><p><strong>What it looks like:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone https://github.com/xxx/xxx
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> xxx
+</span></span><span class="line"><span class="cl">make <span class="o">&amp;&amp;</span> make install
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Or <code>cargo build --release</code>, <code>go build</code>.</p>
+<p><strong>What it is:</strong> you take the source code and compile it into an executable on your own machine.</p>
+<p><strong>Pros:</strong> you can modify the code, optimize for your platform, or build versions that have not been released yet.</p>
+<p><strong>Cons:</strong> requires a compiler toolchain, takes a long time, upgrades are painful, and errors are common.</p>
+<p><strong>Who it suits:</strong> developers, people who want to change the source. <strong>Ordinary users should avoid this.</strong></p>
+<hr>
+<h3 id="app-stores--plugin-marketplaces">App Stores / Plugin Marketplaces
+</h3><p><strong>What it looks like:</strong></p>
+<ul>
+<li>search for plugins in the VS Code extension marketplace;</li>
+<li>search for plugins in the JetBrains plugin marketplace;</li>
+<li>search for apps in the Microsoft Store / Mac App Store;</li>
+<li>browser extension stores.</li>
+</ul>
+<p><strong>What it is:</strong> a &ldquo;plugin version&rdquo; that lives inside some host application, not a standalone CLI.</p>
+<p><strong>Pros:</strong> the simplest installation, well integrated with the host application.</p>
+<p><strong>Cons:</strong> capabilities are limited by the host application; uninstalling the host removes the plugin too; some plugins recreate configuration files.</p>
+<p><strong>Who it suits:</strong> people who only want to use it inside a particular editor and do not want a separate CLI.</p>
+<hr>
+<h2 id="one-summary-table-how-to-choose">One Summary Table: How to Choose
+</h2><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Method</th>
+					<th style="text-align: left">Typical command</th>
+					<th style="text-align: left">Requires pre-install</th>
+					<th style="text-align: left">Auto update</th>
+					<th style="text-align: left">Who it suits</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">Official one-line script</td>
+					<td style="text-align: left"><code>curl … | bash</code> / <code>irm … | iex</code></td>
+					<td style="text-align: left">None</td>
+					<td style="text-align: left">Usually yes</td>
+					<td style="text-align: left">People who want the fastest setup</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">System package manager</td>
+					<td style="text-align: left"><code>brew</code> / <code>winget</code> / <code>choco</code> / <code>scoop</code> / <code>apt</code></td>
+					<td style="text-align: left">The matching package manager</td>
+					<td style="text-align: left">With the package manager</td>
+					<td style="text-align: left">People already used to package managers</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Language package manager</td>
+					<td style="text-align: left"><code>npm -g</code> / <code>pip</code> / <code>cargo</code></td>
+					<td style="text-align: left">The matching runtime</td>
+					<td style="text-align: left">Manual</td>
+					<td style="text-align: left">People who already have Node/Python/Rust</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Standalone binary</td>
+					<td style="text-align: left">download zip / tar.gz</td>
+					<td style="text-align: left">None</td>
+					<td style="text-align: left">Manual</td>
+					<td style="text-align: left">No runtime dependency, version control</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Container / Docker</td>
+					<td style="text-align: left"><code>docker run …</code></td>
+					<td style="text-align: left">Docker</td>
+					<td style="text-align: left">Pull the image again</td>
+					<td style="text-align: left">Isolation and reproducibility</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Desktop app</td>
+					<td style="text-align: left">double-click <code>.exe</code> / <code>.dmg</code></td>
+					<td style="text-align: left">None</td>
+					<td style="text-align: left">In-app update</td>
+					<td style="text-align: left">People who avoid the terminal</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Build from source</td>
+					<td style="text-align: left"><code>git clone</code> + <code>make</code></td>
+					<td style="text-align: left">Compiler toolchain</td>
+					<td style="text-align: left">Manual</td>
+					<td style="text-align: left">Developers who change code</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">App store / plugin</td>
+					<td style="text-align: left">click install in the store</td>
+					<td style="text-align: left">Host application</td>
+					<td style="text-align: left">With the host</td>
+					<td style="text-align: left">People who only use an editor</td>
+			</tr>
+	</tbody>
+</table></div>
+<p><strong>One-line recommendation:</strong></p>
+
+    <blockquote>
+        <p><strong>If the official one-line script works, use it. If network or system restrictions block you, fall back to a system package manager. Treat language package managers such as npm as the last resort. If you want no runtime dependency at all, use a standalone binary. If you do not want to touch the terminal, use a desktop app.</strong></p>
+
+    </blockquote>
+<hr>
+<h2 id="glossary">Glossary
+</h2><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Term</th>
+					<th style="text-align: left">Meaning</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong>CLI</strong></td>
+					<td style="text-align: left">Command Line Interface. The tool you use by typing commands in a terminal.</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>Terminal</strong></td>
+					<td style="text-align: left">The dark box or window where you type commands. On Windows: PowerShell, CMD, Windows Terminal.</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>PATH</strong></td>
+					<td style="text-align: left">An environment variable that tells the system &ldquo;which directories to search for executables&rdquo;. If it is misconfigured you get <code>command not found</code>.</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>npm</strong></td>
+					<td style="text-align: left">The package manager for Node.js — not an installation method itself, but the most famous member of the &ldquo;language package manager&rdquo; category.</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>irm</strong></td>
+					<td style="text-align: left"><code>Invoke-RestMethod</code> in PowerShell, used to download content from the internet. <code>irm ... | iex</code> = download a script and run it.</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>curl</strong></td>
+					<td style="text-align: left">A cross-platform download tool. <code>curl ... | bash</code> = download a script and run it.</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>iex</strong></td>
+					<td style="text-align: left"><code>Invoke-Expression</code> in PowerShell; it executes a piece of text as code.</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>Binary</strong></td>
+					<td style="text-align: left">An already-compiled executable that runs when you double-click it or type its command.</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>Runtime</strong></td>
+					<td style="text-align: left">The environment a language needs in order to run; Node.js is the runtime for JavaScript, for example.</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>Global install</strong></td>
+					<td style="text-align: left">Installed so the whole system can use it, rather than only one project folder. In npm this is <code>-g</code>.</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>Docker</strong></td>
+					<td style="text-align: left">An &ldquo;isolated box&rdquo; tool that keeps software inside the box, away from the host system.</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>Repository</strong></td>
+					<td style="text-align: left">A place that stores packages or source code. GitHub is the most common code repository.</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>Releases</strong></td>
+					<td style="text-align: left">The &ldquo;published versions&rdquo; page on GitHub, usually holding pre-built archives.</td>
+			</tr>
+	</tbody>
+</table></div>
+<hr>
+<h2 id="security-notes">Security Notes
+</h2><ol>
+<li>
+<p><strong>Download only from official domains.</strong> Before running <code>curl … | bash</code> or <code>irm … | iex</code>, check the domain carefully.</p>
+</li>
+<li>
+<p><strong>Only trust official npm package names.</strong> Look-alike packages exist on npm; installing the wrong one can leak your credentials.</p>
+</li>
+<li>
+<p><strong>A good <code>curl | bash</code> habit:</strong> when possible, download the script first, read it, then run it:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -fsSL &lt;url&gt; -o install.sh
+</span></span><span class="line"><span class="cl">less install.sh
+</span></span><span class="line"><span class="cl">bash install.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>Verify signatures / checksums.</strong> Vendors usually publish SHA256 or GPG signatures; verify them for important tools.</p>
+</li>
+<li>
+<p><strong>Be careful with third-party &ldquo;config switcher / relay proxy&rdquo; tools.</strong> They often rewrite your configuration files and inject third-party endpoints and tokens — at best you get errors, at worst your credentials leak.</p>
+</li>
+<li>
+<p><strong>Never commit API keys into a Git repository.</strong> If a key is suspected of leaking, rotate it on the relevant platform immediately.</p>
+</li>
+</ol>
+<hr>
+<p><sub>This document is a personal write-up, not official documentation. For exact commands, refer to each project&rsquo;s official pages.</sub></p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/en/tags/cli/">CLI</a>
+        
+            <a href="/en/tags/beginner-guide/">Beginner Guide</a>
+        
+            <a href="/en/tags/tools/">Tools</a>
+        
+            <a href="/en/tags/ai-programming/">AI Programming</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under <a class="link" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"  target="_blank" rel="noopener"
+    >CC BY-NC-SA 4.0</a></span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title">Related content</h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/en/p/installation-guide-for-claude-code-and-opencode-cli/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post Installation Guide for Claude Code and OpenCode (CLI)" loading="lazy" src="/p/claude-code-%E4%B8%8E-opencode-%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97cli/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Installation Guide for Claude Code and OpenCode (CLI)</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/en/p/opencode-beginner-to-advanced-a-complete-guide-to-parallel-scheduling-and-usage-tips/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post OpenCode Beginner to Advanced: A Complete Guide to Parallel Scheduling and Usage Tips" loading="lazy" src="/p/opencode-%E6%96%B0%E6%89%8B%E8%BF%9B%E9%98%B6%E5%B9%B6%E8%A1%8C%E8%B0%83%E5%BA%A6%E4%B8%8E%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E5%85%A8%E6%94%BB%E7%95%A5/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">OpenCode Beginner to Advanced: A Complete Guide to Parallel Scheduling and Usage Tips</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/en/p/install-claude-code-and-connect-deepseek-beginner-friendly-guide/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post Install Claude Code and Connect DeepSeek (Beginner-Friendly Guide)" loading="lazy" src="/p/%E5%AE%89%E8%A3%85claudecode%E5%B9%B6%E6%8E%A5%E5%85%A5deepseek%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Install Claude Code and Connect DeepSeek (Beginner-Friendly Guide)</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/en/p/install-claude-code-in-5-minutes-and-connect-deepseek/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post Install Claude Code in 5 Minutes and Connect DeepSeek" loading="lazy" src="/p/5%E5%88%86%E9%92%9F%E5%AE%89%E8%A3%85claudecode%E5%B9%B6%E6%8E%A5%E5%85%A5deepseek/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Install Claude Code in 5 Minutes and Connect DeepSeek</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/en/p/learn-to-create-beautiful-tech-architecture-diagrams-with-ai/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post Learn to Create Beautiful Tech Architecture Diagrams with AI" loading="lazy" src="/p/%E5%B0%8F%E7%99%BD%E4%B9%9F%E8%83%BD%E5%AD%A6%E4%BC%9A%E7%94%A8-ai-%E5%BF%AB%E9%80%9F%E7%94%BB%E5%87%BA%E6%BC%82%E4%BA%AE%E7%9A%84%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84%E5%9B%BE/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Learn to Create Beautiful Tech Architecture Diagrams with AI</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+
+        <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2026 Yanmu
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="4.0.2">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.1ff1e5fdc4e178ed422e50aa407526dc552f26342d729343fded19416194382c.js" defer></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 面向 Windows / macOS / Linux 的命令行（CLI）安装手册，覆盖两大 AI 编程助手。 整理时间：2026 年 10 月。命令与版本以官方文档为准，若与官方页面不一致，以官方为准。 阅读建议：只想装一个工具，直接跳到对应章节；想先了解&quot;该不该继续用 npm&quot;，看「先看这里」一节。\n">
+<title>Claude Code 与 OpenCode 安装指南（CLI）</title>
+
+
+<link rel="canonical" href="https://AkuamT.github.io/p/claude-code-%E4%B8%8E-opencode-%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97cli/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.cf0091000d754a7e58ed45a5ba2bc8263b849a91250b3fedd4fa2fd8e504403f.css"><meta property='og:title' content="Claude Code 与 OpenCode 安装指南（CLI）">
+<meta property='og:description' content=" 面向 Windows / macOS / Linux 的命令行（CLI）安装手册，覆盖两大 AI 编程助手。 整理时间：2026 年 10 月。命令与版本以官方文档为准，若与官方页面不一致，以官方为准。 阅读建议：只想装一个工具，直接跳到对应章节；想先了解&quot;该不该继续用 npm&quot;，看「先看这里」一节。\n">
+<meta property='og:url' content='https://AkuamT.github.io/p/claude-code-%E4%B8%8E-opencode-%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97cli/'>
+<meta property='og:site_name' content='Yanmu'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='ClaudeCode' /><meta property='article:tag' content='OpenCode' /><meta property='article:tag' content='新手入门' /><meta property='article:published_time' content='2026-10-14T00:00:00&#43;08:00'/><meta property='article:modified_time' content='2026-10-14T00:00:00&#43;08:00'/><meta property='og:image' content='https://AkuamT.github.io/p/claude-code-%E4%B8%8E-opencode-%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97cli/cover.svg' />
+<meta name="twitter:title" content="Claude Code 与 OpenCode 安装指南（CLI）">
+<meta name="twitter:description" content=" 面向 Windows / macOS / Linux 的命令行（CLI）安装手册，覆盖两大 AI 编程助手。 整理时间：2026 年 10 月。命令与版本以官方文档为准，若与官方页面不一致，以官方为准。 阅读建议：只想装一个工具，直接跳到对应章节；想先了解&quot;该不该继续用 npm&quot;，看「先看这里」一节。\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://AkuamT.github.io/p/claude-code-%E4%B8%8E-opencode-%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97cli/cover.svg' />
+    <link rel="shortcut icon" href="img/avatar.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/">
+                    <img src="/img/Yanmu.jpg" 
+                        width="1024"
+                        height="1037"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">💻 </span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Yanmu</a></h1>
+            <h2 class="site-description">「愿你成为自己的太阳，无需借谁的光」</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/AkuamT'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E9%93%BE%E6%8E%A5/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                <option value="/p/claude-code-%E4%B8%8E-opencode-%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97cli/" selected>简体中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                <option value="/en/p/installation-guide-for-claude-code-and-opencode-cli/" >English</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                <option value="/zh-hant-tw/p/claude-code-%E8%88%87-opencode-%E5%AE%89%E8%A3%9D%E6%8C%87%E5%8D%97cli/" >繁体中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/ja/p/claude-code-%E3%81%A8-opencode-%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%82%AC%E3%82%A4%E3%83%89cli/" >日本語</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#先看这里三个最常问的问题">先看这里：三个最常问的问题</a>
+      <ol>
+        <li><a href="#q1还需要用-npm-安装吗">Q1：还需要用 npm 安装吗？</a></li>
+        <li><a href="#q2有原生安装包二进制吗">Q2：有原生安装包/二进制吗？</a></li>
+        <li><a href="#q3三者装法怎么选">Q3：三者装法怎么选？</a></li>
+      </ol>
+    </li>
+    <li><a href="#claude-code-安装">Claude Code 安装</a>
+      <ol>
+        <li><a href="#系统要求">系统要求</a></li>
+        <li><a href="#安装方式总览">安装方式总览</a></li>
+        <li><a href="#原生安装命令">原生安装命令</a></li>
+        <li><a href="#安装器背后做了什么">安装器背后做了什么</a></li>
+        <li><a href="#安装位置">安装位置</a></li>
+        <li><a href="#验证安装">验证安装</a></li>
+        <li><a href="#首次运行与登录">首次运行与登录</a></li>
+        <li><a href="#更新策略与发布通道">更新策略与发布通道</a></li>
+        <li><a href="#卸载">卸载</a></li>
+        <li><a href="#常见问题速查">常见问题速查</a></li>
+      </ol>
+    </li>
+    <li><a href="#opencode-安装">OpenCode 安装</a>
+      <ol>
+        <li><a href="#先搞清-v1-与-v2">先搞清 V1 与 V2</a></li>
+        <li><a href="#v1-安装方式">V1 安装方式</a></li>
+        <li><a href="#v2-安装方式">V2 安装方式</a></li>
+        <li><a href="#windows-用户的三个注意点">Windows 用户的三个注意点</a></li>
+        <li><a href="#安装目录优先级">安装目录优先级</a></li>
+        <li><a href="#验证与配置">验证与配置</a></li>
+        <li><a href="#卸载-1">卸载</a></li>
+        <li><a href="#桌面版beta">桌面版（Beta）</a></li>
+      </ol>
+    </li>
+    <li><a href="#两者对比与选择建议">两者对比与选择建议</a></li>
+    <li><a href="#安全与合规提醒">安全与合规提醒</a></li>
+    <li><a href="#官方链接">官方链接</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/p/claude-code-%E4%B8%8E-opencode-%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97cli/">
+            <img alt="Featured image of post Claude Code 与 OpenCode 安装指南（CLI）" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/claude-code-%E4%B8%8E-opencode-%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97cli/cover.svg">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/categories/ai-tools/" style="background-color: #7c3aed; color: #fff;">
+                AI工具
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/claude-code-%E4%B8%8E-opencode-%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97cli/">Claude Code 与 OpenCode 安装指南（CLI）</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-10-14T00:00:00&#43;08:00'>2026年10月14日星期三</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        阅读时长: 10 分钟
+                    </time>
+                
+            </div>
+        
+
+        
+            <div class="inline-meta">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                
+                    <a href="/en/p/installation-guide-for-claude-code-and-opencode-cli/" class="link">English</a>
+                
+                    <a href="/zh-hant-tw/p/claude-code-%E8%88%87-opencode-%E5%AE%89%E8%A3%9D%E6%8C%87%E5%8D%97cli/" class="link">繁体中文</a>
+                
+                    <a href="/ja/p/claude-code-%E3%81%A8-opencode-%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%82%AC%E3%82%A4%E3%83%89cli/" class="link">日本語</a>
+                
+            </div>
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span>目录</span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#先看这里三个最常问的问题">先看这里：三个最常问的问题</a>
+      <ol>
+        <li><a href="#q1还需要用-npm-安装吗">Q1：还需要用 npm 安装吗？</a></li>
+        <li><a href="#q2有原生安装包二进制吗">Q2：有原生安装包/二进制吗？</a></li>
+        <li><a href="#q3三者装法怎么选">Q3：三者装法怎么选？</a></li>
+      </ol>
+    </li>
+    <li><a href="#claude-code-安装">Claude Code 安装</a>
+      <ol>
+        <li><a href="#系统要求">系统要求</a></li>
+        <li><a href="#安装方式总览">安装方式总览</a></li>
+        <li><a href="#原生安装命令">原生安装命令</a></li>
+        <li><a href="#安装器背后做了什么">安装器背后做了什么</a></li>
+        <li><a href="#安装位置">安装位置</a></li>
+        <li><a href="#验证安装">验证安装</a></li>
+        <li><a href="#首次运行与登录">首次运行与登录</a></li>
+        <li><a href="#更新策略与发布通道">更新策略与发布通道</a></li>
+        <li><a href="#卸载">卸载</a></li>
+        <li><a href="#常见问题速查">常见问题速查</a></li>
+      </ol>
+    </li>
+    <li><a href="#opencode-安装">OpenCode 安装</a>
+      <ol>
+        <li><a href="#先搞清-v1-与-v2">先搞清 V1 与 V2</a></li>
+        <li><a href="#v1-安装方式">V1 安装方式</a></li>
+        <li><a href="#v2-安装方式">V2 安装方式</a></li>
+        <li><a href="#windows-用户的三个注意点">Windows 用户的三个注意点</a></li>
+        <li><a href="#安装目录优先级">安装目录优先级</a></li>
+        <li><a href="#验证与配置">验证与配置</a></li>
+        <li><a href="#卸载-1">卸载</a></li>
+        <li><a href="#桌面版beta">桌面版（Beta）</a></li>
+      </ol>
+    </li>
+    <li><a href="#两者对比与选择建议">两者对比与选择建议</a></li>
+    <li><a href="#安全与合规提醒">安全与合规提醒</a></li>
+    <li><a href="#官方链接">官方链接</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    
+    <blockquote>
+        <p>面向 <strong>Windows / macOS / Linux</strong> 的命令行（CLI）安装手册，覆盖两大 AI 编程助手。
+整理时间：<strong>2026 年 10 月</strong>。命令与版本以官方文档为准，若与官方页面不一致，以官方为准。
+阅读建议：只想装一个工具，直接跳到对应章节；想先了解&quot;该不该继续用 npm&quot;，看「先看这里」一节。</p>
+
+    </blockquote>
+<hr>
+<h2 id="先看这里三个最常问的问题">先看这里：三个最常问的问题
+</h2><h3 id="q1还需要用-npm-安装吗">Q1：还需要用 npm 安装吗？
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">工具</th>
+					<th style="text-align: left">结论</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong>Claude Code</strong></td>
+					<td style="text-align: left"><strong>不需要</strong>。官方文档已把「原生安装器（Native Install）」列为 <strong>Recommended</strong>，npm 被挪到「Advanced installation options」。而且<strong>只有原生安装会后台自动更新</strong>，Homebrew / WinGet / npm 三条路都要手动升级。新用户不建议再走 npm。</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>OpenCode</strong></td>
+					<td style="text-align: left"><strong>可选</strong>。官方同时提供安装脚本、独立原生二进制、npm 三种方式。已有 Node.js 环境的用户走 npm 最省事；想完全不依赖 Node.js 就下独立二进制。</td>
+			</tr>
+	</tbody>
+</table></div>
+<h3 id="q2有原生安装包二进制吗">Q2：有原生安装包/二进制吗？
+</h3><p><strong>两个都有。</strong></p>
+<ul>
+<li>Claude Code：原生安装器一条命令搞定，<strong>不需要 Node.js，也不需要管理员权限</strong>，会自动配置 PATH 并在后台自动更新。</li>
+<li>OpenCode：官方提供各平台的独立二进制（zip / tar.gz），也有安装脚本；但 <strong>Windows 上安装脚本依赖 bash 环境</strong>（WSL 或 Git Bash），官方因此在 Windows 章节首推 WSL。</li>
+</ul>
+<h3 id="q3三者装法怎么选">Q3：三者装法怎么选？
+</h3>
+    <blockquote>
+        <p><strong>一句话</strong>：能用官方原生安装器就用原生安装器；被网络或系统限制卡住时，再退到系统包管理器（WinGet / Homebrew / choco / scoop），npm 作为最后选项。</p>
+
+    </blockquote>
+<hr>
+<h2 id="claude-code-安装">Claude Code 安装
+</h2><h3 id="系统要求">系统要求
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">项目</th>
+					<th style="text-align: left">要求</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">操作系统</td>
+					<td style="text-align: left">macOS 13.0+ / Windows 10 1809+ 或 Windows Server 2019+ / Ubuntu 20.04+ / Debian 10+ / Alpine Linux 3.19+</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">硬件</td>
+					<td style="text-align: left">4 GB+ 内存；x64 或 ARM64 处理器（<strong>不支持 32 位 Windows</strong>）</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">网络</td>
+					<td style="text-align: left">必须联网</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Shell</td>
+					<td style="text-align: left">Bash、Zsh、PowerShell 或 CMD</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">附加依赖</td>
+					<td style="text-align: left"><code>ripgrep</code>——Claude Code 通常自带，若代码搜索异常见官方排障页</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">地区</td>
+					<td style="text-align: left">需位于 Anthropic 支持的国家/地区</td>
+			</tr>
+	</tbody>
+</table></div>
+<h3 id="安装方式总览">安装方式总览
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">方式</th>
+					<th style="text-align: center">自动更新</th>
+					<th style="text-align: left">适用平台</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong>原生安装器（推荐）</strong></td>
+					<td style="text-align: center">✅ 后台自动</td>
+					<td style="text-align: left">Windows / macOS / Linux / WSL</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Homebrew</td>
+					<td style="text-align: center">❌ 需手动 <code>brew upgrade</code></td>
+					<td style="text-align: left">macOS / Linux</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">WinGet</td>
+					<td style="text-align: center">❌ 需手动 <code>winget upgrade</code></td>
+					<td style="text-align: left">Windows</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Linux 包管理器（apt / dnf / apk）</td>
+					<td style="text-align: center">随包管理器</td>
+					<td style="text-align: left">Debian / Fedora / Alpine</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>npm（高级选项）</strong></td>
+					<td style="text-align: center">❌ 需手动升级</td>
+					<td style="text-align: left">任意有 Node.js 的平台</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">桌面应用（图形界面）</td>
+					<td style="text-align: center">—</td>
+					<td style="text-align: left">Windows / macOS / Linux</td>
+			</tr>
+	</tbody>
+</table></div>
+<h3 id="原生安装命令">原生安装命令
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">平台</th>
+					<th style="text-align: left">命令</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong>Windows（PowerShell）</strong></td>
+					<td style="text-align: left"><code>irm https://claude.ai/install.ps1 | iex</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>Windows（CMD）</strong></td>
+					<td style="text-align: left"><code>curl -fsSL https://claude.ai/install.cmd -o install.cmd &amp;&amp; install.cmd &amp;&amp; del install.cmd</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>macOS / Linux / WSL</strong></td>
+					<td style="text-align: left"><code>curl -fsSL https://claude.ai/install.sh | bash</code></td>
+			</tr>
+	</tbody>
+</table></div>
+
+    <blockquote>
+        <p><strong>提示</strong>：判断自己在哪个终端——PowerShell 的提示符长这样 <code>PS C:\&gt;</code>，CMD 的长这样 <code>C:\&gt;</code>。两条命令<strong>不能互换</strong>：在 PowerShell 里跑 CMD 命令会报 <code>The token '&amp;&amp;' is not a valid statement separator</code>；在 CMD 里跑 PowerShell 命令会报 <code>'irm' is not recognized</code>。</p>
+
+    </blockquote>
+<p><strong>指定发布通道或版本</strong>（参数取值：<code>stable</code>、<code>latest</code>、或具体版本号如 <code>2.1.89</code>，缺省为 <code>latest</code>）：</p>
+<div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">平台</th>
+					<th style="text-align: left">命令</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">Windows（PowerShell）</td>
+					<td style="text-align: left"><code>&amp; ([scriptblock]::Create((irm https://claude.ai/install.ps1))) stable</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">macOS / Linux / WSL</td>
+					<td style="text-align: left"><code>curl -fsSL https://claude.ai/install.sh | bash -s -- stable</code></td>
+			</tr>
+	</tbody>
+</table></div>
+<h3 id="安装器背后做了什么">安装器背后做了什么
+</h3><p>了解流程有助于判断&quot;卡住了还是在干活&quot;：</p>
+<ol>
+<li>校验系统架构（拒绝 32 位 Windows）；ARM64 与 x64 自动选择对应二进制。</li>
+<li>从 <code>downloads.claude.ai</code> 读取当前版本号。</li>
+<li>下载该版本的 <code>manifest.json</code>，取出对应平台的 <strong>SHA256 校验和</strong>。</li>
+<li>下载二进制到本地临时目录。</li>
+<li><strong>校验 SHA256</strong>，不一致则删除文件并中止。</li>
+<li>安装到用户目录并写入 PATH。</li>
+<li>删除临时文件，输出完成提示。</li>
+</ol>
+
+    <blockquote>
+        <p>⚠️ <strong>两个容易误判的点</strong></p>
+<ul>
+<li><strong>全程没有进度条</strong>，看起来像卡住，实际在下载，通常几十秒内完成。</li>
+<li>完成标志是一行绿色的 <code>Installation complete!</code>。</li>
+</ul>
+
+    </blockquote>
+<h3 id="安装位置">安装位置
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">平台</th>
+					<th style="text-align: left">可执行文件</th>
+					<th style="text-align: left">数据目录</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">Windows</td>
+					<td style="text-align: left"><code>%USERPROFILE%\.local\bin\claude.exe</code></td>
+					<td style="text-align: left"><code>%USERPROFILE%\.local\share\claude</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">macOS / Linux / WSL</td>
+					<td style="text-align: left"><code>~/.local/bin/claude</code></td>
+					<td style="text-align: left"><code>~/.local/share/claude</code></td>
+			</tr>
+	</tbody>
+</table></div>
+<p>用户配置与会话数据则位于：<code>~/.claude/</code>（Windows 为 <code>%USERPROFILE%\.claude</code>）与 <code>~/.claude.json</code>。</p>
+<h3 id="验证安装">验证安装
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">claude --version     <span class="c1"># 应打印版本号</span>
+</span></span><span class="line"><span class="cl">claude doctor        <span class="c1"># 环境自检（排障首选）</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    <blockquote>
+        <p><strong>重要</strong>：安装后请<strong>关闭并重新打开终端</strong>。安装器刚写入的 PATH 对已经打开的窗口不可见。</p>
+
+    </blockquote>
+<p><strong>如果提示找不到命令</strong>（<code>command not found</code> / <code>无法将&quot;claude&quot;项识别为 cmdlet</code>）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># Windows PowerShell</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Test-Path</span> <span class="s2">&#34;</span><span class="nv">$env:USERPROFILE</span><span class="s2">\.local\bin\claude.exe&#34;</span>                                  <span class="c"># ① 二进制是否已安装</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="no">Environment</span><span class="p">]::</span><span class="n">GetEnvironmentVariable</span><span class="p">(</span><span class="s1">&#39;Path&#39;</span><span class="p">,</span><span class="s1">&#39;User&#39;</span><span class="p">)</span> <span class="n">-split</span> <span class="s1">&#39;;&#39;</span> <span class="p">|</span> <span class="nb">Select-String</span> <span class="s1">&#39;local\\bin&#39;</span>   <span class="c"># ② PATH 是否包含</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>若 ① 为 True 而 ② 为空，手动补进用户级 PATH（无需管理员，追加即可）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nv">$p</span> <span class="p">=</span> <span class="p">[</span><span class="no">Environment</span><span class="p">]::</span><span class="n">GetEnvironmentVariable</span><span class="p">(</span><span class="s1">&#39;Path&#39;</span><span class="p">,</span><span class="s1">&#39;User&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="no">Environment</span><span class="p">]::</span><span class="n">SetEnvironmentVariable</span><span class="p">(</span><span class="s1">&#39;Path&#39;</span><span class="p">,</span> <span class="s2">&#34;</span><span class="nv">$env:USERPROFILE</span><span class="s2">\.local\bin;</span><span class="nv">$p</span><span class="s2">&#34;</span><span class="p">,</span> <span class="s1">&#39;User&#39;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>macOS / Linux 同理，把 <code>export PATH=&quot;$HOME/.local/bin:$PATH&quot;</code> 写进 <code>~/.bashrc</code> / <code>~/.zshrc</code>。</p>
+<h3 id="首次运行与登录">首次运行与登录
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> 你的项目目录
+</span></span><span class="line"><span class="cl">claude
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>首次启动会进入引导流程：选择登录方式（Claude 订阅账号，或 Anthropic Console 的 API Key）→ 浏览器完成授权 → 配置写入 <code>~/.claude/</code>。</p>
+<h3 id="更新策略与发布通道">更新策略与发布通道
+</h3><ul>
+<li><strong>原生安装</strong>：后台自动更新，无需干预。</li>
+<li>发布通道：
+<ul>
+<li><code>stable</code>——稳定通道，通常比最新版落后约一周，会跳过有重大回归的版本；</li>
+<li><code>latest</code>——最新通道，新版本一发布就能拿到。</li>
+</ul>
+</li>
+<li>其他方式的更新命令：<code>brew upgrade claude-code</code> / <code>winget upgrade Anthropic.ClaudeCode</code> / <code>npm update -g @anthropic-ai/claude-code</code>。</li>
+</ul>
+<h3 id="卸载">卸载
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">安装方式</th>
+					<th style="text-align: left">卸载命令</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">原生（Windows PowerShell）</td>
+					<td style="text-align: left"><code>Remove-Item -Path &quot;$env:USERPROFILE\.local\bin\claude.exe&quot; -Force</code> 与 <code>Remove-Item -Path &quot;$env:USERPROFILE\.local\share\claude&quot; -Recurse -Force</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">原生（macOS / Linux / WSL）</td>
+					<td style="text-align: left"><code>rm -f ~/.local/bin/claude</code> 与 <code>rm -rf ~/.local/share/claude</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Homebrew</td>
+					<td style="text-align: left"><code>brew uninstall --cask claude-code</code>（latest 通道则为 <code>claude-code@latest</code>）</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">WinGet</td>
+					<td style="text-align: left"><code>winget uninstall Anthropic.ClaudeCode</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">npm</td>
+					<td style="text-align: left"><code>npm uninstall -g @anthropic-ai/claude-code</code></td>
+			</tr>
+	</tbody>
+</table></div>
+<p><strong>清理配置文件</strong>（⚠️ 会一并删除全部设置、已授权工具、MCP 配置与会话历史）：</p>
+<div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">平台</th>
+					<th style="text-align: left">命令</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">Windows（PowerShell）</td>
+					<td style="text-align: left"><code>Remove-Item -Path &quot;$env:USERPROFILE\.claude&quot; -Recurse -Force</code>；<code>Remove-Item -Path &quot;$env:USERPROFILE\.claude.json&quot; -Force</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">macOS / Linux / WSL</td>
+					<td style="text-align: left"><code>rm -rf ~/.claude</code>；<code>rm ~/.claude.json</code></td>
+			</tr>
+	</tbody>
+</table></div>
+
+    <blockquote>
+        <p>若 VS Code 扩展、JetBrains 插件或桌面应用仍在安装状态，它们会重新创建 <code>~/.claude/</code>；想彻底清除需先卸载它们。</p>
+
+    </blockquote>
+<h3 id="常见问题速查">常见问题速查
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">现象</th>
+					<th style="text-align: left">原因与处理</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><code>command not found: claude</code> / 无法识别</td>
+					<td style="text-align: left">安装目录未进 PATH —— 重开终端；仍不行参考上面「验证安装」一节</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><code>'irm' is not recognized</code></td>
+					<td style="text-align: left">你在 CMD 里执行了 PowerShell 命令</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><code>The token '&amp;&amp;' is not a valid statement separator</code></td>
+					<td style="text-align: left">你在 PowerShell 里执行了 CMD 命令</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">下载超时 / <code>Failed to get a valid version from downloads.claude.ai</code></td>
+					<td style="text-align: left">网络或地区问题：配置代理后重试，例如 <code>export HTTPS_PROXY=http://127.0.0.1:端口</code>（Windows：<code>$env:HTTPS_PROXY=&quot;http://127.0.0.1:端口&quot;</code>）</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><code>Checksum verification failed</code></td>
+					<td style="text-align: left">下载损坏，重新执行安装命令</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Windows 上 Bash 工具不可用</td>
+					<td style="text-align: left">安装 <strong>Git for Windows</strong>：Claude Code 会优先使用 Git Bash，未安装时回退到 PowerShell 作为 shell 工具</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">装过多次、行为诡异</td>
+					<td style="text-align: left">可能存在多个安装（如 npm 版 + 原生版并存），用 <code>claude doctor</code> 检查冲突安装</td>
+			</tr>
+	</tbody>
+</table></div>
+<hr>
+<h2 id="opencode-安装">OpenCode 安装
+</h2><p>官网：<a class="link" href="https://opencode.ai"  target="_blank" rel="noopener"
+    >https://opencode.ai</a> ｜ 仓库：<a class="link" href="https://github.com/anomalyco/opencode"  target="_blank" rel="noopener"
+    >https://github.com/anomalyco/opencode</a></p>
+
+    <blockquote>
+        <p><strong>注意品牌沿革</strong>：该项目原属 <code>sst</code> 组织，现已迁移至 <strong><code>anomalyco</code></strong>。旧链接 <code>github.com/sst/opencode</code> 会自动跳转，不是仿冒站点。</p>
+
+    </blockquote>
+<h3 id="先搞清-v1-与-v2">先搞清 V1 与 V2
+</h3><p>OpenCode 目前有两条并行的产品线，<strong>都使用 <code>opencode</code> 这个命令，无法共存</strong>（不能同时安装）：</p>
+<div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left"></th>
+					<th style="text-align: left"><strong>V1（stable）</strong></th>
+					<th style="text-align: left"><strong>V2（beta）</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">安装脚本</td>
+					<td style="text-align: left"><code>curl -fsSL https://opencode.ai/install | bash</code></td>
+					<td style="text-align: left"><code>curl -fsSL https://opencode.ai/v2/install | bash</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">npm 包名</td>
+					<td style="text-align: left"><code>opencode-ai</code></td>
+					<td style="text-align: left"><code>@opencode/cli</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Homebrew</td>
+					<td style="text-align: left"><code>brew install anomalyco/tap/opencode</code></td>
+					<td style="text-align: left"><code>brew install anomalyco/tap/opencode-v2</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Windows 包管理器</td>
+					<td style="text-align: left">支持 <code>choco</code> / <code>scoop</code></td>
+					<td style="text-align: left"><strong>不支持</strong></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">文档</td>
+					<td style="text-align: left"><a class="link" href="https://opencode.ai/docs"  target="_blank" rel="noopener"
+    >https://opencode.ai/docs</a></td>
+					<td style="text-align: left"><a class="link" href="https://opencode.ai/v2/docs"  target="_blank" rel="noopener"
+    >https://opencode.ai/v2/docs</a></td>
+			</tr>
+	</tbody>
+</table></div>
+
+    <blockquote>
+        <p><strong>建议</strong>：V2 仍在 beta，且明确声明 Windows 包管理器不受支持。追求稳定请选 <strong>V1</strong>；想尝鲜再考虑 V2，并注意它与 V1 不能并存。</p>
+
+    </blockquote>
+<h3 id="v1-安装方式">V1 安装方式
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">方式</th>
+					<th style="text-align: left">命令</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">安装脚本（推荐）</td>
+					<td style="text-align: left"><code>curl -fsSL https://opencode.ai/install | bash</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">npm</td>
+					<td style="text-align: left"><code>npm install -g opencode-ai</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">pnpm / yarn / bun</td>
+					<td style="text-align: left"><code>pnpm install -g opencode-ai</code> / <code>yarn global add opencode-ai</code> / <code>bun install -g opencode-ai</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">macOS / Linux（Homebrew）</td>
+					<td style="text-align: left"><code>brew install anomalyco/tap/opencode</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Arch Linux</td>
+					<td style="text-align: left"><code>sudo pacman -S opencode</code>（稳定）或 <code>paru -S opencode-bin</code>（最新）</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Windows（WSL，官方推荐）</td>
+					<td style="text-align: left">在 WSL 内使用上面的脚本或 npm 方式</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Windows（Chocolatey / Scoop）</td>
+					<td style="text-align: left"><code>choco install opencode</code> / <code>scoop install opencode</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Windows（npm）</td>
+					<td style="text-align: left"><code>npm install -g opencode-ai</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Docker</td>
+					<td style="text-align: left"><code>docker run -it --rm ghcr.io/anomalyco/opencode</code></td>
+			</tr>
+	</tbody>
+</table></div>
+<h3 id="v2-安装方式">V2 安装方式
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">方式</th>
+					<th style="text-align: left">命令</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">安装脚本</td>
+					<td style="text-align: left"><code>curl -fsSL https://opencode.ai/v2/install | bash</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">npm</td>
+					<td style="text-align: left"><code>npm install -g @opencode/cli</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">bun</td>
+					<td style="text-align: left"><code>bun install -g --trust @opencode/cli</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">pnpm</td>
+					<td style="text-align: left"><code>pnpm add -g --allow-build=@opencode/cli @opencode/cli</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">yarn</td>
+					<td style="text-align: left"><code>yarn global add @opencode/cli</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Homebrew</td>
+					<td style="text-align: left"><code>brew install anomalyco/tap/opencode-v2</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">独立二进制</td>
+					<td style="text-align: left">从官网下载页或 GitHub Releases 取对应平台压缩包</td>
+			</tr>
+	</tbody>
+</table></div>
+
+    <blockquote>
+        <p>通过 npm / bun / pnpm 安装时，包内 <code>postinstall</code> 脚本会自动选择<strong>当前平台的原生二进制</strong>。bun 与 pnpm 默认阻止构建脚本，因此官方命令里带了 <code>--trust</code> / <code>--allow-build</code> 参数。</p>
+
+    </blockquote>
+<h3 id="windows-用户的三个注意点">Windows 用户的三个注意点
+</h3><ol>
+<li><strong>官方首推 WSL</strong>：性能与功能兼容性最好。</li>
+<li><strong>安装脚本需要 bash</strong>：<code>curl ... | bash</code> 在纯 Windows 终端里跑不了，需 WSL 或 Git Bash。</li>
+<li><strong>V2 不支持 Windows 包管理器</strong>：choco / scoop 这条路在 V2 上不通；V2 请用 npm 或独立二进制。</li>
+</ol>
+<h3 id="安装目录优先级">安装目录优先级
+</h3><p>安装脚本按以下顺序选择落点：</p>
+<ol>
+<li><code>$OPENCODE_INSTALL_DIR</code></li>
+<li><code>$XDG_BIN_DIR</code></li>
+<li><code>$HOME/bin</code></li>
+<li><code>$HOME/.opencode/bin</code>（默认兜底）</li>
+</ol>
+<p>例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">OPENCODE_INSTALL_DIR</span><span class="o">=</span>/usr/local/bin curl -fsSL https://opencode.ai/install <span class="p">|</span> bash
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="验证与配置">验证与配置
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">opencode --version    <span class="c1"># 打印版本</span>
+</span></span><span class="line"><span class="cl">opencode              <span class="c1"># 在项目目录中启动 TUI</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>启动后在 TUI 里用 <code>/connect</code> 配置模型供应商（官方推荐自家 OpenCode Zen，也支持任意兼容 provider）。</p>
+<h3 id="卸载-1">卸载
+</h3><ul>
+<li>脚本 / 独立二进制安装：删除上一步安装目录中的 <code>opencode</code> 可执行文件，并从 PATH 中移除该目录。</li>
+<li>npm 安装：<code>npm uninstall -g opencode-ai</code>（或 <code>@opencode/cli</code>）。</li>
+<li>Homebrew：<code>brew uninstall opencode</code>（或 <code>opencode-v2</code>）。</li>
+<li>配置目录：<code>~/.config/opencode/</code>、<code>~/.local/share/opencode/</code> 可按需删除。</li>
+</ul>
+<h3 id="桌面版beta">桌面版（Beta）
+</h3><p>不想用终端的话，官方也提供桌面应用：Windows 为 <code>opencode-desktop-windows-x64.exe</code>，macOS 为 <code>.dmg</code>，Linux 为 <code>.deb</code> / <code>.rpm</code> / <code>.AppImage</code>，下载页见官方文档。</p>
+<hr>
+<h2 id="两者对比与选择建议">两者对比与选择建议
+</h2><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">维度</th>
+					<th style="text-align: left">Claude Code</th>
+					<th style="text-align: left">OpenCode</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">出品方</td>
+					<td style="text-align: left">Anthropic（官方）</td>
+					<td style="text-align: left">Anomaly 社区开源（MIT）</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">模型支持</td>
+					<td style="text-align: left">主要面向 Claude 系列（也支持兼容 API 端点）</td>
+					<td style="text-align: left">任意 provider（含本地/自建）</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">安装难度</td>
+					<td style="text-align: left">极低（一条命令，自带自动更新）</td>
+					<td style="text-align: left">中（需按平台/版本挑方式）</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Windows 体验</td>
+					<td style="text-align: left">原生支持良好（建议装 Git for Windows）</td>
+					<td style="text-align: left">建议 WSL</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">是否开源</td>
+					<td style="text-align: left">客户端闭源</td>
+					<td style="text-align: left">完全开源</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">适合人群</td>
+					<td style="text-align: left">想要&quot;开箱即用 + 官方支持&quot;</td>
+					<td style="text-align: left">想要&quot;可换模型、可自托管、可改源码&quot;</td>
+			</tr>
+	</tbody>
+</table></div>
+<p><strong>选择建议</strong></p>
+<ul>
+<li>只想尽快用起来、且有 Anthropic 账号 → <strong>Claude Code</strong>（原生安装）。</li>
+<li>想接第三方模型、想省钱、想折腾 → <strong>OpenCode</strong>（V1 stable）。</li>
+<li>两者功能定位类似，<strong>可以先都装</strong>：Claude Code 装在用户目录（<code>~/.local/bin</code>），OpenCode 走 npm 或独立目录，互不干扰。</li>
+</ul>
+<hr>
+<h2 id="安全与合规提醒">安全与合规提醒
+</h2><ol>
+<li><strong>只从官方域名下载</strong>
+<ul>
+<li>Claude Code：<code>claude.ai</code>、<code>code.claude.com</code>、<code>downloads.claude.ai</code></li>
+<li>OpenCode：<code>opencode.ai</code>、<code>github.com/anomalyco/opencode</code></li>
+</ul>
+</li>
+<li><strong>npm 包名只认官方的</strong>：npm 上存在同名山寨包（OpenCode 生态里就出现过 <code>opcpackage</code> 等仿制包）。Claude Code 认 <code>@anthropic-ai/claude-code</code>，OpenCode 认 <code>opencode-ai</code>（V1）/ <code>@opencode/cli</code>（V2）。</li>
+<li><strong>校验签名/校验和</strong>
+<ul>
+<li>Windows：<code>Get-AuthenticodeSignature .\claude.exe</code>，签名者应为 <code>Anthropic, PBC</code>。</li>
+<li>macOS：<code>codesign --verify --verbose ./claude</code>。</li>
+<li>官方还提供带 GPG 签名的 <code>manifest.json</code>，可校验所有平台二进制的 SHA256。</li>
+</ul>
+</li>
+<li><strong><code>curl … | bash</code> 与 <code>irm … | iex</code> 的安全习惯</strong>：先看清域名，再执行；有条件的话先下载脚本、读一遍再运行（<code>curl -fsSL &lt;url&gt; -o install.sh</code> 然后 <code>less install.sh</code>）。</li>
+<li><strong>谨慎使用第三方&quot;配置切换 / 中转代理&quot;工具</strong>：这类工具常会直接改写 <code>~/.claude/settings.json</code>、<code>~/.config/opencode/opencode.json</code> 等文件，写入第三方 <code>baseURL</code> 与 <code>token</code>；一旦它写入失效的模型名或残留 hook，轻则启动报错，重则凭证外泄。要用就自己写配置文件，清楚每一行在做什么。</li>
+<li><strong>API Key 管理</strong>：不要把 Key 明文提交进 Git 仓库；一旦疑似泄露，立即到对应平台轮换。</li>
+</ol>
+<hr>
+<h2 id="官方链接">官方链接
+</h2><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">资源</th>
+					<th style="text-align: left">地址</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">Claude Code 文档首页</td>
+					<td style="text-align: left"><a class="link" href="https://code.claude.com/docs"  target="_blank" rel="noopener"
+    >https://code.claude.com/docs</a></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Claude Code 安装与卸载（Advanced setup）</td>
+					<td style="text-align: left"><a class="link" href="https://code.claude.com/docs/en/setup"  target="_blank" rel="noopener"
+    >https://code.claude.com/docs/en/setup</a></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Claude Code 安装排障</td>
+					<td style="text-align: left"><a class="link" href="https://code.claude.com/docs/en/troubleshoot-install"  target="_blank" rel="noopener"
+    >https://code.claude.com/docs/en/troubleshoot-install</a></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Anthropic 支持的国家/地区</td>
+					<td style="text-align: left"><a class="link" href="https://www.anthropic.com/supported-countries"  target="_blank" rel="noopener"
+    >https://www.anthropic.com/supported-countries</a></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">OpenCode 文档（V1）</td>
+					<td style="text-align: left"><a class="link" href="https://opencode.ai/docs"  target="_blank" rel="noopener"
+    >https://opencode.ai/docs</a></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">OpenCode 文档（V2 beta）</td>
+					<td style="text-align: left"><a class="link" href="https://opencode.ai/v2/docs"  target="_blank" rel="noopener"
+    >https://opencode.ai/v2/docs</a></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">OpenCode 仓库</td>
+					<td style="text-align: left"><a class="link" href="https://github.com/anomalyco/opencode"  target="_blank" rel="noopener"
+    >https://github.com/anomalyco/opencode</a></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">OpenCode 下载页</td>
+					<td style="text-align: left"><a class="link" href="https://opencode.ai/download"  target="_blank" rel="noopener"
+    >https://opencode.ai/download</a></td>
+			</tr>
+	</tbody>
+</table></div>
+<hr>
+<p><sub>本文档为个人整理，非官方文档。命令以各项目官方页面为准。</sub></p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/claudecode/">ClaudeCode</a>
+        
+            <a href="/tags/opencode/">OpenCode</a>
+        
+            <a href="/tags/%E6%96%B0%E6%89%8B%E5%85%A5%E9%97%A8/">新手入门</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under <a class="link" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"  target="_blank" rel="noopener"
+    >CC BY-NC-SA 4.0</a></span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title">相关文章</h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/opencode-%E6%96%B0%E6%89%8B%E8%BF%9B%E9%98%B6%E5%B9%B6%E8%A1%8C%E8%B0%83%E5%BA%A6%E4%B8%8E%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E5%85%A8%E6%94%BB%E7%95%A5/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post OpenCode 新手进阶：并行调度与使用技巧全攻略" loading="lazy" src="/p/opencode-%E6%96%B0%E6%89%8B%E8%BF%9B%E9%98%B6%E5%B9%B6%E8%A1%8C%E8%B0%83%E5%BA%A6%E4%B8%8E%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E5%85%A8%E6%94%BB%E7%95%A5/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">OpenCode 新手进阶：并行调度与使用技巧全攻略</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/5%E5%88%86%E9%92%9F%E5%AE%89%E8%A3%85claudecode%E5%B9%B6%E6%8E%A5%E5%85%A5deepseek/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post 5分钟安装ClaudeCode并接入DeepSeek" loading="lazy" src="/p/5%E5%88%86%E9%92%9F%E5%AE%89%E8%A3%85claudecode%E5%B9%B6%E6%8E%A5%E5%85%A5deepseek/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">5分钟安装ClaudeCode并接入DeepSeek</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/%E5%AE%89%E8%A3%85claudecode%E5%B9%B6%E6%8E%A5%E5%85%A5deepseek%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post 安装ClaudeCode并接入DeepSeek（面向小白）" loading="lazy" src="/p/%E5%AE%89%E8%A3%85claudecode%E5%B9%B6%E6%8E%A5%E5%85%A5deepseek%E9%9D%A2%E5%90%91%E5%B0%8F%E7%99%BD/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">安装ClaudeCode并接入DeepSeek（面向小白）</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/ai-%E7%BC%96%E7%A8%8B%E5%8A%A9%E6%89%8B-cli-%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F%E5%85%A8%E7%A7%91%E6%99%AE/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI 编程助手 CLI 安装方式全科普" loading="lazy" src="/p/ai-%E7%BC%96%E7%A8%8B%E5%8A%A9%E6%89%8B-cli-%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F%E5%85%A8%E7%A7%91%E6%99%AE/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI 编程助手 CLI 安装方式全科普</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/opencode--obsidian%E6%89%93%E9%80%A0%E4%BD%A0%E7%9A%84ai%E9%A9%B1%E5%8A%A8%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E5%B7%A5%E4%BD%9C%E6%B5%81/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post OpenCode + Obsidian：打造你的AI驱动知识管理工作流" loading="lazy" src="/p/opencode--obsidian%E6%89%93%E9%80%A0%E4%BD%A0%E7%9A%84ai%E9%A9%B1%E5%8A%A8%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E5%B7%A5%E4%BD%9C%E6%B5%81/cover.svg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">OpenCode &#43; Obsidian：打造你的AI驱动知识管理工作流</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+
+        <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2026 Yanmu
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="4.0.2">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.f856840516f7c2ad1769a8f5937e3d08d6cb386e2cd2dd025ae696e0ff207958.js" defer></script>
+
+
+    </body>
+</html>

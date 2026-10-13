@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
 
 
-<link rel="stylesheet" href="/scss/style.min.ed668df6847002e96da55125322b5655e4e3773453c2addee35312e6bbf6cb10.css"><meta property='og:title' content="Agent 和 Harness 到底是什麼？—— 影片筆記整理">
+<link rel="stylesheet" href="/scss/style.min.cf0091000d754a7e58ed45a5ba2bc8263b849a91250b3fedd4fa2fd8e504403f.css"><meta property='og:title' content="Agent 和 Harness 到底是什麼？—— 影片筆記整理">
 <meta property='og:description' content="一句話總結 Agent 解決的是 AI 怎麼幹活的問題，Harness 解決的是 AI 怎麼把活幹靠譜的問題。 兩者加在一起，才構成了 Claude Code、Codex、Open Cloud、千問等產品。\n">
 <meta property='og:url' content='https://AkuamT.github.io/zh-hant-tw/p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E9%BA%BC-%E5%BD%B1%E7%89%87%E7%AD%86%E8%A8%98%E6%95%B4%E7%90%86/'>
 <meta property='og:site_name' content='Yanmu'>
@@ -550,7 +550,7 @@
 <li><strong>網站執行</strong> → 後臺執行搜索函數，找到 SVG 素材</li>
 <li><strong>最終生成</strong> → 網站把素材 + 使用者提示詞發給 AI，完成動畫創作</li>
 </ol>
-<p><img class="gallery-image" data-flex-basis="441px" data-flex-grow="183" height="620" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525212936.png" srcset="/p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525212936_hu_9bf2d3cef97bc770.png 800w, /p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525212936.png 1140w" width="1140"></p>
+<p><img class="gallery-image" data-flex-basis="441px" data-flex-grow="183" height="620" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525212936.png" srcset="/p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525212936_hu_caa19c53714e31c5.png 800w, /p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525212936.png 1140w" width="1140"></p>
 <hr>
 <h2 id="二agent-的兩大核心工作模式">二、Agent 的兩大核心工作模式
 </h2><h3 id="1-reactreasoning--acting-走一步看一步">1. ReAct（Reasoning + Acting）—— 走一步看一步
@@ -593,7 +593,7 @@
 	</tbody>
 </table></div>
 <p>實際 Agent 會<strong>將二者結合</strong>使用。例如千問的「任務助理」模式：先分析需求分步規劃（Plan），然後主動搜索資料、寫程式碼、檢查調整（Act）。</p>
-<p><img class="gallery-image" data-flex-basis="312px" data-flex-grow="130" height="893" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525213008.png" srcset="/p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525213008_hu_8abcc76a1376ff26.png 800w, /p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525213008.png 1162w" width="1162"></p>
+<p><img class="gallery-image" data-flex-basis="312px" data-flex-grow="130" height="893" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525213008.png" srcset="/p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525213008_hu_de0962046889d468.png 800w, /p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525213008.png 1162w" width="1162"></p>
 <hr>
 <h2 id="三agent-的進階能力">三、Agent 的進階能力
 </h2><h3 id="工具呼叫tool-calling--function-calling">工具呼叫（Tool Calling / Function Calling）
@@ -616,7 +616,7 @@
 <li>專案經理只拿最終結果，不關心中間過程</li>
 <li>既提高了效率，又緩解了上下文爆炸的問題</li>
 </ul>
-<p><img class="gallery-image" data-flex-basis="299px" data-flex-grow="124" height="941" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525213022.png" srcset="/p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525213022_hu_3c2b8ba52f2ca08d.png 800w, /p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525213022.png 1173w" width="1173"></p>
+<p><img class="gallery-image" data-flex-basis="299px" data-flex-grow="124" height="941" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525213022.png" srcset="/p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525213022_hu_61c7f866cde01d4d.png 800w, /p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525213022.png 1173w" width="1173"></p>
 <hr>
 <h2 id="四harness--讓-ai-把活幹靠譜的防護網">四、Harness —— 讓 AI 把活幹靠譜的防護網
 </h2><p>Agent 真正跑起來會遇到各種坑，需要 Harness（馬具/防護網）來解決。</p>
@@ -657,7 +657,7 @@
 			</tr>
 	</tbody>
 </table></div>
-<p><img class="gallery-image" data-flex-basis="396px" data-flex-grow="165" height="703" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525213039.png" srcset="/p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525213039_hu_3ed75d1f97918308.png 800w, /p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525213039.png 1160w" width="1160"></p>
+<p><img class="gallery-image" data-flex-basis="396px" data-flex-grow="165" height="703" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525213039.png" srcset="/p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525213039_hu_e19d6e6ea1e0f866.png 800w, /p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525213039.png 1160w" width="1160"></p>
 <h3 id="harness-工程的核心原則">Harness 工程的核心原則
 </h3>
     <blockquote>
@@ -666,7 +666,7 @@
     </blockquote>
 <hr>
 <h2 id="五完整架構總結">五、完整架構總結
-</h2><p><img class="gallery-image" data-flex-basis="330px" data-flex-grow="137" height="810" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525213102.png" srcset="/p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525213102_hu_23b88fc6c4151d43.png 800w, /p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525213102.png 1115w" width="1115"></p>
+</h2><p><img class="gallery-image" data-flex-basis="330px" data-flex-grow="137" height="810" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525213102.png" srcset="/p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525213102_hu_1975ad95fc6b2d6a.png 800w, /p/agent-%E5%92%8C-harness-%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88-%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/images/Pasted-image-20260525213102.png 1115w" width="1115"></p>
 <h3 id="一句話昇華">一句話昇華
 </h3>
     <blockquote>
