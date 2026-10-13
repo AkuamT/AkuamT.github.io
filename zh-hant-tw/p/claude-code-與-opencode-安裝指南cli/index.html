@@ -366,6 +366,28 @@
       </ol>
     </li>
     <li><a href="#兩者對比與選擇建議">兩者對比與選擇建議</a></li>
+    <li><a href="#不用官方登入接入第三方大模型-api">不用官方登入：接入第三方大模型 API</a>
+      <ol>
+        <li><a href="#原理換一個位址--換一個憑證">原理：換一個位址 + 換一個憑證</a></li>
+        <li><a href="#設定步驟">設定步驟</a></li>
+        <li><a href="#設定寫在哪裡的差別關鍵">設定寫在哪裡的差別（關鍵）</a></li>
+        <li><a href="#廠商設定速查表">廠商設定速查表</a></li>
+        <li><a href="#一份可直接照抄的完整範例kimi">一份可直接照抄的完整範例（Kimi）</a></li>
+        <li><a href="#驗證設定是否生效">驗證設定是否生效</a></li>
+        <li><a href="#排查表">排查表</a></li>
+        <li><a href="#重要提醒">重要提醒</a></li>
+      </ol>
+    </li>
+    <li><a href="#用圖形化工具管設定以-cc-switch-為例的取捨">用圖形化工具管設定（以 CC Switch 為例的取捨）</a>
+      <ol>
+        <li><a href="#它們解決什麼問題">它們解決什麼問題</a></li>
+        <li><a href="#需要知道的固有代價">需要知道的固有代價</a></li>
+        <li><a href="#新手友善度的悖論">新手友善度的悖論</a></li>
+        <li><a href="#決策建議">決策建議</a></li>
+        <li><a href="#如果決定用請這樣做">如果決定用，請這樣做</a></li>
+        <li><a href="#安全提醒">安全提醒</a></li>
+      </ol>
+    </li>
     <li><a href="#安全與合規提醒">安全與合規提醒</a></li>
     <li><a href="#官方連結">官方連結</a></li>
   </ol>
@@ -444,7 +466,7 @@
 
 
                     <time class="article-time--reading">
-                        閱讀時間: 10 分鐘
+                        閱讀時間: 20 分鐘
                     </time>
                 
             </div>
@@ -526,6 +548,28 @@
       </ol>
     </li>
     <li><a href="#兩者對比與選擇建議">兩者對比與選擇建議</a></li>
+    <li><a href="#不用官方登入接入第三方大模型-api">不用官方登入：接入第三方大模型 API</a>
+      <ol>
+        <li><a href="#原理換一個位址--換一個憑證">原理：換一個位址 + 換一個憑證</a></li>
+        <li><a href="#設定步驟">設定步驟</a></li>
+        <li><a href="#設定寫在哪裡的差別關鍵">設定寫在哪裡的差別（關鍵）</a></li>
+        <li><a href="#廠商設定速查表">廠商設定速查表</a></li>
+        <li><a href="#一份可直接照抄的完整範例kimi">一份可直接照抄的完整範例（Kimi）</a></li>
+        <li><a href="#驗證設定是否生效">驗證設定是否生效</a></li>
+        <li><a href="#排查表">排查表</a></li>
+        <li><a href="#重要提醒">重要提醒</a></li>
+      </ol>
+    </li>
+    <li><a href="#用圖形化工具管設定以-cc-switch-為例的取捨">用圖形化工具管設定（以 CC Switch 為例的取捨）</a>
+      <ol>
+        <li><a href="#它們解決什麼問題">它們解決什麼問題</a></li>
+        <li><a href="#需要知道的固有代價">需要知道的固有代價</a></li>
+        <li><a href="#新手友善度的悖論">新手友善度的悖論</a></li>
+        <li><a href="#決策建議">決策建議</a></li>
+        <li><a href="#如果決定用請這樣做">如果決定用，請這樣做</a></li>
+        <li><a href="#安全提醒">安全提醒</a></li>
+      </ol>
+    </li>
     <li><a href="#安全與合規提醒">安全與合規提醒</a></li>
     <li><a href="#官方連結">官方連結</a></li>
   </ol>
@@ -800,6 +844,11 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>首次啟動會進入引導流程：選擇登入方式（Claude 訂閱帳號，或 Anthropic Console 的 API Key）→ 瀏覽器完成授權 → 設定寫入 <code>~/.claude/</code>。</p>
+
+    <blockquote>
+        <p><strong>不想用 Anthropic 官方帳號？</strong> 可以改接第三方廠商的 Anthropic 相容端點（DeepSeek / Kimi / 智譜 GLM / 通義千問等），並直接跳過登入引導 —— 見下文「不用官方登入：接入第三方大模型 API」一節。</p>
+
+    </blockquote>
 <h3 id="更新策略與發布通道">更新策略與發布通道
 </h3><ul>
 <li><strong>原生安裝</strong>：背景自動更新，無需干預。</li>
@@ -1145,6 +1194,462 @@
 <li>兩者功能定位類似，<strong>可以先都裝</strong>：Claude Code 裝在使用者目錄（<code>~/.local/bin</code>），OpenCode 走 npm 或獨立目錄，互不干擾。</li>
 </ul>
 <hr>
+<h2 id="不用官方登入接入第三方大模型-api">不用官方登入：接入第三方大模型 API
+</h2>
+    <blockquote>
+        <p>本節講的是 Claude Code <strong>官方支援</strong>的機制：把請求指向你自己的 LLM 閘道，或指向第三方廠商提供的 <strong>Anthropic 相容端點</strong>（DeepSeek、Kimi、智譜 GLM、通義千問等）。它不是破解 —— 官方文件裡專門有一頁《Connect Claude Code to an LLM gateway》講這件事；設定好之後 Claude Code 就不再要求 Anthropic 官方登入。</p>
+
+    </blockquote>
+<h3 id="原理換一個位址--換一個憑證">原理：換一個位址 + 換一個憑證
+</h3><p>Claude Code 只認一件事：<strong>Anthropic Messages API 協定</strong>。任何相容這套協定的服務，只要改幾個環境變數就能把底層模型換掉。</p>
+<div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">變數</th>
+					<th style="text-align: left">作用</th>
+					<th style="text-align: left">不設定的後果</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><code>ANTHROPIC_BASE_URL</code></td>
+					<td style="text-align: left">請求送往的端點</td>
+					<td style="text-align: left">請求仍送往 Anthropic 官方，第三方 Key 驗證失敗</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><code>ANTHROPIC_AUTH_TOKEN</code></td>
+					<td style="text-align: left">憑證，以 <code>Authorization: Bearer &lt;token&gt;</code> 送出</td>
+					<td style="text-align: left"><code>401</code> 驗證錯誤</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><code>ANTHROPIC_API_KEY</code></td>
+					<td style="text-align: left">憑證的另一種形式，以 <code>x-api-key</code> 送出</td>
+					<td style="text-align: left">同上（互動模式下還需一次性確認，見下文「排查表」）</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><code>ANTHROPIC_MODEL</code></td>
+					<td style="text-align: left">主對話模型</td>
+					<td style="text-align: left">回報「模型不存在」</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><code>ANTHROPIC_DEFAULT_OPUS_MODEL</code><br><code>ANTHROPIC_DEFAULT_SONNET_MODEL</code><br><code>ANTHROPIC_DEFAULT_HAIKU_MODEL</code><br><code>ANTHROPIC_DEFAULT_FABLE_MODEL</code></td>
+					<td style="text-align: left">各級距的模型對應</td>
+					<td style="text-align: left">對應級距的任務失敗</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><code>CLAUDE_CODE_SUBAGENT_MODEL</code></td>
+					<td style="text-align: left">子 Agent 使用的模型</td>
+					<td style="text-align: left">子任務失敗或效果明顯變差</td>
+			</tr>
+	</tbody>
+</table></div>
+<p><strong>憑證變數該用哪個？</strong> 官方建議：不確定對方的閘道要哪一種時，<strong>先用 <code>ANTHROPIC_AUTH_TOKEN</code></strong>；若回傳 <code>401</code>，再換成 <code>ANTHROPIC_API_KEY</code>（反過來也一樣）。兩個<strong>不要同時設定</strong>。</p>
+<p><strong>為什麼必須設定「級距對應」？</strong> Claude Code 會依情境請求不同級距的模型——主對話、背景摘要、子 Agent 等。第三方端點通常沒有 <code>haiku</code> / <code>sonnet</code> / <code>opus</code> 這些名稱，所以要把每個級距明確對應到真實模型名稱，否則對應的情境會<strong>靜默失敗</strong>（表面能聊，背景任務卻報錯）。</p>
+<h3 id="設定步驟">設定步驟
+</h3><p><strong>第 1 步：取得端點與模型名稱</strong> —— 見下文「廠商設定速查表」，並以各廠官方文件為準。</p>
+<p><strong>第 2 步：寫入使用者層級設定檔</strong></p>
+<ul>
+<li>macOS / Linux：<code>~/.claude/settings.json</code></li>
+<li>Windows：<code>C:\Users\&lt;使用者名稱&gt;\.claude\settings.json</code></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;env&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_BASE_URL&#34;</span><span class="p">:</span> <span class="s2">&#34;https://&lt;廠商端點&gt;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_AUTH_TOKEN&#34;</span><span class="p">:</span> <span class="s2">&#34;&lt;你的 API Key&gt;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_MODEL&#34;</span><span class="p">:</span> <span class="s2">&#34;&lt;主模型名稱&gt;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_DEFAULT_OPUS_MODEL&#34;</span><span class="p">:</span> <span class="s2">&#34;&lt;模型名稱&gt;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_DEFAULT_SONNET_MODEL&#34;</span><span class="p">:</span> <span class="s2">&#34;&lt;模型名稱&gt;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_DEFAULT_HAIKU_MODEL&#34;</span><span class="p">:</span> <span class="s2">&#34;&lt;模型名稱&gt;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_DEFAULT_FABLE_MODEL&#34;</span><span class="p">:</span> <span class="s2">&#34;&lt;模型名稱&gt;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;CLAUDE_CODE_SUBAGENT_MODEL&#34;</span><span class="p">:</span> <span class="s2">&#34;&lt;模型名稱&gt;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>第 3 步：跳過首次登入引導</strong></p>
+<p>編輯或新建 <code>~/.claude.json</code>（Windows：<code>C:\Users\&lt;使用者名稱&gt;\.claude.json</code>），加入這一項：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;hasCompletedOnboarding&#34;</span><span class="p">:</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    <blockquote>
+        <p>不設定它時，Claude Code 啟動後會嘗試連線 <code>api.anthropic.com</code> 做登入檢查，於是出現
+<code>Unable to connect to Anthropic services. Failed to connect to api.anthropic.com: ERR_BAD_REQUEST</code> 這類錯誤。</p>
+
+    </blockquote>
+<p>跨平台一次寫入（用 node 改 JSON，避免手改格式出錯）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">node --eval <span class="s2">&#34;const fs=require(&#39;fs&#39;),p=require(&#39;path&#39;),os=require(&#39;os&#39;);const f=p.join(os.homedir(),&#39;.claude.json&#39;);const c=fs.existsSync(f)?JSON.parse(fs.readFileSync(f,&#39;utf-8&#39;)):{};c.hasCompletedOnboarding=true;fs.writeFileSync(f,JSON.stringify(c,null,2),&#39;utf-8&#39;)&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>第 4 步：重啟終端 → 啟動 <code>claude</code> → 驗證</strong>（見下文「驗證設定是否生效」）</p>
+<h3 id="設定寫在哪裡的差別關鍵">設定寫在哪裡的差別（關鍵）
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">位置</th>
+					<th style="text-align: left">生效範圍</th>
+					<th style="text-align: left">說明</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><code>~/.claude/settings.json</code> 的 <code>env</code></td>
+					<td style="text-align: left">所有專案（個人層級）</td>
+					<td style="text-align: left">✅ <strong>推薦</strong>，官方與各廠商文件都用它</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">shell 環境變數（<code>export</code> / <code>$env:</code>）</td>
+					<td style="text-align: left">目前終端及其子行程</td>
+					<td style="text-align: left">適合臨時測試；但從桌面／開始功能表啟動的 IDE 看不到這些變數</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">專案 <code>.claude/settings.json</code> 的 <code>env</code></td>
+					<td style="text-align: left">僅該專案</td>
+					<td style="text-align: left">⚠️ 它在<strong>首次執行精靈和信任提示之後</strong>才生效，因此<strong>不能用來跳過登入</strong>；而且容易被提交進 git</td>
+			</tr>
+	</tbody>
+</table></div>
+<p><strong>衝突規則：<code>settings.json</code> 裡的 <code>env</code> 會覆蓋 shell 中同名的環境變數。</strong> 所以發現「改了環境變數卻不生效」時，先回頭檢查 <code>settings.json</code> 裡是不是有殘留舊值。</p>
+<h3 id="廠商設定速查表">廠商設定速查表
+</h3>
+    <blockquote>
+        <p>⚠️ 端點與模型名稱由各廠商自行維護、更新頻繁。下表僅作起點，<strong>設定前請務必以各廠商官方文件為準</strong>。</p>
+
+    </blockquote>
+<div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">廠商</th>
+					<th style="text-align: left"><code>ANTHROPIC_BASE_URL</code></th>
+					<th style="text-align: left">模型名稱範例</th>
+					<th style="text-align: left">官方文件</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong>DeepSeek</strong></td>
+					<td style="text-align: left"><code>https://api.deepseek.com/anthropic</code></td>
+					<td style="text-align: left"><code>deepseek-flash</code>、<code>deepseek-v4-pro</code></td>
+					<td style="text-align: left"><a class="link" href="https://api-docs.deepseek.com/zh-cn/guides/anthropic_api/"  target="_blank" rel="noopener"
+    >api-docs.deepseek.com</a></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>Kimi（Moonshot）</strong></td>
+					<td style="text-align: left"><code>https://api.moonshot.cn/anthropic</code></td>
+					<td style="text-align: left"><code>kimi-k3[1m]</code>、<code>kimi-k2.7-code</code></td>
+					<td style="text-align: left"><a class="link" href="https://platform.moonshot.cn/docs/guide/claude-code-kimi"  target="_blank" rel="noopener"
+    >platform.moonshot.cn</a></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>智譜 GLM</strong></td>
+					<td style="text-align: left"><code>https://open.bigmodel.cn/api/anthropic</code></td>
+					<td style="text-align: left"><code>glm-5.3[1m]</code>、<code>glm-5.3-flash</code></td>
+					<td style="text-align: left"><a class="link" href="https://docs.bigmodel.cn/cn/coding-plan/tool/claude"  target="_blank" rel="noopener"
+    >docs.bigmodel.cn</a></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>通義千問（阿里雲百鍊）</strong></td>
+					<td style="text-align: left">按量：<code>https://dashscope.aliyuncs.com/apps/anthropic</code><br>Coding Plan：<code>https://coding.dashscope.aliyuncs.com/apps/anthropic</code><br>Token Plan：<code>https://token-plan.cn-beijing.maas.aliyuncs.com/apps/anthropic</code></td>
+					<td style="text-align: left"><code>qwen3.7-plus</code>、<code>qwen3.6-flash</code> 等</td>
+					<td style="text-align: left"><a class="link" href="https://help.aliyun.com/zh/model-studio/claude-code"  target="_blank" rel="noopener"
+    >help.aliyun.com</a></td>
+			</tr>
+	</tbody>
+</table></div>
+<p><strong>三個容易踩到的細節</strong></p>
+<ol>
+<li><strong><code>[1m]</code> 後綴是有效的</strong>，表示「1M 上下文視窗」，不是筆誤——各廠文件裡都這樣寫（如 <code>kimi-k3[1m]</code>、<code>glm-5.3[1m]</code>、<code>qwen3.7-plus[1m]</code>）。也可以用 <code>CLAUDE_CODE_MAX_CONTEXT_TOKENS</code> 環境變數表達同樣的意思。</li>
+<li><strong>DeepSeek 會自動對應模型名稱</strong>：官方文件說明，傳入不支援的模型名稱時後端會自動對應到 <code>deepseek-flash</code>；並且 <code>claude-opus*</code> → <code>deepseek-v4-pro</code>，<code>claude-haiku*</code> / <code>claude-sonnet*</code> → <code>deepseek-flash</code>。這也是它只需改一個 base_url 就能接入 Claude Code 的原因。</li>
+<li><strong>端點位址不要自己附加 <code>/v1</code> 或 <code>/v1/messages</code></strong>：Claude Code 會自行拼接路徑，多寫一段往往直接 404。</li>
+</ol>
+<h3 id="一份可直接照抄的完整範例kimi">一份可直接照抄的完整範例（Kimi）
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;env&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_BASE_URL&#34;</span><span class="p">:</span> <span class="s2">&#34;https://api.moonshot.cn/anthropic&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_AUTH_TOKEN&#34;</span><span class="p">:</span> <span class="s2">&#34;YOUR_API_KEY&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_MODEL&#34;</span><span class="p">:</span> <span class="s2">&#34;kimi-k3[1m]&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_DEFAULT_OPUS_MODEL&#34;</span><span class="p">:</span> <span class="s2">&#34;kimi-k3[1m]&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_DEFAULT_SONNET_MODEL&#34;</span><span class="p">:</span> <span class="s2">&#34;kimi-k3[1m]&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_DEFAULT_HAIKU_MODEL&#34;</span><span class="p">:</span> <span class="s2">&#34;kimi-k2.7-code&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_DEFAULT_FABLE_MODEL&#34;</span><span class="p">:</span> <span class="s2">&#34;kimi-k3[1m]&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;CLAUDE_CODE_SUBAGENT_MODEL&#34;</span><span class="p">:</span> <span class="s2">&#34;kimi-k3[1m]&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;CLAUDE_CODE_AUTO_COMPACT_WINDOW&#34;</span><span class="p">:</span> <span class="s2">&#34;1000000&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;CLAUDE_CODE_EFFORT_LEVEL&#34;</span><span class="p">:</span> <span class="s2">&#34;max&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>各參數的作用：</p>
+<ul>
+<li><code>ANTHROPIC_DEFAULT_HAIKU_MODEL</code> 通常搭配一個<strong>便宜快速</strong>的模型（背景摘要、小任務用），主級距搭配強模型；</li>
+<li><code>CLAUDE_CODE_AUTO_COMPACT_WINDOW</code>：觸發上下文自動壓縮的視窗大小，設太小會過早丟失上下文；</li>
+<li><code>CLAUDE_CODE_EFFORT_LEVEL</code>：推理強度，<code>max</code> 品質最好，也最慢最貴。</li>
+</ul>
+<h3 id="驗證設定是否生效">驗證設定是否生效
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">步驟</th>
+					<th style="text-align: left">操作</th>
+					<th style="text-align: left">期望結果</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">① 直測端點</td>
+					<td style="text-align: left"><code>curl &lt;BASE_URL&gt;/v1/messages --header &quot;Authorization: Bearer &lt;KEY&gt;&quot; --header &quot;Content-Type: application/json&quot; --data '{&quot;model&quot;:&quot;&lt;模型&gt;&quot;,&quot;max_tokens&quot;:1,&quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;hi&quot;}]}'</code></td>
+					<td style="text-align: left">回傳合法 JSON（<code>{&quot;id&quot;:&quot;msg_...&quot;,&quot;content&quot;:[...]}</code>），而不是 HTML 錯誤頁</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">② 工作階段內檢查</td>
+					<td style="text-align: left">啟動 <code>claude</code> 後執行 <code>/status</code></td>
+					<td style="text-align: left"><code>Anthropic base URL</code> 行顯示你的端點；<code>Auth token</code> / <code>API key</code> 行顯示憑證來源。若顯示 <code>Login method: &lt;claude.ai 帳號&gt;</code> 表示憑證沒送到</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">③ 端到端</td>
+					<td style="text-align: left">隨便送一句（如「你好」）</td>
+					<td style="text-align: left">正常回覆、無報錯</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">④ 模型級距</td>
+					<td style="text-align: left"><code>/model</code></td>
+					<td style="text-align: left">能看到你設定的模型</td>
+			</tr>
+	</tbody>
+</table></div>
+
+    <blockquote>
+        <p>修改設定後<strong>必須新開終端視窗</strong>再啟動 <code>claude</code>，否則讀到的是舊環境。</p>
+
+    </blockquote>
+<h3 id="排查表">排查表
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">現象</th>
+					<th style="text-align: left">原因</th>
+					<th style="text-align: left">處理</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><code>401 invalid_api_key</code></td>
+					<td style="text-align: left">憑證類型與端點不符，或 Key 無效</td>
+					<td style="text-align: left"><code>ANTHROPIC_AUTH_TOKEN</code> 與 <code>ANTHROPIC_API_KEY</code> 二選一；確認 Key 與端點屬於同一家、同一方案</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><code>model not found</code> / 模型不存在</td>
+					<td style="text-align: left">模型名稱拼錯，或該模型未在方案內開放</td>
+					<td style="text-align: left">對照廠商文件核對模型名稱（注意 <code>[1m]</code> 後綴、大小寫、多餘空格）</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">主對話正常，但<strong>子 Agent / 背景任務報錯</strong></td>
+					<td style="text-align: left">級距變數沒設齊</td>
+					<td style="text-align: left">補上 <code>ANTHROPIC_DEFAULT_HAIKU_MODEL</code>、<code>ANTHROPIC_DEFAULT_FABLE_MODEL</code>、<code>CLAUDE_CODE_SUBAGENT_MODEL</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">改了設定不生效</td>
+					<td style="text-align: left">舊值殘留在 <code>settings.json</code>，或 shell 裡有舊 <code>export</code></td>
+					<td style="text-align: left">清掉兩端殘留；<code>settings.json</code> 的 <code>env</code> 優先於 shell</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">仍提示登入 / <code>Unable to connect to Anthropic services</code></td>
+					<td style="text-align: left">變數沒在「首次執行精靈之前」可見，或沒設 <code>hasCompletedOnboarding</code></td>
+					<td style="text-align: left">用<strong>使用者層級</strong>的 <code>settings.json</code> 或 shell export；確認 <code>~/.claude.json</code> 中該項為 <code>true</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">每次啟動都問 <code>Do you want to use this API key</code></td>
+					<td style="text-align: left">用的是 <code>ANTHROPIC_API_KEY</code>（互動模式需一次性確認）</td>
+					<td style="text-align: left">選 Yes；或改用 <code>ANTHROPIC_AUTH_TOKEN</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">想清除已儲存的官方登入</td>
+					<td style="text-align: left">之前 <code>/login</code> 過</td>
+					<td style="text-align: left">工作階段內執行 <code>/logout</code>，然後重啟</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">403 / 收到 HTML 錯誤頁</td>
+					<td style="text-align: left">前置 WAF 或反向代理攔了請求主體</td>
+					<td style="text-align: left">請閘道把 <code>/v1/messages</code> 從請求主體檢查規則中豁免</td>
+			</tr>
+	</tbody>
+</table></div>
+<h3 id="重要提醒">重要提醒
+</h3><ol>
+<li><strong>別同時設定 <code>ANTHROPIC_API_KEY</code> 和 <code>ANTHROPIC_AUTH_TOKEN</code></strong>，會衝突；Kimi 文件明確指出要把 <code>ANTHROPIC_API_KEY</code> 刪掉。</li>
+<li><strong><code>settings.json</code> 裡是明文 Key</strong>：不要提交進 git；專案層級設定務必寫進 <code>.gitignore</code>。</li>
+<li><strong><code>.env</code> 檔案不會被讀取</strong>：不要把憑證寫在 <code>.env</code> 裡。</li>
+<li><strong>換第三方 = 換資料去向</strong>：你的程式碼和對話會完整經過該廠商或中轉服務，選擇前想清楚；優先使用<strong>廠商直營端點</strong>，慎用來源不明的「中轉站」。</li>
+<li><strong>回到官方登入</strong>：刪掉 <code>settings.json</code> 中 <code>env</code> 裡的這些變數（或直接刪該檔案），執行 <code>/logout</code>，重啟 <code>claude</code> 即可恢復官方登入流程。</li>
+<li><strong>第三方「一鍵切換」工具的取捨</strong>：見下文「用圖形化工具管設定」一節 —— 它們會直接改寫 <code>settings.json</code>，省的是操作成本，貴的是排查成本。</li>
+</ol>
+<hr>
+<h2 id="用圖形化工具管設定以-cc-switch-為例的取捨">用圖形化工具管設定（以 CC Switch 為例的取捨）
+</h2>
+    <blockquote>
+        <p>手寫 <code>settings.json</code> 對不熟悉 JSON 的人確實有門檻，於是出現了不少「設定管理 / 供應商切換」類圖形工具，其中最流行的是 <strong>CC Switch</strong>（<code>github.com/farion1231/cc-switch</code>，14 萬+ stars，官網 <code>ccswitch.io</code>）。本節的分析對<strong>這一類工具普遍適用</strong>。</p>
+
+    </blockquote>
+<h3 id="它們解決什麼問題">它們解決什麼問題
+</h3><ul>
+<li>在圖形介面裡填 Base URL / API Key，不用碰 JSON，也不怕寫錯逗號；</li>
+<li>內建常見廠商範本（DeepSeek、Kimi、智譜 GLM、通義千問等）與自架閘道；</li>
+<li>一鍵切換多個供應商（官方帳號 ↔ 第三方帳號 ↔ 便宜模型）；</li>
+<li>自動幫你寫入 <code>hasCompletedOnboarding</code>，省掉首次登入引導；</li>
+<li>附帶備份、Skills 管理、用量統計等周邊功能。</li>
+</ul>
+<p>對<strong>需要在多個供應商之間頻繁切換</strong>的使用者，這確實省事。它省的是<strong>操作成本</strong>。</p>
+<h3 id="需要知道的固有代價">需要知道的固有代價
+</h3><p>這類工具不是「幫你改一個欄位」，而是<strong>接管</strong>你的設定檔。以 CC Switch 為例，它的官方文件與 issue 裡明確記錄了幾條「設計如此」的行為：</p>
+<div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">行為</th>
+					<th style="text-align: left">後果</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">切換供應商時<strong>用完整快照重寫</strong> live 設定檔（官方在 <a class="link" href="https://github.com/farion1231/cc-switch/issues/3946"  target="_blank" rel="noopener"
+    >issue #3946</a> 明確回覆「這是有意的設計行為」）</td>
+					<td style="text-align: left">你自己寫在 <code>settings.json</code> 裡的 <code>hooks</code>、<code>statusLine</code>、<code>permissions</code> 等欄位會被覆蓋掉；同類 issue 還有 #2992 / #4274 / #2109 / #2871 / #3078</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">會<strong>寫入自己的 hook 或環境變數</strong>，有時還附帶輔助指令碼</td>
+					<td style="text-align: left">若指令碼本體或解譯器在本機不存在，每次啟動都會報錯，且報錯位置離「設定」很遠，極難定位</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>一個程式同時接管多個 CLI</strong>（Claude Code / Codex / OpenCode / Gemini / Grok / Hermes 等）</td>
+					<td style="text-align: left">任一處錯配會波及其他工具。例如寫入 OpenCode 設定的路徑與工具實際讀取的路徑不一致時，會出現「切換看似成功、實際全部落空」（<a class="link" href="https://github.com/farion1231/cc-switch/issues/5945"  target="_blank" rel="noopener"
+    >issue #5945</a>）</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">修改的是<strong>真實生效檔案</strong>，而非副本</td>
+					<td style="text-align: left">出問題時，第一現場就是你在用的工作設定</td>
+			</tr>
+	</tbody>
+</table></div>
+
+    <blockquote>
+        <p><strong>注意</strong>：這通常不是「軟體品質差」，而是產品定位使然——接管式管理必然帶來「誰的欄位算數」的衝突。它確實提供備份（<code>~/.cc-switch/backups/</code>，以及記錄首次改寫前原檔案的 <code>backups/live-first-write/</code>），但備份能救檔案，救不了你排查問題時浪費的時間。</p>
+
+    </blockquote>
+<h3 id="新手友善度的悖論">新手友善度的悖論
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left"></th>
+					<th style="text-align: left">手寫設定</th>
+					<th style="text-align: left">圖形化工具</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">上手成本</td>
+					<td style="text-align: left">需要看懂一個 JSON 檔案</td>
+					<td style="text-align: left">點幾下就能用</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">出問題時的排查</td>
+					<td style="text-align: left">每一行都是你自己寫的，範圍很小</td>
+					<td style="text-align: left">面對工具產生的一堆檔案 + 被覆蓋的原始設定 + 自動注入的 hook，不清楚哪一層在生效</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">能否腳本化排查</td>
+					<td style="text-align: left">可以（用 <code>diff</code>、<code>/status</code>、<code>claude doctor</code> 逐層驗證）</td>
+					<td style="text-align: left">通常不行（純 GUI，無命令列入口）</td>
+			</tr>
+	</tbody>
+</table></div>
+<p>換句話說：<strong>它省的是操作成本，貴的是排查成本。</strong> 如果你連「設定為什麼沒生效」都還需要搜尋，那麼當工具替你寫入的內容出問題時，你會更無從下手。</p>
+<h3 id="決策建議">決策建議
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">你的情況</th>
+					<th style="text-align: left">建議</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">只用一個供應商長期使用</td>
+					<td style="text-align: left"><strong>手寫一次設定就夠</strong>，之後幾個月都不用再碰。圖形介面省下的幾分鐘，不值它帶來的覆蓋風險</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">需要在 3 個以上供應商之間頻繁切換</td>
+					<td style="text-align: left">這類工具的價值才真正體現，值得用，但請照下面「如果決定用，請這樣做」的方式使用</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">想要極簡</td>
+					<td style="text-align: left">用上文「不用官方登入」一節的「範本 + 一條命令」，或自架「切換 = 複製一個小檔案」的指令碼，比 GUI 更快也更透明</td>
+			</tr>
+	</tbody>
+</table></div>
+<h3 id="如果決定用請這樣做">如果決定用，請這樣做
+</h3><ol>
+<li><strong>只讓它管一個工具</strong>：用不到的 CLI（Codex / Gemini / OpenCode 等）不要打開對應面板；</li>
+<li><strong>關掉本機代理 / Routing</strong>：直連最少一層轉發出錯的可能；</li>
+<li><strong>關掉非必要的自動同步</strong>：Skills 同步、工作階段同步、外掛整合都會順手改到別的目錄；</li>
+<li><strong>每次切換後打開設定檔看一眼</strong>（<code>~/.claude/settings.json</code>）：確認 <code>env</code> 裡的模型名稱正確，且<strong>沒有多餘的 <code>hooks</code> 段</strong>；</li>
+<li><strong>記住備份位置</strong>：<code>~/.cc-switch/backups/live-first-write/</code> 保存著「被改寫前的原始檔案」，出事從這裡撈；</li>
+<li><strong>切換後跑一次自檢</strong>（如 <code>claude doctor</code>）；</li>
+<li>心裡有數：以上 6 條都做下來，對單一供應商使用者來說，已經比手寫一個 JSON 更麻煩了。</li>
+</ol>
+<h3 id="安全提醒">安全提醒
+</h3><ul>
+<li>這類工具會接觸到你的 <strong>API Key</strong> 和<strong>全部設定檔</strong>，務必只從官方管道下載。CC Switch 的官方站點是 <code>ccswitch.io</code>，官方倉庫是 <code>github.com/farion1231/cc-switch</code>；GitHub 上存在多個同名 fork，下載前確認作者與位址。</li>
+<li>連推薦它的雲廠商也會附上免責聲明。例如阿里雲百鍊文件在介紹它時寫道：<em>「該工具為第三方軟體，其指令碼與程式碼不受阿里雲審核和維護，安裝使用前請自行評估其來源可信度與程式碼安全性。」</em></li>
+<li>無論用什麼工具，<strong>最終生效的永遠是 <code>~/.claude/settings.json</code></strong>。學會讀這個檔案，你就永遠有兜底能力。</li>
+</ul>
+<hr>
 <h2 id="安全與合規提醒">安全與合規提醒
 </h2><ol>
 <li><strong>只從官方網域下載</strong>
@@ -1162,7 +1667,7 @@
 </ul>
 </li>
 <li><strong><code>curl … | bash</code> 與 <code>irm … | iex</code> 的安全習慣</strong>：先看清網域，再執行；有條件的話先下載腳本、讀一遍再執行（<code>curl -fsSL &lt;url&gt; -o install.sh</code> 然後 <code>less install.sh</code>）。</li>
-<li><strong>謹慎使用第三方「設定切換／中轉代理」工具</strong>：這類工具常會直接改寫 <code>~/.claude/settings.json</code>、<code>~/.config/opencode/opencode.json</code> 等檔案，寫入第三方 <code>baseURL</code> 與 <code>token</code>；一旦它寫入失效的模型名稱或殘留 hook，輕則啟動報錯，重則憑證外洩。要用就自己寫設定檔，清楚每一行在做什麼。</li>
+<li><strong>第三方「設定切換／中轉代理」工具的取捨</strong>：詳見上文「用圖形化工具管設定」一節。核心是——它們會直接改寫 <code>~/.claude/settings.json</code>、<code>~/.config/opencode/opencode.json</code> 等檔案，<strong>最終生效的永遠是這些檔案本身</strong>，所以務必會讀、會改、會驗證它們。</li>
 <li><strong>API Key 管理</strong>：不要把 Key 明文提交進 Git 倉庫；一旦疑似洩露，立即到對應平台輪換。</li>
 </ol>
 <hr>

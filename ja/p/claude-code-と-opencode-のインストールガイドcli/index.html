@@ -366,6 +366,28 @@
       </ol>
     </li>
     <li><a href="#両者の比較と選択の指針">両者の比較と選択の指針</a></li>
+    <li><a href="#公式ログインを使わないサードパーティの大規模モデル-api-に接続する">公式ログインを使わない：サードパーティの大規模モデル API に接続する</a>
+      <ol>
+        <li><a href="#原理アドレスとクレデンシャルを差し替える">原理：アドレスとクレデンシャルを差し替える</a></li>
+        <li><a href="#設定手順">設定手順</a></li>
+        <li><a href="#設定をどこに書くかの違い重要">設定をどこに書くかの違い（重要）</a></li>
+        <li><a href="#ベンダー設定早見表">ベンダー設定早見表</a></li>
+        <li><a href="#そのまま使える完全な例kimi">そのまま使える完全な例（Kimi）</a></li>
+        <li><a href="#設定が効いているかを確認する">設定が効いているかを確認する</a></li>
+        <li><a href="#トラブルシューティング">トラブルシューティング</a></li>
+        <li><a href="#重要な注意">重要な注意</a></li>
+      </ol>
+    </li>
+    <li><a href="#gui-ツールで設定を管理するcc-switch-を例にしたトレードオフ">GUI ツールで設定を管理する（CC Switch を例にしたトレードオフ）</a>
+      <ol>
+        <li><a href="#何を解決するのか">何を解決するのか</a></li>
+        <li><a href="#知っておくべき固有のコスト">知っておくべき固有のコスト</a></li>
+        <li><a href="#初心者にとっての使いやすさのパラドックス">初心者にとっての使いやすさのパラドックス</a></li>
+        <li><a href="#判断の指針">判断の指針</a></li>
+        <li><a href="#使うと決めたならこう使う">使うと決めたなら、こう使う</a></li>
+        <li><a href="#セキュリティ上の注意">セキュリティ上の注意</a></li>
+      </ol>
+    </li>
     <li><a href="#セキュリティとコンプライアンスの注意">セキュリティとコンプライアンスの注意</a></li>
     <li><a href="#公式リンク">公式リンク</a></li>
   </ol>
@@ -444,7 +466,7 @@
 
 
                     <time class="article-time--reading">
-                        読了時間: 13分
+                        読了時間: 28分
                     </time>
                 
             </div>
@@ -526,6 +548,28 @@
       </ol>
     </li>
     <li><a href="#両者の比較と選択の指針">両者の比較と選択の指針</a></li>
+    <li><a href="#公式ログインを使わないサードパーティの大規模モデル-api-に接続する">公式ログインを使わない：サードパーティの大規模モデル API に接続する</a>
+      <ol>
+        <li><a href="#原理アドレスとクレデンシャルを差し替える">原理：アドレスとクレデンシャルを差し替える</a></li>
+        <li><a href="#設定手順">設定手順</a></li>
+        <li><a href="#設定をどこに書くかの違い重要">設定をどこに書くかの違い（重要）</a></li>
+        <li><a href="#ベンダー設定早見表">ベンダー設定早見表</a></li>
+        <li><a href="#そのまま使える完全な例kimi">そのまま使える完全な例（Kimi）</a></li>
+        <li><a href="#設定が効いているかを確認する">設定が効いているかを確認する</a></li>
+        <li><a href="#トラブルシューティング">トラブルシューティング</a></li>
+        <li><a href="#重要な注意">重要な注意</a></li>
+      </ol>
+    </li>
+    <li><a href="#gui-ツールで設定を管理するcc-switch-を例にしたトレードオフ">GUI ツールで設定を管理する（CC Switch を例にしたトレードオフ）</a>
+      <ol>
+        <li><a href="#何を解決するのか">何を解決するのか</a></li>
+        <li><a href="#知っておくべき固有のコスト">知っておくべき固有のコスト</a></li>
+        <li><a href="#初心者にとっての使いやすさのパラドックス">初心者にとっての使いやすさのパラドックス</a></li>
+        <li><a href="#判断の指針">判断の指針</a></li>
+        <li><a href="#使うと決めたならこう使う">使うと決めたなら、こう使う</a></li>
+        <li><a href="#セキュリティ上の注意">セキュリティ上の注意</a></li>
+      </ol>
+    </li>
     <li><a href="#セキュリティとコンプライアンスの注意">セキュリティとコンプライアンスの注意</a></li>
     <li><a href="#公式リンク">公式リンク</a></li>
   </ol>
@@ -800,6 +844,11 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>初回起動時はガイド付きの流れになります：ログイン方法を選択（Claude のサブスクリプションアカウント、または Anthropic Console の API Key）→ ブラウザで認可を完了 → 設定が <code>~/.claude/</code> に書き込まれます。</p>
+
+    <blockquote>
+        <p><strong>Anthropic 公式アカウントを使いたくない場合</strong>：サードパーティ各社の Anthropic 互換エンドポイント（DeepSeek / Kimi / 智谱 GLM / 通義千問 など）に接続し、ログインのガイドを丸ごとスキップできます —— 後述の「公式ログインを使わない：サードパーティの大規模モデル API に接続する」セクションを参照してください。</p>
+
+    </blockquote>
 <h3 id="更新方針とリリースチャネル">更新方針とリリースチャネル
 </h3><ul>
 <li><strong>ネイティブインストール</strong>：バックグラウンドで自動更新。操作は不要。</li>
@@ -1145,6 +1194,462 @@
 <li>両者は機能の位置づけが似ているので、<strong>両方入れても構いません</strong>。Claude Code はユーザーディレクトリ（<code>~/.local/bin</code>）、OpenCode は npm か独自ディレクトリに入るため、互いに干渉しません。</li>
 </ul>
 <hr>
+<h2 id="公式ログインを使わないサードパーティの大規模モデル-api-に接続する">公式ログインを使わない：サードパーティの大規模モデル API に接続する
+</h2>
+    <blockquote>
+        <p>このセクションで扱うのは Claude Code が<strong>公式にサポートしている</strong>仕組みです。リクエストを自分の LLM ゲートウェイ、あるいはサードパーティ各社が提供する <strong>Anthropic 互換エンドポイント</strong>（DeepSeek、Kimi、智谱 GLM、通義千問 など）に向けます。これはクラックではありません —— 公式ドキュメントには《Connect Claude Code to an LLM gateway》という専用ページがあります。設定後は Anthropic の公式ログインを要求されなくなります。</p>
+
+    </blockquote>
+<h3 id="原理アドレスとクレデンシャルを差し替える">原理：アドレスとクレデンシャルを差し替える
+</h3><p>Claude Code が認識するのは <strong>Anthropic Messages API プロトコル</strong>だけです。このプロトコルに対応したサービスであれば、環境変数をいくつか変えるだけで土台のモデルを差し替えられます。</p>
+<div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">変数</th>
+					<th style="text-align: left">役割</th>
+					<th style="text-align: left">設定しない場合の結果</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><code>ANTHROPIC_BASE_URL</code></td>
+					<td style="text-align: left">リクエストの送り先エンドポイント</td>
+					<td style="text-align: left">リクエストは Anthropic 公式に送られ、サードパーティの Key は認証に失敗する</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><code>ANTHROPIC_AUTH_TOKEN</code></td>
+					<td style="text-align: left">クレデンシャル。<code>Authorization: Bearer &lt;token&gt;</code> として送信</td>
+					<td style="text-align: left"><code>401</code> 認証エラー</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><code>ANTHROPIC_API_KEY</code></td>
+					<td style="text-align: left">もう一つのクレデンシャル形式。<code>x-api-key</code> として送信</td>
+					<td style="text-align: left">同上（対話モードでは一度だけ確認を求められる。後述の「トラブルシューティング」参照）</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><code>ANTHROPIC_MODEL</code></td>
+					<td style="text-align: left">メイン対話モデル</td>
+					<td style="text-align: left">「モデルが存在しない」と報告される</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><code>ANTHROPIC_DEFAULT_OPUS_MODEL</code><br><code>ANTHROPIC_DEFAULT_SONNET_MODEL</code><br><code>ANTHROPIC_DEFAULT_HAIKU_MODEL</code><br><code>ANTHROPIC_DEFAULT_FABLE_MODEL</code></td>
+					<td style="text-align: left">各ティアのモデルマッピング</td>
+					<td style="text-align: left">対応するティアのタスクが失敗する</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><code>CLAUDE_CODE_SUBAGENT_MODEL</code></td>
+					<td style="text-align: left">サブ Agent が使うモデル</td>
+					<td style="text-align: left">サブタスクが失敗、または品質が明らかに落ちる</td>
+			</tr>
+	</tbody>
+</table></div>
+<p><strong>クレデンシャル変数はどちらを使うべきか？</strong> 公式の推奨は、相手のゲートウェイがどちらを求めるか分からないときは<strong>まず <code>ANTHROPIC_AUTH_TOKEN</code></strong>。<code>401</code> が返ったら <code>ANTHROPIC_API_KEY</code> に切り替えます（逆も同様）。<strong>両方を同時に設定しないでください。</strong></p>
+<p><strong>「ティアマッピング」が必須な理由</strong> Claude Code は場面に応じて異なるティアのモデルを要求します——メイン対話、バックグラウンドの要約、サブ Agent など。サードパーティのエンドポイントには <code>haiku</code> / <code>sonnet</code> / <code>opus</code> といった名前が通常ないため、各ティアを実在するモデル名に明示的にマッピングする必要があります。そうしないと該当シーンが<strong>静かに失敗</strong>します（表向きは会話できても、バックグラウンドのタスクがエラーになる）。</p>
+<h3 id="設定手順">設定手順
+</h3><p><strong>ステップ 1：エンドポイントとモデル名を入手する</strong> —— 後述の「ベンダー設定早見表」を参照し、各社の公式ドキュメントに従ってください。</p>
+<p><strong>ステップ 2：ユーザーレベルの設定ファイルに書き込む</strong></p>
+<ul>
+<li>macOS / Linux：<code>~/.claude/settings.json</code></li>
+<li>Windows：<code>C:\Users\&lt;ユーザー名&gt;\.claude\settings.json</code></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;env&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_BASE_URL&#34;</span><span class="p">:</span> <span class="s2">&#34;https://&lt;ベンダーのエンドポイント&gt;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_AUTH_TOKEN&#34;</span><span class="p">:</span> <span class="s2">&#34;&lt;あなたの API Key&gt;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_MODEL&#34;</span><span class="p">:</span> <span class="s2">&#34;&lt;メインモデル名&gt;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_DEFAULT_OPUS_MODEL&#34;</span><span class="p">:</span> <span class="s2">&#34;&lt;モデル名&gt;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_DEFAULT_SONNET_MODEL&#34;</span><span class="p">:</span> <span class="s2">&#34;&lt;モデル名&gt;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_DEFAULT_HAIKU_MODEL&#34;</span><span class="p">:</span> <span class="s2">&#34;&lt;モデル名&gt;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_DEFAULT_FABLE_MODEL&#34;</span><span class="p">:</span> <span class="s2">&#34;&lt;モデル名&gt;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;CLAUDE_CODE_SUBAGENT_MODEL&#34;</span><span class="p">:</span> <span class="s2">&#34;&lt;モデル名&gt;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>ステップ 3：初回ログインのガイドをスキップする</strong></p>
+<p><code>~/.claude.json</code>（Windows：<code>C:\Users\&lt;ユーザー名&gt;\.claude.json</code>）を編集または新規作成し、この項目を追加します：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;hasCompletedOnboarding&#34;</span><span class="p">:</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    <blockquote>
+        <p>これを設定しないと、Claude Code は起動時に <code>api.anthropic.com</code> へ接続してログイン検証を行おうとし、
+<code>Unable to connect to Anthropic services. Failed to connect to api.anthropic.com: ERR_BAD_REQUEST</code> のようなエラーが出ます。</p>
+
+    </blockquote>
+<p>クロスプラットフォームで一発書き込み（node で JSON を編集し、手作業のフォーマット崩れを避ける）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">node --eval <span class="s2">&#34;const fs=require(&#39;fs&#39;),p=require(&#39;path&#39;),os=require(&#39;os&#39;);const f=p.join(os.homedir(),&#39;.claude.json&#39;);const c=fs.existsSync(f)?JSON.parse(fs.readFileSync(f,&#39;utf-8&#39;)):{};c.hasCompletedOnboarding=true;fs.writeFileSync(f,JSON.stringify(c,null,2),&#39;utf-8&#39;)&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>ステップ 4：ターミナルを再起動 → <code>claude</code> を起動 → 検証</strong>（後述の「設定が効いているかを確認する」参照）</p>
+<h3 id="設定をどこに書くかの違い重要">設定をどこに書くかの違い（重要）
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">場所</th>
+					<th style="text-align: left">有効範囲</th>
+					<th style="text-align: left">説明</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><code>~/.claude/settings.json</code> の <code>env</code></td>
+					<td style="text-align: left">すべてのプロジェクト（個人レベル）</td>
+					<td style="text-align: left">✅ <strong>推奨</strong>。公式ドキュメントも各社のガイドもこれを使っています</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">シェルの環境変数（<code>export</code> / <code>$env:</code>）</td>
+					<td style="text-align: left">現在のターミナルとその子プロセス</td>
+					<td style="text-align: left">一時的なテスト向け。デスクトップやスタートメニューから起動した IDE からは見えません</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">プロジェクトの <code>.claude/settings.json</code> の <code>env</code></td>
+					<td style="text-align: left">そのプロジェクトのみ</td>
+					<td style="text-align: left">⚠️ <strong>初回起動ウィザードと信頼プロンプトの後</strong>に初めて有効になるため、<strong>ログインのスキップには使えません</strong>。しかも git にコミットされがちです</td>
+			</tr>
+	</tbody>
+</table></div>
+<p><strong>競合ルール：<code>settings.json</code> の <code>env</code> は、シェルにある同名の環境変数を上書きします。</strong> そのため「環境変数を変えたのに効かない」ときは、まず <code>settings.json</code> に古い値が残っていないか確認してください。</p>
+<h3 id="ベンダー設定早見表">ベンダー設定早見表
+</h3>
+    <blockquote>
+        <p>⚠️ エンドポイントとモデル名は各社が独自に管理しており、更新が頻繁です。下表はあくまで出発点です。<strong>設定前に必ず各社の公式ドキュメントで確認してください。</strong></p>
+
+    </blockquote>
+<div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">ベンダー</th>
+					<th style="text-align: left"><code>ANTHROPIC_BASE_URL</code></th>
+					<th style="text-align: left">モデル名の例</th>
+					<th style="text-align: left">公式ドキュメント</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong>DeepSeek</strong></td>
+					<td style="text-align: left"><code>https://api.deepseek.com/anthropic</code></td>
+					<td style="text-align: left"><code>deepseek-flash</code>、<code>deepseek-v4-pro</code></td>
+					<td style="text-align: left"><a class="link" href="https://api-docs.deepseek.com/zh-cn/guides/anthropic_api/"  target="_blank" rel="noopener"
+    >api-docs.deepseek.com</a></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>Kimi（Moonshot）</strong></td>
+					<td style="text-align: left"><code>https://api.moonshot.cn/anthropic</code></td>
+					<td style="text-align: left"><code>kimi-k3[1m]</code>、<code>kimi-k2.7-code</code></td>
+					<td style="text-align: left"><a class="link" href="https://platform.moonshot.cn/docs/guide/claude-code-kimi"  target="_blank" rel="noopener"
+    >platform.moonshot.cn</a></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>智谱 GLM</strong></td>
+					<td style="text-align: left"><code>https://open.bigmodel.cn/api/anthropic</code></td>
+					<td style="text-align: left"><code>glm-5.3[1m]</code>、<code>glm-5.3-flash</code></td>
+					<td style="text-align: left"><a class="link" href="https://docs.bigmodel.cn/cn/coding-plan/tool/claude"  target="_blank" rel="noopener"
+    >docs.bigmodel.cn</a></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>通義千問（Alibaba Cloud Bailian）</strong></td>
+					<td style="text-align: left">従量課金：<code>https://dashscope.aliyuncs.com/apps/anthropic</code><br>Coding Plan：<code>https://coding.dashscope.aliyuncs.com/apps/anthropic</code><br>Token Plan：<code>https://token-plan.cn-beijing.maas.aliyuncs.com/apps/anthropic</code></td>
+					<td style="text-align: left"><code>qwen3.7-plus</code>、<code>qwen3.6-flash</code> など</td>
+					<td style="text-align: left"><a class="link" href="https://help.aliyun.com/zh/model-studio/claude-code"  target="_blank" rel="noopener"
+    >help.aliyun.com</a></td>
+			</tr>
+	</tbody>
+</table></div>
+<p><strong>つまずきやすい 3 つのポイント</strong></p>
+<ol>
+<li><strong><code>[1m]</code> サフィックスは有効です</strong>。「1M コンテキストウィンドウ」を意味し、誤記ではありません——各社のドキュメントにそう書かれています（<code>kimi-k3[1m]</code>、<code>glm-5.3[1m]</code>、<code>qwen3.7-plus[1m]</code> など）。<code>CLAUDE_CODE_MAX_CONTEXT_TOKENS</code> 環境変数でも同じ意味を表せます。</li>
+<li><strong>DeepSeek はモデル名を自動マッピングします</strong>：公式ドキュメントによると、サポート外のモデル名を渡すとバックエンドが自動的に <code>deepseek-flash</code> にマッピングし、さらに <code>claude-opus*</code> → <code>deepseek-v4-pro</code>、<code>claude-haiku*</code> / <code>claude-sonnet*</code> → <code>deepseek-flash</code> となります。base_url を変えるだけで Claude Code に接続できるのはこのためです。</li>
+<li><strong>エンドポイントに <code>/v1</code> や <code>/v1/messages</code> を自分で足さないでください</strong>：Claude Code が自分でパスを組み立てるため、余分なセグメントはたいていそのまま 404 になります。</li>
+</ol>
+<h3 id="そのまま使える完全な例kimi">そのまま使える完全な例（Kimi）
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;env&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_BASE_URL&#34;</span><span class="p">:</span> <span class="s2">&#34;https://api.moonshot.cn/anthropic&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_AUTH_TOKEN&#34;</span><span class="p">:</span> <span class="s2">&#34;YOUR_API_KEY&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_MODEL&#34;</span><span class="p">:</span> <span class="s2">&#34;kimi-k3[1m]&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_DEFAULT_OPUS_MODEL&#34;</span><span class="p">:</span> <span class="s2">&#34;kimi-k3[1m]&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_DEFAULT_SONNET_MODEL&#34;</span><span class="p">:</span> <span class="s2">&#34;kimi-k3[1m]&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_DEFAULT_HAIKU_MODEL&#34;</span><span class="p">:</span> <span class="s2">&#34;kimi-k2.7-code&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_DEFAULT_FABLE_MODEL&#34;</span><span class="p">:</span> <span class="s2">&#34;kimi-k3[1m]&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;CLAUDE_CODE_SUBAGENT_MODEL&#34;</span><span class="p">:</span> <span class="s2">&#34;kimi-k3[1m]&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;CLAUDE_CODE_AUTO_COMPACT_WINDOW&#34;</span><span class="p">:</span> <span class="s2">&#34;1000000&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;CLAUDE_CODE_EFFORT_LEVEL&#34;</span><span class="p">:</span> <span class="s2">&#34;max&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>各パラメータの役割：</p>
+<ul>
+<li><code>ANTHROPIC_DEFAULT_HAIKU_MODEL</code> には通常、<strong>安くて速い</strong>モデル（バックグラウンド要約や小タスク用）を割り当て、メインのティアには強いモデルを割り当てます；</li>
+<li><code>CLAUDE_CODE_AUTO_COMPACT_WINDOW</code>：コンテキストの自動圧縮が発動するウィンドウサイズ。小さすぎると早々にコンテキストを失います；</li>
+<li><code>CLAUDE_CODE_EFFORT_LEVEL</code>：推論の強度。<code>max</code> は品質が最も良い一方、最も遅く高コストです。</li>
+</ul>
+<h3 id="設定が効いているかを確認する">設定が効いているかを確認する
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">ステップ</th>
+					<th style="text-align: left">操作</th>
+					<th style="text-align: left">期待される結果</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">① エンドポイントを直接テスト</td>
+					<td style="text-align: left"><code>curl &lt;BASE_URL&gt;/v1/messages --header &quot;Authorization: Bearer &lt;KEY&gt;&quot; --header &quot;Content-Type: application/json&quot; --data '{&quot;model&quot;:&quot;&lt;モデル&gt;&quot;,&quot;max_tokens&quot;:1,&quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;hi&quot;}]}'</code></td>
+					<td style="text-align: left">正しい JSON（<code>{&quot;id&quot;:&quot;msg_...&quot;,&quot;content&quot;:[...]}</code>）が返り、HTML のエラーページではない</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">② セッション内で確認</td>
+					<td style="text-align: left"><code>claude</code> 起動後に <code>/status</code> を実行</td>
+					<td style="text-align: left"><code>Anthropic base URL</code> 行に自分のエンドポイントが表示される。<code>Auth token</code> / <code>API key</code> 行にクレデンシャルの出所が出る。<code>Login method: &lt;claude.ai アカウント&gt;</code> と表示されるならクレデンシャルが届いていない</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">③ エンドツーエンド</td>
+					<td style="text-align: left">何か一言送る（例：「こんにちは」）</td>
+					<td style="text-align: left">正常に返答し、エラーがない</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">④ モデルティア</td>
+					<td style="text-align: left"><code>/model</code></td>
+					<td style="text-align: left">設定したモデルが見える</td>
+			</tr>
+	</tbody>
+</table></div>
+
+    <blockquote>
+        <p>設定変更後は<strong>必ず新しいターミナルウィンドウを開いて</strong>から <code>claude</code> を起動してください。そうしないと古い環境を読み込みます。</p>
+
+    </blockquote>
+<h3 id="トラブルシューティング">トラブルシューティング
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">現象</th>
+					<th style="text-align: left">原因</th>
+					<th style="text-align: left">対処</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><code>401 invalid_api_key</code></td>
+					<td style="text-align: left">クレデンシャルの種類とエンドポイントが不一致、または Key が無効</td>
+					<td style="text-align: left"><code>ANTHROPIC_AUTH_TOKEN</code> と <code>ANTHROPIC_API_KEY</code> のどちらか一方にする。Key とエンドポイントが同じ会社・同じプランか確認する</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><code>model not found</code> / モデルが存在しない</td>
+					<td style="text-align: left">モデル名の誤り、またはプランでそのモデルが開放されていない</td>
+					<td style="text-align: left">各社ドキュメントと照合する（<code>[1m]</code> サフィックス、大文字小文字、余分な空白に注意）</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">メイン対話は正常だが<strong>サブ Agent / バックグラウンドタスクがエラー</strong></td>
+					<td style="text-align: left">ティア変数が不足</td>
+					<td style="text-align: left"><code>ANTHROPIC_DEFAULT_HAIKU_MODEL</code>、<code>ANTHROPIC_DEFAULT_FABLE_MODEL</code>、<code>CLAUDE_CODE_SUBAGENT_MODEL</code> を補う</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">設定を変えても効かない</td>
+					<td style="text-align: left"><code>settings.json</code> に古い値が残っている、またはシェルに古い <code>export</code> がある</td>
+					<td style="text-align: left">両方の残留を消す。<code>settings.json</code> の <code>env</code> はシェルより優先される</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">依然としてログインを求められる / <code>Unable to connect to Anthropic services</code></td>
+					<td style="text-align: left">変数が「初回起動ウィザードより前」に見えていない、または <code>hasCompletedOnboarding</code> 未設定</td>
+					<td style="text-align: left"><strong>ユーザーレベル</strong>の <code>settings.json</code> かシェル export を使う。<code>~/.claude.json</code> の該当項目が <code>true</code> か確認する</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">起動のたびに <code>Do you want to use this API key</code> と聞かれる</td>
+					<td style="text-align: left"><code>ANTHROPIC_API_KEY</code> を使っている（対話モードでは一度だけ確認が必要）</td>
+					<td style="text-align: left">Yes を選ぶ。または <code>ANTHROPIC_AUTH_TOKEN</code> に変える</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">保存済みの公式ログインを消したい</td>
+					<td style="text-align: left">以前 <code>/login</code> した</td>
+					<td style="text-align: left">セッション内で <code>/logout</code> を実行し、再起動する</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">403 / HTML のエラーページが返る</td>
+					<td style="text-align: left">前段の WAF やリバースプロキシがリクエストボディを遮断した</td>
+					<td style="text-align: left">ゲートウェイ側で <code>/v1/messages</code> をリクエストボディ検査の対象から除外してもらう</td>
+			</tr>
+	</tbody>
+</table></div>
+<h3 id="重要な注意">重要な注意
+</h3><ol>
+<li><strong><code>ANTHROPIC_API_KEY</code> と <code>ANTHROPIC_AUTH_TOKEN</code> を同時に設定しない</strong>。競合します。Kimi のドキュメントは <code>ANTHROPIC_API_KEY</code> を削除するよう明記しています。</li>
+<li><strong><code>settings.json</code> には Key が平文で入ります</strong>：git にコミットしないこと。プロジェクトレベルの設定は必ず <code>.gitignore</code> に書きます。</li>
+<li><strong><code>.env</code> ファイルは読み込まれません</strong>：クレデンシャルを <code>.env</code> に書かないでください。</li>
+<li><strong>サードパーティに替える = データの行き先を変える</strong>：あなたのコードと会話は、そのベンダーや中継サービスを丸ごと通過します。よく考えて選び、<strong>ベンダー直営のエンドポイント</strong>を優先し、出所不明の「中継所」は慎重に。</li>
+<li><strong>公式ログインに戻す</strong>：<code>settings.json</code> の <code>env</code> からこれらの変数を削除する（またはファイル自体を削除する）→ <code>/logout</code> を実行 → <code>claude</code> を再起動すれば、公式ログインの流れに戻ります。</li>
+<li><strong>サードパーティの「ワンクリック切替」ツールのトレードオフ</strong>：後述の「GUI ツールで設定を管理する」セクションを参照 —— これらは <code>settings.json</code> を直接書き換えます。省けるのは操作コストで、高くつくのは調査コストです。</li>
+</ol>
+<hr>
+<h2 id="gui-ツールで設定を管理するcc-switch-を例にしたトレードオフ">GUI ツールで設定を管理する（CC Switch を例にしたトレードオフ）
+</h2>
+    <blockquote>
+        <p><code>settings.json</code> を手書きするのは JSON に不慣れな人には確かにハードルがあります。そこで「設定管理 / プロバイダー切替」系の GUI ツールが数多く登場しました。中でも人気なのが <strong>CC Switch</strong>（<code>github.com/farion1231/cc-switch</code>、14 万以上の stars、公式サイト <code>ccswitch.io</code>）です。以下の分析は<strong>この種のツール全般</strong>に当てはまります。</p>
+
+    </blockquote>
+<h3 id="何を解決するのか">何を解決するのか
+</h3><ul>
+<li>GUI で Base URL / API Key を入力でき、JSON に触れず、カンマの打ち間違いも怖くない；</li>
+<li>よくあるベンダーのテンプレート（DeepSeek、Kimi、智谱 GLM、通義千問 など）と自前ゲートウェイを内蔵；</li>
+<li>複数プロバイダーのワンクリック切替（公式アカウント ↔ サードパーティ ↔ 安価なモデル）；</li>
+<li><code>hasCompletedOnboarding</code> を自動で書き込み、初回ログインのガイドを省く；</li>
+<li>バックアップ、Skills 管理、使用量統計などの周辺機能付き。</li>
+</ul>
+<p><strong>複数プロバイダーを頻繁に切り替える</strong>ユーザーにとっては確かに便利です。省けるのは<strong>操作コスト</strong>です。</p>
+<h3 id="知っておくべき固有のコスト">知っておくべき固有のコスト
+</h3><p>これらは「1 つのフィールドを書き換えてくれる」のではなく、あなたの設定ファイルを<strong>乗っ取ります</strong>。CC Switch を例にすると、公式ドキュメントと issue に「設計通りの挙動」として明確に記録されているものがいくつかあります：</p>
+<div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">挙動</th>
+					<th style="text-align: left">結果</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">プロバイダー切替時に<strong>完全なスナップショットで</strong> live 設定ファイルを書き換える（公式は <a class="link" href="https://github.com/farion1231/cc-switch/issues/3946"  target="_blank" rel="noopener"
+    >issue #3946</a> で「これは意図的な設計」と回答）</td>
+					<td style="text-align: left">自分で <code>settings.json</code> に書いた <code>hooks</code>、<code>statusLine</code>、<code>permissions</code> などが上書きされる。同種の issue には #2992 / #4274 / #2109 / #2871 / #3078 もある</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">独自の <strong>hook や環境変数を書き込む</strong>ことがあり、補助スクリプトを添えることもある</td>
+					<td style="text-align: left">スクリプト本体やインタプリタが手元に無いと毎回起動時にエラーになる。しかもエラー位置は「設定」から遠く、特定が極めて難しい</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>1 つのプログラムが複数の CLI を同時に管理</strong>（Claude Code / Codex / OpenCode / Gemini / Grok / Hermes など）</td>
+					<td style="text-align: left">一箇所の誤設定が他のツールに波及する。たとえば OpenCode 用に書き込むパスがツールの実際の読み取りパスと食い違うと、「切替は成功したように見えて実際は全部空振り」になる（<a class="link" href="https://github.com/farion1231/cc-switch/issues/5945"  target="_blank" rel="noopener"
+    >issue #5945</a>）</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">変更するのは<strong>実際に効いているファイル</strong>であり、コピーではない</td>
+					<td style="text-align: left">問題が起きたとき、現場はあなたが使っているその設定そのもの</td>
+			</tr>
+	</tbody>
+</table></div>
+
+    <blockquote>
+        <p><strong>注意</strong>：これは通常「ソフトの品質が悪い」のではなく、製品の位置づけによるものです——乗っ取り型の管理は「どのフィールドが有効か」の衝突を必然的に生みます。バックアップは確かに用意されています（<code>~/.cc-switch/backups/</code>、および初回書き換え前の原本を記録する <code>backups/live-first-write/</code>）。しかしバックアップはファイルを救えても、調査で無駄にした時間は救えません。</p>
+
+    </blockquote>
+<h3 id="初心者にとっての使いやすさのパラドックス">初心者にとっての使いやすさのパラドックス
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left"></th>
+					<th style="text-align: left">手書き設定</th>
+					<th style="text-align: left">GUI ツール</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">導入コスト</td>
+					<td style="text-align: left">JSON ファイル 1 つを読む必要がある</td>
+					<td style="text-align: left">数クリックで使える</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">問題発生時の調査</td>
+					<td style="text-align: left">すべて自分が書いた行なので範囲が狭い</td>
+					<td style="text-align: left">ツールが生成した大量のファイル + 上書きされた元設定 + 自動注入された hook を前に、どの層が効いているか分からない</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">スクリプト的な調査</td>
+					<td style="text-align: left">可能（<code>diff</code>、<code>/status</code>、<code>claude doctor</code> で層ごとに検証）</td>
+					<td style="text-align: left">通常は不可（純粋な GUI でコマンドライン入口がない）</td>
+			</tr>
+	</tbody>
+</table></div>
+<p>言い換えれば：<strong>省けるのは操作コストで、高くつくのは調査コストです。</strong> 「なぜ設定が効かないのか」を検索しなければならない人が、ツールが書き込んだ内容で問題が起きたら、なおさら手がかりを失います。</p>
+<h3 id="判断の指針">判断の指針
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">あなたの状況</th>
+					<th style="text-align: left">推奨</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">1 つのプロバイダーを長く使う</td>
+					<td style="text-align: left"><strong>一度手書きすれば十分</strong>で、その後数か月触る必要はありません。GUI が省く数分は、上書きリスクに見合いません</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">3 つ以上のプロバイダーを頻繁に切り替える</td>
+					<td style="text-align: left">ここでこそ価値が発揮されます。使う価値はありますが、後述の「使うと決めたなら、こう使う」に従ってください</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">とにかくミニマルにしたい</td>
+					<td style="text-align: left">上記の「公式ログインを使わない」セクションの「テンプレート + 1 コマンド」、または「切替 = 小さなファイルを 1 つコピーする」自前スクリプトのほうが、GUI より速く透明です</td>
+			</tr>
+	</tbody>
+</table></div>
+<h3 id="使うと決めたならこう使う">使うと決めたなら、こう使う
+</h3><ol>
+<li><strong>1 つのツールだけを管理させる</strong>：使わない CLI（Codex / Gemini / OpenCode など）のパネルは開かない；</li>
+<li><strong>ローカルプロキシ / Routing を切る</strong>：直結のほうが、中継が 1 層少なくなり失敗要因が減ります；</li>
+<li><strong>不要な自動同期を切る</strong>：Skills 同期、セッション同期、プラグイン連携はどれも他のディレクトリに手を伸ばします；</li>
+<li><strong>切替のたびに設定ファイルを開いて確認する</strong>（<code>~/.claude/settings.json</code>）：<code>env</code> のモデル名が正しいか、<strong>余計な <code>hooks</code> セクションがないか</strong>；</li>
+<li><strong>バックアップの場所を覚えておく</strong>：<code>~/.cc-switch/backups/live-first-write/</code> に「書き換え前の原本」があります。問題が起きたらここから救出します；</li>
+<li><strong>切替後に一度セルフチェックを走らせる</strong>（<code>claude doctor</code> など）；</li>
+<li>覚えておくこと：上の 6 つをすべて実践するのは、単一プロバイダーのユーザーにとっては、JSON を 1 つ手書きするよりすでに面倒です。</li>
+</ol>
+<h3 id="セキュリティ上の注意">セキュリティ上の注意
+</h3><ul>
+<li>これらはあなたの <strong>API Key</strong> と<strong>すべての設定ファイル</strong>に触れます。必ず公式チャネルからのみダウンロードしてください。CC Switch の公式サイトは <code>ccswitch.io</code>、公式リポジトリは <code>github.com/farion1231/cc-switch</code> です。GitHub には同名の fork が複数あるため、ダウンロード前に作者とアドレスを確認してください。</li>
+<li>推薦しているクラウド事業者も免責事項を添えています。たとえば Alibaba Cloud Bailian のドキュメントはこう書いています：<em>「本ツールはサードパーティ製ソフトウェアであり、そのスクリプトとコードは Alibaba Cloud の審査および保守の対象外です。インストール・使用前に、入手元の信頼性とコードの安全性をご自身で評価してください。」</em></li>
+<li>どのツールを使っても、<strong>最終的に効くのは常に <code>~/.claude/settings.json</code></strong> です。このファイルを読めるようになれば、常に最後の拠り所があります。</li>
+</ul>
+<hr>
 <h2 id="セキュリティとコンプライアンスの注意">セキュリティとコンプライアンスの注意
 </h2><ol>
 <li><strong>公式ドメインからのみダウンロードする</strong>
@@ -1162,7 +1667,7 @@
 </ul>
 </li>
 <li><strong><code>curl … | bash</code> と <code>irm … | iex</code> の安全な習慣</strong>：まずドメインを確認してから実行する。可能なら先にスクリプトをダウンロードして読み、それから実行する（<code>curl -fsSL &lt;url&gt; -o install.sh</code> の後に <code>less install.sh</code>）。</li>
-<li><strong>サードパーティの「設定切替 / 中継プロキシ」ツールは慎重に</strong>：これらは <code>~/.claude/settings.json</code> や <code>~/.config/opencode/opencode.json</code> などを直接書き換え、サードパーティの <code>baseURL</code> と <code>token</code> を書き込むことがあります。無効なモデル名や残留した hook が入ると、起動エラー程度ならまだしも、認証情報の漏洩につながります。使うなら設定ファイルは自分で書き、各行が何をしているか理解してください。</li>
+<li><strong>サードパーティの「設定切替 / 中継プロキシ」ツールのトレードオフ</strong>：詳細は上記の「GUI ツールで設定を管理する」セクションを参照。要点は——これらは <code>~/.claude/settings.json</code> や <code>~/.config/opencode/opencode.json</code> などを直接書き換え、<strong>最終的に効くのは常にこれらのファイル自体</strong>であるということ。だからこそ読める・書ける・検証できるようになっておく必要があります。</li>
 <li><strong>API Key の管理</strong>：Key を平文で Git リポジトリにコミットしない。漏洩が疑われたら、ただちに対応プラットフォームでローテーションする。</li>
 </ol>
 <hr>

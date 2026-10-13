@@ -366,6 +366,28 @@
       </ol>
     </li>
     <li><a href="#comparing-the-two-and-how-to-choose">Comparing the Two and How to Choose</a></li>
+    <li><a href="#skipping-the-official-login-connecting-to-third-party-llm-apis">Skipping the Official Login: Connecting to Third-Party LLM APIs</a>
+      <ol>
+        <li><a href="#principle-swap-the-url-and-the-credential">Principle: Swap the URL and the Credential</a></li>
+        <li><a href="#configuration-steps">Configuration Steps</a></li>
+        <li><a href="#where-the-configuration-lives-critical">Where the Configuration Lives (Critical)</a></li>
+        <li><a href="#vendor-quick-reference">Vendor Quick Reference</a></li>
+        <li><a href="#a-complete-copy-paste-example-kimi">A Complete Copy-Paste Example (Kimi)</a></li>
+        <li><a href="#verifying-the-configuration">Verifying the Configuration</a></li>
+        <li><a href="#troubleshooting">Troubleshooting</a></li>
+        <li><a href="#important-reminders">Important Reminders</a></li>
+      </ol>
+    </li>
+    <li><a href="#managing-configuration-with-a-gui-tool-the-cc-switch-trade-off">Managing Configuration with a GUI Tool (the CC Switch Trade-off)</a>
+      <ol>
+        <li><a href="#what-they-solve">What They Solve</a></li>
+        <li><a href="#the-inherent-costs-you-should-know">The Inherent Costs You Should Know</a></li>
+        <li><a href="#the-beginner-friendliness-paradox">The Beginner-Friendliness Paradox</a></li>
+        <li><a href="#decision-guide">Decision Guide</a></li>
+        <li><a href="#if-you-decide-to-use-one">If You Decide to Use One</a></li>
+        <li><a href="#security-notes">Security Notes</a></li>
+      </ol>
+    </li>
     <li><a href="#security-and-compliance-notes">Security and Compliance Notes</a></li>
     <li><a href="#official-links">Official Links</a></li>
   </ol>
@@ -444,7 +466,7 @@
 
 
                     <time class="article-time--reading">
-                        11 minutes read
+                        22 minutes read
                     </time>
                 
             </div>
@@ -526,6 +548,28 @@
       </ol>
     </li>
     <li><a href="#comparing-the-two-and-how-to-choose">Comparing the Two and How to Choose</a></li>
+    <li><a href="#skipping-the-official-login-connecting-to-third-party-llm-apis">Skipping the Official Login: Connecting to Third-Party LLM APIs</a>
+      <ol>
+        <li><a href="#principle-swap-the-url-and-the-credential">Principle: Swap the URL and the Credential</a></li>
+        <li><a href="#configuration-steps">Configuration Steps</a></li>
+        <li><a href="#where-the-configuration-lives-critical">Where the Configuration Lives (Critical)</a></li>
+        <li><a href="#vendor-quick-reference">Vendor Quick Reference</a></li>
+        <li><a href="#a-complete-copy-paste-example-kimi">A Complete Copy-Paste Example (Kimi)</a></li>
+        <li><a href="#verifying-the-configuration">Verifying the Configuration</a></li>
+        <li><a href="#troubleshooting">Troubleshooting</a></li>
+        <li><a href="#important-reminders">Important Reminders</a></li>
+      </ol>
+    </li>
+    <li><a href="#managing-configuration-with-a-gui-tool-the-cc-switch-trade-off">Managing Configuration with a GUI Tool (the CC Switch Trade-off)</a>
+      <ol>
+        <li><a href="#what-they-solve">What They Solve</a></li>
+        <li><a href="#the-inherent-costs-you-should-know">The Inherent Costs You Should Know</a></li>
+        <li><a href="#the-beginner-friendliness-paradox">The Beginner-Friendliness Paradox</a></li>
+        <li><a href="#decision-guide">Decision Guide</a></li>
+        <li><a href="#if-you-decide-to-use-one">If You Decide to Use One</a></li>
+        <li><a href="#security-notes">Security Notes</a></li>
+      </ol>
+    </li>
     <li><a href="#security-and-compliance-notes">Security and Compliance Notes</a></li>
     <li><a href="#official-links">Official Links</a></li>
   </ol>
@@ -800,6 +844,11 @@ How to read: if you only want to install one tool, jump straight to that section
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>The first launch starts a guided flow: choose a login method (a Claude subscription account, or an API key from the Anthropic Console) → finish authorization in the browser → configuration is written to <code>~/.claude/</code>.</p>
+
+    <blockquote>
+        <p><strong>Do not want to use an official Anthropic account?</strong> You can point it at a third-party vendor&rsquo;s Anthropic-compatible endpoint (DeepSeek / Kimi / Zhipu GLM / Qwen, etc.) and skip the login flow entirely — see &ldquo;Skipping the Official Login: Connecting to Third-Party LLM APIs&rdquo; below.</p>
+
+    </blockquote>
 <h3 id="update-strategy-and-release-channels">Update Strategy and Release Channels
 </h3><ul>
 <li><strong>Native install</strong>: updates automatically in the background, no intervention needed.</li>
@@ -1145,6 +1194,462 @@ How to read: if you only want to install one tool, jump straight to that section
 <li>The two are similar in positioning, so <strong>you can install both</strong>: Claude Code lives in your user directory (<code>~/.local/bin</code>) while OpenCode goes through npm or its own directory, so they do not interfere.</li>
 </ul>
 <hr>
+<h2 id="skipping-the-official-login-connecting-to-third-party-llm-apis">Skipping the Official Login: Connecting to Third-Party LLM APIs
+</h2>
+    <blockquote>
+        <p>This section covers a mechanism Claude Code <strong>officially supports</strong>: pointing requests at your own LLM gateway, or at the <strong>Anthropic-compatible endpoints</strong> offered by third-party vendors (DeepSeek, Kimi, Zhipu GLM, Qwen, etc.). It is not a crack — the official docs have a dedicated page, <em>Connect Claude Code to an LLM gateway</em>, describing it. Once configured, Claude Code no longer requires an official Anthropic login.</p>
+
+    </blockquote>
+<h3 id="principle-swap-the-url-and-the-credential">Principle: Swap the URL and the Credential
+</h3><p>Claude Code only recognizes one thing: the <strong>Anthropic Messages API protocol</strong>. Any service that speaks this protocol can replace the underlying model after you change a few environment variables.</p>
+<div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Variable</th>
+					<th style="text-align: left">Purpose</th>
+					<th style="text-align: left">Consequence if missing</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><code>ANTHROPIC_BASE_URL</code></td>
+					<td style="text-align: left">The endpoint requests go to</td>
+					<td style="text-align: left">Requests still go to Anthropic; the third-party key fails authentication</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><code>ANTHROPIC_AUTH_TOKEN</code></td>
+					<td style="text-align: left">Credential, sent as <code>Authorization: Bearer &lt;token&gt;</code></td>
+					<td style="text-align: left">A <code>401</code> authentication error</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><code>ANTHROPIC_API_KEY</code></td>
+					<td style="text-align: left">The other credential form, sent as <code>x-api-key</code></td>
+					<td style="text-align: left">Same as above (interactive mode also asks for a one-time confirmation, see &ldquo;Troubleshooting&rdquo; below)</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><code>ANTHROPIC_MODEL</code></td>
+					<td style="text-align: left">The main conversation model</td>
+					<td style="text-align: left">&ldquo;Model not found&rdquo;</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><code>ANTHROPIC_DEFAULT_OPUS_MODEL</code><br><code>ANTHROPIC_DEFAULT_SONNET_MODEL</code><br><code>ANTHROPIC_DEFAULT_HAIKU_MODEL</code><br><code>ANTHROPIC_DEFAULT_FABLE_MODEL</code></td>
+					<td style="text-align: left">Model mapping for each tier</td>
+					<td style="text-align: left">Tasks in the corresponding tier fail</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><code>CLAUDE_CODE_SUBAGENT_MODEL</code></td>
+					<td style="text-align: left">The model used by sub-agents</td>
+					<td style="text-align: left">Sub-tasks fail or degrade noticeably</td>
+			</tr>
+	</tbody>
+</table></div>
+<p><strong>Which credential variable should you use?</strong> The official advice: when you are unsure which one the gateway expects, <strong>start with <code>ANTHROPIC_AUTH_TOKEN</code></strong>; if you get a <code>401</code>, switch to <code>ANTHROPIC_API_KEY</code> (and vice versa). Do <strong>not set both</strong>.</p>
+<p><strong>Why is the &ldquo;tier mapping&rdquo; mandatory?</strong> Claude Code requests different model tiers depending on the scenario — main conversation, background summaries, sub-agents, and so on. Third-party endpoints usually do not have names like <code>haiku</code> / <code>sonnet</code> / <code>opus</code>, so each tier must be explicitly mapped to a real model name; otherwise the corresponding scenario <strong>fails silently</strong> (the chat works, while background tasks error out).</p>
+<h3 id="configuration-steps">Configuration Steps
+</h3><p><strong>Step 1: Get the endpoint and model names</strong> — see &ldquo;Vendor Quick Reference&rdquo; below, and always defer to each vendor&rsquo;s official docs.</p>
+<p><strong>Step 2: Write the user-level configuration file</strong></p>
+<ul>
+<li>macOS / Linux: <code>~/.claude/settings.json</code></li>
+<li>Windows: <code>C:\Users\&lt;username&gt;\.claude\settings.json</code></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;env&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_BASE_URL&#34;</span><span class="p">:</span> <span class="s2">&#34;https://&lt;vendor-endpoint&gt;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_AUTH_TOKEN&#34;</span><span class="p">:</span> <span class="s2">&#34;&lt;your API key&gt;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_MODEL&#34;</span><span class="p">:</span> <span class="s2">&#34;&lt;main model name&gt;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_DEFAULT_OPUS_MODEL&#34;</span><span class="p">:</span> <span class="s2">&#34;&lt;model name&gt;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_DEFAULT_SONNET_MODEL&#34;</span><span class="p">:</span> <span class="s2">&#34;&lt;model name&gt;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_DEFAULT_HAIKU_MODEL&#34;</span><span class="p">:</span> <span class="s2">&#34;&lt;model name&gt;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_DEFAULT_FABLE_MODEL&#34;</span><span class="p">:</span> <span class="s2">&#34;&lt;model name&gt;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;CLAUDE_CODE_SUBAGENT_MODEL&#34;</span><span class="p">:</span> <span class="s2">&#34;&lt;model name&gt;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Step 3: Skip the first-run login flow</strong></p>
+<p>Edit or create <code>~/.claude.json</code> (Windows: <code>C:\Users\&lt;username&gt;\.claude.json</code>) and add this entry:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;hasCompletedOnboarding&#34;</span><span class="p">:</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    <blockquote>
+        <p>Without it, Claude Code tries to reach <code>api.anthropic.com</code> for a login check on startup, producing errors such as
+<code>Unable to connect to Anthropic services. Failed to connect to api.anthropic.com: ERR_BAD_REQUEST</code>.</p>
+
+    </blockquote>
+<p>A one-shot cross-platform write (using node to edit the JSON, so you cannot break the formatting by hand):</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">node --eval <span class="s2">&#34;const fs=require(&#39;fs&#39;),p=require(&#39;path&#39;),os=require(&#39;os&#39;);const f=p.join(os.homedir(),&#39;.claude.json&#39;);const c=fs.existsSync(f)?JSON.parse(fs.readFileSync(f,&#39;utf-8&#39;)):{};c.hasCompletedOnboarding=true;fs.writeFileSync(f,JSON.stringify(c,null,2),&#39;utf-8&#39;)&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Step 4: Restart the terminal → launch <code>claude</code> → verify</strong> (see &ldquo;Verifying the Configuration&rdquo; below)</p>
+<h3 id="where-the-configuration-lives-critical">Where the Configuration Lives (Critical)
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Location</th>
+					<th style="text-align: left">Scope</th>
+					<th style="text-align: left">Notes</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><code>env</code> in <code>~/.claude/settings.json</code></td>
+					<td style="text-align: left">All projects (personal level)</td>
+					<td style="text-align: left">✅ <strong>Recommended</strong>; the official docs and every vendor guide use it</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Shell environment variables (<code>export</code> / <code>$env:</code>)</td>
+					<td style="text-align: left">The current terminal and its child processes</td>
+					<td style="text-align: left">Fine for temporary tests; but IDEs launched from the desktop/Start menu will not see them</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><code>env</code> in a project&rsquo;s <code>.claude/settings.json</code></td>
+					<td style="text-align: left">That project only</td>
+					<td style="text-align: left">⚠️ It takes effect <strong>after the first-run wizard and the trust prompt</strong>, so it <strong>cannot be used to skip login</strong>; it is also easy to commit into git by accident</td>
+			</tr>
+	</tbody>
+</table></div>
+<p><strong>Conflict rule: the <code>env</code> block in <code>settings.json</code> overrides environment variables of the same name from the shell.</strong> So when &ldquo;I changed the environment variable but nothing happened&rdquo;, go back and check whether <code>settings.json</code> still holds a stale value.</p>
+<h3 id="vendor-quick-reference">Vendor Quick Reference
+</h3>
+    <blockquote>
+        <p>⚠️ Endpoints and model names are maintained by each vendor and change frequently. The table below is only a starting point — <strong>always confirm against each vendor&rsquo;s official docs before configuring</strong>.</p>
+
+    </blockquote>
+<div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Vendor</th>
+					<th style="text-align: left"><code>ANTHROPIC_BASE_URL</code></th>
+					<th style="text-align: left">Example model names</th>
+					<th style="text-align: left">Official docs</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong>DeepSeek</strong></td>
+					<td style="text-align: left"><code>https://api.deepseek.com/anthropic</code></td>
+					<td style="text-align: left"><code>deepseek-flash</code>, <code>deepseek-v4-pro</code></td>
+					<td style="text-align: left"><a class="link" href="https://api-docs.deepseek.com/zh-cn/guides/anthropic_api/"  target="_blank" rel="noopener"
+    >api-docs.deepseek.com</a></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>Kimi (Moonshot)</strong></td>
+					<td style="text-align: left"><code>https://api.moonshot.cn/anthropic</code></td>
+					<td style="text-align: left"><code>kimi-k3[1m]</code>, <code>kimi-k2.7-code</code></td>
+					<td style="text-align: left"><a class="link" href="https://platform.moonshot.cn/docs/guide/claude-code-kimi"  target="_blank" rel="noopener"
+    >platform.moonshot.cn</a></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>Zhipu GLM</strong></td>
+					<td style="text-align: left"><code>https://open.bigmodel.cn/api/anthropic</code></td>
+					<td style="text-align: left"><code>glm-5.3[1m]</code>, <code>glm-5.3-flash</code></td>
+					<td style="text-align: left"><a class="link" href="https://docs.bigmodel.cn/cn/coding-plan/tool/claude"  target="_blank" rel="noopener"
+    >docs.bigmodel.cn</a></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>Qwen (Alibaba Cloud Bailian)</strong></td>
+					<td style="text-align: left">Pay-as-you-go: <code>https://dashscope.aliyuncs.com/apps/anthropic</code><br>Coding Plan: <code>https://coding.dashscope.aliyuncs.com/apps/anthropic</code><br>Token Plan: <code>https://token-plan.cn-beijing.maas.aliyuncs.com/apps/anthropic</code></td>
+					<td style="text-align: left"><code>qwen3.7-plus</code>, <code>qwen3.6-flash</code>, etc.</td>
+					<td style="text-align: left"><a class="link" href="https://help.aliyun.com/zh/model-studio/claude-code"  target="_blank" rel="noopener"
+    >help.aliyun.com</a></td>
+			</tr>
+	</tbody>
+</table></div>
+<p><strong>Three easy-to-miss details</strong></p>
+<ol>
+<li><strong>The <code>[1m]</code> suffix is valid</strong> — it means &ldquo;1M context window&rdquo;, not a typo; every vendor&rsquo;s docs write it that way (e.g. <code>kimi-k3[1m]</code>, <code>glm-5.3[1m]</code>, <code>qwen3.7-plus[1m]</code>). You can express the same thing with the <code>CLAUDE_CODE_MAX_CONTEXT_TOKENS</code> environment variable.</li>
+<li><strong>DeepSeek maps model names automatically</strong>: per its official docs, an unsupported model name is mapped to <code>deepseek-flash</code> on the backend; also <code>claude-opus*</code> → <code>deepseek-v4-pro</code>, and <code>claude-haiku*</code> / <code>claude-sonnet*</code> → <code>deepseek-flash</code>. This is why it can be wired into Claude Code by changing only a base_url.</li>
+<li><strong>Do not append <code>/v1</code> or <code>/v1/messages</code> to the endpoint yourself</strong>: Claude Code assembles the path on its own, and the extra segment usually yields a plain 404.</li>
+</ol>
+<h3 id="a-complete-copy-paste-example-kimi">A Complete Copy-Paste Example (Kimi)
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;env&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_BASE_URL&#34;</span><span class="p">:</span> <span class="s2">&#34;https://api.moonshot.cn/anthropic&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_AUTH_TOKEN&#34;</span><span class="p">:</span> <span class="s2">&#34;YOUR_API_KEY&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_MODEL&#34;</span><span class="p">:</span> <span class="s2">&#34;kimi-k3[1m]&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_DEFAULT_OPUS_MODEL&#34;</span><span class="p">:</span> <span class="s2">&#34;kimi-k3[1m]&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_DEFAULT_SONNET_MODEL&#34;</span><span class="p">:</span> <span class="s2">&#34;kimi-k3[1m]&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_DEFAULT_HAIKU_MODEL&#34;</span><span class="p">:</span> <span class="s2">&#34;kimi-k2.7-code&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ANTHROPIC_DEFAULT_FABLE_MODEL&#34;</span><span class="p">:</span> <span class="s2">&#34;kimi-k3[1m]&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;CLAUDE_CODE_SUBAGENT_MODEL&#34;</span><span class="p">:</span> <span class="s2">&#34;kimi-k3[1m]&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;CLAUDE_CODE_AUTO_COMPACT_WINDOW&#34;</span><span class="p">:</span> <span class="s2">&#34;1000000&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;CLAUDE_CODE_EFFORT_LEVEL&#34;</span><span class="p">:</span> <span class="s2">&#34;max&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>What each parameter does:</p>
+<ul>
+<li><code>ANTHROPIC_DEFAULT_HAIKU_MODEL</code> usually points at a <strong>cheap, fast</strong> model (background summaries, small tasks), while the main tiers get strong models;</li>
+<li><code>CLAUDE_CODE_AUTO_COMPACT_WINDOW</code>: the window size that triggers automatic context compaction — set it too small and you lose context prematurely;</li>
+<li><code>CLAUDE_CODE_EFFORT_LEVEL</code>: reasoning effort; <code>max</code> gives the best quality, and is the slowest and most expensive.</li>
+</ul>
+<h3 id="verifying-the-configuration">Verifying the Configuration
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Step</th>
+					<th style="text-align: left">Action</th>
+					<th style="text-align: left">Expected result</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">① Probe the endpoint directly</td>
+					<td style="text-align: left"><code>curl &lt;BASE_URL&gt;/v1/messages --header &quot;Authorization: Bearer &lt;KEY&gt;&quot; --header &quot;Content-Type: application/json&quot; --data '{&quot;model&quot;:&quot;&lt;model&gt;&quot;,&quot;max_tokens&quot;:1,&quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;hi&quot;}]}'</code></td>
+					<td style="text-align: left">Valid JSON (<code>{&quot;id&quot;:&quot;msg_...&quot;,&quot;content&quot;:[...]}</code>), not an HTML error page</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">② Check inside a session</td>
+					<td style="text-align: left">Run <code>/status</code> after starting <code>claude</code></td>
+					<td style="text-align: left">The <code>Anthropic base URL</code> line shows your endpoint; <code>Auth token</code> / <code>API key</code> shows the credential source. If it says <code>Login method: &lt;claude.ai account&gt;</code>, the credential never arrived</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">③ End to end</td>
+					<td style="text-align: left">Send any message (e.g. &ldquo;hello&rdquo;)</td>
+					<td style="text-align: left">A normal reply, no errors</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">④ Model tiers</td>
+					<td style="text-align: left"><code>/model</code></td>
+					<td style="text-align: left">Your configured models are listed</td>
+			</tr>
+	</tbody>
+</table></div>
+
+    <blockquote>
+        <p>After changing the configuration you <strong>must open a new terminal window</strong> before starting <code>claude</code>, or you will still be reading the old environment.</p>
+
+    </blockquote>
+<h3 id="troubleshooting">Troubleshooting
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Symptom</th>
+					<th style="text-align: left">Cause</th>
+					<th style="text-align: left">Fix</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><code>401 invalid_api_key</code></td>
+					<td style="text-align: left">Credential type does not match the endpoint, or the key is invalid</td>
+					<td style="text-align: left">Pick either <code>ANTHROPIC_AUTH_TOKEN</code> or <code>ANTHROPIC_API_KEY</code>; confirm the key and endpoint belong to the same vendor and the same plan</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><code>model not found</code></td>
+					<td style="text-align: left">The model name is misspelled, or the model is not enabled on your plan</td>
+					<td style="text-align: left">Check the name against the vendor docs (watch the <code>[1m]</code> suffix, capitalization, stray spaces)</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">The main chat works but <strong>sub-agents / background tasks error out</strong></td>
+					<td style="text-align: left">Tier variables are incomplete</td>
+					<td style="text-align: left">Add <code>ANTHROPIC_DEFAULT_HAIKU_MODEL</code>, <code>ANTHROPIC_DEFAULT_FABLE_MODEL</code>, <code>CLAUDE_CODE_SUBAGENT_MODEL</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Configuration changes have no effect</td>
+					<td style="text-align: left">A stale value lingers in <code>settings.json</code>, or an old <code>export</code> exists in the shell</td>
+					<td style="text-align: left">Clear both; <code>settings.json</code>&rsquo;s <code>env</code> takes precedence over the shell</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Still asked to log in / <code>Unable to connect to Anthropic services</code></td>
+					<td style="text-align: left">The variables were not visible <em>before the first-run wizard</em>, or <code>hasCompletedOnboarding</code> is missing</td>
+					<td style="text-align: left">Use the <strong>user-level</strong> <code>settings.json</code> or a shell export; make sure the entry in <code>~/.claude.json</code> is <code>true</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Every start asks <code>Do you want to use this API key</code></td>
+					<td style="text-align: left">You are using <code>ANTHROPIC_API_KEY</code> (interactive mode needs a one-time confirmation)</td>
+					<td style="text-align: left">Choose Yes, or switch to <code>ANTHROPIC_AUTH_TOKEN</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Want to clear a saved official login</td>
+					<td style="text-align: left">You ran <code>/login</code> earlier</td>
+					<td style="text-align: left">Run <code>/logout</code> in a session, then restart</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">403 / an HTML error page</td>
+					<td style="text-align: left">An upstream WAF or reverse proxy blocked the request body</td>
+					<td style="text-align: left">Have the gateway exempt <code>/v1/messages</code> from request-body inspection rules</td>
+			</tr>
+	</tbody>
+</table></div>
+<h3 id="important-reminders">Important Reminders
+</h3><ol>
+<li><strong>Never set <code>ANTHROPIC_API_KEY</code> and <code>ANTHROPIC_AUTH_TOKEN</code> at the same time</strong> — they conflict; Kimi&rsquo;s docs explicitly tell you to delete <code>ANTHROPIC_API_KEY</code>.</li>
+<li><strong><code>settings.json</code> holds the key in plaintext</strong>: do not commit it; always add project-level configuration to <code>.gitignore</code>.</li>
+<li><strong><code>.env</code> files are not read</strong>: do not put credentials in a <code>.env</code>.</li>
+<li><strong>Switching vendors means switching where your data goes</strong>: your code and conversations pass in full through that vendor or relay service — think it through beforehand, prefer <strong>vendor-operated endpoints</strong>, and be wary of &ldquo;relay stations&rdquo; of unknown origin.</li>
+<li><strong>Going back to the official login</strong>: delete these variables from the <code>env</code> block in <code>settings.json</code> (or delete the file), run <code>/logout</code>, restart <code>claude</code>, and the official login flow returns.</li>
+<li><strong>The trade-off of third-party &ldquo;one-click switcher&rdquo; tools</strong>: see &ldquo;Managing Configuration with a GUI Tool&rdquo; below — they rewrite <code>settings.json</code> directly, saving operational effort at the cost of far more expensive troubleshooting.</li>
+</ol>
+<hr>
+<h2 id="managing-configuration-with-a-gui-tool-the-cc-switch-trade-off">Managing Configuration with a GUI Tool (the CC Switch Trade-off)
+</h2>
+    <blockquote>
+        <p>Hand-writing <code>settings.json</code> is genuinely a barrier for people unfamiliar with JSON, so a number of &ldquo;configuration manager / provider switcher&rdquo; GUI tools have appeared. The most popular is <strong>CC Switch</strong> (<code>github.com/farion1231/cc-switch</code>, 140k+ stars, official site <code>ccswitch.io</code>). The analysis below applies to <strong>this whole class of tools</strong>.</p>
+
+    </blockquote>
+<h3 id="what-they-solve">What They Solve
+</h3><ul>
+<li>Fill in Base URL / API Key in a GUI — no JSON, no fear of a stray comma;</li>
+<li>Built-in templates for common vendors (DeepSeek, Kimi, Zhipu GLM, Qwen, etc.) plus self-hosted gateways;</li>
+<li>One-click switching between multiple providers (official account ↔ third-party account ↔ cheap models);</li>
+<li>Automatically write <code>hasCompletedOnboarding</code> for you, skipping the first-run login;</li>
+<li>Extras such as backups, Skills management and usage statistics.</li>
+</ul>
+<p>For users who <strong>switch frequently between several providers</strong>, this is genuinely convenient. It saves <strong>operational effort</strong>.</p>
+<h3 id="the-inherent-costs-you-should-know">The Inherent Costs You Should Know
+</h3><p>These tools do not &ldquo;change one field for you&rdquo; — they <strong>take over</strong> your configuration files. For CC Switch specifically, its own docs and issue tracker plainly record several &ldquo;working as designed&rdquo; behaviours:</p>
+<div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Behaviour</th>
+					<th style="text-align: left">Consequence</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">Switching providers <strong>rewrites the live configuration file with a full snapshot</strong> (the maintainers state in <a class="link" href="https://github.com/farion1231/cc-switch/issues/3946"  target="_blank" rel="noopener"
+    >issue #3946</a> that &ldquo;this is intentional design&rdquo;)</td>
+					<td style="text-align: left">Fields you wrote yourself in <code>settings.json</code> — <code>hooks</code>, <code>statusLine</code>, <code>permissions</code>, etc. — get overwritten; related issues include #2992 / #4274 / #2109 / #2871 / #3078</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">It <strong>writes its own hooks or environment variables</strong>, sometimes with helper scripts</td>
+					<td style="text-align: left">If the script body or its interpreter is missing on your machine, every launch errors — and the error is far away from anything labelled &ldquo;configuration&rdquo;, making it very hard to trace</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>A single program manages multiple CLIs at once</strong> (Claude Code / Codex / OpenCode / Gemini / Grok / Hermes, etc.)</td>
+					<td style="text-align: left">A misconfiguration in one place spills into the others. For example, when the path it writes for OpenCode differs from the path the tool actually reads, you get &ldquo;switching looks successful but nothing took effect&rdquo; (<a class="link" href="https://github.com/farion1231/cc-switch/issues/5945"  target="_blank" rel="noopener"
+    >issue #5945</a>)</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">It edits the <strong>real, live files</strong>, not a copy</td>
+					<td style="text-align: left">When something breaks, the crime scene is the very configuration you were working with</td>
+			</tr>
+	</tbody>
+</table></div>
+
+    <blockquote>
+        <p><strong>Note</strong>: this is usually not &ldquo;poor software quality&rdquo; but the nature of the product — takeover-style management inevitably creates &ldquo;whose field wins&rdquo; conflicts. It does offer backups (<code>~/.cc-switch/backups/</code>, plus <code>backups/live-first-write/</code> recording the original file before the first rewrite), but backups save files, not the time you spend troubleshooting.</p>
+
+    </blockquote>
+<h3 id="the-beginner-friendliness-paradox">The Beginner-Friendliness Paradox
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left"></th>
+					<th style="text-align: left">Hand-written configuration</th>
+					<th style="text-align: left">GUI tool</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">Getting started</td>
+					<td style="text-align: left">You need to read one JSON file</td>
+					<td style="text-align: left">A few clicks</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Troubleshooting</td>
+					<td style="text-align: left">Every line is yours, so the search space is tiny</td>
+					<td style="text-align: left">You face a pile of generated files + overwritten originals + auto-injected hooks, unsure which layer is in effect</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Scriptable diagnosis</td>
+					<td style="text-align: left">Yes (<code>diff</code>, <code>/status</code>, <code>claude doctor</code>, layer by layer)</td>
+					<td style="text-align: left">Usually no (pure GUI, no command-line entry point)</td>
+			</tr>
+	</tbody>
+</table></div>
+<p>In other words: <strong>it saves operational effort and costs you troubleshooting effort.</strong> If you still have to search for why your configuration did not take effect, you will be even more lost when something the tool wrote for you breaks.</p>
+<h3 id="decision-guide">Decision Guide
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Your situation</th>
+					<th style="text-align: left">Recommendation</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">One provider, long-term use</td>
+					<td style="text-align: left"><strong>Write the configuration once and you are done</strong> — nothing to touch for months. The minutes a GUI saves are not worth the overwrite risk</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Frequent switching between 3+ providers</td>
+					<td style="text-align: left">This is where such tools earn their keep; worth using, but follow &ldquo;If You Decide to Use One&rdquo; below</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">You want minimalism</td>
+					<td style="text-align: left">Use the &ldquo;template + one command&rdquo; approach from the section above, or write a &ldquo;switching = copy one small file&rdquo; script — faster and more transparent than a GUI</td>
+			</tr>
+	</tbody>
+</table></div>
+<h3 id="if-you-decide-to-use-one">If You Decide to Use One
+</h3><ol>
+<li><strong>Let it manage only one tool</strong>: do not open the panels for CLIs you do not use (Codex / Gemini / OpenCode, etc.);</li>
+<li><strong>Turn off local proxy / Routing</strong>: direct connections have one fewer layer that can fail;</li>
+<li><strong>Turn off unnecessary auto-sync</strong>: Skills sync, session sync and plugin integrations all reach into other directories;</li>
+<li><strong>Open the configuration file after every switch</strong> (<code>~/.claude/settings.json</code>): confirm the model names in <code>env</code> are right and that there is <strong>no leftover <code>hooks</code> section</strong>;</li>
+<li><strong>Remember where the backups live</strong>: <code>~/.cc-switch/backups/live-first-write/</code> keeps &ldquo;the original file before it was rewritten&rdquo; — recover from there when things break;</li>
+<li><strong>Run a self-check after switching</strong> (e.g. <code>claude doctor</code>);</li>
+<li>Be aware: doing all six of the above is, for a single-provider user, already more bother than writing one JSON file.</li>
+</ol>
+<h3 id="security-notes">Security Notes
+</h3><ul>
+<li>These tools touch your <strong>API keys</strong> and <strong>every configuration file</strong>, so download them only from official channels. CC Switch&rsquo;s official site is <code>ccswitch.io</code> and its official repository is <code>github.com/farion1231/cc-switch</code>; several same-named forks exist on GitHub, so verify the author and URL before downloading.</li>
+<li>Even cloud vendors that recommend it add a disclaimer. Alibaba Cloud&rsquo;s Bailian docs, for instance, write: <em>&ldquo;This tool is third-party software; its scripts and code are not reviewed or maintained by Alibaba Cloud. Please assess the credibility of its source and the security of its code before installing or using it.&rdquo;</em></li>
+<li>Whatever tool you use, <strong><code>~/.claude/settings.json</code> is always what actually takes effect</strong>. Learn to read that file and you will always have a fallback.</li>
+</ul>
+<hr>
 <h2 id="security-and-compliance-notes">Security and Compliance Notes
 </h2><ol>
 <li><strong>Download only from official domains</strong>
@@ -1162,7 +1667,7 @@ How to read: if you only want to install one tool, jump straight to that section
 </ul>
 </li>
 <li><strong>Safe habits for <code>curl … | bash</code> and <code>irm … | iex</code></strong>: check the domain first, then run; when possible, download the script, read it, then run it (<code>curl -fsSL &lt;url&gt; -o install.sh</code> followed by <code>less install.sh</code>).</li>
-<li><strong>Be careful with third-party &ldquo;config switcher / relay proxy&rdquo; tools</strong>: such tools often rewrite <code>~/.claude/settings.json</code>, <code>~/.config/opencode/opencode.json</code> and similar files, injecting a third-party <code>baseURL</code> and <code>token</code>; if they write an invalid model name or leave a stale hook behind, you get startup errors at best and leaked credentials at worst. If you must use one, write the configuration files yourself so you know what every line does.</li>
+<li><strong>The trade-off of third-party &ldquo;config switcher / relay proxy&rdquo; tools</strong>: see &ldquo;Managing Configuration with a GUI Tool&rdquo; above. The core point — they rewrite <code>~/.claude/settings.json</code>, <code>~/.config/opencode/opencode.json</code> and similar files directly, and <strong>those files are always what actually takes effect</strong>, so you must be able to read, edit and verify them.</li>
 <li><strong>API key management</strong>: never commit keys in plaintext to a Git repository; if a key is suspected of leaking, rotate it on the relevant platform immediately.</li>
 </ol>
 <hr>
